@@ -1,9 +1,9 @@
 # ms_uart
 A universal Asynchronous Receiver/Transmitter (UART) IP with the following features:
-- Afixed fram format (8N1)
+- A fixed fram format (8N1)
 - 16-byte TX and RX FIFOs with programmable thresholds
 - 16-bit prescaler (PR) for programable baud rate generation
-- Programmable baud rate, ```Baudrate = CLK/((PR+1)*16)```
+- Programmable baud rate, ```Baud_rate = CLK/((PR+1)*16)```
 - Four Interrupt Sources:
     + TX Fifo not full
     + RX Fifo not empty
