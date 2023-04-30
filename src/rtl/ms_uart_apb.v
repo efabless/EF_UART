@@ -80,35 +80,35 @@ module ms_uart_apb (
         if(~PRESETn)   
             RIS_REG <= 6'd0;
         else begin
-            if(tx_full_flag)    
-                RIS_REG[0] <= 1'b1;
-            else if(ICR_REG[0])
+            if(ICR_REG[0])
                 RIS_REG[0] <= 1'b0;
+            else if(tx_full_flag)    
+                RIS_REG[0] <= 1'b1;
             
-            if(tx_empty_flag)    
-                RIS_REG[1] <= 1'b1;
-            else if(ICR_REG[1])
+            if(ICR_REG[1])
                 RIS_REG[1] <= 1'b0;
+            else if(tx_empty_flag)    
+                RIS_REG[1] <= 1'b1;
 
-            if(tx_below_flag)    
-                RIS_REG[2] <= 1'b1;
-            else if(ICR_REG[2])
+            if(ICR_REG[2])
                 RIS_REG[2] <= 1'b0;
+            else if(tx_below_flag)    
+                RIS_REG[2] <= 1'b1;
             
-            if(rx_full_flag)    
-                RIS_REG[3] <= 1'b1;
-            else if(ICR_REG[3])
+            if(ICR_REG[3])
                 RIS_REG[3] <= 1'b0;
+            else if(rx_full_flag)    
+                RIS_REG[3] <= 1'b1;
             
-            if(rx_empty_flag)    
-                RIS_REG[4] <= 1'b1;
-            else if(ICR_REG[4])
+            if(ICR_REG[4])
                 RIS_REG[4] <= 1'b0;
+            else if(rx_empty_flag)    
+                RIS_REG[4] <= 1'b1;
 
-            if(rx_above_flag)    
-                RIS_REG[5] <= 1'b1;
-            else if(ICR_REG[5])
+            if(ICR_REG[5])
                 RIS_REG[5] <= 1'b0;
+            else if(rx_above_flag)    
+                RIS_REG[5] <= 1'b1;
         end
 
     // ICR Register
