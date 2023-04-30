@@ -1,7 +1,18 @@
 /*
-    Wishbone bus wrapper for the ms_uart IP
-    Author: Mohamed Shalan (mshalan@aucegypt.edu)
-    License: Apache 2.0
+	Copyright 2020 Mohamed Shalan
+	
+	Licensed under the Apache License, Version 2.0 (the "License"); 
+	you may not use this file except in compliance with the License. 
+	You may obtain a copy of the License at:
+	http://www.apache.org/licenses/LICENSE-2.0
+	Unless required by applicable law or agreed to in writing, software 
+	distributed under the License is distributed on an "AS IS" BASIS, 
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+	See the License for the specific language governing permissions and 
+	limitations under the License.
+*/
+/*
+    A Wishbone bus wrapper for the ms_uart IP
 */
 
 `timescale          1ns/1ns
@@ -69,6 +80,8 @@ module ms_uart_wb (
     wire        rx_full_flag;
     wire [3:0]  rx_level;
     wire        rx_above_flag   =   (rx_level > RXFIFOTR_REG);
+
+    reg         rd_reg, wr_reg;
    
     // RIS Register
     // bit 0: TX fifo is full Flag
@@ -81,35 +94,35 @@ module ms_uart_wb (
         if(rst_i)   
             RIS_REG <= 6'd0;
         else begin
-            if(tx_full_flag)    
-                RIS_REG[0] <= 1'b1;
-            else if(ICR_REG[0])
+            if(ICR_REG[0])
                 RIS_REG[0] <= 1'b0;
+            else if(tx_full_flag)    
+                RIS_REG[0] <= 1'b1;
             
-            if(tx_empty_flag)    
-                RIS_REG[1] <= 1'b1;
-            else if(ICR_REG[1])
+            if(ICR_REG[1])
                 RIS_REG[1] <= 1'b0;
+            else if(tx_empty_flag)    
+                RIS_REG[1] <= 1'b1;
 
-            if(tx_below_flag)    
-                RIS_REG[2] <= 1'b1;
-            else if(ICR_REG[2])
+            if(ICR_REG[2])
                 RIS_REG[2] <= 1'b0;
+            else if(tx_below_flag)    
+                RIS_REG[2] <= 1'b1;
             
-            if(rx_full_flag)    
-                RIS_REG[3] <= 1'b1;
-            else if(ICR_REG[3])
+            if(ICR_REG[3])
                 RIS_REG[3] <= 1'b0;
+            else if(rx_full_flag)    
+                RIS_REG[3] <= 1'b1;
             
-            if(rx_empty_flag)    
-                RIS_REG[4] <= 1'b1;
-            else if(ICR_REG[4])
+            if(ICR_REG[4])
                 RIS_REG[4] <= 1'b0;
+            else if(rx_empty_flag)    
+                RIS_REG[4] <= 1'b1;
 
-            if(rx_above_flag)    
-                RIS_REG[5] <= 1'b1;
-            else if(ICR_REG[5])
+            if(ICR_REG[5])
                 RIS_REG[5] <= 1'b0;
+            else if(rx_above_flag)    
+                RIS_REG[5] <= 1'b1;
         end
 
     // ICR Register
@@ -132,15 +145,15 @@ module ms_uart_wb (
     `WB_REG(IM_REG, 32'd0, 6)
 
     // WB Data out
-    assign  dat_o   =   (PADDR[15:0] == DATA_REG_ADDR)      ?   rdata           :
-                        (PADDR[15:0] == PRESCALE_REG_ADDR)  ?   PRESCALE_REG    :
-                        (PADDR[15:0] == TXFIFOTR_REG_ADDR)  ?   TXFIFOTR_REG    :
-                        (PADDR[15:0] == RXFIFOTR_REG_ADDR)  ?   RXFIFOTR_REG    :
-                        (PADDR[15:0] == CTRL_REG_ADDR)      ?   CTRL_REG        :
-                        (PADDR[15:0] == RIS_REG_ADDR)       ?   RIS_REG         :
-                        (PADDR[15:0] == MIS_REG_ADDR)       ?   MIS_REG         :
-                        (PADDR[15:0] == IM_REG_ADDR)        ?   IM_REG          :
-                        (PADDR[15:0] == ICR_REG_ADDR)       ?   32'd0           :   32'hDEADBEEF;
+    assign  dat_o   =   (adr_i[15:0] == DATA_REG_ADDR)      ?   rdata           :
+                        (adr_i[15:0] == PRESCALE_REG_ADDR)  ?   PRESCALE_REG    :
+                        (adr_i[15:0] == TXFIFOTR_REG_ADDR)  ?   TXFIFOTR_REG    :
+                        (adr_i[15:0] == RXFIFOTR_REG_ADDR)  ?   RXFIFOTR_REG    :
+                        (adr_i[15:0] == CTRL_REG_ADDR)      ?   CTRL_REG        :
+                        (adr_i[15:0] == RIS_REG_ADDR)       ?   RIS_REG         :
+                        (adr_i[15:0] == MIS_REG_ADDR)       ?   MIS_REG         :
+                        (adr_i[15:0] == IM_REG_ADDR)        ?   IM_REG          :
+                        (adr_i[15:0] == ICR_REG_ADDR)       ?   32'd0           :   32'hDEADBEEF;
                  
     assign irq = |MIS_REG;
 
@@ -153,14 +166,31 @@ module ms_uart_wb (
             else
                 ack_o <= 1'b0;
 
+
+    always @ (posedge clk_i or posedge rst_i)
+        if(rst_i)
+            rd_reg <= 1'b0;
+        else if(rd_reg)
+            rd_reg <= 0;
+        else
+            rd_reg <= rd;
+    
+    always @ (posedge clk_i or posedge rst_i)
+        if(rst_i)
+            wr_reg <= 1'b0;
+        else if(wr_reg)
+            wr_reg <= 0;
+        else
+            wr_reg <= wr;
+
     ms_uart uart (
         .clk(clk_i),
         .rst_n(~rst_i),
 
         .prescale(PRESCALE_REG),
         .en(en),
-        .rd(rd),
-        .wr(wr),
+        .rd(rd_reg),
+        .wr(wr_reg),
         .wdata(wdata),
         .tx_empty(tx_empty_flag),
         .tx_full(tx_full_flag),
