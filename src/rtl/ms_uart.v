@@ -30,6 +30,8 @@ module ms_uart (
     
     input   wire [15:0] prescale,
     input   wire        en,
+    input   wire        tx_en,
+    input   wire        rx_en,
     input   wire        rd,
     input   wire        wr,
     input   wire [7:0]  wdata,
@@ -78,7 +80,7 @@ module ms_uart (
         .clk(clk),
         .resetn(rst_n),
         .tx_start(~tx_empty),
-        .b_tick(b_tick),
+        .b_tick(b_tick & tx_en),
         .d_in(tx_data),
         .tx_done(tx_done),
         .tx(TX)
@@ -99,7 +101,7 @@ module ms_uart (
     UART_RX uart_rx (
         .clk(clk),
         .resetn(rst_n),
-        .b_tick(b_tick),
+        .b_tick(b_tick & rx_en),
         .rx(RX),
         .rx_done(rx_done),
         .dout(rx_data)

@@ -68,6 +68,8 @@ module ms_uart_wb (
 
     wire [15:0] prescale        =   PRESCALE_REG[15:0];
     wire        en              =   CTRL_REG[0];
+    wire        tx_en           =   CTRL_REG[1];
+    wire        rx_en           =   CTRL_REG[2];
     wire        rd              =   wb_re & (adr_i[15:0] == DATA_REG_ADDR);
     wire        wr              =   wb_we & (adr_i[15:0] == DATA_REG_ADDR);
     wire [7:0]  wdata           =   dat_i[7:0];
@@ -189,6 +191,8 @@ module ms_uart_wb (
 
         .prescale(PRESCALE_REG),
         .en(en),
+        .tx_en(tx_en),
+        .rx_en(rx_en),
         .rd(rd_reg),
         .wr(wr_reg),
         .wdata(wdata),

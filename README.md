@@ -29,7 +29,7 @@ The IP comes with wrappers for both the Wishbone (classical) and APB buses.
 | Prescaler | 0x004  | RW        | ```Baud_rate = Bus_Clock_Freq/((Prescale+1)*16)```|
 | TX FIFO Threshold| 0x008   | RW| TX FIFO Threshold for IRQ generation |
 | RX FIFO Threshold| 0x00C   | RW| TX FIFO Threshold for IRQ generation |
-| Control| 0x100 | RW | 0x100 | Bit 0: UART Enable |
+| Control| 0x100 | RW | 0x100 | Bit 0: UART Enable, Bit 1: TX Enable, Bit 2: RX Enable |
 | RIS | 0x200 | R | Raw Status Register |
 | MIS | 0x204 | R | Masked Status Register |
 | IM | 0x208 | RW | Interrupts Masking Register |
