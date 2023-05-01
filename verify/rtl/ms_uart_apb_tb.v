@@ -80,13 +80,13 @@ module ms_uart_apb_tb;
         @(e_test1);
         // Configure the prescales
         APB_M_WR(PRESCALE_REG_ADDR, 2);   
-        APB_M_WR(CTRL_REG_ADDR, 0);           // Enable       
-        APB_M_WR(IM_REG_ADDR, 0);          // Disable all interrupts
+        APB_M_WR(CTRL_REG_ADDR, 0);                 // Disable the UART       
+        APB_M_WR(IM_REG_ADDR, 0);                   // Disable all interrupts
         APB_M_WR(ICR_REG_ADDR, 8'hFF);
-        //WB_M_WR_W(TXFIFOTR_REG_ADDR, 4 );      // Set the TX FIFO threshold
-        APB_M_WR(RXFIFOTR_REG_ADDR, 7 );      // Set the TX FIFO threshold
+        //WB_M_WR_W(TXFIFOTR_REG_ADDR, 4 );         // Set the TX FIFO threshold
+        APB_M_WR(RXFIFOTR_REG_ADDR, 7 );            // Set the TX FIFO threshold
         APB_M_WR(IM_REG_ADDR, IRQ_RX_FIFO_ABOVE); 
-        APB_M_WR(CTRL_REG_ADDR, 1);           // Enable       
+        APB_M_WR(CTRL_REG_ADDR, 7);                 // Enable UART, TX and RX
         // Send some data
         APB_M_WR(DATA_REG_ADDR, 8'h11);
         APB_M_WR(DATA_REG_ADDR, 8'h22);

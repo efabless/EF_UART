@@ -90,13 +90,13 @@ module ms_uart_apb_tb;
         @(e_test1);
         // Configure the prescales
         WB_M_WR_W(PRESCALE_REG_ADDR, 2);   
-        WB_M_WR_W(CTRL_REG_ADDR, 0);           // Enable       
-        WB_M_WR_W(IM_REG_ADDR, 0);          // Disable all interrupts
-        WB_M_WR_W(ICR_REG_ADDR, 8'hFF);
-        //WB_M_WR_W(TXFIFOTR_REG_ADDR, 4 );      // Set the TX FIFO threshold
-        WB_M_WR_W(RXFIFOTR_REG_ADDR, 7 );      // Set the TX FIFO threshold
-        WB_M_WR_W(IM_REG_ADDR, IRQ_RX_FIFO_ABOVE); 
-        WB_M_WR_W(CTRL_REG_ADDR, 1);           // Enable       
+        WB_M_WR_W(CTRL_REG_ADDR, 0);                // Disable the UART       
+        WB_M_WR_W(IM_REG_ADDR, 0);                  // Disable all interrupts
+        WB_M_WR_W(ICR_REG_ADDR, 8'hFF); 
+        //WB_M_WR_W(TXFIFOTR_REG_ADDR, 4 );         // Set the TX FIFO threshold
+        WB_M_WR_W(RXFIFOTR_REG_ADDR, 7 );           // Set the TX FIFO threshold
+        WB_M_WR_W(IM_REG_ADDR, IRQ_RX_FIFO_ABOVE);  // Enable RX FIFO Above Threshold Interrupt
+        WB_M_WR_W(CTRL_REG_ADDR, 7);                // Enable UART, TX and RX       
         
         // Send some data
         WB_M_WR_W(DATA_REG_ADDR, 8'h11);
