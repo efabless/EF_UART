@@ -11,6 +11,8 @@
 #define MS_UART_ICR_REG_ADDR        (MS_UART_BASE +  0x20C)
 
 #define MS_UART_CTRL_EN             0x1
+#define MS_UART_CTRL_TXEN           0x2
+#define MS_UART_CTRL_TXEN           0x4
 
 #define MS_UART_TX_FIFO_FULL        0x01
 #define MS_UART_TX_FIFO_EMPTY       0x02
