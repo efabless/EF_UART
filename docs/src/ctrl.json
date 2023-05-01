@@ -1,0 +1,6 @@
+[
+    { "name": "en",   "bits": 1},
+    { "name": "txen",   "bits": 1, "rotate": -60},
+    { "name": "rxen",   "bits": 1, "rotate": -60},
+    { "bits": 29}
+]

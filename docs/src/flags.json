@@ -1,0 +1,9 @@
+[
+    { "bits": 1},
+    { "name": "TXFE",   "bits": 1, "rotate": -60},
+    { "name": "TXFL",   "bits": 1, "rotate": -60},
+    { "name": "RXFF",   "bits": 1, "rotate": -60},
+    { "bits": 1},
+    { "name": "RXFL",   "bits": 1, "rotate": -60},
+    { "bits": 26}
+]
