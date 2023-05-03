@@ -53,7 +53,7 @@ module ms_uart_wb (
     reg [15:0]  PRESCALE_REG;
     reg [ 3:0]  TXFIFOTR_REG;
     reg [ 3:0]  RXFIFOTR_REG;
-    reg [ 0:0]  CTRL_REG;
+    reg [ 2:0]  CTRL_REG;
     reg [ 5:0]  IM_REG;
     reg [ 5:0]  ICR_REG;
     reg [ 5:0]  RIS_REG;
@@ -68,8 +68,8 @@ module ms_uart_wb (
 
     wire [15:0] prescale        =   PRESCALE_REG[15:0];
     wire        en              =   CTRL_REG[0];
-    wire        tx_en           =   CTRL_REG[1];
-    wire        rx_en           =   CTRL_REG[2];
+    wire        tx_en           =   CTRL_REG[1] & en;
+    wire        rx_en           =   CTRL_REG[2] & en;
     wire        rd              =   wb_re & (adr_i[15:0] == DATA_REG_ADDR);
     wire        wr              =   wb_we & (adr_i[15:0] == DATA_REG_ADDR);
     wire [7:0]  wdata           =   dat_i[7:0];
@@ -143,7 +143,7 @@ module ms_uart_wb (
     `WB_REG(PRESCALE_REG, 32'd0, 16)
     `WB_REG(TXFIFOTR_REG, 32'd0, 4)
     `WB_REG(RXFIFOTR_REG, 32'd0, 4)
-    `WB_REG(CTRL_REG, 32'd0, 1)            
+    `WB_REG(CTRL_REG, 32'd0, 3)            
     `WB_REG(IM_REG, 32'd0, 6)
 
     // WB Data out
