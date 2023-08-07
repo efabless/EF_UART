@@ -1,4 +1,4 @@
-# ms_uart
+# EF_UART
 A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following features:
 - A fixed fram format (8N1)
 - 16-byte TX and RX FIFOs with programmable thresholds
@@ -13,14 +13,14 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
 The IP comes with wrappers for both the Wishbone (classical) and APB buses.
 
 ## The Interface
-### ms_tmr32
-<img src="./docs/ms_uart.svg" alt= “” width="60%" height="60%">
+### EF_UART
+<img src="./docs/EF_UART.svg" alt= “” width="60%" height="60%">
 
-### ms_tmr32_wb
-<img src="./docs/ms_uart_wb.svg" alt= “” width="60%" height="60%">
+### EF_UART_wb
+<img src="./docs/EF_UART_wb.svg" alt= “” width="60%" height="60%">
 
-### ms_tmr32_apb
-<img src="./docs/ms_uart_apb.svg" alt= “” width="60%" height="60%">
+### EF_UART_apb
+<img src="./docs/EF_UART_apb.svg" alt= “” width="60%" height="60%">
 
 ## I/O Registers
 | Register | Offset | Mode         | Description |

@@ -1,5 +1,5 @@
 
-module ms_uart_apb_tb;
+module EF_UART_apb_tb;
 
     localparam  DATA_REG_ADDR       = 16'h0000,
                 PRESCALE_REG_ADDR   = 16'h0004,
@@ -40,7 +40,7 @@ module ms_uart_apb_tb;
     `include "apb_tasks.vh"
 
     initial begin
-        $dumpfile("ms_uart_apb_tb.vcd");
+        $dumpfile("EF_UART_apb_tb.vcd");
         $dumpvars;
         #250_000;
         $display("Timeout!"); 
@@ -112,7 +112,7 @@ module ms_uart_apb_tb;
         -> e_test1_done;
 	end
 
-    ms_uart_apb MUV (
+    EF_UART_apb MUV (
         //APB Interface
         .PCLK(PCLK),
         .PRESETn(PRESETn),

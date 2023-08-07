@@ -24,7 +24,7 @@
         + TX Fifo level is below the threshold
 */
 
-module ms_uart (
+module EF_UART (
     input   wire        clk,
     input   wire        rst_n,
     

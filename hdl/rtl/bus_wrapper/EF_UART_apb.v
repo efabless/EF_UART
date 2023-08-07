@@ -1,5 +1,5 @@
 /*
-    AMBA APB bus wrapper for the ms_uart IP
+    AMBA APB bus wrapper for the EF_UART IP
     Author: Mohamed Shalan (mshalan@aucegypt.edu)
     License: Apache 2.0
 */
@@ -9,7 +9,7 @@
 
 `define     APB_REG(name, init_value, size)    always @(posedge PCLK or negedge PRESETn) if(~PRESETn) name <= init_value; else if(apb_we & (PADDR[15:0]==``name``_ADDR)) name <= PWDATA[size-1:0];
 
-module ms_uart_apb (
+module EF_UART_apb (
     input wire          PCLK,
     input wire          PRESETn,
       
@@ -147,7 +147,7 @@ module ms_uart_apb (
 
     assign PREADY = 1'b1;
 
-    ms_uart uart (
+    EF_UART uart (
         .clk(PCLK),
         .rst_n(PRESETn),
 

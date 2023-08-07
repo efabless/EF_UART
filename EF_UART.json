@@ -1,7 +1,7 @@
 {
-    "name": "ms_uart",
+    "name": "EF_UART",
     "description": "UART with a programmable baud rate generator and RX/TX FIFOs",
-    "repo": "github.com/shalan/ms_uart",
+    "repo": "github.com/shalan/EF_UART",
     "author": "Mohamed Shalan",
     "email": "mshalan@aucegypt.edu",
     "version": "0.9",
