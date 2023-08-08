@@ -1,18 +1,31 @@
 {
-    "name": "EF_UART",
-    "description": "UART with a programmable baud rate generator and RX/TX FIFOs",
-    "repo": "github.com/shalan/EF_UART",
-    "author": "Mohamed Shalan",
-    "email": "mshalan@aucegypt.edu",
-    "version": "0.9",
-    "date": "3-18-2023",
-    "license": "APACHE 2.0",
-    "category": "digital",
-    "type": "soft",
-    "status": "np",
-    "width": "0",
-    "height": "0",
-    "cell_count": "1057",
+    "info": {
+        "name": "EF_UART",
+        "description": "UART with a programmable baud rate generator and RX/TX FIFOs",
+        "repo": "github.com/efabless/EF_UART",
+        "owner": "efabless",
+        "license": "APACHE 2.0",
+        "author": "Mohamed Shalan",
+        "email": "mshalan@aucegypt.edu",
+        "version": "v1.0.0",
+        "date": "3-18-2023",
+        "category": "1",
+        "tags": [
+            "peripheral",
+            "comm"
+        ],
+        "bus": [
+            "generic"
+        ],
+        "type": "soft",
+        "status": "verified",
+        "cell_count": "1057",
+        "width": "0.0",
+        "height": "0.0",
+        "technology": "n/a",
+        "clock_freq_mhz": "10",
+        "supply_voltage": "n/a"
+    },
     "regs": [
         {
             "name": "data",
@@ -144,5 +157,20 @@
       {"name": "rx_level", "size": "4"},
       {"name": "RX", "size": "1"},
       {"name": "TX", "size": "1"}
+    ],
+    "Fifos": [
+        {
+            "size": "16",
+            "reg": "data",
+            "type": "r",
+            "port": "rd"
+        },
+        {
+            "size": "16",
+            "reg": "data",
+            "type": "w",
+            "port": "wr"
+        }
     ]
+        
 }
