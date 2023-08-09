@@ -24,7 +24,9 @@
         "height": "0.0",
         "technology": "n/a",
         "clock_freq_mhz": "10",
-        "supply_voltage": "n/a"
+        "supply_voltage": [
+            "n/a"
+        ]
     },
     "regs": [
         {
