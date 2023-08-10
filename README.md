@@ -14,13 +14,13 @@ The IP comes with wrappers for both the Wishbone (classical) and APB buses.
 
 ## The Interface
 ### EF_UART
-<img src="./docs/EF_UART.svg" alt= “” width="60%" height="60%">
+<img src="./doc/EF_UART.svg" alt= “” width="60%" height="60%">
 
 ### EF_UART_wb
-<img src="./docs/EF_UART_wb.svg" alt= “” width="60%" height="60%">
+<img src="./doc/EF_UART_wb.svg" alt= “” width="60%" height="60%">
 
 ### EF_UART_apb
-<img src="./docs/EF_UART_apb.svg" alt= “” width="60%" height="60%">
+<img src="./doc/EF_UART_apb.svg" alt= “” width="60%" height="60%">
 
 ## I/O Registers
 | Register | Offset | Mode         | Description |
@@ -35,18 +35,18 @@ The IP comes with wrappers for both the Wishbone (classical) and APB buses.
 | IM | 0x208 | RW | Interrupts Masking Register; enable and disables interrupts |
 | ICR | 0x20C | W | Interrupts Clear Register; write 1 to clear the flag |
 ### Data Register [offset: 0x000, RW]
-![Diagram](./docs/data.svg "Diagram")
+![Diagram](./doc/data.svg "Diagram")
 ### Prescaler Register [offset: 0x004, RW]
-![Diagram](./docs/prescaler.svg "Diagram")
+![Diagram](./doc/prescaler.svg "Diagram")
 ### TXFILS (TX FIFO Interrupt Level Select) [offset: 0x008, RW]
-![Diagram](./docs/txifls.svg "Diagram")
+![Diagram](./doc/txifls.svg "Diagram")
 ### RXFILS (RX FIFO Interrupt Level Select) [offset: 0x00c, RW]
-![Diagram](./docs/rxifls.svg "Diagram")
+![Diagram](./doc/rxifls.svg "Diagram")
 ### CTRL (Control Register) [offset: 0x100, R]
-![Diagram](./docs/ctrl.svg "Diagram")
+![Diagram](./doc/ctrl.svg "Diagram")
 ### RIS (Raw Interrupts Status Register) [offset: 0x200, R]
 Reflects the status of interrupts trigger conditions detected (raw, prior to masking). 
-![Diagram](./docs/flags.svg "Diagram")
+![Diagram](./doc/flags.svg "Diagram")
 - TXFE: TX FIFO is empty
 - TXFL: TX FIFO Level is below the set level
 - RXFF: RX FIFO is full
@@ -54,12 +54,12 @@ Reflects the status of interrupts trigger conditions detected (raw, prior to mas
 
 ### RIS (Masked Interrupts Status Register) [offset: 0x204, R]
 Similar to RIS but shows the state of the interrupt after masking. MIS register is hardwired to: ```RIS & IM```.
-![Diagram](./docs/flags.svg "Diagram")
+![Diagram](./doc/flags.svg "Diagram")
 
 ### IM (Interrupts Mask Register) [offset: 0x208, RW]
 Disabling/Enabling an interrupt source.
-![Diagram](./docs/flags.svg "Diagram")
+![Diagram](./doc/flags.svg "Diagram")
 
 ### ICR (Interrupts Clear Register) [offset: 0x20c, W]
 Writing a 1 to a bit in this register clears the corresponding interrupt flag in the RIS Register. 
-![Diagram](./docs/flags.svg "Diagram")
+![Diagram](./doc/flags.svg "Diagram")
