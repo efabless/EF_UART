@@ -12,7 +12,7 @@
 	limitations under the License.
 */
 /*
-    A Wishbone bus wrapper for the ms_uart IP
+    A Wishbone bus wrapper for the EF_UART IP
 */
 
 `timescale          1ns/1ns
@@ -20,7 +20,7 @@
 
 `define     WB_REG(name, init_value,size)    always @(posedge clk_i or posedge rst_i) if(rst_i) name <= init_value; else if(wb_we & (adr_i[15:0]==``name``_ADDR)) name <= dat_i[size-1:0];
 
-module ms_uart_wb (
+module EF_UART_wb (
     // WB bus Interface
     input   wire        clk_i,
     input   wire        rst_i,
@@ -185,7 +185,7 @@ module ms_uart_wb (
         else
             wr_reg <= wr;
 
-    ms_uart uart (
+    EF_UART uart (
         .clk(clk_i),
         .rst_n(~rst_i),
 

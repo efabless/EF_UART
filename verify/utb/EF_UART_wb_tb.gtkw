@@ -1,0 +1,98 @@
+[*]
+[*] GTKWave Analyzer v3.3.107 (w)1999-2020 BSI
+[*] Sat Apr 29 19:58:36 2023
+[*]
+[dumpfile] "/Users/shalan/work/EF_UART/verify/rtl/EF_UART_wb_tb.vcd"
+[dumpfile_mtime] "Sat Apr 29 18:35:30 2023"
+[dumpfile_size] 243097
+[savefile] "/Users/shalan/work/EF_UART/verify/rtl/EF_UART_wb_tb.gtkw"
+[timestart] 0
+[size] 1728 942
+[pos] -1 -1
+*-12.630326 38855 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] EF_UART_apb_tb.
+[treeopen] EF_UART_apb_tb.MUV.
+[treeopen] EF_UART_apb_tb.MUV.uart.
+[sst_width] 256
+[signals_width] 184
+[sst_expanded] 1
+[sst_vpaned_height] 278
+@28
+EF_UART_apb_tb.clk_i
+EF_UART_apb_tb.rst_i
+EF_UART_apb_tb.RX
+EF_UART_apb_tb.TX
+@22
+EF_UART_apb_tb.status[7:0]
+@200
+-WB
+@22
+EF_UART_apb_tb.MUV.adr_i[31:0]
+@28
+EF_UART_apb_tb.MUV.cyc_i
+@22
+EF_UART_apb_tb.MUV.dat_i[31:0]
+EF_UART_apb_tb.MUV.dat_o[31:0]
+@28
+EF_UART_apb_tb.ack_o
+EF_UART_apb_tb.we_i
+EF_UART_apb_tb.stb_i
+@200
+-UART WB
+@28
+EF_UART_apb_tb.MUV.CTRL_REG
+@22
+EF_UART_apb_tb.MUV.PRESCALE_REG[15:0]
+EF_UART_apb_tb.MUV.RIS_REG[5:0]
+EF_UART_apb_tb.MUV.MIS_REG[5:0]
+EF_UART_apb_tb.MUV.IM_REG[5:0]
+EF_UART_apb_tb.MUV.ICR_REG[5:0]
+EF_UART_apb_tb.MUV.RXFIFOTR_REG[3:0]
+EF_UART_apb_tb.MUV.TXFIFOTR_REG[3:0]
+@28
+EF_UART_apb_tb.MUV.wb_re
+EF_UART_apb_tb.MUV.wb_valid
+EF_UART_apb_tb.MUV.wb_we
+@22
+EF_UART_apb_tb.MUV.wdata[7:0]
+EF_UART_apb_tb.MUV.rdata[7:0]
+EF_UART_apb_tb.MUV.adr_i[31:0]
+@28
+EF_UART_apb_tb.MUV.rx_above_flag
+EF_UART_apb_tb.MUV.rx_empty_flag
+EF_UART_apb_tb.MUV.rx_full_flag
+EF_UART_apb_tb.MUV.tx_below_flag
+EF_UART_apb_tb.MUV.tx_empty_flag
+EF_UART_apb_tb.MUV.tx_full_flag
+@22
+EF_UART_apb_tb.MUV.uart.rx_level[3:0]
+EF_UART_apb_tb.MUV.uart.tx_level[3:0]
+@28
+EF_UART_apb_tb.MUV.uart.clk
+EF_UART_apb_tb.MUV.uart.wr
+EF_UART_apb_tb.MUV.wr_reg
+EF_UART_apb_tb.MUV.rd
+EF_UART_apb_tb.MUV.rd_reg
+EF_UART_apb_tb.MUV.irq
+@200
+-UART
+@22
+EF_UART_apb_tb.MUV.uart.prescale[15:0]
+@28
+EF_UART_apb_tb.MUV.uart.en
+EF_UART_apb_tb.MUV.uart.clk
+EF_UART_apb_tb.MUV.uart.b_tick
+@22
+EF_UART_apb_tb.MUV.uart.rdata[7:0]
+EF_UART_apb_tb.MUV.uart.wdata[7:0]
+EF_UART_apb_tb.MUV.uart.fifo_rx.r_data[7:0]
+EF_UART_apb_tb.MUV.uart.fifo_rx.w_data[7:0]
+EF_UART_apb_tb.MUV.uart.uart_rx.dout[7:0]
+@28
+EF_UART_apb_tb.MUV.uart.uart_rx.rx
+EF_UART_apb_tb.MUV.uart.uart_rx.rx_done
+EF_UART_apb_tb.MUV.uart.RX
+@29
+EF_UART_apb_tb.MUV.uart.TX
+[pattern_trace] 1
+[pattern_trace] 0
