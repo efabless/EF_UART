@@ -6,7 +6,7 @@
         "owner": "efabless",
         "license": "APACHE 2.0",
         "author": "Mohamed Shalan",
-        "email": "mshalan@aucegypt.edu",
+        "email": "mshalan@efabless.com",
         "version": "v1.0.0",
         "date": "3-18-2023",
         "category": "1",
@@ -33,6 +33,7 @@
             "name": "data",
             "size": "8",
             "mode": "rw",
+            "init": "0",
             "fields": [
                 {
                     "name": "data",
@@ -98,6 +99,10 @@
                 }
             ]
         }
+    ],
+    "fifos":[
+        {"size":"16", "reg":"data", "type":"r", "port":"rd"},
+        {"size":"16", "reg":"data", "type":"w", "port":"wr"}
     ],
     "interface": [
         {
