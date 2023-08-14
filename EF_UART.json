@@ -100,10 +100,6 @@
             ]
         }
     ],
-    "fifos":[
-        {"size":"16", "reg":"data", "type":"r", "port":"rd"},
-        {"size":"16", "reg":"data", "type":"w", "port":"wr"}
-    ],
     "interface": [
         {
             "name": "RX",
