@@ -7,11 +7,10 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
 - Four Interrupt Sources:
     + RX Fifo is full
     + TX Fifo is empty
-    + RX Fifo level is above the set level
-    + TX Fifo level is below the set level
+    + RX Fifo level is above the set threshold
+    + TX Fifo level is below the set threshold
 
-The IP comes with wrappers for both the Wishbone (classical) and APB buses.
-
+The IP has a generic bus interface. Bus wrappers for AHB-Lite, APB and WB are provided; they are auto-generated using wrapper_gen.py 
 ## The Interface
 ### EF_UART
 <img src="./docs/_static/EF_UART.svg" alt= “” width="60%" height="60%">
