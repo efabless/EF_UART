@@ -1,5 +1,7 @@
 /*
-	Copyright 2020 Mohamed Shalan
+	Copyright 2020 Efabless Corp.
+
+	Author: Mohamed Shalan (mshalan@efabless.com)
 	
 	Licensed under the Apache License, Version 2.0 (the "License"); 
 	you may not use this file except in compliance with the License. 
@@ -23,6 +25,8 @@
         + RX Fifo level exceeded the threshold
         + TX Fifo level is below the threshold
 */
+
+`default_nettype        none
 
 module EF_UART (
     input   wire        clk,
