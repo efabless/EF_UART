@@ -1,22 +1,7 @@
 
 module EF_UART_apb_tb;
 
-    localparam  DATA_REG_ADDR       = 16'h0000,
-                PRESCALE_REG_ADDR   = 16'h0004,
-                TXFIFOTR_REG_ADDR   = 16'h0008,
-                RXFIFOTR_REG_ADDR   = 16'h000c,
-                CTRL_REG_ADDR       = 16'h0100,
-                RIS_REG_ADDR        = 16'h0200,
-                MIS_REG_ADDR        = 16'h0204,
-                IM_REG_ADDR         = 16'h0208,
-                ICR_REG_ADDR        = 16'h020C;
-
-    localparam  IRQ_TX_FIFO_FULL    = 6'h01,
-                IRQ_TX_FIFO_EMPTY   = 6'h02,
-                IRQ_TX_FIFO_BELOW   = 6'h04,
-                IRQ_RX_FIFO_FULL    = 6'h08,
-                IRQ_RX_FIFO_EMPTY   = 6'h10,
-                IRQ_RX_FIFO_ABOVE   = 6'h20;
+    `include "params.vh"
 
     reg         PCLK;
     reg         PRESETn;
@@ -80,22 +65,22 @@ module EF_UART_apb_tb;
         @(e_test1);
         // Configure the prescales
         APB_M_WR(PRESCALE_REG_ADDR, 2);   
-        APB_M_WR(CTRL_REG_ADDR, 0);                 // Disable the UART       
+        APB_M_WR(CONTROL_REG_ADDR, 0);                 // Disable the UART       
         APB_M_WR(IM_REG_ADDR, 0);                   // Disable all interrupts
         APB_M_WR(ICR_REG_ADDR, 8'hFF);
         //WB_M_WR_W(TXFIFOTR_REG_ADDR, 4 );         // Set the TX FIFO threshold
-        APB_M_WR(RXFIFOTR_REG_ADDR, 7 );            // Set the TX FIFO threshold
+        APB_M_WR(RXFIFOT_REG_ADDR, 7 );            // Set the TX FIFO threshold
         APB_M_WR(IM_REG_ADDR, IRQ_RX_FIFO_ABOVE); 
-        APB_M_WR(CTRL_REG_ADDR, 7);                 // Enable UART, TX and RX
+        APB_M_WR(CONTROL_REG_ADDR, 7);                 // Enable UART, TX and RX
         // Send some data
-        APB_M_WR(DATA_REG_ADDR, 8'h11);
-        APB_M_WR(DATA_REG_ADDR, 8'h22);
-        APB_M_WR(DATA_REG_ADDR, 8'h33);
-        APB_M_WR(DATA_REG_ADDR, 8'h44);
-        APB_M_WR(DATA_REG_ADDR, 8'h55);
-        APB_M_WR(DATA_REG_ADDR, 8'h66);
-        APB_M_WR(DATA_REG_ADDR, 8'h77);
-        APB_M_WR(DATA_REG_ADDR, 8'h88);
+        APB_M_WR(TXDATA_REG_ADDR, 8'h11);
+        APB_M_WR(TXDATA_REG_ADDR, 8'h22);
+        APB_M_WR(TXDATA_REG_ADDR, 8'h33);
+        APB_M_WR(TXDATA_REG_ADDR, 8'h44);
+        APB_M_WR(TXDATA_REG_ADDR, 8'h55);
+        APB_M_WR(TXDATA_REG_ADDR, 8'h66);
+        APB_M_WR(TXDATA_REG_ADDR, 8'h77);
+        APB_M_WR(TXDATA_REG_ADDR, 8'h88);
 
         // wait for the first character to be received
         APB_M_RD(MIS_REG_ADDR, status);
@@ -106,7 +91,7 @@ module EF_UART_apb_tb;
         
         // Reading the 8 characters
         repeat(8) begin
-            APB_M_RD(DATA_REG_ADDR, rx_data);
+            APB_M_RD(RXDATA_REG_ADDR, rx_data);
             $display("Received: 0x%x", rx_data);
         end
         -> e_test1_done;
