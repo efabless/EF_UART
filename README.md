@@ -43,10 +43,7 @@ The IP has a generic bus interface. Bus wrappers for AHB-Lite, APB and WB are pr
 ![Diagram](./docs/_static/data.svg "Diagram")
 ### Prescaler Register [offset: 0x008, RW]
 ![Diagram](./docs/_static/prescaler.svg "Diagram")
-### TX FIFO Level Threshold [offset: 0x014, RW]
-![Diagram](./doc/txifls.svg "Diagram")
-### TX FIFO Level Threshold [offset: 0x018, RW]
-![Diagram](./docs/_static/rxifls.svg "Diagram")
+
 ### CTRL (Control Register) [offset: 0x01C, R]
 ![Diagram](./docs/_static/ctrl.svg "Diagram")
 ### RIS (Raw Interrupts Status Register) [offset: 0xF00, R]
