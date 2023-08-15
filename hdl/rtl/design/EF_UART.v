@@ -39,13 +39,17 @@ module EF_UART (
     input   wire        rd,
     input   wire        wr,
     input   wire [7:0]  wdata,
+    input   wire [3:0]  txfifotr,
+    input   wire [3:0]  rxfifotr,
     output  wire        tx_empty,
     output  wire        tx_full,
     output  wire [3:0]  tx_level,
+    output  wire        tx_level_below,
     output  wire [7:0]  rdata,
     output  wire        rx_empty,
     output  wire        rx_full,
     output  wire [3:0]  rx_level,
+    output  wire        rx_level_above,
 
     input   wire        RX,
     output  wire        TX
@@ -110,6 +114,9 @@ module EF_UART (
         .rx_done(rx_done),
         .dout(rx_data)
     );
+
+    assign tx_level_below = (tx_level < txfifotr);
+    assign rx_level_above = (rx_level > rxfifotr);
 
 endmodule
 
