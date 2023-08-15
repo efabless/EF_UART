@@ -30,16 +30,30 @@
     },
     "regs": [
         {
-            "name": "data",
+            "name": "txdata",
             "size": "8",
-            "mode": "rw",
+            "mode": "fw",
             "init": "0",
             "fields": [
                 {
-                    "name": "data",
+                    "name": "wdata",
                     "from": "0",
-                    "size": "7",
+                    "size": "8",
                     "port": "wdata"
+                }
+            ]
+        },
+        {
+            "name": "rxdata",
+            "size": "8",
+            "mode": "fr",
+            "init": "0",
+            "fields": [
+                {
+                    "name": "rdata",
+                    "from": "0",
+                    "size": "8",
+                    "port": "rdata"
                 }
             ]
         },
@@ -52,19 +66,45 @@
                 {
                     "name": "prescale",
                     "from": "0",
-                    "size": "15",
+                    "size": "16",
                     "port": "prescale"
                 }
             ]
         },
         {
-            "name": "txfifotr",
+            "name": "TXFIFOLEVEL",
+            "size": "4",
+            "mode": "ro",
+            "fields": [
+                {
+                    "name": "level",
+                    "from": "0",
+                    "size": "4",
+                    "port": "tx_level"
+                }
+            ]
+        },
+        {
+            "name": "RXFIFOLEVEL",
+            "size": "4",
+            "mode": "ro",
+            "fields": [
+                {
+                    "name": "level",
+                    "from": "0",
+                    "size": "4",
+                    "port": "rx_level"
+                }
+            ]
+        },
+        {
+            "name": "TXFIFOT",
             "size": "4",
             "mode": "rw",
             "init": "0",
             "fields": [
                 {
-                    "name": "txfifotr",
+                    "name": "value",
                     "from": "0",
                     "size": "4",
                     "port": "txfifotr"
@@ -72,13 +112,13 @@
             ]
         },
         {
-            "name": "rxfifotr",
+            "name": "RXFIFOT",
             "size": "4",
             "mode": "rw",
             "init": "0",
             "fields": [
                 {
-                    "name": "rxfifotr",
+                    "name": "value",
                     "from": "0",
                     "size": "4",
                     "port": "rxfifotr"
@@ -87,7 +127,7 @@
         },
         {
             "name": "control",
-            "size": "1",
+            "size": "3",
             "mode": "rw",
             "init": "0",
             "fields": [
@@ -96,6 +136,18 @@
                     "from": "0",
                     "size": "1",
                     "port": "en"
+                },
+                {
+                    "name": "txen",
+                    "from": "1",
+                    "size": "1",
+                    "port": "tx_en"
+                },
+                {
+                    "name": "rxen",
+                    "from": "2",
+                    "size": "1",
+                    "port": "rx_en"
                 }
             ]
         }
@@ -117,27 +169,19 @@
     "flags": [
         {
             "name": "tx_empty_flag",
-            "port": "to_flag"
-        },
-        {
-            "name": "tx_full_flag",
-            "port": "match_flag"
+            "port": "tx_empty"
         },
         {
             "name": "tx_below_flag",
-            "port": "cp_flag"
-        },
-        {
-            "name": "rx_empty_flag",
-            "port": "cp_flag"
+            "port": "tx_level_below"
         },
         {
             "name": "rx_full_flag",
-            "port": "match_flag"
+            "port": "rx_full"
         },
         {
-            "name": "rx_below_flag",
-            "port": "cp_flag"
+            "name": "tr_above_flag",
+            "port": "rx_level_above"
         }
     ],
     "clock": "clk",
@@ -152,27 +196,36 @@
       {"name": "wr", "size": "1"},
       {"name": "wdata", "size": "8"},
       {"name": "tx_empty", "size": "1"},
-      {"name": "tx_full", "size": "1"},
       {"name": "tx_level", "size": "4"},
       {"name": "rdata", "size": "8"},
-      {"name": "rx_empty", "size": "1"},
       {"name": "rx_full", "size": "1"},
       {"name": "rx_level", "size": "4"},
       {"name": "RX", "size": "1"},
-      {"name": "TX", "size": "1"}
+      {"name": "TX", "size": "1"},
+      {"name": "tx_en", "size": "1"},
+      {"name": "rx_en", "size": "1"},
+      {"name": "tx_level_below", "size": "1"},
+      {"name": "rx_level_above", "size": "1"},
+      {"name": "txfifotr", "size": "4"},
+      {"name": "rxfifotr", "size": "4"}
     ],
-    "Fifos": [
+
+    "fifos": [
         {
-            "size": "16",
-            "reg": "data",
+            "depth": "16",
+            "width": 8,
+            "reg": "rxdata",
             "type": "r",
-            "port": "rd"
+            "control_port": "rd",
+            "data_port":"rdata"
         },
         {
-            "size": "16",
-            "reg": "data",
+            "depth": "16",
+            "width": 8,
+            "reg": "txdata",
             "type": "w",
-            "port": "wr"
+            "control_port": "wr",
+            "data_port":"wdata"
         }
     ]
         
