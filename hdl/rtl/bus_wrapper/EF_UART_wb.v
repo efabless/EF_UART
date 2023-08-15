@@ -43,51 +43,57 @@ module EF_UART_wb (
 	input	wire 		we_i,
 	output	wire 		irq
 );
-	localparam[15:0] DATA_REG_ADDR = 16'h0000;
-	localparam[15:0] PRESCALE_REG_ADDR = 16'h0004;
-	localparam[15:0] TXFIFOTR_REG_ADDR = 16'h0008;
-	localparam[15:0] RXFIFOTR_REG_ADDR = 16'h000c;
-	localparam[15:0] CONTROL_REG_ADDR = 16'h0010;
+	localparam[15:0] TXDATA_REG_ADDR = 16'h0000;
+	localparam[15:0] RXDATA_REG_ADDR = 16'h0004;
+	localparam[15:0] PRESCALE_REG_ADDR = 16'h0008;
+	localparam[15:0] TXFIFOLEVEL_REG_ADDR = 16'h000c;
+	localparam[15:0] RXFIFOLEVEL_REG_ADDR = 16'h0010;
+	localparam[15:0] TXFIFOT_REG_ADDR = 16'h0014;
+	localparam[15:0] RXFIFOT_REG_ADDR = 16'h0018;
+	localparam[15:0] CONTROL_REG_ADDR = 16'h001c;
 	localparam[15:0] ICR_REG_ADDR = 16'h0f00;
 	localparam[15:0] RIS_REG_ADDR = 16'h0f04;
 	localparam[15:0] IM_REG_ADDR = 16'h0f08;
 	localparam[15:0] MIS_REG_ADDR = 16'h0f0c;
 
-	reg	[7:0]	DATA_REG;
 	reg	[15:0]	PRESCALE_REG;
-	reg	[3:0]	TXFIFOTR_REG;
-	reg	[3:0]	RXFIFOTR_REG;
-	reg			CONTROL_REG;
-	reg	[5:0]	RIS_REG;
-	reg	[5:0]	ICR_REG;
-	reg	[5:0]	IM_REG;
+	reg	[3:0]	TXFIFOT_REG;
+	reg	[3:0]	RXFIFOT_REG;
+	reg	[2:0]	CONTROL_REG;
+	reg	[3:0]	RIS_REG;
+	reg	[3:0]	ICR_REG;
+	reg	[3:0]	IM_REG;
 
-	wire[6:0]	wdata	= DATA_REG[6:0];
-	wire[14:0]	prescale	= PRESCALE_REG[14:0];
-	wire[3:0]	txfifotr	= TXFIFOTR_REG[3:0];
-	wire[3:0]	rxfifotr	= RXFIFOTR_REG[3:0];
+	wire[7:0]	rdata;
+	wire[7:0]	RXDATA_REG	= rdata;
+	wire[15:0]	prescale	= PRESCALE_REG[15:0];
+	wire[3:0]	tx_level;
+	wire[3:0]	TXFIFOLEVEL_REG	= tx_level;
+	wire[3:0]	rx_level;
+	wire[3:0]	RXFIFOLEVEL_REG	= rx_level;
+	wire[3:0]	txfifotr	= TXFIFOT_REG[3:0];
+	wire[3:0]	rxfifotr	= RXFIFOT_REG[3:0];
 	wire		en	= CONTROL_REG[0:0];
-	wire		to_flag;
-	wire		_TX_EMPTY_FLAG_FLAG_	= to_flag;
-	wire		match_flag;
-	wire		_TX_FULL_FLAG_FLAG_	= match_flag;
-	wire		cp_flag;
-	wire		_TX_BELOW_FLAG_FLAG_	= cp_flag;
-	wire		cp_flag;
-	wire		_RX_EMPTY_FLAG_FLAG_	= cp_flag;
-	wire		match_flag;
-	wire		_RX_FULL_FLAG_FLAG_	= match_flag;
-	wire		cp_flag;
-	wire		_RX_BELOW_FLAG_FLAG_	= cp_flag;
-	wire[5:0]	MIS_REG	= RIS_REG & IM_REG;
+	wire		tx_en	= CONTROL_REG[1:1];
+	wire		rx_en	= CONTROL_REG[2:2];
+	wire		tx_empty;
+	wire		_TX_EMPTY_FLAG_FLAG_	= tx_empty;
+	wire		tx_level_below;
+	wire		_TX_BELOW_FLAG_FLAG_	= tx_level_below;
+	wire		rx_full;
+	wire		_RX_FULL_FLAG_FLAG_	= rx_full;
+	wire		rx_level_above;
+	wire		_TR_ABOVE_FLAG_FLAG_	= rx_level_above;
+	wire[3:0]	MIS_REG	= RIS_REG & IM_REG;
 	wire		wb_valid	= cyc_i & stb_i;
 	wire		wb_we	= we_i & wb_valid;
 	wire		wb_re	= ~we_i & wb_valid;
 	wire[3:0]	wb_byte_sel	= sel_i & {4{wb_we}};
 	wire		_clk_	= clk_i;
 	wire		_rst_	= rst_i;
-	wire		rd	= (wb_re & (adr_i==DATA_REG_ADDR));
-	wire		wr	= (wb_we & (adr_i==DATA_REG_ADDR));
+	wire		rd	= (wb_re & (adr_i==RXDATA_REG_ADDR)  & ack_o);
+	wire		wr	= (wb_we & (adr_i==TXDATA_REG_ADDR)  & ~ack_o);
+	wire[7:0]	wdata	= dat_i[7:0];
 
 	EF_UART inst_to_wrap (
 		.clk(_clk_),
@@ -98,14 +104,18 @@ module EF_UART_wb (
 		.wr(wr),
 		.wdata(wdata),
 		.tx_empty(tx_empty),
-		.tx_full(tx_full),
 		.tx_level(tx_level),
 		.rdata(rdata),
-		.rx_empty(rx_empty),
 		.rx_full(rx_full),
 		.rx_level(rx_level),
 		.RX(RX),
-		.TX(TX)
+		.TX(TX),
+		.tx_en(tx_en),
+		.rx_en(rx_en),
+		.tx_level_below(tx_level_below),
+		.rx_level_above(rx_level_above),
+		.txfifotr(txfifotr),
+		.rxfifotr(rxfifotr)
 	);
 
 	always @ (posedge clk_i or posedge rst_i)
@@ -116,37 +126,37 @@ module EF_UART_wb (
 			else
 				ack_o <= 1'b0;
 
-	`WB_REG(DATA_REG, 0)
 	`WB_REG(PRESCALE_REG, 0)
-	`WB_REG(TXFIFOTR_REG, 0)
-	`WB_REG(RXFIFOTR_REG, 0)
+	`WB_REG(TXFIFOT_REG, 0)
+	`WB_REG(RXFIFOT_REG, 0)
 	`WB_REG(CONTROL_REG, 0)
+	`WB_REG(IM_REG, 0)
 
-	`WB_ICR(6)
+	`WB_ICR(4)
 
 	always @ (posedge clk_i or posedge rst_i)
 		if(rst_i) RIS_REG <= 32'd0;
 		else begin
 			if(_TX_EMPTY_FLAG_FLAG_) RIS_REG[0] <= 1'b1; else if(ICR_REG[0]) RIS_REG[0] <= 1'b0;
-			if(_TX_FULL_FLAG_FLAG_) RIS_REG[1] <= 1'b1; else if(ICR_REG[1]) RIS_REG[1] <= 1'b0;
-			if(_TX_BELOW_FLAG_FLAG_) RIS_REG[2] <= 1'b1; else if(ICR_REG[2]) RIS_REG[2] <= 1'b0;
-			if(_RX_EMPTY_FLAG_FLAG_) RIS_REG[3] <= 1'b1; else if(ICR_REG[3]) RIS_REG[3] <= 1'b0;
-			if(_RX_FULL_FLAG_FLAG_) RIS_REG[4] <= 1'b1; else if(ICR_REG[4]) RIS_REG[4] <= 1'b0;
-			if(_RX_BELOW_FLAG_FLAG_) RIS_REG[5] <= 1'b1; else if(ICR_REG[5]) RIS_REG[5] <= 1'b0;
+			if(_TX_BELOW_FLAG_FLAG_) RIS_REG[1] <= 1'b1; else if(ICR_REG[1]) RIS_REG[1] <= 1'b0;
+			if(_RX_FULL_FLAG_FLAG_) RIS_REG[2] <= 1'b1; else if(ICR_REG[2]) RIS_REG[2] <= 1'b0;
+			if(_TR_ABOVE_FLAG_FLAG_) RIS_REG[3] <= 1'b1; else if(ICR_REG[3]) RIS_REG[3] <= 1'b0;
 
 		end
 
 	assign irq = |MIS_REG;
 
 	assign	dat_o = 
-			(adr_i == DATA_REG_ADDR) ? DATA_REG :
 			(adr_i == PRESCALE_REG_ADDR) ? PRESCALE_REG :
-			(adr_i == TXFIFOTR_REG_ADDR) ? TXFIFOTR_REG :
-			(adr_i == RXFIFOTR_REG_ADDR) ? RXFIFOTR_REG :
+			(adr_i == TXFIFOT_REG_ADDR) ? TXFIFOT_REG :
+			(adr_i == RXFIFOT_REG_ADDR) ? RXFIFOT_REG :
 			(adr_i == CONTROL_REG_ADDR) ? CONTROL_REG :
 			(adr_i == RIS_REG_ADDR) ? RIS_REG :
 			(adr_i == ICR_REG_ADDR) ? ICR_REG :
 			(adr_i == IM_REG_ADDR) ? IM_REG :
+			(adr_i == RXDATA_REG_ADDR) ? RXDATA_REG :
+			(adr_i == TXFIFOLEVEL_REG_ADDR) ? TXFIFOLEVEL_REG :
+			(adr_i == RXFIFOLEVEL_REG_ADDR) ? RXFIFOLEVEL_REG :
 			(adr_i == MIS_REG_ADDR) ? MIS_REG :
 			32'hDEADBEEF;
 

@@ -23,25 +23,48 @@
 
 #define EF_UART_BASE				0x00000000
 
-#define	EF_UART_DATA_REG_ADDR		(EF_UART_BASE+0x0)
-#define	EF_UART_PRESCALE_REG_ADDR		(EF_UART_BASE+0x4)
-#define	EF_UART_TXFIFOTR_REG_ADDR		(EF_UART_BASE+0x8)
-#define	EF_UART_RXFIFOTR_REG_ADDR		(EF_UART_BASE+0xc)
-#define	EF_UART_CONTROL_REG_ADDR		(EF_UART_BASE+0x10)
+#define	EF_UART_TXDATA_REG_ADDR		(EF_UART_BASE+0x0)
+#define	EF_UART_RXDATA_REG_ADDR		(EF_UART_BASE+0x4)
+#define	EF_UART_PRESCALE_REG_ADDR		(EF_UART_BASE+0x8)
+#define	EF_UART_TXFIFOLEVEL_REG_ADDR		(EF_UART_BASE+0xc)
+#define	EF_UART_RXFIFOLEVEL_REG_ADDR		(EF_UART_BASE+0x10)
+#define	EF_UART_TXFIFOT_REG_ADDR		(EF_UART_BASE+0x14)
+#define	EF_UART_RXFIFOT_REG_ADDR		(EF_UART_BASE+0x18)
+#define	EF_UART_CONTROL_REG_ADDR		(EF_UART_BASE+0x1c)
+#define	EF_UART_ICR_REG_ADDR		(EF_UART_BASE+0xf00)
+#define	EF_UART_RIS_REG_ADDR		(EF_UART_BASE+0xf04)
+#define	EF_UART_IM_REG_ADDR		(EF_UART_BASE+0xf08)
+#define	EF_UART_MIS_REG_ADDR		(EF_UART_BASE+0xf0c)
 
-#define EF_UART_DATA_REG_DATA		0
-#define EF_UART_DATA_REG_DATA_LEN	7
+#define EF_UART_TXDATA_REG_WDATA		0
+#define EF_UART_TXDATA_REG_WDATA_LEN	8
+#define EF_UART_RXDATA_REG_RDATA		0
+#define EF_UART_RXDATA_REG_RDATA_LEN	8
 #define EF_UART_PRESCALE_REG_PRESCALE		0
-#define EF_UART_PRESCALE_REG_PRESCALE_LEN	15
-#define EF_UART_TXFIFOTR_REG_TXFIFOTR		0
-#define EF_UART_TXFIFOTR_REG_TXFIFOTR_LEN	4
-#define EF_UART_RXFIFOTR_REG_RXFIFOTR		0
-#define EF_UART_RXFIFOTR_REG_RXFIFOTR_LEN	4
+#define EF_UART_PRESCALE_REG_PRESCALE_LEN	16
+#define EF_UART_TXFIFOLEVEL_REG_LEVEL		0
+#define EF_UART_TXFIFOLEVEL_REG_LEVEL_LEN	4
+#define EF_UART_RXFIFOLEVEL_REG_LEVEL		0
+#define EF_UART_RXFIFOLEVEL_REG_LEVEL_LEN	4
+#define EF_UART_TXFIFOT_REG_VALUE		0
+#define EF_UART_TXFIFOT_REG_VALUE_LEN	4
+#define EF_UART_RXFIFOT_REG_VALUE		0
+#define EF_UART_RXFIFOT_REG_VALUE_LEN	4
 #define EF_UART_CONTROL_REG_EN		0
 #define EF_UART_CONTROL_REG_EN_LEN	1
+#define EF_UART_CONTROL_REG_TXEN		1
+#define EF_UART_CONTROL_REG_TXEN_LEN	1
+#define EF_UART_CONTROL_REG_RXEN		2
+#define EF_UART_CONTROL_REG_RXEN_LEN	1
+#define INT_TX_EMPTY_FLAG_FLAG	0x1
+#define INT_TX_BELOW_FLAG_FLAG	0x2
+#define INT_RX_FULL_FLAG_FLAG	0x4
+#define INT_TR_ABOVE_FLAG_FLAG	0x8
 
-volatile unsigned int * ef_uart_data	= (volatile unsigned int *) EF_UART_DATA_REG_ADDR;
-volatile unsigned int * ef_uart_prescale	= (volatile unsigned int *) EF_UART_PRESCALE_REG_ADDR;
-volatile unsigned int * ef_uart_txfifotr	= (volatile unsigned int *) EF_UART_TXFIFOTR_REG_ADDR;
-volatile unsigned int * ef_uart_rxfifotr	= (volatile unsigned int *) EF_UART_RXFIFOTR_REG_ADDR;
-volatile unsigned int * ef_uart_control	= (volatile unsigned int *) EF_UART_CONTROL_REG_ADDR;
+volatile unsigned int * ef_uart_PRESCALE_REG	= (volatile unsigned int *) EF_UART_PRESCALE_REG_ADDR;
+volatile unsigned int * ef_uart_TXFIFOT_REG	= (volatile unsigned int *) EF_UART_TXFIFOT_REG_ADDR;
+volatile unsigned int * ef_uart_RXFIFOT_REG	= (volatile unsigned int *) EF_UART_RXFIFOT_REG_ADDR;
+volatile unsigned int * ef_uart_CONTROL_REG	= (volatile unsigned int *) EF_UART_CONTROL_REG_ADDR;
+volatile unsigned int * ef_uart_RIS_REG	= (volatile unsigned int *) EF_UART_RIS_REG_ADDR;
+volatile unsigned int * ef_uart_ICR_REG	= (volatile unsigned int *) EF_UART_ICR_REG_ADDR;
+volatile unsigned int * ef_uart_IM_REG	= (volatile unsigned int *) EF_UART_IM_REG_ADDR;
