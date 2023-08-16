@@ -11,15 +11,7 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
     + TX Fifo level is below the set threshold
 
 The IP has a generic bus interface. Bus wrappers for AHB-Lite, APB and WB are provided; they are auto-generated using wrapper_gen.py 
-## The Interface
-### EF_UART
-<img src="./docs/_static/EF_UART.svg" alt= “” width="60%" height="60%">
 
-### EF_UART_wb
-<img src="./docs/_static/EF_UART_wb.svg" alt= “” width="60%" height="60%">
-
-### EF_UART_apb
-<img src="./docs/_static/EF_UART_apb.svg" alt= “” width="60%" height="60%">
 
 ## I/O Registers
 | Register | Offset | Mode         | Description |
