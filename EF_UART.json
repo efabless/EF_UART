@@ -3,13 +3,13 @@
         "name": "EF_UART",
         "description": "UART with a programmable baud rate generator and RX/TX FIFOs",
         "repo": "github.com/efabless/EF_UART",
-        "owner": "efabless",
+        "owner": "Efabless Corp.",
         "license": "APACHE 2.0",
         "author": "Mohamed Shalan",
         "email": "mshalan@efabless.com",
         "version": "v1.0.0",
         "date": "3-18-2023",
-        "category": "1",
+        "category": "digital",
         "tags": [
             "peripheral",
             "comm"
