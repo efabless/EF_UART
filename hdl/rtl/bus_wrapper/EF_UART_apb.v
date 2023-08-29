@@ -25,8 +25,8 @@
 `default_nettype	none
 
 `define		APB_BLOCK(name, init)	always @(posedge PCLK or negedge PRESETn) if(~PRESETn) name <= init;
-`define		APB_REG(name, init)		`APB_BLOCK(name, init) else if(apb_we & (PADDR==``name``_ADDR)) name <= PWDATA;
-`define		APB_ICR(sz)				`APB_BLOCK(ICR_REG, sz'b0) else if(apb_we & (PADDR==ICR_REG_ADDR)) ICR_REG <= PWDATA; else ICR_REG <= sz'd0;
+`define		APB_REG(name, init)		`APB_BLOCK(name, init) else if(apb_we & (PADDR[15:0]==``name``_ADDR)) name <= PWDATA;
+`define		APB_ICR(sz)				`APB_BLOCK(ICR_REG, sz'b0) else if(apb_we & (PADDR[15:0]==ICR_REG_ADDR)) ICR_REG <= PWDATA; else ICR_REG <= sz'd0;
 
 module EF_UART_apb (
 	input	wire 		RX,
@@ -137,17 +137,17 @@ module EF_UART_apb (
 	assign irq = |MIS_REG;
 
 	assign	PRDATA = 
-			(PADDR == PRESCALE_REG_ADDR) ? PRESCALE_REG :
-			(PADDR == TXFIFOT_REG_ADDR) ? TXFIFOT_REG :
-			(PADDR == RXFIFOT_REG_ADDR) ? RXFIFOT_REG :
-			(PADDR == CONTROL_REG_ADDR) ? CONTROL_REG :
-			(PADDR == RIS_REG_ADDR) ? RIS_REG :
-			(PADDR == ICR_REG_ADDR) ? ICR_REG :
-			(PADDR == IM_REG_ADDR) ? IM_REG :
-			(PADDR == RXDATA_REG_ADDR) ? RXDATA_REG :
-			(PADDR == TXFIFOLEVEL_REG_ADDR) ? TXFIFOLEVEL_REG :
-			(PADDR == RXFIFOLEVEL_REG_ADDR) ? RXFIFOLEVEL_REG :
-			(PADDR == MIS_REG_ADDR) ? MIS_REG :
+			(PADDR[15:0] == PRESCALE_REG_ADDR) ? PRESCALE_REG :
+			(PADDR[15:0] == TXFIFOT_REG_ADDR) ? TXFIFOT_REG :
+			(PADDR[15:0] == RXFIFOT_REG_ADDR) ? RXFIFOT_REG :
+			(PADDR[15:0] == CONTROL_REG_ADDR) ? CONTROL_REG :
+			(PADDR[15:0] == RIS_REG_ADDR) ? RIS_REG :
+			(PADDR[15:0] == ICR_REG_ADDR) ? ICR_REG :
+			(PADDR[15:0] == IM_REG_ADDR) ? IM_REG :
+			(PADDR[15:0] == RXDATA_REG_ADDR) ? RXDATA_REG :
+			(PADDR[15:0] == TXFIFOLEVEL_REG_ADDR) ? TXFIFOLEVEL_REG :
+			(PADDR[15:0] == RXFIFOLEVEL_REG_ADDR) ? RXFIFOLEVEL_REG :
+			(PADDR[15:0] == MIS_REG_ADDR) ? MIS_REG :
 			32'hDEADBEEF;
 
 
