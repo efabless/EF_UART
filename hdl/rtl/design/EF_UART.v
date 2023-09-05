@@ -322,7 +322,7 @@ module UART_RX(
         
     case(current_state)
       idle_st:
-        if(~rx)
+        if(~rx & b_tick)
           begin
             next_state = start_st;
             b_next = 0;
