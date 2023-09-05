@@ -180,7 +180,7 @@
             "port": "rx_full"
         },
         {
-            "name": "tr_above_flag",
+            "name": "rx_above_flag",
             "port": "rx_level_above"
         }
     ],
