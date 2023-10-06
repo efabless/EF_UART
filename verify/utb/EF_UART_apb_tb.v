@@ -39,6 +39,11 @@ module EF_UART_apb_tb;
     initial begin
         PCLK = 1'b0;
         PRESETn = 1'bx;
+        PADDR = 0;
+        PWRITE = 0;
+        PSEL = 0;
+        PENABLE = 0;
+        PWDATA = 0;
         #55;
         -> e_reset;
         @(e_reset_done);
@@ -47,7 +52,7 @@ module EF_UART_apb_tb;
         $finish;
     end
 
-    always #5 PCLK = !PCLK;
+    always #10 PCLK = !PCLK;
 
     
     // Reset
