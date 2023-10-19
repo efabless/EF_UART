@@ -26,7 +26,7 @@ module EF_UART_apb_tb;
 
     initial begin
         $dumpfile("EF_UART_apb_tb.vcd");
-        $dumpvars;
+        $dumpvars(0, DUV);
         #250_000;
         $display("Timeout!"); 
         $finish;
@@ -77,6 +77,7 @@ module EF_UART_apb_tb;
         APB_M_WR(RXFIFOT_REG_ADDR, 7 );            // Set the TX FIFO threshold
         APB_M_WR(IM_REG_ADDR, IRQ_RX_FIFO_ABOVE); 
         APB_M_WR(CONTROL_REG_ADDR, 7);                 // Enable UART, TX and RX
+        
         // Send some data
         APB_M_WR(TXDATA_REG_ADDR, 8'h11);
         APB_M_WR(TXDATA_REG_ADDR, 8'h22);
@@ -86,6 +87,7 @@ module EF_UART_apb_tb;
         APB_M_WR(TXDATA_REG_ADDR, 8'h66);
         APB_M_WR(TXDATA_REG_ADDR, 8'h77);
         APB_M_WR(TXDATA_REG_ADDR, 8'h88);
+        
 
         // wait for the first character to be received
         APB_M_RD(MIS_REG_ADDR, status);
@@ -99,10 +101,12 @@ module EF_UART_apb_tb;
             APB_M_RD(RXDATA_REG_ADDR, rx_data);
             $display("Received: 0x%x", rx_data);
         end
+        
+        //#10000 $finish;
         -> e_test1_done;
 	end
 
-    EF_UART_apb MUV (
+    EF_UART_apb DUV (
         //APB Interface
         .PCLK(PCLK),
         .PRESETn(PRESETn),
