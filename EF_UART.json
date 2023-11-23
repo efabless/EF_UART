@@ -26,14 +26,6 @@
         "clock_freq_mhz": "10",
         "supply_voltage": [
             "n/a"
-        ],
-        "tech":[
-            "sky130":{
-                "gl_netlist": true,
-                "cell_count": "1285",
-                "is":"3.74",
-                "id":"18777"
-            }
         ]
     },
     "regs": [
