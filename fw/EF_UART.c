@@ -1,7 +1,6 @@
 #ifndef EF_UART_C
 #define EF_UART_C
 
-#include <stdint.h>
 #include <EF_UART.h>
 
 
@@ -89,7 +88,7 @@ void EF_UART_setIM(uint32_t uart_base, int mask){
     uart->im = mask;
 }
 
-int EF_UART_getIM(uint32_t uart_base, int mask){
+int EF_UART_getIM(uint32_t uart_base){
 
    EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
     return (uart->im);
