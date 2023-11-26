@@ -19,7 +19,8 @@
 	limitations under the License.
 
 */
-
+#ifndef EF_UART_REGS_H
+#define EF_UART_REGS_H
 
 #ifndef IO_TYPES
 #define IO_TYPES
@@ -68,3 +69,5 @@ typedef struct _EF_UART_TYPE_ {
 	__RW	im;
 	__R 	mis;
 } EF_UART_TYPE;
+
+#endif
