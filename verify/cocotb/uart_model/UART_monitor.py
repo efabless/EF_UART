@@ -3,68 +3,58 @@ from cocotb.triggers import Timer, RisingEdge, ClockCycles, FallingEdge, NextTim
 from collections import namedtuple
 
 
-UART_Transaction = namedtuple("UART_Transaction", ["type", "char"])
-APB_Transaction = namedtuple("APB_Transaction", ["address", "write", "data", "size"])
+UART_Transaction = namedtuple("UART_Transaction", ["type", "char", "prescale"])
 
 
 class UART_apbMonitor:
-    def __init__(self, hdl, queue):
+    def __init__(self, hdl, queue, ip_regs_dict):
         self.uart_hdl = hdl
-        self._queue_fork = cocotb.scheduler.add(self._apb_monitor_(queue))
+        self.ip_regs_dict = ip_regs_dict
+        self._queue_fork = cocotb.scheduler.add(self._soc_uart_monitor(queue))
         cocotb.log.debug("[TEST] Start UART APB Monitor")
 
-    async def _apb_monitor_(self, queue):
-        self.hdls()
+    async def update_bit_cycles(self):
         while True:
-            await RisingEdge(self.en_hdl)
-            if self.uart_irq_hdl.value.integer == 1:
-                transaction = UART_Transaction(type="irq")
-                queue.put_nowait(transaction)
-                cocotb.log.debug(f"[{__class__.__name__}][_apb_monitor_] sending transaction {transaction} to queue")
-                self.uart_irq_hdl.value = 0
+            self.bit_cycles = round((self.ip_regs_dict[8]["val"] + 1) * 16) +1
+            cocotb.log.debug(f"[{__class__.__name__}] bit_cycles: {self.bit_cycles}")
+            await ClockCycles(self.clk, 1)
 
-    async def _monitor_(self, queue):
+    async def _soc_uart_monitor(self, queue):
         self.hdls()
-        bit_cycles = 26302
-        cocotb.log.info(f"[{__class__.__name__}][_soc_debug_monitor] bit_cycles: {bit_cycles}")
-        # while True:
-        rx_fork = await cocotb.start(self._uart_rx_monitor(queue, bit_cycles, not_ascii=True))
-        tx_fork = await cocotb.start(self._uart_tx_monitor(queue, bit_cycles, not_ascii=True))
+        await cocotb.start(self.update_bit_cycles())
+        cocotb.log.debug(f"[{__class__.__name__}][_soc_uart_monitor] bit_cycles: {self.bit_cycles}")
+        rx_fork = await cocotb.start(self._soc_uart_rx_monitor(queue))
+        tx_fork = await cocotb.start(self._soc_uart_tx_monitor(queue))
 
-    async def _uart_rx_monitor(self, queue, bit_cycles, not_ascii=False):
+    async def _soc_uart_rx_monitor(self, queue, not_ascii=False):
         while True:
             char = ""
-            await FallingEdge(self.wb_uart_rx_hdl)  # start of char
-            await ClockCycles(self.clk, bit_cycles+1)
+            await FallingEdge(self.rx_hdl)  # start of char
+            await ClockCycles(self.clk, self.bit_cycles+1)
             await NextTimeStep()
             for i in range(8):
-                char = self.wb_uart_rx_hdl.value.binstr + char
-                await ClockCycles(self.clk, bit_cycles+1)
+                char = self.rx_hdl.value.binstr + char
+                await ClockCycles(self.clk, self.bit_cycles+1)
                 await NextTimeStep()
             transaction = UART_Transaction(
-                type="rx", char=chr(int(char, 2)) if not not_ascii else hex(int(char, 2)))
+                type="rx", char=chr(int(char, 2)) if not not_ascii else hex(int(char, 2)), prescale=self.ip_regs_dict[8]["val"])
             queue.put_nowait(transaction)
             cocotb.log.debug(f"[{__class__.__name__}][_soc_uart_rx_monitor] sending transaction {transaction} to queue")
 
-    async def _uart_tx_monitor(self, queue, bit_cycles, not_ascii=False):
+    async def _soc_uart_tx_monitor(self, queue, not_ascii=False):
         while True:
             char = ""
-            await FallingEdge(self.wb_uart_tx_hdl)
-            await ClockCycles(self.clk, bit_cycles)
+            await FallingEdge(self.tx_hdl)
+            await ClockCycles(self.clk, self.bit_cycles)
             for i in range(8):
-                char = self.wb_uart_tx_hdl.value.binstr + char
-                await ClockCycles(self.clk, bit_cycles)
+                char = self.tx_hdl.value.binstr + char
+                await ClockCycles(self.clk, self.bit_cycles)
             transaction = UART_Transaction(
-                type="tx", char=chr(int(char, 2)) if not not_ascii else hex(int(char, 2)))
+                type="tx", char=chr(int(char, 2)) if not not_ascii else hex(int(char, 2)), prescale=self.ip_regs_dict[8]["val"])
             queue.put_nowait(transaction)
             cocotb.log.debug(f"[{__class__.__name__}][_soc_uart_tx_monitor] sending transaction {transaction} to queue")
-        
-    def apb_hdls(self):
-        self.clk_hdl = self.uart_hdl.PCLK
-        self.reset_hdl = self.uart_hdl.PRESETn
-        self.addr_hdl = self.uart_hdl.PADDR
-        self.en_hdl = self.uart_hdl.PENABLE
-        self.wdata_hdl = self.uart_hdl.PWDATA
-        self.wen_hdl = self.uart_hdl.PWRITE
-        self.rdata_hdl = self.uart_hdl.PRDATA
-        self.ack_hdl = self.uart_hdl.PREADY
+
+    def hdls(self):
+        self.clk = self.uart_hdl.PCLK
+        self.rx_hdl = self.uart_hdl.RX
+        self.tx_hdl = self.uart_hdl.TX
