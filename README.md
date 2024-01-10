@@ -2,7 +2,7 @@
 A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following features:
 - A programmable frame format
 - Data bits could vary from 5 to 9 bits
-- Even, odd, stick, or no-parity bit generation/detection
+- Even, odd, sticky zero, sticky one or no-parity bit generation and detection
 - One or Two stop bit generation
 - Line-break detection
 - Programmable timeout bits 
@@ -16,7 +16,7 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
     + TX Fifo is empty
     + RX Fifo level is above the set threshold
     + TX Fifo level is below the set threshold
-    + line break
+    + Line Break
     + Match
     + Frame Error
     + Parity Error
