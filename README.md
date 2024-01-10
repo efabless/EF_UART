@@ -45,7 +45,7 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
 
 RX Data register
 
-<img src="https://svg.wavedrom.com/reg:[{name:"rxdata", bits:9},{bits: 23}], config: {hspace: width, lanes: 2, hflip: true}}"/>
+<img src="https://svg.wavedrom.com/{reg:[{name:"rxdata", bits:9},{bits: 23}], config: {hspace: width, lanes: 2, hflip: true}}"/>
 <img src="https://svg.wavedrom.com/{signal:[{wave:'0.P.....'},{wave:'02345230',data:'S E R V E R'}]}"/>
 
 ### TX Data register [Offset: 0x4, mode: w]
