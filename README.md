@@ -1,13 +1,27 @@
 # EF_UART
 A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following features:
-- A fixed fram format (8N1)
+- A programmable frame format
+- Data bits could vary from 5 to 9 bits
+- Even, odd, stick, or no-parity bit generation/detection
+- One or Two stop bit generation
+- Line-break detection
+- Programmable timeout bits 
+- Loop back enable which connects the RX and TX pins together
+- Glitch Filter on RX enable
+- Matching data detection 
 - 16-byte TX and RX FIFOs with programmable thresholds
 - 16-bit prescaler (PR) for programable baud rate generation
-- Four Interrupt Sources:
+- Ten Interrupt Sources:
     + RX Fifo is full
     + TX Fifo is empty
     + RX Fifo level is above the set threshold
     + TX Fifo level is below the set threshold
+    + line break
+    + Match
+    + Frame Error
+    + Parity Error
+    + Overrun
+    + Timeout 
 
 The IP has a generic bus interface. Bus wrappers for AHB-Lite, APB and WB are provided; they are auto-generated using wrapper_gen.py 
 
