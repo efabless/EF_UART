@@ -80,7 +80,7 @@ UART Configuration Register
 
 FIFO Control Register
 
-<img src="https://svg.wavedrom.com/{reg:[       {name:'txfifotr', bits:4},      {name:'rxfifotr', bits:4},      {bits: 16}], config: {lanes: 2, hflip: true}} "/>
+<img src="https://svg.wavedrom.com/{reg:[{name:'txfifotr', bits:4},{bits: 4},{name:'rxfifotr', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
 
 |bit|field name|width|description|
 |---|---|---|---|
