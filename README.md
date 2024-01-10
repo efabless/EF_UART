@@ -24,6 +24,7 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
     + Overrun
     + Receiver timeout 
 
+
 ## Registers
 
 |register name|offset|size|mode|description|
@@ -43,15 +44,21 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
 
 ### RX Data register [Offset: 0x0, mode: r]
 
-RX Data register.
+RX Data register
+
+<img src="https://svg.wavedrom.com/{reg:[{name:'rxdata', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
 
 ### TX Data register [Offset: 0x4, mode: w]
 
 TX Data register
 
+<img src="https://svg.wavedrom.com/{reg:[{name:'txdata', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
+
 ### Prescaler [Offset: 0xc, mode: w]
 
 Prescaler
+
+<img src="https://svg.wavedrom.com/{reg:[{name:'prescaler', bits:16},{bits: 16}], config: {lanes: 2, hflip: true}} "/>
 
 ### UART Control Register [Offset: 0x8, mode: w]
 
@@ -65,6 +72,8 @@ UART Control Register
 |3|lpen|1|Loopback (connect RX and TX pins together) enable|
 |4|gfen|1|UART Glitch Filer on RX enable|
 
+<img src="https://svg.wavedrom.com/{reg:[{name:'en', bits:1},{name:'txen', bits:1},{name:'rxen', bits:1},{name:'lpen', bits:1},{name:'gfen', bits:1},{bits: 27}], config: {lanes: 2, hflip: true}} "/>
+
 ### UART Configuration Register [Offset: 0x10, mode: w]
 
 UART Configuration Register
@@ -76,16 +85,18 @@ UART Configuration Register
 |5|parity|3|Parity Type: 000: None, 001: odd, 010: even, 100: Sticky 0, 101: Sticky 1|
 |8|timeout|6|Receiver Timeout measured in number of bits|
 
+<img src="https://svg.wavedrom.com/{reg:[{name:'wlen', bits:4},{name:'stp2', bits:1},{name:'parity', bits:3},{name:'timeout', bits:6},{bits: 18}], config: {lanes: 2, hflip: true}} "/>
+
 ### FIFO Control Register [Offset: 0x14, mode: w]
 
 FIFO Control Register
-
-<img src="https://svg.wavedrom.com/{reg:[{name:'txfifotr', bits:4},{bits: 4},{name:'rxfifotr', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
 
 |bit|field name|width|description|
 |---|---|---|---|
 |0|txfifotr|4|Transmit FIFO Level Threshold|
 |8|rxfifotr|4|Receive FIFO Level Threshold|
+
+<img src="https://svg.wavedrom.com/{reg:[{name:'txfifotr', bits:4},{bits: 4},{name:'rxfifotr', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
 
 ### FIFO Status Register [Offset: 0x18, mode: r]
 
@@ -96,9 +107,13 @@ FIFO Status Register
 |0|rx_level|4|Receive FIFO Level|
 |8|tx_level|4|Transmit FIFO Level|
 
+<img src="https://svg.wavedrom.com/{reg:[{name:'rx_level', bits:4},{bits: 4},{name:'tx_level', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
+
 ### Match Register [Offset: 0x1c, mode: w]
 
 Match Register
+
+<img src="https://svg.wavedrom.com/{reg:[{name:'match', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
 
 ## Interrupt Flags
 
