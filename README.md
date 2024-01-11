@@ -38,7 +38,7 @@ The I/O registers are provided by the bus wrapper. This section applies to all p
 |---|---|---|---|---|
 |RXDATA|0000|0x00000000|r|RX Data register; the interface to the Receive FIFO.|
 |TXDATA|0004|0x00000000|w|TX Data register; ; the interface to the Receive FIFO.|
-|PR|000c|0x00000000|w|The Prescaler register; used to determine the baud rate. $Baud\ rate = clock\freq/((PR+1)\times16)$.|
+|PR|000c|0x00000000|w|The Prescaler register; used to determine the baud rate. $Baud\ rate = clock\ freq/((PR+1)\times16)$.|
 |CTRL|0008|0x00000000|w|UART Control Register|
 |CFG|0010|0x00003F08|w|UART Configuration Register|
 |FIFOCTRL|0014|0x00000000|w|FIFO Control Register|
@@ -63,7 +63,7 @@ TX Data register; ; the interface to the Receive FIFO.
 
 ### The Prescaler register [Offset: 0xc, mode: w]
 
-The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.
+The Prescaler register; used to determine the baud rate. $baud\ rate = (Clock\ freq)/((PR+1)\times16)$.
 
 <img src="https://svg.wavedrom.com/{reg:[{name:'PR', bits:16},{bits: 16}], config: {lanes: 2, hflip: true}} "/>
 
