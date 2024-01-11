@@ -27,38 +27,38 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
 
 ## Registers
 
-|register name|offset|size|mode|description|
+|Name|Offset|Reset Value|Access Mode|Description|
 |---|---|---|---|---|
-|rxdata|0000|9|r|RX Data register|
-|txdata|0004|9|w|TX Data register|
-|prescaler|000c|16|w|Prescaler|
-|control|0008|5|w|UART Control Register|
-|config|0010|14|w|UART Configuration Register|
-|fifo_control|0014|16|w|FIFO Control Register|
-|fifo_status|0018|16|r|FIFO Status Register|
-|match|001c|9|w|Match Register|
-|IM|0f00|10|w|Interrupt Mask Register; check the flags table for more details|
-|RIS|0f08|10|w|Raw Interrupt Status; check the flags table for more details|
-|MIS|0f04|10|w|Masked Interrupt Status; check the flags table for more details|
-|IC|0f0c|10|w|Interrupt Clear Register; check the flags table for more details|
+|RXDATA|0000|0x00000000|r|RX Data register; the interface to the Receive FIFO.|
+|TXDATA|0004|0x00000000|w|TX Data register; ; the interface to the Receive FIFO.|
+|PR|000c|0x00000000|w|The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.|
+|CTRL|0008|0x00000000|w|UART Control Register|
+|CFG|0010|0x00003F08|w|UART Configuration Register|
+|FIFOCTRL|0014|0x00000000|w|FIFO Control Register|
+|FIFOS|0018|0x00000000|r|FIFO Status Register|
+|MATCH|001c|0x00000000|w|Match Register|
+|IM|0f00|0x00000000|w|Interrupt Mask Register; write 1/0 to enable/disable interrupts; check the interrupt flags table for more details|
+|RIS|0f08|0x00000000|w|Raw Interrupt Status; reflects the current interrupts status;check the interrupt flags table for more details|
+|MIS|0f04|0x00000000|w|Masked Interrupt Status; On a read, this register gives the current masked status value of the corresponding interrupt. A write has no effect; check the interrupt flags table for more details|
+|IC|0f0c|0x00000000|w|Interrupt Clear Register; On a write of 1, the corresponding interrupt (both raw interrupt and masked interrupt, if enabled) is cleared; check the interrupt flags table for more details|
 
-### RX Data register [Offset: 0x0, mode: r]
+### RX Data register; the interface to the Receive FIFO. [Offset: 0x0, mode: r]
 
-RX Data register
+RX Data register; the interface to the Receive FIFO.
 
-<img src="https://svg.wavedrom.com/{reg:[{name:'rxdata', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
+<img src="https://svg.wavedrom.com/{reg:[{name:'RXDATA', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
 
-### TX Data register [Offset: 0x4, mode: w]
+### TX Data register; ; the interface to the Receive FIFO. [Offset: 0x4, mode: w]
 
-TX Data register
+TX Data register; ; the interface to the Receive FIFO.
 
-<img src="https://svg.wavedrom.com/{reg:[{name:'txdata', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
+<img src="https://svg.wavedrom.com/{reg:[{name:'TXDATA', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
 
-### Prescaler [Offset: 0xc, mode: w]
+### The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$. [Offset: 0xc, mode: w]
 
-Prescaler
+The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.
 
-<img src="https://svg.wavedrom.com/{reg:[{name:'prescaler', bits:16},{bits: 16}], config: {lanes: 2, hflip: true}} "/>
+<img src="https://svg.wavedrom.com/{reg:[{name:'PR', bits:16},{bits: 16}], config: {lanes: 2, hflip: true}} "/>
 
 ### UART Control Register [Offset: 0x8, mode: w]
 
@@ -93,10 +93,10 @@ FIFO Control Register
 
 |bit|field name|width|description|
 |---|---|---|---|
-|0|txfifotr|4|Transmit FIFO Level Threshold|
-|8|rxfifotr|4|Receive FIFO Level Threshold|
+|0|TXLT|4|Transmit FIFO Level Threshold|
+|8|RXLT|4|Receive FIFO Level Threshold|
 
-<img src="https://svg.wavedrom.com/{reg:[{name:'txfifotr', bits:4},{bits: 4},{name:'rxfifotr', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
+<img src="https://svg.wavedrom.com/{reg:[{name:'TXLT', bits:4},{bits: 4},{name:'RXLT', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
 
 ### FIFO Status Register [Offset: 0x18, mode: r]
 
@@ -104,34 +104,37 @@ FIFO Status Register
 
 |bit|field name|width|description|
 |---|---|---|---|
-|0|rx_level|4|Receive FIFO Level|
-|8|tx_level|4|Transmit FIFO Level|
+|0|RXL|4|Receive FIFO Level|
+|8|TXL|4|Transmit FIFO Level|
 
-<img src="https://svg.wavedrom.com/{reg:[{name:'rx_level', bits:4},{bits: 4},{name:'tx_level', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
+<img src="https://svg.wavedrom.com/{reg:[{name:'RXL', bits:4},{bits: 4},{name:'TXL', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
 
 ### Match Register [Offset: 0x1c, mode: w]
 
 Match Register
 
-<img src="https://svg.wavedrom.com/{reg:[{name:'match', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
+<img src="https://svg.wavedrom.com/{reg:[{name:'MATCH', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
 
 ## Interrupt Flags
 
-|bit|flag|width|
-|---|---|---|
-|0|TX_EMPTY|1|
-|1|RX_FULL|1|
-|2|TX_LEVEL_BELOW|1|
-|3|RX_LEVEL_ABOVE|1|
-|4|LINE_BREAK|1|
-|5|MATCH|1|
-|6|FRAME_ERROR|1|
-|7|PARITY_ERROR|1|
-|8|OVERRUN|1|
-|9|TIMEOUT|1|
+
+The following are the bit definitions for the interrupt registers: IM, RIS, MIS, and IC.
+
+|Bit|Flag|Width|Description|
+|---|---|---|---|
+|0|TXE|1|Transmit FIFO is Empty.|
+|1|RXF|1|Receive FIFO is Full.|
+|2|TXB|1|Transmit FIFO level is Below Threshold.|
+|3|RXA|1|Receive FIFO level is Above Threshold.|
+|4|BRK|1|Line Break; 13 consecutive 0's have been detected on the line.|
+|5|MATCH|1|Match; the receive data matches the MATCH register.|
+|6|FE|1|Framing Error; the receiver does not see a "stop" bit at the expected "stop" bit time.|
+|7|PRE|1|Parity Error; the receiver calculated parity does not match the received one.|
+|8|OR|1|Overrun; data has been received but the RX FIFO is full.|
+|9|RTO|1|Receiver Timeout; no data has been received for the time of a specified number of bits.|
 
 ## Usage Guidelines:
-1. Set the prescaler according to the required transmission and receiving baud rate where  ```Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)``` . Setting the prescaler is done through writing to the prescaler register
+1. Set the prescaler according to the required transmission and receiving baud rate where  ```Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)``` . Setting the prescaler is done through writing to ``PR`` register
 2. Configure the frame format by : 
     * Choosing the number of data bits which could vary from 5 to 9. This is done by setting the ```wlen``` field in the ```config``` register
     * Choosing whether the stop bits are one or two by setting the ```stb2``` bit in ```config``` register where ‘0’ means one bit and ‘1’ means two bits
