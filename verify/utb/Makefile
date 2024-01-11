@@ -1,7 +1,14 @@
-SIM-RTL:
-	iverilog  -s EF_UART_apb_tb ../../hdl/rtl/EF_UART.v ../../hdl/rtl/bus_wrappers/EF_UART_apb.v EF_UART_apb_tb.v
-	./a.out
+SOURCE = ../../hdl/rtl/EF_UART.v ../../hdl/rtl/bus_wrappers/EF_UART_APB.v
+TESTBENCH = EF_UART_APB_tb.v
+RTL_LIB = ../../IP_Utilities/rtl/aucohl_lib.vh
+WRAPPER_HEADER_DIR = ../../hdl/rtl/bus_wrappers/
 
-SIM-GL:
-	iverilog  -s EF_UART_apb_tb ../../hdl/rtl/EF_UART.v ../../hdl/gl/sky130/EF_UART_apb.v EF_UART_apb_tb.v ../../util/tech/sky130/sky130_hd.v
-	./a.out
+APB-RTL: 
+	iverilog -o run.vvp -I../../IP_Utilities/verify/ -I$(WRAPPER_HEADER_DIR) $(RTL_LIB)  $(SOURCE) $(TESTBENCH)
+	./run.vvp
+
+clean:
+	rm -f *.vvp
+	rm -f *.vcd
+
+all: APB-RTL
