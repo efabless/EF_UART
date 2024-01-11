@@ -202,53 +202,6 @@ The following are the bit definitions for the interrupt registers: IM, RIS, MIS,
 |8|OR|1|Overrun; data has been received but the RX FIFO is full.|
 |9|RTO|1|Receiver Timeout; no data has been received for the time of a specified number of bits.|
 
-## Parameters 
-
-|Parameter|Description|Default Value|
-|---|---|---|
-|SC|Number of samples per bit/baud|8|
-|MDW|Max data size/width|9|
-|GFLEN|Length (number of stages) of the glitch filter|8|
-|FAW|FIFO Address width; Depth=2^AW|4|
-
-## Interface Description 
-
-|Port|Width|Direction|
-|---|---|---|
-|prescaler|16|input|
-|en|1|input|
-|tx_en|1|input|
-|rx_en|1|input|
-|wdata|MDW|input|
-|timeout_bits|6|input|
-|loopback_en|1|input|
-|glitch_filter_en|1|input|
-|tx_level|FAW|output|
-|rx_level|FAW|output|
-|rd|1|input|
-|wr|1|input|
-|data_size|4|input|
-|stop_bits_count|1|input|
-|parity_type|3|input|
-|txfifotr|FAW|input|
-|rxfifotr|FAW|input|
-|match_data|MDW|input|
-|tx_empty|1|output|
-|tx_full|1|output|
-|tx_level_below|1|output|
-|rdata|MDW|output|
-|rx_empty|1|output|
-|rx_full|1|output|
-|rx_level_above|1|output|
-|break_flag|1|output|
-|match_flag|1|output|
-|frame_error_flag|1|output|
-|parity_error_flag|1|output|
-|overrun_flag|1|output|
-|timeout_flag|1|output|
-|rx|1|input|
-|tx|1|output|
-
 ## F/W Usage Guidelines:
 1. Set the prescaler according to the required transmission and receiving baud rate where:  $Baud\ rate = Bus\ Clock\ Freq/((Prescaler+1)\times16)$. Setting the prescaler is done through writing to ``PR`` register
 2. Configure the frame format by : 
