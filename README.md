@@ -24,14 +24,21 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
     + Overrun
     + Receiver timeout 
 
+## System Integration
 
-## Registers
+```EF_UART``` comes with APB, AHB and WB bus wrappers in Verilog HDL; based on your use case, use one of these wrappers or create your own wrapper for your system bus type. 
+
+The ```EF_UART``` ```tx``` and ```rx``` ports must be connected, both or one of them, to an input I/O pad for ```rx``` and an output I/O pad for ```tx```.
+
+## I/O Registers
+
+The I/O registers are provided by the bus wrapper. This section applies to all provided bus wrappers.
 
 |Name|Offset|Reset Value|Access Mode|Description|
 |---|---|---|---|---|
 |RXDATA|0000|0x00000000|r|RX Data register; the interface to the Receive FIFO.|
 |TXDATA|0004|0x00000000|w|TX Data register; ; the interface to the Receive FIFO.|
-|PR|000c|0x00000000|w|The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.|
+|PR|000c|0x00000000|w|The Prescaler register; used to determine the baud rate. $Baud\ rate = clock\freq/((PR+1)\times16)$.|
 |CTRL|0008|0x00000000|w|UART Control Register|
 |CFG|0010|0x00003F08|w|UART Configuration Register|
 |FIFOCTRL|0014|0x00000000|w|FIFO Control Register|
@@ -42,19 +49,19 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
 |MIS|0f04|0x00000000|w|Masked Interrupt Status; On a read, this register gives the current masked status value of the corresponding interrupt. A write has no effect; check the interrupt flags table for more details|
 |IC|0f0c|0x00000000|w|Interrupt Clear Register; On a write of 1, the corresponding interrupt (both raw interrupt and masked interrupt, if enabled) is cleared; check the interrupt flags table for more details|
 
-### RX Data register; the interface to the Receive FIFO. [Offset: 0x0, mode: r]
+### RX Data register [Offset: 0x0, mode: r]
 
 RX Data register; the interface to the Receive FIFO.
 
 <img src="https://svg.wavedrom.com/{reg:[{name:'RXDATA', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
 
-### TX Data register; ; the interface to the Receive FIFO. [Offset: 0x4, mode: w]
+### TX Data register [Offset: 0x4, mode: w]
 
 TX Data register; ; the interface to the Receive FIFO.
 
 <img src="https://svg.wavedrom.com/{reg:[{name:'TXDATA', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
 
-### The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$. [Offset: 0xc, mode: w]
+### The Prescaler register [Offset: 0xc, mode: w]
 
 The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.
 
@@ -180,8 +187,8 @@ The following are the bit definitions for the interrupt registers: IM, RIS, MIS,
 |rx|1|input|
 |tx|1|output|
 
-## Usage Guidelines:
-1. Set the prescaler according to the required transmission and receiving baud rate where  ```Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)``` . Setting the prescaler is done through writing to ``PR`` register
+## F/W Usage Guidelines:
+1. Set the prescaler according to the required transmission and receiving baud rate where:  $Baud\ rate = Bus\ Clock\ Freq/((Prescaler+1)\times16)$. Setting the prescaler is done through writing to ``PR`` register
 2. Configure the frame format by : 
     * Choosing the number of data bits which could vary from 5 to 9. This is done by setting the ```wlen``` field in the ```CFG``` register
     * Choosing whether the stop bits are one or two by setting the ```stb2``` bit in ```CFG``` register where ‘0’ means one bit and ‘1’ means two bits
@@ -204,8 +211,12 @@ You can either clone repo or use [IPM](https://github.com/efabless/IPM) which is
 ```ipm install EF_UART```
 
 ## Simulation:
+
 ### Run Verilog Testbench:
-2. Clone [IP_Utilities](https://github.com/shalan/IP_Utilities) repo under ``EF_UART/`` directory
-3. In the directory ``EF_UART/verify/utb/`` run ``make APB-RTL``
+
+1. Clone [IP_Utilities](https://github.com/shalan/IP_Utilities) repo under ``EF_UART/`` directory
+2. In the directory ``EF_UART/verify/utb/`` run ``make APB-RTL``
 
 ### Run cocotb UVM Testbench:
+
+TBD
