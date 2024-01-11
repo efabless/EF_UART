@@ -1,6 +1,7 @@
 # EF_UART
 
-A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following features:
+UART, or universal asynchronous receiver-transmitter, is one of the most used device-to-device communication protocols. A UART enables two devices to exchange data serially without sharing the clock in a frame oriented way. The frame consists of a start bit, a number of data bits (typically one byte), a parity bit (optional) and 1-2 stop bits. 
+EF_UART is a Soft IP with the following features:
 - A configurable frame format
     - Data bits could vary from 5 to 9 bits
     - Even, odd, stick, or no-parity bit generation/detection
@@ -77,7 +78,7 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
 | tx                | output    | wire           |             |
 
 ## Sky130 Implementation
-|Module | Number of cells | Max. Freq |
+|Module | Number of cells | Max. freq |
 |-|-|-|
 |EF_UART|||
 |EF_UART_APB||
