@@ -92,6 +92,15 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
 
 The ```EF_UART``` ```tx``` and ```rx``` ports must be connected, both or one of them, to an input I/O pad for ```rx``` and an output I/O pad for ```tx```.
 
+```verilog
+EF_UART_APB UART0 (
+		`TB_APB_SLAVE_CONN,
+		.rx(rx),
+		.tx(tx)
+	);
+```
+Note: ``` `TB_APB_SLAVE_CONN ``` is a convenient macro provided by [IP_Utilities](https://github.com/shalan/IP_Utilities).
+
 ## I/O Registers
 
 The I/O registers are provided by the bus wrapper. This section applies to all provided bus wrappers.
