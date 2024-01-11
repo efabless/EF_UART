@@ -154,8 +154,8 @@ You can either clone repo or use [IPM](https://github.com/efabless/IPM) which is
 ```ipm install EF_UART```
 
 ## Simulation:
-### Run Verilog TB:
+### Run Verilog Testbench:
 2. Clone [IP_Utilities](https://github.com/shalan/IP_Utilities) repo under ``EF_UART/`` directory
 3. In the directory ``EF_UART/verify/utb/`` run ``make APB-RTL``
 
-### Run cocotb UVM TB:
+### Run cocotb UVM Testbench:
