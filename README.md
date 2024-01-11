@@ -26,7 +26,7 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
 
 ## The Interface
 
-<img src="docs/_static/EF_UART.svg"/>
+<img src="docs/_static/EF_UART.svg" width="600"/>
 
 ### Module Parameters
 | Generic name | Value | Description |
@@ -75,6 +75,16 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
 | timeout_flag      | output    | wire           |             |
 | rx                | input     | wire           |             |
 | tx                | output    | wire           |             |
+
+## Sky130 Implementation
+|Module | Number of cells | Max. Freq |
+|-|-|-|
+|EF_UART|||
+|EF_UART_APB||
+|EF_UART_AHBL||
+|EF_UART_WB||
+
+
 
 ## System Integration
 
