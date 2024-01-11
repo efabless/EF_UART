@@ -29,76 +29,111 @@ info:
 parameters:
   - name: SC
     default: 8
+    description: "Number of samples per bit/baud"
   - name: MDW
     default: 9
+    description: "Max data size/width"
   - name: GFLEN
     default: 8
+    description: "Length (number of stages) of the glitch filter"
   - name: FAW
     default: 4
+    description: "FIFO Address width; Depth=2^AW"
 
 ports:
   - name: prescaler
     width: 16
+    direction: input
   - name: en
     width: 1
+    direction: input
   - name: tx_en
     width: 1
+    direction: input
   - name: rx_en
     width: 1
+    direction: input
   - name: wdata
     width: MDW
+    direction: input
   - name: timeout_bits
     width: 6
+    direction: input
   - name: loopback_en
     width: 1
+    direction: input
   - name: glitch_filter_en
     width: 1
+    direction: input
   - name: tx_level
     width: FAW
+    direction: output
   - name: rx_level
     width: FAW
+    direction: output
   - name: rd
     width: 1
+    direction: input
   - name: wr
     width: 1
+    direction: input
   - name: data_size
     width: 4
+    direction: input
   - name: stop_bits_count
     width: 1
+    direction: input
   - name: parity_type
     width: 3
+    direction: input
   - name: txfifotr
     width: FAW
+    direction: input
   - name: rxfifotr
     width: FAW
+    direction: input
   - name: match_data
     width: MDW
+    direction: input
   - name: tx_empty
     width: 1
+    direction: output
   - name: tx_full
     width: 1
+    direction: output
   - name: tx_level_below
     width: 1
+    direction: output
   - name: rdata
     width: MDW
+    direction: output
   - name: rx_empty
     width: 1
+    direction: output
   - name: rx_full
     width: 1
+    direction: output
   - name: rx_level_above
     width: 1
+    direction: output
   - name: break_flag
     width: 1
+    direction: output
   - name: match_flag
     width: 1
+    direction: output
   - name: frame_error_flag
     width: 1
+    direction: output
   - name: parity_error_flag
     width: 1
+    direction: output
   - name: overrun_flag
     width: 1
+    direction: output
   - name: timeout_flag
     width: 1
+    direction: output
 
 external_interface:
   - name: rx
