@@ -70,6 +70,7 @@ The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq
 ### UART Control Register [Offset: 0x8, mode: w]
 
 UART Control Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'en', bits:1},{name:'txen', bits:1},{name:'rxen', bits:1},{name:'lpen', bits:1},{name:'gfen', bits:1},{bits: 27}], config: {lanes: 2, hflip: true}} "/>
 
 |bit|field name|width|description|
 |---|---|---|---|
@@ -79,11 +80,11 @@ UART Control Register
 |3|lpen|1|Loopback (connect RX and TX pins together) enable|
 |4|gfen|1|UART Glitch Filer on RX enable|
 
-<img src="https://svg.wavedrom.com/{reg:[{name:'en', bits:1},{name:'txen', bits:1},{name:'rxen', bits:1},{name:'lpen', bits:1},{name:'gfen', bits:1},{bits: 27}], config: {lanes: 2, hflip: true}} "/>
 
 ### UART Configuration Register [Offset: 0x10, mode: w]
 
 UART Configuration Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'wlen', bits:4},{name:'stp2', bits:1},{name:'parity', bits:3},{name:'timeout', bits:6},{bits: 18}], config: {lanes: 2, hflip: true}} "/>
 
 |bit|field name|width|description|
 |---|---|---|---|
@@ -92,29 +93,28 @@ UART Configuration Register
 |5|parity|3|Parity Type: 000: None, 001: odd, 010: even, 100: Sticky 0, 101: Sticky 1|
 |8|timeout|6|Receiver Timeout measured in number of bits|
 
-<img src="https://svg.wavedrom.com/{reg:[{name:'wlen', bits:4},{name:'stp2', bits:1},{name:'parity', bits:3},{name:'timeout', bits:6},{bits: 18}], config: {lanes: 2, hflip: true}} "/>
 
 ### FIFO Control Register [Offset: 0x14, mode: w]
 
 FIFO Control Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'TXLT', bits:4},{bits: 4},{name:'RXLT', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
 
 |bit|field name|width|description|
 |---|---|---|---|
 |0|TXLT|4|Transmit FIFO Level Threshold|
 |8|RXLT|4|Receive FIFO Level Threshold|
 
-<img src="https://svg.wavedrom.com/{reg:[{name:'TXLT', bits:4},{bits: 4},{name:'RXLT', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
 
 ### FIFO Status Register [Offset: 0x18, mode: r]
 
 FIFO Status Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'RXL', bits:4},{bits: 4},{name:'TXL', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
 
 |bit|field name|width|description|
 |---|---|---|---|
 |0|RXL|4|Receive FIFO Level|
 |8|TXL|4|Transmit FIFO Level|
 
-<img src="https://svg.wavedrom.com/{reg:[{name:'RXL', bits:4},{bits: 4},{name:'TXL', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
 
 ### Match Register [Offset: 0x1c, mode: w]
 
