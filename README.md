@@ -105,7 +105,7 @@ Note: ``` `TB_APB_SLAVE_CONN ``` is a convenient macro provided by [IP_Utilities
 
 The I/O registers are provided by the bus wrapper. This section applies to all provided bus wrappers.
 
-|Name|Offset|Reset Value|Access Mode|Description|
+|Name|Offset|Reset Value|Access Mode[^1]|Description|
 |---|---|---|---|---|
 |RXDATA|0000|0x00000000|r|RX Data register; the interface to the Receive FIFO.|
 |TXDATA|0004|0x00000000|w|TX Data register; ; the interface to the Receive FIFO.|
@@ -119,6 +119,8 @@ The I/O registers are provided by the bus wrapper. This section applies to all p
 |RIS|0f08|0x00000000|w|Raw Interrupt Status; reflects the current interrupts status;check the interrupt flags table for more details|
 |MIS|0f04|0x00000000|w|Masked Interrupt Status; On a read, this register gives the current masked status value of the corresponding interrupt. A write has no effect; check the interrupt flags table for more details|
 |IC|0f0c|0x00000000|w|Interrupt Clear Register; On a write of 1, the corresponding interrupt (both raw interrupt and masked interrupt, if enabled) is cleared; check the interrupt flags table for more details|
+
+[^1]: r: read-only; w: write-only (reading returns the last written data); rw: read/write.
 
 ### RX Data register [Offset: 0x0, mode: r]
 
