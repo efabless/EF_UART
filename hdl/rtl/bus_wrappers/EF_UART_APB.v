@@ -1,26 +1,19 @@
 /*
-	Copyright 2022 AUCOHL
+	Copyright 2024 Efabless Corp.
 
 	Author: Mohamed Shalan (mshalan@aucegypt.edu)
 
-	Permission is hereby granted, free of charge, to any person obtaining
-	a copy of this software and associated documentation files (the
-	"Software"), to deal in the Software without restriction, including
-	without limitation the rights to use, copy, modify, merge, publish,
-	distribute, sublicense, and/or sell copies of the Software, and to
-	permit persons to whom the Software is furnished to do so, subject to
-	the following conditions:
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
 
-	The above copyright notice and this permission notice shall be
-	included in all copies or substantial portions of the Software.
+	    http://www.apache.org/licenses/LICENSE-2.0
 
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-	NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-	LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-	OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-	WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
 
 */
 
@@ -45,14 +38,14 @@ module EF_UART_APB #(
 	output	[0:0]	tx
 );
 
-	localparam	rxdata_REG_OFFSET = `APB_AW'd0;
-	localparam	txdata_REG_OFFSET = `APB_AW'd4;
-	localparam	prescaler_REG_OFFSET = `APB_AW'd12;
-	localparam	control_REG_OFFSET = `APB_AW'd8;
-	localparam	config_REG_OFFSET = `APB_AW'd16;
-	localparam	fifo_control_REG_OFFSET = `APB_AW'd20;
-	localparam	fifo_status_REG_OFFSET = `APB_AW'd24;
-	localparam	match_REG_OFFSET = `APB_AW'd28;
+	localparam	RXDATA_REG_OFFSET = `APB_AW'd0;
+	localparam	TXDATA_REG_OFFSET = `APB_AW'd4;
+	localparam	PR_REG_OFFSET = `APB_AW'd12;
+	localparam	CTRL_REG_OFFSET = `APB_AW'd8;
+	localparam	CFG_REG_OFFSET = `APB_AW'd16;
+	localparam	FIFOCTRL_REG_OFFSET = `APB_AW'd20;
+	localparam	FIFOS_REG_OFFSET = `APB_AW'd24;
+	localparam	MATCH_REG_OFFSET = `APB_AW'd28;
 	localparam	IM_REG_OFFSET = `APB_AW'd3840;
 	localparam	MIS_REG_OFFSET = `APB_AW'd3844;
 	localparam	RIS_REG_OFFSET = `APB_AW'd3848;
@@ -97,41 +90,41 @@ module EF_UART_APB #(
 	wire [1-1:0]	timeout_flag;
 
 
-	wire	[MDW-1:0]	rxdata_WIRE;
+	wire	[MDW-1:0]	RXDATA_WIRE;
 
-	wire	[MDW-1:0]	txdata_WIRE;
+	wire	[MDW-1:0]	TXDATA_WIRE;
 
-	reg [16-1:0]	prescaler_REG;
-	assign	prescaler = prescaler_REG;
-	`APB_REG(prescaler_REG, 0, 16)
+	reg [16-1:0]	PR_REG;
+	assign	prescaler = PR_REG;
+	`APB_REG(PR_REG, 0, 16)
 
-	reg [5-1:0]	control_REG;
-	assign	en	=	control_REG[0 : 0];
-	assign	tx_en	=	control_REG[1 : 1];
-	assign	rx_en	=	control_REG[2 : 2];
-	assign	loopback_en	=	control_REG[3 : 3];
-	assign	glitch_filter_en	=	control_REG[4 : 4];
-	`APB_REG(control_REG, 0, 5)
+	reg [5-1:0]	CTRL_REG;
+	assign	en	=	CTRL_REG[0 : 0];
+	assign	tx_en	=	CTRL_REG[1 : 1];
+	assign	rx_en	=	CTRL_REG[2 : 2];
+	assign	loopback_en	=	CTRL_REG[3 : 3];
+	assign	glitch_filter_en	=	CTRL_REG[4 : 4];
+	`APB_REG(CTRL_REG, 0, 5)
 
-	reg [14-1:0]	config_REG;
-	assign	data_size	=	config_REG[3 : 0];
-	assign	stop_bits_count	=	config_REG[4 : 4];
-	assign	parity_type	=	config_REG[7 : 5];
-	assign	timeout_bits	=	config_REG[13 : 8];
-	`APB_REG(config_REG, 'h3F08, 14)
+	reg [14-1:0]	CFG_REG;
+	assign	data_size	=	CFG_REG[3 : 0];
+	assign	stop_bits_count	=	CFG_REG[4 : 4];
+	assign	parity_type	=	CFG_REG[7 : 5];
+	assign	timeout_bits	=	CFG_REG[13 : 8];
+	`APB_REG(CFG_REG, 'h3F08, 14)
 
-	reg [16-1:0]	fifo_control_REG;
-	assign	txfifotr	=	fifo_control_REG[(FAW - 1) : 0];
-	assign	rxfifotr	=	fifo_control_REG[(FAW + 7) : 8];
-	`APB_REG(fifo_control_REG, 0, 16)
+	reg [16-1:0]	FIFOCTRL_REG;
+	assign	txfifotr	=	FIFOCTRL_REG[(FAW - 1) : 0];
+	assign	rxfifotr	=	FIFOCTRL_REG[(FAW + 7) : 8];
+	`APB_REG(FIFOCTRL_REG, 0, 16)
 
-	wire [16-1:0]	fifo_status_WIRE;
-	assign	fifo_status_WIRE[(FAW - 1) : 0] = rx_level;
-	assign	fifo_status_WIRE[(FAW + 7) : 8] = tx_level;
+	wire [16-1:0]	FIFOS_WIRE;
+	assign	FIFOS_WIRE[(FAW - 1) : 0] = rx_level;
+	assign	FIFOS_WIRE[(FAW + 7) : 8] = tx_level;
 
-	reg [MDW-1:0]	match_REG;
-	assign	match_data = match_REG;
-	`APB_REG(match_REG, 0, MDW)
+	reg [MDW-1:0]	MATCH_REG;
+	assign	match_data = MATCH_REG;
+	`APB_REG(MATCH_REG, 0, MDW)
 
 	reg [9:0] IM_REG;
 	reg [9:0] IC_REG;
@@ -141,45 +134,49 @@ module EF_UART_APB #(
 	`APB_REG(IM_REG, 0, 10)
 	`APB_IC_REG(10)
 
-	wire [0:0] line_break = break_flag;
-	wire [0:0] match = match_flag;
-	wire [0:0] frame_error = frame_error_flag;
-	wire [0:0] parity_error = parity_error_flag;
-	wire [0:0] overrun = overrun_flag;
-	wire [0:0] timeout = timeout_flag;
+	wire [0:0] TXE = tx_empty;
+	wire [0:0] RXF = rx_full;
+	wire [0:0] TXB = tx_level_below;
+	wire [0:0] RXA = rx_level_above;
+	wire [0:0] BRK = break_flag;
+	wire [0:0] MATCH = match_flag;
+	wire [0:0] FE = frame_error_flag;
+	wire [0:0] PRE = parity_error_flag;
+	wire [0:0] OR = overrun_flag;
+	wire [0:0] RTO = timeout_flag;
 
 
 	integer _i_;
 	`APB_BLOCK(RIS_REG, 0) else begin
 		for(_i_ = 0; _i_ < 1; _i_ = _i_ + 1) begin
-			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(tx_empty[_i_ - 0] == 1'b1) RIS_REG[_i_] <= 1'b1;
+			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(TXE[_i_ - 0] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 		for(_i_ = 1; _i_ < 2; _i_ = _i_ + 1) begin
-			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(rx_full[_i_ - 1] == 1'b1) RIS_REG[_i_] <= 1'b1;
+			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(RXF[_i_ - 1] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 		for(_i_ = 2; _i_ < 3; _i_ = _i_ + 1) begin
-			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(tx_level_below[_i_ - 2] == 1'b1) RIS_REG[_i_] <= 1'b1;
+			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(TXB[_i_ - 2] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 		for(_i_ = 3; _i_ < 4; _i_ = _i_ + 1) begin
-			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(rx_level_above[_i_ - 3] == 1'b1) RIS_REG[_i_] <= 1'b1;
+			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(RXA[_i_ - 3] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 		for(_i_ = 4; _i_ < 5; _i_ = _i_ + 1) begin
-			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(line_break[_i_ - 4] == 1'b1) RIS_REG[_i_] <= 1'b1;
+			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(BRK[_i_ - 4] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 		for(_i_ = 5; _i_ < 6; _i_ = _i_ + 1) begin
-			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(match[_i_ - 5] == 1'b1) RIS_REG[_i_] <= 1'b1;
+			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(MATCH[_i_ - 5] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 		for(_i_ = 6; _i_ < 7; _i_ = _i_ + 1) begin
-			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(frame_error[_i_ - 6] == 1'b1) RIS_REG[_i_] <= 1'b1;
+			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(FE[_i_ - 6] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 		for(_i_ = 7; _i_ < 8; _i_ = _i_ + 1) begin
-			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(parity_error[_i_ - 7] == 1'b1) RIS_REG[_i_] <= 1'b1;
+			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(PRE[_i_ - 7] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 		for(_i_ = 8; _i_ < 9; _i_ = _i_ + 1) begin
-			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(overrun[_i_ - 8] == 1'b1) RIS_REG[_i_] <= 1'b1;
+			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(OR[_i_ - 8] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 		for(_i_ = 9; _i_ < 10; _i_ = _i_ + 1) begin
-			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(timeout[_i_ - 9] == 1'b1) RIS_REG[_i_] <= 1'b1;
+			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(RTO[_i_ - 9] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
 	end
 
@@ -229,14 +226,14 @@ module EF_UART_APB #(
 	);
 
 	assign	PRDATA = 
-			(PADDR[`APB_AW-1:0] == rxdata_REG_OFFSET)	? rxdata_WIRE :
-			(PADDR[`APB_AW-1:0] == txdata_REG_OFFSET)	? txdata_WIRE :
-			(PADDR[`APB_AW-1:0] == prescaler_REG_OFFSET)	? prescaler_REG :
-			(PADDR[`APB_AW-1:0] == control_REG_OFFSET)	? control_REG :
-			(PADDR[`APB_AW-1:0] == config_REG_OFFSET)	? config_REG :
-			(PADDR[`APB_AW-1:0] == fifo_control_REG_OFFSET)	? fifo_control_REG :
-			(PADDR[`APB_AW-1:0] == fifo_status_REG_OFFSET)	? fifo_status_WIRE :
-			(PADDR[`APB_AW-1:0] == match_REG_OFFSET)	? match_REG :
+			(PADDR[`APB_AW-1:0] == RXDATA_REG_OFFSET)	? RXDATA_WIRE :
+			(PADDR[`APB_AW-1:0] == TXDATA_REG_OFFSET)	? TXDATA_WIRE :
+			(PADDR[`APB_AW-1:0] == PR_REG_OFFSET)	? PR_REG :
+			(PADDR[`APB_AW-1:0] == CTRL_REG_OFFSET)	? CTRL_REG :
+			(PADDR[`APB_AW-1:0] == CFG_REG_OFFSET)	? CFG_REG :
+			(PADDR[`APB_AW-1:0] == FIFOCTRL_REG_OFFSET)	? FIFOCTRL_REG :
+			(PADDR[`APB_AW-1:0] == FIFOS_REG_OFFSET)	? FIFOS_WIRE :
+			(PADDR[`APB_AW-1:0] == MATCH_REG_OFFSET)	? MATCH_REG :
 			(PADDR[`APB_AW-1:0] == IM_REG_OFFSET)	? IM_REG :
 			(PADDR[`APB_AW-1:0] == MIS_REG_OFFSET)	? MIS_REG :
 			(PADDR[`APB_AW-1:0] == RIS_REG_OFFSET)	? RIS_REG :
@@ -245,8 +242,8 @@ module EF_UART_APB #(
 
 	assign PREADY = 1'b1;
 
-	assign	rxdata_WIRE = rdata;
-	assign	rd = (apb_re & (PADDR[`APB_AW-1:0] == rxdata_REG_OFFSET));
+	assign	RXDATA_WIRE = rdata;
+	assign	rd = (apb_re & (PADDR[`APB_AW-1:0] == RXDATA_REG_OFFSET));
 	assign	wdata = PWDATA;
-	assign	wr = (apb_we & (PADDR[`APB_AW-1:0] == txdata_REG_OFFSET));
+	assign	wr = (apb_we & (PADDR[`APB_AW-1:0] == TXDATA_REG_OFFSET));
 endmodule

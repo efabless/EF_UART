@@ -2,13 +2,13 @@
     "info": {
       "name": "EF_UART",
       "description": "A Universal Asynchronous Receiver Transmitter",
-      "repo": "https://github.com/efabless/EF_UART",
-      "owner": "AUCOHL",
-      "license": "MIT",
+      "repo": "https://github.com/efabless/EF_UART.git",
+      "owner": "Efabless Corp.",
+      "license": "APACHE 2.0",
       "author": "Mohamed Shalan",
       "email": "mshalan@aucegypt.edu",
       "version": "v1.0.0",
-      "date": "3-18-2022",
+      "date": "11-1-2024",
       "category": "digital",
       "tags": [
         "peripheral",
@@ -195,37 +195,37 @@
     },
     "registers": [
       {
-        "name": "rxdata",
+        "name": "RXDATA",
         "size": "MDW",
         "mode": "r",
         "fifo": "yes",
         "offset": 0,
         "bit_access": "no",
         "read_port": "rdata",
-        "description": "RX Data register"
+        "description": "RX Data register; the interface to the Receive FIFO."
       },
       {
-        "name": "txdata",
+        "name": "TXDATA",
         "size": "MDW",
         "mode": "w",
         "fifo": "yes",
         "offset": 4,
         "bit_access": "no",
         "write_port": "wdata",
-        "description": "TX Data register"
+        "description": "TX Data register; ; the interface to the Receive FIFO."
       },
       {
-        "name": "prescaler",
+        "name": "PR",
         "size": 16,
         "mode": "w",
         "fifo": "no",
         "offset": 12,
         "bit_access": "no",
         "write_port": "prescaler",
-        "description": "Prescaler"
+        "description": "The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$."
       },
       {
-        "name": "control",
+        "name": "CTRL",
         "size": 5,
         "mode": "w",
         "fifo": "no",
@@ -271,7 +271,7 @@
         ]
       },
       {
-        "name": "config",
+        "name": "CFG",
         "size": 14,
         "mode": "w",
         "fifo": "no",
@@ -311,7 +311,7 @@
         ]
       },
       {
-        "name": "fifo_control",
+        "name": "FIFOCTRL",
         "size": 16,
         "mode": "w",
         "fifo": "no",
@@ -320,14 +320,14 @@
         "description": "FIFO Control Register",
         "fields": [
           {
-            "name": "txfifotr",
+            "name": "TXLT",
             "bit_offset": 0,
             "bit_width": "FAW",
             "write_port": "txfifotr",
             "description": "Transmit FIFO Level Threshold"
           },
           {
-            "name": "rxfifotr",
+            "name": "RXLT",
             "bit_offset": 8,
             "bit_width": "FAW",
             "write_port": "rxfifotr",
@@ -336,7 +336,7 @@
         ]
       },
       {
-        "name": "fifo_status",
+        "name": "FIFOS",
         "size": 16,
         "mode": "r",
         "fifo": "no",
@@ -345,14 +345,14 @@
         "description": "FIFO Status Register",
         "fields": [
           {
-            "name": "rx_level",
+            "name": "RXL",
             "bit_offset": 0,
             "bit_width": "FAW",
             "read_port": "rx_level",
             "description": "Receive FIFO Level"
           },
           {
-            "name": "tx_level",
+            "name": "TXL",
             "bit_offset": 8,
             "bit_width": "FAW",
             "read_port": "tx_level",
@@ -361,7 +361,7 @@
         ]
       },
       {
-        "name": "match",
+        "name": "MATCH",
         "size": "MDW",
         "mode": "w",
         "fifo": "no",
@@ -373,44 +373,54 @@
     ],
     "flags": [
       {
-        "name": "tx_empty",
-        "port": "tx_empty"
+        "name": "TXE",
+        "port": "tx_empty",
+        "description": "Transmit FIFO is Empty."
       },
       {
-        "name": "rx_full",
-        "port": "rx_full"
+        "name": "RXF",
+        "port": "rx_full",
+        "description": "Receive FIFO is Full."
       },
       {
-        "name": "tx_level_below",
-        "port": "tx_level_below"
+        "name": "TXB",
+        "port": "tx_level_below",
+        "description": "Transmit FIFO level is Below Threshold."
       },
       {
-        "name": "rx_level_above",
-        "port": "rx_level_above"
+        "name": "RXA",
+        "port": "rx_level_above",
+        "description": "Receive FIFO level is Above Threshold."
       },
       {
-        "name": "line_break",
-        "port": "break_flag"
+        "name": "BRK",
+        "port": "break_flag",
+        "description": "Line Break; 13 consecutive 0's have been detected on the line."
       },
       {
-        "name": "match",
-        "port": "match_flag"
+        "name": "MATCH",
+        "port": "match_flag",
+        "description": "Match; the receive data matches the MATCH register."
       },
       {
-        "name": "frame_error",
-        "port": "frame_error_flag"
+        "name": "FE",
+        "port": "frame_error_flag",
+        "description": "Framing Error; the receiver does not see a \"stop\" bit at the expected \"stop\" bit time."
       },
       {
-        "name": "parity_error",
-        "port": "parity_error_flag"
+        "name": "PRE",
+        "port": "parity_error_flag",
+        "description": "Parity Error; the receiver calculated parity does not match the received one."
       },
       {
-        "name": "overrun",
-        "port": "overrun_flag"
+        "name": "OR",
+        "port": "overrun_flag",
+        "description": "Overrun; data has been received but the RX FIFO is full."
       },
       {
-        "name": "timeout",
-        "port": "timeout_flag"
+        "name": "RTO",
+        "port": "timeout_flag",
+        "description": "Receiver Timeout; no data has been received for the time of a specified number of bits."
       }
     ],
     "fifos": [
@@ -418,7 +428,7 @@
         "type": "read",
         "width": "MDW",
         "depth": 16,
-        "register": "rxdata",
+        "register": "RXDATA",
         "data_port": "rdata",
         "control_port": "rd"
       },
@@ -426,7 +436,7 @@
         "type": "write",
         "width": "MDW",
         "depth": 16,
-        "register": "txdata",
+        "register": "TXDATA",
         "data_port": "wdata",
         "control_port": "wr"
       }
