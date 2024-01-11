@@ -133,6 +133,42 @@ The following are the bit definitions for the interrupt registers: IM, RIS, MIS,
 |8|OR|1|Overrun; data has been received but the RX FIFO is full.|
 |9|RTO|1|Receiver Timeout; no data has been received for the time of a specified number of bits.|
 
+## Interface 
+
+|Port|Width|Direction|
+|---|---|---|
+|prescaler|16|
+|en|1|
+|tx_en|1|
+|rx_en|1|
+|wdata|MDW|
+|timeout_bits|6|
+|loopback_en|1|
+|glitch_filter_en|1|
+|tx_level|FAW|
+|rx_level|FAW|
+|rd|1|
+|wr|1|
+|data_size|4|
+|stop_bits_count|1|
+|parity_type|3|
+|txfifotr|FAW|
+|rxfifotr|FAW|
+|match_data|MDW|
+|tx_empty|1|
+|tx_full|1|
+|tx_level_below|1|
+|rdata|MDW|
+|rx_empty|1|
+|rx_full|1|
+|rx_level_above|1|
+|break_flag|1|
+|match_flag|1|
+|frame_error_flag|1|
+|parity_error_flag|1|
+|overrun_flag|1|
+|timeout_flag|1|
+
 ## Usage Guidelines:
 1. Set the prescaler according to the required transmission and receiving baud rate where  ```Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)``` . Setting the prescaler is done through writing to ``PR`` register
 2. Configure the frame format by : 
