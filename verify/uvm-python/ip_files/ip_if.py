@@ -1,0 +1,12 @@
+from uvm.base.sv import sv_if
+
+
+class ip_if(sv_if):
+
+    #  // Actual Signals
+    # wire 		RX;
+    # wire 		TX;
+
+    def __init__(self, dut):
+        bus_map = {"PCLK": "PCLK","RX": "RX", "TX": "TX"}
+        super().__init__(dut, "" , bus_map)

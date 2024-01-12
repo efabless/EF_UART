@@ -1,0 +1,10 @@
+*.yalm
+*.html
+*.pyc
+*/__pycache__/
+*.code-workspace
+*.log
+*.vcd
+/sim_build/
+/coverageReports/
+*.xml
