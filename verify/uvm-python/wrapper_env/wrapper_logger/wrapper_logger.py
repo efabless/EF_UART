@@ -44,16 +44,16 @@ class wrapper_logger(UVMComponent):
         if not os.path.exists("loggers"):
             os.makedirs("loggers")
         self.logger_file = f"{os.getcwd()}/loggers/logger_bus.log"
+        self.col_widths = [10, 10, 10, 10]
         # # log the header
         self.bus_log(None, header_logged=True)
 
     def bus_log(self, transaction, header_logged=False):
         # Define a max width for each column
-        col_widths = [20, 10, 10, 10]
 
         if header_logged:
-            headers = [f"{'Time (ns)':<{col_widths[0]}}", f"{'Kind':<{col_widths[1]}}", f"{'Address':<{col_widths[2]}}", f"{'Data':<{col_widths[3]}}"]
-            header = tabulate([], headers=headers, tablefmt="grid")
+            headers = [f"{'Time (ns)'}", f"{'Kind'}", f"{'Address'}", f"{'Data'}"]
+            header = self.format_row(headers)
             with open(self.logger_file, 'w') as f:
                 f.write(f"{header}\n")
         else:
@@ -64,11 +64,20 @@ class wrapper_logger(UVMComponent):
             data = transaction.data if type(transaction.data) is not int else f"{hex(transaction.data)}"
 
             # Now, assemble your table_data with the pre-formatted fields
-            table_data = [(f"{sim_time:<{col_widths[0]}}", f"{operation:<{col_widths[1]}}", f"{address:<{col_widths[2]}}", f"{data:<{col_widths[3]}}")]
+            table_data = [f"{sim_time}", f"{operation}", f"{address}", f"{data}"]
 
-            table = tabulate(table_data, tablefmt="grid")
+            table = self.format_row(table_data)
             with open(self.logger_file, 'a') as f:
                 f.write(f"{table}\n")
+
+    def format_row(self, row_data):
+        # Define a max width for each column
+        for i in range(len(self.col_widths)):
+            self.col_widths[i] = max(self.col_widths[i], len(row_data[i]) + 1)
+        row_header = '+' + '+'.join('-' * (w) for w in self.col_widths) + '+'
+        row = '|' + '|'.join(f"{item:{w}}" for item, w in zip(row_data, self.col_widths)) + '|'
+        return row_header + "\n" + row
+
 
 
 uvm_component_utils(wrapper_logger)

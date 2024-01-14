@@ -29,16 +29,16 @@ class ip_logger(UVMComponent):
         if not os.path.exists("loggers"):
             os.makedirs("loggers")
         self.logger_file = f"{os.getcwd()}/loggers/logger_ip.log"
+        self.col_widths = [20, 10]
         # # log the header
         self.ip_log(None, header_logged=True)
 
     def ip_log(self, transaction, header_logged=False):
         # Define a max width for each column
-        col_widths = [20, 10, 10, 10]
 
         if header_logged:
-            headers = [f"{'Time (ns)':<{col_widths[0]}}", f"{'Char':<{col_widths[1]}}"]
-            header = tabulate([], headers=headers, tablefmt="grid")
+            headers = [f"{'Time (ns)'}", f"{'Char'}"]
+            header = self.format_row(headers)
             with open(self.logger_file, 'w') as f:
                 f.write(f"{header}\n")
         else:
@@ -47,11 +47,19 @@ class ip_logger(UVMComponent):
             char = f"{transaction.char}"
 
             # Now, assemble your table_data with the pre-formatted fields
-            table_data = [(f"{sim_time:<{col_widths[0]}}", f"{char:<{col_widths[1]}}")]
+            table_data = [f"{sim_time}", f"{char}"]
 
-            table = tabulate(table_data, tablefmt="grid")
+            table = self.format_row(table_data)
             with open(self.logger_file, 'a') as f:
                 f.write(f"{table}\n")
+
+    def format_row(self, row_data):
+        # Define a max width for each column
+        for i in range(len(self.col_widths)):
+            self.col_widths[i] = max(self.col_widths[i], len(row_data[i]) + 1)
+        row_header = '+' + '+'.join('-' * (w) for w in self.col_widths) + '+'
+        row = '|' + '|'.join(f"{item:{w}}" for item, w in zip(row_data, self.col_widths)) + '|'
+        return row_header + "\n" + row
 
 
 uvm_component_utils(ip_logger)
