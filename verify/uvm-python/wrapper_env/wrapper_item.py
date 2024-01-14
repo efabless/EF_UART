@@ -47,9 +47,6 @@ uvm_object_utils_end(wrapper_bus_item)
 
 class wrapper_irq_item(UVMSequenceItem):
 
-    READ = 0
-    WRITE = 1
-
     def __init__(self, name="wrapper_irq_item"):
         super().__init__(name)
         self.trg_irq = 0  # bit

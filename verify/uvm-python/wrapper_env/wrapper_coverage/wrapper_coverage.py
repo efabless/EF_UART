@@ -2,7 +2,7 @@ from uvm.base.uvm_component import UVMComponent
 from uvm.macros import uvm_component_utils
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisImp
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW 
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW 
 from wrapper_env.wrapper_coverage.coverage_regs import wrapper_cov_groups
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
@@ -29,12 +29,12 @@ class wrapper_coverage(UVMComponent):
         self.cov_groups = wrapper_cov_groups("uart", regs.get_regs(), regs.get_irq_exist())
 
     def write_bus(self, tr):
-        uvm_info(self.tag, "get bus coverage for " + tr.convert2string(), UVM_MEDIUM)
+        uvm_info(self.tag, "get bus coverage for " + tr.convert2string(), UVM_HIGH)
         self.cov_groups.bus_cov(tr)
         pass
 
     def write_irq(self, tr):
-        uvm_info(self.tag, "get irq coverage for " + tr.convert2string(), UVM_MEDIUM)
+        uvm_info(self.tag, "get irq coverage for " + tr.convert2string(), UVM_HIGH)
         self.cov_groups.irq_cov(tr)
         pass
 

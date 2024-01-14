@@ -1,5 +1,5 @@
 from uvm.macros.uvm_message_defines import uvm_info
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW
 from cocotb_coverage.coverage import CoverPoint
 from uvm.macros import uvm_component_utils
 from wrapper_env.wrapper_item import wrapper_bus_item
@@ -40,7 +40,7 @@ class wrapper_cov_groups():
             rel=lambda val, b: val[1] == b[1] and val[0] == b[0]
         )
         def sample(tr):
-            uvm_info("coverage", f"im_val: {self.ip_regs_dict[0xf08]['val']}", UVM_MEDIUM)
+            uvm_info("coverage", f"im_val: {self.ip_regs_dict[0xf08]['val']}", UVM_HIGH)
             pass
         if do_sampling:
             sample(tr)
@@ -48,7 +48,7 @@ class wrapper_cov_groups():
     def _cov_points(self):
         cov_points = []
         for reg_addr, reg in self.ip_regs_dict.items():
-            uvm_info("coverage", f"register: {reg['name']} reg_addr: {hex(reg_addr)}", UVM_MEDIUM)
+            uvm_info("coverage", f"register: {reg['name']} reg_addr: {hex(reg_addr)}", UVM_HIGH)
             
             if "fields" not in reg:
                 for access in ["write", "read"]:

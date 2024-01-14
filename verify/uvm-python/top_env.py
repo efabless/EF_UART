@@ -21,7 +21,8 @@ class top_env(UVMEnv):
         self.scoreboard = scoreboard.type_id.create("scoreboard", self)
 
     def connect_phase(self, phase):
-        self.wrapper_env.wrapper_bus_export.connect(self.vip.analysis_imp)
+        self.wrapper_env.wrapper_bus_export.connect(self.vip.analysis_imp_bus)
+        self.ip_env.ip_env_export.connect(self.vip.analysis_imp_ip)
         # scoreboard connection
         self.wrapper_env.wrapper_bus_export.connect(self.scoreboard.analysis_imp_bus)
         self.wrapper_env.wrapper_irq_export.connect(self.scoreboard.analysis_imp_irq)

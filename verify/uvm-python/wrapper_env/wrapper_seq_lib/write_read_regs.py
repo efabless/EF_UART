@@ -29,10 +29,10 @@ class write_read_regs(UVMSequence):
         self.address = list(self.regs_dict.keys())
         # remove non read write addresses
         uvm_info(self.tag, "Got addresses: " + str(self.address), UVM_LOW)
-        self.address = [addr for addr in self.address if self.regs_dict[addr]["mode"] == "w"]
+        self.address = [addr for addr in self.address if self.regs_dict[addr]["mode"] == "wr"]
         uvm_info(self.tag, "Got addresses: " + str(self.address), UVM_LOW)
         self.add_cov_notify()
-        for i in range(1000):
+        for i in range(3000):
             await uvm_do_with(self, self.req, lambda addr: addr in self.address)
             if len(self.address) < 2:  # if only one is still can't get high coverage it probabily need corner test
                 break

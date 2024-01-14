@@ -2,7 +2,7 @@ from uvm.base.uvm_component import UVMComponent
 from uvm.macros import uvm_component_utils
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisImp
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW 
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW 
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
 import os
@@ -31,12 +31,12 @@ class wrapper_logger(UVMComponent):
         self.configure_logger()
 
     def write_bus(self, tr):
-        uvm_info(self.tag, "get bus logging for " + tr.convert2string(), UVM_MEDIUM)
+        uvm_info(self.tag, "get bus logging for " + tr.convert2string(), UVM_HIGH)
         self.bus_log(tr)
         pass
 
     def write_irq(self, tr):
-        uvm_info(self.tag, "get irq logg for " + tr.convert2string(), UVM_MEDIUM)
+        uvm_info(self.tag, "get irq logg for " + tr.convert2string(), UVM_HIGH)
         # self.cov_groups.irq_cov(tr)
         pass
 

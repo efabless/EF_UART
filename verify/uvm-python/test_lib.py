@@ -84,9 +84,9 @@ class example_base_test(UVMTest):
 
         uvm_info("TEST_TOP", "Forking master_proc now", UVM_LOW)
         wrapper_seq = write_read_regs("write_read_regs")
-        # wrapper_seq = uart_tx_seq("uart_tx_seq")
+        wrapper_seq = uart_tx_seq("uart_tx_seq")
+        wrapper_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
         await wrapper_seq.start(wrapper_sqr)
-        await Timer(20, "US")
         phase.drop_objection(self, "example_base_test drop objection")
 
     # def extract_phase(self, phase):

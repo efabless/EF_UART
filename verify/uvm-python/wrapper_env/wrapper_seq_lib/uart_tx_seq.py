@@ -7,7 +7,7 @@ from wrapper_env.wrapper_item import wrapper_bus_item
 from uvm.base.uvm_config_db import UVMConfigDb
 from cocotb_coverage.coverage import coverage_db
 import os
-
+import random
 
 class uart_tx_seq(UVMSequence):
 
@@ -19,38 +19,15 @@ class uart_tx_seq(UVMSequence):
         self.tag = name
 
     async def body(self):
-        # get all regs valid addresses
-        # arr = []
-        # if (not UVMConfigDb.get(self, "", "wrapper_regs", arr)):
-        #     uvm_fatal(self.tag, "No json file wrapper regs")
-        # else:
-        #     regs = arr[0]
-        # self.regs_dict = regs.get_regs()
-        # self.address = list(self.regs_dict.keys())
-        # # remove non read write addresses
-        # uvm_info(self.tag, "Got addresses: " + str(self.address), UVM_LOW)
-        # self.address = [addr for addr in self.address if self.regs_dict[addr]["mode"] == "w"]
-        # uvm_info(self.tag, "Got addresses: " + str(self.address), UVM_LOW)
-        # self.add_cov_notify()
-        # for i in range(1000):
         await uvm_do_with(self, self.req, lambda addr: addr == 0x8, lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data == 3)
+        await uvm_do_with(self, self.req, lambda addr: addr == 12, lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data == 1)
         for _ in range(10):
-            await uvm_do_with(self, self.req, lambda addr: addr == 0x4, lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data in range(0, 0x8F))
-
-    def add_cov_notify(self):
-        # add callback to the cover group
-        for name in self.regs_dict.values():
-            coverage_db["uart.regs." + name["name"]].add_threshold_callback(self.remove_addr, 90)
-
-    def remove_addr(self):
-        # remove callback from the cover group
-        for address, name in self.regs_dict.items():
-            if coverage_db["uart.regs." + name["name"]].cover_percentage >= 90:
-                try:
-                    self.address.remove(address)
-                    uvm_info(self.tag, f"removed address: {str(address)}({name['name']})  address available in regs:  {str(self.address)}", UVM_LOW)
-                except ValueError:
-                    pass
+            random_send = random.randint(1, 16)
+            for __ in range(random_send):
+                await uvm_do_with(self, self.req, lambda addr: addr == 0x4, lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data in range(0, 0x80))
+            for __ in range(random.randint(0, random_send)):
+                await self.monitor.tx_received.wait()
+                self.monitor.tx_received.clear()
 
 
 uvm_object_utils(uart_tx_seq)

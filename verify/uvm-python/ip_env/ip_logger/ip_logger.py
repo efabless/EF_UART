@@ -29,7 +29,7 @@ class ip_logger(UVMComponent):
         if not os.path.exists("loggers"):
             os.makedirs("loggers")
         self.logger_file = f"{os.getcwd()}/loggers/logger_ip.log"
-        self.col_widths = [20, 10]
+        self.col_widths = [20, 10, 10]
         # # log the header
         self.ip_log(None, header_logged=True)
 
@@ -37,17 +37,17 @@ class ip_logger(UVMComponent):
         # Define a max width for each column
 
         if header_logged:
-            headers = [f"{'Time (ns)'}", f"{'Char'}"]
+            headers = ['Time (ns)', 'Char', "Direction"]
             header = self.format_row(headers)
             with open(self.logger_file, 'w') as f:
                 f.write(f"{header}\n")
         else:
             # Ensure each piece of data fits within the specified width
             sim_time = f"{cocotb.utils.get_sim_time(units='ns')} ns"
-            char = f"{transaction.char}"
-
+            char = f"{transaction.char}({hex(ord(transaction.char))})"
+            direction = f"{'RX' if transaction.direction == ip_item.RX else 'TX'}"
             # Now, assemble your table_data with the pre-formatted fields
-            table_data = [f"{sim_time}", f"{char}"]
+            table_data = [sim_time, char, direction]
 
             table = self.format_row(table_data)
             with open(self.logger_file, 'a') as f:

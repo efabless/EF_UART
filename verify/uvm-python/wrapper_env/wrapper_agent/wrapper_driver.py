@@ -2,7 +2,7 @@ from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.comps.uvm_driver import UVMDriver
 from uvm.base.uvm_config_db import UVMConfigDb
 from cocotb.triggers import Timer, RisingEdge
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW
+from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_HIGH, UVM_LOW
 from wrapper_env.wrapper_item import wrapper_bus_item
 
 
@@ -20,7 +20,7 @@ class wrapper_driver(UVMDriver):
             self.sigs = arr[0]
 
     async def run_phase(self, phase):
-        uvm_info(self.tag, "run_phase started", UVM_LOW)
+        uvm_info(self.tag, "run_phase started", UVM_MEDIUM)
         await self.reset()
 
         while True:
@@ -28,7 +28,7 @@ class wrapper_driver(UVMDriver):
             tr = []
             await self.seq_item_port.get_next_item(tr)
             tr = tr[0]
-            uvm_info(self.tag, "Driving trans into DUT: " + tr.convert2string(), UVM_LOW)
+            uvm_info(self.tag, "Driving trans into DUT: " + tr.convert2string(), UVM_MEDIUM)
 
             #if (not self.sigs.clk.triggered):
             #yield Edge(self.sigs.clk)
@@ -67,7 +67,7 @@ class wrapper_driver(UVMDriver):
         await Timer(1, "NS")
 
     async def read(self, addr, data):
-        uvm_info(self.tag, "Doing APB read to addr " + hex(addr), UVM_MEDIUM)
+        uvm_info(self.tag, "Doing APB read to addr " + hex(addr), UVM_HIGH)
 
         self.sigs.PADDR.value = addr
         self.sigs.PWRITE.value = 0
@@ -80,7 +80,7 @@ class wrapper_driver(UVMDriver):
         self.sigs.PENABLE.value = 0
 
     async def write(self, addr, data):
-        uvm_info(self.tag, "Doing APB write to addr " + hex(addr), UVM_MEDIUM)
+        uvm_info(self.tag, "Doing APB write to addr " + hex(addr), UVM_HIGH)
         self.sigs.PADDR.value = addr
         self.sigs.PWDATA.value = data
         self.sigs.PWRITE.value = 1
@@ -90,7 +90,7 @@ class wrapper_driver(UVMDriver):
         await self.drive_delay()
         self.sigs.PSEL.value = 0
         self.sigs.PENABLE.value = 0
-        uvm_info(self.tag, "Finished APB write to addr " + hex(addr), UVM_MEDIUM)
+        uvm_info(self.tag, "Finished APB write to addr " + hex(addr), UVM_HIGH)
 
 
 uvm_component_utils(wrapper_driver)

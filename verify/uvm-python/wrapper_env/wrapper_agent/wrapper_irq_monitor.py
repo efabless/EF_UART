@@ -27,8 +27,7 @@ class wrapper_irq_monitor(UVMMonitor):
         #     await Timer(1, "NS")
         while True:
             tr = None
-            # await Edge(self.sigs.irq)
-            await Timer(200, "NS")
+            await Edge(self.sigs.irq)
             tr = wrapper_irq_item.type_id.create("tr", self)
             if self.sigs.irq == 1:
                 tr.trg_irq = 1

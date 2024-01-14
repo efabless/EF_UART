@@ -1,6 +1,6 @@
 import json
 from uvm.macros.uvm_message_defines import uvm_info
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW
 import yaml
 
 
@@ -15,7 +15,7 @@ class wrapper_regs():
         parameter_values = {param["name"]: param["default"] for param in self.data["parameters"]}
         self.replace_parameters(self.data, parameter_values)
         self.init_regs()
-        uvm_info(self.tag, f"Regs: {self.data['registers']}", UVM_LOW)
+        uvm_info(self.tag, f"Regs: {self.data['registers']}", UVM_HIGH)
 
     def init_regs(self):
         regs = {}
@@ -51,10 +51,10 @@ class wrapper_regs():
     def write_reg_value(self, address, value):
         address = address & 0xffff
         if address in self.regs:
-            uvm_info(self.tag, f"value before write {value} to address {hex(address)}: {hex(self.regs[address]['val'])}", UVM_LOW)
+            uvm_info(self.tag, f"value before write {value} to address {hex(address)}: {hex(self.regs[address]['val'])}", UVM_HIGH)
             if "w" in self.regs[address]["mode"]:
                 self.regs[address]["val"] = value & ((1 << int(self.regs[address]["size"])) - 1)
-            uvm_info(self.tag, f"value after write to address {hex(address)}: {hex(self.regs[address]['val'])}", UVM_MEDIUM)
+            uvm_info(self.tag, f"value after write to address {hex(address)}: {hex(self.regs[address]['val'])}", UVM_HIGH)
 
     def read_reg_value(self, address):
         return self.regs[address]["val"]
