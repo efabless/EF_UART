@@ -173,7 +173,7 @@ registers:
     size: 16
     mode: w
     fifo: no
-    offset: 12
+    offset: 8
     bit_access: no
     write_port: prescaler
     description: The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.
@@ -181,7 +181,7 @@ registers:
     size: 5
     mode: w
     fifo: no
-    offset: 8
+    offset: 12
     bit_access: no
     description: UART Control Register
     fields:

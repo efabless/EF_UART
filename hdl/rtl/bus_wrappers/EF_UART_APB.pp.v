@@ -49,8 +49,8 @@ module EF_UART_APB #(
 
 	localparam	RXDATA_REG_OFFSET = 16'd0;
 	localparam	TXDATA_REG_OFFSET = 16'd4;
-	localparam	PR_REG_OFFSET = 16'd12;
-	localparam	CTRL_REG_OFFSET = 16'd8;
+	localparam	PR_REG_OFFSET = 16'd8;
+	localparam	CTRL_REG_OFFSET = 16'd12;
 	localparam	CFG_REG_OFFSET = 16'd16;
 	localparam	FIFOCTRL_REG_OFFSET = 16'd20;
 	localparam	FIFOS_REG_OFFSET = 16'd24;

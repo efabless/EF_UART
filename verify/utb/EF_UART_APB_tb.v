@@ -1,19 +1,19 @@
 /*
-        Copyright 2024 Efabless Corp.
+	Copyright 2024 Efabless Corp.
 
-        Author: Mohamed Shalan (mshalan@aucegypt.edu)
+	Author: Mohamed Shalan (mshalan@aucegypt.edu)
 
-        Licensed under the Apache License, Version 2.0 (the "License");
-        you may not use this file except in compliance with the License.
-        You may obtain a copy of the License at
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
 
-            http://www.apache.org/licenses/LICENSE-2.0
+	    http://www.apache.org/licenses/LICENSE-2.0
 
-        Unless required by applicable law or agreed to in writing, software
-        distributed under the License is distributed on an "AS IS" BASIS,
-        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-        See the License for the specific language governing permissions and
-        limitations under the License.
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
 
 */
 
@@ -36,24 +36,24 @@ module EF_UART_APB_tb;
 
 	// DON NOT Change the following parameters
 	localparam [`APB_AW-1:0]
-			RXDATA_REG_OFFSET =     `APB_AW'h0000,
-            TXDATA_REG_OFFSET =     `APB_AW'h0004,
-            PR_REG_OFFSET = `APB_AW'h000c,
-            CTRL_REG_OFFSET =       `APB_AW'h0008,
-            CFG_REG_OFFSET =        `APB_AW'h0010,
-            FIFOCTRL_REG_OFFSET =   `APB_AW'h0014,
-            FIFOS_REG_OFFSET =      `APB_AW'h0018,
-            MATCH_REG_OFFSET =      `APB_AW'h001c,
-            IM_REG_OFFSET =         `APB_AW'h0f00,
-            IC_REG_OFFSET =         `APB_AW'h0f0c,
-            RIS_REG_OFFSET =        `APB_AW'h0f08,
-            MIS_REG_OFFSET =        `APB_AW'h0f04;
+			RXDATA_REG_OFFSET =	`APB_AW'h0000,
+			TXDATA_REG_OFFSET =	`APB_AW'h0004,
+			PR_REG_OFFSET =	`APB_AW'h0008,
+			CTRL_REG_OFFSET =	`APB_AW'h000c,
+			CFG_REG_OFFSET =	`APB_AW'h0010,
+			FIFOCTRL_REG_OFFSET =	`APB_AW'h0014,
+			FIFOS_REG_OFFSET =	`APB_AW'h0018,
+			MATCH_REG_OFFSET =	`APB_AW'h001c,
+			IM_REG_OFFSET =		`APB_AW'h0f00,
+			IC_REG_OFFSET =		`APB_AW'h0f0c,
+			RIS_REG_OFFSET =	`APB_AW'h0f08,
+			MIS_REG_OFFSET =	`APB_AW'h0f04;
 
 	`TB_APB_SIG
 
 	wire	[0:0]	rx;
 	wire	[0:0]	tx;
-
+	
 	reg				vip_tx;
 	wire			vip_rx;
 
@@ -75,7 +75,7 @@ module EF_UART_APB_tb;
 	`include "serial_tasks.vh"
 
 	event	e_test1_start, e_test1_done;
-event	e_test2_start, e_test2_done;
+	event	e_test2_start, e_test2_done;
 	`TB_TEST_EVENT(test3) 
 	
 	localparam real BIT_TIME_115200 = 8680.55,
@@ -84,7 +84,7 @@ event	e_test2_start, e_test2_done;
 		#999 -> e_assert_reset;
 		@(e_reset_done);
 
-// Do some initializations
+		// Do some initializations
 		// Set the baud rate to 115,200 bps
 		// 0.1152 = 10/((PR+1)*8) ==> PR = 9.85 (~10)
 		// Actual baud = 113.636 baud/s
@@ -97,7 +97,7 @@ event	e_test2_start, e_test2_done;
 		@(e_test1_done);
 
 		// Perform other tests
-#1000 -> e_test2_start;
+		#1000 -> e_test2_start;
 		@(e_test2_done);
 
 		#1000 -> e_test3_start;
@@ -122,7 +122,7 @@ event	e_test2_start, e_test2_done;
 	`TB_TEST_BEGIN(test1)
 t1f = 0;
 		// Test 1 code goes here
-		// Enable the receiver and the UART
+// Enable the receiver and the UART
 APB_W_WRITE(CTRL_REG_OFFSET, 32'b0_0_1_0_1);
 		//send_serial_8N1(8696, 8'hA5);
 		->e_send_serial_data;
@@ -147,8 +147,8 @@ APB_W_WRITE(CTRL_REG_OFFSET, 32'b0_0_1_0_1);
 				#1000_000_000;
 		end 
 	`TB_TEST_END(test1)
-
-// Test 2 -- Send a frame @ 57600
+		
+		// Test 2 -- Send a frame @ 57600
 	`TB_TEST_BEGIN(test2)
 		// Disable the UART fully
 		APB_W_WRITE(CTRL_REG_OFFSET, 32'b0);
