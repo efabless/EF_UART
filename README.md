@@ -1,6 +1,7 @@
 # EF_UART
 
-A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following features:
+UART, or universal asynchronous receiver-transmitter, is one of the most used device-to-device communication protocols. A UART enables two devices to exchange data serially without sharing the clock in a frame oriented way. The frame consists of a start bit, a number of data bits (typically one byte), a parity bit (optional) and 1-2 stop bits. 
+EF_UART is a Soft IP with the following features:
 - A configurable frame format
     - Data bits could vary from 5 to 9 bits
     - Even, odd, stick, or no-parity bit generation/detection
@@ -24,21 +25,92 @@ A universal Asynchronous Receiver/Transmitter (UART) Soft IP with the following 
     + Overrun
     + Receiver timeout 
 
+## The Interface
+
+<img src="docs/_static/EF_UART.svg" width="600"/>
+
+### Module Parameters
+| Generic name | Value | Description |
+| ------------ | ----- | ----------- |
+| MDW          | 9     | Maximum data width            |
+| FAW          | 4     | FIFO Address Width; $FIFO\ Depth = 2^{FAW}$            |
+| SC           | 8     | Number of samples per bit            |
+| GFLEN        | 8     | Glitch Filter Length   |
+
+### Ports
+
+| Port name         | Direction | Type           | Description |
+| ----------------- | --------- | -------------- | ----------- |
+| clk               | input     | wire           |             |
+| rst_n             | input     | wire           |             |
+| prescaler         | input     | wire [15:0]    |             |
+| en                | input     | wire           |             |
+| tx_en             | input     | wire           |             |
+| rx_en             | input     | wire           |             |
+| rd                | input     | wire           |             |
+| wr                | input     | wire           |             |
+| wdata             | input     | wire [MDW-1:0] |             |
+| data_size         | input     | wire [3:0]     |             |
+| stop_bits_count   | input     | wire           |             |
+| parity_type       | input     | wire [2:0]     |             |
+| txfifotr          | input     | wire [3:0]     |             |
+| rxfifotr          | input     | wire [3:0]     |             |
+| match_data        | input     | wire [MDW-1:0] |             |
+| timeout_bits      | input     | wire [5:0]     |             |
+| loopback_en       | input     | wire           |             |
+| glitch_filter_en  | input     | wire           |             |
+| tx_empty          | output    | wire           |             |
+| tx_full           | output    | wire           |             |
+| tx_level          | output    | wire [FAW-1:0] |             |
+| tx_level_below    | output    | wire           |             |
+| rdata             | output    | wire [MDW-1:0] |             |
+| rx_empty          | output    | wire           |             |
+| rx_full           | output    | wire           |             |
+| rx_level          | output    | wire [FAW-1:0] |             |
+| rx_level_above    | output    | wire           |             |
+| break_flag        | output    | wire           |             |
+| match_flag        | output    | wire           |             |
+| frame_error_flag  | output    | wire           |             |
+| parity_error_flag | output    | wire           |             |
+| overrun_flag      | output    | wire           |             |
+| timeout_flag      | output    | wire           |             |
+| rx                | input     | wire           |             |
+| tx                | output    | wire           |             |
+
+## Sky130 Implementation
+|Module | Number of cells | Max. freq |
+|-|-|-|
+|EF_UART|||
+|EF_UART_APB||
+|EF_UART_AHBL||
+|EF_UART_WB||
+
+
+
 ## System Integration
 
 ```EF_UART``` comes with APB, AHB and WB bus wrappers in Verilog HDL; based on your use case, use one of these wrappers or create your own wrapper for your system bus type. 
 
 The ```EF_UART``` ```tx``` and ```rx``` ports must be connected, both or one of them, to an input I/O pad for ```rx``` and an output I/O pad for ```tx```.
 
+```verilog
+EF_UART_APB UART0 (
+		`TB_APB_SLAVE_CONN,
+		.rx(rx),
+		.tx(tx)
+	);
+```
+Note: ``` `TB_APB_SLAVE_CONN ``` is a convenient macro provided by [IP_Utilities](https://github.com/shalan/IP_Utilities).
+
 ## I/O Registers
 
 The I/O registers are provided by the bus wrapper. This section applies to all provided bus wrappers.
 
-|Name|Offset|Reset Value|Access Mode|Description|
+|Name|Offset|Reset Value|Access Mode[^1]|Description|
 |---|---|---|---|---|
 |RXDATA|0000|0x00000000|r|RX Data register; the interface to the Receive FIFO.|
 |TXDATA|0004|0x00000000|w|TX Data register; ; the interface to the Receive FIFO.|
-|PR|000c|0x00000000|w|The Prescaler register; used to determine the baud rate. $Baud\ rate = clock\freq/((PR+1)\times16)$.|
+|PR|000c|0x00000000|w|The Prescaler register; used to determine the baud rate. $Baud\ rate = clock\ freq/((PR+1)\times16)$.|
 |CTRL|0008|0x00000000|w|UART Control Register|
 |CFG|0010|0x00003F08|w|UART Configuration Register|
 |FIFOCTRL|0014|0x00000000|w|FIFO Control Register|
@@ -48,6 +120,8 @@ The I/O registers are provided by the bus wrapper. This section applies to all p
 |RIS|0f08|0x00000000|w|Raw Interrupt Status; reflects the current interrupts status;check the interrupt flags table for more details|
 |MIS|0f04|0x00000000|w|Masked Interrupt Status; On a read, this register gives the current masked status value of the corresponding interrupt. A write has no effect; check the interrupt flags table for more details|
 |IC|0f0c|0x00000000|w|Interrupt Clear Register; On a write of 1, the corresponding interrupt (both raw interrupt and masked interrupt, if enabled) is cleared; check the interrupt flags table for more details|
+
+[^1]: r: read-only; w: write-only (reading returns the last written data); rw: read/write.
 
 ### RX Data register [Offset: 0x0, mode: r]
 
@@ -63,7 +137,7 @@ TX Data register; ; the interface to the Receive FIFO.
 
 ### The Prescaler register [Offset: 0xc, mode: w]
 
-The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.
+The Prescaler register; used to determine the baud rate. $baud\ rate = (Clock\ freq)/((PR+1)\times16)$.
 
 <img src="https://svg.wavedrom.com/{reg:[{name:'PR', bits:16},{bits: 16}], config: {lanes: 2, hflip: true}} "/>
 
@@ -139,53 +213,6 @@ The following are the bit definitions for the interrupt registers: IM, RIS, MIS,
 |7|PRE|1|Parity Error; the receiver calculated parity does not match the received one.|
 |8|OR|1|Overrun; data has been received but the RX FIFO is full.|
 |9|RTO|1|Receiver Timeout; no data has been received for the time of a specified number of bits.|
-
-## Parameters 
-
-|Parameter|Description|Default Value|
-|---|---|---|
-|SC|Number of samples per bit/baud|8|
-|MDW|Max data size/width|9|
-|GFLEN|Length (number of stages) of the glitch filter|8|
-|FAW|FIFO Address width; Depth=2^AW|4|
-
-## Interface Description 
-
-|Port|Width|Direction|
-|---|---|---|
-|prescaler|16|input|
-|en|1|input|
-|tx_en|1|input|
-|rx_en|1|input|
-|wdata|MDW|input|
-|timeout_bits|6|input|
-|loopback_en|1|input|
-|glitch_filter_en|1|input|
-|tx_level|FAW|output|
-|rx_level|FAW|output|
-|rd|1|input|
-|wr|1|input|
-|data_size|4|input|
-|stop_bits_count|1|input|
-|parity_type|3|input|
-|txfifotr|FAW|input|
-|rxfifotr|FAW|input|
-|match_data|MDW|input|
-|tx_empty|1|output|
-|tx_full|1|output|
-|tx_level_below|1|output|
-|rdata|MDW|output|
-|rx_empty|1|output|
-|rx_full|1|output|
-|rx_level_above|1|output|
-|break_flag|1|output|
-|match_flag|1|output|
-|frame_error_flag|1|output|
-|parity_error_flag|1|output|
-|overrun_flag|1|output|
-|timeout_flag|1|output|
-|rx|1|input|
-|tx|1|output|
 
 ## F/W Usage Guidelines:
 1. Set the prescaler according to the required transmission and receiving baud rate where:  $Baud\ rate = Bus\ Clock\ Freq/((Prescaler+1)\times16)$. Setting the prescaler is done through writing to ``PR`` register
