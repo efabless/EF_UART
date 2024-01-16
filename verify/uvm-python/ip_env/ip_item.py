@@ -18,7 +18,7 @@ class ip_item(UVMSequenceItem):
 
     def convert2string(self):
         dirct = "RX" if self.direction == ip_item.RX else "TX"
-        return sv.sformatf("uart char=%s direction=%s", self.char, dirct)
+        return sv.sformatf("uart char=%s(0x%0h) direction=%s", chr(self.char), self.char,dirct)
 
     def do_compare(self, tr):
         return self.char == tr.char and self.direction == tr.direction

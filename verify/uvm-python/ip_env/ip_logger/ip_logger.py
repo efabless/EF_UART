@@ -44,7 +44,7 @@ class ip_logger(UVMComponent):
         else:
             # Ensure each piece of data fits within the specified width
             sim_time = f"{cocotb.utils.get_sim_time(units='ns')} ns"
-            char = f"{transaction.char}({hex(ord(transaction.char))})"
+            char = f"{chr(transaction.char)}({hex(transaction.char)})"
             direction = f"{'RX' if transaction.direction == ip_item.RX else 'TX'}"
             # Now, assemble your table_data with the pre-formatted fields
             table_data = [sim_time, char, direction]

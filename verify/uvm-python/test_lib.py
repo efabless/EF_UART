@@ -11,12 +11,17 @@ from top_env import top_env
 from ip_files.ip_if import ip_if
 from ip_files.wrapper_if import wrapper_bus_if, wrapper_irq_if
 from cocotb.triggers import Timer
-from wrapper_env.wrapper_seq_lib.write_read_regs import write_read_regs
-from wrapper_env.wrapper_seq_lib.uart_tx_seq import uart_tx_seq
 from cocotb_coverage.coverage import coverage_db
 from caravel_cocotb.scripts.merge_coverage import merge_fun_cov
 from wrapper_env.wrapper_regs import wrapper_regs
 import os
+#seq 
+from wrapper_env.wrapper_seq_lib.write_read_regs import write_read_regs
+from wrapper_env.wrapper_seq_lib.uart_tx_seq import uart_tx_seq
+from wrapper_env.wrapper_seq_lib.uart_config import uart_config
+from wrapper_env.wrapper_seq_lib.uart_rx_read import uart_rx_read
+from ip_env.ip_seq_lib.uart_rx_seq import uart_rx_seq
+
 
 @cocotb.test()
 async def module_top(dut):
@@ -80,13 +85,20 @@ class example_base_test(UVMTest):
         phase.raise_objection(self, "example_base_test OBJECTED")
         uvm_info("sequence", "after raise", UVM_LOW)
         wrapper_sqr = self.example_tb0.wrapper_env.wrapper_agent.wrapper_sequencer
+        ip_sqr = self.example_tb0.ip_env.ip_agent.ip_sequencer
         uvm_info("sequence", "after set seq", UVM_LOW)
 
         uvm_info("TEST_TOP", "Forking master_proc now", UVM_LOW)
         wrapper_seq = write_read_regs("write_read_regs")
         wrapper_seq = uart_tx_seq("uart_tx_seq")
+        ip_seq_rx = uart_rx_seq("uart_rx_seq")
+        wrapper_config_uart = uart_config()
+        wrapper_rx_read = uart_rx_read()
         wrapper_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
-        await wrapper_seq.start(wrapper_sqr)
+        await wrapper_config_uart.start(wrapper_sqr)
+        for _ in range(10):
+            await ip_seq_rx.start(ip_sqr)
+            await wrapper_rx_read.start(wrapper_sqr)
         phase.drop_objection(self, "example_base_test drop objection")
 
     # def extract_phase(self, phase):

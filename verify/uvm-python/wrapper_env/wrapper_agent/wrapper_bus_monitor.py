@@ -53,4 +53,5 @@ class wrapper_bus_monitor(UVMMonitor):
         await RisingEdge(self.sigs.PCLK)
         await Timer(1, "NS")
 
+
 uvm_component_utils(wrapper_bus_monitor)

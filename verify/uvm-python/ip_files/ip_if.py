@@ -8,5 +8,5 @@ class ip_if(sv_if):
     # wire 		TX;
 
     def __init__(self, dut):
-        bus_map = {"PCLK": "PCLK","RX": "RX", "TX": "TX"}
-        super().__init__(dut, "" , bus_map)
+        bus_map = {"PCLK": "PCLK", "RX": "RX", "TX": "TX", "tx_done": "tx_done", "rx_done": "rx_done"}
+        super().__init__(dut, "", bus_map)

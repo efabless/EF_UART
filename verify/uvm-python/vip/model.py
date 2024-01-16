@@ -10,11 +10,15 @@ from ip_env.ip_item import ip_item
 from uvm.base.uvm_component import UVMComponent
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisExport
+from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
+
+uvm_analysis_imp_rx = uvm_analysis_imp_decl("_rx")
 
 
 class EF_UART(UVMComponent):
     def __init__(self, name="EF_UART_Model", parent=None):
         super().__init__(name, parent)
+        self.analysis_imp_rx = uvm_analysis_imp_rx("model_rx", self)
         self.ip_export = UVMAnalysisExport("model_export", self)
         self.tag = name
         pass
@@ -26,16 +30,12 @@ class EF_UART(UVMComponent):
         if (not UVMConfigDb.get(self, "", "wrapper_regs", arr)):
             uvm_fatal(self.tag, "No json file wrapper regs")
         else:
-            regs = arr[0]
-        self.regs_dict = regs.get_regs()
-        self.reg_name_address = {info['name']: address for address, info in self.regs_dict.items()}
-        self.regs = regs
+            self.regs = arr[0]
         self.tag = "EF_UART_model"
         self.fifo_tx = Queue(maxsize=15)
-        self.fifo_rx = Queue(maxsize=15)
+        self.fifo_rx = Queue(maxsize=16)
         self.tx_thread = None
         self.rx_thread = None
-        self.rx_data_is_x = True
         self.event_control = Event()
         self.tx_trig_event = Event() # fire when monitor detect new tx received to sync the fifos
         cocotb.scheduler.add(self.control_regs())
@@ -43,7 +43,7 @@ class EF_UART(UVMComponent):
     def write_register(self, addr, data):
         uvm_info(self.tag, "Writing register " + hex(addr) + " with value " + hex(data), UVM_MEDIUM)
         self.regs.write_reg_value(addr, data)
-        if addr == 0x4:  # txdata
+        if addr == self.regs.reg_name_to_address["txdata"]:  # txdata
             try:
                 self.fifo_tx.put_nowait(data)
                 uvm_info(self.tag, f"value {hex(data)} written to tx fifo size = {self.fifo_tx.qsize()}", UVM_MEDIUM)
@@ -57,8 +57,11 @@ class EF_UART(UVMComponent):
         uvm_info(self.tag, "Reading register " + hex(addr), UVM_MEDIUM)
         if addr == 0x4:  # txdata write only
             return 0xDEADBEEF
-        elif addr == 0x0 and self.rx_data_is_x:  # rxdata
-            return "00000000000000000000000xxxxxxxxx"
+        elif addr == self.regs.reg_name_to_address["rxdata"]:  # reading from rx data
+            try:
+                return self.fifo_rx.get_nowait()
+            except asyncio.QueueEmpty:
+                return "X" # x means the data is trash so the scoreboard should not check it
         elif addr == 0x20:  # txlevel
             uvm_info(self.tag, "TX level: " + str(self.fifo_tx.qsize()), UVM_MEDIUM)
             return self.fifo_tx.qsize()
@@ -75,7 +78,6 @@ class EF_UART(UVMComponent):
             self.ip_export.write(tr)
             await self.tx_trig_event.wait()
             self.tx_trig_event.clear()
-            
 
     async def receive(self):
         while True:
@@ -83,9 +85,19 @@ class EF_UART(UVMComponent):
             self.rx_data_is_x = False
             self.regs.write_reg_value(0x0, data_rx)
 
+    def write_rx(self, tr):
+        # if rx is enabled 
+        if (self.regs.read_reg_value("control") & 7) in [5, 7]:
+            try:
+                self.fifo_rx.put_nowait(tr.char)
+            except asyncio.QueueFull:
+                uvm_warning(self.tag, "writing to rx while fifo is full so ignore the value")
+        else:
+            uvm_warning(self.tag, "received uart transaction while uart is disabled", UVM_MEDIUM)
+
     async def control_regs(self):
         while True:
-            if (self.get_reg_value("control") & 7) in [3, 7]:
+            if (self.regs.read_reg_value("control") & 7) in [3, 7]:
                 uvm_info(self.tag, "Enabling UART TX", UVM_MEDIUM)
                 if self.tx_thread is None:
                     self.tx_thread = await cocotb.start(self.transmit())
@@ -94,24 +106,10 @@ class EF_UART(UVMComponent):
                 self.tx_thread.kill()
                 self.tx_thread = None
 
-            if (self.get_reg_value("control") & 7) in [5, 7]:
-                uvm_info(self.tag, "Enabling UART RX", UVM_MEDIUM)
-                if self.rx_thread is None:
-                    self.rx_thread = await cocotb.start(self.receive())
-            elif self.rx_thread is not None:
-                uvm_info(self.tag, "Disabling UART RX", UVM_MEDIUM)
-                self.rx_thread.kill()
-                self.rx_thread = None
             uvm_info(self.tag, "UART control reg wait", UVM_MEDIUM)
             await self.event_control.wait()
             uvm_info(self.tag, "UART control reg changed", UVM_MEDIUM)
             self.event_control.clear()
-
-    def get_reg_value(self, name):
-        return self.regs_dict[self.reg_name_address[name]]["val"]
-
-    def set_reg_value(self, name, value):
-        self.regs_dict[self.reg_name_address[name]]["val"] = value
 
 
 uvm_component_utils(EF_UART)

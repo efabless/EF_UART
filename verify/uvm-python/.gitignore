@@ -8,3 +8,4 @@
 /sim_build/
 /coverageReports/
 *.xml
+*.gtkw

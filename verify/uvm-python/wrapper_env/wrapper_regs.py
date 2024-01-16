@@ -1,5 +1,5 @@
 import json
-from uvm.macros.uvm_message_defines import uvm_info
+from uvm.macros.uvm_message_defines import uvm_info, uvm_error
 from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW
 import yaml
 
@@ -39,8 +39,8 @@ class wrapper_regs():
             else:
                 reg["val"] = int(reg["init"][2:], 16)
             regs[int(reg["offset"])] = reg
-            
         self.regs = regs
+        self.reg_name_to_address = {info['name']: address for address, info in self.regs.items()}
 
     def get_regs(self):
         return self.regs
@@ -48,7 +48,21 @@ class wrapper_regs():
     def get_irq_exist(self):
         return self.irq_exist
 
-    def write_reg_value(self, address, value):
+    def write_reg_value(self, reg, value):
+        """
+            Writes a value to a register.
+            Parameters:
+                reg (int or str): The register to write to. If an integer is provided, it is treated as the address of the register. If a string is provided, it is treated as the name of the register and converted to its corresponding address using the `reg_name_to_address` dictionary.
+                value: The value to write to the register.
+            Returns:
+                None
+        """
+        if type(reg) is int:
+            address = reg
+        elif type(reg) is str:
+            address = self.reg_name_to_address[reg]
+        else: 
+            uvm_error(self.tag, f"Invalid reg type: {type(reg)} for write value: {value}")
         address = address & 0xffff
         if address in self.regs:
             uvm_info(self.tag, f"value before write {value} to address {hex(address)}: {hex(self.regs[address]['val'])}", UVM_HIGH)
@@ -56,7 +70,14 @@ class wrapper_regs():
                 self.regs[address]["val"] = value & ((1 << int(self.regs[address]["size"])) - 1)
             uvm_info(self.tag, f"value after write to address {hex(address)}: {hex(self.regs[address]['val'])}", UVM_HIGH)
 
-    def read_reg_value(self, address):
+    def read_reg_value(self, reg):
+        if type(reg) is int:
+            address = reg
+        elif type(reg) is str:
+            address = self.reg_name_to_address[reg]
+        else: 
+            uvm_error(self.tag, f"Invalid reg type: {type(reg)} for read")
+        address = address & 0xffff
         return self.regs[address]["val"]
     
     # Function to replace parameter values in the data

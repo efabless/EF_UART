@@ -17,12 +17,15 @@ module top();
 	wire [31:0]	PRDATA;
 	wire 		PREADY;
 	wire 		irq;
-
     EF_UART_APB dut(.rx(RX), .tx(TX), .PCLK(PCLK), .PRESETn(PRESETn), .PADDR(PADDR), .PWRITE(PWRITE), .PSEL(PSEL), .PENABLE(PENABLE), .PWDATA(PWDATA), .PRDATA(PRDATA), .PREADY(PREADY), .IRQ(irq));
     initial begin
         $dumpfile ({"waves.vcd"});
         $dumpvars(0, top);
     end
     always #10 PCLK = !PCLK; // clk generator
+
+    // monitor inside signals
+    wire tx_done = dut.instance_to_wrap.tx_done;
+    wire rx_done = dut.instance_to_wrap.rx_done;
 	
 endmodule
