@@ -44,106 +44,139 @@ ports:
   - name: prescaler
     width: 16
     direction: input
+    description: Prescaler used to determine the baud rate.
   - name: en
     width: 1
     direction: input
+    description: Enable for UART
   - name: tx_en
     width: 1
     direction: input
+    description: Enable for UART transmission 
   - name: rx_en
     width: 1
     direction: input
+    description: Enable for UART receiving  
   - name: wdata
     width: MDW
     direction: input
+    description: Transmission data 
   - name: timeout_bits
     width: 6
     direction: input
+    description: Receiver Timeout measured in number of bits.
   - name: loopback_en
     width: 1
     direction: input
+    description: Loopback enable; connect tx to the rx 
   - name: glitch_filter_en
     width: 1
     direction: input
+    description: UART Glitch Filer on RX enable
   - name: tx_level
     width: FAW
     direction: output
+    description: The current level of TX FIFO
   - name: rx_level
     width: FAW
     direction: output
+    description: The current level of RX FIFO
   - name: rd
     width: 1
     direction: input
+    description: Read from RX FIFO signal 
   - name: wr
     width: 1
     direction: input
+    description: Write to TX FIFO signal 
   - name: data_size
     width: 4
     direction: input
+    description: Number of data bits in the frame 
   - name: stop_bits_count
     width: 1
     direction: input
+    description: Number of stop bits in the frame (could be 1 or 2) 
   - name: parity_type
     width: 3
     direction: input
+    description: Type of Parity in the frame 
   - name: txfifotr
     width: FAW
     direction: input
+    description: TX FIFO Threshold
   - name: rxfifotr
     width: FAW
     direction: input
+    description: RX FIFO Threshold 
   - name: match_data
     width: MDW
     direction: input
+    description: Match data (match flag would be raised if it matches what is recieved)
   - name: tx_empty
     width: 1
     direction: output
+    description: TX empty flag
   - name: tx_full
     width: 1
     direction: output
+    description: TX full flag
   - name: tx_level_below
     width: 1
     direction: output
+    description: TX level below flag
   - name: rdata
     width: MDW
     direction: output
+    description: Recieved Data 
   - name: rx_empty
     width: 1
     direction: output
+    description: RX empty flag
   - name: rx_full
     width: 1
     direction: output
+    description: RX full flag
   - name: rx_level_above
     width: 1
     direction: output
+    description: RX level above flag
   - name: break_flag
     width: 1
     direction: output
+    description: Break flag
   - name: match_flag
     width: 1
     direction: output
+    description: Match flag
   - name: frame_error_flag
     width: 1
     direction: output
+    description: Frame error flag
   - name: parity_error_flag
     width: 1
     direction: output
+    description: Parity error flag
   - name: overrun_flag
     width: 1
     direction: output
+    description: Overrun flag
   - name: timeout_flag
     width: 1
     direction: output
+    description: Timeout flag
 
 external_interface:
   - name: rx
     port: rx
     direction: input
+    description: RX connected to the external interface 
     width: 1
   - name: tx
     port: tx
     direction: output
     width: 1
+    description: TX connected to external interface 
 
 clock:
   name: clk
