@@ -29,53 +29,52 @@ EF_UART is a Soft IP with the following features:
 
 <img src="docs/_static/EF_UART.svg" width="600"/>
 
-### Module Parameters
-| Generic name | Value | Description |
-| ------------ | ----- | ----------- |
-| MDW          | 9     | Maximum data width            |
-| FAW          | 4     | FIFO Address Width; $FIFO\ Depth = 2^{FAW}$            |
-| SC           | 8     | Number of samples per bit            |
-| GFLEN        | 8     | Glitch Filter Length   |
+### Module Parameters 
 
-### Ports
+|Parameter|Description|Default Value|
+|---|---|---|
+|SC|Number of samples per bit/baud|8|
+|MDW|Max data size/width|9|
+|GFLEN|Length (number of stages) of the glitch filter|8|
+|FAW|FIFO Address width; Depth=2^AW|4|
 
-| Port name         | Direction | Type           | Description |
-| ----------------- | --------- | -------------- | ----------- |
-| clk               | input     | wire           |             |
-| rst_n             | input     | wire           |             |
-| prescaler         | input     | wire [15:0]    |             |
-| en                | input     | wire           |             |
-| tx_en             | input     | wire           |             |
-| rx_en             | input     | wire           |             |
-| rd                | input     | wire           |             |
-| wr                | input     | wire           |             |
-| wdata             | input     | wire [MDW-1:0] |             |
-| data_size         | input     | wire [3:0]     |             |
-| stop_bits_count   | input     | wire           |             |
-| parity_type       | input     | wire [2:0]     |             |
-| txfifotr          | input     | wire [3:0]     |             |
-| rxfifotr          | input     | wire [3:0]     |             |
-| match_data        | input     | wire [MDW-1:0] |             |
-| timeout_bits      | input     | wire [5:0]     |             |
-| loopback_en       | input     | wire           |             |
-| glitch_filter_en  | input     | wire           |             |
-| tx_empty          | output    | wire           |             |
-| tx_full           | output    | wire           |             |
-| tx_level          | output    | wire [FAW-1:0] |             |
-| tx_level_below    | output    | wire           |             |
-| rdata             | output    | wire [MDW-1:0] |             |
-| rx_empty          | output    | wire           |             |
-| rx_full           | output    | wire           |             |
-| rx_level          | output    | wire [FAW-1:0] |             |
-| rx_level_above    | output    | wire           |             |
-| break_flag        | output    | wire           |             |
-| match_flag        | output    | wire           |             |
-| frame_error_flag  | output    | wire           |             |
-| parity_error_flag | output    | wire           |             |
-| overrun_flag      | output    | wire           |             |
-| timeout_flag      | output    | wire           |             |
-| rx                | input     | wire           |             |
-| tx                | output    | wire           |             |
+### Ports 
+
+|Port|Direction|Width|Description|
+|---|---|---|---|
+|rx|input|1|RX connected to the external interface|
+|tx|output|1|TX connected to external interface|
+|prescaler|input|16|Prescaler used to determine the baud rate.|
+|en|input|1|Enable for UART|
+|tx_en|input|1|Enable for UART transmission|
+|rx_en|input|1|Enable for UART receiving|
+|wdata|input|MDW|Transmission data|
+|timeout_bits|input|6|Receiver Timeout measured in number of bits.|
+|loopback_en|input|1|Loopback enable; connect tx to the rx|
+|glitch_filter_en|input|1|UART Glitch Filer on RX enable|
+|tx_level|output|FAW|The current level of TX FIFO|
+|rx_level|output|FAW|The current level of RX FIFO|
+|rd|input|1|Read from RX FIFO signal|
+|wr|input|1|Write to TX FIFO signal|
+|data_size|input|4|Number of data bits in the frame|
+|stop_bits_count|input|1|Number of stop bits in the frame (could be 1 or 2)|
+|parity_type|input|3|Type of Parity in the frame|
+|txfifotr|input|FAW|TX FIFO Threshold|
+|rxfifotr|input|FAW|RX FIFO Threshold|
+|match_data|input|MDW|Match data (match flag would be raised if it matches what is recieved)|
+|tx_empty|output|1|TX empty flag|
+|tx_full|output|1|TX full flag|
+|tx_level_below|output|1|TX level below flag|
+|rdata|output|MDW|Recieved Data|
+|rx_empty|output|1|RX empty flag|
+|rx_full|output|1|RX full flag|
+|rx_level_above|output|1|RX level above flag|
+|break_flag|output|1|Break flag|
+|match_flag|output|1|Match flag|
+|frame_error_flag|output|1|Frame error flag|
+|parity_error_flag|output|1|Parity error flag|
+|overrun_flag|output|1|Overrun flag|
+|timeout_flag|output|1|Timeout flag|
 
 ## Sky130 Implementation
 |Module | Number of cells | Max. freq |
