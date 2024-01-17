@@ -12,6 +12,9 @@ uvm_analysis_imp_irq = uvm_analysis_imp_decl("_irq")
 
 
 class wrapper_coverage(UVMComponent):
+    """
+    component that initialize the coverage groups and control when to sample the data.
+    """
     def __init__(self, name="wrapper_coverage", parent=None):
         super().__init__(name, parent)
         self.analysis_imp_bus = uvm_analysis_imp_bus("analysis_imp_bus", self)

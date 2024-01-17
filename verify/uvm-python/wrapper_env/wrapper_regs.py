@@ -5,6 +5,9 @@ import yaml
 
 
 class wrapper_regs():
+    """
+    The wrapper_regs class is used to initialize and manage a set of registers specified in a JSON or YAML file.
+    """
     def __init__(self, design_file) -> None:
         self.tag = "wrapper_regs"
         with open(design_file, 'r') as file:

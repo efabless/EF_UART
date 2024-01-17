@@ -16,6 +16,9 @@ uvm_analysis_imp_rx = uvm_analysis_imp_decl("_rx")
 
 
 class EF_UART(UVMComponent):
+    """
+    EF UART specific model. every ip should have it's unique model
+    """
     def __init__(self, name="EF_UART_Model", parent=None):
         super().__init__(name, parent)
         self.analysis_imp_rx = uvm_analysis_imp_rx("model_rx", self)

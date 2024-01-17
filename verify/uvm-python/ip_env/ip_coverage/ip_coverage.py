@@ -8,6 +8,9 @@ from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
 
 
 class ip_coverage(UVMComponent):
+    """
+    component that initialize the coverage groups and control when to sample the data.
+    """
     def __init__(self, name="ip_coverage", parent=None):
         super().__init__(name, parent)
         self.analysis_imp = UVMAnalysisImp("cov_ap", self)
