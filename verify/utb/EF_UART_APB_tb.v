@@ -74,9 +74,9 @@ module EF_UART_APB_tb;
 	`include "apb_tasks.vh"
 	`include "serial_tasks.vh"
 
-	event	e_test1_start, e_test1_done;
-	event	e_test2_start, e_test2_done;
-	`TB_TEST_EVENT(test3) 
+	`TB_TEST_EVENT(test1)
+	`TB_TEST_EVENT(test2)
+	`TB_TEST_EVENT(test3)
 	
 	localparam real BIT_TIME_115200 = 8680.55,
 					BIT_TIME_57600 = 17361.11;
@@ -147,7 +147,7 @@ APB_W_WRITE(CTRL_REG_OFFSET, 32'b0_0_1_0_1);
 				#1000_000_000;
 		end 
 	`TB_TEST_END(test1)
-		
+
 		// Test 2 -- Send a frame @ 57600
 	`TB_TEST_BEGIN(test2)
 		// Disable the UART fully
