@@ -34,7 +34,7 @@ class uart_config(UVMSequence):
         await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["prescaler"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data in range(0, 0x10))
 
         # random config
-        # await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["config"], lambda kind: kind == wrapper_bus_item.WRITE)
+        await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["config"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: (data>>8) == 0x3f and (data&0xf) in range(5, 10) and ((data&0xE0) >> 5) in [0,1,2,4,5] and data&0xF ==9)
 
         # random IM 
         await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["im"], lambda kind: kind == wrapper_bus_item.WRITE)

@@ -14,14 +14,16 @@ class ip_item(UVMSequenceItem):
         self.rand("char", range(0, 0x80))
         self._direction = None
         self.direction = ip_item.RX
+        self.word_length = 8
+        self.parity= "None"
         pass
 
     def convert2string(self):
         dirct = "RX" if self.direction == ip_item.RX else "TX"
-        return sv.sformatf("uart char=%s(0x%0h) direction=%s", chr(self.char), self.char,dirct)
+        return sv.sformatf("uart char=%s(0x%0h) direction=%s, word_length=%d, parity=%s", chr(self.char), self.char,dirct, self.word_length, self.parity)
 
     def do_compare(self, tr):
-        return self.char == tr.char and self.direction == tr.direction
+        return self.char == tr.char and self.direction == tr.direction and self.parity == tr.parity
 
     @property
     def direction(self):

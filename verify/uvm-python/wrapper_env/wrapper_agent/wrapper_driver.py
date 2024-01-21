@@ -32,7 +32,7 @@ class wrapper_driver(UVMDriver):
 
             #if (not self.sigs.clk.triggered):
             #yield Edge(self.sigs.clk)
-            await self.drive_delay()
+            # await self.drive_delay()
             #yield RisingEdge(self.sigs.clk)
             #yield Timer(1, "NS")
 

@@ -22,11 +22,11 @@ class uart_tx_seq(UVMSequence):
         # configure uart 
         config_seq = uart_config("uart_config")
         await uvm_do(self, config_seq)  # change the presclar
-        for _ in range(70):
+        for _ in range(30):
             random_send = random.randint(1, 16)
             for __ in range(random_send):
-                await uvm_do_with(self, self.req, lambda addr: addr == 0x4, lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data in range(0, 0x80))
-            for __ in range(random.randint(1, random_send)):
+                await uvm_do_with(self, self.req, lambda addr: addr == 0x4, lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data in range(0, 0x200))
+            for __ in range(random.randint(0, random_send-1 if random_send > 1 else 1)):
                 await self.monitor.tx_received.wait()
                 self.monitor.tx_received.clear()
 

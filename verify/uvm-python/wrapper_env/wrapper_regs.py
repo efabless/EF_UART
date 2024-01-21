@@ -18,7 +18,7 @@ class wrapper_regs():
         parameter_values = {param["name"]: param["default"] for param in self.data["parameters"]}
         self.replace_parameters(self.data, parameter_values)
         self.init_regs()
-        uvm_info(self.tag, f"Regs: {self.data['registers']}", UVM_HIGH)
+        uvm_info(self.tag, f"Regs: {self.regs}", UVM_HIGH)
 
     def init_regs(self):
         regs = {}

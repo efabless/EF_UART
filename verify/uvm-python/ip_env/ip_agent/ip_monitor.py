@@ -44,6 +44,8 @@ class ip_monitor(UVMMonitor):
             tr.char = await self.get_char()
             self.tx_received_counter += 1
             tr.direction = ip_item.TX
+            tr.word_length = self.word_length_tx
+            tr.parity = self.parity_tx
             uvm_info(self.tag, "sampled uart TX transaction: " + tr.convert2string(), UVM_MEDIUM)
             self.monitor_port.write(tr)
             self.tx_received.set()
@@ -56,6 +58,7 @@ class ip_monitor(UVMMonitor):
             tr.char = await self.get_char_rx()
             self.rx_received_counter += 1
             tr.direction = ip_item.RX
+            tr.word_length = self.word_length_rx
             uvm_info(self.tag, "sampled uart RX transaction: " + tr.convert2string(), UVM_MEDIUM)
             self.monitor_port.write(tr)
             self.rx_received.set()
@@ -63,29 +66,47 @@ class ip_monitor(UVMMonitor):
     async def get_char(self, direction=ip_item.TX):
         await self.start_of_tx()
         char = ""
-        for i in range(8):
+        self.parity_tx = "None"
+        for i in range(self.word_length_tx):
             char = self.sigs.TX.value.binstr + char
-            await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
-        await ClockCycles(self.sigs.PCLK, math.floor(self.num_cyc_bit / 2))  # to even the /2 in the start of tx
-        if self.tx_received_counter > 3: # first transmit might have diffrent delay because of the gen tick module
+            uvm_info(self.tag, f"char[{i}] = {self.sigs.TX.value.binstr}  legth = {self.word_length_tx}", UVM_MEDIUM)
+            await ClockCycles(self.sigs.PCLK, self.num_cyc_bit_tx)
+        # get parity bit
+        if self.parity_exists_tx:
+            self.parity_tx = self.sigs.TX.value.binstr
+            uvm_info(self.tag, f"parity bit = {self.sigs.TX.value.binstr}  legth = {self.word_length_tx}", UVM_MEDIUM)
+            await ClockCycles(self.sigs.PCLK, self.num_cyc_bit_tx)
+        await ClockCycles(self.sigs.PCLK, math.floor(self.num_cyc_bit_tx / 2)-2)  # to even the /2 in the start of tx
+        uvm_info(self.tag, "waiting for tx_done", UVM_MEDIUM)
+        # if self.tx_received_counter > 1: # first transmit might have diffrent delay because of the gen tick module
+        while True:
             await RisingEdge(self.sigs.tx_done)  # for the fifo of the model to get the same timing as the fifo in rtl
+            await Timer(1, "ns")
+            if self.sigs.tx_done.value == 1: # to make sure it's no latch
+                await FallingEdge(self.sigs.tx_done)  # for the fifo of the model to get the same timing as the fifo in rtl
+                uvm_info(self.tag, "found tx_done", UVM_MEDIUM)
+                await Timer(1, "ns")
+                break
         return int(char, 2)
 
     async def start_of_tx(self):
         while True:
             await FallingEdge(self.sigs.TX)
-            self.num_cyc_bit = self.get_bit_n_cyc()
+            uvm_info(self.tag, "start of TX", UVM_MEDIUM)
+            self.num_cyc_bit_tx = self.get_bit_n_cyc()
+            self.word_length_tx = self.get_n_bits()
+            self.parity_exists_tx = self.is_parity_exists()
             await Timer(1, units="ns")
             if self.sigs.TX.value == 1:
                 continue
-            await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
-            await ClockCycles(self.sigs.PCLK, math.ceil(self.num_cyc_bit / 2))
+            await ClockCycles(self.sigs.PCLK, self.num_cyc_bit_tx)
+            await ClockCycles(self.sigs.PCLK, math.ceil(self.num_cyc_bit_tx / 2))
             break
 
     async def get_char_rx(self):
         await self.start_of_rx()
         char = ""
-        for i in range(8):
+        for i in range(self.word_length):
             char = self.sigs.RX.value.binstr + char
             uvm_info(self.tag, f"char[{i}] = {self.sigs.RX.value.binstr} ", UVM_MEDIUM)
             await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
@@ -99,7 +120,8 @@ class ip_monitor(UVMMonitor):
         while True:
             await FallingEdge(self.sigs.RX)
             uvm_info(self.tag, "start of RX", UVM_MEDIUM)
-            self.num_cyc_bit = self.get_bit_n_cyc()
+            self.num_cyc_bit_rx = self.get_bit_n_cyc()
+            self.word_length_rx = self.get_n_bits()
             await Timer(1, units="ns")
             if self.sigs.RX.value == 1:
                 continue
@@ -112,5 +134,12 @@ class ip_monitor(UVMMonitor):
         uvm_info(self.tag, "prescale = " + str(prescale), UVM_MEDIUM)
         return ((prescale + 1) * 8)
 
+    def get_n_bits(self):
+        word_length = self.regs.read_reg_value("config") & 0xf
+        uvm_info(self.tag, "Data word length = " + str(word_length), UVM_MEDIUM)
+        return word_length
 
+    def is_parity_exists(self):
+        parity = (self.regs.read_reg_value("config") >> 5) & 0x7
+        return parity != 0
 uvm_component_utils(ip_monitor)

@@ -2,7 +2,7 @@ import cocotb
 from cocotb.triggers import Timer, Event
 from cocotb.clock import Clock
 from cocotb.binary import BinaryValue
-from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_warning
+from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_warning, uvm_error
 from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW
 from cocotb.queue import Queue
 import asyncio
@@ -48,7 +48,8 @@ class EF_UART(UVMComponent):
         self.regs.write_reg_value(addr, data)
         if addr == self.regs.reg_name_to_address["txdata"]:  # txdata
             try:
-                self.fifo_tx.put_nowait(data)
+                word_mask = (1 << (self.regs.read_reg_value("config") & 0xf)) -1
+                self.fifo_tx.put_nowait(data & word_mask)
                 uvm_info(self.tag, f"value {hex(data)} written to tx fifo size = {self.fifo_tx.qsize()}", UVM_MEDIUM)
             except asyncio.QueueFull:
                 uvm_warning(self.tag, f"writing to tx while fifo is full so ignore the value {hex(data)}")
@@ -74,10 +75,12 @@ class EF_UART(UVMComponent):
         # this should be called only if uart is enabled
         while (True):
             data_tx = await self.fifo_tx.get()
-            uvm_info(self.tag, f"Transmitting {chr(data_tx)}({hex(data_tx)})", UVM_MEDIUM)
+            uvm_info(self.tag, f"Transmitting {chr(data_tx)}({hex(data_tx)}) fifo size = {self.fifo_tx.qsize()}", UVM_MEDIUM)
             tr = ip_item.type_id.create("tr", self)
-            tr.char = chr(data_tx)
+            tr.char = data_tx
             tr.direction = ip_item.TX
+            tr.parity = self.calculate_parity(data_tx)
+            tr.word_length = self.regs.read_reg_value("config") & 0xf
             self.ip_export.write(tr)
             await self.tx_trig_event.wait()
             self.tx_trig_event.clear()
@@ -113,6 +116,30 @@ class EF_UART(UVMComponent):
             await self.event_control.wait()
             uvm_info(self.tag, "UART control reg changed", UVM_MEDIUM)
             self.event_control.clear()
+
+    def calculate_parity(self, data):
+        parity_type = (self.regs.read_reg_value("config") >> 5) & 0x7
+        uvm_info(self.tag, "Parity type = " + str(parity_type), UVM_MEDIUM)
+        if parity_type == 0:
+            return "None"
+        elif parity_type == 1: # odd
+            return "0" if self.count_ones(data) % 2 else "1"
+        elif parity_type == 2: # even
+            return "0" if self.count_ones(data) % 2 == 0 else "1"
+        elif parity_type == 4: # sticky 0
+            return "0"
+        elif parity_type == 5: # sticky 1
+            return "1"
+        else:
+            uvm_error(self.tag, "Parity has invalid value: " + str(parity_type))
+            return "Unknown"
+
+    def count_ones(self, n):
+        count = 0
+        while n:
+            count += n & 1  # Increment count if the least significant bit is 1
+            n >>= 1  # Right shift to check the next bit
+        return count
 
 
 uvm_component_utils(EF_UART)

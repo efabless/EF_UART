@@ -1,7 +1,7 @@
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_warning
 from uvm.comps.uvm_driver import UVMDriver
 from uvm.base.uvm_config_db import UVMConfigDb
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW
+from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW, UVM_HIGH
 from ip_env.ip_item import ip_item
 from cocotb.triggers import Timer, ClockCycles, FallingEdge, Event, RisingEdge
 
@@ -43,10 +43,11 @@ class ip_driver(UVMDriver):
     async def start_of_rx(self):
         self.sigs.RX.value = 0
         self.num_cyc_bit = self.get_bit_n_cyc()
+        self.word_length = self.get_n_bits()
         await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
 
     async def send_byte(self, byte):
-        for i in range(8):
+        for i in range(self.word_length):
             self.sigs.RX.value = (byte >> i) & 1
             await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
 
@@ -56,8 +57,13 @@ class ip_driver(UVMDriver):
 
     def get_bit_n_cyc(self):
         prescale = self.regs.read_reg_value("prescaler")
-        uvm_info(self.tag, "prescale = " + str(prescale), UVM_MEDIUM)
+        uvm_info(self.tag, "prescale = " + str(prescale), UVM_HIGH)
         return ((prescale + 1) * 8)
+
+    def get_n_bits(self):
+        word_length = self.regs.read_reg_value("config") & 0xf
+        uvm_info(self.tag, "Data word length = " + str(word_length), UVM_MEDIUM)
+        return word_length
 
     async def reset(self, num_cycles=3):
         self.sigs.RX.value = 1

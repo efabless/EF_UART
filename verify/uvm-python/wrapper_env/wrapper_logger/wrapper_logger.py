@@ -27,12 +27,13 @@ class wrapper_logger(UVMComponent):
         if (not UVMConfigDb.get(self, "", "wrapper_regs", arr)):
             uvm_fatal(self.tag, "No json file wrapper regs")
         else:
-            regs = arr[0]
+            self.regs = arr[0]
         self.configure_logger()
 
     def write_bus(self, tr):
         uvm_info(self.tag, "get bus logging for " + tr.convert2string(), UVM_HIGH)
         self.bus_log(tr)
+        self.regs_log(tr)
         pass
 
     def write_irq(self, tr):
@@ -44,9 +45,11 @@ class wrapper_logger(UVMComponent):
         if not os.path.exists("loggers"):
             os.makedirs("loggers")
         self.logger_file = f"{os.getcwd()}/loggers/logger_bus.log"
+        self.logger_file_regs_w = f"{os.getcwd()}/loggers/regs_write.log"
         self.col_widths = [10, 10, 10, 10]
         # # log the header
         self.bus_log(None, header_logged=True)
+        self.regs_log(None, header_logged=True)
 
     def bus_log(self, transaction, header_logged=False):
         # Define a max width for each column
@@ -69,6 +72,39 @@ class wrapper_logger(UVMComponent):
             table = self.format_row(table_data)
             with open(self.logger_file, 'a') as f:
                 f.write(f"{table}\n")
+
+    def regs_log(self, transaction, header_logged=False):
+        # Define a max width for each column
+
+        if header_logged:
+            headers = [f"{'Time (ns)'}", f"{'Type'}", f"{'Name'}", f"{'Data'}"]
+            header = self.format_row(headers)
+            with open(self.logger_file_regs_w, 'w') as f:
+                f.write(f"{header}\n")
+        else:
+            # Ensure each piece of data fits within the specified width
+            sim_time = f"{cocotb.utils.get_sim_time(units='ns')} ns"
+            # first write the register write then if it has fields
+            the_type = "REG"
+            Name = f"{self.regs.regs[transaction.addr]['name']}"
+            data = f"{hex(transaction.data)}"
+            # Now, assemble your table_data with the pre-formatted fields
+            table_data = [f"{sim_time}", f"{the_type}", f"{Name}", f"{data}"]
+
+            table = self.format_row(table_data)
+            with open(self.logger_file_regs_w, 'a') as f:
+                f.write(f"{table}\n")
+            if "fields" in self.regs.regs[transaction.addr]:
+                for field in self.regs.regs[transaction.addr]["fields"]:
+                    the_type = "FIELD"
+                    Name = f"{field['name']}"
+                    data = f"{hex((transaction.data>>field['bit_offset'])&((1 << field['bit_width']) - 1))}"
+                    # Now, assemble your table_data with the pre-formatted fields
+                    table_data = [f"{sim_time}", f"{the_type}", f"{Name}", f"{data}"]
+                    table = self.format_row(table_data)
+                    with open(self.logger_file_regs_w, 'a') as f:
+                        f.write(f"{table}\n")
+                    
 
     def format_row(self, row_data):
         # Define a max width for each column

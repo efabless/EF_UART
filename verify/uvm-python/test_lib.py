@@ -81,6 +81,9 @@ class example_base_test(UVMTest):
         uvm_info(self.get_type_name(), sv.sformatf("Printing the test topology :\n%s", self.sprint(self.printer)), UVM_LOW)
 
     async def run_phase(self, phase):
+        import cProfile
+        pr = cProfile.Profile()
+        pr.enable()
         uvm_info("sequence", "Starting test", UVM_LOW)
         phase.raise_objection(self, "example_base_test OBJECTED")
         uvm_info("sequence", "after raise", UVM_LOW)
@@ -91,14 +94,14 @@ class example_base_test(UVMTest):
         uvm_info("TEST_TOP", "Forking master_proc now", UVM_LOW)
         wrapper_seq = write_read_regs("write_read_regs")
         wrapper_seq = uart_tx_seq("uart_tx_seq")
-        ip_seq_rx = uart_rx_seq("uart_rx_seq")
-        wrapper_config_uart = uart_config()
-        wrapper_rx_read = uart_rx_read()
+        # ip_seq_rx = uart_rx_seq("uart_rx_seq")
+        # wrapper_config_uart = uart_config()
+        # wrapper_rx_read = uart_rx_read()
         wrapper_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
-        await wrapper_config_uart.start(wrapper_sqr)
-        for _ in range(10):
-            await ip_seq_rx.start(ip_sqr)
-            await wrapper_rx_read.start(wrapper_sqr)
+        await wrapper_seq.start(wrapper_sqr)
+        # for _ in range(10):
+        #     await ip_seq_rx.start(ip_sqr)
+        #     await wrapper_rx_read.start(wrapper_sqr)
         phase.drop_objection(self, "example_base_test drop objection")
 
     # def extract_phase(self, phase):

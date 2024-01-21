@@ -37,6 +37,7 @@ class wrapper_bus_monitor(UVMMonitor):
             tr = wrapper_bus_item.type_id.create("tr", self)
             tr.kind = wrapper_bus_item.WRITE if self.sigs.PWRITE.value == 1 else wrapper_bus_item.READ
             tr.addr = self.sigs.PADDR.value.integer
+            await self.sample_delay()
             if tr.kind == wrapper_bus_item.WRITE:
                 tr.data = self.sigs.PWDATA.value.integer
             else:
