@@ -1,5 +1,5 @@
 from uvm.seq.uvm_sequence_item import UVMSequenceItem
-from uvm.macros import uvm_object_utils_begin, uvm_object_utils_end, uvm_field_int, uvm_object_utils
+from uvm.macros import uvm_object_utils_begin, uvm_object_utils_end, uvm_field_int, uvm_object_utils, uvm_error
 from uvm.base.uvm_object_globals import UVM_ALL_ON, UVM_NOPACK
 from uvm.base.sv import sv
 
@@ -25,6 +25,30 @@ class ip_item(UVMSequenceItem):
     def do_compare(self, tr):
         return self.char == tr.char and self.direction == tr.direction and self.parity == tr.parity
 
+    
+    def calculate_parity(self, parity_type):
+        # uvm_info(self.tag, "Parity type = " + str(parity_type), UVM_MEDIUM)
+        if parity_type == 0:
+            self.parity = "None"
+        elif parity_type == 1:  # odd
+            self.parity = "0" if self.count_ones(self.char) % 2 else "1"
+        elif parity_type == 2:  # even
+            self.parity =  "0" if self.count_ones(self.char) % 2 == 0 else "1"
+        elif parity_type == 4:  # sticky 0
+            self.parity = "0"
+        elif parity_type == 5:  # sticky 1
+            self.parity = "1"
+        else:
+            uvm_error(self.tag, "Parity has invalid value: " + str(parity_type))
+            return "None"
+
+    def count_ones(self, n):
+        count = 0
+        while n:
+            count += n & 1  # Increment count if the least significant bit is 1
+            n >>= 1  # Right shift to check the next bit
+        return count
+    
     @property
     def direction(self):
         return self._direction
@@ -35,6 +59,7 @@ class ip_item(UVMSequenceItem):
             self._direction = value
         else:
             raise ValueError("direction must be RX or TX")
+
 
 
 uvm_object_utils(ip_item)

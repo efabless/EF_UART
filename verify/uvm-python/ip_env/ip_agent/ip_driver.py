@@ -4,7 +4,8 @@ from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW, UVM_HIGH
 from ip_env.ip_item import ip_item
 from cocotb.triggers import Timer, ClockCycles, FallingEdge, Event, RisingEdge
-
+import cocotb
+import random
 
 class ip_driver(UVMDriver):
     def __init__(self, name="ip_driver", parent=None):
@@ -27,6 +28,7 @@ class ip_driver(UVMDriver):
     async def run_phase(self, phase):
         uvm_info(self.tag, "run_phase started", UVM_LOW)
         await self.reset()
+        # assert glitches 
         while True:
             tr = []
             await self.seq_item_port.get_next_item(tr)
@@ -34,8 +36,11 @@ class ip_driver(UVMDriver):
             if tr.direction == ip_item.RX:
                 uvm_info(self.tag, "Driving trans into IP: " + tr.convert2string(), UVM_MEDIUM)
                 await self.start_of_rx()
+                await cocotb.start(self.assert_glitches()) # assert glitches
                 await self.send_byte(tr.char)
-                await self.end_of_rx()
+                await self.send_parity(tr)
+                await self.send_stop_bit()
+                await self.end_of_rx(2)
             else:
                 uvm_warning(self.tag, f"invalid direction {tr.direction} send to driver", UVM_MEDIUM)
             self.seq_item_port.item_done()
@@ -44,16 +49,40 @@ class ip_driver(UVMDriver):
         self.sigs.RX.value = 0
         self.num_cyc_bit = self.get_bit_n_cyc()
         self.word_length = self.get_n_bits()
+        uvm_info(self.tag, "starting of start bit", UVM_MEDIUM)
         await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
+        uvm_info(self.tag, "finifhing of start bit", UVM_MEDIUM)
 
     async def send_byte(self, byte):
         for i in range(self.word_length):
             self.sigs.RX.value = (byte >> i) & 1
+            uvm_info(self.tag, f"driving byte[{i}] = {(byte >> i) & 1}", UVM_MEDIUM)
             await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
 
-    async def end_of_rx(self):
-        self.sigs.RX.value = 1
+    async def send_parity(self, tr):
+        parity_type = (self.regs.read_reg_value("config") >> 5) & 0x7
+        tr.calculate_parity(parity_type)
+        if tr.parity == "None":
+            return
+        self.sigs.RX.value = int(tr.parity)
+        uvm_info(self.tag, f"driving parity = {tr.parity}", UVM_MEDIUM)
         await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
+
+    async def send_stop_bit(self):
+        stop_bit = (self.regs.read_reg_value("config") >> 4) & 0x1
+        if stop_bit:
+            self.sigs.RX.value = 1
+            uvm_info(self.tag, f"driving extra stop bit", UVM_MEDIUM)
+            await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
+        return
+
+    async def end_of_rx(self, extra_stop_bit=0):
+        self.sigs.RX.value = 1
+        uvm_info(self.tag, f"start ending of RX", UVM_MEDIUM)
+        await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
+        uvm_info(self.tag, f"finished ending of RX", UVM_MEDIUM)
+        for _ in range(extra_stop_bit):
+            await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
 
     def get_bit_n_cyc(self):
         prescale = self.regs.read_reg_value("prescaler")
@@ -69,6 +98,14 @@ class ip_driver(UVMDriver):
         self.sigs.RX.value = 1
         await ClockCycles(self.sigs.PCLK, num_cycles)
 
-
+    async def assert_glitches(self):
+        await ClockCycles(self.sigs.PCLK, random.randint(self.num_cyc_bit, self.num_cyc_bit * 7))
+        await Timer(random.randint(1, 100), units="ns")
+        old_val = self.sigs.RX.value.integer
+        self.sigs.RX.value = old_val-1
+        uvm_info(self.tag, "Asserting glitch", UVM_MEDIUM)
+        await Timer(random.randint(1, 10), units="ns")
+        self.sigs.RX.value = old_val
+        # wait long before checking again
 
 uvm_component_utils(ip_driver)

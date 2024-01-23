@@ -10,6 +10,7 @@ import os
 import random
 from wrapper_env.wrapper_seq_lib.uart_config import uart_config
 
+
 class uart_rx_seq(UVMSequence):
 
     def __init__(self, name="uart_rx_seq"):

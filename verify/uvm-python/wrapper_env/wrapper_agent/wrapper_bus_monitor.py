@@ -1,4 +1,4 @@
-from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
+from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_error
 from uvm.comps.uvm_monitor import UVMMonitor
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisPort
 from uvm.base.uvm_config_db import UVMConfigDb
@@ -41,9 +41,10 @@ class wrapper_bus_monitor(UVMMonitor):
             if tr.kind == wrapper_bus_item.WRITE:
                 tr.data = self.sigs.PWDATA.value.integer
             else:
-                try: 
+                try:
                     tr.data = self.sigs.PRDATA.value.integer
                 except ValueError:
+                    uvm_error(self.tag, f"PRDATA is not an integer {self.sigs.PRDATA.value.binstr}")
                     tr.data = self.sigs.PRDATA.value.binstr
             self.monitor_port.write(tr)
             # update reg value #TODO: move this to the vip later
@@ -52,7 +53,7 @@ class wrapper_bus_monitor(UVMMonitor):
 
     async def sample_delay(self):
         await RisingEdge(self.sigs.PCLK)
-        await Timer(1, "NS")
+        # await Timer(1, "NS")
 
 
 uvm_component_utils(wrapper_bus_monitor)

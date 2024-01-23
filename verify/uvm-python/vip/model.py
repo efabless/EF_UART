@@ -59,9 +59,7 @@ class EF_UART(UVMComponent):
 
     def read_register(self, addr):
         uvm_info(self.tag, "Reading register " + hex(addr), UVM_MEDIUM)
-        if addr == 0x4:  # txdata write only
-            return 0xDEADBEEF
-        elif addr == self.regs.reg_name_to_address["rxdata"]:  # reading from rx data
+        if addr == self.regs.reg_name_to_address["rxdata"]:  # reading from rx data
             try:
                 return self.fifo_rx.get_nowait()
             except asyncio.QueueEmpty:
@@ -79,17 +77,18 @@ class EF_UART(UVMComponent):
             tr = ip_item.type_id.create("tr", self)
             tr.char = data_tx
             tr.direction = ip_item.TX
-            tr.parity = self.calculate_parity(data_tx)
+            parity_type = (self.regs.read_reg_value("config") >> 5) & 0x7
+            tr.calculate_parity(parity_type)
             tr.word_length = self.regs.read_reg_value("config") & 0xf
             self.ip_export.write(tr)
             await self.tx_trig_event.wait()
             self.tx_trig_event.clear()
-
-    async def receive(self):
-        while True:
-            data_rx = await self.fifo_rx.get()
-            self.rx_data_is_x = False
-            self.regs.write_reg_value(0x0, data_rx)
+            # update rx fifo when loopback is enabled 
+            if (self.regs.read_reg_value("control") & 0xF) == 0xF:
+                try:
+                    self.fifo_rx.put_nowait(data_tx)
+                except asyncio.QueueFull:
+                    uvm_warning(self.tag, "writing to rx while fifo is full so ignore the value")
 
     def write_rx(self, tr):
         # if rx is enabled 
@@ -99,7 +98,7 @@ class EF_UART(UVMComponent):
             except asyncio.QueueFull:
                 uvm_warning(self.tag, "writing to rx while fifo is full so ignore the value")
         else:
-            uvm_warning(self.tag, "received uart transaction while uart is disabled", UVM_MEDIUM)
+            uvm_warning(self.tag, "received uart transaction while uart is disabled")
 
     async def control_regs(self):
         while True:
@@ -116,30 +115,6 @@ class EF_UART(UVMComponent):
             await self.event_control.wait()
             uvm_info(self.tag, "UART control reg changed", UVM_MEDIUM)
             self.event_control.clear()
-
-    def calculate_parity(self, data):
-        parity_type = (self.regs.read_reg_value("config") >> 5) & 0x7
-        uvm_info(self.tag, "Parity type = " + str(parity_type), UVM_MEDIUM)
-        if parity_type == 0:
-            return "None"
-        elif parity_type == 1: # odd
-            return "0" if self.count_ones(data) % 2 else "1"
-        elif parity_type == 2: # even
-            return "0" if self.count_ones(data) % 2 == 0 else "1"
-        elif parity_type == 4: # sticky 0
-            return "0"
-        elif parity_type == 5: # sticky 1
-            return "1"
-        else:
-            uvm_error(self.tag, "Parity has invalid value: " + str(parity_type))
-            return "Unknown"
-
-    def count_ones(self, n):
-        count = 0
-        while n:
-            count += n & 1  # Increment count if the least significant bit is 1
-            n >>= 1  # Right shift to check the next bit
-        return count
 
 
 uvm_component_utils(EF_UART)

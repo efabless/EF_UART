@@ -8,39 +8,32 @@ from uvm.base.uvm_config_db import UVMConfigDb
 from cocotb_coverage.coverage import coverage_db
 import os
 import random
+from wrapper_env.wrapper_seq_lib.seq_base import seq_base
 
-
-class uart_config(UVMSequence):
+class uart_config(seq_base):
 
     def __init__(self, name="uart_config"):
-        UVMSequence.__init__(self, name)
-        self.set_automatic_phase_objection(1)
-        self.req = wrapper_bus_item()
-        self.rsp = wrapper_bus_item()
-        self.tag = name
+        super().__init__(name)
 
     async def body(self):
+        await super().body()
         # get register names/address conversion dict
-        arr = []
-        if (not UVMConfigDb.get(self, "", "wrapper_regs", arr)):
-            uvm_fatal(self.tag, "No json file wrapper regs")
-        else:
-            adress_dict = arr[0].reg_name_to_address
+        
         # randomly config uart
         # first disabled the uart
-        await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["control"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data == 0)
+        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["control"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data == 0)
 
         # random prescale value
-        await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["prescaler"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data in range(0, 0x10))
+        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["prescaler"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data in range(0, 0x10))
 
         # random config
-        await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["config"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: (data>>8) == 0x3f and (data&0xf) in range(5, 10) and ((data&0xE0) >> 5) in [0,1,2,4,5] and data&0xF ==9)
+        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["config"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: (data>>8) == 0x3f and (data&0xf) in range(5, 10) and ((data&0xE0) >> 5) in [0,1,2,4,5] and data&0xF ==9)
 
         # random IM 
-        await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["im"], lambda kind: kind == wrapper_bus_item.WRITE)
+        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["im"], lambda kind: kind == wrapper_bus_item.WRITE)
 
         # enable uart
-        await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["control"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data == 7)
+        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["control"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data == 0x17)
 
 
 uvm_object_utils(uart_config)

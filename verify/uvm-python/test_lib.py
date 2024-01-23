@@ -1,11 +1,12 @@
 import cocotb
 
 from uvm.comps import UVMTest
+from uvm import UVMCoreService
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_warning
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.base.uvm_printer import UVMTablePrinter
 from uvm.base.sv import sv
-from uvm.base.uvm_object_globals import UVM_FULL, UVM_LOW
+from uvm.base.uvm_object_globals import UVM_FULL, UVM_LOW, UVM_ERROR
 from uvm.base.uvm_globals import run_test
 from top_env import top_env
 from ip_files.ip_if import ip_if
@@ -15,12 +16,14 @@ from cocotb_coverage.coverage import coverage_db
 from caravel_cocotb.scripts.merge_coverage import merge_fun_cov
 from wrapper_env.wrapper_regs import wrapper_regs
 import os
-#seq 
+from uvm.base.uvm_report_server import UVMReportServer
+#seq
 from wrapper_env.wrapper_seq_lib.write_read_regs import write_read_regs
 from wrapper_env.wrapper_seq_lib.uart_tx_seq import uart_tx_seq
 from wrapper_env.wrapper_seq_lib.uart_config import uart_config
 from wrapper_env.wrapper_seq_lib.uart_rx_read import uart_rx_read
 from ip_env.ip_seq_lib.uart_rx_seq import uart_rx_seq
+from wrapper_env.wrapper_seq_lib.uart_loopback_seq import uart_loopback_seq
 
 
 @cocotb.test()
@@ -75,6 +78,10 @@ class example_base_test(UVMTest):
         else:
             # TODO: convert to uvm_fatal in the future
             uvm_fatal("NOVIF", "Could not get wrapper_bus_if from config DB")
+        # set max number of uvm errors 
+        server = UVMReportServer()
+        server.set_max_quit_count(1)
+        UVMCoreService.get().set_report_server(server)
 
     def end_of_elaboration_phase(self, phase):
         # Set verbosity for the bus monitor for this demo
@@ -92,29 +99,35 @@ class example_base_test(UVMTest):
         uvm_info("sequence", "after set seq", UVM_LOW)
 
         uvm_info("TEST_TOP", "Forking master_proc now", UVM_LOW)
-        wrapper_seq = write_read_regs("write_read_regs")
-        wrapper_seq = uart_tx_seq("uart_tx_seq")
-        # ip_seq_rx = uart_rx_seq("uart_rx_seq")
-        # wrapper_config_uart = uart_config()
-        # wrapper_rx_read = uart_rx_read()
-        wrapper_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
-        await wrapper_seq.start(wrapper_sqr)
-        # for _ in range(10):
-        #     await ip_seq_rx.start(ip_sqr)
-        #     await wrapper_rx_read.start(wrapper_sqr)
+        run_tx = True
+        run_rx = False
+        loop_back = False
+        # RUN TX
+        if run_tx:
+            wrapper_seq = uart_tx_seq("uart_tx_seq")
+            wrapper_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
+            await wrapper_seq.start(wrapper_sqr)
+        if run_rx:
+            ip_seq_rx = uart_rx_seq("uart_rx_seq")
+            wrapper_config_uart = uart_config()
+            wrapper_rx_read = uart_rx_read()
+            await wrapper_config_uart.start(wrapper_sqr)
+            for _ in range(10):
+                await ip_seq_rx.start(ip_sqr)
+                await wrapper_rx_read.start(wrapper_sqr)
+        if loop_back:
+            wrapper_seq = uart_loopback_seq("uart_loopback_seq")
+            wrapper_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
+            await wrapper_seq.start(wrapper_sqr)
         phase.drop_objection(self, "example_base_test drop objection")
 
-    # def extract_phase(self, phase):
-    #     self.err_msg = ""
-    #     if self.example_tb0.scoreboard0.sbd_error:
-    #         self.test_pass = False
-    #         self.err_msg += '\nScoreboard error flag set'
-    #     if self.example_tb0.scoreboard0.num_writes == 0:
-    #         self.test_pass = False
-    #         self.err_msg += '\nnum_writes == 0 in scb'
-    #     if self.example_tb0.scoreboard0.num_init_reads == 0:
-    #         self.test_pass = False
-    #         self.err_msg += '\nnum_init_reads == 0 in scb'
+    def extract_phase(self, phase):
+        super().check_phase(phase)
+        server = UVMCoreService.get().get_report_server()
+        errors = server.get_severity_count(UVM_ERROR)
+        if errors > 0:
+            uvm_fatal("FOUND ERRORS", "There were " + str(errors) + " UVM_ERRORs in the test")
+        
 
 
     def report_phase(self, phase):

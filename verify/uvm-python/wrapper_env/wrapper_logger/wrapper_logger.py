@@ -87,7 +87,7 @@ class wrapper_logger(UVMComponent):
             # first write the register write then if it has fields
             the_type = "REG"
             Name = f"{self.regs.regs[transaction.addr]['name']}"
-            data = f"{hex(transaction.data)}"
+            data = f"{transaction.data}" if type(transaction.data) is not int else f"{hex(transaction.data)}"
             # Now, assemble your table_data with the pre-formatted fields
             table_data = [f"{sim_time}", f"{the_type}", f"{Name}", f"{data}"]
 

@@ -68,22 +68,37 @@ endmodule
 module aucohl_ticker #(parameter W=8) (
     input   wire            clk, 
     input   wire            rst_n,
+    input   wire            en,
     input   wire [W-1:0]    clk_div,
     output  wire            tick
 );
 
     reg [W-1:0] counter;
     wire        counter_is_zero = (counter == 'b0);
-    always @(posedge clk, negedge rst_n)
-        if(rst_n)
-            counter <=  'b0;
-        else if(counter_is_zero)
-            counter <=  clk_div - 'b1;
-        else
-            counter <=  counter - 'b1; 
+    wire        tick_w;
+    reg         tick_reg;
 
-    assign tick = (clk_div == 'b1)  ?   1'b1 : counter_is_zero;
-    
+    always @(posedge clk, negedge rst_n)
+        if(~rst_n)
+            counter <=  'b0;
+        else if(en) 
+            if(counter_is_zero)
+                counter <=  clk_div;
+            else
+                counter <=  counter - 'b1; 
+
+    assign tick_w = (clk_div == 'b1)  ?   1'b1 : counter_is_zero;
+
+    always @(posedge clk or negedge rst_n)
+        if(!rst_n)
+            tick_reg <= 1'b0;
+        else if(en)
+            tick_reg <= tick_w;
+        else
+            tick_reg <= 0;
+
+    assign tick = tick_reg;
+
 endmodule
 
 /*
@@ -102,6 +117,7 @@ module aucohl_glitch_filter #(parameter N = 8, CLKDIV = 1) (
     aucohl_ticker ticker (
         .clk(clk),
         .rst_n(rst_n),
+        .en(1'b1),
         .clk_div(CLKDIV),
         .tick(tick)
     );
@@ -113,7 +129,7 @@ module aucohl_glitch_filter #(parameter N = 8, CLKDIV = 1) (
             shifter <= {shifter[N-2:0], in};
 
     wire all_ones   = & shifter;
-    wire all_zeros  = | shifter;
+    wire all_zeros  = ~| shifter;
 
     always @(posedge clk, negedge rst_n)
         if(!rst_n)
@@ -150,7 +166,24 @@ module aucohl_fifo #(parameter DW=8, AW=4)(
     reg [AW-1:0]  r_ptr_reg;
     reg [AW-1:0]  r_ptr_next;
     reg [AW-1:0]  r_ptr_succ;
-
+    // array reg 
+    wire[DW-1:0] array_reg_0 = array_reg[0];
+    wire[DW-1:0] array_reg_1 = array_reg[1];
+    wire[DW-1:0] array_reg_2 = array_reg[2];
+    wire[DW-1:0] array_reg_3 = array_reg[3];
+    wire[DW-1:0] array_reg_4 = array_reg[4];
+    wire[DW-1:0] array_reg_5 = array_reg[5];
+    wire[DW-1:0] array_reg_6 = array_reg[6];
+    wire[DW-1:0] array_reg_7 = array_reg[7];
+    wire[DW-1:0] array_reg_8 = array_reg[8];
+    wire[DW-1:0] array_reg_9 = array_reg[9];
+    wire[DW-1:0] array_reg_10 = array_reg[10];
+    wire[DW-1:0] array_reg_11 = array_reg[11];
+    wire[DW-1:0] array_reg_12 = array_reg[12];
+    wire[DW-1:0] array_reg_13 = array_reg[13];
+    wire[DW-1:0] array_reg_14 = array_reg[14];
+    wire[DW-1:0] array_reg_15 = array_reg[15];
+    
     // Level
     reg [AW-1:0] level_reg;
     reg [AW-1:0] level_next;      
