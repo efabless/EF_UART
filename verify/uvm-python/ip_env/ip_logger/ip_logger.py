@@ -2,7 +2,7 @@ from uvm.base.uvm_component import UVMComponent
 from uvm.macros import uvm_component_utils
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisImp
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW 
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW 
 from uvm.base.uvm_config_db import UVMConfigDb
 import os
 import cocotb
@@ -21,7 +21,7 @@ class ip_logger(UVMComponent):
         self.configure_logger()
 
     def write(self, tr):
-        uvm_info(self.tag, "get bus logging for " + tr.convert2string(), UVM_MEDIUM)
+        uvm_info(self.tag, "get bus logging for " + tr.convert2string(), UVM_HIGH)
         self.ip_log(tr)
         pass
 

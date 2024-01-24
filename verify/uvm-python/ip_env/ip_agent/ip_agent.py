@@ -24,6 +24,7 @@ class ip_agent(UVMAgent):
         self.driver = None
         self.monitor = None
         self.agent_export = UVMAnalysisExport("agent_export", self)
+        self.agent_irq_export = UVMAnalysisExport("agent_irq_export", self)
 
     def build_phase(self, phase):
         self.ip_sequencer = ip_sequencer.type_id.create("ip_sequencer", self)
@@ -33,6 +34,7 @@ class ip_agent(UVMAgent):
     def connect_phase(self, phase):
         self.driver.seq_item_port.connect(self.ip_sequencer.seq_item_export)
         self.monitor.monitor_port.connect(self.agent_export)
+        self.monitor.monitor_irq_port.connect(self.agent_irq_export)
         pass
 
 

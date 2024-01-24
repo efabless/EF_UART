@@ -2,7 +2,7 @@ from uvm.base.uvm_component import UVMComponent
 from uvm.macros import uvm_component_utils
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisImp
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW 
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW 
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
 

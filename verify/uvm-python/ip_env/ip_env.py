@@ -23,6 +23,7 @@ class ip_env(UVMEnv):
         self.logger_comp = None
         self.ip_agent = None
         self.ip_env_export = UVMAnalysisExport("ip_env_export", self)
+        self.ip_env_irq_export = UVMAnalysisExport("ip_env_irq_export", self)
 
     def build_phase(self, phase):
         self.ip_agent = ip_agent.type_id.create("ip_agent", self)
@@ -32,6 +33,7 @@ class ip_env(UVMEnv):
 
     def connect_phase(self, phase):
         self.ip_agent.agent_export.connect(self.ip_env_export)
+        self.ip_agent.agent_irq_export.connect(self.ip_env_irq_export)
         self.ip_agent.agent_export.connect(self.coverage_comp.analysis_imp)
         self.ip_agent.agent_export.connect(self.logger_comp.analysis_imp)
         pass

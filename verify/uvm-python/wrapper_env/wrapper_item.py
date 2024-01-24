@@ -3,7 +3,7 @@ from uvm.macros import uvm_object_utils_begin, uvm_object_utils_end, uvm_field_i
 from uvm.base.uvm_object_globals import UVM_ALL_ON, UVM_NOPACK
 from uvm.base.sv import sv
 from uvm.macros import uvm_component_utils, uvm_info, uvm_error, uvm_warning
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW
 
 
 class wrapper_bus_item(UVMSequenceItem):

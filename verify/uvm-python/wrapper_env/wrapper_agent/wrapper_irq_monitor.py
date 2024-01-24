@@ -4,7 +4,7 @@ from uvm.tlm1.uvm_analysis_port import UVMAnalysisPort
 from uvm.base.uvm_config_db import UVMConfigDb
 from cocotb.triggers import Edge, Timer
 from wrapper_env.wrapper_item import wrapper_irq_item
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW
 
 
 class wrapper_irq_monitor(UVMMonitor):
@@ -34,7 +34,7 @@ class wrapper_irq_monitor(UVMMonitor):
             else:
                 tr.trg_irq = 0
             self.monitor_port.write(tr)
-            uvm_info(self.tag, "sampled IRQ transaction: " + tr.convert2string(), UVM_MEDIUM)
+            uvm_info(self.tag, "sampled IRQ transaction: " + tr.convert2string(), UVM_HIGH)
 
 
 uvm_component_utils(wrapper_irq_monitor)

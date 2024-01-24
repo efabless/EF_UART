@@ -36,6 +36,7 @@ class top_env(UVMEnv):
         """
         self.wrapper_env.wrapper_bus_export.connect(self.vip.analysis_imp_bus)
         self.ip_env.ip_env_export.connect(self.vip.analysis_imp_ip)
+        self.ip_env.ip_env_irq_export.connect(self.vip.analysis_imp_ip_irq)
         # scoreboard connection
         self.wrapper_env.wrapper_bus_export.connect(self.scoreboard.analysis_imp_bus)
         self.wrapper_env.wrapper_irq_export.connect(self.scoreboard.analysis_imp_irq)

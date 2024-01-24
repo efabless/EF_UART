@@ -31,6 +31,12 @@ class uart_config(seq_base):
 
         # random IM 
         await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["im"], lambda kind: kind == wrapper_bus_item.WRITE)
+        
+        # match register
+        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["match"], lambda kind: kind == wrapper_bus_item.WRITE)
+        
+        # threshold value
+        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["fifo_control"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: (data & 0b1111) in range(0, 15) and (data>>8) & 0b1111 in range(0, 15))
 
         # enable uart
         await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["control"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data == 0x17)

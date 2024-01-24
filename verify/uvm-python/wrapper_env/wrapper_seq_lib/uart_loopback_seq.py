@@ -18,7 +18,7 @@ class uart_loopback_seq(seq_base):
 
     async def body(self):
         await super().body()
-        # configure uart 
+        # configure uart
         config_seq = uart_config("uart_config")
         await uvm_do(self, config_seq)  # change the presclar/ configs
         # enable loopback

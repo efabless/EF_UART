@@ -41,6 +41,7 @@ async def module_top(dut):
     regs = wrapper_regs(json_file)
     UVMConfigDb.set(None, "*", "wrapper_regs", regs)
     UVMConfigDb.set(None, "*", "irq_exist", regs.get_irq_exist())
+    UVMConfigDb.set(None, "*", "insert_glitches", True)
     await run_test()
     coverage_db.export_to_yaml(filename=f"{head_path}/verify/uvm-python/coverage.yalm")
 
@@ -70,13 +71,11 @@ class example_base_test(UVMTest):
         if UVMConfigDb.get(None, "*", "ip_if", arr) is True:
             UVMConfigDb.set(self, "*", "ip_if", arr[0])
         else:
-            # TODO: convert to uvm_fatal in the future
             uvm_fatal("NOVIF", "Could not get ip_if from config DB")
 
         if UVMConfigDb.get(None, "*", "wrapper_bus_if", arr) is True:
             UVMConfigDb.set(self, "*", "wrapper_bus_if", arr[0])
         else:
-            # TODO: convert to uvm_fatal in the future
             uvm_fatal("NOVIF", "Could not get wrapper_bus_if from config DB")
         # set max number of uvm errors 
         server = UVMReportServer()
@@ -99,8 +98,8 @@ class example_base_test(UVMTest):
         uvm_info("sequence", "after set seq", UVM_LOW)
 
         uvm_info("TEST_TOP", "Forking master_proc now", UVM_LOW)
-        run_tx = True
-        run_rx = False
+        run_tx = False
+        run_rx = True
         loop_back = False
         # RUN TX
         if run_tx:

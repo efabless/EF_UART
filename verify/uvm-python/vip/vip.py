@@ -1,7 +1,7 @@
 from uvm.base.uvm_component import UVMComponent
 from uvm.macros import uvm_component_utils
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisImp
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW 
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM 
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.base.uvm_config_db import UVMConfigDb
 from vip.model import EF_UART
@@ -12,6 +12,7 @@ from ip_env.ip_item import ip_item
 
 uvm_analysis_imp_bus = uvm_analysis_imp_decl("_bus")
 uvm_analysis_imp_ip = uvm_analysis_imp_decl("_ip")
+uvm_analysis_imp_ip_irq = uvm_analysis_imp_decl("_ip_irq")
 
 
 class vip(UVMComponent):
@@ -27,6 +28,7 @@ class vip(UVMComponent):
         super().__init__(name, parent)
         self.analysis_imp_bus = uvm_analysis_imp_bus("vip_ap_bus", self)
         self.analysis_imp_ip = uvm_analysis_imp_ip("vip_ap_ip", self)
+        self.analysis_imp_ip_irq = uvm_analysis_imp_ip_irq("vip_ap_ip_irq", self)
         self.wrapper_bus_export = UVMAnalysisExport("vip_bus_export", self)
         self.wrapper_irq_export = UVMAnalysisExport("vip_irq_export", self)
         self.ip_export = UVMAnalysisExport("vip_ip_export", self)
@@ -44,7 +46,7 @@ class vip(UVMComponent):
         self.vip_model_rx_export.connect(self.model.analysis_imp_rx)
 
     def write_bus(self, tr):
-        uvm_info(self.tag, "Vip write: " + tr.convert2string(), UVM_MEDIUM)
+        uvm_info(self.tag, "Vip write: " + tr.convert2string(), UVM_HIGH)
         if tr.kind == wrapper_bus_item.WRITE:
             self.model.write_register(tr.addr, tr.data)
             self.wrapper_bus_export.write(tr)
@@ -55,12 +57,15 @@ class vip(UVMComponent):
             self.wrapper_bus_export.write(td)
 
     def write_ip(self, tr):
-        uvm_info(self.tag, "ip Vip write: " + tr.convert2string(), UVM_MEDIUM)
+        uvm_info(self.tag, "ip Vip write: " + tr.convert2string(), UVM_HIGH)
         if tr.direction == ip_item.TX:
             self.model.tx_trig_event.set()
         else:
-            uvm_info(self.tag, "VIP receieved RX", UVM_MEDIUM)
+            uvm_info(self.tag, "VIP receieved RX", UVM_HIGH)
             self.vip_model_rx_export.write(tr)
+
+    def write_ip_irq(self, tr):
+        uvm_info(self.tag, "ip_irq Vip write: " + tr.convert2string(), UVM_MEDIUM)
 
 
 uvm_component_utils(vip)

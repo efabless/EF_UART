@@ -4,7 +4,7 @@ from uvm.tlm1.uvm_analysis_port import UVMAnalysisPort
 from uvm.base.uvm_config_db import UVMConfigDb
 from cocotb.triggers import Timer, RisingEdge
 from wrapper_env.wrapper_item import wrapper_bus_item
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW
 
 
 class wrapper_bus_monitor(UVMMonitor):
@@ -49,7 +49,7 @@ class wrapper_bus_monitor(UVMMonitor):
             self.monitor_port.write(tr)
             # update reg value #TODO: move this to the vip later
             self.regs.write_reg_value(tr.addr, tr.data)
-            uvm_info(self.tag, "sampled APB transaction: " + tr.convert2string(), UVM_MEDIUM)
+            uvm_info(self.tag, "sampled APB transaction: " + tr.convert2string(), UVM_HIGH)
 
     async def sample_delay(self):
         await RisingEdge(self.sigs.PCLK)
