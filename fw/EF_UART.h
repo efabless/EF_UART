@@ -83,7 +83,7 @@ int EF_UART_getMatchData(uint32_t uart_base);
       \param uart_base The base memory address of UART registers.
       \return TX FIFO level register
     */
-int EF_UART_getTxFifoLevel(uint32_t uart_base);
+int EF_UART_getTxCount(uint32_t uart_base);
 
 
 //! returns the current level of the RX FIFO (the number of bytes in the FIFO)
@@ -91,7 +91,7 @@ int EF_UART_getTxFifoLevel(uint32_t uart_base);
       \param uart_base The base memory address of UART registers.
       \return RX FIFO level register
     */
-int EF_UART_getRxFifoLevel(uint32_t uart_base);
+int EF_UART_getRxCount(uint32_t uart_base);
 
 
 

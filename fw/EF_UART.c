@@ -240,7 +240,7 @@ int EF_UART_getFifoControl (uint32_t uart_base){
 }
 
 
-int EF_UART_getTxFifoLevel(uint32_t uart_base){
+int EF_UART_getTxCount(uint32_t uart_base){
 
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
 
@@ -249,7 +249,7 @@ int EF_UART_getTxFifoLevel(uint32_t uart_base){
     return (tx_level);
 }
 
-int EF_UART_getRxFifoLevel(uint32_t uart_base){
+int EF_UART_getRxCount(uint32_t uart_base){
 
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
 
