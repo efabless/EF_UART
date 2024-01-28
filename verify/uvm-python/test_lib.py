@@ -1,5 +1,4 @@
 import cocotb
-
 from uvm.comps import UVMTest
 from uvm import UVMCoreService
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_warning
@@ -79,7 +78,7 @@ class example_base_test(UVMTest):
             uvm_fatal("NOVIF", "Could not get wrapper_bus_if from config DB")
         # set max number of uvm errors 
         server = UVMReportServer()
-        server.set_max_quit_count(1)
+        server.set_max_quit_count(30)
         UVMCoreService.get().set_report_server(server)
 
     def end_of_elaboration_phase(self, phase):
@@ -126,8 +125,6 @@ class example_base_test(UVMTest):
         errors = server.get_severity_count(UVM_ERROR)
         if errors > 0:
             uvm_fatal("FOUND ERRORS", "There were " + str(errors) + " UVM_ERRORs in the test")
-        
-
 
     def report_phase(self, phase):
         if self.test_pass:

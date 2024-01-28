@@ -88,5 +88,15 @@ class scoreboard(UVMScoreboard):
             if not val.do_compare(exp):
                 uvm_error(self.tag, "IP mismatch: " + val.convert2string() + " != " + exp.convert2string())
 
+    def check_phase(self, phase):
+        super().check_phase(phase)
+        # check all the quese is empty or at least has the same item
+        if self.q_bus.qsize() != self.q_bus_vip.qsize():
+            uvm_error(self.tag, f"Bus queue still have unchecked items queue bus {self.q_bus._queue} size {self.q_bus.qsize()} bus_vip {self.q_bus_vip._queue} size {self.q_bus_vip.qsize()}")
+        if self.q_irq.qsize() != self.q_irq_vip.qsize():
+            uvm_error(self.tag, f"IRQ queue still have unchecked items queue irq {self.q_irq._queue} size {self.q_irq.qsize()} irq_vip {self.q_irq_vip._queue} size {self.q_irq_vip.qsize()}")
+        if self.q_ip.qsize() != self.q_ip_vip.qsize():
+            uvm_error(self.tag, f"IP queue still have unchecked items queue ip {self.q_ip._queue} size {self.q_ip.qsize()} ip_vip {self.q_ip_vip._queue} size {self.q_ip_vip.qsize()}")
+
 
 uvm_component_utils(scoreboard)

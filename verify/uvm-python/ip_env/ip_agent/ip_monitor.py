@@ -60,7 +60,6 @@ class ip_monitor(UVMMonitor):
             uvm_info(self.tag, "sampled uart TX transaction: " + tr.convert2string(), UVM_HIGH)
             self.monitor_port.write(tr)
             self.tx_received.set()
-            
 
     async def sample_rx(self):
         while True:
@@ -212,7 +211,7 @@ class ip_monitor(UVMMonitor):
                 continue
             irq = ip_interrupt.type_id.create("tr_irq", self)
             irq.rx_break_line = 1
-            uvm_info(self.tag, f"break line", UVM_HIGH)
+            uvm_info(self.tag, "break line", UVM_HIGH)
             self.monitor_irq_port.write(irq)
 
     def check_parity(self, char, parity):

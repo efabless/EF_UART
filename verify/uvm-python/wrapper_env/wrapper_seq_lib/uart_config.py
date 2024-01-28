@@ -10,36 +10,70 @@ import os
 import random
 from wrapper_env.wrapper_seq_lib.seq_base import seq_base
 
-class uart_config(seq_base):
 
-    def __init__(self, name="uart_config"):
+class uart_config(seq_base):
+    def __init__(self, name="uart_config", prescaler=None, config=None, im=None, match=None, fifo_control=None, control=None):
         super().__init__(name)
+        self.prescaler = prescaler
+        self.config = config
+        self.im = im
+        self.match = match
+        self.fifo_control = fifo_control
+        self.control = control
 
     async def body(self):
         await super().body()
         # get register names/address conversion dict
-        
+
         # randomly config uart
         # first disabled the uart
-        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["control"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data == 0)
+        await self.send_req(is_write=True, reg="control", data_condition=lambda data: data == 0)
 
         # random prescale value
-        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["prescaler"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data in range(0, 0x10))
+        if self.prescaler is not None:
+            await self.send_req(is_write=True, reg="prescaler", data_condition=lambda data: data == self.prescaler)
+        else:
+            await self.send_req(is_write=True, reg="prescaler", data_condition=lambda data: data in range(0, 0x10))
 
         # random config
-        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["config"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: (data>>8) == 0x3f and (data&0xf) in range(5, 10) and ((data&0xE0) >> 5) in [0,1,2,4,5] and data&0xF ==9)
+        if self.config is not None:
+            await self.send_req(is_write=True, reg="config", data_condition=lambda data: data == self.config)
+        else:
+            await self.send_req(is_write=True, reg="config", data_condition=lambda data: ((data >> 8) == 0x3f and (data & 0xf) in range(5, 10) and ((data & 0xE0) >> 5) in [0, 1, 2, 4, 5] and data & 0xF == 9))
 
-        # random IM 
-        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["im"], lambda kind: kind == wrapper_bus_item.WRITE)
-        
+        # random IM
+        if self.im is not None:
+            await self.send_req(is_write=True, reg="im", data_condition=lambda data: data == self.im)
+        else:
+            await self.send_req(is_write=True, reg="im")
+
         # match register
-        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["match"], lambda kind: kind == wrapper_bus_item.WRITE)
-        
+        if self.match is not None:
+            await self.send_req(is_write=True, reg="match", data_condition=lambda data: data == self.match)
+        else:
+            await self.send_req(is_write=True, reg="match")
+
         # threshold value
-        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["fifo_control"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: (data & 0b1111) in range(0, 15) and (data>>8) & 0b1111 in range(0, 15))
+        if self.fifo_control is not None:
+            await self.send_req(is_write=True, reg="fifo_control", data_condition=lambda data: data == self.fifo_control)
+        else:
+            await self.send_req(is_write=True, reg="fifo_control", data_condition=lambda data: ((data >> 8) & 0b1111) in range(0, 15) and (data & 0b1111) in range(0, 15))
 
         # enable uart
-        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["control"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data == 0x17)
+        if self.control is not None:
+            await self.send_req(is_write=True, reg="control", data_condition=lambda data: data == self.control)
+        else:
+            await self.send_req(is_write=True, reg="control", data_condition=lambda data: data == 0x17)
+
+    async def send_req(self, is_write, reg, data_condition=None):
+        # send request
+        if is_write:
+            if data_condition is None:
+                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict[reg], lambda kind: kind == wrapper_bus_item.WRITE)
+            else:
+                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict[reg], lambda kind: kind == wrapper_bus_item.WRITE, data_condition)
+        else:
+            await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict[reg], lambda kind: kind == wrapper_bus_item.READ)
 
 
 uvm_object_utils(uart_config)
