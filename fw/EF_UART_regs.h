@@ -17,6 +17,11 @@
 
 */
 
+/*! \file EF_UART_regs.h
+    \brief C header file which contains UART registers definition 
+    
+*/
+
 #ifndef EF_UARTREGS_H
 #define EF_UARTREGS_H
 

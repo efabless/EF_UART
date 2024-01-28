@@ -1,0 +1,172 @@
+\doxysection{EF\+\_\+\+UART.\+h}
+\hypertarget{EF__UART_8h_source}{}\label{EF__UART_8h_source}\mbox{\hyperlink{EF__UART_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ EF\_UART\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ EF\_UART\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{EF__UART__regs_8h}{EF\_UART\_regs.h}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{EF__UART_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parity\_type}}\ \{\mbox{\hyperlink{EF__UART_8h_aab5cbb4a185bfe65a14e19beeaba4f10ac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}}\ =\ 0,\ \mbox{\hyperlink{EF__UART_8h_aab5cbb4a185bfe65a14e19beeaba4f10aa29cedab858353a26006af9db7cd1ed8}{ODD}}\ =\ 1,\ \mbox{\hyperlink{EF__UART_8h_aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc}{EVEN}}\ =\ 2,\ \mbox{\hyperlink{EF__UART_8h_aab5cbb4a185bfe65a14e19beeaba4f10adedda6ce97e93d2a3e84ca7a704cd998}{STICKY\_0}}\ =\ 4,\ \mbox{\hyperlink{EF__UART_8h_aab5cbb4a185bfe65a14e19beeaba4f10a0cc8b778b8f0b3fa4d7a084fddbc3cec}{STICKY\_1}}\ =\ 5\};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_ac8fb76879468f536845efd63dd013023}{EF\_UART\_enable}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a906f9de6fa1f7d7a3e251f9c8ecf3ba1}{EF\_UART\_disable}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a27d08acb4a16fe736ec85a6809a8f4cf}{EF\_UART\_enableRx}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a8bbcb77cabef3983cca1118db94f33da}{EF\_UART\_disableRx}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a9e39d1b67dee9dc4eddecab799f2a73e}{EF\_UART\_enableTx}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a5fdfa5d0ceaf25c86265f08508d0ac82}{EF\_UART\_disableTx}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a5b6c1522111c36f052d01ef8477d8708}{EF\_UART\_enableLoopBack}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a14b502b1b4f32f74147fa27ef594ec5f}{EF\_UART\_disableLoopBack}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a41e9f0fc22054ed60435b56e07cc2b08}{EF\_UART\_enableGlitchFilter}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a0b951370140c22de50546112916dbf0f}{EF\_UART\_disableGlitchFilter}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a93420e961b8b16ec1d4e19565a89338f}{EF\_UART\_setCTRL}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_ae932a6f49dc8556119957adf2d230714}{EF\_UART\_getCTRL}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a29ad6f2b0288e0a90421b7755b4ea6d7}{EF\_UART\_setDataSize}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_ad9196d00146f379a9e90b260b4545209}{EF\_UART\_setTwoStopBitsSelect}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{bool}\ is\_two\_bits);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a61f34f093714af424473fa57fb04cfc5}{EF\_UART\_setParityType}}(uint32\_t\ uart\_base,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{EF__UART_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parity\_type}}\ parity);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00142\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_ab56dac54958dce9684d6ad1cd26d1018}{EF\_UART\_setTimeoutBits}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00155\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_abad90397a0d5f9b1559105971e24b585}{EF\_UART\_setConfig}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{int}\ config);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00163\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_aae10f814cfbacb6ee771ddcc5b349744}{EF\_UART\_getConfig}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00172\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a998d1e7e9da992f65124ac26854513ec}{EF\_UART\_setRxFIFOThreshold}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{int}\ threshold);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00180\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_a829e9820f1d010624994aa7590851721}{EF\_UART\_getRxFIFOThreshold}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00189\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a416b4fb1a37947fefee94fdcd2b6175b}{EF\_UART\_setTxFIFOThreshold}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{int}\ threshold);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00197\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_a6e89a406b1b3cff125032eff26043d3d}{EF\_UART\_getTxFIFOThreshold}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00208\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_ade8fde5e588c22e9bdf3b68f26469098}{EF\_UART\_setFIFOControl}}\ (uint32\_t\ uart\_base,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00216\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_a044758d0138aeb24c6a87fda9c7de6c6}{EF\_UART\_getFIFOControl}}\ (uint32\_t\ uart\_base);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00226\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_a24c0a12c701bbab2594a68148ccaf187}{EF\_UART\_getFIFOStatus}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00235\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a65715703fe82c3f9fb235cf6b0f62e7b}{EF\_UART\_setMatchData}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{int}\ matchData);}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00243\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_a471ea6bce689a667b0415208815a9005}{EF\_UART\_getMatchData}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00251\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_ab67855784d50b5c547378f5d5702c273}{EF\_UART\_getTxCount}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00259\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_ad473ded49b92582489495c207b425a01}{EF\_UART\_getRxCount}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00268\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a417529a40a07f0af36ba658f3a31fff5}{EF\_UART\_setPrescaler}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{int}\ prescaler);}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00276\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_a2d7077f683a7553f9c178ecfd058d1bd}{EF\_UART\_getPrescaler}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00294\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_afb034e9ca5c75e87df32e77410dfffea}{EF\_UART\_getRIS}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00312\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_a6ffee64b80995aff387251125ebeca80}{EF\_UART\_getMIS}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00330\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_af9fd462da652712e3d4c1a356af2b276}{EF\_UART\_setIM}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{int}\ mask);}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00348\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_a19e91976fc7aa7bc0d7aea10f9092c82}{EF\_UART\_getIM}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00366\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a71cf6e226bdc78fa9e36f40b4039fe8e}{EF\_UART\_setICR}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{int}\ mask);}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00375\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a45b53dbb72f6493a763d6176eb56ef2a}{EF\_UART\_writeCharArr}}(uint32\_t\ uart\_base,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *char\_arr);}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00384\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EF__UART_8h_a9219a3cffee150f100b55272eaae74da}{EF\_UART\_writeChar}}(uint32\_t\ uart\_base,\ \textcolor{keywordtype}{char}\ data);}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00393\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{EF__UART_8h_a727b43ac98a06b2e2a0c31c305e3e2f9}{EF\_UART\_readChar}}(uint32\_t\ uart\_base);}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
