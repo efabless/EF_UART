@@ -5,10 +5,11 @@ from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.base.uvm_config_db import UVMConfigDb
 from vip.model import EF_UART
-from wrapper_env.wrapper_item import wrapper_bus_item
+from wrapper_env.wrapper_item import wrapper_bus_item, wrapper_irq_item
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisExport
 from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
 from ip_env.ip_item import ip_item
+import cocotb
 
 uvm_analysis_imp_bus = uvm_analysis_imp_decl("_bus")
 uvm_analysis_imp_ip = uvm_analysis_imp_decl("_ip")
@@ -40,13 +41,20 @@ class vip(UVMComponent):
         super().build_phase(phase)
         self.model = EF_UART.type_id.create("model", self)
 
+    def start_of_simulation_phase(self, phase):
+        cocotb.scheduler.add(self.update_irq())
+
     def connect_phase(self, phase):
         super().connect_phase(phase)
         self.model.ip_export.connect(self.ip_export)
         self.vip_model_rx_export.connect(self.model.analysis_imp_rx)
 
     def write_bus(self, tr):
-        uvm_info(self.tag, "Vip write: " + tr.convert2string(), UVM_HIGH)
+        uvm_info(self.tag, "Vip write: " + tr.convert2string(), UVM_MEDIUM)
+        if tr.reset:
+            self.model.reset()
+            self.wrapper_bus_export.write(tr)
+            return
         if tr.kind == wrapper_bus_item.WRITE:
             self.model.write_register(tr.addr, tr.data)
             self.wrapper_bus_export.write(tr)
@@ -66,6 +74,31 @@ class vip(UVMComponent):
 
     def write_ip_irq(self, tr):
         uvm_info(self.tag, "ip_irq Vip write: " + tr.convert2string(), UVM_MEDIUM)
+        if tr.rx_timeout:
+            self.model.flags.set_timeout_err()
+        if tr.rx_break_line:
+            self.model.flags.set_line_break()
+        if tr.rx_wrong_parity:
+            self.model.flags.set_parity_err()
+        if tr.rx_frame_error:
+            self.model.flags.set_frame_err()
+
+    async def update_irq(self):
+        irq = 0
+        while (True):
+            await self.model.flags.mis_changed.wait()
+            uvm_info(self.tag, f"mis changed mis = {self.model.regs.read_reg_value('mis')} irq = {irq}", UVM_MEDIUM)
+            if self.model.regs.read_reg_value("mis") != 0 and irq == 0:
+                irq = 1
+                tr = wrapper_irq_item.type_id.create("tr", self)
+                tr.trg_irq = 1
+                self.wrapper_irq_export.write(tr)
+            elif self.model.regs.read_reg_value("mis") == 0 and irq == 1:
+                irq = 0
+                tr = wrapper_irq_item.type_id.create("tr", self)
+                tr.trg_irq = 0
+                self.wrapper_irq_export.write(tr)
+            self.model.flags.mis_changed.clear()
 
 
 uvm_component_utils(vip)

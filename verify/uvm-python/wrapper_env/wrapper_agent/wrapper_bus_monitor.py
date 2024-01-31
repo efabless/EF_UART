@@ -2,10 +2,10 @@ from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_error
 from uvm.comps.uvm_monitor import UVMMonitor
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisPort
 from uvm.base.uvm_config_db import UVMConfigDb
-from cocotb.triggers import Timer, RisingEdge
+from cocotb.triggers import Timer, RisingEdge, FallingEdge
 from wrapper_env.wrapper_item import wrapper_bus_item
 from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW
-
+import cocotb
 
 class wrapper_bus_monitor(UVMMonitor):
     def __init__(self, name="wrapper_bus_monitor", parent=None):
@@ -27,6 +27,7 @@ class wrapper_bus_monitor(UVMMonitor):
             self.regs = regs_arr[0]
 
     async def run_phase(self, phase):
+        await cocotb.start(self.watch_reset())
         while True:
             tr = None
             # wait for a transaction
@@ -51,6 +52,17 @@ class wrapper_bus_monitor(UVMMonitor):
             self.regs.write_reg_value(tr.addr, tr.data)
             uvm_info(self.tag, "sampled APB transaction: " + tr.convert2string(), UVM_HIGH)
 
+    async def watch_reset(self):
+        while True:
+            await FallingEdge(self.sigs.PRESETn)
+            # send reset tr 
+            tr = wrapper_bus_item.type_id.create("tr", self)
+            tr.reset = 1
+            tr.kind = wrapper_bus_item.READ
+            tr.addr = 0
+            self.monitor_port.write(tr)
+            uvm_info(self.tag, "sampled reset transaction: " + tr.convert2string(), UVM_HIGH)
+    
     async def sample_delay(self):
         await RisingEdge(self.sigs.PCLK)
         # await Timer(1, "NS")

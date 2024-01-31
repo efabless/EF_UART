@@ -31,7 +31,7 @@ class wrapper_logger(UVMComponent):
         self.configure_logger()
 
     def write_bus(self, tr):
-        uvm_info(self.tag, "get bus logging for " + tr.convert2string(), UVM_HIGH)
+        uvm_info(self.tag, "get bus logging for " + tr.convert2string(), UVM_LOW)
         self.bus_log(tr)
         self.regs_log(tr)
         pass

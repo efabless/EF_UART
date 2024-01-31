@@ -5,6 +5,7 @@ from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW 
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
+from ip_env.ip_coverage.ip_cov_groups import ip_cov_groups
 
 
 class ip_coverage(UVMComponent):
@@ -18,10 +19,15 @@ class ip_coverage(UVMComponent):
 
     def build_phase(self, phase):
         super().build_phase(phase)
-        pass
+        arr = []
+        if (not UVMConfigDb.get(self, "", "wrapper_regs", arr)):
+            uvm_fatal(self.tag, "No json file wrapper regs")
+        else:
+            regs = arr[0]
+        self.cov_groups = ip_cov_groups("top.ip", regs)
 
     def write(self, tr):
-        pass
+        self.cov_groups.ip_cov(tr)
 
 
 uvm_component_utils(ip_coverage)

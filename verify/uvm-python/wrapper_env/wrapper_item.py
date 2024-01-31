@@ -10,7 +10,7 @@ class wrapper_bus_item(UVMSequenceItem):
 
     READ = 0
     WRITE = 1
-
+    RESET = 2
     def __init__(self, name="wrapper_bus_item"):
         super().__init__(name)
         self.tag = name
@@ -20,8 +20,11 @@ class wrapper_bus_item(UVMSequenceItem):
         self.rand("data", range(0, 0xFFFF))
         self.kind = wrapper_bus_item.READ  # kind_e
         self.rand("kind", [wrapper_bus_item.READ, wrapper_bus_item.WRITE])
+        self.reset = 0
 
     def convert2string(self):
+        if self.reset:
+            return sv.sformatf("RESET command send to DUT")
         kind = "READ"
         if self.kind == 1:
             kind = "WRITE"
@@ -58,5 +61,7 @@ class wrapper_irq_item(UVMSequenceItem):
     def convert2string(self):
         return sv.sformatf(f"{'clear interrupt' if self.trg_irq == 0 else 'set interrupt'}")
 
-
+    def do_compare(self, tr):
+        # check if the data is trash return True
+        return self.trg_irq == tr.trg_irq
 uvm_object_utils(wrapper_irq_item)

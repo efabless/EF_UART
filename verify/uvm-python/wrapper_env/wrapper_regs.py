@@ -1,6 +1,6 @@
 import json
 from uvm.macros.uvm_message_defines import uvm_info, uvm_error
-from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM
 import yaml
 
 
@@ -44,6 +44,7 @@ class wrapper_regs():
             regs[int(reg["offset"])] = reg
         self.regs = regs
         self.reg_name_to_address = {info['name']: address for address, info in self.regs.items()}
+        uvm_info(self.tag, f"regs name and addresses {self.reg_name_to_address}", UVM_MEDIUM)
 
     def get_regs(self):
         return self.regs
@@ -51,7 +52,7 @@ class wrapper_regs():
     def get_irq_exist(self):
         return self.irq_exist
 
-    def write_reg_value(self, reg, value):
+    def write_reg_value(self, reg, value, mask=0xffffffff, force_write=False):
         """
             Writes a value to a register.
             Parameters:
@@ -69,7 +70,10 @@ class wrapper_regs():
         address = address & 0xffff
         if address in self.regs:
             uvm_info(self.tag, f"value before write {value} to address {hex(address)}: {hex(self.regs[address]['val'])}", UVM_HIGH)
-            if "w" in self.regs[address]["mode"]:
+            if "w" in self.regs[address]["mode"] or force_write:
+                if mask != 0xffffffff:
+                    old_value = self.regs[address]["val"]
+                    value = (old_value & ~mask) | (value & mask)
                 self.regs[address]["val"] = value & ((1 << int(self.regs[address]["size"])) - 1)
             uvm_info(self.tag, f"value after write to address {hex(address)}: {hex(self.regs[address]['val'])}", UVM_HIGH)
 
@@ -78,11 +82,11 @@ class wrapper_regs():
             address = reg
         elif type(reg) is str:
             address = self.reg_name_to_address[reg]
-        else: 
+        else:
             uvm_error(self.tag, f"Invalid reg type: {type(reg)} for read")
         address = address & 0xffff
         return self.regs[address]["val"]
-    
+
     # Function to replace parameter values in the data
     def replace_parameters(self, data, parameter_values):
         if isinstance(data, dict):

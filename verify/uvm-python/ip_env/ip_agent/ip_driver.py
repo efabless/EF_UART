@@ -29,7 +29,7 @@ class ip_driver(UVMDriver):
         if (not UVMConfigDb.get(self, "", "insert_glitches", glitches_arr)):
             self.insert_glitches = False
         else:
-            self.insert_glitches = True
+            self.insert_glitches = glitches_arr[0]
 
     async def run_phase(self, phase):
         uvm_info(self.tag, "run_phase started", UVM_LOW)
@@ -40,7 +40,7 @@ class ip_driver(UVMDriver):
             await self.seq_item_port.get_next_item(tr)
             tr = tr[0]
             if tr.direction == ip_item.RX:
-                uvm_info(self.tag, "Driving trans into IP: " + tr.convert2string(), UVM_HIGH)
+                uvm_info(self.tag, "Driving trans into IP: " + tr.convert2string(), UVM_MEDIUM)
                 await self.start_of_rx()
                 if self.insert_glitches:
                     await cocotb.start(self.add_glitches()) # assert glitches
@@ -53,9 +53,9 @@ class ip_driver(UVMDriver):
                 await self.end_of_rx(1)
                 uvm_info(self.tag, "finish send bit0", UVM_MEDIUM)
                 # add breakline 2% of the times 
-                if random.random() < 0.02:
-                    uvm_info(self.tag, "Adding breakline", UVM_MEDIUM)
-                    await self.break_line()   
+                # if random.random() < 0.02:
+                #     uvm_info(self.tag, "Adding breakline", UVM_MEDIUM)
+                #     await self.break_line()   
             else:
                 uvm_warning(self.tag, f"invalid direction {tr.direction} send to driver", UVM_HIGH)
             self.seq_item_port.item_done()
@@ -85,8 +85,7 @@ class ip_driver(UVMDriver):
         tr.calculate_parity(parity_type)
         if tr.parity == "None":
             return
-        # self.sigs.RX.value = int(tr.parity)
-        self.sigs.RX.value = 1
+        self.sigs.RX.value = int(tr.parity)
         uvm_info(self.tag, f"driving parity = {tr.parity}", UVM_HIGH)
         await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
 
@@ -125,7 +124,7 @@ class ip_driver(UVMDriver):
         await Timer(random.randint(1, 100), units="ns")
         old_val = self.sigs.RX.value.integer
         self.sigs.RX.value = old_val-1
-        uvm_info(self.tag, "Asserting glitch", UVM_HIGH)
+        uvm_info(self.tag, "Asserting glitch", UVM_MEDIUM)
         await Timer(random.randint(1, 10), units="ns")
         self.sigs.RX.value = old_val
         # wait long before checking again

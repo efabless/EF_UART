@@ -16,12 +16,16 @@ from caravel_cocotb.scripts.merge_coverage import merge_fun_cov
 from wrapper_env.wrapper_regs import wrapper_regs
 import os
 from uvm.base.uvm_report_server import UVMReportServer
+from cocotb.triggers import Event, First
 #seq
 from wrapper_env.wrapper_seq_lib.write_read_regs import write_read_regs
 from wrapper_env.wrapper_seq_lib.uart_tx_seq import uart_tx_seq
 from wrapper_env.wrapper_seq_lib.uart_config import uart_config
 from wrapper_env.wrapper_seq_lib.uart_rx_read import uart_rx_read
 from ip_env.ip_seq_lib.uart_rx_seq import uart_rx_seq
+from ip_env.ip_seq_lib.tx_length_parity_seq import tx_length_parity_seq
+from ip_env.ip_seq_lib.rx_length_parity_seq import rx_length_parity_seq, rx_length_parity_seq_wrapper
+from ip_env.ip_seq_lib.uart_prescalar_seq import uart_prescalar_seq_wrapper, uart_prescalar_seq
 from wrapper_env.wrapper_seq_lib.uart_loopback_seq import uart_loopback_seq
 
 
@@ -40,7 +44,7 @@ async def module_top(dut):
     regs = wrapper_regs(json_file)
     UVMConfigDb.set(None, "*", "wrapper_regs", regs)
     UVMConfigDb.set(None, "*", "irq_exist", regs.get_irq_exist())
-    UVMConfigDb.set(None, "*", "insert_glitches", True)
+    UVMConfigDb.set(None, "*", "insert_glitches", False)
     await run_test()
     coverage_db.export_to_yaml(filename=f"{head_path}/verify/uvm-python/coverage.yalm")
 
@@ -78,7 +82,7 @@ class example_base_test(UVMTest):
             uvm_fatal("NOVIF", "Could not get wrapper_bus_if from config DB")
         # set max number of uvm errors 
         server = UVMReportServer()
-        server.set_max_quit_count(30)
+        server.set_max_quit_count(1)
         UVMCoreService.get().set_report_server(server)
 
     def end_of_elaboration_phase(self, phase):
@@ -86,9 +90,6 @@ class example_base_test(UVMTest):
         uvm_info(self.get_type_name(), sv.sformatf("Printing the test topology :\n%s", self.sprint(self.printer)), UVM_LOW)
 
     async def run_phase(self, phase):
-        import cProfile
-        pr = cProfile.Profile()
-        pr.enable()
         uvm_info("sequence", "Starting test", UVM_LOW)
         phase.raise_objection(self, "example_base_test OBJECTED")
         uvm_info("sequence", "after raise", UVM_LOW)
@@ -98,14 +99,17 @@ class example_base_test(UVMTest):
 
         uvm_info("TEST_TOP", "Forking master_proc now", UVM_LOW)
         run_tx = False
-        run_rx = True
+        run_rx = False
         loop_back = False
+        run_prescalar = False
+        run_length_parity_tx = False
+        run_length_parity_rx = True
         # RUN TX
         if run_tx:
             wrapper_seq = uart_tx_seq("uart_tx_seq")
             wrapper_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
             await wrapper_seq.start(wrapper_sqr)
-        if run_rx:
+        elif run_rx:
             ip_seq_rx = uart_rx_seq("uart_rx_seq")
             wrapper_config_uart = uart_config()
             wrapper_rx_read = uart_rx_read()
@@ -113,10 +117,31 @@ class example_base_test(UVMTest):
             for _ in range(10):
                 await ip_seq_rx.start(ip_sqr)
                 await wrapper_rx_read.start(wrapper_sqr)
-        if loop_back:
+        elif loop_back:
             wrapper_seq = uart_loopback_seq("uart_loopback_seq")
             wrapper_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
             await wrapper_seq.start(wrapper_sqr)
+        elif run_prescalar:
+            handshake_event = Event("handshake_event")
+            ip_seq = uart_prescalar_seq(handshake_event)
+            wrapper_seq = uart_prescalar_seq_wrapper(handshake_event)
+            wrapper_seq.tx_seq_obj.monitor = self.example_tb0.ip_env.ip_agent.monitor
+            wrapper_seq_thread = await cocotb.start(wrapper_seq.start(wrapper_sqr))
+            ip_seq_thread = await cocotb.start(ip_seq.start(ip_sqr))
+            await First(ip_seq_thread, wrapper_seq_thread)
+        elif run_length_parity_tx:
+            wrapper_seq = tx_length_parity_seq()
+            wrapper_seq.tx_seq_obj.monitor = self.example_tb0.ip_env.ip_agent.monitor
+            await wrapper_seq.start(wrapper_sqr)
+        elif run_length_parity_rx:
+            handshake_event = Event("handshake_event")
+            wrapper_seq = rx_length_parity_seq_wrapper(handshake_event)
+            ip_seq = rx_length_parity_seq(handshake_event)
+            wrapper_seq_thread = await cocotb.start(wrapper_seq.start(wrapper_sqr))
+            ip_seq_thread = await cocotb.start(ip_seq.start(ip_sqr))
+            await First(ip_seq_thread, wrapper_seq_thread)
+        else:
+            await Timer(1, "NS")
         phase.drop_objection(self, "example_base_test drop objection")
 
     def extract_phase(self, phase):
@@ -127,6 +152,7 @@ class example_base_test(UVMTest):
             uvm_fatal("FOUND ERRORS", "There were " + str(errors) + " UVM_ERRORs in the test")
 
     def report_phase(self, phase):
+        uvm_info(self.get_type_name(), "report_phase", UVM_LOW)
         if self.test_pass:
             uvm_info(self.get_type_name(), "** UVM TEST PASSED **", UVM_LOW)
         else:

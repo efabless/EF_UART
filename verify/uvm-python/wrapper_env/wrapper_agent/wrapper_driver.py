@@ -2,7 +2,7 @@ from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.comps.uvm_driver import UVMDriver
 from uvm.base.uvm_config_db import UVMConfigDb
 from cocotb.triggers import Timer, RisingEdge
-from uvm.base.uvm_object_globals import UVM_HIGH, UVM_HIGH, UVM_LOW
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_MEDIUM, UVM_LOW
 from wrapper_env.wrapper_item import wrapper_bus_item
 
 
@@ -29,7 +29,11 @@ class wrapper_driver(UVMDriver):
             await self.seq_item_port.get_next_item(tr)
             tr = tr[0]
             uvm_info(self.tag, "Driving trans into DUT: " + tr.convert2string(), UVM_HIGH)
-
+            if tr.reset:
+                uvm_info(self.tag, "Doing reset", UVM_MEDIUM)
+                await self.reset()
+                self.seq_item_port.item_done()
+                continue
             #if (not self.sigs.clk.triggered):
             #yield Edge(self.sigs.clk)
             # await self.drive_delay()

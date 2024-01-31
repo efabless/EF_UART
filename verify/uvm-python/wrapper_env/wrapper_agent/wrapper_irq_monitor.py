@@ -22,9 +22,9 @@ class wrapper_irq_monitor(UVMMonitor):
             self.sigs = arr[0]
 
     async def run_phase(self, phase):
-        # if self.sigs.irq.value.binstr not in ["1", "0"]:  # ignore transition from x to 0
-        #     await Edge(self.sigs.irq)
-        #     await Timer(1, "NS")
+        if self.sigs.irq.value.binstr not in ["1", "0"]:  # ignore transition from x to 0
+            await Edge(self.sigs.irq)
+            await Timer(1, "NS")
         while True:
             tr = None
             await Edge(self.sigs.irq)

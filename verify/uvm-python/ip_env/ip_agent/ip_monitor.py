@@ -95,7 +95,7 @@ class ip_monitor(UVMMonitor):
             parity = await self.glitch_free_sample(signal, num_cyc_bit, 8)
             uvm_info(self.tag, f"parity bit = {parity}  length = {word_length}", UVM_HIGH)
         # stop bit
-        stop_bit = await self.glitch_free_sample(signal, num_cyc_bit, 8)
+        stop_bit = await self.glitch_free_sample(signal, num_cyc_bit, 8, last_bit=not self.is_stop_bit_exists())
         if stop_bit != "1":
             uvm_warning(self.tag, f"stop bit expected but got {stop_bit}")
             if direction == ip_item.RX:
@@ -104,14 +104,14 @@ class ip_monitor(UVMMonitor):
         # await ClockCycles(self.sigs.PCLK, num_cyc_bit - 2)  # to even the /2 in the start of tx
         # mimic stop bit
         if self.is_stop_bit_exists():
-            stop_bit = await ClockCycles(self.sigs.PCLK, num_cyc_bit)
+            stop_bit = await self.glitch_free_sample(signal, num_cyc_bit, 8, last_bit=True)
             if stop_bit != "1":
                 uvm_warning(self.tag, f"stop bit expected but got {stop_bit}")
                 if direction == ip_item.RX:
                     self.frame_error()
                     return "None", "None", "None"
         if direction == ip_item.TX:
-            uvm_info(self.tag, f"waiting for {'tx' if direction == ip_item.TX else 'rx'}_done", UVM_HIGH)
+            uvm_info(self.tag, f"waiting for {'tx' if direction == ip_item.TX else 'rx'}_done", UVM_MEDIUM)
             # wait for done from the model
             # check the monitor waited for the done less than num_cyc_bit_tx / 2 if not there is an issue in the protocol
             wait_done_time = cocotb.utils.get_sim_time(units="ns")
@@ -232,7 +232,7 @@ class ip_monitor(UVMMonitor):
         irq.rx_frame_error = 1
         self.monitor_irq_port.write(irq)
 
-    async def glitch_free_sample(self, signal, num_cyc, sample_num):
+    async def glitch_free_sample(self, signal, num_cyc, sample_num, last_bit=False):
         base_value = num_cyc // sample_num
         lst = [base_value] * sample_num
         # Distribute the remainder across the first 'remainder' elements of the list by adding 1
@@ -241,6 +241,8 @@ class ip_monitor(UVMMonitor):
         zeros = 0
         for i in range(remainder):
             lst[i] += 1
+        if last_bit:
+            lst.pop() # in the last bit leave time to wait for tx_done for tx only to sync the fifos
         # Count the number of ones and zeros
         for cyc in lst:
             val = signal.value.binstr

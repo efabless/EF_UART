@@ -10,14 +10,14 @@ class wrapper_cov_groups():
         self.hierarchy = hierarchy
         self.ip_regs_dict = ip_regs_dict
         # initialize coverage no covearge happened just sample nothing so the coverge is initialized
+        self.cov_points = self._cov_points()
+        
         self.bus_cov(None, do_sampling=False)
         if irq_exist:
             self.irq_cov(None, do_sampling=False)
 
     def bus_cov(self, tr, do_sampling=True):
-        cov_points = self._cov_points()
-
-        @self.apply_decorators(decorators=cov_points)
+        @self.apply_decorators(decorators=self.cov_points)
         def sample(tr):
             pass
         if do_sampling:

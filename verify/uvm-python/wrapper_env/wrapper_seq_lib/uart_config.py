@@ -63,7 +63,7 @@ class uart_config(seq_base):
         if self.control is not None:
             await self.send_req(is_write=True, reg="control", data_condition=lambda data: data == self.control)
         else:
-            await self.send_req(is_write=True, reg="control", data_condition=lambda data: data == 0x17)
+            await self.send_req(is_write=True, reg="control", data_condition=lambda data: data & 0b1111 == 0x7) # tx enabled, rx enabled and loopback disabled
 
     async def send_req(self, is_write, reg, data_condition=None):
         # send request
