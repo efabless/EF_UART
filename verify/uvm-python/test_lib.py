@@ -7,31 +7,44 @@ from uvm.base.uvm_printer import UVMTablePrinter
 from uvm.base.sv import sv
 from uvm.base.uvm_object_globals import UVM_FULL, UVM_LOW, UVM_ERROR
 from uvm.base.uvm_globals import run_test
-from top_env import top_env
-from ip_files.ip_if import ip_if
-from ip_files.wrapper_if import wrapper_bus_if, wrapper_irq_if
-from cocotb.triggers import Timer
+from EF_UVM.top_env import top_env
+from uart_interface.uart_if import uart_if
+from EF_UVM.wrapper_env.wrapper_interface.wrapper_if import wrapper_bus_if, wrapper_irq_if
 from cocotb_coverage.coverage import coverage_db
 from caravel_cocotb.scripts.merge_coverage import merge_fun_cov
-from wrapper_env.wrapper_regs import wrapper_regs
-import os
-from uvm.base.uvm_report_server import UVMReportServer
 from cocotb.triggers import Event, First
+from EF_UVM.wrapper_env.wrapper_regs import wrapper_regs
+from uvm.base.uvm_report_server import UVMReportServer
 #seq
-from wrapper_env.wrapper_seq_lib.write_read_regs import write_read_regs
-from ip_env.ip_seq_lib.uart_tx_seq import uart_tx_seq
-from ip_env.ip_seq_lib.uart_config import uart_config
-from ip_env.ip_seq_lib.uart_rx_read import uart_rx_read
-from ip_env.ip_seq_lib.uart_rx_seq import uart_rx_seq
-from ip_env.ip_seq_lib.tx_length_parity_seq import tx_length_parity_seq
-from ip_env.ip_seq_lib.rx_length_parity_seq import rx_length_parity_seq, rx_length_parity_seq_wrapper
-from ip_env.ip_seq_lib.uart_prescalar_seq import uart_prescalar_seq_wrapper, uart_prescalar_seq
-from ip_env.ip_seq_lib.uart_loopback_seq import uart_loopback_seq
+from EF_UVM.wrapper_env.wrapper_seq_lib.write_read_regs import write_read_regs
+from uart_seq_lib.uart_tx_seq import uart_tx_seq
+from uart_seq_lib.uart_config import uart_config
+from uart_seq_lib.uart_rx_read import uart_rx_read
+from uart_seq_lib.uart_rx_seq import uart_rx_seq
+from uart_seq_lib.tx_length_parity_seq import tx_length_parity_seq
+from uart_seq_lib.rx_length_parity_seq import rx_length_parity_seq, rx_length_parity_seq_wrapper
+from uart_seq_lib.uart_prescalar_seq import uart_prescalar_seq_wrapper, uart_prescalar_seq
+from uart_seq_lib.uart_loopback_seq import uart_loopback_seq
 from uvm.base import UVMRoot
+
+# override classes
+from EF_UVM.ip_env.ip_agent.ip_driver import ip_driver
+from uart_agent.uart_driver import uart_driver
+from EF_UVM.ip_env.ip_agent.ip_monitor import ip_monitor
+from uart_agent.uart_monitor import uart_monitor
+from EF_UVM.vip.vip import VIP
+from vip.vip import UART_VIP
+from EF_UVM.scoreboard import scoreboard
+from uart_scoreboard import uart_scoreboard
+from EF_UVM.ip_env.ip_coverage.ip_coverage import ip_coverage
+from uart_coverage.uart_coverage import uart_coverage
+from EF_UVM.ip_env.ip_logger.ip_logger import ip_logger
+from uart_logger.uart_logger import uart_logger
+
 
 @cocotb.test()
 async def module_top(dut):
-    pif = ip_if(dut)
+    pif = uart_if(dut)
     w_if = wrapper_bus_if(dut)
     w_irq_if = wrapper_irq_if(dut)
     UVMConfigDb.set(None, "*", "ip_if", pif)
@@ -51,9 +64,6 @@ async def module_top(dut):
     await run_test()
     coverage_db.export_to_yaml(filename=f"{test_path}/coverage.yalm")
 
-    merge_fun_cov(f"{head_path}/verify/uvm-python/")
-    # await Timer(999, "NS")
-
 
 class base_test(UVMTest):
     def __init__(self, name="base_test", parent=None):
@@ -65,6 +75,14 @@ class base_test(UVMTest):
     def build_phase(self, phase):
         # UVMConfigDb.set(self, "example_tb0.wrapper_env.wrapper_agent.wrapper_sequencer.run_phase", "default_sequence", write_seq.type_id.get())
         super().build_phase(phase)
+        # override 
+        self.set_type_override_by_type(ip_driver.get_type(), uart_driver.get_type())
+        self.set_type_override_by_type(ip_monitor.get_type(), uart_monitor.get_type())
+        self.set_type_override_by_type(VIP.get_type(), UART_VIP.get_type())
+        self.set_type_override_by_type(scoreboard.get_type(), uart_scoreboard.get_type())
+        self.set_type_override_by_type(ip_coverage.get_type(), uart_coverage.get_type())
+        self.set_type_override_by_type(ip_logger.get_type(), uart_logger.get_type())
+        # self.set_type_override_by_type(ip_item.get_type(),uart_item.get_type())
         # Enable transaction recording for everything
         UVMConfigDb.set(self, "*", "recording_detail", UVM_FULL)
         # Create the tb
@@ -87,7 +105,7 @@ class base_test(UVMTest):
         server = UVMReportServer()
         server.set_max_quit_count(1)
         UVMCoreService.get().set_report_server(server)
-        
+
 
     def end_of_elaboration_phase(self, phase):
         # Set verbosity for the bus monitor for this demo

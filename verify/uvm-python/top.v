@@ -26,7 +26,4 @@ module top();
         $dumpvars(0, top);
     end
     always #10 PCLK = !PCLK; // clk generator
-
-   
-	
 endmodule

@@ -5,18 +5,16 @@ from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.base.uvm_config_db import UVMConfigDb
 from vip.model import EF_UART
-from wrapper_env.wrapper_item import wrapper_bus_item, wrapper_irq_item
+from EF_UVM.wrapper_env.wrapper_item import wrapper_bus_item, wrapper_irq_item
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisExport
 from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
-from ip_env.ip_item import ip_item
+from uart_item.uart_item import uart_item
 import cocotb
-
-uvm_analysis_imp_bus = uvm_analysis_imp_decl("_bus")
-uvm_analysis_imp_ip = uvm_analysis_imp_decl("_ip")
-uvm_analysis_imp_ip_irq = uvm_analysis_imp_decl("_ip_irq")
+from EF_UVM.vip.vip import VIP 
 
 
-class vip(UVMComponent):
+
+class UART_VIP(VIP):
     """
     The VIP, or Verification IP, is a crucial element within the top-level verification environment, designed to validate the functionality and performance of both the IP (Intellectual Property) and the bus system. Its primary role is to act as a representative or mimic of the actual hardware components, including the IP and the bus. Key features and functions of the VIP include:
     1) Input Simulation: The VIP is capable of receiving the same inputs that would be provided to the actual IP and bus via connection with the monitors of the bus and IP.
@@ -27,15 +25,7 @@ class vip(UVMComponent):
     """
     def __init__(self, name="ip_coverage", parent=None):
         super().__init__(name, parent)
-        self.analysis_imp_bus = uvm_analysis_imp_bus("vip_ap_bus", self)
-        self.analysis_imp_ip = uvm_analysis_imp_ip("vip_ap_ip", self)
-        self.analysis_imp_ip_irq = uvm_analysis_imp_ip_irq("vip_ap_ip_irq", self)
-        self.wrapper_bus_export = UVMAnalysisExport("vip_bus_export", self)
-        self.wrapper_irq_export = UVMAnalysisExport("vip_irq_export", self)
-        self.ip_export = UVMAnalysisExport("vip_ip_export", self)
         self.vip_model_rx_export = UVMAnalysisExport("vip_model_rx_export", self)
-        self.model = None
-        self.tag = "vip"
 
     def build_phase(self, phase):
         super().build_phase(phase)
@@ -66,7 +56,7 @@ class vip(UVMComponent):
 
     def write_ip(self, tr):
         uvm_info(self.tag, "ip Vip write: " + tr.convert2string(), UVM_HIGH)
-        if tr.direction == ip_item.TX:
+        if tr.direction == uart_item.TX:
             self.model.tx_trig_event.set()
         else:
             uvm_info(self.tag, "VIP receieved RX", UVM_HIGH)
@@ -101,4 +91,4 @@ class vip(UVMComponent):
             self.model.flags.mis_changed.clear()
 
 
-uvm_component_utils(vip)
+uvm_component_utils(UART_VIP)

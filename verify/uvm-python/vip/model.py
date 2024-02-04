@@ -6,7 +6,7 @@ from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_warning, uv
 from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM
 from cocotb.queue import Queue
 import asyncio
-from ip_env.ip_item import ip_item
+from uart_item.uart_item import uart_item
 from uvm.base.uvm_component import UVMComponent
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisExport
@@ -89,9 +89,9 @@ class EF_UART(UVMComponent):
             data_tx = await self.fifo_tx.get_no_pop()
             self.check_tx_level_threshold()
             uvm_info(self.tag, f"Transmitting {chr(data_tx)}({hex(data_tx)}) fifo size = {self.fifo_tx.qsize()}", UVM_HIGH)
-            tr = ip_item.type_id.create("tr", self)
+            tr = uart_item.type_id.create("tr", self)
             tr.char = data_tx
-            tr.direction = ip_item.TX
+            tr.direction = uart_item.TX
             parity_type = (self.regs.read_reg_value("config") >> 5) & 0x7
             tr.calculate_parity(parity_type)
             tr.word_length = self.regs.read_reg_value("config") & 0xf
