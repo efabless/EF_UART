@@ -1,7 +1,7 @@
 import cocotb
 from uvm.comps import UVMTest
 from uvm import UVMCoreService
-from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info, uvm_warning
+from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.base.uvm_config_db import UVMConfigDb
 from uvm.base.uvm_printer import UVMTablePrinter
 from uvm.base.sv import sv
@@ -11,11 +11,10 @@ from EF_UVM.top_env import top_env
 from uart_interface.uart_if import uart_if
 from EF_UVM.wrapper_env.wrapper_interface.wrapper_if import wrapper_bus_if, wrapper_irq_if
 from cocotb_coverage.coverage import coverage_db
-from caravel_cocotb.scripts.merge_coverage import merge_fun_cov
 from cocotb.triggers import Event, First
 from EF_UVM.wrapper_env.wrapper_regs import wrapper_regs
 from uvm.base.uvm_report_server import UVMReportServer
-#seq
+# seq
 from EF_UVM.wrapper_env.wrapper_seq_lib.write_read_regs import write_read_regs
 from uart_seq_lib.uart_tx_seq import uart_tx_seq
 from uart_seq_lib.uart_config import uart_config
@@ -41,9 +40,14 @@ from uart_coverage.uart_coverage import uart_coverage
 from EF_UVM.ip_env.ip_logger.ip_logger import ip_logger
 from uart_logger.uart_logger import uart_logger
 
+# import cProfile
+# import pstats
 
 @cocotb.test()
 async def module_top(dut):
+    # profiler = cProfile.Profile()
+    # profiler.enable()
+
     pif = uart_if(dut)
     w_if = wrapper_bus_if(dut)
     w_irq_if = wrapper_irq_if(dut)
@@ -63,6 +67,10 @@ async def module_top(dut):
     test_path = test_path[0]
     await run_test()
     coverage_db.export_to_yaml(filename=f"{test_path}/coverage.yalm")
+    # profiler.disable()
+    # profiler.dump_stats("profile_result.prof")
+
+
 
 
 class base_test(UVMTest):

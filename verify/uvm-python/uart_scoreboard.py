@@ -8,7 +8,7 @@ from EF_UVM.scoreboard import scoreboard
 
 
 class uart_scoreboard(scoreboard):
-    def __init__(self, name="scoreboard", parent=None):
+    def __init__(self, name="uart_scoreboard", parent=None):
         super().__init__(name, parent)
         pass
 
