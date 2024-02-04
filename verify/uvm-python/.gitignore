@@ -5,7 +5,7 @@
 *.code-workspace
 *.log
 *.vcd
-/sim_build/
+/sim/
 /coverageReports/
 *.xml
 *.gtkw

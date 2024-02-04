@@ -19,14 +19,14 @@ from uvm.base.uvm_report_server import UVMReportServer
 from cocotb.triggers import Event, First
 #seq
 from wrapper_env.wrapper_seq_lib.write_read_regs import write_read_regs
-from wrapper_env.wrapper_seq_lib.uart_tx_seq import uart_tx_seq
-from wrapper_env.wrapper_seq_lib.uart_config import uart_config
-from wrapper_env.wrapper_seq_lib.uart_rx_read import uart_rx_read
+from ip_env.ip_seq_lib.uart_tx_seq import uart_tx_seq
+from ip_env.ip_seq_lib.uart_config import uart_config
+from ip_env.ip_seq_lib.uart_rx_read import uart_rx_read
 from ip_env.ip_seq_lib.uart_rx_seq import uart_rx_seq
 from ip_env.ip_seq_lib.tx_length_parity_seq import tx_length_parity_seq
 from ip_env.ip_seq_lib.rx_length_parity_seq import rx_length_parity_seq, rx_length_parity_seq_wrapper
 from ip_env.ip_seq_lib.uart_prescalar_seq import uart_prescalar_seq_wrapper, uart_prescalar_seq
-from wrapper_env.wrapper_seq_lib.uart_loopback_seq import uart_loopback_seq
+from ip_env.ip_seq_lib.uart_loopback_seq import uart_loopback_seq
 from uvm.base import UVMRoot
 
 @cocotb.test()

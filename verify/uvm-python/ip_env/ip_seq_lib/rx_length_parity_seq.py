@@ -2,11 +2,10 @@ from uvm.macros.uvm_object_defines import uvm_object_utils
 from uvm.macros.uvm_sequence_defines import uvm_do_with
 from uvm.base import sv, UVM_HIGH, UVM_LOW
 import random
-from wrapper_env.wrapper_seq_lib.seq_base import seq_base
-from uvm.macros.uvm_message_defines import uvm_info, uvm_fatal
+from ip_env.ip_seq_lib.seq_base import seq_base
 from wrapper_env.wrapper_seq_lib.reset_seq import reset_seq
 from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
-from wrapper_env.wrapper_seq_lib.uart_config import uart_config
+from ip_env.ip_seq_lib.uart_config import uart_config
 from uvm.seq import UVMSequence
 from ip_env.ip_item import ip_item
 from ip_env.ip_seq_lib.rx_seq import rx_seq

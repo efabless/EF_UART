@@ -5,8 +5,8 @@ from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
 from uvm.base import sv, UVM_HIGH, UVM_LOW
 from ip_env.ip_item import ip_item
 import random
-from wrapper_env.wrapper_seq_lib.seq_base import seq_base
-from wrapper_env.wrapper_seq_lib.uart_config import uart_config
+from ip_env.ip_seq_lib.seq_base import seq_base
+from ip_env.ip_seq_lib.uart_config import uart_config
 from wrapper_env.wrapper_seq_lib.reset_seq import reset_seq
 from ip_env.ip_seq_lib.tx_seq import tx_seq
 from ip_env.ip_seq_lib.rx_seq import rx_seq

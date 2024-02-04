@@ -8,8 +8,8 @@ from uvm.base.uvm_config_db import UVMConfigDb
 from cocotb_coverage.coverage import coverage_db
 import os
 import random
-from wrapper_env.wrapper_seq_lib.uart_config import uart_config
-from wrapper_env.wrapper_seq_lib.seq_base import seq_base
+from ip_env.ip_seq_lib.uart_config import uart_config
+from ip_env.ip_seq_lib.seq_base import seq_base
 
 
 class uart_loopback_seq(seq_base):

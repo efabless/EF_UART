@@ -5,8 +5,6 @@ from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
 from uvm.base import sv, UVM_HIGH, UVM_LOW
 from wrapper_env.wrapper_item import wrapper_bus_item
 from uvm.base.uvm_config_db import UVMConfigDb
-from cocotb_coverage.coverage import coverage_db
-import os
 import random
 
 

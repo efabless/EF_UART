@@ -4,11 +4,7 @@ from uvm.macros.uvm_message_defines import uvm_info, uvm_fatal
 from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
 from uvm.base import sv, UVM_HIGH, UVM_LOW
 from wrapper_env.wrapper_item import wrapper_bus_item
-from uvm.base.uvm_config_db import UVMConfigDb
-from cocotb_coverage.coverage import coverage_db
-import os
-import random
-from wrapper_env.wrapper_seq_lib.seq_base import seq_base
+from ip_env.ip_seq_lib.seq_base import seq_base
 
 
 class uart_config(seq_base):
