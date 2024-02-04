@@ -40,12 +40,12 @@ class write_read_regs(UVMSequence):
     def add_cov_notify(self):
         # add callback to the cover group
         for name in self.regs_dict.values():
-            coverage_db["uart.regs." + name["name"]].add_threshold_callback(self.remove_addr, 90)
+            coverage_db["top.wrapper.regs." + name["name"]].add_threshold_callback(self.remove_addr, 95)
 
     def remove_addr(self):
         # remove callback from the cover group
         for address, name in self.regs_dict.items():
-            if coverage_db["uart.regs." + name["name"]].cover_percentage >= 90:
+            if coverage_db["top.wrapper.regs." + name["name"]].cover_percentage >= 95:
                 try:
                     self.address.remove(address)
                     uvm_info(self.tag, f"removed address: {str(address)}({name['name']})  address available in regs:  {str(self.address)}", UVM_LOW)
