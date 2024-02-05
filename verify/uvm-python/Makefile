@@ -2,7 +2,7 @@ PLUSARGS += "+UVM_VERBOSITY=UVM_MEDIUM"
 TOPLEVEL := top
 MODULE   ?= top_module
 VERILOG_SOURCES ?=  $(PWD)/top.v $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_APB.v  $(PWD)/../../hdl/rtl/EF_UART.v
-RTL_MACROS ?= ""
+RTL_MACROS ?= "-DSKIP_WAVE_DUMP"
 YAML_FILE = $(PWD)/../../EF_UART.yaml
 MAKEFLAGS += --no-print-directory
 

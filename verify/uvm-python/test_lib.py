@@ -62,6 +62,8 @@ async def module_top(dut):
     UVMConfigDb.set(None, "*", "wrapper_regs", regs)
     UVMConfigDb.set(None, "*", "irq_exist", regs.get_irq_exist())
     UVMConfigDb.set(None, "*", "insert_glitches", False)
+    UVMConfigDb.set(None, "*", "collect_coverage", False)
+    UVMConfigDb.set(None, "*", "disable_logger", True)
     test_path = []
     UVMRoot().clp.get_arg_values("+TEST_PATH=", test_path)
     test_path = test_path[0]
