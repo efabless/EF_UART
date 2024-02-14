@@ -80,9 +80,9 @@ EF_UART is a Soft IP with the following features:
 The following table is the result for implmenting the EF_UART IP using Sky130 PDK and the [OpenLane2](https://github.com/efabless/openlane2) flow tool. You can find the configuration file used [here]()
 |Module | Number of cells | Max. freq |
 |-|-|-|
-|EF_UART|||
-|EF_UART_APB||
-|EF_UART_AHBL||
+|EF_UART|1612||
+|EF_UART_APB|1967|
+|EF_UART_AHBL|2003|
 |EF_UART_WB||
 
 
