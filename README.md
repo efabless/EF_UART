@@ -77,7 +77,7 @@ EF_UART is a Soft IP with the following features:
 |timeout_flag|output|1|Timeout flag|
 
 ## Implementation example 
-The following table is the result for implmenting the IP using Sky130 PDK and the [OpenLane2](https://github.com/efabless/openlane2) flow tool. You can find the configuration file used [here]()
+The following table is the result for implmenting the EF_UART IP using Sky130 PDK and the [OpenLane2](https://github.com/efabless/openlane2) flow tool. You can find the configuration file used [here]()
 |Module | Number of cells | Max. freq |
 |-|-|-|
 |EF_UART|||
