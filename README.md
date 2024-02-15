@@ -84,6 +84,7 @@ TX Data register; ; the interface to the Receive FIFO.
 ### PR Register [Offset: 0x8, mode: w]
 
 The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.
+
 <img src="https://svg.wavedrom.com/{reg:[{name:'PR', bits:16},{bits: 16}], config: {lanes: 2, hflip: true}} "/>
 
 
