@@ -17,4 +17,14 @@ SIM_TAG ?= default_tag
 # Define SIM_PATH variable
 SIM_PATH := $(PWD)/sim/$(SIM_TAG)
 
+# Check and clone EF_UVM repository at the beginning of the Makefile execution
+REPO_DIR := EF_UVM
+
+clone_ef_uvm := $(shell if [ ! -d "$(REPO_DIR)" ]; then \
+	echo "Cloning the EF_UVM repository..."; \
+	git clone git@github.com:M0stafaRady/EF_UVM.git; \
+fi;)
+
+
+
 include EF_UVM/Makefile.test
