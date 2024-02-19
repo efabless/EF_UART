@@ -1,26 +1,19 @@
 /*
-	Copyright 2022 AUCOHL
+	Copyright 2024 Efabless Corp.
 
 	Author: Mohamed Shalan (mshalan@aucegypt.edu)
 
-	Permission is hereby granted, free of charge, to any person obtaining
-	a copy of this software and associated documentation files (the
-	"Software"), to deal in the Software without restriction, including
-	without limitation the rights to use, copy, modify, merge, publish,
-	distribute, sublicense, and/or sell copies of the Software, and to
-	permit persons to whom the Software is furnished to do so, subject to
-	the following conditions:
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
 
-	The above copyright notice and this permission notice shall be
-	included in all copies or substantial portions of the Software.
+	    http://www.apache.org/licenses/LICENSE-2.0
 
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-	NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-	LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-	OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-	WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
 
 */
 
@@ -45,11 +38,11 @@ module EF_UART_APB_tb;
 	localparam [`APB_AW-1:0]
 			RXDATA_REG_OFFSET =	`APB_AW'h0000,
 			TXDATA_REG_OFFSET =	`APB_AW'h0004,
-			PRESCALER_REG_OFFSET =	`APB_AW'h000c,
-			CONTROL_REG_OFFSET =	`APB_AW'h0008,
-			CONFIG_REG_OFFSET =	`APB_AW'h0010,
-			FIFO_CONTROL_REG_OFFSET =	`APB_AW'h0014,
-			FIFO_STATUS_REG_OFFSET =	`APB_AW'h0018,
+			PR_REG_OFFSET =	`APB_AW'h0008,
+			CTRL_REG_OFFSET =	`APB_AW'h000c,
+			CFG_REG_OFFSET =	`APB_AW'h0010,
+			FIFOCTRL_REG_OFFSET =	`APB_AW'h0014,
+			FIFOS_REG_OFFSET =	`APB_AW'h0018,
 			MATCH_REG_OFFSET =	`APB_AW'h001c,
 			IM_REG_OFFSET =		`APB_AW'h0f00,
 			IC_REG_OFFSET =		`APB_AW'h0f0c,
@@ -60,7 +53,7 @@ module EF_UART_APB_tb;
 
 	wire	[0:0]	rx;
 	wire	[0:0]	tx;
-
+	
 	reg				vip_tx;
 	wire			vip_rx;
 
@@ -81,9 +74,9 @@ module EF_UART_APB_tb;
 	`include "apb_tasks.vh"
 	`include "serial_tasks.vh"
 
-	event	e_test1_start, e_test1_done;
-event	e_test2_start, e_test2_done;
-	`TB_TEST_EVENT(test3) 
+	`TB_TEST_EVENT(test1)
+	`TB_TEST_EVENT(test2)
+	`TB_TEST_EVENT(test3)
 	
 	localparam real BIT_TIME_115200 = 8680.55,
 					BIT_TIME_57600 = 17361.11;
@@ -91,20 +84,20 @@ event	e_test2_start, e_test2_done;
 		#999 -> e_assert_reset;
 		@(e_reset_done);
 
-// Do some initializations
+		// Do some initializations
 		// Set the baud rate to 115,200 bps
 		// 0.1152 = 10/((PR+1)*8) ==> PR = 9.85 (~10)
 		// Actual baud = 113.636 baud/s
 		// bit time = 8.6805 us (actual: 8.8 us)
-		APB_W_WRITE(PRESCALER_REG_OFFSET, 16'd10);
+		APB_W_WRITE(PR_REG_OFFSET, 16'd10);
 		// Configure the line for 8N1
-		APB_W_WRITE(CONFIG_REG_OFFSET, 32'b111111_000_0_1000);
+		APB_W_WRITE(CFG_REG_OFFSET, 32'b111111_000_0_1000);
 		// Perform Test 1
 		#1000 -> e_test1_start;
 		@(e_test1_done);
 
 		// Perform other tests
-#1000 -> e_test2_start;
+		#1000 -> e_test2_start;
 		@(e_test2_done);
 
 		#1000 -> e_test3_start;
@@ -129,8 +122,8 @@ event	e_test2_start, e_test2_done;
 	`TB_TEST_BEGIN(test1)
 t1f = 0;
 		// Test 1 code goes here
-		// Enable the receiver and the UART
-APB_W_WRITE(CONTROL_REG_OFFSET, 32'b0_0_1_0_1);
+// Enable the receiver and the UART
+APB_W_WRITE(CTRL_REG_OFFSET, 32'b0_0_1_0_1);
 		//send_serial_8N1(8696, 8'hA5);
 		->e_send_serial_data;
 		forever begin
@@ -155,18 +148,18 @@ APB_W_WRITE(CONTROL_REG_OFFSET, 32'b0_0_1_0_1);
 		end 
 	`TB_TEST_END(test1)
 
-// Test 2 -- Send a frame @ 57600
+		// Test 2 -- Send a frame @ 57600
 	`TB_TEST_BEGIN(test2)
 		// Disable the UART fully
-		APB_W_WRITE(CONTROL_REG_OFFSET, 32'b0);
+		APB_W_WRITE(CTRL_REG_OFFSET, 32'b0);
 		// Configure the prescaler for 57600
 		// Prescaler has to be 20.7 
 		// will go for 21 which gives 56818.18 baud/s
-		APB_W_WRITE(PRESCALER_REG_OFFSET, 16'd21);
+		APB_W_WRITE(PR_REG_OFFSET, 16'd21);
 		// Configure the line for 812
-		APB_W_WRITE(CONFIG_REG_OFFSET, 32'b111111_101_1_1000);
+		APB_W_WRITE(CFG_REG_OFFSET, 32'b111111_101_1_1000);
 		// Enable the transmission
-		APB_W_WRITE(CONTROL_REG_OFFSET, 32'b0_0_0_1_1);
+		APB_W_WRITE(CTRL_REG_OFFSET, 32'b0_0_0_1_1);
 		// Send two different frames
 		APB_W_WRITE(TXDATA_REG_OFFSET, 'hC3);
 		APB_W_WRITE(TXDATA_REG_OFFSET, 'h91);
@@ -178,15 +171,15 @@ APB_W_WRITE(CONTROL_REG_OFFSET, 32'b0_0_1_0_1);
 	// Test 3 -- Enable Loopback mode
 	`TB_TEST_BEGIN(test3)
 		// Disable the UART fully
-		APB_W_WRITE(CONTROL_REG_OFFSET, 32'b0);
+		APB_W_WRITE(CTRL_REG_OFFSET, 32'b0);
 		// Configure the prescaler for 57600
 		// Prescaler has to be 20.7 
 		// will go for 21 which gives 56818.18 baud/s
-		APB_W_WRITE(PRESCALER_REG_OFFSET, 16'd21);
+		APB_W_WRITE(PR_REG_OFFSET, 16'd21);
 		// Configure the line for 812
-		APB_W_WRITE(CONFIG_REG_OFFSET, 32'b111111_101_1_1000);
+		APB_W_WRITE(CFG_REG_OFFSET, 32'b111111_101_1_1000);
 		// Enable TX, RX and LP
-		APB_W_WRITE(CONTROL_REG_OFFSET, 32'b0_1_1_1_1);
+		APB_W_WRITE(CTRL_REG_OFFSET, 32'b0_1_1_1_1);
 		// Send two different frames
 		APB_W_WRITE(TXDATA_REG_OFFSET, 'hC3);
 		APB_W_WRITE(TXDATA_REG_OFFSET, 'h91);
