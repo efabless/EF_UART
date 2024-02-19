@@ -58,9 +58,9 @@ class EF_UART(UVMComponent):
     def write_register(self, addr, data):
         uvm_info(self.tag, "Writing register " + hex(addr) + " with value " + hex(data), UVM_HIGH)
         self.regs.write_reg_value(addr, data)
-        if addr == self.regs.reg_name_to_address["txdata"]:  # txdata
+        if addr == self.regs.reg_name_to_address["TXDATA"]:  # txdata
             try:
-                word_mask = (1 << (self.regs.read_reg_value("config") & 0xf)) -1
+                word_mask = (1 << (self.regs.read_reg_value("CFG") & 0xf)) -1
                 self.fifo_tx.put_nowait(data & word_mask)
                 uvm_info(self.tag, f"value {hex(data)} written to tx fifo size = {self.fifo_tx.qsize()}", UVM_MEDIUM)
                 self.check_tx_level_threshold()
@@ -68,14 +68,15 @@ class EF_UART(UVMComponent):
                     self.flags.set_tx_full()
             except asyncio.QueueFull:
                 uvm_warning(self.tag, f"writing to tx while fifo is full so ignore the value {hex(data)}")
-        if addr == 0x8:  # control
+        if addr == self.regs.reg_name_to_address["CTRL"]:  # control
             uvm_info(self.tag, "UART control reg set", UVM_HIGH)
             self.event_control.set()
 
     def read_register(self, addr):
-        uvm_info(self.tag, "Reading register " + hex(addr), UVM_HIGH)
-        if addr == self.regs.reg_name_to_address["rxdata"]:  # reading from rx data
+        uvm_info(self.tag, "Reading register " + hex(addr), UVM_MEDIUM)
+        if addr == self.regs.reg_name_to_address["RXDATA"]:  # reading from rx data
             try:
+                uvm_info(self.tag, f"reading from rx fifo size = {self.fifo_rx.qsize()}", UVM_MEDIUM)
                 data = self.fifo_rx.get_nowait()
                 self.check_rx_level_threshold()
                 return data
@@ -92,9 +93,9 @@ class EF_UART(UVMComponent):
             tr = uart_item.type_id.create("tr", self)
             tr.char = data_tx
             tr.direction = uart_item.TX
-            parity_type = (self.regs.read_reg_value("config") >> 5) & 0x7
+            parity_type = (self.regs.read_reg_value("CFG") >> 5) & 0x7
             tr.calculate_parity(parity_type)
-            tr.word_length = self.regs.read_reg_value("config") & 0xf
+            tr.word_length = self.regs.read_reg_value("CFG") & 0xf
             
             await self.tx_trig_event.wait()
             self.ip_export.write(tr)
@@ -103,7 +104,7 @@ class EF_UART(UVMComponent):
             # update rx fifo when loopback is enabled 
             await self.fifo_tx.get()
 
-            if (self.regs.read_reg_value("control") & 0xF) == 0xF:
+            if (self.regs.read_reg_value("CTRL") & 0xF) == 0xF:
                 try:
                     self.fifo_rx.put_nowait(data_tx)
                     self.check_receiver_match(data_tx)
@@ -117,7 +118,7 @@ class EF_UART(UVMComponent):
 
     def write_rx(self, tr):
         # if rx is enabled
-        if (self.regs.read_reg_value("control") & 7) in [5, 7]:
+        if (self.regs.read_reg_value("CTRL") & 7) in [5, 7]:
             try:
                 self.fifo_rx.put_nowait(tr.char)
                 self.check_receiver_match(tr.char)
@@ -136,7 +137,7 @@ class EF_UART(UVMComponent):
 
     async def control_regs(self):
         while True:
-            if (self.regs.read_reg_value("control") & 7) in [3, 7]:
+            if (self.regs.read_reg_value("CTRL") & 7) in [3, 7]:
                 uvm_info(self.tag, "Enabling UART TX", UVM_MEDIUM)
                 if self.tx_thread is None:
                     self.tx_thread = await cocotb.start(self.transmit())
@@ -151,12 +152,12 @@ class EF_UART(UVMComponent):
             self.event_control.clear()
 
     def check_receiver_match(self, new_char):
-        match_reg = self.regs.read_reg_value("match")
+        match_reg = self.regs.read_reg_value("MATCH")
         if new_char == match_reg:
             self.flags.set_data_match()
 
     def check_rx_level_threshold(self):
-        threshold = (self.regs.read_reg_value("fifo_control") >> 8) & 0b1111
+        threshold = (self.regs.read_reg_value("FIFOCTRL") >> 8) & 0b1111
         uvm_info(self.tag, f"RX threshold = {threshold} size = {self.fifo_rx.qsize()}", UVM_HIGH)
         if self.fifo_rx.qsize() > threshold:
             if not self.fifo_rx_threshold:
@@ -168,7 +169,7 @@ class EF_UART(UVMComponent):
         #         uvm_info(self.tag, "[interrupt flag] Disabling RX FIFO thread", UVM_HIGH)
 
     def check_tx_level_threshold(self):
-        threshold = self.regs.read_reg_value("fifo_control") & 0b1111
+        threshold = self.regs.read_reg_value("FIFOCTRL") & 0b1111
         uvm_info(self.tag, f"TX threshold = {threshold} size = {self.fifo_tx.qsize()}", UVM_HIGH)
         if self.fifo_tx.qsize() < threshold:
             if not self.fifo_tx_threshold:

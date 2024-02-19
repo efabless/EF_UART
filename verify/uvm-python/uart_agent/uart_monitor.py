@@ -155,32 +155,32 @@ class uart_monitor(ip_monitor):
         return num_cyc_bit_rx, word_length_rx
 
     def get_bit_n_cyc(self):
-        prescale = self.regs.read_reg_value("prescaler")
+        prescale = self.regs.read_reg_value("PR")
         uvm_info(self.tag, "prescale = " + str(prescale), UVM_HIGH)
         return ((prescale + 1) * 8)
 
     def get_n_bits(self):
-        word_length = self.regs.read_reg_value("config") & 0b1111
+        word_length = self.regs.read_reg_value("CFG") & 0b1111
         uvm_info(self.tag, "Data word length = " + str(word_length), UVM_HIGH)
         return word_length
 
     def is_parity_exists(self):
-        parity = (self.regs.read_reg_value("config") >> 5) & 0b111
+        parity = (self.regs.read_reg_value("CFG") >> 5) & 0b111
         return parity != 0
 
     def is_stop_bit_exists(self):
-        stop_bit = (self.regs.read_reg_value("config") >> 4) & 0x1
+        stop_bit = (self.regs.read_reg_value("CFG") >> 4) & 0x1
         return stop_bit
 
     async def watch_rx_timeout(self):
         # wait for uart enable
         while True:
-            uart_enabled = self.regs.read_reg_value("control") & 1
+            uart_enabled = self.regs.read_reg_value("CTRL") & 1
             if uart_enabled:
                 break
             await ClockCycles(self.sigs.PCLK, 1)
         while True:
-            timeout = 1 + ((self.regs.read_reg_value("config") >> 8) & 0b111111)
+            timeout = 1 + ((self.regs.read_reg_value("CFG") >> 8) & 0b111111)
             bit_rate = self.get_bit_n_cyc() * self.clk_period
             total_time_ns = int(timeout * bit_rate)
             uvm_info(self.tag, f"timeout = {timeout} bit_rate = {bit_rate} mult = {bit_rate * timeout}", UVM_MEDIUM)
@@ -215,7 +215,7 @@ class uart_monitor(ip_monitor):
     def check_parity(self, char, parity):
         tr = uart_item.type_id.create("tr", self)
         tr.char = char
-        parity_type = (self.regs.read_reg_value("config") >> 5) & 0x7
+        parity_type = (self.regs.read_reg_value("CFG") >> 5) & 0x7
         tr.calculate_parity(parity_type)
         if tr.parity == parity:
             return

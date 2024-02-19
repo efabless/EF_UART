@@ -27,7 +27,7 @@ class uart_rx_read(UVMSequence):
         # randomly config uart
         # first disabled the uart
         for _ in range(random.randint(1, 18)):
-            await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["rxdata"], lambda kind: kind == wrapper_bus_item.READ, lambda data: data == 0)
+            await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["RXDATA"], lambda kind: kind == wrapper_bus_item.READ, lambda data: data == 0)
             # await uvm_do_with(self, self.req, lambda addr: addr == adress_dict["im"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data == 0)
 
 

@@ -82,7 +82,7 @@ class uart_driver(UVMDriver):
             await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
 
     async def send_parity(self, tr):
-        parity_type = (self.regs.read_reg_value("config") >> 5) & 0x7
+        parity_type = (self.regs.read_reg_value("CFG") >> 5) & 0x7
         tr.calculate_parity(parity_type)
         if tr.parity == "None":
             return
@@ -91,7 +91,7 @@ class uart_driver(UVMDriver):
         await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
 
     async def send_stop_bit(self):
-        stop_bit = (self.regs.read_reg_value("config") >> 4) & 0x1
+        stop_bit = (self.regs.read_reg_value("CFG") >> 4) & 0x1
         if stop_bit:
             self.sigs.RX.value = 1
             uvm_info(self.tag, f"driving extra stop bit", UVM_HIGH)
@@ -107,12 +107,12 @@ class uart_driver(UVMDriver):
             await ClockCycles(self.sigs.PCLK, self.num_cyc_bit)
 
     def get_bit_n_cyc(self):
-        prescale = self.regs.read_reg_value("prescaler")
+        prescale = self.regs.read_reg_value("PR")
         uvm_info(self.tag, "prescale = " + str(prescale), UVM_HIGH)
         return ((prescale + 1) * 8)
 
     def get_n_bits(self):
-        word_length = self.regs.read_reg_value("config") & 0xf
+        word_length = self.regs.read_reg_value("CFG") & 0xf
         uvm_info(self.tag, "Data word length = " + str(word_length), UVM_HIGH)
         return word_length
 

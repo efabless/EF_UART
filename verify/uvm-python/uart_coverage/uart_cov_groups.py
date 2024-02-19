@@ -16,7 +16,7 @@ class ip_cov_groups():
         @self.apply_decorators(decorators=self.char_cov)
         @CoverPoint(
             f"{self.hierarchy}.Prescaler",
-            xf=lambda tr: (self.regs.read_reg_value("prescaler"), tr.direction),
+            xf=lambda tr: (self.regs.read_reg_value("PR"), tr.direction),
             bins=[((0 if i == 0 else 1 << i * 4, (1 << (i * 4 + 4)) - 1), j) for i in range(4) for j in [uart_item.RX, uart_item.TX]],
             bins_labels=[((hex(0 if i == 0 else 1 << i * 4), hex((1 << (i * 4 + 4)) - 1)), "RX" if j == uart_item.RX else "TX") for i in range(4) for j in [uart_item.RX, uart_item.TX]],
             at_least=3,
@@ -24,21 +24,21 @@ class ip_cov_groups():
         )
         @CoverPoint(
             f"{self.hierarchy}.Loopback",
-            xf=lambda tr: (self.regs.read_reg_value("control") & 0b1000 == 0b1000),
+            xf=lambda tr: (self.regs.read_reg_value("CTRL") & 0b1000 == 0b1000),
             bins=[False, True],
             bins_labels=["loopback" if i else "normal" for i in [False, True]],
             at_least=3,
         )
         @CoverPoint(
             f"{self.hierarchy}.Glitch_fliter",
-            xf=lambda tr: (self.regs.read_reg_value("control") & 0b10000 == 0b10000, tr.direction),
+            xf=lambda tr: (self.regs.read_reg_value("CTRL") & 0b10000 == 0b10000, tr.direction),
             bins=[(i,uart_item.RX) for i in [False, True]],
             bins_labels=["Flitered" if i else "not Flitered" for i in [False, True]],
             at_least=3,
         )
         @CoverPoint(
             f"{self.hierarchy}.Stopbits",
-            xf=lambda tr: (self.regs.read_reg_value("config") & 0b10000 == 0b10000),
+            xf=lambda tr: (self.regs.read_reg_value("CFG") & 0b10000 == 0b10000),
             bins=[False, True],
             bins_labels=["two stop bits" if i else "one stop bit" for i in [False, True]],
             at_least=3,
@@ -62,7 +62,7 @@ class ip_cov_groups():
                 ))
                 cov_points.append(CoverPoint(
                     f"{self.hierarchy}.{'TX' if direction == uart_item.TX else 'RX'}.Length{word_len}.Parity",
-                    xf=lambda tr: (tr.direction, tr.word_length, tr.parity, (self.regs.read_reg_value("config") >> 5) & 0b111),
+                    xf=lambda tr: (tr.direction, tr.word_length, tr.parity, (self.regs.read_reg_value("CFG") >> 5) & 0b111),
                     bins=[("None", 0), ("0", 1), ("1", 1), ("0", 2), ("1", 2), ("0", 4), ("1", 5)],
                     bins_labels=["None", "odd 0 parity", "odd 1 parity", "even 0 parity", "even 1 parity", "stick 0 parity", "stick 1 parity"],
                     rel=lambda val, b, direction=direction, word_len=word_len: direction == val[0] and word_len == val[1] and b[0] == val[2] and b[1] == val[3]

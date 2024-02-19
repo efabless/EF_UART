@@ -1,9 +1,10 @@
 from uvm.seq import UVMSequence
 from uvm.macros.uvm_object_defines import uvm_object_utils
-from uvm.macros.uvm_message_defines import uvm_fatal
+from uvm.macros.uvm_message_defines import uvm_fatal,uvm_info
 from EF_UVM.wrapper_env.wrapper_item import wrapper_bus_item
 from uvm.base.uvm_config_db import UVMConfigDb
 
+from uvm.base.uvm_object_globals import UVM_FULL, UVM_LOW, UVM_ERROR
 
 class seq_base(UVMSequence):
 

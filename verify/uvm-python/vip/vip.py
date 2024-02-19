@@ -49,6 +49,7 @@ class UART_VIP(VIP):
             self.model.write_register(tr.addr, tr.data)
             self.wrapper_bus_export.write(tr)
         elif tr.kind == wrapper_bus_item.READ:
+            uvm_info(self.tag, "Vip read: " + tr.convert2string(), UVM_MEDIUM)
             data = self.model.read_register(tr.addr)
             td = tr.do_clone()
             td.data = data

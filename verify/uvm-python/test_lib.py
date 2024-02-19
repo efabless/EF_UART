@@ -62,8 +62,8 @@ async def module_top(dut):
     UVMConfigDb.set(None, "*", "wrapper_regs", regs)
     UVMConfigDb.set(None, "*", "irq_exist", regs.get_irq_exist())
     UVMConfigDb.set(None, "*", "insert_glitches", False)
-    UVMConfigDb.set(None, "*", "collect_coverage", False)
-    UVMConfigDb.set(None, "*", "disable_logger", True)
+    UVMConfigDb.set(None, "*", "collect_coverage", True)
+    UVMConfigDb.set(None, "*", "disable_logger", False)
     test_path = []
     UVMRoot().clp.get_arg_values("+TEST_PATH=", test_path)
     test_path = test_path[0]
@@ -113,7 +113,7 @@ class base_test(UVMTest):
             uvm_fatal("NOVIF", "Could not get wrapper_bus_if from config DB")
         # set max number of uvm errors 
         server = UVMReportServer()
-        server.set_max_quit_count(1)
+        server.set_max_quit_count(3)
         UVMCoreService.get().set_report_server(server)
 
 
