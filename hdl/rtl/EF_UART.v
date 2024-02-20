@@ -266,7 +266,7 @@ module UART_RX #(parameter NUM_SAMPLES = 16, MDW = 8)(
     reg [3:0]   b_reg;            //baud-rate/over sampling counter
     reg [3:0]   b_next;
     reg [3:0]   count_reg;        //data-bit counter
-    reg [2:0]   count_next;
+	reg [3:0]   count_next;
     reg [8:0]   data_reg;         //data register
     reg [8:0]   data_next;
     reg         p_error_reg;
@@ -441,8 +441,8 @@ module UART_TX #(parameter NUM_SAMPLES = 16, MDW = 8)(
     reg [2:0]   next_state;
     reg [3:0]   b_reg;          // baud tick counter
     reg [3:0]   b_next;
-    reg [2:0]   count_reg;      // data bit counter
-    reg [2:0]   count_next;
+	reg [3:0]   count_reg;      // data bit counter
+	reg [3:0]   count_next;
     reg [8:0]   data_reg;       // data register
     reg [8:0]   data_next;
     reg         tx_reg;         // output data reg
