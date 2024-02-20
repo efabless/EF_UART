@@ -24,9 +24,6 @@ jobs:
           cd verify/uvm-python
           make run_all_tests RUN_MERGE_COVERAGE=false
 
-      - name: Clean passed runs
-        run: make clean_passed_dirs
-
       - name: Check for test results in sim/default_run
         run: |
           cd verify/uvm-python
