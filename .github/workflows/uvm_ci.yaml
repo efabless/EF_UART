@@ -24,21 +24,23 @@ jobs:
           cd verify/uvm-python
           make run_all_tests RUN_MERGE_COVERAGE=false
 
-      - name: Check for test results in sim/default_run
+      - name: Check for test results in run
         run: |
           cd verify/uvm-python
-          passed_count=$(find sim/default_run -type f -name 'passed' | wc -l)
-          failed_count=$(find sim/default_run -type f -name 'failed' | wc -l)
-          unknown_count=$(find sim/default_run -type f -name 'unknown' | wc -l)
+          passed_count=$(find sim/default_tag -type f -name 'passed' | wc -l)
+          failed_count=$(find sim/default_tag -type f -name 'failed' | wc -l)
+          unknown_count=$(find sim/default_tag -type f -name 'unknown' | wc -l)
 
           echo "Passed: $passed_count"
           echo "Failed: $failed_count"
           echo "Unknown: $unknown_count"
 
-          if [ "$failed_count" -ne 0 ] || [ "$unknown_count" -ne 0 ]; then
+          if [ "$passed_count" -eq 0 ]; then
+            echo "Error: No passed test results found"
+            exit 1
+          elif [ "$failed_count" -ne 0 ] || [ "$unknown_count" -ne 0 ]; then
             echo "Error: There are failed or unknown test results"
             exit 1
           else
             echo "All tests passed successfully"
-          fi
-
+          fi 
