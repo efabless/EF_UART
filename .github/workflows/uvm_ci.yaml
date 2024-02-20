@@ -15,6 +15,10 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: download docker
+        run: |
+          docker pull efabless/dv:cocotb
+
       - name: Navigate to verify/uvm-python and run tests
         run: |
           cd verify/uvm-python
