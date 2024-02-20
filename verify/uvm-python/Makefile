@@ -22,7 +22,7 @@ REPO_DIR := EF_UVM
 
 clone_ef_uvm := $(shell if [ ! -d "$(REPO_DIR)" ]; then \
 	echo "Cloning the EF_UVM repository..."; \
-	git clone git@github.com:M0stafaRady/EF_UVM.git; \
+	git clone https://github.com/M0stafaRady/EF_UVM.git; \
 fi;)
 
 
