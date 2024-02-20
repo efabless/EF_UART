@@ -1,0 +1,33 @@
+name: Run UVM all tests
+
+on:
+  push: # This now triggers on pushes to any branch
+  pull_request: # This now triggers on pull requests to any branch
+
+jobs:
+  test_and_clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Navigate to verify/uvm-python and run tests
+        run: |
+          cd verify/uvm-python
+          make run_all_tests
+
+      - name: Clean passed runs
+        run: make clean_passed_dirs
+
+      - name: Check for directories under sim
+        run: |
+          if [ "$(ls -A sim/)" ]; then
+             echo "Error: runs exist under sim after cleanup"
+             exit 1
+          else
+             echo "Cleanup successful, no directories under sim"
+          fi
