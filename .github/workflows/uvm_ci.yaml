@@ -22,7 +22,7 @@ jobs:
       - name: Navigate to verify/uvm-python and run tests
         run: |
           cd verify/uvm-python
-          make run_all_tests
+          make run_all_tests RUN_MERGE_COVERAGE=false
 
       - name: Clean passed runs
         run: make clean_passed_dirs
