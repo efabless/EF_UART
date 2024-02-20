@@ -27,11 +27,21 @@ jobs:
       - name: Clean passed runs
         run: make clean_passed_dirs
 
-      - name: Check for directories under sim
+      - name: Check for test results in sim/default_run
         run: |
-          if [ "$(ls -A sim/)" ]; then
-             echo "Error: runs exist under sim after cleanup"
-             exit 1
+          cd verify/uvm-python
+          passed_count=$(find sim/default_run -type f -name 'passed' | wc -l)
+          failed_count=$(find sim/default_run -type f -name 'failed' | wc -l)
+          unknown_count=$(find sim/default_run -type f -name 'unknown' | wc -l)
+
+          echo "Passed: $passed_count"
+          echo "Failed: $failed_count"
+          echo "Unknown: $unknown_count"
+
+          if [ "$failed_count" -ne 0 ] || [ "$unknown_count" -ne 0 ]; then
+            echo "Error: There are failed or unknown test results"
+            exit 1
           else
-             echo "Cleanup successful, no directories under sim"
+            echo "All tests passed successfully"
           fi
+
