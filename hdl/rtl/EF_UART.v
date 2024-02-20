@@ -199,8 +199,8 @@ module EF_UART #(parameter  MDW = 9,        // Max data size/width
                 samples_count <= samples_count + 1'b1;
     end
 
-    assign tx_level_below = (tx_level < txfifotr);
-    assign rx_level_above = (rx_level > rxfifotr);
+    assign tx_level_below = (tx_level < txfifotr) & ~tx_full;
+    assign rx_level_above = (rx_level > rxfifotr) | rx_full;
     assign overrun_flag = rx_full & rx_done;
     assign timeout_flag = (bits_count == timeout_bits);
 
