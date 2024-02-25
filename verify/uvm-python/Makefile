@@ -9,7 +9,7 @@ MAKEFLAGS += --no-print-directory
 
 # List of tests
 TESTS := TX_StressTest RX_StressTest LoopbackTest PrescalarStressTest LengthParityTXStressTest LengthParityRXStressTest WriteReadRegsTest
-TESTS := WriteReadRegsTest 
+# TESTS := WriteReadRegsTest 
 
 # Variable for tag - set this as required
 SIM_TAG ?= default_tag
