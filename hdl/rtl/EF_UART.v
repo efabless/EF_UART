@@ -199,8 +199,8 @@ module EF_UART #(parameter  MDW = 9,        // Max data size/width
                 samples_count <= samples_count + 1'b1;
     end
 
-    assign tx_level_below = (tx_level < txfifotr);
-    assign rx_level_above = (rx_level > rxfifotr);
+    assign tx_level_below = (tx_level < txfifotr) & ~tx_full;
+    assign rx_level_above = (rx_level > rxfifotr) | rx_full;
     assign overrun_flag = rx_full & rx_done;
     assign timeout_flag = (bits_count == timeout_bits);
 
@@ -447,7 +447,11 @@ module UART_TX #(parameter NUM_SAMPLES = 16, MDW = 8)(
     reg [8:0]   data_next;
     reg         tx_reg;         // output data reg
     reg         tx_next;
-  
+
+    	// prepare the data to claculate the parity by removing any extra bits entered
+	// by the user by error
+    	wire [MDW-1] pdata = (d_in) & ~(MDW'hFF << data_size);
+
     //State Machine  
     always @(posedge clk, negedge resetn) begin
         if(!resetn) begin
@@ -517,13 +521,13 @@ module UART_TX #(parameter NUM_SAMPLES = 16, MDW = 8)(
             parity_st: begin
                 tx_next = 1'b0;
                 case (parity_type)
-                    3'b001 : //Odd parity
-                        tx_next = ~^d_in;
-                    3'b010 : //Even parity
-                        tx_next = ^d_in;
-                    3'b100 : //Sticky 0 parity
+                    3'b001 : // Odd parity
+                        tx_next = ~^pdata;
+                    3'b010 : // Even parity
+                        tx_next = ^pdata;
+                    3'b100 : // Sticky 0 parity
                         tx_next = 0;
-                    3'b101 : //Sticky 1 parity
+                    3'b101 : // Sticky 1 parity
                         tx_next = 1;
                 endcase
                 if(b_tick)
