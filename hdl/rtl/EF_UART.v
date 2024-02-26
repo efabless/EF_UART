@@ -110,6 +110,7 @@ module EF_UART #(parameter  MDW = 9,        // Max data size/width
     aucohl_glitch_filter #(.N(GFLEN)) rx_glitch_filter (
         .clk(clk),
         .rst_n(rst_n),
+        .en(glitch_filter_en),
         .in(rx_synched),
         .out(rx_filtered)
     );
