@@ -9,7 +9,7 @@ from uvm.base.uvm_object_globals import UVM_FULL, UVM_LOW, UVM_ERROR
 from uvm.base.uvm_globals import run_test
 from EF_UVM.top_env import top_env
 from uart_interface.uart_if import uart_if
-from EF_UVM.wrapper_env.wrapper_interface.wrapper_if import wrapper_bus_if, wrapper_irq_if
+from EF_UVM.wrapper_env.wrapper_interface.wrapper_if import wrapper_apb_if, wrapper_irq_if, wrapper_ahb_if
 from cocotb_coverage.coverage import coverage_db
 from cocotb.triggers import Event, First
 from EF_UVM.wrapper_env.wrapper_regs import wrapper_regs
@@ -40,19 +40,34 @@ from uart_coverage.uart_coverage import uart_coverage
 from EF_UVM.ip_env.ip_logger.ip_logger import ip_logger
 from uart_logger.uart_logger import uart_logger
 
-# import cProfile
-# import pstats
+# 
+from EF_UVM.wrapper_env.wrapper_agent.wrapper_ahb_driver import wrapper_ahb_driver
+from EF_UVM.wrapper_env.wrapper_agent.wrapper_apb_driver import wrapper_apb_driver
+from EF_UVM.wrapper_env.wrapper_agent.wrapper_ahb_monitor import wrapper_ahb_monitor
+from EF_UVM.wrapper_env.wrapper_agent.wrapper_apb_monitor import wrapper_apb_monitor
+
+
 
 @cocotb.test()
 async def module_top(dut):
     # profiler = cProfile.Profile()
     # profiler.enable()
-
+    arr = []
+    # sv.value_plusargs('BUS_TYPE',arr)
+    BUS_TYPE = cocotb.plusargs['BUS_TYPE']
+    print(f"plusr agr value = {BUS_TYPE}")
     pif = uart_if(dut)
-    w_if = wrapper_bus_if(dut)
+    if BUS_TYPE == "APB":
+        w_if = wrapper_apb_if(dut)
+    elif BUS_TYPE == "AHB":
+        w_if = wrapper_ahb_if(dut)
+    elif BUS_TYPE == "WISHBONE":
+        w_if = wrapper_wishbone_if(dut)
+    else:
+        uvm_fatal("module_top", f"unknown bus type {BUS_TYPE}")
     w_irq_if = wrapper_irq_if(dut)
     UVMConfigDb.set(None, "*", "ip_if", pif)
-    UVMConfigDb.set(None, "*", "wrapper_bus_if", w_if)
+    UVMConfigDb.set(None, "*", "wrapper_if", w_if)
     UVMConfigDb.set(None, "*", "wrapper_irq_if", w_irq_if)
     UVMConfigDb.set(None, "*", "json_file", "/home/rady/work/uvm_unit/EF_UART/EF_UART.json")
     yaml_file = []
@@ -92,6 +107,10 @@ class base_test(UVMTest):
         self.set_type_override_by_type(scoreboard.get_type(), uart_scoreboard.get_type())
         self.set_type_override_by_type(ip_coverage.get_type(), uart_coverage.get_type())
         self.set_type_override_by_type(ip_logger.get_type(), uart_logger.get_type())
+        BUS_TYPE = cocotb.plusargs['BUS_TYPE']
+        if BUS_TYPE == "AHB":
+            self.set_type_override_by_type(wrapper_apb_driver.get_type(), wrapper_ahb_driver.get_type())
+            self.set_type_override_by_type(wrapper_apb_monitor.get_type(), wrapper_ahb_monitor.get_type())
         # self.set_type_override_by_type(ip_item.get_type(),uart_item.get_type())
         # Enable transaction recording for everything
         UVMConfigDb.set(self, "*", "recording_detail", UVM_FULL)
@@ -107,10 +126,10 @@ class base_test(UVMTest):
         else:
             uvm_fatal("NOVIF", "Could not get ip_if from config DB")
 
-        if UVMConfigDb.get(None, "*", "wrapper_bus_if", arr) is True:
-            UVMConfigDb.set(self, "*", "wrapper_bus_if", arr[0])
+        if UVMConfigDb.get(None, "*", "wrapper_if", arr) is True:
+            UVMConfigDb.set(self, "*", "wrapper_if", arr[0])
         else:
-            uvm_fatal("NOVIF", "Could not get wrapper_bus_if from config DB")
+            uvm_fatal("NOVIF", "Could not get wrapper_if from config DB")
         # set max number of uvm errors 
         server = UVMReportServer()
         server.set_max_quit_count(3)
