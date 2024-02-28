@@ -7,7 +7,7 @@
     "license": "APACHE 2.0",
     "author": "Mohamed Shalan",
     "email": "mshalan@aucegypt.edu",
-    "version": "v1.0.0",
+    "version": "v1.1.0",
     "date": "11-1-2024",
     "category": "digital",
     "tags": [
@@ -18,11 +18,11 @@
     "bus": [
       "generic"
     ],
-    "type\"": "soft",
+    "type": "soft",
     "status": "verified",
     "cell_count": "690",
-    "width\"": "0.0",
-    "height\"": "0.0",
+    "width": "0.0",
+    "height": "0.0",
     "technology": "n/a",
     "clock_freq_mhz": "10",
     "digital_supply_voltage": "n/a",
