@@ -35,7 +35,7 @@ fi;)
 
 clone_ef_uvm := $(shell if [ ! -d "EF_UVM" ]; then \
 	echo "Cloning the EF_UVM repository..."; \
-	git clone https://github.com/M0stafaRady/EF_UVM.git; \
+	git clone https://github.com/efabless/EF_UVM.git; \
 fi;)
 
 
