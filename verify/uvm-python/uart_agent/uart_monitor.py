@@ -56,6 +56,7 @@ class uart_monitor(ip_monitor):
             tr.char, tr.parity, tr.word_length = await self.get_char()
             tr.direction = uart_item.TX
             uvm_info(self.tag, "sampled uart TX transaction: " + tr.convert2string(), UVM_HIGH)
+            uvm_error(self.tag, "sampled uart TX transaction: " + tr.convert2string())
             self.monitor_port.write(tr)
             self.tx_received.set()
 
