@@ -9,7 +9,7 @@ from uvm.base.uvm_object_globals import UVM_FULL, UVM_LOW, UVM_ERROR
 from uvm.base.uvm_globals import run_test
 from EF_UVM.top_env import top_env
 from uart_interface.uart_if import uart_if
-from EF_UVM.wrapper_env.wrapper_interface.wrapper_if import wrapper_apb_if, wrapper_irq_if, wrapper_ahb_if
+from EF_UVM.wrapper_env.wrapper_interface.wrapper_if import wrapper_apb_if, wrapper_irq_if, wrapper_ahb_if, wrapper_wb_if
 from cocotb_coverage.coverage import coverage_db
 from cocotb.triggers import Event, First
 from EF_UVM.wrapper_env.wrapper_regs import wrapper_regs
@@ -43,8 +43,10 @@ from uart_logger.uart_logger import uart_logger
 # 
 from EF_UVM.wrapper_env.wrapper_agent.wrapper_ahb_driver import wrapper_ahb_driver
 from EF_UVM.wrapper_env.wrapper_agent.wrapper_apb_driver import wrapper_apb_driver
+from EF_UVM.wrapper_env.wrapper_agent.wrapper_wb_driver import wrapper_wb_driver
 from EF_UVM.wrapper_env.wrapper_agent.wrapper_ahb_monitor import wrapper_ahb_monitor
 from EF_UVM.wrapper_env.wrapper_agent.wrapper_apb_monitor import wrapper_apb_monitor
+from EF_UVM.wrapper_env.wrapper_agent.wrapper_wb_monitor import wrapper_wb_monitor
 
 
 
@@ -62,7 +64,7 @@ async def module_top(dut):
     elif BUS_TYPE == "AHB":
         w_if = wrapper_ahb_if(dut)
     elif BUS_TYPE == "WISHBONE":
-        w_if = wrapper_wishbone_if(dut)
+        w_if = wrapper_wb_if(dut)
     else:
         uvm_fatal("module_top", f"unknown bus type {BUS_TYPE}")
     w_irq_if = wrapper_irq_if(dut)
@@ -111,6 +113,9 @@ class base_test(UVMTest):
         if BUS_TYPE == "AHB":
             self.set_type_override_by_type(wrapper_apb_driver.get_type(), wrapper_ahb_driver.get_type())
             self.set_type_override_by_type(wrapper_apb_monitor.get_type(), wrapper_ahb_monitor.get_type())
+        elif BUS_TYPE == "WISHBONE":
+            self.set_type_override_by_type(wrapper_apb_driver.get_type(), wrapper_wb_driver.get_type())
+            self.set_type_override_by_type(wrapper_apb_monitor.get_type(), wrapper_wb_monitor.get_type())
         # self.set_type_override_by_type(ip_item.get_type(),uart_item.get_type())
         # Enable transaction recording for everything
         UVMConfigDb.set(self, "*", "recording_detail", UVM_FULL)
