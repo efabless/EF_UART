@@ -44,17 +44,17 @@ jobs:
           else
             echo "All tests passed successfully"
           fi
-    - name: tar failed tests
-      if: failure()
-      run: |
-        cd verify/uvm-python
-        tar -czf failed_tests.tar.gz sim/default_tag
+        - name: tar failed tests
+          if: failure()
+          run: |
+            cd verify/uvm-python
+            tar -czf failed_tests.tar.gz sim/default_tag
+        
+        - name: upload failed tests
+          if: failure()
+          uses: actions/upload-artifact@v2
+          with:
+            name: failed_tests
+            path: verify/uvm-python/failed_tests.tar.gz
     
-    - name: upload failed tests
-      if: failure()
-      uses: actions/upload-artifact@v2
-      with:
-        name: failed_tests
-        path: verify/uvm-python/failed_tests.tar.gz
-    
-    
+
