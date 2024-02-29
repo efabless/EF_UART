@@ -54,8 +54,6 @@ from EF_UVM.wrapper_env.wrapper_agent.wrapper_wb_monitor import wrapper_wb_monit
 async def module_top(dut):
     # profiler = cProfile.Profile()
     # profiler.enable()
-    arr = []
-    # sv.value_plusargs('BUS_TYPE',arr)
     BUS_TYPE = cocotb.plusargs['BUS_TYPE']
     print(f"plusr agr value = {BUS_TYPE}")
     pif = uart_if(dut)

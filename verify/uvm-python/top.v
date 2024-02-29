@@ -3,10 +3,10 @@
 module top();
     reg 		CLK = 0;
     wire 		RESETn = 1;
+    wire 		RX;
+    wire 		TX;
+    wire 		irq;
     `ifdef BUS_TYPE_APB
-        wire 		RX;
-        wire 		TX;
-       
         wire [31:0]	PADDR;
         wire 		PWRITE;
         wire 		PSEL;
@@ -14,7 +14,6 @@ module top();
         wire [31:0]	PWDATA;
         wire [31:0]	PRDATA;
         wire 		PREADY;
-        wire 		irq;
         EF_UART_APB dut(.rx(RX), .tx(TX), .PCLK(CLK), .PRESETn(RESETn), .PADDR(PADDR), .PWRITE(PWRITE), .PSEL(PSEL), .PENABLE(PENABLE), .PWDATA(PWDATA), .PRDATA(PRDATA), .PREADY(PREADY), .IRQ(irq));
     `endif // BUS_TYPE_APB
     `ifdef BUS_TYPE_AHB
@@ -26,7 +25,6 @@ module top();
         wire [31:0]	HWDATA;
         wire [31:0]	HRDATA;
         wire 		HREADY;
-        wire 		irq;
         EF_UART_AHBL dut(.rx(RX), .tx(TX), .HCLK(CLK), .HRESETn(RESETn), .HADDR(HADDR), .HWRITE(HWRITE), .HSEL(HSEL), .HTRANS(HTRANS), .HWDATA(HWDATA), .HRDATA(HRDATA), .HREADY(HREADY),.HREADYOUT(HREADYOUT), .IRQ(irq));
     `endif // BUS_TYPE_AHB
     `ifdef BUS_TYPE_WISHBONE
@@ -37,7 +35,6 @@ module top();
         wire        cyc_i;
         wire        stb_i;
         reg         ack_o;
-        wire        we_i;
         EF_UART_wb dut(.rx(RX), .tx(TX), .clk_i(CLK), .rst_i(~rst_i), .adr_i(adr_i), .dat_i(dat_i), .dat_o(dat_o), .sel_i(sel_i), .cyc_i(cyc_i), .stb_i(stb_i), .ack_o(ack_o),.we_i(we_i), .irq(irq));
     `endif // BUS_TYPE_WISHBONE
     // monitor inside signals
