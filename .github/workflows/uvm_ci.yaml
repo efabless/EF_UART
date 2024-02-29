@@ -59,10 +59,21 @@ jobs:
   lint: # Lint the RTL code
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: download docker
+        run: |
+          docker pull efabless/dv:cocotb
+
       - uses: actions/checkout@v2
       - name: Lint
         run: |
+          cd verify/uvm-python
           make lint BUS_TYPE=APB
+
       - name: Upload lint results
         if: failure()
         uses: actions/upload-artifact@v2
