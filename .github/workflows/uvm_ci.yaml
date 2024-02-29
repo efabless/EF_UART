@@ -73,11 +73,11 @@ jobs:
         run: |
           cd verify/uvm-python
           make lint BUS_TYPE=APB
-          cnt=$(grep -c "Error" "verify/uvm-python/sim/linter.log")
+          cnt=$(grep -c "Error" "sim/linter.log")
           if ! [[ $cnt ]]; then cnt=0; fi
           if [[ $cnt -eq 1 ]]; then exit 0; fi
           exit 2
-          cnt=$(grep -c "Warning" "verify/uvm-python/sim/linter.log")
+          cnt=$(grep -c "Warning" "sim/linter.log")
           if ! [[ $cnt ]]; then cnt=0; fi
           if [[ $cnt -eq 1 ]]; then exit 0; fi
           exit 2
