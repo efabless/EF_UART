@@ -73,11 +73,11 @@ jobs:
         run: |
           cd verify/uvm-python
           make lint BUS_TYPE=APB
-          cnt=$(grep -c "Error" "verify/uvm-python/sim/lint.log")
+          cnt=$(grep -c "Error" "verify/uvm-python/sim/linter.log")
           if ! [[ $cnt ]]; then cnt=0; fi
           if [[ $cnt -eq 1 ]]; then exit 0; fi
           exit 2
-          cnt=$(grep -c "Warning" "verify/uvm-python/sim/lint.log")
+          cnt=$(grep -c "Warning" "verify/uvm-python/sim/linter.log")
           if ! [[ $cnt ]]; then cnt=0; fi
           if [[ $cnt -eq 1 ]]; then exit 0; fi
           exit 2
@@ -86,6 +86,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: lint_results.log
-          path: verify/uvm-python/sim/lint.log
+          path: verify/uvm-python/sim/linter.log
 
 
