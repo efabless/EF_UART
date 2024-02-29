@@ -56,5 +56,18 @@ jobs:
         with:
           name: failed_tests
           path: verify/uvm-python/failed_tests.tar.gz
-    
+  lint: # Lint the RTL code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint
+        run: |
+          make lint BUS_TYPE=APB
+      - name: Upload lint results
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint_results.log
+          path: verify/uvm-python/sim/lint.log
+
 

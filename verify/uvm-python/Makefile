@@ -1,8 +1,11 @@
 PLUSARGS += "+UVM_VERBOSITY=UVM_HIGH"
 TOPLEVEL := top
 MODULE   ?= top_module
-VERILOG_INCLUDE_DIRS = $(PWD)/IP_Utilities/rtl $(PWD)/../../hdl/rtl $(PWD)/../../hdl/rtl/bus_wrappers
-VERILOG_SOURCES ?=  $(PWD)/top.v  $(PWD)/IP_Utilities/rtl/aucohl_lib.v $(PWD)/IP_Utilities/rtl/aucohl_rtl.vh $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_AHBL.pp.v $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_APB.pp.v  $(PWD)/../../hdl/rtl/EF_UART.v 
+AHB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_AHBL.pp.v
+APB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_APB.pp.v
+WB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_wb.v
+HDL_FILES ?= $(PWD)/IP_Utilities/rtl/aucohl_lib.v $(PWD)/IP_Utilities/rtl/aucohl_rtl.vh  $(PWD)/../../hdl/rtl/EF_UART.v 
+VERILOG_SOURCES ?=  $(PWD)/top.v $(AHB_FILES) $(APB_FILES) $(WB_FILES) $(HDL_FILES)
 RTL_MACROS += ""
 BUS_TYPE ?= APB
 ifeq ($(BUS_TYPE),APB)
