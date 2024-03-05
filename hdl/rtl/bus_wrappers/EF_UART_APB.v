@@ -243,7 +243,7 @@ module EF_UART_APB #(
 	assign PREADY = 1'b1;
 
 	assign	RXDATA_WIRE = rdata;
-	assign	rd = (apb_re & (PADDR[`APB_AW-1:0] == RXDATA_REG_OFFSET) & PENABLE);
+	assign	rd = (apb_re & (PADDR[`APB_AW-1:0] == RXDATA_REG_OFFSET));
 	assign	wdata = PWDATA;
 	assign	wr = (apb_we & (PADDR[`APB_AW-1:0] == TXDATA_REG_OFFSET));
 endmodule

@@ -110,6 +110,7 @@ module EF_UART #(parameter  MDW = 9,        // Max data size/width
     aucohl_glitch_filter #(.N(GFLEN)) rx_glitch_filter (
         .clk(clk),
         .rst_n(rst_n),
+        .en(glitch_filter_en),
         .in(rx_synched),
         .out(rx_filtered)
     );
@@ -266,7 +267,7 @@ module UART_RX #(parameter NUM_SAMPLES = 16, MDW = 8)(
     reg [3:0]   b_reg;            //baud-rate/over sampling counter
     reg [3:0]   b_next;
     reg [3:0]   count_reg;        //data-bit counter
-    reg [2:0]   count_next;
+    reg [3:0]   count_next;
     reg [8:0]   data_reg;         //data register
     reg [8:0]   data_next;
     reg         p_error_reg;
@@ -308,6 +309,7 @@ module UART_RX #(parameter NUM_SAMPLES = 16, MDW = 8)(
         data_next = data_reg;
         rx_done = 1'b0;
         p_error_next = 1'b0;
+        f_error_next = 1'b0;
             
         case(current_state)
             idle_st:
@@ -441,8 +443,8 @@ module UART_TX #(parameter NUM_SAMPLES = 16, MDW = 8)(
     reg [2:0]   next_state;
     reg [3:0]   b_reg;          // baud tick counter
     reg [3:0]   b_next;
-    reg [2:0]   count_reg;      // data bit counter
-    reg [2:0]   count_next;
+    reg [3:0]   count_reg;      // data bit counter
+    reg [3:0]   count_next;
     reg [8:0]   data_reg;       // data register
     reg [8:0]   data_next;
     reg         tx_reg;         // output data reg
@@ -450,7 +452,7 @@ module UART_TX #(parameter NUM_SAMPLES = 16, MDW = 8)(
 
     	// prepare the data to claculate the parity by removing any extra bits entered
 	// by the user by error
-    	wire [MDW-1] pdata = (d_in) & ~(MDW'hFF << data_size);
+    	wire [MDW-1] pdata = (d_in) & ~({MDW{1'b1}} << data_size);
 
     //State Machine  
     always @(posedge clk, negedge resetn) begin
