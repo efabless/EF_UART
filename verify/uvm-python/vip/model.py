@@ -30,7 +30,7 @@ class EF_UART(UVMComponent):
         super().build_phase(phase)
         uvm_info(self.tag, "Vip built", UVM_HIGH)
         arr = []
-        if (not UVMConfigDb.get(self, "", "wrapper_regs", arr)):
+        if (not UVMConfigDb.get(self, "", "bus_regs", arr)):
             uvm_fatal(self.tag, "No json file wrapper regs")
         else:
             self.regs = arr[0]

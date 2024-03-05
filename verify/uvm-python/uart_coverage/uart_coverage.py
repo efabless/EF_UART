@@ -19,7 +19,7 @@ class uart_coverage(ip_coverage):
     def build_phase(self, phase):
         super().build_phase(phase)
         arr = []
-        if (not UVMConfigDb.get(self, "", "wrapper_regs", arr)):
+        if (not UVMConfigDb.get(self, "", "bus_regs", arr)):
             uvm_fatal(self.tag, "No json file wrapper regs")
         else:
             regs = arr[0]

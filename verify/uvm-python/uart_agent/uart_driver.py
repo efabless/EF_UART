@@ -21,7 +21,7 @@ class uart_driver(UVMDriver):
         else:
             self.vif = arr[0]
         regs_arr = []
-        if (not UVMConfigDb.get(self, "", "wrapper_regs", regs_arr)):
+        if (not UVMConfigDb.get(self, "", "bus_regs", regs_arr)):
             uvm_fatal(self.tag, "No json file wrapper regs")
         else:
             self.regs = regs_arr[0]
@@ -32,9 +32,11 @@ class uart_driver(UVMDriver):
         else:
             self.insert_glitches = glitches_arr[0]
 
+    async def reset_phase(self, phase):
+        await self.reset()
+
     async def run_phase(self, phase):
         uvm_info(self.tag, "run_phase started", UVM_LOW)
-        await self.reset()
         # assert glitches
         while True:
             tr = []

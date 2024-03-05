@@ -5,7 +5,7 @@ from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.base.uvm_config_db import UVMConfigDb
 from vip.model import EF_UART
-from EF_UVM.wrapper_env.wrapper_item import wrapper_bus_item, wrapper_irq_item
+from EF_UVM.bus_env.bus_item import bus_bus_item, bus_irq_item
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisExport
 from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
 from uart_item.uart_item import uart_item
@@ -43,17 +43,17 @@ class UART_VIP(VIP):
         uvm_info(self.tag, "Vip write: " + tr.convert2string(), UVM_MEDIUM)
         if tr.reset:
             self.model.reset()
-            self.wrapper_bus_export.write(tr)
+            self.bus_bus_export.write(tr)
             return
-        if tr.kind == wrapper_bus_item.WRITE:
+        if tr.kind == bus_bus_item.WRITE:
             self.model.write_register(tr.addr, tr.data)
-            self.wrapper_bus_export.write(tr)
-        elif tr.kind == wrapper_bus_item.READ:
+            self.bus_bus_export.write(tr)
+        elif tr.kind == bus_bus_item.READ:
             uvm_info(self.tag, "Vip read: " + tr.convert2string(), UVM_MEDIUM)
             data = self.model.read_register(tr.addr)
             td = tr.do_clone()
             td.data = data
-            self.wrapper_bus_export.write(td)
+            self.bus_bus_export.write(td)
 
     def write_ip(self, tr):
         uvm_info(self.tag, "ip Vip write: " + tr.convert2string(), UVM_HIGH)
@@ -81,14 +81,14 @@ class UART_VIP(VIP):
             uvm_info(self.tag, f"mis changed mis = {self.model.regs.read_reg_value('mis')} irq = {irq}", UVM_MEDIUM)
             if self.model.regs.read_reg_value("mis") != 0 and irq == 0:
                 irq = 1
-                tr = wrapper_irq_item.type_id.create("tr", self)
+                tr = bus_irq_item.type_id.create("tr", self)
                 tr.trg_irq = 1
-                self.wrapper_irq_export.write(tr)
+                self.bus_irq_export.write(tr)
             elif self.model.regs.read_reg_value("mis") == 0 and irq == 1:
                 irq = 0
-                tr = wrapper_irq_item.type_id.create("tr", self)
+                tr = bus_irq_item.type_id.create("tr", self)
                 tr.trg_irq = 0
-                self.wrapper_irq_export.write(tr)
+                self.bus_irq_export.write(tr)
             self.model.flags.mis_changed.clear()
 
 

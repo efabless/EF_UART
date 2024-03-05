@@ -3,7 +3,7 @@ from uvm.macros.uvm_object_defines import uvm_object_utils
 from uvm.macros.uvm_message_defines import uvm_info, uvm_fatal
 from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
 from uvm.base import sv, UVM_HIGH, UVM_LOW
-from EF_UVM.wrapper_env.wrapper_item import wrapper_bus_item
+from EF_UVM.bus_env.bus_item import bus_bus_item
 from uvm.base.uvm_config_db import UVMConfigDb
 from cocotb_coverage.coverage import coverage_db
 import os
@@ -22,17 +22,17 @@ class uart_loopback_seq(seq_base):
         config_seq = uart_config("uart_config")
         await uvm_do(self, config_seq)  # change the presclar/ configs
         # enable loopback
-        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["CTRL"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data == 0xF)
+        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["CTRL"], lambda kind: kind == bus_bus_item.WRITE, lambda data: data == 0xF)
 
         for _ in range(30):
             random_send = random.randint(1, 10)
             for __ in range(random_send):
-                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["TXDATA"], lambda kind: kind == wrapper_bus_item.WRITE, lambda data: data in range(0, 0x200))
+                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["TXDATA"], lambda kind: kind == bus_bus_item.WRITE, lambda data: data in range(0, 0x200))
             for __ in range(random_send): # wait untill all data sent
                 await self.monitor.tx_received.wait()
                 self.monitor.tx_received.clear()
             for __ in range(random_send):
-                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["RXDATA"], lambda kind: kind == wrapper_bus_item.READ, lambda data: data in range(0, 0x200))
+                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["RXDATA"], lambda kind: kind == bus_bus_item.READ, lambda data: data in range(0, 0x200))
 
 
 uvm_object_utils(uart_loopback_seq)

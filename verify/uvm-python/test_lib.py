@@ -9,13 +9,13 @@ from uvm.base.uvm_object_globals import UVM_FULL, UVM_LOW, UVM_ERROR
 from uvm.base.uvm_globals import run_test
 from EF_UVM.top_env import top_env
 from uart_interface.uart_if import uart_if
-from EF_UVM.wrapper_env.wrapper_interface.wrapper_if import wrapper_apb_if, wrapper_irq_if, wrapper_ahb_if, wrapper_wb_if
+from EF_UVM.bus_env.bus_interface.bus_if import bus_apb_if, bus_irq_if, bus_ahb_if, bus_wb_if
 from cocotb_coverage.coverage import coverage_db
 from cocotb.triggers import Event, First
-from EF_UVM.wrapper_env.wrapper_regs import wrapper_regs
+from EF_UVM.bus_env.bus_regs import bus_regs
 from uvm.base.uvm_report_server import UVMReportServer
 # seq
-from EF_UVM.wrapper_env.wrapper_seq_lib.write_read_regs import write_read_regs
+from EF_UVM.bus_env.bus_seq_lib.write_read_regs import write_read_regs
 from uart_seq_lib.uart_tx_seq import uart_tx_seq
 from uart_seq_lib.uart_config import uart_config
 from uart_seq_lib.uart_rx_read import uart_rx_read
@@ -41,12 +41,12 @@ from EF_UVM.ip_env.ip_logger.ip_logger import ip_logger
 from uart_logger.uart_logger import uart_logger
 
 # 
-from EF_UVM.wrapper_env.wrapper_agent.wrapper_ahb_driver import wrapper_ahb_driver
-from EF_UVM.wrapper_env.wrapper_agent.wrapper_apb_driver import wrapper_apb_driver
-from EF_UVM.wrapper_env.wrapper_agent.wrapper_wb_driver import wrapper_wb_driver
-from EF_UVM.wrapper_env.wrapper_agent.wrapper_ahb_monitor import wrapper_ahb_monitor
-from EF_UVM.wrapper_env.wrapper_agent.wrapper_apb_monitor import wrapper_apb_monitor
-from EF_UVM.wrapper_env.wrapper_agent.wrapper_wb_monitor import wrapper_wb_monitor
+from EF_UVM.bus_env.bus_agent.bus_ahb_driver import bus_ahb_driver
+from EF_UVM.bus_env.bus_agent.bus_apb_driver import bus_apb_driver
+from EF_UVM.bus_env.bus_agent.bus_wb_driver import bus_wb_driver
+from EF_UVM.bus_env.bus_agent.bus_ahb_monitor import bus_ahb_monitor
+from EF_UVM.bus_env.bus_agent.bus_apb_monitor import bus_apb_monitor
+from EF_UVM.bus_env.bus_agent.bus_wb_monitor import bus_wb_monitor
 
 
 
@@ -58,23 +58,23 @@ async def module_top(dut):
     print(f"plusr agr value = {BUS_TYPE}")
     pif = uart_if(dut)
     if BUS_TYPE == "APB":
-        w_if = wrapper_apb_if(dut)
+        w_if = bus_apb_if(dut)
     elif BUS_TYPE == "AHB":
-        w_if = wrapper_ahb_if(dut)
+        w_if = bus_ahb_if(dut)
     elif BUS_TYPE == "WISHBONE":
-        w_if = wrapper_wb_if(dut)
+        w_if = bus_wb_if(dut)
     else:
         uvm_fatal("module_top", f"unknown bus type {BUS_TYPE}")
-    w_irq_if = wrapper_irq_if(dut)
+    w_irq_if = bus_irq_if(dut)
     UVMConfigDb.set(None, "*", "ip_if", pif)
-    UVMConfigDb.set(None, "*", "wrapper_if", w_if)
-    UVMConfigDb.set(None, "*", "wrapper_irq_if", w_irq_if)
+    UVMConfigDb.set(None, "*", "bus_if", w_if)
+    UVMConfigDb.set(None, "*", "bus_irq_if", w_irq_if)
     UVMConfigDb.set(None, "*", "json_file", "/home/rady/work/uvm_unit/EF_UART/EF_UART.json")
     yaml_file = []
     UVMRoot().clp.get_arg_values("+YAML_FILE=", yaml_file)
     yaml_file = yaml_file[0]
-    regs = wrapper_regs(yaml_file)
-    UVMConfigDb.set(None, "*", "wrapper_regs", regs)
+    regs = bus_regs(yaml_file)
+    UVMConfigDb.set(None, "*", "bus_regs", regs)
     UVMConfigDb.set(None, "*", "irq_exist", regs.get_irq_exist())
     UVMConfigDb.set(None, "*", "insert_glitches", False)
     UVMConfigDb.set(None, "*", "collect_coverage", True)
@@ -98,7 +98,7 @@ class base_test(UVMTest):
         self.printer = None
 
     def build_phase(self, phase):
-        # UVMConfigDb.set(self, "example_tb0.wrapper_env.wrapper_agent.wrapper_sequencer.run_phase", "default_sequence", write_seq.type_id.get())
+        # UVMConfigDb.set(self, "example_tb0.bus_env.bus_agent.bus_sequencer.run_phase", "default_sequence", write_seq.type_id.get())
         super().build_phase(phase)
         # override 
         self.set_type_override_by_type(ip_driver.get_type(), uart_driver.get_type())
@@ -109,11 +109,11 @@ class base_test(UVMTest):
         self.set_type_override_by_type(ip_logger.get_type(), uart_logger.get_type())
         BUS_TYPE = cocotb.plusargs['BUS_TYPE']
         if BUS_TYPE == "AHB":
-            self.set_type_override_by_type(wrapper_apb_driver.get_type(), wrapper_ahb_driver.get_type())
-            self.set_type_override_by_type(wrapper_apb_monitor.get_type(), wrapper_ahb_monitor.get_type())
+            self.set_type_override_by_type(bus_apb_driver.get_type(), bus_ahb_driver.get_type())
+            self.set_type_override_by_type(bus_apb_monitor.get_type(), bus_ahb_monitor.get_type())
         elif BUS_TYPE == "WISHBONE":
-            self.set_type_override_by_type(wrapper_apb_driver.get_type(), wrapper_wb_driver.get_type())
-            self.set_type_override_by_type(wrapper_apb_monitor.get_type(), wrapper_wb_monitor.get_type())
+            self.set_type_override_by_type(bus_apb_driver.get_type(), bus_wb_driver.get_type())
+            self.set_type_override_by_type(bus_apb_monitor.get_type(), bus_wb_monitor.get_type())
         # self.set_type_override_by_type(ip_item.get_type(),uart_item.get_type())
         # Enable transaction recording for everything
         UVMConfigDb.set(self, "*", "recording_detail", UVM_FULL)
@@ -129,10 +129,10 @@ class base_test(UVMTest):
         else:
             uvm_fatal("NOVIF", "Could not get ip_if from config DB")
 
-        if UVMConfigDb.get(None, "*", "wrapper_if", arr) is True:
-            UVMConfigDb.set(self, "*", "wrapper_if", arr[0])
+        if UVMConfigDb.get(None, "*", "bus_if", arr) is True:
+            UVMConfigDb.set(self, "*", "bus_if", arr[0])
         else:
-            uvm_fatal("NOVIF", "Could not get wrapper_if from config DB")
+            uvm_fatal("NOVIF", "Could not get bus_if from config DB")
         # set max number of uvm errors 
         server = UVMReportServer()
         server.set_max_quit_count(3)
@@ -144,7 +144,7 @@ class base_test(UVMTest):
         uvm_info(self.get_type_name(), sv.sformatf("Printing the test topology :\n%s", self.sprint(self.printer)), UVM_LOW)
 
     def start_of_simulation_phase(self, phase):
-        self.wrapper_sqr = self.example_tb0.wrapper_env.wrapper_agent.wrapper_sequencer
+        self.bus_sqr = self.example_tb0.bus_env.bus_agent.bus_sequencer
         self.ip_sqr = self.example_tb0.ip_env.ip_agent.ip_sequencer
 
     async def run_phase(self, phase):
@@ -177,9 +177,9 @@ class TX_StressTest(base_test):
     async def run_phase(self, phase):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
-        wrapper_seq = uart_tx_seq("uart_tx_seq")
-        wrapper_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
-        await wrapper_seq.start(self.wrapper_sqr)
+        bus_seq = uart_tx_seq("uart_tx_seq")
+        bus_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
+        await bus_seq.start(self.bus_sqr)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
 
@@ -195,12 +195,12 @@ class RX_StressTest(base_test):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
         ip_seq_rx = uart_rx_seq("uart_rx_seq")
-        wrapper_config_uart = uart_config()
-        wrapper_rx_read = uart_rx_read()
-        await wrapper_config_uart.start(self.wrapper_sqr)
+        bus_config_uart = uart_config()
+        bus_rx_read = uart_rx_read()
+        await bus_config_uart.start(self.bus_sqr)
         for _ in range(10):
             await ip_seq_rx.start(self.ip_sqr)
-            await wrapper_rx_read.start(self.wrapper_sqr)
+            await bus_rx_read.start(self.bus_sqr)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
 
@@ -215,9 +215,9 @@ class LoopbackTest(base_test):
     async def run_phase(self, phase):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
-        wrapper_seq = uart_loopback_seq("uart_loopback_seq")
-        wrapper_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
-        await wrapper_seq.start(self.wrapper_sqr)
+        bus_seq = uart_loopback_seq("uart_loopback_seq")
+        bus_seq.monitor = self.example_tb0.ip_env.ip_agent.monitor
+        await bus_seq.start(self.bus_sqr)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
 
@@ -234,11 +234,11 @@ class PrescalarStressTest(base_test):
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
         handshake_event = Event("handshake_event")
         ip_seq = uart_prescalar_seq(handshake_event)
-        wrapper_seq = uart_prescalar_seq_wrapper(handshake_event)
-        wrapper_seq.tx_seq_obj.monitor = self.example_tb0.ip_env.ip_agent.monitor
-        wrapper_seq_thread = await cocotb.start(wrapper_seq.start(self.wrapper_sqr))
+        bus_seq = uart_prescalar_seq_wrapper(handshake_event)
+        bus_seq.tx_seq_obj.monitor = self.example_tb0.ip_env.ip_agent.monitor
+        bus_seq_thread = await cocotb.start(bus_seq.start(self.bus_sqr))
         ip_seq_thread = await cocotb.start(ip_seq.start(self.ip_sqr))
-        await First(ip_seq_thread, wrapper_seq_thread)
+        await First(ip_seq_thread, bus_seq_thread)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
 
@@ -253,9 +253,9 @@ class LengthParityTXStressTest(base_test):
     async def run_phase(self, phase):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
-        wrapper_seq = tx_length_parity_seq()
-        wrapper_seq.tx_seq_obj.monitor = self.example_tb0.ip_env.ip_agent.monitor
-        await wrapper_seq.start(self.wrapper_sqr)
+        bus_seq = tx_length_parity_seq()
+        bus_seq.tx_seq_obj.monitor = self.example_tb0.ip_env.ip_agent.monitor
+        await bus_seq.start(self.bus_sqr)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
 
@@ -271,11 +271,11 @@ class LengthParityRXStressTest(base_test):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
         handshake_event = Event("handshake_event")
-        wrapper_seq = rx_length_parity_seq_wrapper(handshake_event)
+        bus_seq = rx_length_parity_seq_wrapper(handshake_event)
         ip_seq = rx_length_parity_seq(handshake_event)
-        wrapper_seq_thread = await cocotb.start(wrapper_seq.start(self.wrapper_sqr))
+        bus_seq_thread = await cocotb.start(bus_seq.start(self.bus_sqr))
         ip_seq_thread = await cocotb.start(ip_seq.start(self.ip_sqr))
-        await First(ip_seq_thread, wrapper_seq_thread)
+        await First(ip_seq_thread, bus_seq_thread)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
 
@@ -290,8 +290,8 @@ class WriteReadRegsTest(base_test):
     async def run_phase(self, phase):
         uvm_info(self.tag, f"Starting test {self.__class__.__name__}", UVM_LOW)
         phase.raise_objection(self, f"{self.__class__.__name__} OBJECTED")
-        wrapper_seq = write_read_regs()
-        await wrapper_seq.start(self.wrapper_sqr)
+        bus_seq = write_read_regs()
+        await bus_seq.start(self.bus_sqr)
         phase.drop_objection(self, f"{self.__class__.__name__} drop objection")
 
 

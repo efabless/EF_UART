@@ -7,7 +7,7 @@ from uart_item.uart_item import uart_item
 import random
 from uart_seq_lib.seq_base import seq_base
 from uart_seq_lib.uart_config import uart_config
-from EF_UVM.wrapper_env.wrapper_seq_lib.reset_seq import reset_seq
+from EF_UVM.bus_env.bus_seq_lib.reset_seq import reset_seq
 from uart_seq_lib.tx_seq import tx_seq
 from uart_seq_lib.rx_seq import rx_seq
 from cocotb.triggers import NextTimeStep
