@@ -31,8 +31,8 @@ from EF_UVM.ip_env.ip_agent.ip_driver import ip_driver
 from uart_agent.uart_driver import uart_driver
 from EF_UVM.ip_env.ip_agent.ip_monitor import ip_monitor
 from uart_agent.uart_monitor import uart_monitor
-from EF_UVM.vip.vip import VIP
-from vip.vip import UART_VIP
+from EF_UVM.ref_model.ref_model import ref_model
+from ref_model.ref_model import UART_VIP
 from EF_UVM.scoreboard import scoreboard
 from uart_scoreboard import uart_scoreboard
 from EF_UVM.ip_env.ip_coverage.ip_coverage import ip_coverage
@@ -103,7 +103,7 @@ class base_test(UVMTest):
         # override 
         self.set_type_override_by_type(ip_driver.get_type(), uart_driver.get_type())
         self.set_type_override_by_type(ip_monitor.get_type(), uart_monitor.get_type())
-        self.set_type_override_by_type(VIP.get_type(), UART_VIP.get_type())
+        self.set_type_override_by_type(ref_model.get_type(), UART_VIP.get_type())
         self.set_type_override_by_type(scoreboard.get_type(), uart_scoreboard.get_type())
         self.set_type_override_by_type(ip_coverage.get_type(), uart_coverage.get_type())
         self.set_type_override_by_type(ip_logger.get_type(), uart_logger.get_type())
