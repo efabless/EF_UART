@@ -1,7 +1,7 @@
 from uvm.macros.uvm_object_defines import uvm_object_utils
 from uvm.macros.uvm_sequence_defines import uvm_do_with
 from uvm.base import sv, UVM_HIGH, UVM_LOW
-from EF_UVM.bus_env.bus_item import bus_bus_item
+from EF_UVM.bus_env.bus_item import bus_item
 import random
 from uart_seq_lib.seq_base import seq_base
 
@@ -21,7 +21,7 @@ class tx_seq(seq_base):
                 await self.wait_tx()
 
     async def send_tx(self):
-        await uvm_do_with(self, self.req, lambda addr: addr == 0x4, lambda kind: kind == bus_bus_item.WRITE, lambda data: data in range(0, 0x200))
+        await uvm_do_with(self, self.req, lambda addr: addr == 0x4, lambda kind: kind == bus_item.WRITE, lambda data: data in range(0, 0x200))
 
     async def wait_tx(self):
         await self.monitor.tx_received.wait()

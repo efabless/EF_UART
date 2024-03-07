@@ -5,7 +5,7 @@ from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.base.uvm_config_db import UVMConfigDb
 from ref_model.model import EF_UART
-from EF_UVM.bus_env.bus_item import bus_bus_item, bus_irq_item
+from EF_UVM.bus_env.bus_item import bus_item, bus_irq_item
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisExport
 from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
 from uart_item.uart_item import uart_item
@@ -45,10 +45,10 @@ class UART_VIP(ref_model):
             self.model.reset()
             self.bus_bus_export.write(tr)
             return
-        if tr.kind == bus_bus_item.WRITE:
+        if tr.kind == bus_item.WRITE:
             self.model.write_register(tr.addr, tr.data)
             self.bus_bus_export.write(tr)
-        elif tr.kind == bus_bus_item.READ:
+        elif tr.kind == bus_item.READ:
             uvm_info(self.tag, "Vip read: " + tr.convert2string(), UVM_MEDIUM)
             data = self.model.read_register(tr.addr)
             td = tr.do_clone()

@@ -3,7 +3,7 @@ from uvm.macros.uvm_object_defines import uvm_object_utils
 from uvm.macros.uvm_message_defines import uvm_info, uvm_fatal
 from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
 from uvm.base import sv, UVM_HIGH, UVM_LOW
-from EF_UVM.bus_env.bus_item import bus_bus_item
+from EF_UVM.bus_env.bus_item import bus_item
 from uart_seq_lib.seq_base import seq_base
 
 
@@ -65,11 +65,11 @@ class uart_config(seq_base):
         # send request
         if is_write:
             if data_condition is None:
-                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict[reg], lambda kind: kind == bus_bus_item.WRITE)
+                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict[reg], lambda kind: kind == bus_item.WRITE)
             else:
-                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict[reg], lambda kind: kind == bus_bus_item.WRITE, data_condition)
+                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict[reg], lambda kind: kind == bus_item.WRITE, data_condition)
         else:
-            await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict[reg], lambda kind: kind == bus_bus_item.READ)
+            await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict[reg], lambda kind: kind == bus_item.READ)
 
 
 uvm_object_utils(uart_config)
