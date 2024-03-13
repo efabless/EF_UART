@@ -3,10 +3,10 @@ from uvm.macros.uvm_sequence_defines import uvm_do_with
 from uvm.base import sv, UVM_HIGH, UVM_LOW
 from EF_UVM.bus_env.bus_item import bus_item
 import random
-from uart_seq_lib.seq_base import seq_base
+from EF_UVM.bus_env.bus_seq_lib.bus_seq_base import bus_seq_base
 
 
-class tx_seq(seq_base):
+class tx_seq(bus_seq_base):
     def __init__(self, name="tx_seq", repeat=1):
         super().__init__(name)
         self.repeat = repeat

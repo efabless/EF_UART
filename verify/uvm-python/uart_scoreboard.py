@@ -1,6 +1,6 @@
 from uvm.comps import UVMScoreboard
 from uvm.macros import uvm_component_utils, uvm_info
-from uvm.base.uvm_object_globals import UVM_MEDIUM, UVM_LOW
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW
 from uart_item.uart_item import uart_item
 from EF_UVM.scoreboard import scoreboard
 
@@ -14,7 +14,7 @@ class uart_scoreboard(scoreboard):
 
     def write_ip(self, tr):
         # filter the ip checker to check only the TX, RX ones are checked by reading the register
-        uvm_info(self.tag, "write_ip: " + tr.convert2string(), UVM_MEDIUM)
+        uvm_info(self.tag, "write_ip: " + tr.convert2string(), UVM_HIGH)
         if tr.direction == uart_item.TX:
             self.q_ip.put_nowait(tr)
 

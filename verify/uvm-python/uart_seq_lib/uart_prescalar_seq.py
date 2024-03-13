@@ -5,9 +5,8 @@ from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
 from uvm.base import sv, UVM_HIGH, UVM_LOW
 from uart_item.uart_item import uart_item
 import random
-from uart_seq_lib.seq_base import seq_base
+from EF_UVM.bus_env.bus_seq_lib.bus_seq_base import bus_seq_base
 from uart_seq_lib.uart_config import uart_config
-from EF_UVM.bus_env.bus_seq_lib.reset_seq import reset_seq
 from uart_seq_lib.tx_seq import tx_seq
 from uart_seq_lib.rx_seq import rx_seq
 from cocotb.triggers import NextTimeStep
@@ -31,7 +30,7 @@ class uart_prescalar_seq(UVMSequence):
             self.handshake_event.set()
 
 
-class uart_prescalar_seq_wrapper(seq_base):
+class uart_prescalar_seq_wrapper(bus_seq_base):
 
     def __init__(self, handshake_event, name="uart_prescalar_seq_wrapper"):
         super().__init__(name)
@@ -46,7 +45,7 @@ class uart_prescalar_seq_wrapper(seq_base):
         # reset then set new prescalar
         for prescaler_val in self.prescaler_vals:
             uvm_info(self.get_type_name(), f"prescaler_val = {prescaler_val}", UVM_LOW)
-            await uvm_do(self, reset_seq())
+            await self.send_reset()
             await uvm_do(self, uart_config(im=0, prescaler=prescaler_val))
             self.handshake_event.set()
             await uvm_do(self, self.tx_seq_obj)

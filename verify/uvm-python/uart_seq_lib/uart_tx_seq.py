@@ -9,7 +9,8 @@ from cocotb_coverage.coverage import coverage_db
 import os
 import random
 from uart_seq_lib.uart_config import uart_config
-from EF_UVM.bus_env.bus_seq_lib.reset_seq import reset_seq
+
+
 class uart_tx_seq(UVMSequence):
 
     def __init__(self, name="uart_tx_seq"):
