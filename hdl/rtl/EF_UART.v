@@ -450,9 +450,9 @@ module UART_TX #(parameter NUM_SAMPLES = 16, MDW = 8)(
     reg         tx_reg;         // output data reg
     reg         tx_next;
 
-    	// prepare the data to claculate the parity by removing any extra bits entered
+    // prepare the data to claculate the parity by removing any extra bits entered
 	// by the user by error
-    	wire [MDW-1] pdata = (d_in) & ~({MDW{1'b1}} << data_size);
+    wire [MDW-1:0] pdata = (d_in) & ~({MDW{1'b1}} << data_size);
 
     //State Machine  
     always @(posedge clk, negedge resetn) begin
