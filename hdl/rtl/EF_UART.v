@@ -87,8 +87,8 @@ module EF_UART #(parameter  MDW = 9,        // Max data size/width
     output  wire            tx
 );
 
-    wire        tx_done;
-    wire        rx_done;
+    (* keep *) wire        tx_done;
+    (* keep *) wire        rx_done;
 
     wire        b_tick;
 
