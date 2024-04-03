@@ -17,18 +17,6 @@ class uart_monitor(ip_monitor):
         self.tx_received = Event("tx_received")
         self.rx_received = Event("rx_received")
 
-    def build_phase(self, phase):
-        super().build_phase(phase)
-        arr = []
-        if (not UVMConfigDb.get(self, "", "ip_if", arr)):
-            uvm_fatal(self.tag, "No interface specified for self monitor instance")
-        else:
-            self.sigs = arr[0]
-        regs_arr = []
-        if (not UVMConfigDb.get(self, "", "bus_regs", regs_arr)):
-            uvm_fatal(self.tag, "No json file wrapper regs")
-        else:
-            self.regs = regs_arr[0]
 
     async def run_phase(self, phase):
         sample_tx = await cocotb.start(self.sample_tx())
@@ -39,11 +27,11 @@ class uart_monitor(ip_monitor):
         await Combine(sample_tx, sample_rx)
 
     async def get_clk_period(self):
-        await RisingEdge(self.sigs.PCLK)
-        await RisingEdge(self.sigs.PCLK)
+        await RisingEdge(self.vif.PCLK)
+        await RisingEdge(self.vif.PCLK)
         time0 = cocotb.utils.get_sim_time(units="ns")
-        await RisingEdge(self.sigs.PCLK)
-        # await ClockCycles(self.sigs.PCLK, 1)
+        await RisingEdge(self.vif.PCLK)
+        # await ClockCycles(self.vif.PCLK, 1)
         time1 = cocotb.utils.get_sim_time(units="ns")
         self.clk_period = time1 - time0
         uvm_info(self.tag, f"clock period = {self.clk_period}", UVM_MEDIUM)
@@ -76,12 +64,12 @@ class uart_monitor(ip_monitor):
     async def get_char(self, direction=uart_item.TX):
         if (direction == uart_item.TX):
             num_cyc_bit, word_length = await self.start_of_tx()
-            signal = self.sigs.TX
-            done_signal = self.sigs.tx_done
+            signal = self.vif.TX
+            done_signal = self.vif.tx_done
         else:
             num_cyc_bit, word_length = await self.start_of_rx()
-            signal = self.sigs.RX
-            done_signal = self.sigs.rx_done
+            signal = self.vif.RX
+            done_signal = self.vif.rx_done
         char = ""
         parity = "None"
         for i in range(word_length):
@@ -99,7 +87,7 @@ class uart_monitor(ip_monitor):
             if direction == uart_item.RX:
                 self.frame_error()
                 return "None", "None", "None"
-        # await ClockCycles(self.sigs.PCLK, num_cyc_bit - 2)  # to even the /2 in the start of tx
+        # await ClockCycles(self.vif.PCLK, num_cyc_bit - 2)  # to even the /2 in the start of tx
         # mimic stop bit
         if self.is_stop_bit_exists():
             stop_bit = await self.glitch_free_sample(signal, num_cyc_bit, 8, last_bit=True)
@@ -130,27 +118,27 @@ class uart_monitor(ip_monitor):
 
     async def start_of_tx(self):
         while True:
-            await FallingEdge(self.sigs.TX)
+            await FallingEdge(self.vif.TX)
             uvm_info(self.tag, "start of TX", UVM_HIGH)
             num_cyc_bit_tx = self.get_bit_n_cyc()
             word_length_tx = self.get_n_bits()
             await Timer(1, units="ns")
-            if self.sigs.TX.value == 1:
+            if self.vif.TX.value == 1:
                 continue
-            await ClockCycles(self.sigs.PCLK, num_cyc_bit_tx)
+            await ClockCycles(self.vif.PCLK, num_cyc_bit_tx)
             break
         return num_cyc_bit_tx, word_length_tx
 
     async def start_of_rx(self):
         while True:
-            await FallingEdge(self.sigs.RX)
+            await FallingEdge(self.vif.RX)
             uvm_info(self.tag, "start of RX", UVM_HIGH)
             num_cyc_bit_rx = self.get_bit_n_cyc()
             word_length_rx = self.get_n_bits()
             await Timer(1, units="ns")
-            if self.sigs.RX.value == 1:
+            if self.vif.RX.value == 1:
                 continue
-            await ClockCycles(self.sigs.PCLK, num_cyc_bit_rx)
+            await ClockCycles(self.vif.PCLK, num_cyc_bit_rx)
             break
         return num_cyc_bit_rx, word_length_rx
 
@@ -178,7 +166,7 @@ class uart_monitor(ip_monitor):
             uart_enabled = self.regs.read_reg_value("CTRL") & 1
             if uart_enabled:
                 break
-            await ClockCycles(self.sigs.PCLK, 1)
+            await ClockCycles(self.vif.PCLK, 1)
         while True:
             timeout = 1 + ((self.regs.read_reg_value("CFG") >> 8) & 0b111111)
             bit_rate = self.get_bit_n_cyc() * self.clk_period
@@ -198,14 +186,14 @@ class uart_monitor(ip_monitor):
 
     async def watch_line_break(self):
         while True:
-            await FallingEdge(self.sigs.RX)
+            await FallingEdge(self.vif.RX)
             bit_num_cycles = self.get_bit_n_cyc()
-            await ClockCycles(self.sigs.PCLK, math.floor(bit_num_cycles/2))
+            await ClockCycles(self.vif.PCLK, math.floor(bit_num_cycles/2))
             for _ in range(11):
-                await ClockCycles(self.sigs.PCLK, bit_num_cycles)
-                if self.sigs.RX.value == 1:
+                await ClockCycles(self.vif.PCLK, bit_num_cycles)
+                if self.vif.RX.value == 1:
                     break
-            if self.sigs.RX.value == 1:
+            if self.vif.RX.value == 1:
                 continue
             irq = uart_interrupt.type_id.create("tr_irq", self)
             irq.rx_break_line = 1
@@ -248,7 +236,7 @@ class uart_monitor(ip_monitor):
                 ones += 1
             elif val == "0":
                 zeros += 1
-            await ClockCycles(self.sigs.PCLK, cyc)
+            await ClockCycles(self.vif.PCLK, cyc)
         uvm_info(self.tag, f"finish glitch_free_sample ones = {ones} zeros = {zeros} sample rate = {sample_num} num_cyc = {num_cyc} list = {lst}", UVM_HIGH)
         if ones > zeros:
             return "1"
