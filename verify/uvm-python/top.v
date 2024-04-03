@@ -38,8 +38,13 @@ module top();
         EF_UART_wb dut(.rx(RX), .tx(TX), .clk_i(CLK), .rst_i(~rst_i), .adr_i(adr_i), .dat_i(dat_i), .dat_o(dat_o), .sel_i(sel_i), .cyc_i(cyc_i), .stb_i(stb_i), .ack_o(ack_o),.we_i(we_i), .irq(irq));
     `endif // BUS_TYPE_WISHBONE
     // monitor inside signals
+`ifndef GL 
     wire tx_done = dut.instance_to_wrap.tx_done;
     wire rx_done = dut.instance_to_wrap.rx_done;
+`else 
+    wire tx_done = dut.\instance_to_wrap.tx_done ;
+    wire rx_done = dut.\instance_to_wrap.rx_done ;
+`endif // GL
     `ifndef SKIP_WAVE_DUMP
         initial begin
             $dumpfile ({"waves.vcd"});

@@ -9,10 +9,10 @@ from cocotb_coverage.coverage import coverage_db
 import os
 import random
 from uart_seq_lib.uart_config import uart_config
-from uart_seq_lib.seq_base import seq_base
+from EF_UVM.bus_env.bus_seq_lib.bus_seq_base import bus_seq_base
 
 
-class uart_loopback_seq(seq_base):
+class uart_loopback_seq(bus_seq_base):
     def __init__(self, name="uart_loopback_seq"):
         super().__init__(name)
 

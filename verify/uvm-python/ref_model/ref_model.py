@@ -41,7 +41,7 @@ class UART_VIP(ref_model):
 
     def write_bus(self, tr):
         uvm_info(self.tag, "Vip write: " + tr.convert2string(), UVM_MEDIUM)
-        if tr.reset:
+        if tr.kind == bus_item.RESET:
             self.model.reset()
             self.bus_bus_export.write(tr)
             return

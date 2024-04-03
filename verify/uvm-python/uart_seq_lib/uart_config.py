@@ -4,10 +4,10 @@ from uvm.macros.uvm_message_defines import uvm_info, uvm_fatal
 from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
 from uvm.base import sv, UVM_HIGH, UVM_LOW
 from EF_UVM.bus_env.bus_item import bus_item
-from uart_seq_lib.seq_base import seq_base
+from EF_UVM.bus_env.bus_seq_lib.bus_seq_base import bus_seq_base
 
 
-class uart_config(seq_base):
+class uart_config(bus_seq_base):
     def __init__(self, name="uart_config", prescaler=None, config=None, im=None, match=None, fifo_control=None, control=None):
         super().__init__(name)
         self.prescaler = prescaler
