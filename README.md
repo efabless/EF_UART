@@ -299,4 +299,34 @@ You can either clone repo or use [IPM](https://github.com/efabless/IPM) which is
 1. Clone [IP_Utilities](https://github.com/shalan/IP_Utilities) repo in the same directory as the IP
 2. In the directory ``EF_UART/verify/utb/`` run ``make APB-RTL`` to run testbench for APB or ``make AHBL-RTL`` to run testbench for AHBL
 ### Run cocotb UVM Testbench:
-TBD
+
+In IP directory run:
+ ```shell
+ cd verify/uvm-python/
+ ```
+ ##### To run testbench for design with APB 
+ To run all tests:
+ ```shell
+ make run_all_tests BUS_TYPE=APB
+ ```
+ To run a certain test:
+ ```shell
+ make run_<test_name> BUS_TYPE=APB
+ ```
+ To run all tests with a tag: 
+ ```shell
+ make run_all_tests TAG=<new_tag> BUS_TYPE=APB
+ ```
+ ##### To run testbench for design with APB
+ To run all tests:
+ ```shell
+ make run_all_tests BUS_TYPE=AHB
+ ```
+ To run a certain test:
+ ```shell
+ make run_<test_name> BUS_TYPE=AHB
+ ```
+ To run all tests with a tag: 
+ ```shell
+ make run_all_tests TAG=<new_tag> BUS_TYPE=AHB
+```
