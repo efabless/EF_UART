@@ -1,0 +1,575 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="EF__UART__regs_8h" kind="file" language="C++">
+    <compoundname>EF_UART_regs.h</compoundname>
+    <includedby refid="EF__UART_8h" local="no">EF_UART.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>EF_UART.c</label>
+        <link refid="EF__UART_8c"/>
+      </node>
+      <node id="2">
+        <label>EF_UART.h</label>
+        <link refid="EF__UART_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>EF_UART_regs.h</label>
+        <link refid="EF__UART__regs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct__EF__UART__TYPE__" prot="public">_EF_UART_TYPE_</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="EF__UART__regs_8h_1a470cd5845bed94d8b8b358933e4a3442" prot="public" static="no">
+        <name>IO_TYPES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="29" column="9" bodyfile="EF_UART_regs.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" prot="public" static="no">
+        <name>__R</name>
+        <initializer>volatile const unsigned int</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="30" column="11" bodyfile="EF_UART_regs.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" prot="public" static="no">
+        <name>__W</name>
+        <initializer>volatile       unsigned int</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="31" column="11" bodyfile="EF_UART_regs.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a81f369079976a46554fd9798ab035697" prot="public" static="no">
+        <name>__RW</name>
+        <initializer>volatile       unsigned int</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="32" column="11" bodyfile="EF_UART_regs.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a266874a7f0e8f44a104856cc9edf8e1b" prot="public" static="no">
+        <name>EF_UART_CTRL_REG_EN_BIT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="35" column="9" bodyfile="EF_UART_regs.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1afd2ff304610edfabd0274bb0719c2e1b" prot="public" static="no">
+        <name>EF_UART_CTRL_REG_EN_MASK</name>
+        <initializer>0x1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="36" column="9" bodyfile="EF_UART_regs.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a4803fa0200e936a1d8f112b1cda3a0be" prot="public" static="no">
+        <name>EF_UART_CTRL_REG_TXEN_BIT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="37" column="9" bodyfile="EF_UART_regs.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a4b8b5bd1caaa4e1f65da544132cac877" prot="public" static="no">
+        <name>EF_UART_CTRL_REG_TXEN_MASK</name>
+        <initializer>0x2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="38" column="9" bodyfile="EF_UART_regs.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a5ced1617f0c81c91c84feb6e67ab7e3f" prot="public" static="no">
+        <name>EF_UART_CTRL_REG_RXEN_BIT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="39" column="9" bodyfile="EF_UART_regs.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1afacdd0aef6658a33f7bfd07e21c8a68f" prot="public" static="no">
+        <name>EF_UART_CTRL_REG_RXEN_MASK</name>
+        <initializer>0x4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="40" column="9" bodyfile="EF_UART_regs.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1ad74f6f089ecffe1bee2d4d3dd3f416dc" prot="public" static="no">
+        <name>EF_UART_CTRL_REG_LPEN_BIT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="41" column="9" bodyfile="EF_UART_regs.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1aebbe2052a5a6b9355d3cee5bb904d0a2" prot="public" static="no">
+        <name>EF_UART_CTRL_REG_LPEN_MASK</name>
+        <initializer>0x8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="42" column="9" bodyfile="EF_UART_regs.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a5f47e9ee6518199926ec8b11ecdaac8c" prot="public" static="no">
+        <name>EF_UART_CTRL_REG_GFEN_BIT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="43" column="9" bodyfile="EF_UART_regs.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a7f87b5eccffb824604dcd31b26989dd5" prot="public" static="no">
+        <name>EF_UART_CTRL_REG_GFEN_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="44" column="9" bodyfile="EF_UART_regs.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a0b828c908bc0843a0e9229adfcb29863" prot="public" static="no">
+        <name>EF_UART_CFG_REG_WLEN_BIT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="45" column="9" bodyfile="EF_UART_regs.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1adba653133ac3677b18091f8ad0b3c6f2" prot="public" static="no">
+        <name>EF_UART_CFG_REG_WLEN_MASK</name>
+        <initializer>0xf</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="46" column="9" bodyfile="EF_UART_regs.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a16e0c9d637210b71aa88aa9f344d5f6e" prot="public" static="no">
+        <name>EF_UART_CFG_REG_STP2_BIT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="47" column="9" bodyfile="EF_UART_regs.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a328e8490a01454a2449fc367991302a1" prot="public" static="no">
+        <name>EF_UART_CFG_REG_STP2_MASK</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="48" column="9" bodyfile="EF_UART_regs.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a385a3de23966fe78d4f7c08ce196ad15" prot="public" static="no">
+        <name>EF_UART_CFG_REG_PARITY_BIT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="49" column="9" bodyfile="EF_UART_regs.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a798e3d66249e9defd1eaae7cde9b4d44" prot="public" static="no">
+        <name>EF_UART_CFG_REG_PARITY_MASK</name>
+        <initializer>0xe0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="50" column="9" bodyfile="EF_UART_regs.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1afaa9ea2f3ab4ff8647532935574bcd88" prot="public" static="no">
+        <name>EF_UART_CFG_REG_TIMEOUT_BIT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="51" column="9" bodyfile="EF_UART_regs.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1ad0c0bdddadfd3a44d43b5d7813af277d" prot="public" static="no">
+        <name>EF_UART_CFG_REG_TIMEOUT_MASK</name>
+        <initializer>0x3f00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="52" column="9" bodyfile="EF_UART_regs.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a69c312c946bec91e3cea12cb9e66cdc0" prot="public" static="no">
+        <name>EF_UART_FIFOCTRL_REG_TXLT_BIT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="53" column="9" bodyfile="EF_UART_regs.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a1bf32ffbed1f291bbd4df32b64c975cc" prot="public" static="no">
+        <name>EF_UART_FIFOCTRL_REG_TXLT_MASK</name>
+        <initializer>0xf</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="54" column="9" bodyfile="EF_UART_regs.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a7e595dafa06d084074a25de5721bd9ab" prot="public" static="no">
+        <name>EF_UART_FIFOCTRL_REG_RXLT_BIT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="55" column="9" bodyfile="EF_UART_regs.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a3d1d577c97f279d55c8dd912417042e8" prot="public" static="no">
+        <name>EF_UART_FIFOCTRL_REG_RXLT_MASK</name>
+        <initializer>0xf00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="56" column="9" bodyfile="EF_UART_regs.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a643adcc29f4cb4f27f47117c59065edf" prot="public" static="no">
+        <name>EF_UART_FIFOS_REG_RXL_BIT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="57" column="9" bodyfile="EF_UART_regs.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a678dfcd394bda6fdccea37a799177325" prot="public" static="no">
+        <name>EF_UART_FIFOS_REG_RXL_MASK</name>
+        <initializer>0xf</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="58" column="9" bodyfile="EF_UART_regs.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a61be2c6547b44c7a6655abc3a82ad8d7" prot="public" static="no">
+        <name>EF_UART_FIFOS_REG_TXL_BIT</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="59" column="9" bodyfile="EF_UART_regs.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a4bcda73b2207720bd3b1212fc047337a" prot="public" static="no">
+        <name>EF_UART_FIFOS_REG_TXL_MASK</name>
+        <initializer>0xf00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="60" column="9" bodyfile="EF_UART_regs.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1af0ef9bb61d418f4ec8031e74ac1374f3" prot="public" static="no">
+        <name>EF_UART_TXE_FLAG</name>
+        <initializer>0x1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="62" column="9" bodyfile="EF_UART_regs.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1abdbd275b9e49d27fc0631f3db144626c" prot="public" static="no">
+        <name>EF_UART_RXF_FLAG</name>
+        <initializer>0x2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="63" column="9" bodyfile="EF_UART_regs.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a1d10765fcb44dabc4653269f5f45d7e0" prot="public" static="no">
+        <name>EF_UART_TXB_FLAG</name>
+        <initializer>0x4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="64" column="9" bodyfile="EF_UART_regs.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1afcc839803a3e147726c4d0ff8aa631ac" prot="public" static="no">
+        <name>EF_UART_RXA_FLAG</name>
+        <initializer>0x8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="65" column="9" bodyfile="EF_UART_regs.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a4e2eaae9e111bb3a77eadb3141f123a3" prot="public" static="no">
+        <name>EF_UART_BRK_FLAG</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="66" column="9" bodyfile="EF_UART_regs.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1aa5f6a28e7e7c0693a5d922ab8788d70c" prot="public" static="no">
+        <name>EF_UART_MATCH_FLAG</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="67" column="9" bodyfile="EF_UART_regs.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1aafc66529a3139c689109d2406ed67a57" prot="public" static="no">
+        <name>EF_UART_FE_FLAG</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="68" column="9" bodyfile="EF_UART_regs.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1a3cff4fc63e9ab01bad003a962a6d3938" prot="public" static="no">
+        <name>EF_UART_PRE_FLAG</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="69" column="9" bodyfile="EF_UART_regs.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1ad2021fcd6ecdc551490d95ff8a2227f4" prot="public" static="no">
+        <name>EF_UART_OR_FLAG</name>
+        <initializer>0x100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="70" column="9" bodyfile="EF_UART_regs.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="EF__UART__regs_8h_1aa5b304f625110ba9a40b9fb5d0f22928" prot="public" static="no">
+        <name>EF_UART_RTO_FLAG</name>
+        <initializer>0x200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="71" column="9" bodyfile="EF_UART_regs.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="EF__UART__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" prot="public" static="no">
+        <type>struct <ref refid="struct__EF__UART__TYPE__" kindref="compound">_EF_UART_TYPE_</ref></type>
+        <definition>typedef struct _EF_UART_TYPE_ EF_UART_TYPE</definition>
+        <argsstring></argsstring>
+        <name>EF_UART_TYPE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="87" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>C header file which contains UART registers definition. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Copyright<sp/>2024<sp/>Efabless<sp/>Corp.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>Author:<sp/>Mohamed<sp/>Shalan<sp/>(mshalan@aucegypt.edu)</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"></highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EF_UARTREGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UARTREGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>IO_TYPES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="EF__UART__regs_8h_1a470cd5845bed94d8b8b358933e4a3442" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IO_TYPES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="EF__UART__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/><sp/>__R<sp/><sp/><sp/><sp/><sp/>volatile<sp/>const<sp/>unsigned<sp/>int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="EF__UART__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/><sp/>__W<sp/><sp/><sp/><sp/><sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>unsigned<sp/>int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="EF__UART__regs_8h_1a81f369079976a46554fd9798ab035697" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/><sp/>__RW<sp/><sp/><sp/><sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>unsigned<sp/>int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="EF__UART__regs_8h_1a266874a7f0e8f44a104856cc9edf8e1b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_EN_BIT<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="EF__UART__regs_8h_1afd2ff304610edfabd0274bb0719c2e1b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_EN_MASK<sp/><sp/><sp/><sp/>0x1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="EF__UART__regs_8h_1a4803fa0200e936a1d8f112b1cda3a0be" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_TXEN_BIT<sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="EF__UART__regs_8h_1a4b8b5bd1caaa4e1f65da544132cac877" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_TXEN_MASK<sp/><sp/>0x2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="EF__UART__regs_8h_1a5ced1617f0c81c91c84feb6e67ab7e3f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_RXEN_BIT<sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="EF__UART__regs_8h_1afacdd0aef6658a33f7bfd07e21c8a68f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_RXEN_MASK<sp/><sp/>0x4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="EF__UART__regs_8h_1ad74f6f089ecffe1bee2d4d3dd3f416dc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_LPEN_BIT<sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="EF__UART__regs_8h_1aebbe2052a5a6b9355d3cee5bb904d0a2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_LPEN_MASK<sp/><sp/>0x8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="EF__UART__regs_8h_1a5f47e9ee6518199926ec8b11ecdaac8c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_GFEN_BIT<sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="EF__UART__regs_8h_1a7f87b5eccffb824604dcd31b26989dd5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_GFEN_MASK<sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="EF__UART__regs_8h_1a0b828c908bc0843a0e9229adfcb29863" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_WLEN_BIT<sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="EF__UART__regs_8h_1adba653133ac3677b18091f8ad0b3c6f2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_WLEN_MASK<sp/><sp/><sp/>0xf</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="EF__UART__regs_8h_1a16e0c9d637210b71aa88aa9f344d5f6e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_STP2_BIT<sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="EF__UART__regs_8h_1a328e8490a01454a2449fc367991302a1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_STP2_MASK<sp/><sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="EF__UART__regs_8h_1a385a3de23966fe78d4f7c08ce196ad15" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_PARITY_BIT<sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="EF__UART__regs_8h_1a798e3d66249e9defd1eaae7cde9b4d44" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_PARITY_MASK<sp/>0xe0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="EF__UART__regs_8h_1afaa9ea2f3ab4ff8647532935574bcd88" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_TIMEOUT_BIT<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="EF__UART__regs_8h_1ad0c0bdddadfd3a44d43b5d7813af277d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_TIMEOUT_MASK<sp/><sp/><sp/><sp/>0x3f00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="EF__UART__regs_8h_1a69c312c946bec91e3cea12cb9e66cdc0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_FIFOCTRL_REG_TXLT_BIT<sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="EF__UART__regs_8h_1a1bf32ffbed1f291bbd4df32b64c975cc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_FIFOCTRL_REG_TXLT_MASK<sp/><sp/>0xf</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="EF__UART__regs_8h_1a7e595dafa06d084074a25de5721bd9ab" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_FIFOCTRL_REG_RXLT_BIT<sp/><sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="EF__UART__regs_8h_1a3d1d577c97f279d55c8dd912417042e8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_FIFOCTRL_REG_RXLT_MASK<sp/><sp/>0xf00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="EF__UART__regs_8h_1a643adcc29f4cb4f27f47117c59065edf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_FIFOS_REG_RXL_BIT<sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="EF__UART__regs_8h_1a678dfcd394bda6fdccea37a799177325" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_FIFOS_REG_RXL_MASK<sp/><sp/>0xf</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="EF__UART__regs_8h_1a61be2c6547b44c7a6655abc3a82ad8d7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_FIFOS_REG_TXL_BIT<sp/><sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="EF__UART__regs_8h_1a4bcda73b2207720bd3b1212fc047337a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_FIFOS_REG_TXL_MASK<sp/><sp/>0xf00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="EF__UART__regs_8h_1af0ef9bb61d418f4ec8031e74ac1374f3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_TXE_FLAG<sp/><sp/><sp/><sp/>0x1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="EF__UART__regs_8h_1abdbd275b9e49d27fc0631f3db144626c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_RXF_FLAG<sp/><sp/><sp/><sp/>0x2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="EF__UART__regs_8h_1a1d10765fcb44dabc4653269f5f45d7e0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_TXB_FLAG<sp/><sp/><sp/><sp/>0x4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="EF__UART__regs_8h_1afcc839803a3e147726c4d0ff8aa631ac" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_RXA_FLAG<sp/><sp/><sp/><sp/>0x8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="EF__UART__regs_8h_1a4e2eaae9e111bb3a77eadb3141f123a3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_BRK_FLAG<sp/><sp/><sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="EF__UART__regs_8h_1aa5f6a28e7e7c0693a5d922ab8788d70c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_MATCH_FLAG<sp/><sp/>0x20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="EF__UART__regs_8h_1aafc66529a3139c689109d2406ed67a57" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_FE_FLAG<sp/>0x40</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="EF__UART__regs_8h_1a3cff4fc63e9ab01bad003a962a6d3938" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_PRE_FLAG<sp/><sp/><sp/><sp/>0x80</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="EF__UART__regs_8h_1ad2021fcd6ecdc551490d95ff8a2227f4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_OR_FLAG<sp/>0x100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="EF__UART__regs_8h_1aa5b304f625110ba9a40b9fb5d0f22928" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_RTO_FLAG<sp/><sp/><sp/><sp/>0x200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="struct__EF__UART__TYPE__" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__EF__UART__TYPE__" kindref="compound">_EF_UART_TYPE_</ref><sp/>{</highlight></codeline>
+<codeline lineno="74" refid="struct__EF__UART__TYPE___1aff46d22baad8d54ad1615dbac2c9b905" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1aff46d22baad8d54ad1615dbac2c9b905" kindref="member">RXDATA</ref>;</highlight></codeline>
+<codeline lineno="75" refid="struct__EF__UART__TYPE___1a99fca397943293a7c803a989f17a51f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1a99fca397943293a7c803a989f17a51f5" kindref="member">TXDATA</ref>;</highlight></codeline>
+<codeline lineno="76" refid="struct__EF__UART__TYPE___1ab2ed350e6f2da615799df38abd839c27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1ab2ed350e6f2da615799df38abd839c27" kindref="member">PR</ref>;</highlight></codeline>
+<codeline lineno="77" refid="struct__EF__UART__TYPE___1aaf3574c53f189c64c14ccfb846aed421" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1aaf3574c53f189c64c14ccfb846aed421" kindref="member">CTRL</ref>;</highlight></codeline>
+<codeline lineno="78" refid="struct__EF__UART__TYPE___1a419b02d7f3175d7386fbb78c635d2cff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1a419b02d7f3175d7386fbb78c635d2cff" kindref="member">CFG</ref>;</highlight></codeline>
+<codeline lineno="79" refid="struct__EF__UART__TYPE___1a5f48f387b4dc63014e4380eb51f4c33b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1a5f48f387b4dc63014e4380eb51f4c33b" kindref="member">FIFOCTRL</ref>;</highlight></codeline>
+<codeline lineno="80" refid="struct__EF__UART__TYPE___1ac95e4f7543a0aed3ee5277c2096af20a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1ac95e4f7543a0aed3ee5277c2096af20a" kindref="member">FIFOS</ref>;</highlight></codeline>
+<codeline lineno="81" refid="struct__EF__UART__TYPE___1aa4c42f2e242b0eca1910fb9584e1284f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1aa4c42f2e242b0eca1910fb9584e1284f" kindref="member">MATCH</ref>;</highlight></codeline>
+<codeline lineno="82" refid="struct__EF__UART__TYPE___1a996f8caa831159d01cf13945b8a45a5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1a996f8caa831159d01cf13945b8a45a5b" kindref="member">reserved</ref>[952];</highlight></codeline>
+<codeline lineno="83" refid="struct__EF__UART__TYPE___1a92173860adcbbdea07bb55da2f91f347" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1a81f369079976a46554fd9798ab035697" kindref="member">__RW</ref><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1a92173860adcbbdea07bb55da2f91f347" kindref="member">im</ref>;</highlight></codeline>
+<codeline lineno="84" refid="struct__EF__UART__TYPE___1af280d3fb7ed14be350dc97821dbacb1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1af280d3fb7ed14be350dc97821dbacb1e" kindref="member">mis</ref>;</highlight></codeline>
+<codeline lineno="85" refid="struct__EF__UART__TYPE___1a0b77ac9024109a44412fea686355cd62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1a0b77ac9024109a44412fea686355cd62" kindref="member">ris</ref>;</highlight></codeline>
+<codeline lineno="86" refid="struct__EF__UART__TYPE___1a8a399eff288117f64c79c9c1b0213d09" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="EF__UART__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref><sp/><sp/><sp/><sp/><sp/><ref refid="struct__EF__UART__TYPE___1a8a399eff288117f64c79c9c1b0213d09" kindref="member">icr</ref>;</highlight></codeline>
+<codeline lineno="87" refid="EF__UART__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" refkind="member"><highlight class="normal">}<sp/><ref refid="EF__UART__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="EF_UART_regs.h"/>
+  </compounddef>
+</doxygen>

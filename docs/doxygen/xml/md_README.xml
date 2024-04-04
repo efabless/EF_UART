@@ -1,0 +1,656 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="md_README" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>APIs Documentation</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md_README_1autotoc_md0"/> </para>
+<sect2 id="md_README_1autotoc_md1">
+<title>EF_UART_enable</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1ac8fb76879468f536845efd63dd013023" kindref="member">EF_UART_enable</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>enables using uart by setting &quot;en&quot; bit in the control register to 1</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md2">
+<title>EF_UART_disable</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a906f9de6fa1f7d7a3e251f9c8ecf3ba1" kindref="member">EF_UART_disable</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>disables using uart by clearing &quot;en&quot; bit in the control register</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md3">
+<title>EF_UART_enableRx</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a27d08acb4a16fe736ec85a6809a8f4cf" kindref="member">EF_UART_enableRx</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>enables using uart RX by setting uart &quot;rxen&quot; bit in the control register to 1</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md4">
+<title>EF_UART_disableRx</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a8bbcb77cabef3983cca1118db94f33da" kindref="member">EF_UART_disableRx</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>disables using uart RX by clearing uart &quot;rxen&quot; bit in the control register</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md5">
+<title>EF_UART_enableTx</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a9e39d1b67dee9dc4eddecab799f2a73e" kindref="member">EF_UART_enableTx</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>enables using uart TX by setting uart &quot;txen&quot; bit in the control register to 1</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md6">
+<title>EF_UART_disableTx</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a5fdfa5d0ceaf25c86265f08508d0ac82" kindref="member">EF_UART_disableTx</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>disables using uart TX by clearing uart &quot;txen&quot; bit in the control register</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md7">
+<title>EF_UART_enableLoopBack</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a5b6c1522111c36f052d01ef8477d8708" kindref="member">EF_UART_enableLoopBack</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>enables loopback (connecting TX to RX signal) by setting &quot;lpen&quot; bit in the control register to 1</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md8">
+<title>EF_UART_disableLoopBack</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a14b502b1b4f32f74147fa27ef594ec5f" kindref="member">EF_UART_disableLoopBack</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>disables loopback (connecting TX to RX signal) by clearing &quot;lpen&quot; bit in the control register</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md9">
+<title>EF_UART_enableGlitchFilter</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a41e9f0fc22054ed60435b56e07cc2b08" kindref="member">EF_UART_enableGlitchFilter</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>enables glitch filter (filter out noise or glitches on the received signal) by setting &quot;gfen&quot; bit in the control register to 1</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md10">
+<title>EF_UART_disableGlitchFilter</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a0b951370140c22de50546112916dbf0f" kindref="member">EF_UART_disableGlitchFilter</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>disables glitch filter (filter out noise or glitches on the received signal) by clearing &quot;gfen&quot; bit in the control register</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md11">
+<title>EF_UART_setCTRL</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a93420e961b8b16ec1d4e19565a89338f" kindref="member">EF_UART_setCTRL</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>value</bold> The value of the control register</para>
+</listitem></itemizedlist>
+</para>
+<para>sets the control register to a certain value where</para>
+<para><itemizedlist>
+<listitem><para>bit 0: UART enable</para>
+</listitem><listitem><para>bit 1: UART Transmitter enable</para>
+</listitem><listitem><para>bit 2: UART Receiver enable</para>
+</listitem><listitem><para>bit 3: Loopback (connect RX and TX pins together) enable</para>
+</listitem><listitem><para>bit 4: UART Glitch Filer on RX enable</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md12">
+<title>EF_UART_getCTRL</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1ae932a6f49dc8556119957adf2d230714" kindref="member">EF_UART_getCTRL</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>returns the value of the control register</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: control register value</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md13">
+<title>EF_UART_setPrescaler</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a417529a40a07f0af36ba658f3a31fff5" kindref="member">EF_UART_setPrescaler</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>prescaler</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>prescaler</bold> The value of the required prescaler</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md14">
+<title>EF_UART_getPrescaler</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a2d7077f683a7553f9c178ecfd058d1bd" kindref="member">EF_UART_getPrescaler</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>returns the value of the prescaler</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: prescaler register value</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md15">
+<title>EF_UART_setDataSize</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a29ad6f2b0288e0a90421b7755b4ea6d7" kindref="member">EF_UART_setDataSize</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>sets the Data Size (Data word length: 5-9 bits ) by setting the &quot;wlen&quot; field in configuration register</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>value</bold> The value of the required data word length</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md16">
+<title>EF_UART_setTwoStopBitsSelect</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1ad9196d00146f379a9e90b260b4545209" kindref="member">EF_UART_setTwoStopBitsSelect</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_two_bits</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>sets the &quot;stp2&quot; bit in configuration register (whether the stop bits are two or one)</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>is_two_bits</bold> bool value, if &quot;true&quot;, the stop bits are two and if &quot;false&quot;, the stop bit is one</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md17">
+<title>EF_UART_setParityType</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a61f34f093714af424473fa57fb04cfc5" kindref="member">EF_UART_setParityType</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>parity</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>sets the &quot;parity&quot; field in configuration register (could be none, odd, even, sticky 0 or sticky 1)</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>parity</bold> enum parity_type could be &quot;NONE&quot; , &quot;ODD&quot; , &quot;EVEN&quot; , &quot;STICKY_0&quot; , or &quot;STICKY_1&quot;</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md18">
+<title>EF_UART_setTimeoutBits</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1ab56dac54958dce9684d6ad1cd26d1018" kindref="member">EF_UART_setTimeoutBits</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>sets the &quot;timeout&quot; field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>value</bold> timeout bits value</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md19">
+<title>EF_UART_setConfig</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a3af6fd4d87a613dcc940fd59c0a6e9fa" kindref="member">EF_UART_setConfig</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>config</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>config</bold> The value of the configuration register</para>
+</listitem></itemizedlist>
+</para>
+<para>sets the configuration register to a certain value where</para>
+<para><itemizedlist>
+<listitem><para>bit 0-3: Data word length: 5-9 bits</para>
+</listitem><listitem><para>bit 4: Two Stop Bits Select</para>
+</listitem><listitem><para>bit 5-7: Parity Type: 000: None, 001: odd, 010: even, 100: Sticky 0, 101: Sticky 1</para>
+</listitem><listitem><para>bit 8-13: Receiver Timeout measured in number of bits</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md20">
+<title>EF_UART_getConfig</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1aae10f814cfbacb6ee771ddcc5b349744" kindref="member">EF_UART_getConfig</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>returns the value of the configuration register</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: configuration register value</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md21">
+<title>EF_UART_setRxFIFOThreshold</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1ab453e751dd18f6e0893998ab546e0eb0" kindref="member">EF_UART_setRxFIFOThreshold</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>threshold</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>sets the RX FIFO threshold to a certain value at which &quot;RXA&quot; interrupt will be raised</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>threshold</bold> The value of the required threshold</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md22">
+<title>EF_UART_getRxFIFOThreshold</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a829e9820f1d010624994aa7590851721" kindref="member">EF_UART_getRxFIFOThreshold</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>returns the current value of the RX FIFO threshold</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: RX FIFO threshold register</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md23">
+<title>EF_UART_setTxFIFOThreshold</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1aeb511962317eb5bcb55d2739f13e80ad" kindref="member">EF_UART_setTxFIFOThreshold</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>threshold</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>sets the TX FIFO threshold to a certain value at which &quot;TXB&quot; interrupt will be raised</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>threshold</bold> The value of the required threshold</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md24">
+<title>EF_UART_getTxFIFOThreshold</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a6e89a406b1b3cff125032eff26043d3d" kindref="member">EF_UART_getTxFIFOThreshold</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>returns the current value of the TX FIFO threshold</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: TX FIFO threshold register</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md25">
+<title>EF_UART_setFIFOControl</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1ade8fde5e588c22e9bdf3b68f26469098" kindref="member">EF_UART_setFIFOControl</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>config</bold> The value of the FIFO control register</para>
+</listitem></itemizedlist>
+</para>
+<para>sets the FIFO control register to a certain value where</para>
+<para><itemizedlist>
+<listitem><para>bit 0-3: Transmit FIFO Level Threshold</para>
+</listitem><listitem><para>bit 8-11: Receive FIFO Level Threshold</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md26">
+<title>EF_UART_getFIFOControl</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a044758d0138aeb24c6a87fda9c7de6c6" kindref="member">EF_UART_getFIFOControl</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>returns the value of the FIFO control register</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: FIFO control register value</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md27">
+<title>EF_UART_getTxCount</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1ab67855784d50b5c547378f5d5702c273" kindref="member">EF_UART_getTxCount</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>returns the current level of the TX FIFO (the number of bytes in the FIFO)</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: TX FIFO level register</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md28">
+<title>EF_UART_getRxCount</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1ad473ded49b92582489495c207b425a01" kindref="member">EF_UART_getRxCount</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>returns the current level of the RX FIFO (the number of bytes in the FIFO)</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: RX FIFO level register</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md29">
+<title>EF_UART_getFIFOStatus</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a24c0a12c701bbab2594a68148ccaf187" kindref="member">EF_UART_getFIFOStatus</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: FIFO status register value</para>
+<para>returns the value of the FIFO status register where</para>
+<para><itemizedlist>
+<listitem><para>bit 0-3: Receive FIFO Level</para>
+</listitem><listitem><para>bit 8-11: Transmit FIFO Level</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md30">
+<title>EF_UART_setMatchData</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a65715703fe82c3f9fb235cf6b0f62e7b" kindref="member">EF_UART_setMatchData</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matchData</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>sets the matchData to a certain value at which &quot;MATCH&quot; interrupt will be raised</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>matchData</bold> The value of the required match data</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md31">
+<title>EF_UART_getMatchData</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a471ea6bce689a667b0415208815a9005" kindref="member">EF_UART_getMatchData</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>returns the value of the match data register</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: match data register value</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md32">
+<title>EF_UART_getRIS</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1afb034e9ca5c75e87df32e77410dfffea" kindref="member">EF_UART_getRIS</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: RIS register value</para>
+<para>returns the value of the Raw Interrupt Status Register</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md33">
+<title>EF_UART_getMIS</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a6ffee64b80995aff387251125ebeca80" kindref="member">EF_UART_getMIS</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: MIS register value</para>
+<para>returns the value of the Masked Interrupt Status Register</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md34">
+<title>EF_UART_setIM</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1af9fd462da652712e3d4c1a356af2b276" kindref="member">EF_UART_setIM</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>mask</bold> The required mask value</para>
+</listitem></itemizedlist>
+</para>
+<para>sets the value of the Interrupts Masking Register; which enable and disables interrupts</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md35">
+<title>EF_UART_getIM</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a19e91976fc7aa7bc0d7aea10f9092c82" kindref="member">EF_UART_getIM</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: IM register value</para>
+<para>returns the value of the Interrupts Masking Register; which enable and disables interrupts</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md36">
+<title>EF_UART_setICR</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a71cf6e226bdc78fa9e36f40b4039fe8e" kindref="member">EF_UART_setICR</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>mask</bold> The required mask value</para>
+</listitem></itemizedlist>
+</para>
+<para>sets the value of the Interrupts Clear Register; write 1 to clear the flag</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md37">
+<title>EF_UART_writeChar</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a9219a3cffee150f100b55272eaae74da" kindref="member">EF_UART_writeChar</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>transmit a single character through uart</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>data</bold> The character or byte required to send</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md38">
+<title>EF_UART_writeCharArr</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a45b53dbb72f6493a763d6176eb56ef2a" kindref="member">EF_UART_writeCharArr</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>char_arr</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>transmit an array of characters through uart</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem><listitem><para><bold>char_arr</bold> An array of characters to send</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md39">
+<title>EF_UART_readChar</title>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8c_1a727b43ac98a06b2e2a0c31c305e3e2f9" kindref="member">EF_UART_readChar</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para>receive a single character through uart</para>
+<para><bold>Parameters</bold>:</para>
+<para><itemizedlist>
+<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Return</bold>: the byte received</para>
+<para><hruler/>
+ </para>
+</sect2>
+    </detaileddescription>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

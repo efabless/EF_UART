@@ -1,0 +1,1657 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="EF__UART_8h" kind="file" language="C++">
+    <compoundname>EF_UART.h</compoundname>
+    <includes refid="EF__UART__regs_8h" local="no">EF_UART_regs.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includedby refid="EF__UART_8c" local="no">EF_UART.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>EF_UART.h</label>
+        <link refid="EF__UART_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>EF_UART_regs.h</label>
+        <link refid="EF__UART__regs_8h"/>
+      </node>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>EF_UART.c</label>
+        <link refid="EF__UART_8c"/>
+      </node>
+      <node id="1">
+        <label>EF_UART.h</label>
+        <link refid="EF__UART_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" prot="public" static="no" strong="no">
+        <type></type>
+        <name>parity_type</name>
+        <enumvalue id="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10ac157bdf0b85a40d2619cbc8bc1ae5fe2" prot="public">
+          <name>NONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10aa29cedab858353a26006af9db7cd1ed8" prot="public">
+          <name>ODD</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" prot="public">
+          <name>EVEN</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10adedda6ce97e93d2a3e84ca7a704cd998" prot="public">
+          <name>STICKY_0</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a0cc8b778b8f0b3fa4d7a084fddbc3cec" prot="public">
+          <name>STICKY_1</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="14" column="1" bodyfile="EF_UART.h" bodystart="14" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="EF__UART_8h_1ac8fb76879468f536845efd63dd013023" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_enable</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_enable</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>enables using uart by setting &quot;en&quot; bit in the control register to 1 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="21" column="6" bodyfile="EF_UART.c" bodystart="11" bodyend="17" declfile="EF_UART.h" declline="21" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a906f9de6fa1f7d7a3e251f9c8ecf3ba1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_disable</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_disable</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>disables using uart by clearing &quot;en&quot; bit in the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="28" column="6" bodyfile="EF_UART.c" bodystart="19" bodyend="25" declfile="EF_UART.h" declline="28" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a27d08acb4a16fe736ec85a6809a8f4cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_enableRx</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_enableRx</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>enables using uart RX by setting uart &quot;rxen&quot; bit in the control register to 1 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="35" column="6" bodyfile="EF_UART.c" bodystart="27" bodyend="33" declfile="EF_UART.h" declline="35" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a8bbcb77cabef3983cca1118db94f33da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_disableRx</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_disableRx</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>disables using uart RX by clearing uart &quot;rxen&quot; bit in the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="42" column="6" bodyfile="EF_UART.c" bodystart="35" bodyend="41" declfile="EF_UART.h" declline="42" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a9e39d1b67dee9dc4eddecab799f2a73e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_enableTx</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_enableTx</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>enables using uart TX by setting uart &quot;txen&quot; bit in the control register to 1 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="49" column="6" bodyfile="EF_UART.c" bodystart="43" bodyend="49" declfile="EF_UART.h" declline="49" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a5fdfa5d0ceaf25c86265f08508d0ac82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_disableTx</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_disableTx</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>disables using uart TX by clearing uart &quot;txen&quot; bit in the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="56" column="6" bodyfile="EF_UART.c" bodystart="51" bodyend="57" declfile="EF_UART.h" declline="56" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a5b6c1522111c36f052d01ef8477d8708" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_enableLoopBack</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_enableLoopBack</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>enables loopback (connecting TX to RX signal) by setting &quot;lpen&quot; bit in the control register to 1 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="63" column="6" bodyfile="EF_UART.c" bodystart="59" bodyend="65" declfile="EF_UART.h" declline="63" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a14b502b1b4f32f74147fa27ef594ec5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_disableLoopBack</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_disableLoopBack</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>disables loopback (connecting TX to RX signal) by clearing &quot;lpen&quot; bit in the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="70" column="6" bodyfile="EF_UART.c" bodystart="67" bodyend="73" declfile="EF_UART.h" declline="70" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a41e9f0fc22054ed60435b56e07cc2b08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_enableGlitchFilter</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_enableGlitchFilter</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>enables glitch filter (filter out noise or glitches on the received signal) by setting &quot;gfen&quot; bit in the control register to 1 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="77" column="6" bodyfile="EF_UART.c" bodystart="75" bodyend="84" declfile="EF_UART.h" declline="77" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a0b951370140c22de50546112916dbf0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_disableGlitchFilter</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_disableGlitchFilter</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>disables glitch filter (filter out noise or glitches on the received signal) by clearing &quot;gfen&quot; bit in the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="84" column="6" bodyfile="EF_UART.c" bodystart="86" bodyend="92" declfile="EF_UART.h" declline="84" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a93420e961b8b16ec1d4e19565a89338f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setCTRL</definition>
+        <argsstring>(uint32_t uart_base, int value)</argsstring>
+        <name>EF_UART_setCTRL</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the control register to a certain value where<itemizedlist>
+<listitem><para>bit 0: UART enable</para>
+</listitem><listitem><para>bit 1: UART Transmitter enable</para>
+</listitem><listitem><para>bit 2: UART Receiver enable</para>
+</listitem><listitem><para>bit 3: Loopback (connect RX and TX pins together) enable</para>
+</listitem><listitem><para>bit 4: UART Glitch Filer on RX enable</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the control register </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="98" column="6" bodyfile="EF_UART.c" bodystart="94" bodyend="100" declfile="EF_UART.h" declline="98" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1ae932a6f49dc8556119957adf2d230714" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getCTRL</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getCTRL</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>returns the value of the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>control register value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="106" column="5" bodyfile="EF_UART.c" bodystart="102" bodyend="107" declfile="EF_UART.h" declline="106" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a29ad6f2b0288e0a90421b7755b4ea6d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setDataSize</definition>
+        <argsstring>(uint32_t uart_base, int value)</argsstring>
+        <name>EF_UART_setDataSize</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>sets the Data Size (Data word length: 5-9 bits ) by setting the &quot;wlen&quot; field in configuration register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the required data word length <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="115" column="6" bodyfile="EF_UART.c" bodystart="122" bodyend="131" declfile="EF_UART.h" declline="115" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1ad9196d00146f379a9e90b260b4545209" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setTwoStopBitsSelect</definition>
+        <argsstring>(uint32_t uart_base, bool is_two_bits)</argsstring>
+        <name>EF_UART_setTwoStopBitsSelect</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_two_bits</declname>
+        </param>
+        <briefdescription>
+<para>sets the &quot;stp2&quot; bit in configuration register (whether the stop boits are two or one) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_two_bits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bool value, if &quot;true&quot;, the stop bits are two and if &quot;false&quot;, the stop bit is one </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="124" column="6" bodyfile="EF_UART.c" bodystart="133" bodyend="147" declfile="EF_UART.h" declline="124" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a61f34f093714af424473fa57fb04cfc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setParityType</definition>
+        <argsstring>(uint32_t uart_base, enum parity_type parity)</argsstring>
+        <name>EF_UART_setParityType</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>enum <ref refid="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref></type>
+          <declname>parity</declname>
+        </param>
+        <briefdescription>
+<para>sets the &quot;parity&quot; field in configuration register (could be none, odd, even, sticky 0 or sticky 1) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>enum parity_type could be &quot;NONE&quot; , &quot;ODD&quot; , &quot;EVEN&quot; , &quot;STICKY_0&quot; , or &quot;STICKY_1&quot; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="133" column="6" bodyfile="EF_UART.c" bodystart="149" bodyend="158" declfile="EF_UART.h" declline="133" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1ab56dac54958dce9684d6ad1cd26d1018" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setTimeoutBits</definition>
+        <argsstring>(uint32_t uart_base, int value)</argsstring>
+        <name>EF_UART_setTimeoutBits</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>sets the &quot;timeout&quot; field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timeout bits value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="142" column="6" bodyfile="EF_UART.c" bodystart="160" bodyend="169" declfile="EF_UART.h" declline="142" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1abad90397a0d5f9b1559105971e24b585" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setConfig</definition>
+        <argsstring>(uint32_t uart_base, int config)</argsstring>
+        <name>EF_UART_setConfig</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the configuration register to a certain value where<itemizedlist>
+<listitem><para>bit 0-3: Data word length: 5-9 bits</para>
+</listitem><listitem><para>bit 4: Two Stop Bits Select</para>
+</listitem><listitem><para>bit 5-7: Parity Type: 000: None, 001: odd, 010: even, 100: Sticky 0, 101: Sticky 1</para>
+</listitem><listitem><para>bit 8-13: Receiver Timeout measured in number of bits</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the configuration register </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="155" column="6" bodyfile="EF_UART.c" bodystart="171" bodyend="176" declfile="EF_UART.h" declline="155" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1aae10f814cfbacb6ee771ddcc5b349744" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getConfig</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getConfig</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>returns the value of the configuration register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>configuration register value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="163" column="5" bodyfile="EF_UART.c" bodystart="178" bodyend="182" declfile="EF_UART.h" declline="163" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a998d1e7e9da992f65124ac26854513ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setRxFIFOThreshold</definition>
+        <argsstring>(uint32_t uart_base, int threshold)</argsstring>
+        <name>EF_UART_setRxFIFOThreshold</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+<para>sets the RX FIFO threshold to a certain value at which &quot;RXA&quot; interrupt will be raised </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>threshold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the required threshold </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="172" column="6" bodyfile="EF_UART.c" bodystart="184" bodyend="193" declfile="EF_UART.h" declline="172" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a829e9820f1d010624994aa7590851721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getRxFIFOThreshold</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getRxFIFOThreshold</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>returns the current value of the RX FIFO threshold </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>RX FIFO threshold register </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="180" column="5" bodyfile="EF_UART.c" bodystart="195" bodyend="203" declfile="EF_UART.h" declline="180" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a416b4fb1a37947fefee94fdcd2b6175b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setTxFIFOThreshold</definition>
+        <argsstring>(uint32_t uart_base, int threshold)</argsstring>
+        <name>EF_UART_setTxFIFOThreshold</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+<para>sets the TX FIFO threshold to a certain value at which &quot;TXB&quot; interrupt will be raised </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>threshold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the required threshold </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="189" column="6" bodyfile="EF_UART.c" bodystart="205" bodyend="214" declfile="EF_UART.h" declline="189" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a6e89a406b1b3cff125032eff26043d3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getTxFIFOThreshold</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getTxFIFOThreshold</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>returns the current value of the TX FIFO threshold </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TX FIFO threshold register </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="197" column="5" bodyfile="EF_UART.c" bodystart="216" bodyend="224" declfile="EF_UART.h" declline="197" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1ade8fde5e588c22e9bdf3b68f26469098" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setFIFOControl</definition>
+        <argsstring>(uint32_t uart_base, int value)</argsstring>
+        <name>EF_UART_setFIFOControl</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the FIFO control register to a certain value where<itemizedlist>
+<listitem><para>bit 0-3: Transmit FIFO Level Threshold</para>
+</listitem><listitem><para>bit 8-11: Receive FIFO Level Threshold</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the FIFO control register </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="208" column="6" bodyfile="EF_UART.c" bodystart="226" bodyend="232" declfile="EF_UART.h" declline="208" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a044758d0138aeb24c6a87fda9c7de6c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getFIFOControl</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getFIFOControl</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>returns the value of the FIFO control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>FIFO control register value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="216" column="5" bodyfile="EF_UART.c" bodystart="234" bodyend="240" declfile="EF_UART.h" declline="216" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a24c0a12c701bbab2594a68148ccaf187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getFIFOStatus</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getFIFOStatus</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the FIFO status register where<itemizedlist>
+<listitem><para>bit 0-3: Receive FIFO Level</para>
+</listitem><listitem><para>bit 8-11: Transmit FIFO Level</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>FIFO status register value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="226" column="5" bodyfile="EF_UART.c" bodystart="261" bodyend="266" declfile="EF_UART.h" declline="226" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a65715703fe82c3f9fb235cf6b0f62e7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setMatchData</definition>
+        <argsstring>(uint32_t uart_base, int matchData)</argsstring>
+        <name>EF_UART_setMatchData</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>matchData</declname>
+        </param>
+        <briefdescription>
+<para>sets the matchData to a certain value at which &quot;MATCH&quot; interrupt will be raised </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>matchData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the required match data <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="235" column="6" bodyfile="EF_UART.c" bodystart="268" bodyend="273" declfile="EF_UART.h" declline="235" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a471ea6bce689a667b0415208815a9005" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getMatchData</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getMatchData</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>returns the value of the match data register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>match data register value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="243" column="5" bodyfile="EF_UART.c" bodystart="275" bodyend="279" declfile="EF_UART.h" declline="243" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1ab67855784d50b5c547378f5d5702c273" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getTxCount</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getTxCount</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>returns the current level of the TX FIFO (the number of bytes in the FIFO) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TX FIFO level register </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="251" column="5" bodyfile="EF_UART.c" bodystart="243" bodyend="250" declfile="EF_UART.h" declline="251" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1ad473ded49b92582489495c207b425a01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getRxCount</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getRxCount</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>returns the current level of the RX FIFO (the number of bytes in the FIFO) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>RX FIFO level register </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="259" column="5" bodyfile="EF_UART.c" bodystart="252" bodyend="259" declfile="EF_UART.h" declline="259" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a417529a40a07f0af36ba658f3a31fff5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setPrescaler</definition>
+        <argsstring>(uint32_t uart_base, int prescaler)</argsstring>
+        <name>EF_UART_setPrescaler</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>prescaler</declname>
+        </param>
+        <briefdescription>
+<para>sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prescaler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the required prescaler </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="268" column="6" bodyfile="EF_UART.c" bodystart="109" bodyend="113" declfile="EF_UART.h" declline="268" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a2d7077f683a7553f9c178ecfd058d1bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getPrescaler</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getPrescaler</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>returns the value of the prescaler </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>prescaler register value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="276" column="5" bodyfile="EF_UART.c" bodystart="115" bodyend="119" declfile="EF_UART.h" declline="276" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1afb034e9ca5c75e87df32e77410dfffea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getRIS</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getRIS</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Raw Interrupt Status Register<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>RIS register value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="294" column="5" bodyfile="EF_UART.c" bodystart="293" bodyend="297" declfile="EF_UART.h" declline="294" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a6ffee64b80995aff387251125ebeca80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getMIS</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getMIS</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Masked Interrupt Status Register<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>MIS register value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="312" column="5" bodyfile="EF_UART.c" bodystart="299" bodyend="303" declfile="EF_UART.h" declline="312" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1af9fd462da652712e3d4c1a356af2b276" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setIM</definition>
+        <argsstring>(uint32_t uart_base, int mask)</argsstring>
+        <name>EF_UART_setIM</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the value of the Interrupts Masking Register; which enable and disables interrupts<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="330" column="6" bodyfile="EF_UART.c" bodystart="305" bodyend="309" declfile="EF_UART.h" declline="330" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a19e91976fc7aa7bc0d7aea10f9092c82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_getIM</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_getIM</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Interrupts Masking Register; which enable and disables interrupts<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>IM register value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="348" column="5" bodyfile="EF_UART.c" bodystart="311" bodyend="315" declfile="EF_UART.h" declline="348" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a71cf6e226bdc78fa9e36f40b4039fe8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_setICR</definition>
+        <argsstring>(uint32_t uart_base, int mask)</argsstring>
+        <name>EF_UART_setICR</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the value of the Interrupts Clear Register; write 1 to clear the flag<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="366" column="6" bodyfile="EF_UART.c" bodystart="317" bodyend="321" declfile="EF_UART.h" declline="366" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a45b53dbb72f6493a763d6176eb56ef2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_writeCharArr</definition>
+        <argsstring>(uint32_t uart_base, const char *char_arr)</argsstring>
+        <name>EF_UART_writeCharArr</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>char_arr</declname>
+        </param>
+        <briefdescription>
+<para>transmit an array of characters through uart </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char_arr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of characters to send </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="375" column="6" bodyfile="EF_UART.c" bodystart="332" bodyend="340" declfile="EF_UART.h" declline="375" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a9219a3cffee150f100b55272eaae74da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EF_UART_writeChar</definition>
+        <argsstring>(uint32_t uart_base, char data)</argsstring>
+        <name>EF_UART_writeChar</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>transmit a single character through uart </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character or byte required to send </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="384" column="6" bodyfile="EF_UART.c" bodystart="324" bodyend="330" declfile="EF_UART.h" declline="384" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="EF__UART_8h_1a727b43ac98a06b2e2a0c31c305e3e2f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EF_UART_readChar</definition>
+        <argsstring>(uint32_t uart_base)</argsstring>
+        <name>EF_UART_readChar</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>uart_base</declname>
+        </param>
+        <briefdescription>
+<para>recieve a single character through uart </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart_base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base memory address of UART registers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the byte recieved </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="393" column="5" bodyfile="EF_UART.c" bodystart="350" bodyend="358" declfile="EF_UART.h" declline="393" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>C header file for UART APIs which contains the function prototypes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EF_UART_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="EF__UART__regs_8h" kindref="compound">EF_UART_regs.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>{<ref refid="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10ac157bdf0b85a40d2619cbc8bc1ae5fe2" kindref="member">NONE</ref><sp/>=<sp/>0,<sp/><ref refid="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10aa29cedab858353a26006af9db7cd1ed8" kindref="member">ODD</ref><sp/>=<sp/>1,<sp/><ref refid="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" kindref="member">EVEN</ref><sp/>=<sp/>2,<sp/><ref refid="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10adedda6ce97e93d2a3e84ca7a704cd998" kindref="member">STICKY_0</ref><sp/>=<sp/>4,<sp/><ref refid="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a0cc8b778b8f0b3fa4d7a084fddbc3cec" kindref="member">STICKY_1</ref><sp/>=<sp/>5};</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1ac8fb76879468f536845efd63dd013023" kindref="member">EF_UART_enable</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a906f9de6fa1f7d7a3e251f9c8ecf3ba1" kindref="member">EF_UART_disable</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a27d08acb4a16fe736ec85a6809a8f4cf" kindref="member">EF_UART_enableRx</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a8bbcb77cabef3983cca1118db94f33da" kindref="member">EF_UART_disableRx</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a9e39d1b67dee9dc4eddecab799f2a73e" kindref="member">EF_UART_enableTx</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a5fdfa5d0ceaf25c86265f08508d0ac82" kindref="member">EF_UART_disableTx</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a5b6c1522111c36f052d01ef8477d8708" kindref="member">EF_UART_enableLoopBack</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a14b502b1b4f32f74147fa27ef594ec5f" kindref="member">EF_UART_disableLoopBack</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a41e9f0fc22054ed60435b56e07cc2b08" kindref="member">EF_UART_enableGlitchFilter</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a0b951370140c22de50546112916dbf0f" kindref="member">EF_UART_disableGlitchFilter</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a93420e961b8b16ec1d4e19565a89338f" kindref="member">EF_UART_setCTRL</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1ae932a6f49dc8556119957adf2d230714" kindref="member">EF_UART_getCTRL</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a29ad6f2b0288e0a90421b7755b4ea6d7" kindref="member">EF_UART_setDataSize</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1ad9196d00146f379a9e90b260b4545209" kindref="member">EF_UART_setTwoStopBitsSelect</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_two_bits);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a61f34f093714af424473fa57fb04cfc5" kindref="member">EF_UART_setParityType</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>parity);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1ab56dac54958dce9684d6ad1cd26d1018" kindref="member">EF_UART_setTimeoutBits</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1abad90397a0d5f9b1559105971e24b585" kindref="member">EF_UART_setConfig</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>config);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1aae10f814cfbacb6ee771ddcc5b349744" kindref="member">EF_UART_getConfig</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a998d1e7e9da992f65124ac26854513ec" kindref="member">EF_UART_setRxFIFOThreshold</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>threshold);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a829e9820f1d010624994aa7590851721" kindref="member">EF_UART_getRxFIFOThreshold</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a416b4fb1a37947fefee94fdcd2b6175b" kindref="member">EF_UART_setTxFIFOThreshold</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>threshold);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a6e89a406b1b3cff125032eff26043d3d" kindref="member">EF_UART_getTxFIFOThreshold</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1ade8fde5e588c22e9bdf3b68f26469098" kindref="member">EF_UART_setFIFOControl</ref><sp/>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a044758d0138aeb24c6a87fda9c7de6c6" kindref="member">EF_UART_getFIFOControl</ref><sp/>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a24c0a12c701bbab2594a68148ccaf187" kindref="member">EF_UART_getFIFOStatus</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a65715703fe82c3f9fb235cf6b0f62e7b" kindref="member">EF_UART_setMatchData</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matchData);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a471ea6bce689a667b0415208815a9005" kindref="member">EF_UART_getMatchData</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1ab67855784d50b5c547378f5d5702c273" kindref="member">EF_UART_getTxCount</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1ad473ded49b92582489495c207b425a01" kindref="member">EF_UART_getRxCount</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a417529a40a07f0af36ba658f3a31fff5" kindref="member">EF_UART_setPrescaler</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>prescaler);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a2d7077f683a7553f9c178ecfd058d1bd" kindref="member">EF_UART_getPrescaler</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1afb034e9ca5c75e87df32e77410dfffea" kindref="member">EF_UART_getRIS</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a6ffee64b80995aff387251125ebeca80" kindref="member">EF_UART_getMIS</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1af9fd462da652712e3d4c1a356af2b276" kindref="member">EF_UART_setIM</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a19e91976fc7aa7bc0d7aea10f9092c82" kindref="member">EF_UART_getIM</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a71cf6e226bdc78fa9e36f40b4039fe8e" kindref="member">EF_UART_setICR</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a45b53dbb72f6493a763d6176eb56ef2a" kindref="member">EF_UART_writeCharArr</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*char_arr);</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a9219a3cffee150f100b55272eaae74da" kindref="member">EF_UART_writeChar</ref>(uint32_t<sp/>uart_base,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="EF__UART_8h_1a727b43ac98a06b2e2a0c31c305e3e2f9" kindref="member">EF_UART_readChar</ref>(uint32_t<sp/>uart_base);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="EF_UART.h"/>
+  </compounddef>
+</doxygen>

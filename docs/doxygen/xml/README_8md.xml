@@ -1,0 +1,749 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">##<sp/>APIs<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_enable</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_enable(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">enables<sp/>using<sp/>uart<sp/>by<sp/>setting<sp/>&quot;en&quot;<sp/>bit<sp/>in<sp/>the<sp/>control<sp/>register<sp/>to<sp/>1<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_disable</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_disable(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">disables<sp/>using<sp/>uart<sp/>by<sp/>clearing<sp/>&quot;en&quot;<sp/>bit<sp/>in<sp/>the<sp/>control<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_enableRx</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_enableRx(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">enables<sp/>using<sp/>uart<sp/>RX<sp/>by<sp/>setting<sp/>uart<sp/>&quot;rxen&quot;<sp/>bit<sp/>in<sp/>the<sp/>control<sp/>register<sp/>to<sp/>1<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_disableRx</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_disableRx(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">disables<sp/>using<sp/>uart<sp/>RX<sp/>by<sp/>clearing<sp/>uart<sp/>&quot;rxen&quot;<sp/>bit<sp/>in<sp/>the<sp/>control<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_enableTx</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_enableTx(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">enables<sp/>using<sp/>uart<sp/>TX<sp/>by<sp/>setting<sp/>uart<sp/>&quot;txen&quot;<sp/>bit<sp/>in<sp/>the<sp/>control<sp/>register<sp/>to<sp/>1<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_disableTx</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_disableTx(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">disables<sp/>using<sp/>uart<sp/>TX<sp/>by<sp/>clearing<sp/>uart<sp/>&quot;txen&quot;<sp/>bit<sp/>in<sp/>the<sp/>control<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_enableLoopBack</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_enableLoopBack(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">enables<sp/>loopback<sp/>(connecting<sp/>TX<sp/>to<sp/>RX<sp/>signal)<sp/>by<sp/>setting<sp/>&quot;lpen&quot;<sp/>bit<sp/>in<sp/>the<sp/>control<sp/>register<sp/>to<sp/>1<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_disableLoopBack</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_disableLoopBack(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">disables<sp/>loopback<sp/>(connecting<sp/>TX<sp/>to<sp/>RX<sp/>signal)<sp/>by<sp/>clearing<sp/>&quot;lpen&quot;<sp/>bit<sp/>in<sp/>the<sp/>control<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_enableGlitchFilter</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_enableGlitchFilter(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">enables<sp/>glitch<sp/>filter<sp/>(filter<sp/>out<sp/>noise<sp/>or<sp/>glitches<sp/>on<sp/>the<sp/>received<sp/>signal)<sp/>by<sp/>setting<sp/>&quot;gfen&quot;<sp/>bit<sp/>in<sp/>the<sp/>control<sp/>register<sp/>to<sp/>1<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_disableGlitchFilter</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_disableGlitchFilter(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">disables<sp/>glitch<sp/>filter<sp/>(filter<sp/>out<sp/>noise<sp/>or<sp/>glitches<sp/>on<sp/>the<sp/>received<sp/>signal)<sp/>by<sp/>clearing<sp/>&quot;gfen&quot;<sp/>bit<sp/>in<sp/>the<sp/>control<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setCTRL</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setCTRL(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**value**<sp/>The<sp/>value<sp/>of<sp/>the<sp/>control<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>control<sp/>register<sp/>to<sp/>a<sp/>certain<sp/>value<sp/>where</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0:<sp/>UART<sp/>enable</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1:<sp/>UART<sp/>Transmitter<sp/>enable</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2:<sp/>UART<sp/>Receiver<sp/>enable</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3:<sp/>Loopback<sp/>(connect<sp/>RX<sp/>and<sp/>TX<sp/>pins<sp/>together)<sp/>enable</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4:<sp/>UART<sp/>Glitch<sp/>Filer<sp/>on<sp/>RX<sp/>enable</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getCTRL</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getCTRL(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>control<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>control<sp/>register<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setPrescaler</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setPrescaler(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>prescaler</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>prescaler<sp/>to<sp/>a<sp/>certain<sp/>value<sp/>where<sp/>Baud_rate<sp/>=<sp/>Bus_Clock_Freq/((Prescaler+1)*16)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**prescaler**<sp/>The<sp/>value<sp/>of<sp/>the<sp/>required<sp/>prescaler<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getPrescaler</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getPrescaler(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>prescaler<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>prescaler<sp/>register<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setDataSize</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setDataSize(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>Data<sp/>Size<sp/>(Data<sp/>word<sp/>length:<sp/>5-9<sp/>bits<sp/>)<sp/>by<sp/>setting<sp/>the<sp/>&quot;wlen&quot;<sp/>field<sp/>in<sp/>configuration<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**value**<sp/>The<sp/>value<sp/>of<sp/>the<sp/>required<sp/>data<sp/>word<sp/>length<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setTwoStopBitsSelect</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setTwoStopBitsSelect(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>is_two_bits</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>&quot;stp2&quot;<sp/>bit<sp/>in<sp/>configuration<sp/>register<sp/>(whether<sp/>the<sp/>stop<sp/>bits<sp/>are<sp/>two<sp/>or<sp/>one)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**is_two_bits**<sp/>bool<sp/>value,<sp/>if<sp/>&quot;true&quot;,<sp/>the<sp/>stop<sp/>bits<sp/>are<sp/>two<sp/>and<sp/>if<sp/>&quot;false&quot;,<sp/>the<sp/>stop<sp/>bit<sp/>is<sp/>one<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setParityType</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setParityType(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>enum<sp/>parity_type<sp/>parity</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>&quot;parity&quot;<sp/>field<sp/>in<sp/>configuration<sp/>register<sp/>(could<sp/>be<sp/>none,<sp/>odd,<sp/>even,<sp/>sticky<sp/>0<sp/>or<sp/>sticky<sp/>1)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**parity**<sp/>enum<sp/>parity_type<sp/>could<sp/>be<sp/>&quot;NONE&quot;<sp/>,<sp/>&quot;ODD&quot;<sp/>,<sp/>&quot;EVEN&quot;<sp/>,<sp/>&quot;STICKY_0&quot;<sp/>,<sp/>or<sp/>&quot;STICKY_1&quot;<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setTimeoutBits</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setTimeoutBits(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>&quot;timeout&quot;<sp/>field<sp/>in<sp/>configuration<sp/>register<sp/>which<sp/>is<sp/>receiver<sp/>timeout<sp/>measured<sp/>in<sp/>number<sp/>of<sp/>bits<sp/>at<sp/>which<sp/>the<sp/>timeout<sp/>flag<sp/>will<sp/>be<sp/>raised<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**value**<sp/>timeout<sp/>bits<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setConfig</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setConfig(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>config</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**config**<sp/>The<sp/>value<sp/>of<sp/>the<sp/>configuration<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>configuration<sp/>register<sp/>to<sp/>a<sp/>certain<sp/>value<sp/>where</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0-3:<sp/>Data<sp/>word<sp/>length:<sp/>5-9<sp/>bits</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4:<sp/>Two<sp/>Stop<sp/>Bits<sp/>Select</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5-7:<sp/>Parity<sp/>Type:<sp/>000:<sp/>None,<sp/>001:<sp/>odd,<sp/>010:<sp/>even,<sp/>100:<sp/>Sticky<sp/>0,<sp/>101:<sp/>Sticky<sp/>1</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8-13:<sp/>Receiver<sp/>Timeout<sp/>measured<sp/>in<sp/>number<sp/>of<sp/>bits</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getConfig</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getConfig(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>configuration<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>configuration<sp/>register<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setRxFIFOThreshold</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setRxFIFOThreshold(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>threshold</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>RX<sp/>FIFO<sp/>threshold<sp/>to<sp/>a<sp/>certain<sp/>value<sp/>at<sp/>which<sp/>&quot;RXA&quot;<sp/>interrupt<sp/>will<sp/>be<sp/>raised<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**threshold**<sp/>The<sp/>value<sp/>of<sp/>the<sp/>required<sp/>threshold<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getRxFIFOThreshold</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getRxFIFOThreshold(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>current<sp/>value<sp/>of<sp/>the<sp/>RX<sp/>FIFO<sp/>threshold<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>RX<sp/>FIFO<sp/>threshold<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setTxFIFOThreshold</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setTxFIFOThreshold(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>threshold</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>TX<sp/>FIFO<sp/>threshold<sp/>to<sp/>a<sp/>certain<sp/>value<sp/>at<sp/>which<sp/>&quot;TXB&quot;<sp/>interrupt<sp/>will<sp/>be<sp/>raised<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**threshold**<sp/>The<sp/>value<sp/>of<sp/>the<sp/>required<sp/>threshold<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getTxFIFOThreshold</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getTxFIFOThreshold(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>current<sp/>value<sp/>of<sp/>the<sp/>TX<sp/>FIFO<sp/>threshold<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>TX<sp/>FIFO<sp/>threshold<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setFIFOControl</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setFIFOControl(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**config**<sp/>The<sp/>value<sp/>of<sp/>the<sp/>FIFO<sp/>control<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>FIFO<sp/>control<sp/>register<sp/>to<sp/>a<sp/>certain<sp/>value<sp/>where</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0-3:<sp/>Transmit<sp/>FIFO<sp/>Level<sp/>Threshold</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8-11:<sp/>Receive<sp/>FIFO<sp/>Level<sp/>Threshold</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getFIFOControl</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getFIFOControl(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>FIFO<sp/>control<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>FIFO<sp/>control<sp/>register<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getTxCount</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getTxCount(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>current<sp/>level<sp/>of<sp/>the<sp/>TX<sp/>FIFO<sp/>(the<sp/>number<sp/>of<sp/>bytes<sp/>in<sp/>the<sp/>FIFO)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>TX<sp/>FIFO<sp/>level<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getRxCount</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getRxCount(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>current<sp/>level<sp/>of<sp/>the<sp/>RX<sp/>FIFO<sp/>(the<sp/>number<sp/>of<sp/>bytes<sp/>in<sp/>the<sp/>FIFO)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>RX<sp/>FIFO<sp/>level<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getFIFOStatus</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getFIFOStatus(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>FIFO<sp/>status<sp/>register<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>FIFO<sp/>status<sp/>register<sp/>where</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0-3:<sp/>Receive<sp/>FIFO<sp/>Level</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8-11:<sp/>Transmit<sp/>FIFO<sp/>Level</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setMatchData</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setMatchData(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>matchData</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>matchData<sp/>to<sp/>a<sp/>certain<sp/>value<sp/>at<sp/>which<sp/>&quot;MATCH&quot;<sp/>interrupt<sp/>will<sp/>be<sp/>raised<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**matchData**<sp/>The<sp/>value<sp/>of<sp/>the<sp/>required<sp/>match<sp/>data<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getMatchData</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getMatchData(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>match<sp/>data<sp/>register<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>match<sp/>data<sp/>register<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getRIS</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getRIS(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>RIS<sp/>register<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Raw<sp/>Interrupt<sp/>Status<sp/>Register</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>TXE<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>RXF<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>TXB<sp/>:<sp/>Transmit<sp/>FIFO<sp/>level<sp/>is<sp/>Below<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>RXA<sp/>:<sp/>Receive<sp/>FIFO<sp/>level<sp/>is<sp/>Above<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>BRK<sp/>:<sp/>Line<sp/>Break;<sp/>13<sp/>consecutive<sp/>0&apos;s<sp/>have<sp/>been<sp/>detected<sp/>on<sp/>the<sp/>line.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>MATCH<sp/>:<sp/>the<sp/>receive<sp/>data<sp/>matches<sp/>the<sp/>MATCH<sp/>register.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>6<sp/>FE<sp/>:<sp/>Framing<sp/>Error,<sp/>the<sp/>receiver<sp/>does<sp/>not<sp/>see<sp/>a<sp/>&quot;stop&quot;<sp/>bit<sp/>at<sp/>the<sp/>expected<sp/>&quot;stop&quot;<sp/>bit<sp/>time.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>7<sp/>PRE<sp/>:<sp/>Parity<sp/>Error;<sp/>the<sp/>receiver<sp/>calculated<sp/>parity<sp/>does<sp/>not<sp/>match<sp/>the<sp/>received<sp/>one.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8<sp/>OR<sp/>:<sp/>Overrun;<sp/>data<sp/>has<sp/>been<sp/>received<sp/>but<sp/>the<sp/>RX<sp/>FIFO<sp/>is<sp/>full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>9<sp/>RTO<sp/>:<sp/>Receiver<sp/>Timeout;<sp/>no<sp/>data<sp/>has<sp/>been<sp/>received<sp/>for<sp/>the<sp/>time<sp/>of<sp/>a<sp/>specified<sp/>number<sp/>of<sp/>bits.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getMIS</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getMIS(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>MIS<sp/>register<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Masked<sp/>Interrupt<sp/>Status<sp/>Register</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>TXE<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>RXF<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>TXB<sp/>:<sp/>Transmit<sp/>FIFO<sp/>level<sp/>is<sp/>Below<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>RXA<sp/>:<sp/>Receive<sp/>FIFO<sp/>level<sp/>is<sp/>Above<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>BRK<sp/>:<sp/>Line<sp/>Break;<sp/>13<sp/>consecutive<sp/>0&apos;s<sp/>have<sp/>been<sp/>detected<sp/>on<sp/>the<sp/>line.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>MATCH<sp/>:<sp/>the<sp/>receive<sp/>data<sp/>matches<sp/>the<sp/>MATCH<sp/>register.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>6<sp/>FE<sp/>:<sp/>Framing<sp/>Error,<sp/>the<sp/>receiver<sp/>does<sp/>not<sp/>see<sp/>a<sp/>&quot;stop&quot;<sp/>bit<sp/>at<sp/>the<sp/>expected<sp/>&quot;stop&quot;<sp/>bit<sp/>time.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>7<sp/>PRE<sp/>:<sp/>Parity<sp/>Error;<sp/>the<sp/>receiver<sp/>calculated<sp/>parity<sp/>does<sp/>not<sp/>match<sp/>the<sp/>received<sp/>one.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8<sp/>OR<sp/>:<sp/>Overrun;<sp/>data<sp/>has<sp/>been<sp/>received<sp/>but<sp/>the<sp/>RX<sp/>FIFO<sp/>is<sp/>full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>9<sp/>RTO<sp/>:<sp/>Receiver<sp/>Timeout;<sp/>no<sp/>data<sp/>has<sp/>been<sp/>received<sp/>for<sp/>the<sp/>time<sp/>of<sp/>a<sp/>specified<sp/>number<sp/>of<sp/>bits.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setIM</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setIM(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**mask**<sp/>The<sp/>required<sp/>mask<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Interrupts<sp/>Masking<sp/>Register;<sp/>which<sp/>enable<sp/>and<sp/>disables<sp/>interrupts</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>TXE<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>RXF<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>TXB<sp/>:<sp/>Transmit<sp/>FIFO<sp/>level<sp/>is<sp/>Below<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>RXA<sp/>:<sp/>Receive<sp/>FIFO<sp/>level<sp/>is<sp/>Above<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>BRK<sp/>:<sp/>Line<sp/>Break;<sp/>13<sp/>consecutive<sp/>0&apos;s<sp/>have<sp/>been<sp/>detected<sp/>on<sp/>the<sp/>line.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>MATCH<sp/>:<sp/>the<sp/>receive<sp/>data<sp/>matches<sp/>the<sp/>MATCH<sp/>register.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>6<sp/>FE<sp/>:<sp/>Framing<sp/>Error,<sp/>the<sp/>receiver<sp/>does<sp/>not<sp/>see<sp/>a<sp/>&quot;stop&quot;<sp/>bit<sp/>at<sp/>the<sp/>expected<sp/>&quot;stop&quot;<sp/>bit<sp/>time.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>7<sp/>PRE<sp/>:<sp/>Parity<sp/>Error;<sp/>the<sp/>receiver<sp/>calculated<sp/>parity<sp/>does<sp/>not<sp/>match<sp/>the<sp/>received<sp/>one.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8<sp/>OR<sp/>:<sp/>Overrun;<sp/>data<sp/>has<sp/>been<sp/>received<sp/>but<sp/>the<sp/>RX<sp/>FIFO<sp/>is<sp/>full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>9<sp/>RTO<sp/>:<sp/>Receiver<sp/>Timeout;<sp/>no<sp/>data<sp/>has<sp/>been<sp/>received<sp/>for<sp/>the<sp/>time<sp/>of<sp/>a<sp/>specified<sp/>number<sp/>of<sp/>bits.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_getIM</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_getIM(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>IM<sp/>register<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">returns<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Interrupts<sp/>Masking<sp/>Register;<sp/>which<sp/>enable<sp/>and<sp/>disables<sp/>interrupts</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>TXE<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>RXF<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>TXB<sp/>:<sp/>Transmit<sp/>FIFO<sp/>level<sp/>is<sp/>Below<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>RXA<sp/>:<sp/>Receive<sp/>FIFO<sp/>level<sp/>is<sp/>Above<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>BRK<sp/>:<sp/>Line<sp/>Break;<sp/>13<sp/>consecutive<sp/>0&apos;s<sp/>have<sp/>been<sp/>detected<sp/>on<sp/>the<sp/>line.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>MATCH<sp/>:<sp/>the<sp/>receive<sp/>data<sp/>matches<sp/>the<sp/>MATCH<sp/>register.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>6<sp/>FE<sp/>:<sp/>Framing<sp/>Error,<sp/>the<sp/>receiver<sp/>does<sp/>not<sp/>see<sp/>a<sp/>&quot;stop&quot;<sp/>bit<sp/>at<sp/>the<sp/>expected<sp/>&quot;stop&quot;<sp/>bit<sp/>time.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>7<sp/>PRE<sp/>:<sp/>Parity<sp/>Error;<sp/>the<sp/>receiver<sp/>calculated<sp/>parity<sp/>does<sp/>not<sp/>match<sp/>the<sp/>received<sp/>one.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8<sp/>OR<sp/>:<sp/>Overrun;<sp/>data<sp/>has<sp/>been<sp/>received<sp/>but<sp/>the<sp/>RX<sp/>FIFO<sp/>is<sp/>full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>9<sp/>RTO<sp/>:<sp/>Receiver<sp/>Timeout;<sp/>no<sp/>data<sp/>has<sp/>been<sp/>received<sp/>for<sp/>the<sp/>time<sp/>of<sp/>a<sp/>specified<sp/>number<sp/>of<sp/>bits.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_setICR</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_setICR(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**mask**<sp/>The<sp/>required<sp/>mask<sp/>value<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sets<sp/>the<sp/>value<sp/>of<sp/>the<sp/>Interrupts<sp/>Clear<sp/>Register;<sp/>write<sp/>1<sp/>to<sp/>clear<sp/>the<sp/>flag</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>0<sp/>TXE<sp/>:<sp/>Transmit<sp/>FIFO<sp/>is<sp/>Empty.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>1<sp/>RXF<sp/>:<sp/>Receive<sp/>FIFO<sp/>is<sp/>Full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>2<sp/>TXB<sp/>:<sp/>Transmit<sp/>FIFO<sp/>level<sp/>is<sp/>Below<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>3<sp/>RXA<sp/>:<sp/>Receive<sp/>FIFO<sp/>level<sp/>is<sp/>Above<sp/>Threshold.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>4<sp/>BRK<sp/>:<sp/>Line<sp/>Break;<sp/>13<sp/>consecutive<sp/>0&apos;s<sp/>have<sp/>been<sp/>detected<sp/>on<sp/>the<sp/>line.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>5<sp/>MATCH<sp/>:<sp/>the<sp/>receive<sp/>data<sp/>matches<sp/>the<sp/>MATCH<sp/>register.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>6<sp/>FE<sp/>:<sp/>Framing<sp/>Error,<sp/>the<sp/>receiver<sp/>does<sp/>not<sp/>see<sp/>a<sp/>&quot;stop&quot;<sp/>bit<sp/>at<sp/>the<sp/>expected<sp/>&quot;stop&quot;<sp/>bit<sp/>time.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>7<sp/>PRE<sp/>:<sp/>Parity<sp/>Error;<sp/>the<sp/>receiver<sp/>calculated<sp/>parity<sp/>does<sp/>not<sp/>match<sp/>the<sp/>received<sp/>one.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>8<sp/>OR<sp/>:<sp/>Overrun;<sp/>data<sp/>has<sp/>been<sp/>received<sp/>but<sp/>the<sp/>RX<sp/>FIFO<sp/>is<sp/>full.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bit<sp/>9<sp/>RTO<sp/>:<sp/>Receiver<sp/>Timeout;<sp/>no<sp/>data<sp/>has<sp/>been<sp/>received<sp/>for<sp/>the<sp/>time<sp/>of<sp/>a<sp/>specified<sp/>number<sp/>of<sp/>bits.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_writeChar</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_writeChar(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>char<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">transmit<sp/>a<sp/>single<sp/>character<sp/>through<sp/>uart<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**data**<sp/>The<sp/>character<sp/>or<sp/>byte<sp/>required<sp/>to<sp/>send<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_writeCharArr</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>EF_UART_writeCharArr(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>char<sp/>*<sp/>char_arr</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">transmit<sp/>an<sp/>array<sp/>of<sp/>characters<sp/>through<sp/>uart<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**char_arr**<sp/>An<sp/>array<sp/>of<sp/>characters<sp/>to<sp/>send<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>EF_UART_readChar</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cpp</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>EF_UART_readChar(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
+<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">receive<sp/>a<sp/>single<sp/>character<sp/>through<sp/>uart<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters**:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>**uart_base**<sp/>The<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Return**:<sp/>the<sp/>byte<sp/>received<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-------------------------------</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>
