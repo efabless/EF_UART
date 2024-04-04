@@ -51,9 +51,9 @@ EF_UART_APB INST (
 The following table is the result for implementing the EF_UART IP with different wrappers using Sky130 PDK and [yosys](https://github.com/YosysHQ/yosys).
 |Module | Number of cells | Max. freq |
 |-|-|-|
-|EF_UART|1612||
-|EF_UART_APB|1967||
-|EF_UART_AHBL|2003||
+|EF_UART|1590| 212 MHz |
+|EF_UART_APB|1943| 192 MHz|
+|EF_UART_AHBL|1973| 232 MHz|
 ## The Programming Interface
 
 
