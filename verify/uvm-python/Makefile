@@ -21,6 +21,8 @@ else ifeq ($(BUS_TYPE),AHB)
 else ifeq ($(BUS_TYPE),WISHBONE)
     RTL_MACROS += -DBUS_TYPE_WISHBONE
     DESIGN_NAME = EF_UART_WB
+    export CLK_MAKEFILE = clk_i
+    export RST_MAKEFILE = rst_i
 endif
 ## netlist Gen 
 GL_MACROS += -DGL -DFUNCTIONAL  $(RTL_MACROS) -DUNIT_DELAY=\#1 

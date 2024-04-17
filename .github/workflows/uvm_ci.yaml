@@ -108,6 +108,58 @@ jobs:
         with:
           name: failed_tests
           path: verify/uvm-python/failed_tests.tar.gz
+  
+  verify_WB:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: download docker
+        run: |
+          docker pull efabless/dv:cocotb
+
+      - name: Navigate to verify/uvm-python and run tests
+        run: |
+          cd verify/uvm-python
+          make run_all_tests RUN_MERGE_COVERAGE=false BUS_TYPE=WISHBONE
+
+      - name: Check for test results in run
+        run: |
+          cd verify/uvm-python
+          passed_count=$(find sim/default_tag -type f -name 'passed' | wc -l)
+          failed_count=$(find sim/default_tag -type f -name 'failed' | wc -l)
+          unknown_count=$(find sim/default_tag -type f -name 'unknown' | wc -l)
+
+          echo "Passed: $passed_count"
+          echo "Failed: $failed_count"
+          echo "Unknown: $unknown_count"
+
+          if [ "$passed_count" -eq 0 ]; then
+            echo "Error: No passed test results found"
+            exit 1
+          elif [ "$failed_count" -ne 0 ] || [ "$unknown_count" -ne 0 ]; then
+            echo "Error: There are failed or unknown test results"
+            exit 1
+          else
+            echo "All tests passed successfully"
+          fi
+      - name: tar failed tests
+        if: failure()
+        run: |
+          cd verify/uvm-python
+          tar -czf failed_tests.tar.gz sim/default_tag
+      
+      - name: upload failed tests
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: failed_tests
+          path: verify/uvm-python/failed_tests.tar.gz
 
   lint: # Lint the RTL code
     runs-on: ubuntu-latest
