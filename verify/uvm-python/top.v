@@ -35,7 +35,7 @@ module top();
         wire        cyc_i;
         wire        stb_i;
         reg         ack_o;
-        EF_UART_wb dut(.rx(RX), .tx(TX), .clk_i(CLK), .rst_i(~rst_i), .adr_i(adr_i), .dat_i(dat_i), .dat_o(dat_o), .sel_i(sel_i), .cyc_i(cyc_i), .stb_i(stb_i), .ack_o(ack_o),.we_i(we_i), .irq(irq));
+        EF_UART_WB dut(.rx(RX), .tx(TX), .clk_i(CLK), .rst_i(~RESETn), .adr_i(adr_i), .dat_i(dat_i), .dat_o(dat_o), .sel_i(sel_i), .cyc_i(cyc_i), .stb_i(stb_i), .ack_o(ack_o),.we_i(we_i), .IRQ(irq));
     `endif // BUS_TYPE_WISHBONE
     // monitor inside signals
 `ifndef GL 

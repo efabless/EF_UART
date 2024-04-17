@@ -3,7 +3,7 @@ TOPLEVEL := top
 MODULE   ?= top_module
 AHB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_AHBL.pp.v
 APB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_APB.pp.v
-WB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_wb.v
+WB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_WB.pp.v
 HDL_FILES ?= $(PWD)/IP_Utilities/rtl/aucohl_lib.v $(PWD)/IP_Utilities/rtl/aucohl_rtl.vh  $(PWD)/../../hdl/rtl/EF_UART.v 
 VERILOG_SOURCES ?=  $(PWD)/top.v $(AHB_FILES) $(APB_FILES) $(WB_FILES) $(HDL_FILES)
 RTL_MACROS += ""
@@ -20,7 +20,7 @@ else ifeq ($(BUS_TYPE),AHB)
     export RST_MAKEFILE = HRESETn
 else ifeq ($(BUS_TYPE),WISHBONE)
     RTL_MACROS += -DBUS_TYPE_WISHBONE
-    DESIGN_NAME = EF_UART_wb
+    DESIGN_NAME = EF_UART_WB
 endif
 ## netlist Gen 
 GL_MACROS += -DGL -DFUNCTIONAL  $(RTL_MACROS) -DUNIT_DELAY=\#1 
