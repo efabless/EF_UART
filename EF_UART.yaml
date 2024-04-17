@@ -22,6 +22,7 @@ info:
     - IP: 1590
     - APB: 1943
     - AHBL: 1973
+    - WB: 2170
   width": "0.0"
   height": "0.0"
   technology: n/a
@@ -29,6 +30,7 @@ info:
     - IP: 277
     - APB: 208
     - AHBL: 250
+    - WB: 83
   digital_supply_voltage: n/a
   analog_supply_voltage: n/a
 
