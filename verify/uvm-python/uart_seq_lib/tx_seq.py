@@ -21,6 +21,7 @@ class tx_seq(bus_seq_base):
                 await self.wait_tx()
 
     async def send_tx(self):
+        self.create_new_item()
         await uvm_do_with(
             self,
             self.req,

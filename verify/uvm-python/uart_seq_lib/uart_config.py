@@ -118,6 +118,7 @@ class uart_config(bus_seq_base):
 
     async def send_req(self, is_write, reg, data_condition=None):
         # send request
+        self.create_new_item()
         if is_write:
             if data_condition is None:
                 await uvm_do_with(

@@ -22,6 +22,7 @@ class uart_loopback_seq(bus_seq_base):
         config_seq = uart_config("uart_config")
         await uvm_do(self, config_seq)  # change the presclar/ configs
         # enable loopback
+        self.create_new_item()
         await uvm_do_with(
             self,
             self.req,
@@ -33,6 +34,7 @@ class uart_loopback_seq(bus_seq_base):
         for _ in range(30):
             random_send = random.randint(1, 10)
             for __ in range(random_send):
+                self.create_new_item()
                 await uvm_do_with(
                     self,
                     self.req,
@@ -44,6 +46,7 @@ class uart_loopback_seq(bus_seq_base):
                 await self.monitor.tx_received.wait()
                 self.monitor.tx_received.clear()
             for __ in range(random_send):
+                self.create_new_item()
                 await uvm_do_with(
                     self,
                     self.req,

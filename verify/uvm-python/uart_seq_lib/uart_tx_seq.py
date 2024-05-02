@@ -20,10 +20,12 @@ class uart_tx_seq(bus_seq_base):
     async def body(self):
         # configure uart
         config_seq = uart_config("uart_config")
+        self.create_new_item()
         await uvm_do(self, config_seq)  # change the presclar
         for _ in range(30):
             random_send = random.randint(1, 16)
             for __ in range(random_send):
+                self.create_new_item()
                 await uvm_do_with(
                     self,
                     self.req,
