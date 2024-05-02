@@ -88,19 +88,30 @@ class uart_config(bus_seq_base):
             await self.send_req(is_write=True, reg="MATCH")
 
         # threshold value
-        if self.fifo_control is not None:
-            await self.send_req(
-                is_write=True,
-                reg="FIFOCTRL",
-                data_condition=lambda data: data == self.fifo_control,
-            )
-        else:
-            await self.send_req(
-                is_write=True,
-                reg="FIFOCTRL",
-                data_condition=lambda data: ((data >> 8) & 0b1111) in range(0, 15)
-                and (data & 0b1111) in range(0, 15),
-            )
+        # if self.fifo_control is not None:
+        #     await self.send_req(
+        #         is_write=True,
+        #         reg="RX_FIFO_THRESHOLD",
+        #         data_condition=lambda data: data == self.fifo_control & 0b1111,
+        #     )
+        # else:
+        #     await self.send_req(
+        #         is_write=True,
+        #         reg="RX_FIFO_THRESHOLD",
+        #         data_condition=lambda data: data in range(0, 15),
+        #     )
+        # if self.fifo_control is not None:
+        #     await self.send_req(
+        #         is_write=True,
+        #         reg="TX_FIFO_THRESHOLD",
+        #         data_condition=lambda data: data == (self.fifo_control >> 8) & 0b1111,
+        #     )
+        # else:
+        #     await self.send_req(
+        #         is_write=True,
+        #         reg="TX_FIFO_THRESHOLD",
+        #         data_condition=lambda data: data in range(0, 15),
+        #     )
 
         # enable uart
         if self.control is not None:

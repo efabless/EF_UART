@@ -183,7 +183,7 @@ class EF_UART(UVMComponent):
             self.flags.set_data_match()
 
     def check_rx_level_threshold(self):
-        threshold = (self.regs.read_reg_value("FIFOCTRL") >> 8) & 0b1111
+        threshold = self.regs.read_reg_value("RX_FIFO_THRESHOLD")
         uvm_info(
             self.tag,
             f"RX threshold = {threshold} size = {self.fifo_rx.qsize()}",
@@ -199,7 +199,7 @@ class EF_UART(UVMComponent):
         #         uvm_info(self.tag, "[interrupt flag] Disabling RX FIFO thread", UVM_HIGH)
 
     def check_tx_level_threshold(self):
-        threshold = self.regs.read_reg_value("FIFOCTRL") & 0b1111
+        threshold = self.regs.read_reg_value("TX_FIFO_THRESHOLD")
         uvm_info(
             self.tag,
             f"TX threshold = {threshold} size = {self.fifo_tx.qsize()}",
