@@ -22,17 +22,35 @@ class uart_loopback_seq(bus_seq_base):
         config_seq = uart_config("uart_config")
         await uvm_do(self, config_seq)  # change the presclar/ configs
         # enable loopback
-        await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["CTRL"], lambda kind: kind == bus_item.WRITE, lambda data: data == 0xF)
+        await uvm_do_with(
+            self,
+            self.req,
+            lambda addr: addr == self.adress_dict["CTRL"],
+            lambda kind: kind == bus_item.WRITE,
+            lambda data: data == 0xF,
+        )
 
         for _ in range(30):
             random_send = random.randint(1, 10)
             for __ in range(random_send):
-                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["TXDATA"], lambda kind: kind == bus_item.WRITE, lambda data: data in range(0, 0x200))
-            for __ in range(random_send): # wait untill all data sent
+                await uvm_do_with(
+                    self,
+                    self.req,
+                    lambda addr: addr == self.adress_dict["TXDATA"],
+                    lambda kind: kind == bus_item.WRITE,
+                    lambda data: data in range(0, 0x200),
+                )
+            for __ in range(random_send):  # wait untill all data sent
                 await self.monitor.tx_received.wait()
                 self.monitor.tx_received.clear()
             for __ in range(random_send):
-                await uvm_do_with(self, self.req, lambda addr: addr == self.adress_dict["RXDATA"], lambda kind: kind == bus_item.READ, lambda data: data in range(0, 0x200))
+                await uvm_do_with(
+                    self,
+                    self.req,
+                    lambda addr: addr == self.adress_dict["RXDATA"],
+                    lambda kind: kind == bus_item.READ,
+                    lambda data: data in range(0, 0x200),
+                )
 
 
 uvm_object_utils(uart_loopback_seq)

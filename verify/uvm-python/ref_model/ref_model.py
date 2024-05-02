@@ -1,7 +1,7 @@
 from uvm.base.uvm_component import UVMComponent
 from uvm.macros import uvm_component_utils
 from uvm.tlm1.uvm_analysis_port import UVMAnalysisImp
-from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM 
+from uvm.base.uvm_object_globals import UVM_HIGH, UVM_LOW, UVM_MEDIUM
 from uvm.macros import uvm_component_utils, uvm_fatal, uvm_info
 from uvm.base.uvm_config_db import UVMConfigDb
 from ref_model.model import EF_UART
@@ -10,8 +10,7 @@ from uvm.tlm1.uvm_analysis_port import UVMAnalysisExport
 from uvm.macros.uvm_tlm_defines import uvm_analysis_imp_decl
 from uart_item.uart_item import uart_item
 import cocotb
-from EF_UVM.ref_model.ref_model import ref_model 
-
+from EF_UVM.ref_model.ref_model import ref_model
 
 
 class UART_VIP(ref_model):
@@ -23,6 +22,7 @@ class UART_VIP(ref_model):
     4) Interface with Scoreboard: The outputs from the VIP, representing the expected results, are forwarded to the scoreboard. The scoreboard then compares these expected results with the actual outputs from the IP and bus for verification.
     5)Register Abstraction Layer (RAL) Integration: The VIP includes a RAL model that mirrors the register values of the RTL, ensuring synchronization between expected and actual register states. This model facilitates register-level tests and error detection, offering accessible and up-to-date register values for other verification components. It enhances the automation and coverage of register testing, playing a vital role in ensuring the accuracy and comprehensiveness of the verification process.
     """
+
     def __init__(self, name="ip_coverage", parent=None):
         super().__init__(name, parent)
         self.vip_model_rx_export = UVMAnalysisExport("vip_model_rx_export", self)
@@ -76,9 +76,13 @@ class UART_VIP(ref_model):
 
     async def update_irq(self):
         irq = 0
-        while (True):
+        while True:
             await self.model.flags.mis_changed.wait()
-            uvm_info(self.tag, f"mis changed mis = {self.model.regs.read_reg_value('mis')} irq = {irq}", UVM_MEDIUM)
+            uvm_info(
+                self.tag,
+                f"mis changed mis = {self.model.regs.read_reg_value('mis')} irq = {irq}",
+                UVM_MEDIUM,
+            )
             if self.model.regs.read_reg_value("mis") != 0 and irq == 0:
                 irq = 1
                 tr = bus_irq_item.type_id.create("tr", self)

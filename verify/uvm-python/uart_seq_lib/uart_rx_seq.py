@@ -23,7 +23,9 @@ class uart_rx_seq(UVMSequence):
     async def body(self):
         # configure uart
         for _ in range(18):
-            await uvm_do_with(self, self.req, lambda direction: direction == uart_item.RX)
+            await uvm_do_with(
+                self, self.req, lambda direction: direction == uart_item.RX
+            )
 
 
 uvm_object_utils(uart_rx_seq)

@@ -19,6 +19,7 @@ class EF_UART(UVMComponent):
     """
     EF UART specific model. every ip should have it's unique model
     """
+
     def __init__(self, name="EF_UART_Model", parent=None):
         super().__init__(name, parent)
         self.analysis_imp_rx = uvm_analysis_imp_rx("model_rx", self)
@@ -30,7 +31,7 @@ class EF_UART(UVMComponent):
         super().build_phase(phase)
         uvm_info(self.tag, "Vip built", UVM_HIGH)
         arr = []
-        if (not UVMConfigDb.get(self, "", "bus_regs", arr)):
+        if not UVMConfigDb.get(self, "", "bus_regs", arr):
             uvm_fatal(self.tag, "No json file wrapper regs")
         else:
             self.regs = arr[0]
@@ -41,7 +42,9 @@ class EF_UART(UVMComponent):
         self.fifo_rx_threshold = False
         self.tx_thread = None
         self.event_control = Event()
-        self.tx_trig_event = Event()  # fire when monitor detect new tx received to sync the fifos
+        self.tx_trig_event = (
+            Event()
+        )  # fire when monitor detect new tx received to sync the fifos
         self.new_rx_received = Event()
         self.flags = Flags(self.regs, self.tag)
         cocotb.scheduler.add(self.control_regs())
@@ -56,18 +59,29 @@ class EF_UART(UVMComponent):
         uvm_info(self.tag, f"Vip reset {self.fifo_tx.qsize()}", UVM_MEDIUM)
 
     def write_register(self, addr, data):
-        uvm_info(self.tag, "Writing register " + hex(addr) + " with value " + hex(data), UVM_HIGH)
+        uvm_info(
+            self.tag,
+            "Writing register " + hex(addr) + " with value " + hex(data),
+            UVM_HIGH,
+        )
         self.regs.write_reg_value(addr, data)
         if addr == self.regs.reg_name_to_address["TXDATA"]:  # txdata
             try:
-                word_mask = (1 << (self.regs.read_reg_value("CFG") & 0xf)) -1
+                word_mask = (1 << (self.regs.read_reg_value("CFG") & 0xF)) - 1
                 self.fifo_tx.put_nowait(data & word_mask)
-                uvm_info(self.tag, f"value {hex(data)} written to tx fifo size = {self.fifo_tx.qsize()}", UVM_MEDIUM)
+                uvm_info(
+                    self.tag,
+                    f"value {hex(data)} written to tx fifo size = {self.fifo_tx.qsize()}",
+                    UVM_MEDIUM,
+                )
                 self.check_tx_level_threshold()
                 if self.fifo_tx.full():
                     self.flags.set_tx_full()
             except asyncio.QueueFull:
-                uvm_warning(self.tag, f"writing to tx while fifo is full so ignore the value {hex(data)}")
+                uvm_warning(
+                    self.tag,
+                    f"writing to tx while fifo is full so ignore the value {hex(data)}",
+                )
         if addr == self.regs.reg_name_to_address["CTRL"]:  # control
             uvm_info(self.tag, "UART control reg set", UVM_HIGH)
             self.event_control.set()
@@ -76,32 +90,40 @@ class EF_UART(UVMComponent):
         uvm_info(self.tag, "Reading register " + hex(addr), UVM_MEDIUM)
         if addr == self.regs.reg_name_to_address["RXDATA"]:  # reading from rx data
             try:
-                uvm_info(self.tag, f"reading from rx fifo size = {self.fifo_rx.qsize()}", UVM_MEDIUM)
+                uvm_info(
+                    self.tag,
+                    f"reading from rx fifo size = {self.fifo_rx.qsize()}",
+                    UVM_MEDIUM,
+                )
                 data = self.fifo_rx.get_nowait()
                 self.check_rx_level_threshold()
                 return data
             except asyncio.QueueEmpty:
-                return "X" # x means the data is trash so the scoreboard should not check it
+                return "X"  # x means the data is trash so the scoreboard should not check it
         return self.regs.read_reg_value(addr)
 
     async def transmit(self):
         # this should be called only if uart is enabled
-        while (True):
+        while True:
             data_tx = await self.fifo_tx.get_no_pop()
             self.check_tx_level_threshold()
-            uvm_info(self.tag, f"Transmitting {chr(data_tx)}({hex(data_tx)}) fifo size = {self.fifo_tx.qsize()}", UVM_HIGH)
+            uvm_info(
+                self.tag,
+                f"Transmitting {chr(data_tx)}({hex(data_tx)}) fifo size = {self.fifo_tx.qsize()}",
+                UVM_HIGH,
+            )
             tr = uart_item.type_id.create("tr", self)
             tr.char = data_tx
             tr.direction = uart_item.TX
             parity_type = (self.regs.read_reg_value("CFG") >> 5) & 0x7
             tr.calculate_parity(parity_type)
-            tr.word_length = self.regs.read_reg_value("CFG") & 0xf
-            
+            tr.word_length = self.regs.read_reg_value("CFG") & 0xF
+
             await self.tx_trig_event.wait()
             self.ip_export.write(tr)
             self.tx_trig_event.clear()
             # pop last value from as it is sent
-            # update rx fifo when loopback is enabled 
+            # update rx fifo when loopback is enabled
             await self.fifo_tx.get()
 
             if (self.regs.read_reg_value("CTRL") & 0xF) == 0xF:
@@ -113,7 +135,9 @@ class EF_UART(UVMComponent):
                         self.flags.set_rx_full()
                 except asyncio.QueueFull:
                     self.check_receiver_match(data_tx)
-                    uvm_warning(self.tag, "writing to rx while fifo is full so ignore the value")
+                    uvm_warning(
+                        self.tag, "writing to rx while fifo is full so ignore the value"
+                    )
                     self.flags.set_overrun_err()
 
     def write_rx(self, tr):
@@ -130,7 +154,9 @@ class EF_UART(UVMComponent):
             except asyncio.QueueFull:
                 self.new_rx_received.set()
                 self.check_receiver_match(tr.char)
-                uvm_warning(self.tag, "writing to rx while fifo is full so ignore the value")
+                uvm_warning(
+                    self.tag, "writing to rx while fifo is full so ignore the value"
+                )
                 self.flags.set_overrun_err()
         else:
             uvm_warning(self.tag, "received uart transaction while uart is disabled")
@@ -158,7 +184,11 @@ class EF_UART(UVMComponent):
 
     def check_rx_level_threshold(self):
         threshold = (self.regs.read_reg_value("FIFOCTRL") >> 8) & 0b1111
-        uvm_info(self.tag, f"RX threshold = {threshold} size = {self.fifo_rx.qsize()}", UVM_HIGH)
+        uvm_info(
+            self.tag,
+            f"RX threshold = {threshold} size = {self.fifo_rx.qsize()}",
+            UVM_HIGH,
+        )
         if self.fifo_rx.qsize() > threshold:
             if not self.fifo_rx_threshold:
                 self.fifo_rx_threshold = True
@@ -170,7 +200,11 @@ class EF_UART(UVMComponent):
 
     def check_tx_level_threshold(self):
         threshold = self.regs.read_reg_value("FIFOCTRL") & 0b1111
-        uvm_info(self.tag, f"TX threshold = {threshold} size = {self.fifo_tx.qsize()}", UVM_HIGH)
+        uvm_info(
+            self.tag,
+            f"TX threshold = {threshold} size = {self.fifo_tx.qsize()}",
+            UVM_HIGH,
+        )
         if self.fifo_tx.qsize() < threshold:
             if not self.fifo_tx_threshold:
                 self.fifo_tx_threshold = True
@@ -190,10 +224,12 @@ class Flags:
         self.tag = tag
         self.mis_changed = Event()
 
-
     def write_interrupt(self, mask, name="None"):
         self.regs.write_reg_value("ris", mask, mask=mask)
-        if self.regs.read_reg_value("im") & mask == mask and self.regs.read_reg_value("mis") & mask == 0:
+        if (
+            self.regs.read_reg_value("im") & mask == mask
+            and self.regs.read_reg_value("mis") & mask == 0
+        ):
             uvm_info(self.tag, f"Write interrupt {name}", UVM_MEDIUM)
             self.regs.write_reg_value("mis", mask, mask=mask, force_write=True)
             self.mis_changed.set()
@@ -208,7 +244,6 @@ class Flags:
     def set_rx_full(self):
         uvm_info(self.tag, "[interrupt flag] RX FIFO is full", UVM_MEDIUM)
         self.write_interrupt(0b1, "RX FIFO full")
-
 
     def clr_rx_full(self):
         if self.regs.read_reg_value("ris") & 0b1:
@@ -230,7 +265,11 @@ class Flags:
 
     def clr_rx_above_threshold(self):
         if self.regs.read_reg_value("ris") & 0b100 == 0b100:
-            uvm_info(self.tag, "[clear flag] clear RX FIFO above threshold interrupt", UVM_MEDIUM)
+            uvm_info(
+                self.tag,
+                "[clear flag] clear RX FIFO above threshold interrupt",
+                UVM_MEDIUM,
+            )
             self.clear_interrupt(mask=0b100, name="RX FIFO above threshold")
 
     def set_tx_below_threshold(self):
@@ -239,7 +278,11 @@ class Flags:
 
     def clr_tx_below_threshold(self):
         if self.regs.read_reg_value("ris") & 0b1000 == 0b1000:
-            uvm_info(self.tag, "[clear flag] clear TX FIFO below threshold interrupt", UVM_MEDIUM)
+            uvm_info(
+                self.tag,
+                "[clear flag] clear TX FIFO below threshold interrupt",
+                UVM_MEDIUM,
+            )
             self.clear_interrupt(mask=0b1000, name="TX FIFO below threshold")
 
     def set_line_break(self):
@@ -298,14 +341,13 @@ class Flags:
 
 
 class TX_QUEUE(Queue):
-    """same queue provided by cocotb but with 2 new functions to get the tx value send it and then pop it from the queue after sending
-    """
+    """same queue provided by cocotb but with 2 new functions to get the tx value send it and then pop it from the queue after sending"""
+
     def __init__(self, maxsize: int = 0):
         super().__init__(maxsize)
 
     async def get_no_pop(self):
-        """same as get but without popping it from the queue
-        """
+        """same as get but without popping it from the queue"""
         while self.empty():
             event = Event("{} get".format(type(self).__name__))
             self._getters.append((event, cocotb.scheduler._current_task))

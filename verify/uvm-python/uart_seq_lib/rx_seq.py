@@ -5,6 +5,7 @@ from uvm.macros.uvm_message_defines import uvm_info, uvm_fatal
 from uart_item.uart_item import uart_item
 from uvm.seq import UVMSequence
 
+
 class rx_seq(UVMSequence):
     def __init__(self, name="tx_seq", repeat=3):
         UVMSequence.__init__(self, name)
@@ -17,8 +18,9 @@ class rx_seq(UVMSequence):
     async def body(self):
         # configure uart
         for _ in range(self.repeat):
-            await uvm_do_with(self, self.req, lambda direction: direction == uart_item.RX)
-
+            await uvm_do_with(
+                self, self.req, lambda direction: direction == uart_item.RX
+            )
 
 
 uvm_object_utils(rx_seq)
