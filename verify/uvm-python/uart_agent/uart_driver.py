@@ -16,18 +16,18 @@ class uart_driver(UVMDriver):
     def build_phase(self, phase):
         super().build_phase(phase)
         arr = []
-        if (not UVMConfigDb.get(self, "", "ip_if", arr)):
+        if not UVMConfigDb.get(self, "", "ip_if", arr):
             uvm_fatal(self.tag, "No interface specified for self driver instance")
         else:
             self.vif = arr[0]
         regs_arr = []
-        if (not UVMConfigDb.get(self, "", "bus_regs", regs_arr)):
+        if not UVMConfigDb.get(self, "", "bus_regs", regs_arr):
             uvm_fatal(self.tag, "No json file wrapper regs")
         else:
             self.regs = regs_arr[0]
             self.vif = arr[0]
         glitches_arr = []
-        if (not UVMConfigDb.get(self, "", "insert_glitches", glitches_arr)):
+        if not UVMConfigDb.get(self, "", "insert_glitches", glitches_arr):
             self.insert_glitches = False
         else:
             self.insert_glitches = glitches_arr[0]
@@ -43,7 +43,11 @@ class uart_driver(UVMDriver):
             await self.seq_item_port.get_next_item(tr)
             tr = tr[0]
             if tr.direction == uart_item.RX:
-                uvm_info(self.tag, "Driving trans into IP: " + tr.convert2string(), UVM_MEDIUM)
+                uvm_info(
+                    self.tag,
+                    "Driving trans into IP: " + tr.convert2string(),
+                    UVM_MEDIUM,
+                )
                 send_item_thread = await cocotb.start(self.send_item_rx(tr))
                 reset_thread = await cocotb.start(self.wait_reset())
                 await First(send_item_thread, reset_thread)
@@ -51,9 +55,12 @@ class uart_driver(UVMDriver):
                 reset_thread.kill()
                 send_item_thread.kill()
             else:
-                uvm_warning(self.tag, f"invalid direction {tr.direction} send to driver", UVM_HIGH)
+                uvm_warning(
+                    self.tag,
+                    f"invalid direction {tr.direction} send to driver",
+                    UVM_HIGH,
+                )
             self.seq_item_port.item_done()
-
 
     async def wait_reset(self):
         await FallingEdge(self.vif.PRESETn)
@@ -61,7 +68,7 @@ class uart_driver(UVMDriver):
     async def send_item_rx(self, tr):
         await self.start_of_rx()
         if self.insert_glitches:
-            await cocotb.start(self.add_glitches()) # assert glitches
+            await cocotb.start(self.add_glitches())  # assert glitches
         await self.send_byte(tr.char)
         uvm_info(self.tag, "finish send byte", UVM_HIGH)
         await self.send_parity(tr)
@@ -70,10 +77,10 @@ class uart_driver(UVMDriver):
         uvm_info(self.tag, "finish send bit1", UVM_HIGH)
         await self.end_of_rx(1)
         uvm_info(self.tag, "finish send bit0", UVM_HIGH)
-        # add breakline 2% of the times 
+        # add breakline 2% of the times
         # if random.random() < 0.02:
         #     uvm_info(self.tag, "Adding breakline", UVM_MEDIUM)
-        #     await self.break_line() 
+        #     await self.break_line()
 
     async def break_line(self):
         self.vif.RX.value = 0
@@ -123,10 +130,10 @@ class uart_driver(UVMDriver):
     def get_bit_n_cyc(self):
         prescale = self.regs.read_reg_value("PR")
         uvm_info(self.tag, "prescale = " + str(prescale), UVM_HIGH)
-        return ((prescale + 1) * 8)
+        return (prescale + 1) * 8
 
     def get_n_bits(self):
-        word_length = self.regs.read_reg_value("CFG") & 0xf
+        word_length = self.regs.read_reg_value("CFG") & 0xF
         uvm_info(self.tag, "Data word length = " + str(word_length), UVM_HIGH)
         return word_length
 
@@ -135,13 +142,16 @@ class uart_driver(UVMDriver):
         await ClockCycles(self.vif.PCLK, num_cycles)
 
     async def add_glitches(self):
-        await ClockCycles(self.vif.PCLK, random.randint(self.num_cyc_bit, self.num_cyc_bit * 7))
+        await ClockCycles(
+            self.vif.PCLK, random.randint(self.num_cyc_bit, self.num_cyc_bit * 7)
+        )
         await Timer(random.randint(1, 100), units="ns")
         old_val = self.vif.RX.value.integer
-        self.vif.RX.value = old_val-1
+        self.vif.RX.value = old_val - 1
         uvm_info(self.tag, "Asserting glitch", UVM_MEDIUM)
         await Timer(random.randint(1, 10), units="ns")
         self.vif.RX.value = old_val
         # wait long before checking again
+
 
 uvm_component_utils(uart_driver)

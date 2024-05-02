@@ -97,6 +97,14 @@ ports:
     width: 1
     direction: input
     description: Write to TX FIFO signal 
+  - name: tx_fifo_flush
+    width: 1
+    direction: input
+    description: Flushes the TX FIFO. 
+  - name: rx_fifo_flush
+    width: 1
+    direction: input
+    description: Flushes the RX FIFO.
   - name: data_size
     width: 4
     direction: input
@@ -281,42 +289,6 @@ registers:
         bit_width: 6
         write_port: timeout_bits
         description: Receiver Timeout measured in number of bits
-  - name: FIFOCTRL
-    size: 16
-    mode: w
-    fifo: no
-    offset: 20
-    bit_access: no
-    description: FIFO Control Register
-    fields:
-      - name: TXLT
-        bit_offset: 0
-        bit_width: FAW
-        write_port: txfifotr
-        description: Transmit FIFO Level Threshold
-      - name: RXLT
-        bit_offset: 8
-        bit_width: FAW
-        write_port: rxfifotr
-        description: Receive FIFO Level Threshold
-  - name: FIFOS
-    size: 16
-    mode: r
-    fifo: no
-    offset: 24
-    bit_access: no
-    description: FIFO Status Register
-    fields:
-      - name: RXL
-        bit_offset: 0
-        bit_width: FAW
-        read_port: rx_level
-        description: Receive FIFO Level
-      - name: TXL
-        bit_offset: 8
-        bit_width: FAW
-        read_port: tx_level
-        description: Transmit FIFO Level
   - name: MATCH
     size: MDW
     mode: w
@@ -359,15 +331,25 @@ flags:
     description: Receiver Timeout; no data has been received for the time of a specified number of bits.
 
 fifos:
-  - type: read  
+  - name: RX_FIFO
+    type: read  
     width: MDW
-    depth: 16 
+    address_width: FAW
     register: RXDATA
     data_port: rdata
     control_port: rd
-  - type: write
+    flush_enable: True
+    flush_port: rx_fifo_flush
+    threshold_port: rxfifotr
+    level_port: rx_level
+  - name: TX_FIFO
+    type: write
     width: MDW
-    depth: 16
+    address_width: FAW
     register: TXDATA
     data_port: wdata
     control_port: wr
+    flush_enable: True
+    flush_port: tx_fifo_flush
+    threshold_port: txfifotr
+    level_port: tx_level

@@ -21,7 +21,14 @@ class tx_seq(bus_seq_base):
                 await self.wait_tx()
 
     async def send_tx(self):
-        await uvm_do_with(self, self.req, lambda addr: addr == 0x4, lambda kind: kind == bus_item.WRITE, lambda data: data in range(0, 0x200))
+        self.create_new_item()
+        await uvm_do_with(
+            self,
+            self.req,
+            lambda addr: addr == 0x4,
+            lambda kind: kind == bus_item.WRITE,
+            lambda data: data in range(0, 0x200),
+        )
 
     async def wait_tx(self):
         await self.monitor.tx_received.wait()

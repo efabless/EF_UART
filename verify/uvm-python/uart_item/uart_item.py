@@ -1,13 +1,22 @@
 from uvm.seq.uvm_sequence_item import UVMSequenceItem
-from uvm.macros import uvm_object_utils_begin, uvm_object_utils_end, uvm_field_int, uvm_object_utils, uvm_error, uvm_info
+from uvm.macros import (
+    uvm_object_utils_begin,
+    uvm_object_utils_end,
+    uvm_field_int,
+    uvm_object_utils,
+    uvm_error,
+    uvm_info,
+)
 from uvm.base.uvm_object_globals import UVM_ALL_ON, UVM_NOPACK, UVM_HIGH, UVM_MEDIUM
 from uvm.base.sv import sv
 from EF_UVM.ip_env.ip_item import ip_item
+
 
 class uart_item(ip_item):
 
     RX = 0
     TX = 1
+
     def __init__(self, name="uart_item"):
         super().__init__(name)
         self.char = 0  # bit
@@ -16,16 +25,27 @@ class uart_item(ip_item):
         self._direction = None
         self.direction = uart_item.RX
         self.word_length = 8
-        self.parity= "None"
+        self.parity = "None"
         pass
 
     def convert2string(self):
         dirct = "RX" if self.direction == uart_item.RX else "TX"
-        return sv.sformatf("uart char=%s(0x%0h) direction=%s, word_length=%d, parity=%s", chr(self.char), self.char,dirct, self.word_length, self.parity)
+        return sv.sformatf(
+            "uart char=%s(0x%0h) direction=%s, word_length=%d, parity=%s",
+            chr(self.char),
+            self.char,
+            dirct,
+            self.word_length,
+            self.parity,
+        )
 
     def do_compare(self, tr):
-        uvm_info(self.tag, "Comparing " + self.convert2string() + " with " + tr.convert2string(), UVM_MEDIUM)
-        return self.char == tr.char and self.direction == tr.direction 
+        uvm_info(
+            self.tag,
+            "Comparing " + self.convert2string() + " with " + tr.convert2string(),
+            UVM_MEDIUM,
+        )
+        return self.char == tr.char and self.direction == tr.direction
 
     def calculate_parity(self, parity_type):
         # uvm_info(self.tag, "Parity type = " + str(parity_type), UVM_HIGH)
@@ -34,7 +54,7 @@ class uart_item(ip_item):
         elif parity_type == 1:  # odd
             self.parity = "0" if self.count_ones(self.char) % 2 else "1"
         elif parity_type == 2:  # even
-            self.parity =  "0" if self.count_ones(self.char) % 2 == 0 else "1"
+            self.parity = "0" if self.count_ones(self.char) % 2 == 0 else "1"
         elif parity_type == 4:  # sticky 0
             self.parity = "0"
         elif parity_type == 5:  # sticky 1

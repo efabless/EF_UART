@@ -47,7 +47,7 @@ class rx_length_parity_seq_wrapper(bus_seq_base):
             await uvm_do(self, uart_config(im=0, config=config))
             self.handshake_event.set()
             await NextTimeStep()  # wait dummy delay until event is clear
-            await self.handshake_event.wait() # wait until the sequencer in the ip sequencer is done
+            await self.handshake_event.wait()  # wait until the sequencer in the ip sequencer is done
             self.handshake_event.clear()
 
 

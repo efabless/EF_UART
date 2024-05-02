@@ -25,6 +25,7 @@ class uart_rx_read(bus_seq_base):
         # randomly config uart
         # first disabled the uart
         for _ in range(random.randint(1, 18)):
+            self.create_new_item()
             await uvm_do_with(
                 self,
                 self.req,

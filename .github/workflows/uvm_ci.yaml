@@ -1,196 +1,26 @@
-name: Run UVM all tests
+name: Run UVM tests
 
 on:
   push: # This now triggers on pushes to any branch
   pull_request: # This now triggers on pull requests to any branch
 
 jobs:
-  verify_APB:
+  Extract-Buses:
     runs-on: ubuntu-latest
+    outputs:
+      IPs: ${{ steps.set-IPs-matrix.outputs.IPs }}
+      buses: ${{ steps.extract_buses.outputs.buses }}
     steps:
-      - uses: actions/checkout@v2
-      
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: download docker
-        run: |
-          docker pull efabless/dv:cocotb
-
-      - name: Navigate to verify/uvm-python and run tests
-        run: |
-          cd verify/uvm-python
-          make run_all_tests RUN_MERGE_COVERAGE=false
-
-      - name: Check for test results in run
-        run: |
-          cd verify/uvm-python
-          passed_count=$(find sim/default_tag -type f -name 'passed' | wc -l)
-          failed_count=$(find sim/default_tag -type f -name 'failed' | wc -l)
-          unknown_count=$(find sim/default_tag -type f -name 'unknown' | wc -l)
-
-          echo "Passed: $passed_count"
-          echo "Failed: $failed_count"
-          echo "Unknown: $unknown_count"
-
-          if [ "$passed_count" -eq 0 ]; then
-            echo "Error: No passed test results found"
-            exit 1
-          elif [ "$failed_count" -ne 0 ] || [ "$unknown_count" -ne 0 ]; then
-            echo "Error: There are failed or unknown test results"
-            exit 1
-          else
-            echo "All tests passed successfully"
-          fi
-      - name: tar failed tests
-        if: failure()
-        run: |
-          cd verify/uvm-python
-          tar -czf failed_tests.tar.gz sim/default_tag
-      
-      - name: upload failed tests
-        if: failure()
-        uses: actions/upload-artifact@v2
-        with:
-          name: failed_tests
-          path: verify/uvm-python/failed_tests.tar.gz
-
-  verify_AHB:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: download docker
-        run: |
-          docker pull efabless/dv:cocotb
-
-      - name: Navigate to verify/uvm-python and run tests
-        run: |
-          cd verify/uvm-python
-          make run_all_tests RUN_MERGE_COVERAGE=false BUS_TYPE=AHB
-
-      - name: Check for test results in run
-        run: |
-          cd verify/uvm-python
-          passed_count=$(find sim/default_tag -type f -name 'passed' | wc -l)
-          failed_count=$(find sim/default_tag -type f -name 'failed' | wc -l)
-          unknown_count=$(find sim/default_tag -type f -name 'unknown' | wc -l)
-
-          echo "Passed: $passed_count"
-          echo "Failed: $failed_count"
-          echo "Unknown: $unknown_count"
-
-          if [ "$passed_count" -eq 0 ]; then
-            echo "Error: No passed test results found"
-            exit 1
-          elif [ "$failed_count" -ne 0 ] || [ "$unknown_count" -ne 0 ]; then
-            echo "Error: There are failed or unknown test results"
-            exit 1
-          else
-            echo "All tests passed successfully"
-          fi
-      - name: tar failed tests
-        if: failure()
-        run: |
-          cd verify/uvm-python
-          tar -czf failed_tests.tar.gz sim/default_tag
-      
-      - name: upload failed tests
-        if: failure()
-        uses: actions/upload-artifact@v2
-        with:
-          name: failed_tests
-          path: verify/uvm-python/failed_tests.tar.gz
-  
-  verify_WB:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: download docker
-        run: |
-          docker pull efabless/dv:cocotb
-
-      - name: Navigate to verify/uvm-python and run tests
-        run: |
-          cd verify/uvm-python
-          make run_all_tests RUN_MERGE_COVERAGE=false BUS_TYPE=WISHBONE
-
-      - name: Check for test results in run
-        run: |
-          cd verify/uvm-python
-          passed_count=$(find sim/default_tag -type f -name 'passed' | wc -l)
-          failed_count=$(find sim/default_tag -type f -name 'failed' | wc -l)
-          unknown_count=$(find sim/default_tag -type f -name 'unknown' | wc -l)
-
-          echo "Passed: $passed_count"
-          echo "Failed: $failed_count"
-          echo "Unknown: $unknown_count"
-
-          if [ "$passed_count" -eq 0 ]; then
-            echo "Error: No passed test results found"
-            exit 1
-          elif [ "$failed_count" -ne 0 ] || [ "$unknown_count" -ne 0 ]; then
-            echo "Error: There are failed or unknown test results"
-            exit 1
-          else
-            echo "All tests passed successfully"
-          fi
-      - name: tar failed tests
-        if: failure()
-        run: |
-          cd verify/uvm-python
-          tar -czf failed_tests.tar.gz sim/default_tag
-      
-      - name: upload failed tests
-        if: failure()
-        uses: actions/upload-artifact@v2
-        with:
-          name: failed_tests
-          path: verify/uvm-python/failed_tests.tar.gz
-
-  lint: # Lint the RTL code
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: download docker
-        run: |
-          docker pull efabless/dv:cocotb
-
-      - uses: actions/checkout@v2
-      - name: Lint
-        run: |
-          cd verify/uvm-python
-          make lint BUS_TYPE=APB
-          cnt=$(grep -c "Error" "sim/linter.log")
-          if ! [[ $cnt ]]; then cnt=0; fi
-          if [[ $cnt -eq 1 ]]; then exit 0; fi
-          exit 2
-          cnt=$(grep -c "Warning" "sim/linter.log")
-          if ! [[ $cnt ]]; then cnt=0; fi
-          if [[ $cnt -eq 1 ]]; then exit 0; fi
-          exit 2
-      - name: Upload lint results
-        if: failure()
-        uses: actions/upload-artifact@v2
-        with:
-          name: lint_results.log
-          path: verify/uvm-python/sim/linter.log
-
-
+      - name: Extract Supported Buses
+        id: extract_buses
+        uses: efabless/EF_UVM/.github/actions/get-bus@main
+      - name: Check Output
+        run: echo ${{ steps.extract_buses.outputs.buses }}
+  Run-IP-Tests:
+    uses: efabless/EF_UVM/.github/workflows/run_IP.yaml@main
+    needs: [Extract-Buses]
+    with:
+      test-names: "all_tests"
+      name: ${{ github.event.repository.name }}
+      buses: ${{ needs.Extract-Buses.outputs.buses }}
+      is-ip: true

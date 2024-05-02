@@ -22,6 +22,60 @@
 `timescale			1ns/1ps
 `default_nettype	none
 
+
+
+/*
+	Copyright 2020 AUCOHL
+
+    Author: Mohamed Shalan (mshalan@aucegypt.edu)
+	
+	Licensed under the Apache License, Version 2.0 (the "License"); 
+	you may not use this file except in compliance with the License. 
+	You may obtain a copy of the License at:
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software 
+	distributed under the License is distributed on an "AS IS" BASIS, 
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+	See the License for the specific language governing permissions and 
+	limitations under the License.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        
+
+
 module EF_UART_WB #( 
 	parameter	
 		SC = 8,
@@ -41,8 +95,8 @@ module EF_UART_WB #(
                                         output  reg             ack_o,
                                         input   wire            we_i,
                                         output  wire            IRQ,
-	input	[0:0]	rx,
-	output	[0:0]	tx
+	input	[1-1:0]	rx,
+	output	[1-1:0]	tx
 );
 
 	localparam	RXDATA_REG_OFFSET = 16'd0;
@@ -50,13 +104,17 @@ module EF_UART_WB #(
 	localparam	PR_REG_OFFSET = 16'd8;
 	localparam	CTRL_REG_OFFSET = 16'd12;
 	localparam	CFG_REG_OFFSET = 16'd16;
-	localparam	FIFOCTRL_REG_OFFSET = 16'd20;
-	localparam	FIFOS_REG_OFFSET = 16'd24;
 	localparam	MATCH_REG_OFFSET = 16'd28;
 	localparam	IM_REG_OFFSET = 16'd3840;
 	localparam	MIS_REG_OFFSET = 16'd3844;
 	localparam	RIS_REG_OFFSET = 16'd3848;
 	localparam	IC_REG_OFFSET = 16'd3852;
+	localparam	RX_FIFO_FLUSH_REG_OFFSET = 16'd4096;
+	localparam	RX_FIFO_THRESHOLD_REG_OFFSET = 16'd4100;
+	localparam	RX_FIFO_LEVEL_REG_OFFSET = 16'd4104;
+	localparam	TX_FIFO_FLUSH_REG_OFFSET = 16'd4112;
+	localparam	TX_FIFO_THRESHOLD_REG_OFFSET = 16'd4116;
+	localparam	TX_FIFO_LEVEL_REG_OFFSET = 16'd4120;
 
 	wire		clk = clk_i;
 	wire		rst_n = (~rst_i);
@@ -79,6 +137,8 @@ module EF_UART_WB #(
 	wire [FAW-1:0]	rx_level;
 	wire [1-1:0]	rd;
 	wire [1-1:0]	wr;
+	wire [1-1:0]	tx_fifo_flush;
+	wire [1-1:0]	rx_fifo_flush;
 	wire [4-1:0]	data_size;
 	wire [1-1:0]	stop_bits_count;
 	wire [3-1:0]	parity_type;
@@ -99,15 +159,38 @@ module EF_UART_WB #(
 	wire [1-1:0]	overrun_flag;
 	wire [1-1:0]	timeout_flag;
 
+	// FIFO Registers
+	// RX_FIFO Registers
+	reg	[FAW-1:0]	RX_FIFO_THRESHOLD_REG;
+	assign		rxfifotr = RX_FIFO_THRESHOLD_REG;
+	always @(posedge clk_i or posedge rst_i) if(rst_i) RX_FIFO_THRESHOLD_REG <= 0; else if(wb_we & (adr_i[16-1:0]==RX_FIFO_THRESHOLD_REG_OFFSET)) RX_FIFO_THRESHOLD_REG <= dat_i[FAW-1:0];
+	wire	[FAW-1:0]	RX_FIFO_LEVEL_REG;
+	assign		RX_FIFO_LEVEL_REG = rx_level;
+	reg		RX_FIFO_FLUSH_REG;
+	always @(posedge clk_i or posedge rst_i) if(rst_i) RX_FIFO_FLUSH_REG <= 0; else if(wb_we & (adr_i[16-1:0]==RX_FIFO_FLUSH_REG_OFFSET)) RX_FIFO_FLUSH_REG <= dat_i[1-1:0]; else RX_FIFO_FLUSH_REG <= 'b0;
+	assign		rx_fifo_flush = RX_FIFO_FLUSH_REG;
+
+	// TX_FIFO Registers
+	reg	[FAW-1:0]	TX_FIFO_THRESHOLD_REG;
+	assign		txfifotr = TX_FIFO_THRESHOLD_REG;
+	always @(posedge clk_i or posedge rst_i) if(rst_i) TX_FIFO_THRESHOLD_REG <= 0; else if(wb_we & (adr_i[16-1:0]==TX_FIFO_THRESHOLD_REG_OFFSET)) TX_FIFO_THRESHOLD_REG <= dat_i[FAW-1:0];
+	wire	[FAW-1:0]	TX_FIFO_LEVEL_REG;
+	assign		TX_FIFO_LEVEL_REG = tx_level;
+	reg		TX_FIFO_FLUSH_REG;
+	always @(posedge clk_i or posedge rst_i) if(rst_i) TX_FIFO_FLUSH_REG <= 0; else if(wb_we & (adr_i[16-1:0]==TX_FIFO_FLUSH_REG_OFFSET)) TX_FIFO_FLUSH_REG <= dat_i[1-1:0]; else TX_FIFO_FLUSH_REG <= 'b0;
+	assign		tx_fifo_flush = TX_FIFO_FLUSH_REG;
+
+
+	// Register Definitions
 	wire	[MDW-1:0]	RXDATA_WIRE;
 
 	wire	[MDW-1:0]	TXDATA_WIRE;
 
-	reg [16-1:0]	PR_REG;
+	reg [15:0]	PR_REG;
 	assign	prescaler = PR_REG;
 	always @(posedge clk_i or posedge rst_i) if(rst_i) PR_REG <= 0; else if(wb_we & (adr_i[16-1:0]==PR_REG_OFFSET)) PR_REG <= dat_i[16-1:0];
 
-	reg [5-1:0]	CTRL_REG;
+	reg [4:0]	CTRL_REG;
 	assign	en	=	CTRL_REG[0 : 0];
 	assign	tx_en	=	CTRL_REG[1 : 1];
 	assign	rx_en	=	CTRL_REG[2 : 2];
@@ -115,21 +198,12 @@ module EF_UART_WB #(
 	assign	glitch_filter_en	=	CTRL_REG[4 : 4];
 	always @(posedge clk_i or posedge rst_i) if(rst_i) CTRL_REG <= 0; else if(wb_we & (adr_i[16-1:0]==CTRL_REG_OFFSET)) CTRL_REG <= dat_i[5-1:0];
 
-	reg [14-1:0]	CFG_REG;
+	reg [13:0]	CFG_REG;
 	assign	data_size	=	CFG_REG[3 : 0];
 	assign	stop_bits_count	=	CFG_REG[4 : 4];
 	assign	parity_type	=	CFG_REG[7 : 5];
 	assign	timeout_bits	=	CFG_REG[13 : 8];
 	always @(posedge clk_i or posedge rst_i) if(rst_i) CFG_REG <= 'h3F08; else if(wb_we & (adr_i[16-1:0]==CFG_REG_OFFSET)) CFG_REG <= dat_i[14-1:0];
-
-	reg [16-1:0]	FIFOCTRL_REG;
-	assign	txfifotr	=	FIFOCTRL_REG[(FAW - 1) : 0];
-	assign	rxfifotr	=	FIFOCTRL_REG[(FAW + 7) : 8];
-	always @(posedge clk_i or posedge rst_i) if(rst_i) FIFOCTRL_REG <= 0; else if(wb_we & (adr_i[16-1:0]==FIFOCTRL_REG_OFFSET)) FIFOCTRL_REG <= dat_i[16-1:0];
-
-	wire [16-1:0]	FIFOS_WIRE;
-	assign	FIFOS_WIRE[(FAW - 1) : 0] = rx_level;
-	assign	FIFOS_WIRE[(FAW + 7) : 8] = tx_level;
 
 	reg [MDW-1:0]	MATCH_REG;
 	assign	match_data = MATCH_REG;
@@ -215,6 +289,8 @@ module EF_UART_WB #(
 		.rx_level(rx_level),
 		.rd(rd),
 		.wr(wr),
+		.tx_fifo_flush(tx_fifo_flush),
+		.rx_fifo_flush(rx_fifo_flush),
 		.data_size(data_size),
 		.stop_bits_count(stop_bits_count),
 		.parity_type(parity_type),
@@ -244,13 +320,17 @@ module EF_UART_WB #(
 			(adr_i[16-1:0] == PR_REG_OFFSET)	? PR_REG :
 			(adr_i[16-1:0] == CTRL_REG_OFFSET)	? CTRL_REG :
 			(adr_i[16-1:0] == CFG_REG_OFFSET)	? CFG_REG :
-			(adr_i[16-1:0] == FIFOCTRL_REG_OFFSET)	? FIFOCTRL_REG :
-			(adr_i[16-1:0] == FIFOS_REG_OFFSET)	? FIFOS_WIRE :
 			(adr_i[16-1:0] == MATCH_REG_OFFSET)	? MATCH_REG :
 			(adr_i[16-1:0] == IM_REG_OFFSET)	? IM_REG :
 			(adr_i[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
 			(adr_i[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
 			(adr_i[16-1:0] == IC_REG_OFFSET)	? IC_REG :
+			(adr_i[16-1:0] == RX_FIFO_LEVEL_REG_OFFSET)	? RX_FIFO_LEVEL_REG :
+			(adr_i[16-1:0] == RX_FIFO_THRESHOLD_REG_OFFSET)	? RX_FIFO_THRESHOLD_REG :
+			(adr_i[16-1:0] == RX_FIFO_FLUSH_REG_OFFSET)	? RX_FIFO_FLUSH_REG :
+			(adr_i[16-1:0] == TX_FIFO_LEVEL_REG_OFFSET)	? TX_FIFO_LEVEL_REG :
+			(adr_i[16-1:0] == TX_FIFO_THRESHOLD_REG_OFFSET)	? TX_FIFO_THRESHOLD_REG :
+			(adr_i[16-1:0] == TX_FIFO_FLUSH_REG_OFFSET)	? TX_FIFO_FLUSH_REG :
 			32'hDEADBEEF;
 
 	always @ (posedge clk_i or posedge rst_i)

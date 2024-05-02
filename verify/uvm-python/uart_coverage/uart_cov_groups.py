@@ -5,7 +5,7 @@ from uvm.macros import uvm_component_utils
 from uart_item.uart_item import uart_item
 
 
-class ip_cov_groups():
+class ip_cov_groups:
     def __init__(self, hierarchy, regs) -> None:
         self.hierarchy = hierarchy
         self.regs = regs
@@ -17,10 +17,21 @@ class ip_cov_groups():
         @CoverPoint(
             f"{self.hierarchy}.Prescaler",
             xf=lambda tr: (self.regs.read_reg_value("PR"), tr.direction),
-            bins=[((0 if i == 0 else 1 << i * 4, (1 << (i * 4 + 4)) - 1), j) for i in range(4) for j in [uart_item.RX, uart_item.TX]],
-            bins_labels=[((hex(0 if i == 0 else 1 << i * 4), hex((1 << (i * 4 + 4)) - 1)), "RX" if j == uart_item.RX else "TX") for i in range(4) for j in [uart_item.RX, uart_item.TX]],
+            bins=[
+                ((0 if i == 0 else 1 << i * 4, (1 << (i * 4 + 4)) - 1), j)
+                for i in range(4)
+                for j in [uart_item.RX, uart_item.TX]
+            ],
+            bins_labels=[
+                (
+                    (hex(0 if i == 0 else 1 << i * 4), hex((1 << (i * 4 + 4)) - 1)),
+                    "RX" if j == uart_item.RX else "TX",
+                )
+                for i in range(4)
+                for j in [uart_item.RX, uart_item.TX]
+            ],
             at_least=3,
-            rel=lambda val, b: b[0][0] <= val[0] <= b[0][1] and val[1] == b[1]
+            rel=lambda val, b: b[0][0] <= val[0] <= b[0][1] and val[1] == b[1],
         )
         @CoverPoint(
             f"{self.hierarchy}.Loopback",
@@ -31,8 +42,11 @@ class ip_cov_groups():
         )
         @CoverPoint(
             f"{self.hierarchy}.Glitch_fliter",
-            xf=lambda tr: (self.regs.read_reg_value("CTRL") & 0b10000 == 0b10000, tr.direction),
-            bins=[(i,uart_item.RX) for i in [False, True]],
+            xf=lambda tr: (
+                self.regs.read_reg_value("CTRL") & 0b10000 == 0b10000,
+                tr.direction,
+            ),
+            bins=[(i, uart_item.RX) for i in [False, True]],
             bins_labels=["Flitered" if i else "not Flitered" for i in [False, True]],
             at_least=3,
         )
@@ -40,11 +54,14 @@ class ip_cov_groups():
             f"{self.hierarchy}.Stopbits",
             xf=lambda tr: (self.regs.read_reg_value("CFG") & 0b10000 == 0b10000),
             bins=[False, True],
-            bins_labels=["two stop bits" if i else "one stop bit" for i in [False, True]],
+            bins_labels=[
+                "two stop bits" if i else "one stop bit" for i in [False, True]
+            ],
             at_least=3,
         )
         def sample(tr):
             uvm_info("coverage_ip", f"tr = {tr}", UVM_LOW)
+
         if do_sampling:
             sample(tr)
 
@@ -53,27 +70,70 @@ class ip_cov_groups():
         ranges = {9: [32, 16], 8: [16, 16], 7: [16, 8], 6: [8, 8], 5: [8, 4]}
         for direction in [uart_item.RX, uart_item.TX]:
             for word_len in range(5, 10):
-                cov_points.append(CoverPoint(
-                    f"{self.hierarchy}.{'TX' if direction == uart_item.TX else 'RX'}.Length{word_len}.Char",
-                    xf=lambda tr: (tr.direction, tr.word_length, tr.char),
-                    bins=[(i * ranges[word_len][0], i * ranges[word_len][0] + ranges[word_len][0]-1) for i in range(ranges[word_len][1])],
-                    bins_labels=[f"from {hex(i * ranges[word_len][0])} to {hex(i * ranges[word_len][0] + ranges[word_len][0]-1)}" for i in range(ranges[word_len][1])],
-                    rel=lambda val, b, direction=direction, word_len=word_len: direction == val[0] and word_len == val[1] and b[0] <= val[2] <= b[1]
-                ))
-                cov_points.append(CoverPoint(
-                    f"{self.hierarchy}.{'TX' if direction == uart_item.TX else 'RX'}.Length{word_len}.Parity",
-                    xf=lambda tr: (tr.direction, tr.word_length, tr.parity, (self.regs.read_reg_value("CFG") >> 5) & 0b111),
-                    bins=[("None", 0), ("0", 1), ("1", 1), ("0", 2), ("1", 2), ("0", 4), ("1", 5)],
-                    bins_labels=["None", "odd 0 parity", "odd 1 parity", "even 0 parity", "even 1 parity", "stick 0 parity", "stick 1 parity"],
-                    rel=lambda val, b, direction=direction, word_len=word_len: direction == val[0] and word_len == val[1] and b[0] == val[2] and b[1] == val[3]
-                ))
-                cov_points.append(CoverCross(
-                    f"{self.hierarchy}.{'TX' if direction == uart_item.TX else 'RX'}.Length{word_len}.Parity_char",
-                    items=[
-                        f"{self.hierarchy}.{'TX' if direction == uart_item.TX else 'RX'}.Length{word_len}.Parity",
+                cov_points.append(
+                    CoverPoint(
                         f"{self.hierarchy}.{'TX' if direction == uart_item.TX else 'RX'}.Length{word_len}.Char",
-                    ],
-                ))
+                        xf=lambda tr: (tr.direction, tr.word_length, tr.char),
+                        bins=[
+                            (
+                                i * ranges[word_len][0],
+                                i * ranges[word_len][0] + ranges[word_len][0] - 1,
+                            )
+                            for i in range(ranges[word_len][1])
+                        ],
+                        bins_labels=[
+                            f"from {hex(i * ranges[word_len][0])} to {hex(i * ranges[word_len][0] + ranges[word_len][0]-1)}"
+                            for i in range(ranges[word_len][1])
+                        ],
+                        rel=lambda val, b, direction=direction, word_len=word_len: direction
+                        == val[0]
+                        and word_len == val[1]
+                        and b[0] <= val[2] <= b[1],
+                    )
+                )
+                cov_points.append(
+                    CoverPoint(
+                        f"{self.hierarchy}.{'TX' if direction == uart_item.TX else 'RX'}.Length{word_len}.Parity",
+                        xf=lambda tr: (
+                            tr.direction,
+                            tr.word_length,
+                            tr.parity,
+                            (self.regs.read_reg_value("CFG") >> 5) & 0b111,
+                        ),
+                        bins=[
+                            ("None", 0),
+                            ("0", 1),
+                            ("1", 1),
+                            ("0", 2),
+                            ("1", 2),
+                            ("0", 4),
+                            ("1", 5),
+                        ],
+                        bins_labels=[
+                            "None",
+                            "odd 0 parity",
+                            "odd 1 parity",
+                            "even 0 parity",
+                            "even 1 parity",
+                            "stick 0 parity",
+                            "stick 1 parity",
+                        ],
+                        rel=lambda val, b, direction=direction, word_len=word_len: direction
+                        == val[0]
+                        and word_len == val[1]
+                        and b[0] == val[2]
+                        and b[1] == val[3],
+                    )
+                )
+                cov_points.append(
+                    CoverCross(
+                        f"{self.hierarchy}.{'TX' if direction == uart_item.TX else 'RX'}.Length{word_len}.Parity_char",
+                        items=[
+                            f"{self.hierarchy}.{'TX' if direction == uart_item.TX else 'RX'}.Length{word_len}.Parity",
+                            f"{self.hierarchy}.{'TX' if direction == uart_item.TX else 'RX'}.Length{word_len}.Char",
+                        ],
+                    )
+                )
         return cov_points
 
     def apply_decorators(self, decorators):
@@ -81,4 +141,5 @@ class ip_cov_groups():
             for decorator in decorators:
                 func = decorator(func)
             return func
+
         return decorator_wrapper

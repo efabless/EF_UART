@@ -11,6 +11,7 @@ from uart_seq_lib.tx_seq import tx_seq
 from uart_seq_lib.rx_seq import rx_seq
 from cocotb.triggers import NextTimeStep
 
+
 class uart_prescalar_seq(UVMSequence):
 
     def __init__(self, handshake_event, name="uart_prescalar_seq"):
@@ -35,9 +36,15 @@ class uart_prescalar_seq_wrapper(bus_seq_base):
     def __init__(self, handshake_event, name="uart_prescalar_seq_wrapper"):
         super().__init__(name)
         self.handshake_event = handshake_event
-        prescale_ranges = [(0x0, 0xf), (0x10, 0xff), (0x100, 0xfff), (0x1000, 0xffff)]
-        prescale_ranges = [(0x0, 0xf), (0x10, 0xff), (0x100, 0xfff)] # remove the longest prescale so it would take less time
-        self.prescaler_vals = [random.randint(range[0], range[1]) for range in prescale_ranges]
+        prescale_ranges = [(0x0, 0xF), (0x10, 0xFF), (0x100, 0xFFF), (0x1000, 0xFFFF)]
+        prescale_ranges = [
+            (0x0, 0xF),
+            (0x10, 0xFF),
+            (0x100, 0xFFF),
+        ]  # remove the longest prescale so it would take less time
+        self.prescaler_vals = [
+            random.randint(range[0], range[1]) for range in prescale_ranges
+        ]
         random.shuffle(self.prescaler_vals)
         self.tx_seq_obj = tx_seq()
 
@@ -50,8 +57,9 @@ class uart_prescalar_seq_wrapper(bus_seq_base):
             self.handshake_event.set()
             await uvm_do(self, self.tx_seq_obj)
             # await NextTimeStep() # wait dummy delay until event is clear
-            await self.handshake_event.wait() # wait until the sequencer in the ip sequencer is done
+            await self.handshake_event.wait()  # wait until the sequencer in the ip sequencer is done
             self.handshake_event.clear()
+
 
 uvm_object_utils(uart_prescalar_seq)
 uvm_object_utils(uart_prescalar_seq_wrapper)

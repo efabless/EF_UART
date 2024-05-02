@@ -65,6 +65,8 @@ module EF_UART #(parameter  MDW = 9,        // Max data size/width
     input   wire [5:0]      timeout_bits,
     input   wire            loopback_en,
     input   wire            glitch_filter_en,
+    input   wire            tx_fifo_flush,
+    input   wire            rx_fifo_flush,
             
     output  wire            tx_empty,
     output  wire            tx_full,
@@ -136,7 +138,8 @@ module EF_UART #(parameter  MDW = 9,        // Max data size/width
         .empty(tx_empty),
         .full(tx_full),
         .rdata(tx_data),
-        .level(tx_level)
+        .level(tx_level),
+        .flush(tx_fifo_flush)
     );
 
     UART_TX #(.MDW(MDW), .NUM_SAMPLES(SC)) uart_tx (
@@ -161,7 +164,8 @@ module EF_UART #(parameter  MDW = 9,        // Max data size/width
         .empty(rx_empty),
         .full(rx_full),
         .rdata(rdata),
-        .level(rx_level)
+        .level(rx_level),
+        .flush(rx_fifo_flush)
     );
 
     UART_RX #(.MDW(MDW), .NUM_SAMPLES(SC)) uart_rx (
