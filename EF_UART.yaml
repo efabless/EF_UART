@@ -7,8 +7,8 @@ info:
   license: APACHE 2.0
   author: Mohamed Shalan
   email: mshalan@efabless.com
-  version: v1.1.0
-  date: 15-4-2024
+  version: v1.1.1
+  date: 07-5-2024
   category: digital
   tags:
     - peripheral
@@ -33,6 +33,8 @@ info:
     - WB: 83
   digital_supply_voltage: n/a
   analog_supply_voltage: n/a
+  irq_reg_offset: 0xFF00
+  fifo_reg_offset: 0xFE00
 
 parameters:
   - name: SC

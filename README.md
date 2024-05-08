@@ -58,7 +58,6 @@ The following table is the result for implementing the EF_UART IP with different
 
 ### Registers
 
-
 |Name|Offset|Reset Value|Access Mode|Description|
 |---|---|---|---|---|
 |RXDATA|0000|0x00000000|r|RX Data register; the interface to the Receive FIFO.|
@@ -66,50 +65,40 @@ The following table is the result for implementing the EF_UART IP with different
 |PR|0008|0x00000000|w|The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.|
 |CTRL|000c|0x00000000|w|UART Control Register|
 |CFG|0010|0x00003F08|w|UART Configuration Register|
-|FIFOCTRL|0014|0x00000000|w|FIFO Control Register|
-|FIFOS|0018|0x00000000|r|FIFO Status Register|
 |MATCH|001c|0x00000000|w|Match Register|
-|IM|0f00|0x00000000|w|Interrupt Mask Register; write 1/0 to enable/disable interrupts; check the interrupt flags table for more details|
-|RIS|0f08|0x00000000|w|Raw Interrupt Status; reflects the current interrupts status;check the interrupt flags table for more details|
-|MIS|0f04|0x00000000|w|Masked Interrupt Status; On a read, this register gives the current masked status value of the corresponding interrupt. A write has no effect; check the interrupt flags table for more details|
-|IC|0f0c|0x00000000|w|Interrupt Clear Register; On a write of 1, the corresponding interrupt (both raw interrupt and masked interrupt, if enabled) is cleared; check the interrupt flags table for more details|
-
+|RX_FIFO_LEVEL|fe00|0x00000000|r|RX_FIFO Level Register|
+|RX_FIFO_THRESHOLD|fe04|0x00000000|w|RX_FIFO Level Threshold Register|
+|RX_FIFO_FLUSH|fe08|0x00000000|w|RX_FIFO Flush Register|
+|TX_FIFO_LEVEL|fe10|0x00000000|r|TX_FIFO Level Register|
+|TX_FIFO_THRESHOLD|fe14|0x00000000|w|TX_FIFO Level Threshold Register|
+|TX_FIFO_FLUSH|fe18|0x00000000|w|TX_FIFO Flush Register|
+|IM|ff00|0x00000000|w|Interrupt Mask Register; write 1/0 to enable/disable interrupts; check the interrupt flags table for more details|
+|RIS|ff08|0x00000000|w|Raw Interrupt Status; reflects the current interrupts status;check the interrupt flags table for more details|
+|MIS|ff04|0x00000000|w|Masked Interrupt Status; On a read, this register gives the current masked status value of the corresponding interrupt. A write has no effect; check the interrupt flags table for more details|
+|IC|ff0c|0x00000000|w|Interrupt Clear Register; On a write of 1, the corresponding interrupt (both raw interrupt and masked interrupt, if enabled) is cleared; check the interrupt flags table for more details|
 
 ### RXDATA Register [Offset: 0x0, mode: r]
-
 
 RX Data register; the interface to the Receive FIFO.
 <img src="https://svg.wavedrom.com/{reg:[{name:'RXDATA', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
 
 
-
-
 ### TXDATA Register [Offset: 0x4, mode: w]
-
 
 TX Data register; ; the interface to the Receive FIFO.
 <img src="https://svg.wavedrom.com/{reg:[{name:'TXDATA', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
 
 
-
-
 ### PR Register [Offset: 0x8, mode: w]
 
-
 The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.
-
-
 <img src="https://svg.wavedrom.com/{reg:[{name:'PR', bits:16},{bits: 16}], config: {lanes: 2, hflip: true}} "/>
-
-
 
 
 ### CTRL Register [Offset: 0xc, mode: w]
 
-
 UART Control Register
 <img src="https://svg.wavedrom.com/{reg:[{name:'en', bits:1},{name:'txen', bits:1},{name:'rxen', bits:1},{name:'lpen', bits:1},{name:'gfen', bits:1},{bits: 27}], config: {lanes: 2, hflip: true}} "/>
-
 
 |bit|field name|width|description|
 |---|---|---|---|
@@ -117,17 +106,13 @@ UART Control Register
 |1|txen|1|UART Transmitter enable|
 |2|rxen|1|UART Receiver enable|
 |3|lpen|1|Loopback (connect RX and TX pins together) enable|
-|4|gfen|1|UART Glitch Filter on RX enable|
-
-
+|4|gfen|1|UART Glitch Filer on RX enable|
 
 
 ### CFG Register [Offset: 0x10, mode: w]
 
-
 UART Configuration Register
 <img src="https://svg.wavedrom.com/{reg:[{name:'wlen', bits:4},{name:'stp2', bits:1},{name:'parity', bits:3},{name:'timeout', bits:6},{bits: 18}], config: {lanes: 2, hflip: true}} "/>
-
 
 |bit|field name|width|description|
 |---|---|---|---|
@@ -137,45 +122,70 @@ UART Configuration Register
 |8|timeout|6|Receiver Timeout measured in number of bits|
 
 
-
-
-### FIFOCTRL Register [Offset: 0x14, mode: w]
-
-
-FIFO Control Register
-<img src="https://svg.wavedrom.com/{reg:[{name:'TXLT', bits:4},{bits: 4},{name:'RXLT', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
-
-
-|bit|field name|width|description|
-|---|---|---|---|
-|0|TXLT|4|Transmit FIFO Level Threshold|
-|8|RXLT|4|Receive FIFO Level Threshold|
-
-
-
-
-### FIFOS Register [Offset: 0x18, mode: r]
-
-
-FIFO Status Register
-<img src="https://svg.wavedrom.com/{reg:[{name:'RXL', bits:4},{bits: 4},{name:'TXL', bits:4},{bits: 20}], config: {lanes: 2, hflip: true}} "/>
-
-
-|bit|field name|width|description|
-|---|---|---|---|
-|0|RXL|4|Receive FIFO Level|
-|8|TXL|4|Transmit FIFO Level|
-
-
-
-
 ### MATCH Register [Offset: 0x1c, mode: w]
-
 
 Match Register
 <img src="https://svg.wavedrom.com/{reg:[{name:'MATCH', bits:9},{bits: 23}], config: {lanes: 2, hflip: true}} "/>
 
 
+### RX_FIFO_LEVEL Register [Offset: 0xfe00, mode: r]
+
+RX_FIFO Level Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:4},{bits: 28}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|level|4|FIFO data level|
+
+
+### RX_FIFO_THRESHOLD Register [Offset: 0xfe04, mode: w]
+
+RX_FIFO Level Threshold Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'threshold', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|threshold|1|FIFO level threshold value|
+
+
+### RX_FIFO_FLUSH Register [Offset: 0xfe08, mode: w]
+
+RX_FIFO Flush Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'flush', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|flush|1|FIFO flush|
+
+
+### TX_FIFO_LEVEL Register [Offset: 0xfe10, mode: r]
+
+TX_FIFO Level Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'level', bits:4},{bits: 28}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|level|4|FIFO data level|
+
+
+### TX_FIFO_THRESHOLD Register [Offset: 0xfe14, mode: w]
+
+TX_FIFO Level Threshold Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'threshold', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|threshold|1|FIFO level threshold value|
+
+
+### TX_FIFO_FLUSH Register [Offset: 0xfe18, mode: w]
+
+TX_FIFO Flush Register
+<img src="https://svg.wavedrom.com/{reg:[{name:'flush', bits:1},{bits: 31}], config: {lanes: 2, hflip: true}} "/>
+
+|bit|field name|width|description|
+|---|---|---|---|
+|0|flush|1|FIFO flush|
 
 
 ### Interrupt Flags
