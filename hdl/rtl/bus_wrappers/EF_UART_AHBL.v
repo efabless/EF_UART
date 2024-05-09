@@ -125,9 +125,9 @@ module EF_UART_AHBL #(
 	wire [FAW-1:0]	RX_FIFO_LEVEL_WIRE;
 	assign	RX_FIFO_LEVEL_WIRE[(FAW - 1) : 0] = rx_level;
 
-	reg [0:0]	RX_FIFO_THRESHOLD_REG;
-	assign	rxfifotr	=	RX_FIFO_THRESHOLD_REG[0 : 0];
-	`AHBL_REG(RX_FIFO_THRESHOLD_REG, 0, 1)
+	reg [FAW-1:0]	RX_FIFO_THRESHOLD_REG;
+	assign	rxfifotr	=	RX_FIFO_THRESHOLD_REG[(FAW - 1) : 0];
+	`AHBL_REG(RX_FIFO_THRESHOLD_REG, 0, FAW)
 
 	reg [0:0]	RX_FIFO_FLUSH_REG;
 	assign	rx_fifo_flush	=	RX_FIFO_FLUSH_REG[0 : 0];
@@ -136,9 +136,9 @@ module EF_UART_AHBL #(
 	wire [FAW-1:0]	TX_FIFO_LEVEL_WIRE;
 	assign	TX_FIFO_LEVEL_WIRE[(FAW - 1) : 0] = tx_level;
 
-	reg [0:0]	TX_FIFO_THRESHOLD_REG;
-	assign	txfifotr	=	TX_FIFO_THRESHOLD_REG[0 : 0];
-	`AHBL_REG(TX_FIFO_THRESHOLD_REG, 0, 1)
+	reg [FAW-1:0]	TX_FIFO_THRESHOLD_REG;
+	assign	txfifotr	=	TX_FIFO_THRESHOLD_REG[(FAW - 1) : 0];
+	`AHBL_REG(TX_FIFO_THRESHOLD_REG, 0, FAW)
 
 	reg [0:0]	TX_FIFO_FLUSH_REG;
 	assign	tx_fifo_flush	=	TX_FIFO_FLUSH_REG[0 : 0];
