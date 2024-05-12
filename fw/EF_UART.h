@@ -197,34 +197,6 @@ void EF_UART_setTxFIFOThreshold(uint32_t uart_base, int threshold);
 int EF_UART_getTxFIFOThreshold(uint32_t uart_base);
 
 
-//! sets the FIFO control register to a certain value where
-//! *  bit 0-3: Transmit FIFO Level Threshold
-//! *  bit 8-11: Receive FIFO Level Threshold
-    /*!
-      \param uart_base The base memory address of UART registers.
-      \param config The value of the FIFO control register
-
-    */
-void EF_UART_setFIFOControl (uint32_t uart_base, int value);
-
-
-//! returns the value of the FIFO control register
-    /*!
-      \param uart_base The base memory address of UART registers.
-      \return FIFO control register value 
-    */
-int EF_UART_getFIFOControl (uint32_t uart_base);
-
-
-//! returns the value of the FIFO status register where
-//! *  bit 0-3: Receive FIFO Level
-//! *  bit 8-11: Transmit FIFO Level
-    /*!
-      \param uart_base The base memory address of UART registers.
-      \return FIFO status register value 
-    */
-int EF_UART_getFIFOStatus(uint32_t uart_base);
-
 
 //! sets the matchData to a certain value at which "MATCH" interrupt will be raised 
     /*!

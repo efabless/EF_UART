@@ -1,7 +1,7 @@
 /*
 	Copyright 2024 Efabless Corp.
 
-	Author: Mohamed Shalan (mshalan@aucegypt.edu)
+	Author: Mohamed Shalan (mshalan@efabless.com)
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -15,11 +15,6 @@
 	See the License for the specific language governing permissions and
 	limitations under the License.
 
-*/
-
-/*! \file EF_UART_regs.h
-    \brief C header file which contains UART registers definition 
-    
 */
 
 #ifndef EF_UARTREGS_H
@@ -50,14 +45,18 @@
 #define EF_UART_CFG_REG_PARITY_MASK	0xe0
 #define EF_UART_CFG_REG_TIMEOUT_BIT	8
 #define EF_UART_CFG_REG_TIMEOUT_MASK	0x3f00
-#define EF_UART_FIFOCTRL_REG_TXLT_BIT	0
-#define EF_UART_FIFOCTRL_REG_TXLT_MASK	0xf
-#define EF_UART_FIFOCTRL_REG_RXLT_BIT	8
-#define EF_UART_FIFOCTRL_REG_RXLT_MASK	0xf00
-#define EF_UART_FIFOS_REG_RXL_BIT	0
-#define EF_UART_FIFOS_REG_RXL_MASK	0xf
-#define EF_UART_FIFOS_REG_TXL_BIT	8
-#define EF_UART_FIFOS_REG_TXL_MASK	0xf00
+#define EF_UART_RX_FIFO_LEVEL_REG_LEVEL_BIT	0
+#define EF_UART_RX_FIFO_LEVEL_REG_LEVEL_MASK	0xf
+#define EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT	0
+#define EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK	0xf
+#define EF_UART_RX_FIFO_FLUSH_REG_FLUSH_BIT	0
+#define EF_UART_RX_FIFO_FLUSH_REG_FLUSH_MASK	0x1
+#define EF_UART_TX_FIFO_LEVEL_REG_LEVEL_BIT	0
+#define EF_UART_TX_FIFO_LEVEL_REG_LEVEL_MASK	0xf
+#define EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT	0
+#define EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK	0xf
+#define EF_UART_TX_FIFO_FLUSH_REG_FLUSH_BIT	0
+#define EF_UART_TX_FIFO_FLUSH_REG_FLUSH_MASK	0x1
 
 #define EF_UART_TXE_FLAG	0x1
 #define EF_UART_RXF_FLAG	0x2
@@ -76,14 +75,21 @@ typedef struct _EF_UART_TYPE_ {
 	__W 	PR;
 	__W 	CTRL;
 	__W 	CFG;
-	__W 	FIFOCTRL;
-	__R 	FIFOS;
+	__R 	reserved_0[2];
 	__W 	MATCH;
-	__R 	reserved[952];
-	__RW	im;
-	__R 	mis;
-	__R 	ris;
-	__W 	icr;
+	__R 	reserved_1[16248];
+	__R 	RX_FIFO_LEVEL;
+	__W 	RX_FIFO_THRESHOLD;
+	__W 	RX_FIFO_FLUSH;
+	__R 	reserved_2[1];
+	__R 	TX_FIFO_LEVEL;
+	__W 	TX_FIFO_THRESHOLD;
+	__W 	TX_FIFO_FLUSH;
+	__R 	reserved_3[57];
+	__RW	IM;
+	__R 	MIS;
+	__R 	RIS;
+	__W 	IC;
 } EF_UART_TYPE;
 
 #endif

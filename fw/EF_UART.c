@@ -185,20 +185,14 @@ void EF_UART_setRxFIFOThreshold(uint32_t uart_base, int value){
 
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
 
-    // Clear the field bits in the register using the defined mask
-    uart->FIFOCTRL &= ~EF_UART_FIFOCTRL_REG_RXLT_MASK;
-
-    // Set the bits with the given value at the defined offset
-    uart->FIFOCTRL |= ((value << EF_UART_FIFOCTRL_REG_RXLT_BIT) & EF_UART_FIFOCTRL_REG_RXLT_MASK);
+    uart->RX_FIFO_THRESHOLD = value;
 }
 
 int EF_UART_getRxFIFOThreshold(uint32_t uart_base){
 
      EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
 
-    int rx_level_th = (uart->FIFOCTRL & EF_UART_FIFOCTRL_REG_RXLT_MASK) >> EF_UART_FIFOCTRL_REG_RXLT_BIT;
-
-    return (rx_level_th);
+    return (uart->RX_FIFO_THRESHOLD);
 
 }
 
@@ -206,36 +200,14 @@ void EF_UART_setTxFIFOThreshold(uint32_t uart_base, int value){
 
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
 
-    // Clear the field bits in the register using the defined mask
-    uart->FIFOCTRL &= ~EF_UART_FIFOCTRL_REG_TXLT_MASK;
-
-    // Set the bits with the given value at the defined offset
-    uart->FIFOCTRL |= ((value << EF_UART_FIFOCTRL_REG_TXLT_BIT) & EF_UART_FIFOCTRL_REG_TXLT_MASK);
+    uart->TX_FIFO_THRESHOLD=value;
 }
 
 int EF_UART_getTxFIFOThreshold(uint32_t uart_base){
 
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
 
-    int tx_level_th = (uart->FIFOCTRL & EF_UART_FIFOCTRL_REG_TXLT_MASK) >> EF_UART_FIFOCTRL_REG_TXLT_BIT;
-
-    return (tx_level_th);
-
-}
-
-void EF_UART_setFIFOControl (uint32_t uart_base, int value){
-
-    EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
-
-    uart->FIFOCTRL = value;
-
-}
-
-int EF_UART_getFIFOControl (uint32_t uart_base){
-
-    EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
-
-    return (uart->FIFOCTRL) ;
+    return (uart->TX_FIFO_THRESHOLD);
 
 }
 
@@ -244,26 +216,16 @@ int EF_UART_getTxCount(uint32_t uart_base){
 
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
 
-    int tx_level = (uart->FIFOS & EF_UART_FIFOS_REG_TXL_MASK) >> EF_UART_FIFOS_REG_TXL_BIT;
-
-    return (tx_level);
+    return(uart->TX_FIFO_LEVEL);
 }
 
 int EF_UART_getRxCount(uint32_t uart_base){
 
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
 
-    int rx_level = (uart->FIFOS & EF_UART_FIFOS_REG_RXL_MASK) >> EF_UART_FIFOS_REG_RXL_BIT;
-
-    return (rx_level);
+    return(uart->RX_FIFO_LEVEL);
 }
 
-int EF_UART_getFIFOStatus(uint32_t uart_base){
-
-    EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
-
-    return (uart->FIFOS);
-}
 
 void EF_UART_setMatchData(uint32_t uart_base, int matchData){
 
@@ -293,31 +255,31 @@ int EF_UART_getMatchData(uint32_t uart_base){
 int EF_UART_getRIS(uint32_t uart_base){
 
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
-    return (uart->ris);
+    return (uart->RIS);
 }
 
 int EF_UART_getMIS(uint32_t uart_base){
 
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
-    return (uart->mis);
+    return (uart->MIS);
 }
 
 void EF_UART_setIM(uint32_t uart_base, int mask){
    
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
-    uart->im |= mask;
+    uart->IM |= mask;
 }
 
 int EF_UART_getIM(uint32_t uart_base){
 
    EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
-    return (uart->im);
+    return (uart->IM);
 }
 
 void EF_UART_setICR(uint32_t uart_base, int mask){
 
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
-    (uart->icr) |= mask;
+    (uart->IC) |= mask;
 }
 
 
