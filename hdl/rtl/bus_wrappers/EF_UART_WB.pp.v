@@ -95,8 +95,8 @@ module EF_UART_WB #(
                                         output  reg             ack_o,
                                         input   wire            we_i,
                                         output  wire            IRQ,
-	input	[1-1:0]	rx,
-	output	[1-1:0]	tx
+										input	wire	[1-1:0]	rx,
+										output	wire	[1-1:0]	tx
 );
 
 	localparam	RXDATA_REG_OFFSET = 16'h0000;

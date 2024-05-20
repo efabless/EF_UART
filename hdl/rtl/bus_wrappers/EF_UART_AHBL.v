@@ -34,8 +34,8 @@ module EF_UART_AHBL #(
 		FAW = 4
 ) (
 	`AHBL_SLAVE_PORTS,
-	input	[1-1:0]	rx,
-	output	[1-1:0]	tx
+	input	wire	[1-1:0]	rx,
+	output	wire	[1-1:0]	tx
 );
 
 	localparam	RXDATA_REG_OFFSET = `AHBL_AW'h0000;
