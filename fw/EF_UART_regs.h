@@ -90,6 +90,7 @@ typedef struct _EF_UART_TYPE_ {
 	__R 	MIS;
 	__R 	RIS;
 	__W 	IC;
+	__W 	GCLK;
 } EF_UART_TYPE;
 
 #endif

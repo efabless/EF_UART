@@ -8,6 +8,11 @@
 
 #include <EF_UART.h>
 
+void EF_UART_setGclkEnable (uint32_t uart_base, int value){
+    EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
+    uart->GCLK = value;
+}
+
 void EF_UART_enable(uint32_t uart_base){
    
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;

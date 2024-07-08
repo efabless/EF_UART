@@ -13,6 +13,7 @@
 
 enum parity_type {NONE = 0, ODD = 1, EVEN = 2, STICKY_0 = 4, STICKY_1 = 5};
 
+void EF_UART_setGclkEnable (uint32_t uart_base, int value);
 
 //! enables using uart by setting "en" bit in the control register to 1 
     /*!

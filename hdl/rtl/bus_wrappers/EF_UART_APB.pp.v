@@ -22,67 +22,6 @@
 `timescale			1ns/1ps
 `default_nettype	none
 
-
-
-/*
-	Copyright 2020 AUCOHL
-
-    Author: Mohamed Shalan (mshalan@aucegypt.edu)
-	
-	Licensed under the Apache License, Version 2.0 (the "License"); 
-	you may not use this file except in compliance with the License. 
-	You may obtain a copy of the License at:
-
-	http://www.apache.org/licenses/LICENSE-2.0
-
-	Unless required by applicable law or agreed to in writing, software 
-	distributed under the License is distributed on an "AS IS" BASIS, 
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-	See the License for the specific language governing permissions and 
-	limitations under the License.
-*/
-
-
-
-
-
-
-                                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module EF_UART_APB #( 
 	parameter	
 		SC = 8,
@@ -90,6 +29,10 @@ module EF_UART_APB #(
 		GFLEN = 8,
 		FAW = 4
 ) (
+`ifdef USE_POWER_PINS
+	input wire VPWR,
+	input wire VGND,
+`endif
 	input wire          PCLK,
                                         input wire          PRESETn,
                                         input wire          PWRITE,
@@ -121,7 +64,23 @@ module EF_UART_APB #(
 	localparam	MIS_REG_OFFSET = 16'hFF04;
 	localparam	RIS_REG_OFFSET = 16'hFF08;
 	localparam	IC_REG_OFFSET = 16'hFF0C;
-	wire		clk = PCLK;
+
+        wire clk_g;
+        wire clk_gated_en = GCLK_REG[0];
+
+    (* keep *) sky130_fd_sc_hd__dlclkp_4 clk_gate(
+	`ifdef USE_POWER_PINS
+        .VPWR(VPWR), 
+        .VGND(VGND), 
+        .VNB(VGND),
+		.VPB(VPWR),
+    `endif
+        .GCLK(clk_g), 
+        .GATE(clk_gated_en), 
+        .CLK(PCLK)
+        );
+        
+	wire		clk = clk_g;
 	wire		rst_n = PRESETn;
 
 
@@ -232,6 +191,12 @@ module EF_UART_APB #(
                                                     TX_FIFO_FLUSH_REG <= PWDATA[1-1:0];
                                                 else
                                                     TX_FIFO_FLUSH_REG <= 1'h0 & TX_FIFO_FLUSH_REG;
+
+	localparam	GCLK_REG_OFFSET = 16'hFF10;
+	reg [0:0] GCLK_REG;
+	always @(posedge PCLK or negedge PRESETn) if(~PRESETn) GCLK_REG <= 0;
+                                        else if(apb_we & (PADDR[16-1:0]==GCLK_REG_OFFSET))
+                                            GCLK_REG <= PWDATA[1-1:0];
 
 	reg [9:0] IM_REG;
 	reg [9:0] IC_REG;
@@ -357,6 +322,7 @@ module EF_UART_APB #(
 			(PADDR[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
 			(PADDR[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
 			(PADDR[16-1:0] == IC_REG_OFFSET)	? IC_REG :
+			(PADDR[16-1:0] == GCLK_REG_OFFSET)	? GCLK_REG :
 			32'hDEADBEEF;
 
 	assign	PREADY = 1'b1;
