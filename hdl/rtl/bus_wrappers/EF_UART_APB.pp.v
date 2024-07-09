@@ -65,6 +65,7 @@ module EF_UART_APB #(
 	localparam	RIS_REG_OFFSET = 16'hFF08;
 	localparam	IC_REG_OFFSET = 16'hFF0C;
 
+        reg [0:0] GCLK_REG;
         wire clk_g;
         wire clk_gated_en = GCLK_REG[0];
 
@@ -193,7 +194,6 @@ module EF_UART_APB #(
                                                     TX_FIFO_FLUSH_REG <= 1'h0 & TX_FIFO_FLUSH_REG;
 
 	localparam	GCLK_REG_OFFSET = 16'hFF10;
-	reg [0:0] GCLK_REG;
 	always @(posedge PCLK or negedge PRESETn) if(~PRESETn) GCLK_REG <= 0;
                                         else if(apb_we & (PADDR[16-1:0]==GCLK_REG_OFFSET))
                                             GCLK_REG <= PWDATA[1-1:0];
