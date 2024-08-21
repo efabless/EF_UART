@@ -16,15 +16,15 @@ info:
     - serial
   bus:
     - generic
-  type": soft
-  status: verified
+  type: soft
+  maturity: implemented
   cell_count:
     - IP: 1590
     - APB: 1943
     - AHBL: 1973
     - WB: 2170
-  width": "0.0"
-  height": "0.0"
+  width: "0.0"
+  height: "0.0"
   technology: n/a
   clock_freq_mhz:
     - IP: 277
