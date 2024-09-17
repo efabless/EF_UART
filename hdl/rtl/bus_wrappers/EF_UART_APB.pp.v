@@ -69,19 +69,23 @@ module EF_UART_APB #(
         wire clk_g;
         wire clk_gated_en = GCLK_REG[0];
 
-    (* keep *) sky130_fd_sc_hd__dlclkp_4 clk_gate(
-	`ifdef USE_POWER_PINS
-        .VPWR(VPWR), 
-        .VGND(VGND), 
-        .VNB(VGND),
-		.VPB(VPWR),
-    `endif
-        .GCLK(clk_g), 
-        .GATE(clk_gated_en), 
-        .CLK(PCLK)
-        );
-        
-	wire		clk = clk_g;
+	`ifdef FPGA
+		wire clk = PCLK;
+	`else
+		(* keep *) sky130_fd_sc_hd__dlclkp_4 clk_gate(
+		`ifdef USE_POWER_PINS 
+			.VPWR(VPWR), 
+			.VGND(VGND), 
+			.VNB(VGND),
+			.VPB(VPWR),
+		`endif
+			.GCLK(clk_g), 
+			.GATE(clk_gated_en), 
+			.CLK(PCLK)
+			);
+			
+		wire		clk = clk_g;
+	`endif
 	wire		rst_n = PRESETn;
 
 
