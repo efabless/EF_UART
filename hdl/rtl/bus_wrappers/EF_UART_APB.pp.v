@@ -22,6 +22,81 @@
 `timescale			1ns/1ps
 `default_nettype	none
 
+
+
+/*
+	Copyright 2020 AUCOHL
+
+    Author: Mohamed Shalan (mshalan@aucegypt.edu)
+	
+	Licensed under the Apache License, Version 2.0 (the "License"); 
+	you may not use this file except in compliance with the License. 
+	You may obtain a copy of the License at:
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software 
+	distributed under the License is distributed on an "AS IS" BASIS, 
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+	See the License for the specific language governing permissions and 
+	limitations under the License.
+*/
+
+
+
+
+
+
+                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module EF_UART_APB #( 
 	parameter	
 		SC = 8,
@@ -29,10 +104,10 @@ module EF_UART_APB #(
 		GFLEN = 8,
 		FAW = 4
 ) (
-`ifdef USE_POWER_PINS
-	inout VPWR,
-	inout VGND,
-`endif
+
+
+
+
 	input wire          PCLK,
                                         input wire          PRESETn,
                                         input wire          PWRITE,
@@ -65,27 +140,20 @@ module EF_UART_APB #(
 	localparam	RIS_REG_OFFSET = 16'hFF08;
 	localparam	IC_REG_OFFSET = 16'hFF0C;
 
-        reg [0:0] GCLK_REG;
-        wire clk_g;
-        wire clk_gated_en = GCLK_REG[0];
+    reg [0:0] GCLK_REG;
+    wire clk_g;
+    wire clk_gated_en = GCLK_REG[0];
+    ef_gating_cell clk_gate_cell(
+        
 
-	`ifdef FPGA
-		wire clk = PCLK;
-	`else
-		(* keep *) sky130_fd_sc_hd__dlclkp_4 clk_gate(
-		`ifdef USE_POWER_PINS 
-			.VPWR(VPWR), 
-			.VGND(VGND), 
-			.VNB(VGND),
-			.VPB(VPWR),
-		`endif
-			.GCLK(clk_g), 
-			.GATE(clk_gated_en), 
-			.CLK(PCLK)
-			);
-			
-		wire		clk = clk_g;
-	`endif
+
+ // USE_POWER_PINS
+        .clk(PCLK),
+        .clk_en(clk_gated_en),
+        .clk_o(clk_g)
+    );
+    
+	wire		clk = clk_g;
 	wire		rst_n = PRESETn;
 
 

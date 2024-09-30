@@ -83,6 +83,10 @@ module EF_UART_WB #(
 		GFLEN = 8,
 		FAW = 4
 ) (
+
+
+
+
 	input   wire            ext_clk,
                                         input   wire            clk_i,
                                         input   wire            rst_i,
@@ -95,8 +99,8 @@ module EF_UART_WB #(
                                         output  reg             ack_o,
                                         input   wire            we_i,
                                         output  wire            IRQ,
-										input	wire	[1-1:0]	rx,
-										output	wire	[1-1:0]	tx
+	input	wire	[1-1:0]	rx,
+	output	wire	[1-1:0]	tx
 );
 
 	localparam	RXDATA_REG_OFFSET = 16'h0000;
@@ -115,7 +119,21 @@ module EF_UART_WB #(
 	localparam	MIS_REG_OFFSET = 16'hFF04;
 	localparam	RIS_REG_OFFSET = 16'hFF08;
 	localparam	IC_REG_OFFSET = 16'hFF0C;
-	wire		clk = clk_i;
+
+    reg [0:0] GCLK_REG;
+    wire clk_g;
+    wire clk_gated_en = GCLK_REG[0];
+    ef_gating_cell clk_gate_cell(
+        
+
+
+ // USE_POWER_PINS
+        .clk(clk_i),
+        .clk_en(clk_gated_en),
+        .clk_o(clk_g)
+    );
+    
+	wire		clk = clk_g;
 	wire		rst_n = (~rst_i);
 
 
@@ -207,6 +225,9 @@ module EF_UART_WB #(
 	reg [0:0]	TX_FIFO_FLUSH_REG;
 	assign	tx_fifo_flush	=	TX_FIFO_FLUSH_REG[0 : 0];
 	always @(posedge clk_i or posedge rst_i) if(rst_i) TX_FIFO_FLUSH_REG <= 0; else if(wb_we & (adr_i[16-1:0]==TX_FIFO_FLUSH_REG_OFFSET)) TX_FIFO_FLUSH_REG <= dat_i[1-1:0]; else TX_FIFO_FLUSH_REG <= 1'h0 & TX_FIFO_FLUSH_REG;
+
+	localparam	GCLK_REG_OFFSET = 16'hFF10;
+	always @(posedge clk_i or posedge rst_i) if(rst_i) GCLK_REG <= 0; else if(wb_we & (adr_i[16-1:0]==GCLK_REG_OFFSET)) GCLK_REG <= dat_i[1-1:0];
 
 	reg [9:0] IM_REG;
 	reg [9:0] IC_REG;

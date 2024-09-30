@@ -33,6 +33,10 @@ module EF_UART_AHBL #(
 		GFLEN = 8,
 		FAW = 4
 ) (
+`ifdef USE_POWER_PINS
+	inout VPWR,
+	inout VGND,
+`endif
 	`AHBL_SLAVE_PORTS,
 	input	wire	[1-1:0]	rx,
 	output	wire	[1-1:0]	tx
@@ -54,7 +58,21 @@ module EF_UART_AHBL #(
 	localparam	MIS_REG_OFFSET = `AHBL_AW'hFF04;
 	localparam	RIS_REG_OFFSET = `AHBL_AW'hFF08;
 	localparam	IC_REG_OFFSET = `AHBL_AW'hFF0C;
-	wire		clk = HCLK;
+
+    reg [0:0] GCLK_REG;
+    wire clk_g;
+    wire clk_gated_en = GCLK_REG[0];
+    ef_gating_cell clk_gate_cell(
+        `ifdef USE_POWER_PINS 
+        .vpwr(VPWR),
+        .vgnd(VGND),
+        `endif // USE_POWER_PINS
+        .clk(HCLK),
+        .clk_en(clk_gated_en),
+        .clk_o(clk_g)
+    )
+    
+	wire		clk = clk_g;
 	wire		rst_n = HRESETn;
 
 
@@ -143,6 +161,9 @@ module EF_UART_AHBL #(
 	reg [0:0]	TX_FIFO_FLUSH_REG;
 	assign	tx_fifo_flush	=	TX_FIFO_FLUSH_REG[0 : 0];
 	`AHBL_REG_AC(TX_FIFO_FLUSH_REG, 0, 1, 1'h0)
+
+	localparam	GCLK_REG_OFFSET = `AHBL_AW'hFF10;
+	`AHBL_REG(GCLK_REG, 0, 1)
 
 	reg [9:0] IM_REG;
 	reg [9:0] IC_REG;
@@ -262,6 +283,7 @@ module EF_UART_AHBL #(
 			(last_HADDR[`AHBL_AW-1:0] == MIS_REG_OFFSET)	? MIS_REG :
 			(last_HADDR[`AHBL_AW-1:0] == RIS_REG_OFFSET)	? RIS_REG :
 			(last_HADDR[`AHBL_AW-1:0] == IC_REG_OFFSET)	? IC_REG :
+			(last_HADDR[`AHBL_AW-1:0] == GCLK_REG_OFFSET)	? GCLK_REG :
 			32'hDEADBEEF;
 
 	assign	HREADYOUT = 1'b1;
