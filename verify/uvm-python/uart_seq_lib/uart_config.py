@@ -29,7 +29,8 @@ class uart_config(bus_seq_base):
     async def body(self):
         await super().body()
         # get register names/address conversion dict
-
+        # enable clock gated 
+        await self.send_req(is_write=True, reg="CLKGATE", data_condition=lambda data: data == 1)
         # randomly config uart
         # first disabled the uart
         await self.send_req(
