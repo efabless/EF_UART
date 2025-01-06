@@ -365,4 +365,94 @@ void EF_UART_writeChar(uint32_t uart_base, char data);
     */
 int EF_UART_readChar(uint32_t uart_base);
 
+
+
+
+// The following functions are not verified yet
+/******************************************************************************************************************************************/
+/******************************************************************************************************************************************/
+
+#define EF_UART_ERROR_RX_UNAVAILABLE -1
+#define EF_UART_ERROR_TX_UNAVAILABLE 1
+#define EF_UART_SUCCESS 0
+
+
+//! This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code
+    /*!
+      \param uart_base The base memory address of UART registers.
+      \return the byte recieved or an error code if no data is available
+
+    */
+int32_t EF_UART_readCharNonBlocking(uint32_t uart_base);
+
+//! This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code
+    /*!
+      \param uart_base The base memory address of UART registers.
+      \param data The character or byte required to send 
+      \return a status code indicating if the data is sent or not
+
+    */
+uint32_t EF_UART_writeCharNonBlocking(uint32_t uart_base, char data);
+
+//! This function returns a flag indicating whether or not there is data available in the receive FIFO
+    /*!
+      \param uart_base The base memory address of UART registers.
+      \return a flag indicating if there is data available in the receive FIFO
+
+    */
+bool EF_UART_charsAvailable(uint32_t uart_base);
+
+
+//! This function returns a flag indicating whether or not the transmit is available, i.e. the transmit FIFO is not full
+    /*!
+      \param uart_base The base memory address of UART registers.
+      \return a flag indicating if the transmit FIFO is not full
+
+    */
+bool EF_UART_spaceAvailable(uint32_t uart_base);
+
+//! This function return the parity mode of the UART
+    /*!
+      \param uart_base The base memory address of UART registers.
+      \return the parity mode of the UART
+
+    */
+uint32_t EF_UART_getParityMode(uint32_t uart_base);
+
+//! This function checks id the UART is busy
+    /*!
+      \param uart_base The base memory address of UART registers.
+      \return a flag indicating if the UART is busy
+
+    */
+bool EF_UART_busy(uint32_t uart_base);
+
+//! This function disables the TX FIFO functionality of the UART, i.e. the TX FIFO threshold is set to 1
+    /*!
+      \param uart_base The base memory address of UART registers.
+    */
+void EF_UART_disableTxFIFO(uint32_t uart_base);
+
+//! This function disables the RX FIFO functionality of the UART, i.e. the RX FIFO threshold is set to 1
+    /*!
+      \param uart_base The base memory address of UART registers.
+    */
+void EF_UART_disableRxFIFO(uint32_t uart_base);
+
+
+//! This function enables the TX FIFO functionality of the UART, i.e. the TX FIFO threshold is set to 16, max value
+    /*!
+      \param uart_base The base memory address of UART registers.
+    */
+void EF_UART_enableTxFIFO(uint32_t uart_base);
+
+//! This function enables the RX FIFO functionality of the UART, i.e. the RX FIFO threshold is set to 16, max value
+    /*!
+      \param uart_base The base memory address of UART registers.
+    */
+void EF_UART_enableRxFIFO(uint32_t uart_base);
+
+/******************************************************************************************************************************************/
+/******************************************************************************************************************************************/
+
 #endif

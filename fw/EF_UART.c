@@ -296,6 +296,7 @@ void EF_UART_writeChar(uint32_t uart_base, char data){
     EF_UART_setICR(uart_base, EF_UART_TXE_FLAG);
 }
 
+
 void EF_UART_writeCharArr(uint32_t uart_base, const char *char_arr){
 
     EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
@@ -323,5 +324,88 @@ int EF_UART_readChar(uint32_t uart_base){
 
     return data;
 }
+
+
+
+// The following functions are not verified yet
+/******************************************************************************************************************************************/
+/*******************************************************************************xs***********************************************************/
+
+
+int32_t EF_UART_readCharNonBlocking(uint32_t uart_base) {
+    EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
+    int32_t ret = 0;
+    
+    // Check if data is available
+    if ((EF_UART_getRIS(uart_base) & EF_UART_RXA_FLAG) == 0x0) {
+        ret = EF_UART_ERROR_RX_UNAVAILABLE; // Return an error or special value indicating no data
+    } else {
+        ret = uart->RXDATA;
+        EF_UART_setICR(uart_base, EF_UART_RXA_FLAG);
+    }
+    return ret;
+}
+
+
+
+uint32_t EF_UART_writeCharNonBlocking(uint32_t uart_base, char data){
+    EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
+    uint32_t ret = EF_UART_ERROR_TX_UNAVAILABLE;
+    if ((EF_UART_getRIS(uart_base) & EF_UART_TXE_FLAG) == 0x0) {
+        return ret; // Return an error or special value indicating no data
+    }else {
+        uart->TXDATA = data;
+        EF_UART_setICR(uart_base, EF_UART_TXE_FLAG);
+        ret = EF_UART_SUCCESS;
+    }
+    return ret;
+}
+
+
+bool EF_UART_charsAvailable(uint32_t uart_base) {
+    return (EF_UART_getRIS(uart_base) & EF_UART_RXA_FLAG) != 0x0;
+}
+
+
+bool EF_UART_spaceAvailable(uint32_t uart_base){
+    return (EF_UART_getRIS(uart_base) & EF_UART_TXB_FLAG) != 0x0;
+}
+
+
+uint32_t EF_UART_getParityMode(uint32_t uart_base){
+    EF_UART_TYPE* uart = (EF_UART_TYPE*)uart_base;
+    return (uart->CFG & EF_UART_CFG_REG_PARITY_MASK) >> EF_UART_CFG_REG_PARITY_BIT;
+}
+
+
+bool EF_UART_busy(uint32_t uart_base){
+    return (EF_UART_getRIS(uart_base) & EF_UART_TXE_FLAG) == 0x0;
+}
+
+
+void EF_UART_disableTxFIFO(uint32_t uart_base){
+    EF_UART_setTxFIFOThreshold(uart_base, 1);
+    return;
+}
+
+
+void EF_UART_disableRxFIFO(uint32_t uart_base){
+    EF_UART_setRxFIFOThreshold(uart_base, 1);
+    return;
+}
+
+
+void EF_UART_enableTxFIFO(uint32_t uart_base){
+    EF_UART_setTxFIFOThreshold(uart_base, 16);
+    return;
+}
+
+void EF_UART_enableRxFIFO(uint32_t uart_base){
+    EF_UART_setRxFIFOThreshold(uart_base, 16);
+    return;
+}
+/******************************************************************************************************************************************/
+/******************************************************************************************************************************************/
+
 
 #endif // EF_UART_C
