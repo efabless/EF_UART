@@ -1,7 +1,31 @@
 ---
 info:
   name: EF_UART
-  description: A Universal Asynchronous Receiver Transmitter
+  description: |
+    UART, or universal asynchronous receiver-transmitter, is one of the most used device-to-device communication protocols. A UART enables two devices to exchange data serially without sharing the clock in a frame oriented way. The frame consists of a start bit, a number of data bits (typically one byte), a parity bit (optional) and 1-2 stop bits.
+    EF_UART is a Soft IP with the following features:
+    - A configurable frame format
+      - Data bits could vary from 5 to 9 bits
+      - Even, odd, stick, or no-parity bit generation/detection
+      - One or Two stop bit generation
+    - Line-break detection
+    - Configurable receiver timeout
+    - Loopback capability for testing/debugging
+    - Glitch Filter on RX enable
+    - Matching received data detection
+    - 16-byte TX and RX FIFOs with programmable thresholds
+    - 16-bit prescaler (PR) for programmable baud rate generation
+    - Ten Interrupt Sources:
+      + RX FIFO is full
+      + TX FIFO is empty
+      + RX FIFO level is above the set threshold
+      + TX FIFO level is below the set threshold
+      + Line break detection
+      + Receiver data match
+      + Frame Error
+      + Parity Error
+      + Overrun
+      + Receiver timeout
   repo: https://github.com/efabless/EF_UART.git
   owner: Efabless Corp.
   license: APACHE 2.0
@@ -16,7 +40,7 @@ info:
     - serial
   bus:
     - generic
-  type": soft
+  type: soft
   status: verified
   cell_count:
     - IP: 1590
@@ -35,6 +59,20 @@ info:
   analog_supply_voltage: n/a
   irq_reg_offset: 0xFF00
   fifo_reg_offset: 0xFE00
+  firmware_guidelines: |
+    1. Set the prescaler according to the required transmission and receiving baud rate where:  $Baud\ rate = Bus\ Clock\ Freq/((Prescaler+1)\times16)$. Setting the prescaler is done through writing to ``PR`` register
+    2. Configure the frame format by :
+      * Choosing the number of data bits which could vary from 5 to 9. This is done by setting the ```wlen``` field in the ```CFG``` register
+      * Choosing whether the stop bits are one or two by setting the ```stb2``` bit in ```CFG``` register where ‘0’ means one bit and ‘1’ means two bits
+      * Choosing the parity type by setting ```parity``` field in ```CFG``` register where 000: None, 001: odd, 010: even, 100: Sticky 0, 101: Sticky 1
+    3. Set the receiver timeout value which fires the ```RTO``` interrupt after a certain amount of bits are received. This would be useful when the message received is not a multiple of the FIFO’s width.Timeout can be set by writing to the ```timeout``` field in the ```CFG``` register
+    4. Set the FIFO thresholds  by writing to the ```RXLT``` and ```TXLT``` fields in ```FIFOCTRL``` register. This would fire ```RXA``` and ```TXB``` interrupts when the RX FIFO level is above the threshold and TX FIFO level is below the threshold.
+    5. Enable the UART as well as RX or TX or both by setting ```en``` , ```txen```, and ```rxen``` bits to ones in the ```CTRL``` register
+    6. To optionally connect the RX signal to the TX signal so the UART transmits whatever it receives then enable loopback by setting the ```loopback``` bit to one in the ```CTRL``` register.
+    7. To optionally enable the glitch filter on RX , set the ```gfen``` bit to one in the ```CTRL``` register.
+    8. To read what was received , you can read ```RXDATA``` register. Note: you should check that there is something in the FIFO before reading using the interrupts registers.
+    9. To optionally check if the data received matches a certain value by writing to the ```MATCH``` register. This would fire the ```MATCH``` interrupt if the received data matches the match value.
+    10. To transmit, write to the ```TXDATA``` register. Note: you should check that the FIFO is not full before adding something to it using the interrupts register to avoid losing data.
 
 parameters:
   - name: SC
@@ -82,7 +120,7 @@ ports:
   - name: glitch_filter_en
     width: 1
     direction: input
-    description: UART Glitch Filer on RX enable
+    description: UART Glitch Filter on RX enable
   - name: tx_level
     width: FAW
     direction: output
@@ -130,7 +168,7 @@ ports:
   - name: match_data
     width: MDW
     direction: input
-    description: Match data (match flag would be raised if it matches what is recieved)
+    description: Match data (match flag would be raised if it matches what is received)
   - name: tx_empty
     width: 1
     direction: output
@@ -146,7 +184,7 @@ ports:
   - name: rdata
     width: MDW
     direction: output
-    description: Recieved Data 
+    description: Received Data 
   - name: rx_empty
     width: 1
     direction: output
@@ -198,6 +236,7 @@ external_interface:
 
 clock:
   name: clk
+  gated: 'yes'
 
 reset:
   name: rst_n
@@ -318,7 +357,7 @@ flags:
     description: Line Break; 13 consecutive 0's have been detected on the line. 
   - name: MATCH
     port: match_flag
-    description: Match; the receive data matches the MATCH register.
+    description: Match; the received data matches the MATCH register.
   - name: FE
     port: frame_error_flag
     description: Framing Error; the receiver does not see a "stop" bit at the expected "stop" bit time.
