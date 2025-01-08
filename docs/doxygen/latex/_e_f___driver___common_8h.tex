@@ -1,0 +1,135 @@
+\hypertarget{_e_f___driver___common_8h}{}\doxysection{EF\+\_\+\+Driver\+\_\+\+Common.\+h File Reference}
+\label{_e_f___driver___common_8h}\index{EF\_Driver\_Common.h@{EF\_Driver\_Common.h}}
+
+
+C header file for common driver definitions and types.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_e_f___driver___common_8h_ab56c746d5d1672835c101f00f7c90b7c}{EF\+\_\+\+DRIVER\+\_\+\+OK}}~0
+\begin{DoxyCompactList}\small\item\em Operation succeeded. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_e_f___driver___common_8h_adf96107766b856292d4f08a495064c7e}{EF\+\_\+\+DRIVER\+\_\+\+ERROR}}~1
+\begin{DoxyCompactList}\small\item\em Unspecified error. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_e_f___driver___common_8h_a9b7e06e07ac1038e9cc63d5f25d681fb}{EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+BUSY}}~2
+\begin{DoxyCompactList}\small\item\em Driver is busy. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_e_f___driver___common_8h_a26b87ad6f8f1d017af3ee034bd178795}{EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+TIMEOUT}}~3
+\begin{DoxyCompactList}\small\item\em Timeout occurred. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_e_f___driver___common_8h_abd8e6eb4870238ef0f900911e3935d91}{EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+UNSUPPORTED}}~4
+\begin{DoxyCompactList}\small\item\em Operation not supported. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_e_f___driver___common_8h_aed4f0552faa082d7941ed37ae1e430e4}{EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+PARAMETER}}~5
+\begin{DoxyCompactList}\small\item\em Parameter error. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_e_f___driver___common_8h_a89de2e78c0ce8d5b48c0cef064ae3aab}{EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+SPECIFIC}}~6
+\begin{DoxyCompactList}\small\item\em Start of driver specific errors. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_e_f___driver___common_8h_a42a5cb31efb4e28fa9d16016485de643}{EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+NO\+\_\+\+DATA}}~7
+\begin{DoxyCompactList}\small\item\em No data available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}}
+\begin{DoxyCompactList}\small\item\em A type that is used to return the status of the driver functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C header file for common driver definitions and types. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_e_f___driver___common_8h_adf96107766b856292d4f08a495064c7e}\label{_e_f___driver___common_8h_adf96107766b856292d4f08a495064c7e}} 
+\index{EF\_Driver\_Common.h@{EF\_Driver\_Common.h}!EF\_DRIVER\_ERROR@{EF\_DRIVER\_ERROR}}
+\index{EF\_DRIVER\_ERROR@{EF\_DRIVER\_ERROR}!EF\_Driver\_Common.h@{EF\_Driver\_Common.h}}
+\doxysubsubsection{\texorpdfstring{EF\_DRIVER\_ERROR}{EF\_DRIVER\_ERROR}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+DRIVER\+\_\+\+ERROR~1}
+
+
+
+Unspecified error. 
+
+\mbox{\Hypertarget{_e_f___driver___common_8h_a9b7e06e07ac1038e9cc63d5f25d681fb}\label{_e_f___driver___common_8h_a9b7e06e07ac1038e9cc63d5f25d681fb}} 
+\index{EF\_Driver\_Common.h@{EF\_Driver\_Common.h}!EF\_DRIVER\_ERROR\_BUSY@{EF\_DRIVER\_ERROR\_BUSY}}
+\index{EF\_DRIVER\_ERROR\_BUSY@{EF\_DRIVER\_ERROR\_BUSY}!EF\_Driver\_Common.h@{EF\_Driver\_Common.h}}
+\doxysubsubsection{\texorpdfstring{EF\_DRIVER\_ERROR\_BUSY}{EF\_DRIVER\_ERROR\_BUSY}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+BUSY~2}
+
+
+
+Driver is busy. 
+
+\mbox{\Hypertarget{_e_f___driver___common_8h_a42a5cb31efb4e28fa9d16016485de643}\label{_e_f___driver___common_8h_a42a5cb31efb4e28fa9d16016485de643}} 
+\index{EF\_Driver\_Common.h@{EF\_Driver\_Common.h}!EF\_DRIVER\_ERROR\_NO\_DATA@{EF\_DRIVER\_ERROR\_NO\_DATA}}
+\index{EF\_DRIVER\_ERROR\_NO\_DATA@{EF\_DRIVER\_ERROR\_NO\_DATA}!EF\_Driver\_Common.h@{EF\_Driver\_Common.h}}
+\doxysubsubsection{\texorpdfstring{EF\_DRIVER\_ERROR\_NO\_DATA}{EF\_DRIVER\_ERROR\_NO\_DATA}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+NO\+\_\+\+DATA~7}
+
+
+
+No data available. 
+
+\mbox{\Hypertarget{_e_f___driver___common_8h_aed4f0552faa082d7941ed37ae1e430e4}\label{_e_f___driver___common_8h_aed4f0552faa082d7941ed37ae1e430e4}} 
+\index{EF\_Driver\_Common.h@{EF\_Driver\_Common.h}!EF\_DRIVER\_ERROR\_PARAMETER@{EF\_DRIVER\_ERROR\_PARAMETER}}
+\index{EF\_DRIVER\_ERROR\_PARAMETER@{EF\_DRIVER\_ERROR\_PARAMETER}!EF\_Driver\_Common.h@{EF\_Driver\_Common.h}}
+\doxysubsubsection{\texorpdfstring{EF\_DRIVER\_ERROR\_PARAMETER}{EF\_DRIVER\_ERROR\_PARAMETER}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+PARAMETER~5}
+
+
+
+Parameter error. 
+
+\mbox{\Hypertarget{_e_f___driver___common_8h_a89de2e78c0ce8d5b48c0cef064ae3aab}\label{_e_f___driver___common_8h_a89de2e78c0ce8d5b48c0cef064ae3aab}} 
+\index{EF\_Driver\_Common.h@{EF\_Driver\_Common.h}!EF\_DRIVER\_ERROR\_SPECIFIC@{EF\_DRIVER\_ERROR\_SPECIFIC}}
+\index{EF\_DRIVER\_ERROR\_SPECIFIC@{EF\_DRIVER\_ERROR\_SPECIFIC}!EF\_Driver\_Common.h@{EF\_Driver\_Common.h}}
+\doxysubsubsection{\texorpdfstring{EF\_DRIVER\_ERROR\_SPECIFIC}{EF\_DRIVER\_ERROR\_SPECIFIC}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+SPECIFIC~6}
+
+
+
+Start of driver specific errors. 
+
+\mbox{\Hypertarget{_e_f___driver___common_8h_a26b87ad6f8f1d017af3ee034bd178795}\label{_e_f___driver___common_8h_a26b87ad6f8f1d017af3ee034bd178795}} 
+\index{EF\_Driver\_Common.h@{EF\_Driver\_Common.h}!EF\_DRIVER\_ERROR\_TIMEOUT@{EF\_DRIVER\_ERROR\_TIMEOUT}}
+\index{EF\_DRIVER\_ERROR\_TIMEOUT@{EF\_DRIVER\_ERROR\_TIMEOUT}!EF\_Driver\_Common.h@{EF\_Driver\_Common.h}}
+\doxysubsubsection{\texorpdfstring{EF\_DRIVER\_ERROR\_TIMEOUT}{EF\_DRIVER\_ERROR\_TIMEOUT}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+TIMEOUT~3}
+
+
+
+Timeout occurred. 
+
+\mbox{\Hypertarget{_e_f___driver___common_8h_abd8e6eb4870238ef0f900911e3935d91}\label{_e_f___driver___common_8h_abd8e6eb4870238ef0f900911e3935d91}} 
+\index{EF\_Driver\_Common.h@{EF\_Driver\_Common.h}!EF\_DRIVER\_ERROR\_UNSUPPORTED@{EF\_DRIVER\_ERROR\_UNSUPPORTED}}
+\index{EF\_DRIVER\_ERROR\_UNSUPPORTED@{EF\_DRIVER\_ERROR\_UNSUPPORTED}!EF\_Driver\_Common.h@{EF\_Driver\_Common.h}}
+\doxysubsubsection{\texorpdfstring{EF\_DRIVER\_ERROR\_UNSUPPORTED}{EF\_DRIVER\_ERROR\_UNSUPPORTED}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+UNSUPPORTED~4}
+
+
+
+Operation not supported. 
+
+\mbox{\Hypertarget{_e_f___driver___common_8h_ab56c746d5d1672835c101f00f7c90b7c}\label{_e_f___driver___common_8h_ab56c746d5d1672835c101f00f7c90b7c}} 
+\index{EF\_Driver\_Common.h@{EF\_Driver\_Common.h}!EF\_DRIVER\_OK@{EF\_DRIVER\_OK}}
+\index{EF\_DRIVER\_OK@{EF\_DRIVER\_OK}!EF\_Driver\_Common.h@{EF\_Driver\_Common.h}}
+\doxysubsubsection{\texorpdfstring{EF\_DRIVER\_OK}{EF\_DRIVER\_OK}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+DRIVER\+\_\+\+OK~0}
+
+
+
+Operation succeeded. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}\label{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}} 
+\index{EF\_Driver\_Common.h@{EF\_Driver\_Common.h}!EF\_DRIVER\_STATUS@{EF\_DRIVER\_STATUS}}
+\index{EF\_DRIVER\_STATUS@{EF\_DRIVER\_STATUS}!EF\_Driver\_Common.h@{EF\_Driver\_Common.h}}
+\doxysubsubsection{\texorpdfstring{EF\_DRIVER\_STATUS}{EF\_DRIVER\_STATUS}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}}}
+
+
+
+A type that is used to return the status of the driver functions. 
+

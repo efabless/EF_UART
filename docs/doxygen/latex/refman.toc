@@ -1,0 +1,247 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}APIs Documentation}{1}{chapter.1}%
+\contentsline {subsection}{\numberline {1.0.1}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}enable}{1}{subsection.1.0.1}%
+\contentsline {subsection}{\numberline {1.0.2}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}disable}{1}{subsection.1.0.2}%
+\contentsline {subsection}{\numberline {1.0.3}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}enable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rx}{1}{subsection.1.0.3}%
+\contentsline {subsection}{\numberline {1.0.4}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}disable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rx}{2}{subsection.1.0.4}%
+\contentsline {subsection}{\numberline {1.0.5}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}enable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tx}{2}{subsection.1.0.5}%
+\contentsline {subsection}{\numberline {1.0.6}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}disable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tx}{2}{subsection.1.0.6}%
+\contentsline {subsection}{\numberline {1.0.7}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}enable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loop\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Back}{2}{subsection.1.0.7}%
+\contentsline {subsection}{\numberline {1.0.8}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}disable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loop\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Back}{2}{subsection.1.0.8}%
+\contentsline {subsection}{\numberline {1.0.9}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}enable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Glitch\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Filter}{3}{subsection.1.0.9}%
+\contentsline {subsection}{\numberline {1.0.10}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}disable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Glitch\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Filter}{3}{subsection.1.0.10}%
+\contentsline {subsection}{\numberline {1.0.11}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CTRL}{3}{subsection.1.0.11}%
+\contentsline {subsection}{\numberline {1.0.12}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CTRL}{3}{subsection.1.0.12}%
+\contentsline {subsection}{\numberline {1.0.13}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Prescaler}{4}{subsection.1.0.13}%
+\contentsline {subsection}{\numberline {1.0.14}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Prescaler}{4}{subsection.1.0.14}%
+\contentsline {subsection}{\numberline {1.0.15}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Size}{4}{subsection.1.0.15}%
+\contentsline {subsection}{\numberline {1.0.16}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Two\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stop\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bits\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Select}{4}{subsection.1.0.16}%
+\contentsline {subsection}{\numberline {1.0.17}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type}{5}{subsection.1.0.17}%
+\contentsline {subsection}{\numberline {1.0.18}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timeout\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bits}{5}{subsection.1.0.18}%
+\contentsline {subsection}{\numberline {1.0.19}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config}{5}{subsection.1.0.19}%
+\contentsline {subsection}{\numberline {1.0.20}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config}{6}{subsection.1.0.20}%
+\contentsline {subsection}{\numberline {1.0.21}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FIFOThreshold}{6}{subsection.1.0.21}%
+\contentsline {subsection}{\numberline {1.0.22}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FIFOThreshold}{6}{subsection.1.0.22}%
+\contentsline {subsection}{\numberline {1.0.23}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FIFOThreshold}{6}{subsection.1.0.23}%
+\contentsline {subsection}{\numberline {1.0.24}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FIFOThreshold}{7}{subsection.1.0.24}%
+\contentsline {subsection}{\numberline {1.0.25}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FIFOControl}{7}{subsection.1.0.25}%
+\contentsline {subsection}{\numberline {1.0.26}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FIFOControl}{7}{subsection.1.0.26}%
+\contentsline {subsection}{\numberline {1.0.27}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Count}{7}{subsection.1.0.27}%
+\contentsline {subsection}{\numberline {1.0.28}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Count}{8}{subsection.1.0.28}%
+\contentsline {subsection}{\numberline {1.0.29}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}FIFOStatus}{8}{subsection.1.0.29}%
+\contentsline {subsection}{\numberline {1.0.30}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Match\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data}{8}{subsection.1.0.30}%
+\contentsline {subsection}{\numberline {1.0.31}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Match\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data}{8}{subsection.1.0.31}%
+\contentsline {subsection}{\numberline {1.0.32}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}RIS}{9}{subsection.1.0.32}%
+\contentsline {subsection}{\numberline {1.0.33}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}MIS}{9}{subsection.1.0.33}%
+\contentsline {subsection}{\numberline {1.0.34}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IM}{10}{subsection.1.0.34}%
+\contentsline {subsection}{\numberline {1.0.35}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IM}{10}{subsection.1.0.35}%
+\contentsline {subsection}{\numberline {1.0.36}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICR}{11}{subsection.1.0.36}%
+\contentsline {subsection}{\numberline {1.0.37}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}write\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Char}{11}{subsection.1.0.37}%
+\contentsline {subsection}{\numberline {1.0.38}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}write\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Char\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Arr}{11}{subsection.1.0.38}%
+\contentsline {subsection}{\numberline {1.0.39}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}read\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Char}{12}{subsection.1.0.39}%
+\contentsline {chapter}{\numberline {2}Class Index}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{13}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{15}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}TYPE\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{} Struct Reference}{17}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Member Data Documentation}{17}{subsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}CFG}{17}{subsubsection.4.1.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.2}CTRL}{17}{subsubsection.4.1.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.1.3}GCLK}{18}{subsubsection.4.1.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.1.4}IC}{18}{subsubsection.4.1.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.1.5}IM}{18}{subsubsection.4.1.1.5}%
+\contentsline {subsubsection}{\numberline {4.1.1.6}MATCH}{18}{subsubsection.4.1.1.6}%
+\contentsline {subsubsection}{\numberline {4.1.1.7}MIS}{18}{subsubsection.4.1.1.7}%
+\contentsline {subsubsection}{\numberline {4.1.1.8}PR}{18}{subsubsection.4.1.1.8}%
+\contentsline {subsubsection}{\numberline {4.1.1.9}reserved\_0}{18}{subsubsection.4.1.1.9}%
+\contentsline {subsubsection}{\numberline {4.1.1.10}reserved\_1}{18}{subsubsection.4.1.1.10}%
+\contentsline {subsubsection}{\numberline {4.1.1.11}reserved\_2}{18}{subsubsection.4.1.1.11}%
+\contentsline {subsubsection}{\numberline {4.1.1.12}reserved\_3}{18}{subsubsection.4.1.1.12}%
+\contentsline {subsubsection}{\numberline {4.1.1.13}RIS}{18}{subsubsection.4.1.1.13}%
+\contentsline {subsubsection}{\numberline {4.1.1.14}RX\_FIFO\_FLUSH}{18}{subsubsection.4.1.1.14}%
+\contentsline {subsubsection}{\numberline {4.1.1.15}RX\_FIFO\_LEVEL}{19}{subsubsection.4.1.1.15}%
+\contentsline {subsubsection}{\numberline {4.1.1.16}RX\_FIFO\_THRESHOLD}{19}{subsubsection.4.1.1.16}%
+\contentsline {subsubsection}{\numberline {4.1.1.17}RXDATA}{19}{subsubsection.4.1.1.17}%
+\contentsline {subsubsection}{\numberline {4.1.1.18}TX\_FIFO\_FLUSH}{19}{subsubsection.4.1.1.18}%
+\contentsline {subsubsection}{\numberline {4.1.1.19}TX\_FIFO\_LEVEL}{19}{subsubsection.4.1.1.19}%
+\contentsline {subsubsection}{\numberline {4.1.1.20}TX\_FIFO\_THRESHOLD}{19}{subsubsection.4.1.1.20}%
+\contentsline {subsubsection}{\numberline {4.1.1.21}TXDATA}{19}{subsubsection.4.1.1.21}%
+\contentsline {chapter}{\numberline {5}File Documentation}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Common.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{21}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{21}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Macro Definition Documentation}{21}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}EF\_DRIVER\_ERROR}{22}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}EF\_DRIVER\_ERROR\_BUSY}{22}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}EF\_DRIVER\_ERROR\_NO\_DATA}{22}{subsubsection.5.1.2.3}%
+\contentsline {subsubsection}{\numberline {5.1.2.4}EF\_DRIVER\_ERROR\_PARAMETER}{22}{subsubsection.5.1.2.4}%
+\contentsline {subsubsection}{\numberline {5.1.2.5}EF\_DRIVER\_ERROR\_SPECIFIC}{22}{subsubsection.5.1.2.5}%
+\contentsline {subsubsection}{\numberline {5.1.2.6}EF\_DRIVER\_ERROR\_TIMEOUT}{22}{subsubsection.5.1.2.6}%
+\contentsline {subsubsection}{\numberline {5.1.2.7}EF\_DRIVER\_ERROR\_UNSUPPORTED}{22}{subsubsection.5.1.2.7}%
+\contentsline {subsubsection}{\numberline {5.1.2.8}EF\_DRIVER\_OK}{22}{subsubsection.5.1.2.8}%
+\contentsline {subsection}{\numberline {5.1.3}Typedef Documentation}{22}{subsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.1}EF\_DRIVER\_STATUS}{22}{subsubsection.5.1.3.1}%
+\contentsline {section}{\numberline {5.2}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Common.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{23}{section.5.2}%
+\contentsline {section}{\numberline {5.3}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{23}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{25}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Macro Definition Documentation}{25}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}EF\_UART\_C}{25}{subsubsection.5.3.2.1}%
+\contentsline {subsection}{\numberline {5.3.3}Function Documentation}{25}{subsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.1}EF\_UART\_busy()}{26}{subsubsection.5.3.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.3.2}EF\_UART\_charsAvailable()}{26}{subsubsection.5.3.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3.3}EF\_UART\_disable()}{26}{subsubsection.5.3.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.4}EF\_UART\_disableGlitchFilter()}{26}{subsubsection.5.3.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.3.5}EF\_UART\_disableLoopBack()}{27}{subsubsection.5.3.3.5}%
+\contentsline {subsubsection}{\numberline {5.3.3.6}EF\_UART\_disableRx()}{27}{subsubsection.5.3.3.6}%
+\contentsline {subsubsection}{\numberline {5.3.3.7}EF\_UART\_disableTx()}{27}{subsubsection.5.3.3.7}%
+\contentsline {subsubsection}{\numberline {5.3.3.8}EF\_UART\_enable()}{28}{subsubsection.5.3.3.8}%
+\contentsline {subsubsection}{\numberline {5.3.3.9}EF\_UART\_enableGlitchFilter()}{28}{subsubsection.5.3.3.9}%
+\contentsline {subsubsection}{\numberline {5.3.3.10}EF\_UART\_enableLoopBack()}{28}{subsubsection.5.3.3.10}%
+\contentsline {subsubsection}{\numberline {5.3.3.11}EF\_UART\_enableRx()}{28}{subsubsection.5.3.3.11}%
+\contentsline {subsubsection}{\numberline {5.3.3.12}EF\_UART\_enableTx()}{29}{subsubsection.5.3.3.12}%
+\contentsline {subsubsection}{\numberline {5.3.3.13}EF\_UART\_getConfig()}{29}{subsubsection.5.3.3.13}%
+\contentsline {subsubsection}{\numberline {5.3.3.14}EF\_UART\_getCTRL()}{29}{subsubsection.5.3.3.14}%
+\contentsline {subsubsection}{\numberline {5.3.3.15}EF\_UART\_getIM()}{30}{subsubsection.5.3.3.15}%
+\contentsline {subsubsection}{\numberline {5.3.3.16}EF\_UART\_getMatchData()}{30}{subsubsection.5.3.3.16}%
+\contentsline {subsubsection}{\numberline {5.3.3.17}EF\_UART\_getMIS()}{31}{subsubsection.5.3.3.17}%
+\contentsline {subsubsection}{\numberline {5.3.3.18}EF\_UART\_getParityMode()}{31}{subsubsection.5.3.3.18}%
+\contentsline {subsubsection}{\numberline {5.3.3.19}EF\_UART\_getPrescaler()}{32}{subsubsection.5.3.3.19}%
+\contentsline {subsubsection}{\numberline {5.3.3.20}EF\_UART\_getRIS()}{32}{subsubsection.5.3.3.20}%
+\contentsline {subsubsection}{\numberline {5.3.3.21}EF\_UART\_getRxCount()}{33}{subsubsection.5.3.3.21}%
+\contentsline {subsubsection}{\numberline {5.3.3.22}EF\_UART\_getRxFIFOThreshold()}{33}{subsubsection.5.3.3.22}%
+\contentsline {subsubsection}{\numberline {5.3.3.23}EF\_UART\_getTxCount()}{33}{subsubsection.5.3.3.23}%
+\contentsline {subsubsection}{\numberline {5.3.3.24}EF\_UART\_getTxFIFOThreshold()}{34}{subsubsection.5.3.3.24}%
+\contentsline {subsubsection}{\numberline {5.3.3.25}EF\_UART\_readChar()}{34}{subsubsection.5.3.3.25}%
+\contentsline {subsubsection}{\numberline {5.3.3.26}EF\_UART\_readCharNonBlocking()}{34}{subsubsection.5.3.3.26}%
+\contentsline {subsubsection}{\numberline {5.3.3.27}EF\_UART\_setConfig()}{35}{subsubsection.5.3.3.27}%
+\contentsline {subsubsection}{\numberline {5.3.3.28}EF\_UART\_setCTRL()}{35}{subsubsection.5.3.3.28}%
+\contentsline {subsubsection}{\numberline {5.3.3.29}EF\_UART\_setDataSize()}{36}{subsubsection.5.3.3.29}%
+\contentsline {subsubsection}{\numberline {5.3.3.30}EF\_UART\_setGclkEnable()}{36}{subsubsection.5.3.3.30}%
+\contentsline {subsubsection}{\numberline {5.3.3.31}EF\_UART\_setICR()}{36}{subsubsection.5.3.3.31}%
+\contentsline {subsubsection}{\numberline {5.3.3.32}EF\_UART\_setIM()}{37}{subsubsection.5.3.3.32}%
+\contentsline {subsubsection}{\numberline {5.3.3.33}EF\_UART\_setMatchData()}{38}{subsubsection.5.3.3.33}%
+\contentsline {subsubsection}{\numberline {5.3.3.34}EF\_UART\_setParityType()}{38}{subsubsection.5.3.3.34}%
+\contentsline {subsubsection}{\numberline {5.3.3.35}EF\_UART\_setPrescaler()}{38}{subsubsection.5.3.3.35}%
+\contentsline {subsubsection}{\numberline {5.3.3.36}EF\_UART\_setRxFIFOThreshold()}{39}{subsubsection.5.3.3.36}%
+\contentsline {subsubsection}{\numberline {5.3.3.37}EF\_UART\_setTimeoutBits()}{39}{subsubsection.5.3.3.37}%
+\contentsline {subsubsection}{\numberline {5.3.3.38}EF\_UART\_setTwoStopBitsSelect()}{39}{subsubsection.5.3.3.38}%
+\contentsline {subsubsection}{\numberline {5.3.3.39}EF\_UART\_setTxFIFOThreshold()}{40}{subsubsection.5.3.3.39}%
+\contentsline {subsubsection}{\numberline {5.3.3.40}EF\_UART\_spaceAvailable()}{40}{subsubsection.5.3.3.40}%
+\contentsline {subsubsection}{\numberline {5.3.3.41}EF\_UART\_writeChar()}{40}{subsubsection.5.3.3.41}%
+\contentsline {subsubsection}{\numberline {5.3.3.42}EF\_UART\_writeCharArr()}{41}{subsubsection.5.3.3.42}%
+\contentsline {subsubsection}{\numberline {5.3.3.43}EF\_UART\_writeCharNonBlocking()}{41}{subsubsection.5.3.3.43}%
+\contentsline {section}{\numberline {5.4}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{41}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{44}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Macro Definition Documentation}{44}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}EF\_UART\_CFG\_REG\_MAX\_VALUE}{44}{subsubsection.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE}{44}{subsubsection.5.4.2.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.3}EF\_UART\_CTRL\_REG\_MAX\_VALUE}{44}{subsubsection.5.4.2.3}%
+\contentsline {subsubsection}{\numberline {5.4.2.4}EF\_UART\_DataLength\_MAX\_VALUE}{44}{subsubsection.5.4.2.4}%
+\contentsline {subsubsection}{\numberline {5.4.2.5}EF\_UART\_DataLength\_MIN\_VALUE}{44}{subsubsection.5.4.2.5}%
+\contentsline {subsubsection}{\numberline {5.4.2.6}EF\_UART\_ERROR\_RX\_UNAVAILABLE}{44}{subsubsection.5.4.2.6}%
+\contentsline {subsubsection}{\numberline {5.4.2.7}EF\_UART\_ERROR\_TX\_UNAVAILABLE}{44}{subsubsection.5.4.2.7}%
+\contentsline {subsubsection}{\numberline {5.4.2.8}EF\_UART\_IC\_REG\_MAX\_VALUE}{44}{subsubsection.5.4.2.8}%
+\contentsline {subsubsection}{\numberline {5.4.2.9}EF\_UART\_IM\_REG\_MAX\_VALUE}{44}{subsubsection.5.4.2.9}%
+\contentsline {subsubsection}{\numberline {5.4.2.10}EF\_UART\_MATCH\_REG\_MAX\_VALUE}{44}{subsubsection.5.4.2.10}%
+\contentsline {subsubsection}{\numberline {5.4.2.11}EF\_UART\_PR\_REG\_MAX\_VALUE}{45}{subsubsection.5.4.2.11}%
+\contentsline {subsubsection}{\numberline {5.4.2.12}EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}{45}{subsubsection.5.4.2.12}%
+\contentsline {subsubsection}{\numberline {5.4.2.13}EF\_UART\_SUCCESS}{45}{subsubsection.5.4.2.13}%
+\contentsline {subsubsection}{\numberline {5.4.2.14}EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}{45}{subsubsection.5.4.2.14}%
+\contentsline {subsection}{\numberline {5.4.3}Enumeration Type Documentation}{45}{subsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.3.1}parity\_type}{45}{subsubsection.5.4.3.1}%
+\contentsline {subsection}{\numberline {5.4.4}Function Documentation}{45}{subsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.4.1}EF\_UART\_busy()}{45}{subsubsection.5.4.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.4.2}EF\_UART\_charsAvailable()}{46}{subsubsection.5.4.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.4.3}EF\_UART\_disable()}{46}{subsubsection.5.4.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.4.4}EF\_UART\_disableGlitchFilter()}{46}{subsubsection.5.4.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.4.5}EF\_UART\_disableLoopBack()}{47}{subsubsection.5.4.4.5}%
+\contentsline {subsubsection}{\numberline {5.4.4.6}EF\_UART\_disableRx()}{47}{subsubsection.5.4.4.6}%
+\contentsline {subsubsection}{\numberline {5.4.4.7}EF\_UART\_disableTx()}{47}{subsubsection.5.4.4.7}%
+\contentsline {subsubsection}{\numberline {5.4.4.8}EF\_UART\_enable()}{47}{subsubsection.5.4.4.8}%
+\contentsline {subsubsection}{\numberline {5.4.4.9}EF\_UART\_enableGlitchFilter()}{48}{subsubsection.5.4.4.9}%
+\contentsline {subsubsection}{\numberline {5.4.4.10}EF\_UART\_enableLoopBack()}{48}{subsubsection.5.4.4.10}%
+\contentsline {subsubsection}{\numberline {5.4.4.11}EF\_UART\_enableRx()}{48}{subsubsection.5.4.4.11}%
+\contentsline {subsubsection}{\numberline {5.4.4.12}EF\_UART\_enableTx()}{49}{subsubsection.5.4.4.12}%
+\contentsline {subsubsection}{\numberline {5.4.4.13}EF\_UART\_getConfig()}{49}{subsubsection.5.4.4.13}%
+\contentsline {subsubsection}{\numberline {5.4.4.14}EF\_UART\_getCTRL()}{49}{subsubsection.5.4.4.14}%
+\contentsline {subsubsection}{\numberline {5.4.4.15}EF\_UART\_getIM()}{50}{subsubsection.5.4.4.15}%
+\contentsline {subsubsection}{\numberline {5.4.4.16}EF\_UART\_getMatchData()}{50}{subsubsection.5.4.4.16}%
+\contentsline {subsubsection}{\numberline {5.4.4.17}EF\_UART\_getMIS()}{50}{subsubsection.5.4.4.17}%
+\contentsline {subsubsection}{\numberline {5.4.4.18}EF\_UART\_getParityMode()}{51}{subsubsection.5.4.4.18}%
+\contentsline {subsubsection}{\numberline {5.4.4.19}EF\_UART\_getPrescaler()}{51}{subsubsection.5.4.4.19}%
+\contentsline {subsubsection}{\numberline {5.4.4.20}EF\_UART\_getRIS()}{52}{subsubsection.5.4.4.20}%
+\contentsline {subsubsection}{\numberline {5.4.4.21}EF\_UART\_getRxCount()}{52}{subsubsection.5.4.4.21}%
+\contentsline {subsubsection}{\numberline {5.4.4.22}EF\_UART\_getRxFIFOThreshold()}{53}{subsubsection.5.4.4.22}%
+\contentsline {subsubsection}{\numberline {5.4.4.23}EF\_UART\_getTxCount()}{53}{subsubsection.5.4.4.23}%
+\contentsline {subsubsection}{\numberline {5.4.4.24}EF\_UART\_getTxFIFOThreshold()}{53}{subsubsection.5.4.4.24}%
+\contentsline {subsubsection}{\numberline {5.4.4.25}EF\_UART\_readChar()}{55}{subsubsection.5.4.4.25}%
+\contentsline {subsubsection}{\numberline {5.4.4.26}EF\_UART\_readCharNonBlocking()}{55}{subsubsection.5.4.4.26}%
+\contentsline {subsubsection}{\numberline {5.4.4.27}EF\_UART\_setConfig()}{55}{subsubsection.5.4.4.27}%
+\contentsline {subsubsection}{\numberline {5.4.4.28}EF\_UART\_setCTRL()}{56}{subsubsection.5.4.4.28}%
+\contentsline {subsubsection}{\numberline {5.4.4.29}EF\_UART\_setDataSize()}{56}{subsubsection.5.4.4.29}%
+\contentsline {subsubsection}{\numberline {5.4.4.30}EF\_UART\_setGclkEnable()}{57}{subsubsection.5.4.4.30}%
+\contentsline {subsubsection}{\numberline {5.4.4.31}EF\_UART\_setICR()}{57}{subsubsection.5.4.4.31}%
+\contentsline {subsubsection}{\numberline {5.4.4.32}EF\_UART\_setIM()}{58}{subsubsection.5.4.4.32}%
+\contentsline {subsubsection}{\numberline {5.4.4.33}EF\_UART\_setMatchData()}{58}{subsubsection.5.4.4.33}%
+\contentsline {subsubsection}{\numberline {5.4.4.34}EF\_UART\_setParityType()}{59}{subsubsection.5.4.4.34}%
+\contentsline {subsubsection}{\numberline {5.4.4.35}EF\_UART\_setPrescaler()}{59}{subsubsection.5.4.4.35}%
+\contentsline {subsubsection}{\numberline {5.4.4.36}EF\_UART\_setRxFIFOThreshold()}{59}{subsubsection.5.4.4.36}%
+\contentsline {subsubsection}{\numberline {5.4.4.37}EF\_UART\_setTimeoutBits()}{60}{subsubsection.5.4.4.37}%
+\contentsline {subsubsection}{\numberline {5.4.4.38}EF\_UART\_setTwoStopBitsSelect()}{60}{subsubsection.5.4.4.38}%
+\contentsline {subsubsection}{\numberline {5.4.4.39}EF\_UART\_setTxFIFOThreshold()}{60}{subsubsection.5.4.4.39}%
+\contentsline {subsubsection}{\numberline {5.4.4.40}EF\_UART\_spaceAvailable()}{61}{subsubsection.5.4.4.40}%
+\contentsline {subsubsection}{\numberline {5.4.4.41}EF\_UART\_writeChar()}{61}{subsubsection.5.4.4.41}%
+\contentsline {subsubsection}{\numberline {5.4.4.42}EF\_UART\_writeCharArr()}{61}{subsubsection.5.4.4.42}%
+\contentsline {subsubsection}{\numberline {5.4.4.43}EF\_UART\_writeCharNonBlocking()}{62}{subsubsection.5.4.4.43}%
+\contentsline {section}{\numberline {5.5}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{62}{section.5.5}%
+\contentsline {section}{\numberline {5.6}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}regs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{65}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Macro Definition Documentation}{66}{subsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.1.1}\_\_R}{66}{subsubsection.5.6.1.1}%
+\contentsline {subsubsection}{\numberline {5.6.1.2}\_\_RW}{66}{subsubsection.5.6.1.2}%
+\contentsline {subsubsection}{\numberline {5.6.1.3}\_\_W}{66}{subsubsection.5.6.1.3}%
+\contentsline {subsubsection}{\numberline {5.6.1.4}EF\_UART\_BRK\_FLAG}{66}{subsubsection.5.6.1.4}%
+\contentsline {subsubsection}{\numberline {5.6.1.5}EF\_UART\_CFG\_REG\_PARITY\_BIT}{67}{subsubsection.5.6.1.5}%
+\contentsline {subsubsection}{\numberline {5.6.1.6}EF\_UART\_CFG\_REG\_PARITY\_MASK}{67}{subsubsection.5.6.1.6}%
+\contentsline {subsubsection}{\numberline {5.6.1.7}EF\_UART\_CFG\_REG\_STP2\_BIT}{67}{subsubsection.5.6.1.7}%
+\contentsline {subsubsection}{\numberline {5.6.1.8}EF\_UART\_CFG\_REG\_STP2\_MASK}{67}{subsubsection.5.6.1.8}%
+\contentsline {subsubsection}{\numberline {5.6.1.9}EF\_UART\_CFG\_REG\_TIMEOUT\_BIT}{67}{subsubsection.5.6.1.9}%
+\contentsline {subsubsection}{\numberline {5.6.1.10}EF\_UART\_CFG\_REG\_TIMEOUT\_MASK}{67}{subsubsection.5.6.1.10}%
+\contentsline {subsubsection}{\numberline {5.6.1.11}EF\_UART\_CFG\_REG\_WLEN\_BIT}{67}{subsubsection.5.6.1.11}%
+\contentsline {subsubsection}{\numberline {5.6.1.12}EF\_UART\_CFG\_REG\_WLEN\_MASK}{67}{subsubsection.5.6.1.12}%
+\contentsline {subsubsection}{\numberline {5.6.1.13}EF\_UART\_CTRL\_REG\_EN\_BIT}{67}{subsubsection.5.6.1.13}%
+\contentsline {subsubsection}{\numberline {5.6.1.14}EF\_UART\_CTRL\_REG\_EN\_MASK}{67}{subsubsection.5.6.1.14}%
+\contentsline {subsubsection}{\numberline {5.6.1.15}EF\_UART\_CTRL\_REG\_GFEN\_BIT}{67}{subsubsection.5.6.1.15}%
+\contentsline {subsubsection}{\numberline {5.6.1.16}EF\_UART\_CTRL\_REG\_GFEN\_MASK}{67}{subsubsection.5.6.1.16}%
+\contentsline {subsubsection}{\numberline {5.6.1.17}EF\_UART\_CTRL\_REG\_LPEN\_BIT}{68}{subsubsection.5.6.1.17}%
+\contentsline {subsubsection}{\numberline {5.6.1.18}EF\_UART\_CTRL\_REG\_LPEN\_MASK}{68}{subsubsection.5.6.1.18}%
+\contentsline {subsubsection}{\numberline {5.6.1.19}EF\_UART\_CTRL\_REG\_RXEN\_BIT}{68}{subsubsection.5.6.1.19}%
+\contentsline {subsubsection}{\numberline {5.6.1.20}EF\_UART\_CTRL\_REG\_RXEN\_MASK}{68}{subsubsection.5.6.1.20}%
+\contentsline {subsubsection}{\numberline {5.6.1.21}EF\_UART\_CTRL\_REG\_TXEN\_BIT}{68}{subsubsection.5.6.1.21}%
+\contentsline {subsubsection}{\numberline {5.6.1.22}EF\_UART\_CTRL\_REG\_TXEN\_MASK}{68}{subsubsection.5.6.1.22}%
+\contentsline {subsubsection}{\numberline {5.6.1.23}EF\_UART\_FE\_FLAG}{68}{subsubsection.5.6.1.23}%
+\contentsline {subsubsection}{\numberline {5.6.1.24}EF\_UART\_MATCH\_FLAG}{68}{subsubsection.5.6.1.24}%
+\contentsline {subsubsection}{\numberline {5.6.1.25}EF\_UART\_OR\_FLAG}{68}{subsubsection.5.6.1.25}%
+\contentsline {subsubsection}{\numberline {5.6.1.26}EF\_UART\_PRE\_FLAG}{68}{subsubsection.5.6.1.26}%
+\contentsline {subsubsection}{\numberline {5.6.1.27}EF\_UART\_RTO\_FLAG}{68}{subsubsection.5.6.1.27}%
+\contentsline {subsubsection}{\numberline {5.6.1.28}EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT}{68}{subsubsection.5.6.1.28}%
+\contentsline {subsubsection}{\numberline {5.6.1.29}EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}{69}{subsubsection.5.6.1.29}%
+\contentsline {subsubsection}{\numberline {5.6.1.30}EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}{69}{subsubsection.5.6.1.30}%
+\contentsline {subsubsection}{\numberline {5.6.1.31}EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}{69}{subsubsection.5.6.1.31}%
+\contentsline {subsubsection}{\numberline {5.6.1.32}EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}{69}{subsubsection.5.6.1.32}%
+\contentsline {subsubsection}{\numberline {5.6.1.33}EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK}{69}{subsubsection.5.6.1.33}%
+\contentsline {subsubsection}{\numberline {5.6.1.34}EF\_UART\_RXA\_FLAG}{69}{subsubsection.5.6.1.34}%
+\contentsline {subsubsection}{\numberline {5.6.1.35}EF\_UART\_RXF\_FLAG}{69}{subsubsection.5.6.1.35}%
+\contentsline {subsubsection}{\numberline {5.6.1.36}EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT}{69}{subsubsection.5.6.1.36}%
+\contentsline {subsubsection}{\numberline {5.6.1.37}EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}{69}{subsubsection.5.6.1.37}%
+\contentsline {subsubsection}{\numberline {5.6.1.38}EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}{69}{subsubsection.5.6.1.38}%
+\contentsline {subsubsection}{\numberline {5.6.1.39}EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}{69}{subsubsection.5.6.1.39}%
+\contentsline {subsubsection}{\numberline {5.6.1.40}EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}{69}{subsubsection.5.6.1.40}%
+\contentsline {subsubsection}{\numberline {5.6.1.41}EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK}{70}{subsubsection.5.6.1.41}%
+\contentsline {subsubsection}{\numberline {5.6.1.42}EF\_UART\_TXB\_FLAG}{70}{subsubsection.5.6.1.42}%
+\contentsline {subsubsection}{\numberline {5.6.1.43}EF\_UART\_TXE\_FLAG}{70}{subsubsection.5.6.1.43}%
+\contentsline {subsubsection}{\numberline {5.6.1.44}IO\_TYPES}{70}{subsubsection.5.6.1.44}%
+\contentsline {subsection}{\numberline {5.6.2}Typedef Documentation}{70}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}EF\_UART\_TYPE}{70}{subsubsection.5.6.2.1}%
+\contentsline {section}{\numberline {5.7}EF\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UART\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}regs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{70}{section.5.7}%
+\contentsline {section}{\numberline {5.8}README.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md File Reference}{71}{section.5.8}%
+\contentsline {chapter}{Index}{73}{section*.12}%

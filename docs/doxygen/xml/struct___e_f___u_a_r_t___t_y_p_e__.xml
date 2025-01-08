@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct___e_f___u_a_r_t___t_y_p_e__" kind="struct" language="C++" prot="public">
+    <compoundname>_EF_UART_TYPE_</compoundname>
+    <includes refid="_e_f___u_a_r_t__regs_8h" local="no">EF_UART_regs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1aff46d22baad8d54ad1615dbac2c9b905" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_UART_TYPE_::RXDATA</definition>
+        <argsstring></argsstring>
+        <name>RXDATA</name>
+        <qualifiedname>_EF_UART_TYPE_::RXDATA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="73" column="5" bodyfile="EF_UART_regs.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a99fca397943293a7c803a989f17a51f5" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_UART_TYPE_::TXDATA</definition>
+        <argsstring></argsstring>
+        <name>TXDATA</name>
+        <qualifiedname>_EF_UART_TYPE_::TXDATA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="74" column="5" bodyfile="EF_UART_regs.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1ab2ed350e6f2da615799df38abd839c27" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_UART_TYPE_::PR</definition>
+        <argsstring></argsstring>
+        <name>PR</name>
+        <qualifiedname>_EF_UART_TYPE_::PR</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="75" column="5" bodyfile="EF_UART_regs.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1aaf3574c53f189c64c14ccfb846aed421" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_UART_TYPE_::CTRL</definition>
+        <argsstring></argsstring>
+        <name>CTRL</name>
+        <qualifiedname>_EF_UART_TYPE_::CTRL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="76" column="5" bodyfile="EF_UART_regs.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a419b02d7f3175d7386fbb78c635d2cff" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_UART_TYPE_::CFG</definition>
+        <argsstring></argsstring>
+        <name>CFG</name>
+        <qualifiedname>_EF_UART_TYPE_::CFG</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="77" column="5" bodyfile="EF_UART_regs.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a23927360f022c1dd4dbc8451e6977659" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_UART_TYPE_::reserved_0[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>reserved_0</name>
+        <qualifiedname>_EF_UART_TYPE_::reserved_0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="78" column="5" bodyfile="EF_UART_regs.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1aa4c42f2e242b0eca1910fb9584e1284f" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_UART_TYPE_::MATCH</definition>
+        <argsstring></argsstring>
+        <name>MATCH</name>
+        <qualifiedname>_EF_UART_TYPE_::MATCH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="79" column="5" bodyfile="EF_UART_regs.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a4b809032c979fc45a6c5c0a55f26c34f" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_UART_TYPE_::reserved_1[16248]</definition>
+        <argsstring>[16248]</argsstring>
+        <name>reserved_1</name>
+        <qualifiedname>_EF_UART_TYPE_::reserved_1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="80" column="5" bodyfile="EF_UART_regs.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1aa0e14c3a6131575b34297711fb98444d" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_UART_TYPE_::RX_FIFO_LEVEL</definition>
+        <argsstring></argsstring>
+        <name>RX_FIFO_LEVEL</name>
+        <qualifiedname>_EF_UART_TYPE_::RX_FIFO_LEVEL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="81" column="5" bodyfile="EF_UART_regs.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a43428037400a75812097cd8a3256cd4f" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_UART_TYPE_::RX_FIFO_THRESHOLD</definition>
+        <argsstring></argsstring>
+        <name>RX_FIFO_THRESHOLD</name>
+        <qualifiedname>_EF_UART_TYPE_::RX_FIFO_THRESHOLD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="82" column="5" bodyfile="EF_UART_regs.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1ac613a7f5d5329fdf2e967f655cec4bac" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_UART_TYPE_::RX_FIFO_FLUSH</definition>
+        <argsstring></argsstring>
+        <name>RX_FIFO_FLUSH</name>
+        <qualifiedname>_EF_UART_TYPE_::RX_FIFO_FLUSH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="83" column="5" bodyfile="EF_UART_regs.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1ad24d4ace423d0c2867c15b6ae31683fc" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_UART_TYPE_::reserved_2[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>reserved_2</name>
+        <qualifiedname>_EF_UART_TYPE_::reserved_2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="84" column="5" bodyfile="EF_UART_regs.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a4fd96d87bc841a6f1726629499bfeb50" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_UART_TYPE_::TX_FIFO_LEVEL</definition>
+        <argsstring></argsstring>
+        <name>TX_FIFO_LEVEL</name>
+        <qualifiedname>_EF_UART_TYPE_::TX_FIFO_LEVEL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="85" column="5" bodyfile="EF_UART_regs.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a0e1ade580ea1c936365b711a8c43a8ac" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_UART_TYPE_::TX_FIFO_THRESHOLD</definition>
+        <argsstring></argsstring>
+        <name>TX_FIFO_THRESHOLD</name>
+        <qualifiedname>_EF_UART_TYPE_::TX_FIFO_THRESHOLD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="86" column="5" bodyfile="EF_UART_regs.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1aca03e5be4579abf3e7fcca929aec08de" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_UART_TYPE_::TX_FIFO_FLUSH</definition>
+        <argsstring></argsstring>
+        <name>TX_FIFO_FLUSH</name>
+        <qualifiedname>_EF_UART_TYPE_::TX_FIFO_FLUSH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="87" column="5" bodyfile="EF_UART_regs.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1ade10571e4c7f19ba5d0c55623b2035e0" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_UART_TYPE_::reserved_3[57]</definition>
+        <argsstring>[57]</argsstring>
+        <name>reserved_3</name>
+        <qualifiedname>_EF_UART_TYPE_::reserved_3</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="88" column="5" bodyfile="EF_UART_regs.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a5fd23e1cc4432238896f5b79b793014b" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1a81f369079976a46554fd9798ab035697" kindref="member">__RW</ref></type>
+        <definition>__RW _EF_UART_TYPE_::IM</definition>
+        <argsstring></argsstring>
+        <name>IM</name>
+        <qualifiedname>_EF_UART_TYPE_::IM</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="89" column="5" bodyfile="EF_UART_regs.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a6cad1b7265a8f8c8b5e71c700a1df06b" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_UART_TYPE_::MIS</definition>
+        <argsstring></argsstring>
+        <name>MIS</name>
+        <qualifiedname>_EF_UART_TYPE_::MIS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="90" column="5" bodyfile="EF_UART_regs.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a52259725e906f220be8a946cacdcffb9" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
+        <definition>__R _EF_UART_TYPE_::RIS</definition>
+        <argsstring></argsstring>
+        <name>RIS</name>
+        <qualifiedname>_EF_UART_TYPE_::RIS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="91" column="5" bodyfile="EF_UART_regs.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a2c2bccc1048a760f2eaf186451867770" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_UART_TYPE_::IC</definition>
+        <argsstring></argsstring>
+        <name>IC</name>
+        <qualifiedname>_EF_UART_TYPE_::IC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="92" column="5" bodyfile="EF_UART_regs.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1ad1b69ebbb1bfeaed7edb816f86128518" prot="public" static="no" mutable="no">
+        <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
+        <definition>__W _EF_UART_TYPE_::GCLK</definition>
+        <argsstring></argsstring>
+        <name>GCLK</name>
+        <qualifiedname>_EF_UART_TYPE_::GCLK</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART_regs.h" line="93" column="5" bodyfile="EF_UART_regs.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="EF_UART_regs.h" line="72" column="1" bodyfile="EF_UART_regs.h" bodystart="72" bodyend="94"/>
+    <listofallmembers>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a419b02d7f3175d7386fbb78c635d2cff" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>CFG</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1aaf3574c53f189c64c14ccfb846aed421" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>CTRL</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1ad1b69ebbb1bfeaed7edb816f86128518" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>GCLK</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a2c2bccc1048a760f2eaf186451867770" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>IC</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a5fd23e1cc4432238896f5b79b793014b" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>IM</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1aa4c42f2e242b0eca1910fb9584e1284f" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>MATCH</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a6cad1b7265a8f8c8b5e71c700a1df06b" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>MIS</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1ab2ed350e6f2da615799df38abd839c27" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>PR</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a23927360f022c1dd4dbc8451e6977659" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>reserved_0</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a4b809032c979fc45a6c5c0a55f26c34f" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>reserved_1</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1ad24d4ace423d0c2867c15b6ae31683fc" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>reserved_2</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1ade10571e4c7f19ba5d0c55623b2035e0" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>reserved_3</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a52259725e906f220be8a946cacdcffb9" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>RIS</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1ac613a7f5d5329fdf2e967f655cec4bac" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>RX_FIFO_FLUSH</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1aa0e14c3a6131575b34297711fb98444d" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>RX_FIFO_LEVEL</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a43428037400a75812097cd8a3256cd4f" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>RX_FIFO_THRESHOLD</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1aff46d22baad8d54ad1615dbac2c9b905" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>RXDATA</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1aca03e5be4579abf3e7fcca929aec08de" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>TX_FIFO_FLUSH</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a4fd96d87bc841a6f1726629499bfeb50" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>TX_FIFO_LEVEL</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a0e1ade580ea1c936365b711a8c43a8ac" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>TX_FIFO_THRESHOLD</name></member>
+      <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a99fca397943293a7c803a989f17a51f5" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>TXDATA</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

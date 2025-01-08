@@ -1,0 +1,824 @@
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysubsection{EF\+\_\+\+UART\+\_\+enable}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a850821dd83e87cfcdf3786a5ae9d75d2}{EF\_UART\_enable}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+enables using uart by setting \char`\"{}en\char`\"{} bit in the control register to 1
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{EF\+\_\+\+UART\+\_\+disable}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a0650c46534721b9a55b63df53a3edacd}{EF\_UART\_disable}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+disables using uart by clearing \char`\"{}en\char`\"{} bit in the control register
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{EF\+\_\+\+UART\+\_\+enable\+Rx}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ad5ea004f7d0231033aadb8bd6068ee88}{EF\_UART\_enableRx}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+enables using uart RX by setting uart \char`\"{}rxen\char`\"{} bit in the control register to 1
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{EF\+\_\+\+UART\+\_\+disable\+Rx}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_aa2c98e5b5be5273db1abd29519958999}{EF\_UART\_disableRx}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+disables using uart RX by clearing uart \char`\"{}rxen\char`\"{} bit in the control register
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{EF\+\_\+\+UART\+\_\+enable\+Tx}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_af5f6ae890a851613ea9f9954ad5306d7}{EF\_UART\_enableTx}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+enables using uart TX by setting uart \char`\"{}txen\char`\"{} bit in the control register to 1
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{EF\+\_\+\+UART\+\_\+disable\+Tx}\label{md__r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a543a5deefec86fde9baa4cf1e8d5d03b}{EF\_UART\_disableTx}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+disables using uart TX by clearing uart \char`\"{}txen\char`\"{} bit in the control register
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{EF\+\_\+\+UART\+\_\+enable\+Loop\+Back}\label{md__r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ae32c894a702657491ad1094f7be9426a}{EF\_UART\_enableLoopBack}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+enables loopback (connecting TX to RX signal) by setting \char`\"{}lpen\char`\"{} bit in the control register to 1
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{EF\+\_\+\+UART\+\_\+disable\+Loop\+Back}\label{md__r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a8b578752027768733661b9b727f297a6}{EF\_UART\_disableLoopBack}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+disables loopback (connecting TX to RX signal) by clearing \char`\"{}lpen\char`\"{} bit in the control register
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{EF\+\_\+\+UART\+\_\+enable\+Glitch\+Filter}\label{md__r_e_a_d_m_e_autotoc_md9}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a273b15c238fe14e1216594c25cf81839}{EF\_UART\_enableGlitchFilter}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+enables glitch filter (filter out noise or glitches on the received signal) by setting \char`\"{}gfen\char`\"{} bit in the control register to 1
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{EF\+\_\+\+UART\+\_\+disable\+Glitch\+Filter}\label{md__r_e_a_d_m_e_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a29108f7acf85d94f65ce1abcbd9b950e}{EF\_UART\_disableGlitchFilter}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+disables glitch filter (filter out noise or glitches on the received signal) by clearing \char`\"{}gfen\char`\"{} bit in the control register
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+CTRL}\label{md__r_e_a_d_m_e_autotoc_md11}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a1a467e5c515e03613ed283bfb5113f3f}{EF\_UART\_setCTRL}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ value}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{value}} The value of the control register
+\end{DoxyItemize}
+
+sets the control register to a certain value where
+
+
+\begin{DoxyItemize}
+\item bit 0\+: UART enable
+\item bit 1\+: UART Transmitter enable
+\item bit 2\+: UART Receiver enable
+\item bit 3\+: Loopback (connect RX and TX pins together) enable
+\item bit 4\+: UART Glitch Filer on RX enable
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+CTRL}\label{md__r_e_a_d_m_e_autotoc_md12}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_af1da4c4b17ef0c29ad04fceb4fec8daa}{EF\_UART\_getCTRL}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+returns the value of the control register
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: control register value\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+Prescaler}\label{md__r_e_a_d_m_e_autotoc_md13}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_af04cdc5aaa962c7cac7c37f5411bb56d}{EF\_UART\_setPrescaler}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ prescaler}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+sets the prescaler to a certain value where Baud\+\_\+rate = Bus\+\_\+\+Clock\+\_\+\+Freq/((Prescaler+1)$\ast$16)
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{prescaler}} The value of the required prescaler
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+Prescaler}\label{md__r_e_a_d_m_e_autotoc_md14}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a6a205793b17a2b1fcfe335941cacb24f}{EF\_UART\_getPrescaler}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+returns the value of the prescaler
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: prescaler register value\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+Data\+Size}\label{md__r_e_a_d_m_e_autotoc_md15}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a2ed665f292626f6cc65e61364a89fbdd}{EF\_UART\_setDataSize}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ value}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+sets the Data Size (Data word length\+: 5-\/9 bits ) by setting the \char`\"{}wlen\char`\"{} field in configuration register
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{value}} The value of the required data word length
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+Two\+Stop\+Bits\+Select}\label{md__r_e_a_d_m_e_autotoc_md16}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_af5cc25ffa33199c6c5d6cc8577934256}{EF\_UART\_setTwoStopBitsSelect}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ is\_two\_bits}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop bits are two or one)
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{is\+\_\+two\+\_\+bits}} bool value, if \char`\"{}true\char`\"{}, the stop bits are two and if \char`\"{}false\char`\"{}, the stop bit is one
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+Parity\+Type}\label{md__r_e_a_d_m_e_autotoc_md17}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a758aa19092a342f086b821542c5757e7}{EF\_UART\_setParityType}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parity\_type}}\ parity}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+sets the \char`\"{}parity\char`\"{} field in configuration register (could be none, odd, even, sticky 0 or sticky 1)
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{parity}} enum parity\+\_\+type could be \char`\"{}\+NONE\char`\"{} , \char`\"{}\+ODD\char`\"{} , \char`\"{}\+EVEN\char`\"{} , \char`\"{}\+STICKY\+\_\+0\char`\"{} , or \char`\"{}\+STICKY\+\_\+1\char`\"{}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+Timeout\+Bits}\label{md__r_e_a_d_m_e_autotoc_md18}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a282884f28c4bf3bc46c779384c2f8f34}{EF\_UART\_setTimeoutBits}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ value}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+sets the \char`\"{}timeout\char`\"{} field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{value}} timeout bits value
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md19}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+Config}\label{md__r_e_a_d_m_e_autotoc_md19}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a06202a95fb25fe530a9f499a0c3356dd}{EF\_UART\_setConfig}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ config}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{config}} The value of the configuration register
+\end{DoxyItemize}
+
+sets the configuration register to a certain value where
+
+
+\begin{DoxyItemize}
+\item bit 0-\/3\+: Data word length\+: 5-\/9 bits
+\item bit 4\+: Two Stop Bits Select
+\item bit 5-\/7\+: Parity Type\+: 000\+: None, 001\+: odd, 010\+: even, 100\+: Sticky 0, 101\+: Sticky 1
+\item bit 8-\/13\+: Receiver Timeout measured in number of bits
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md20}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+Config}\label{md__r_e_a_d_m_e_autotoc_md20}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a49e2fd4f33a867cf19be6306515f48c4}{EF\_UART\_getConfig}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+returns the value of the configuration register
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: configuration register value\hypertarget{md__r_e_a_d_m_e_autotoc_md21}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+Rx\+FIFOThreshold}\label{md__r_e_a_d_m_e_autotoc_md21}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_aa53c2715114709e88c0cb06933dbd795}{EF\_UART\_setRxFIFOThreshold}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ threshold}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+sets the RX FIFO threshold to a certain value at which \char`\"{}\+RXA\char`\"{} interrupt will be raised
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{threshold}} The value of the required threshold
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md22}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+Rx\+FIFOThreshold}\label{md__r_e_a_d_m_e_autotoc_md22}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a81a73a93bb2a3102153b955f7a351c58}{EF\_UART\_getRxFIFOThreshold}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+returns the current value of the RX FIFO threshold
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: RX FIFO threshold register\hypertarget{md__r_e_a_d_m_e_autotoc_md23}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+Tx\+FIFOThreshold}\label{md__r_e_a_d_m_e_autotoc_md23}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a586c9ea0f947b1d7749902feaece7232}{EF\_UART\_setTxFIFOThreshold}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ threshold}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+sets the TX FIFO threshold to a certain value at which \char`\"{}\+TXB\char`\"{} interrupt will be raised
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{threshold}} The value of the required threshold
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md24}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+Tx\+FIFOThreshold}\label{md__r_e_a_d_m_e_autotoc_md24}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ae789dab33f1e090979ffba3403bfc89e}{EF\_UART\_getTxFIFOThreshold}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+returns the current value of the TX FIFO threshold
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: TX FIFO threshold register\hypertarget{md__r_e_a_d_m_e_autotoc_md25}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+FIFOControl}\label{md__r_e_a_d_m_e_autotoc_md25}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ EF\_UART\_setFIFOControl(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ value}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{config}} The value of the FIFO control register
+\end{DoxyItemize}
+
+sets the FIFO control register to a certain value where
+
+
+\begin{DoxyItemize}
+\item bit 0-\/3\+: Transmit FIFO Level Threshold
+\item bit 8-\/11\+: Receive FIFO Level Threshold
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md26}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+FIFOControl}\label{md__r_e_a_d_m_e_autotoc_md26}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ EF\_UART\_getFIFOControl(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+returns the value of the FIFO control register
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: FIFO control register value\hypertarget{md__r_e_a_d_m_e_autotoc_md27}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+Tx\+Count}\label{md__r_e_a_d_m_e_autotoc_md27}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a9c9804bacfc1ac29f5f7138c4d9391aa}{EF\_UART\_getTxCount}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+returns the current level of the TX FIFO (the number of bytes in the FIFO)
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: TX FIFO level register\hypertarget{md__r_e_a_d_m_e_autotoc_md28}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+Rx\+Count}\label{md__r_e_a_d_m_e_autotoc_md28}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a22997ecd88103d3c73678ae95dfb6997}{EF\_UART\_getRxCount}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+returns the current level of the RX FIFO (the number of bytes in the FIFO)
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: RX FIFO level register\hypertarget{md__r_e_a_d_m_e_autotoc_md29}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+FIFOStatus}\label{md__r_e_a_d_m_e_autotoc_md29}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ EF\_UART\_getFIFOStatus(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: FIFO status register value
+
+returns the value of the FIFO status register where
+
+
+\begin{DoxyItemize}
+\item bit 0-\/3\+: Receive FIFO Level
+\item bit 8-\/11\+: Transmit FIFO Level
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md30}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+Match\+Data}\label{md__r_e_a_d_m_e_autotoc_md30}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a8a5bc5dc07056ad544a3d1f89180b93d}{EF\_UART\_setMatchData}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ matchData}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+sets the match\+Data to a certain value at which \char`\"{}\+MATCH\char`\"{} interrupt will be raised
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{match\+Data}} The value of the required match data
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md31}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+Match\+Data}\label{md__r_e_a_d_m_e_autotoc_md31}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a680be50e9f223af9be12e473f0825627}{EF\_UART\_getMatchData}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+returns the value of the match data register
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: match data register value\hypertarget{md__r_e_a_d_m_e_autotoc_md32}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+RIS}\label{md__r_e_a_d_m_e_autotoc_md32}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ad2fd70aa8cb1d090a3081d9fc339acd2}{EF\_UART\_getRIS}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: RIS register value
+
+returns the value of the Raw Interrupt Status Register
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md33}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+MIS}\label{md__r_e_a_d_m_e_autotoc_md33}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a813285559d03d7fdc9ba7a73bf4df315}{EF\_UART\_getMIS}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: MIS register value
+
+returns the value of the Masked Interrupt Status Register
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md34}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+IM}\label{md__r_e_a_d_m_e_autotoc_md34}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_afdcd87cc87d2c0e0c16b851315c6f7cc}{EF\_UART\_setIM}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ mask}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{mask}} The required mask value
+\end{DoxyItemize}
+
+sets the value of the Interrupts Masking Register; which enable and disables interrupts
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md35}{}\doxysubsection{EF\+\_\+\+UART\+\_\+get\+IM}\label{md__r_e_a_d_m_e_autotoc_md35}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a244ea6b7398137c5c49fde59325736c9}{EF\_UART\_getIM}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: IM register value
+
+returns the value of the Interrupts Masking Register; which enable and disables interrupts
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md36}{}\doxysubsection{EF\+\_\+\+UART\+\_\+set\+ICR}\label{md__r_e_a_d_m_e_autotoc_md36}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a2d23ae1377acb1ee9fe31bdedb4fb861}{EF\_UART\_setICR}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ mask}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{mask}} The required mask value
+\end{DoxyItemize}
+
+sets the value of the Interrupts Clear Register; write 1 to clear the flag
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md37}{}\doxysubsection{EF\+\_\+\+UART\+\_\+write\+Char}\label{md__r_e_a_d_m_e_autotoc_md37}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a3006277927d54cf055f9bf651f1a06f4}{EF\_UART\_writeChar}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ data}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+transmit a single character through uart
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{data}} The character or byte required to send
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md38}{}\doxysubsection{EF\+\_\+\+UART\+\_\+write\+Char\+Arr}\label{md__r_e_a_d_m_e_autotoc_md38}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a8036519d5504fe79890eb8fb07804dbf}{EF\_UART\_writeCharArr}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ char\_arr}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+transmit an array of characters through uart
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\item {\bfseries{char\+\_\+arr}} An array of characters to send
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md39}{}\doxysubsection{EF\+\_\+\+UART\+\_\+read\+Char}\label{md__r_e_a_d_m_e_autotoc_md39}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a81f9d3aefc98bd8e44dd93c54d8156ac}{EF\_UART\_readChar}}(}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ uart\_base}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+receive a single character through uart
+
+{\bfseries{Parameters}}\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{uart\+\_\+base}} The base memory address of UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: the byte received
+
+\DoxyHorRuler{0}
+ 

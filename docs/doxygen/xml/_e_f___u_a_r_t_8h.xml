@@ -1,0 +1,2305 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_e_f___u_a_r_t_8h" kind="file" language="C++">
+    <compoundname>EF_UART.h</compoundname>
+    <includes refid="_e_f___u_a_r_t__regs_8h" local="yes">EF_UART_regs.h</includes>
+    <includes refid="_e_f___driver___common_8h" local="yes">EF_Driver_Common.h</includes>
+    <includedby refid="_e_f___u_a_r_t_8c" local="yes">EF_UART.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>EF_Driver_Common.h</label>
+        <link refid="_e_f___driver___common_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>EF_UART.h</label>
+        <link refid="_e_f___u_a_r_t_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>EF_UART_regs.h</label>
+        <link refid="_e_f___u_a_r_t__regs_8h"/>
+      </node>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>EF_UART.c</label>
+        <link refid="_e_f___u_a_r_t_8c"/>
+      </node>
+      <node id="1">
+        <label>EF_UART.h</label>
+        <link refid="_e_f___u_a_r_t_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1abb5e56e926c33b555091e679f678515d" prot="public" static="no">
+        <name>EF_UART_CTRL_REG_MAX_VALUE</name>
+        <initializer>((uint32_t)0x0000001F)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="40" column="9" bodyfile="EF_UART.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a482ad61b42cd1ab32b3d69e7fc2fbf5d" prot="public" static="no">
+        <name>EF_UART_PR_REG_MAX_VALUE</name>
+        <initializer>((uint32_t)0x0000FFFF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="41" column="9" bodyfile="EF_UART.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1ad037e6ec02fdbc1ac83387687b690cb5" prot="public" static="no">
+        <name>EF_UART_DataLength_MIN_VALUE</name>
+        <initializer>((uint32_t)0x00000005)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="42" column="9" bodyfile="EF_UART.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a600c1602d5dcbe87cbc6ae8d015b2384" prot="public" static="no">
+        <name>EF_UART_DataLength_MAX_VALUE</name>
+        <initializer>((uint32_t)0x00000009)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="43" column="9" bodyfile="EF_UART.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a31ef64a99d1e4389df1255aa2b3fd645" prot="public" static="no">
+        <name>EF_UART_CFG_REG_TIMEOUT_MAX_VALUE</name>
+        <initializer>((uint32_t)0x0000003F)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="44" column="9" bodyfile="EF_UART.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a2c1fd5ccd1238662c3f8fb9f2af47019" prot="public" static="no">
+        <name>EF_UART_CFG_REG_MAX_VALUE</name>
+        <initializer>((uint32_t)0x00001FFF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="45" column="9" bodyfile="EF_UART.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a7749200841ca06b85560cdcce6143c0f" prot="public" static="no">
+        <name>EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE</name>
+        <initializer>((uint32_t)0x0000000F)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="46" column="9" bodyfile="EF_UART.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1aad9c71b2e065a1bc005853521e584cf7" prot="public" static="no">
+        <name>EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE</name>
+        <initializer>((uint32_t)0x0000000F)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="47" column="9" bodyfile="EF_UART.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1aa65fa5d0b6a628fae152ea7013052318" prot="public" static="no">
+        <name>EF_UART_MATCH_REG_MAX_VALUE</name>
+        <initializer>((uint32_t)0x00001FFF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="48" column="9" bodyfile="EF_UART.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1ac5ebf20bf24247905b19e2cb2060a457" prot="public" static="no">
+        <name>EF_UART_IM_REG_MAX_VALUE</name>
+        <initializer>((uint32_t)0x000003FF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="49" column="9" bodyfile="EF_UART.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a056fa4df77234c4221790bbefd6cd974" prot="public" static="no">
+        <name>EF_UART_IC_REG_MAX_VALUE</name>
+        <initializer>((uint32_t)0x000003FF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="50" column="9" bodyfile="EF_UART.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a776da4965f3dec0d9968b8f5c4c86551" prot="public" static="no">
+        <name>EF_UART_ERROR_RX_UNAVAILABLE</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="491" column="9" bodyfile="EF_UART.h" bodystart="491" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a491b6af2f2d299ccb875d408945e4c22" prot="public" static="no">
+        <name>EF_UART_ERROR_TX_UNAVAILABLE</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="492" column="9" bodyfile="EF_UART.h" bodystart="492" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1afeab41a7d44410d01bcf9a89eb328677" prot="public" static="no">
+        <name>EF_UART_SUCCESS</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="493" column="9" bodyfile="EF_UART.h" bodystart="493" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" prot="public" static="no" strong="no">
+        <type></type>
+        <name>parity_type</name>
+        <enumvalue id="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10ac157bdf0b85a40d2619cbc8bc1ae5fe2" prot="public">
+          <name>NONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10aa29cedab858353a26006af9db7cd1ed8" prot="public">
+          <name>ODD</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" prot="public">
+          <name>EVEN</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10adedda6ce97e93d2a3e84ca7a704cd998" prot="public">
+          <name>STICKY_0</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a0cc8b778b8f0b3fa4d7a084fddbc3cec" prot="public">
+          <name>STICKY_1</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="57" column="1" bodyfile="EF_UART.h" bodystart="57" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ae78135e2c4c021996dfcb0214b508e87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setGclkEnable</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t value)</argsstring>
+        <name>EF_UART_setGclkEnable</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>sets the GCLK enable bit in the UART register to a certain value </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the GCLK enable bit</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="73" column="18" bodyfile="EF_UART.c" bodystart="31" bodyend="45" declfile="EF_UART.h" declline="73" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a850821dd83e87cfcdf3786a5ae9d75d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_enable</definition>
+        <argsstring>(EF_UART_TYPE *uart)</argsstring>
+        <name>EF_UART_enable</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>enables using uart by setting &quot;en&quot; bit in the control register to 1 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="81" column="18" bodyfile="EF_UART.c" bodystart="47" bodyend="59" declfile="EF_UART.h" declline="81" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a0650c46534721b9a55b63df53a3edacd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_disable</definition>
+        <argsstring>(EF_UART_TYPE *uart)</argsstring>
+        <name>EF_UART_disable</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>disables using uart by clearing &quot;en&quot; bit in the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="90" column="18" bodyfile="EF_UART.c" bodystart="61" bodyend="72" declfile="EF_UART.h" declline="90" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ad5ea004f7d0231033aadb8bd6068ee88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_enableRx</definition>
+        <argsstring>(EF_UART_TYPE *uart)</argsstring>
+        <name>EF_UART_enableRx</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>enables using uart RX by setting uart &quot;rxen&quot; bit in the control register to 1 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="99" column="18" bodyfile="EF_UART.c" bodystart="74" bodyend="85" declfile="EF_UART.h" declline="99" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1aa2c98e5b5be5273db1abd29519958999" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_disableRx</definition>
+        <argsstring>(EF_UART_TYPE *uart)</argsstring>
+        <name>EF_UART_disableRx</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>disables using uart RX by clearing uart &quot;rxen&quot; bit in the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="108" column="18" bodyfile="EF_UART.c" bodystart="87" bodyend="98" declfile="EF_UART.h" declline="108" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1af5f6ae890a851613ea9f9954ad5306d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_enableTx</definition>
+        <argsstring>(EF_UART_TYPE *uart)</argsstring>
+        <name>EF_UART_enableTx</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>enables using uart TX by setting uart &quot;txen&quot; bit in the control register to 1 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="117" column="18" bodyfile="EF_UART.c" bodystart="100" bodyend="111" declfile="EF_UART.h" declline="117" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a543a5deefec86fde9baa4cf1e8d5d03b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_disableTx</definition>
+        <argsstring>(EF_UART_TYPE *uart)</argsstring>
+        <name>EF_UART_disableTx</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>disables using uart TX by clearing uart &quot;txen&quot; bit in the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="126" column="18" bodyfile="EF_UART.c" bodystart="113" bodyend="124" declfile="EF_UART.h" declline="126" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ae32c894a702657491ad1094f7be9426a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_enableLoopBack</definition>
+        <argsstring>(EF_UART_TYPE *uart)</argsstring>
+        <name>EF_UART_enableLoopBack</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>enables loopback (connecting TX to RX signal) by setting &quot;lpen&quot; bit in the control register to 1 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="135" column="18" bodyfile="EF_UART.c" bodystart="126" bodyend="137" declfile="EF_UART.h" declline="135" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a8b578752027768733661b9b727f297a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_disableLoopBack</definition>
+        <argsstring>(EF_UART_TYPE *uart)</argsstring>
+        <name>EF_UART_disableLoopBack</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>disables loopback (connecting TX to RX signal) by clearing &quot;lpen&quot; bit in the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="144" column="18" bodyfile="EF_UART.c" bodystart="139" bodyend="150" declfile="EF_UART.h" declline="144" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a273b15c238fe14e1216594c25cf81839" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_enableGlitchFilter</definition>
+        <argsstring>(EF_UART_TYPE *uart)</argsstring>
+        <name>EF_UART_enableGlitchFilter</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>enables glitch filter (filter out noise or glitches on the received signal) by setting &quot;gfen&quot; bit in the control register to 1 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="153" column="18" bodyfile="EF_UART.c" bodystart="153" bodyend="165" declfile="EF_UART.h" declline="153" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a29108f7acf85d94f65ce1abcbd9b950e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_disableGlitchFilter</definition>
+        <argsstring>(EF_UART_TYPE *uart)</argsstring>
+        <name>EF_UART_disableGlitchFilter</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>disables glitch filter (filter out noise or glitches on the received signal) by clearing &quot;gfen&quot; bit in the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="162" column="18" bodyfile="EF_UART.c" bodystart="167" bodyend="178" declfile="EF_UART.h" declline="162" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a1a467e5c515e03613ed283bfb5113f3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setCTRL</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t value)</argsstring>
+        <name>EF_UART_setCTRL</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the control register to a certain value where<itemizedlist>
+<listitem><para>bit 0: UART enable</para>
+</listitem><listitem><para>bit 1: UART Transmitter enable</para>
+</listitem><listitem><para>bit 2: UART Receiver enable</para>
+</listitem><listitem><para>bit 3: Loopback (connect RX and TX pins together) enable</para>
+</listitem><listitem><para>bit 4: UART Glitch Filer on RX enable</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the control register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="177" column="18" bodyfile="EF_UART.c" bodystart="181" bodyend="194" declfile="EF_UART.h" declline="177" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1af1da4c4b17ef0c29ad04fceb4fec8daa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getCTRL</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *CTRL_value)</argsstring>
+        <name>EF_UART_getCTRL</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>CTRL_value</declname>
+        </param>
+        <briefdescription>
+<para>returns the value of the control register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">CTRL_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the control register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="187" column="18" bodyfile="EF_UART.c" bodystart="197" bodyend="211" declfile="EF_UART.h" declline="187" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a2ed665f292626f6cc65e61364a89fbdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setDataSize</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t value)</argsstring>
+        <name>EF_UART_setDataSize</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>sets the Data Size (Data word length: 5-9 bits ) by setting the &quot;wlen&quot; field in configuration register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the required data word length <linebreak/>
+</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="197" column="18" bodyfile="EF_UART.c" bodystart="246" bodyend="262" declfile="EF_UART.h" declline="197" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1af5cc25ffa33199c6c5d6cc8577934256" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect</definition>
+        <argsstring>(EF_UART_TYPE *uart, bool is_two_bits)</argsstring>
+        <name>EF_UART_setTwoStopBitsSelect</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_two_bits</declname>
+        </param>
+        <briefdescription>
+<para>sets the &quot;stp2&quot; bit in configuration register (whether the stop boits are two or one) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">is_two_bits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>bool value, if &quot;true&quot;, the stop bits are two and if &quot;false&quot;, the stop bit is one</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="207" column="18" bodyfile="EF_UART.c" bodystart="265" bodyend="280" declfile="EF_UART.h" declline="207" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a758aa19092a342f086b821542c5757e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setParityType</definition>
+        <argsstring>(EF_UART_TYPE *uart, enum parity_type parity)</argsstring>
+        <name>EF_UART_setParityType</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>enum <ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref></type>
+          <declname>parity</declname>
+        </param>
+        <briefdescription>
+<para>sets the &quot;parity&quot; field in configuration register (could be none, odd, even, sticky 0 or sticky 1) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">parity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>enum parity_type could be &quot;NONE&quot; , &quot;ODD&quot; , &quot;EVEN&quot; , &quot;STICKY_0&quot; , or &quot;STICKY_1&quot;</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="217" column="18" bodyfile="EF_UART.c" bodystart="283" bodyend="295" declfile="EF_UART.h" declline="217" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a282884f28c4bf3bc46c779384c2f8f34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setTimeoutBits</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t value)</argsstring>
+        <name>EF_UART_setTimeoutBits</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>sets the &quot;timeout&quot; field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timeout bits value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="227" column="18" bodyfile="EF_UART.c" bodystart="298" bodyend="312" declfile="EF_UART.h" declline="227" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1abc1dc03d443a832dcf107d384252d061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setConfig</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t config)</argsstring>
+        <name>EF_UART_setConfig</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the configuration register to a certain value where<itemizedlist>
+<listitem><para>bit 0-3: Data word length: 5-9 bits</para>
+</listitem><listitem><para>bit 4: Two Stop Bits Select</para>
+</listitem><listitem><para>bit 5-7: Parity Type: 000: None, 001: odd, 010: even, 100: Sticky 0, 101: Sticky 1</para>
+</listitem><listitem><para>bit 8-13: Receiver Timeout measured in number of bits</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the configuration register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="241" column="18" bodyfile="EF_UART.c" bodystart="314" bodyend="327" declfile="EF_UART.h" declline="241" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a49e2fd4f33a867cf19be6306515f48c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getConfig</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *CFG_value)</argsstring>
+        <name>EF_UART_getConfig</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>CFG_value</declname>
+        </param>
+        <briefdescription>
+<para>returns the value of the configuration register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">CFG_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the configuration register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="251" column="18" bodyfile="EF_UART.c" bodystart="329" bodyend="343" declfile="EF_UART.h" declline="251" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a7a53c1e173b85e739784455457fe1790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setRxFIFOThreshold</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t threshold)</argsstring>
+        <name>EF_UART_setRxFIFOThreshold</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+<para>sets the RX FIFO threshold to a certain value at which &quot;RXA&quot; interrupt will be raised </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">threshold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the required threshold</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="261" column="18" bodyfile="EF_UART.c" bodystart="345" bodyend="358" declfile="EF_UART.h" declline="261" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a81a73a93bb2a3102153b955f7a351c58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getRxFIFOThreshold</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *RX_FIFO_THRESHOLD_value)</argsstring>
+        <name>EF_UART_getRxFIFOThreshold</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>RX_FIFO_THRESHOLD_value</declname>
+        </param>
+        <briefdescription>
+<para>returns the current value of the RX FIFO threshold </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">RX_FIFO_THRESHOLD_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the RX FIFO threshold register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="271" column="18" bodyfile="EF_UART.c" bodystart="360" bodyend="374" declfile="EF_UART.h" declline="271" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a83197c472e64c12d7f5548e37005c909" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setTxFIFOThreshold</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t threshold)</argsstring>
+        <name>EF_UART_setTxFIFOThreshold</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+<para>sets the TX FIFO threshold to a certain value at which &quot;TXB&quot; interrupt will be raised </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">threshold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the required threshold</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="281" column="18" bodyfile="EF_UART.c" bodystart="377" bodyend="390" declfile="EF_UART.h" declline="281" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ae789dab33f1e090979ffba3403bfc89e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getTxFIFOThreshold</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *TX_FIFO_THRESHOLD_value)</argsstring>
+        <name>EF_UART_getTxFIFOThreshold</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>TX_FIFO_THRESHOLD_value</declname>
+        </param>
+        <briefdescription>
+<para>returns the current value of the TX FIFO threshold </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">TX_FIFO_THRESHOLD_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the TX FIFO threshold register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="291" column="18" bodyfile="EF_UART.c" bodystart="392" bodyend="406" declfile="EF_UART.h" declline="291" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a8a5bc5dc07056ad544a3d1f89180b93d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setMatchData</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t matchData)</argsstring>
+        <name>EF_UART_setMatchData</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>matchData</declname>
+        </param>
+        <briefdescription>
+<para>sets the matchData to a certain value at which &quot;MATCH&quot; interrupt will be raised </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">matchData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the required match data <linebreak/>
+</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="302" column="18" bodyfile="EF_UART.c" bodystart="440" bodyend="453" declfile="EF_UART.h" declline="302" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a680be50e9f223af9be12e473f0825627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getMatchData</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *MATCH_value)</argsstring>
+        <name>EF_UART_getMatchData</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>MATCH_value</declname>
+        </param>
+        <briefdescription>
+<para>returns the value of the match data register </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">MATCH_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the match data register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="312" column="18" bodyfile="EF_UART.c" bodystart="455" bodyend="469" declfile="EF_UART.h" declline="312" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a9c9804bacfc1ac29f5f7138c4d9391aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getTxCount</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *TX_FIFO_LEVEL_value)</argsstring>
+        <name>EF_UART_getTxCount</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>TX_FIFO_LEVEL_value</declname>
+        </param>
+        <briefdescription>
+<para>returns the current level of the TX FIFO (the number of bytes in the FIFO) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">TX_FIFO_LEVEL_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the TX FIFO level register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="322" column="18" bodyfile="EF_UART.c" bodystart="408" bodyend="422" declfile="EF_UART.h" declline="322" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a22997ecd88103d3c73678ae95dfb6997" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getRxCount</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *RX_FIFO_LEVEL_value)</argsstring>
+        <name>EF_UART_getRxCount</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>RX_FIFO_LEVEL_value</declname>
+        </param>
+        <briefdescription>
+<para>returns the current level of the RX FIFO (the number of bytes in the FIFO) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">RX_FIFO_LEVEL_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the RX FIFO level register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="332" column="18" bodyfile="EF_UART.c" bodystart="424" bodyend="438" declfile="EF_UART.h" declline="332" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1af04cdc5aaa962c7cac7c37f5411bb56d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setPrescaler</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t prescaler)</argsstring>
+        <name>EF_UART_setPrescaler</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>prescaler</declname>
+        </param>
+        <briefdescription>
+<para>sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">prescaler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the required prescaler</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="342" column="18" bodyfile="EF_UART.c" bodystart="214" bodyend="227" declfile="EF_UART.h" declline="342" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a6a205793b17a2b1fcfe335941cacb24f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getPrescaler</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *Prescaler_value)</argsstring>
+        <name>EF_UART_getPrescaler</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>Prescaler_value</declname>
+        </param>
+        <briefdescription>
+<para>returns the value of the prescaler </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Prescaler_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the prescaler register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="352" column="18" bodyfile="EF_UART.c" bodystart="229" bodyend="243" declfile="EF_UART.h" declline="352" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ad2fd70aa8cb1d090a3081d9fc339acd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getRIS</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *RIS_value)</argsstring>
+        <name>EF_UART_getRIS</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>RIS_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Raw Interrupt Status Register<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">RIS_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the Raw Interrupt Status Register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="372" column="18" bodyfile="EF_UART.c" bodystart="483" bodyend="497" declfile="EF_UART.h" declline="372" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a813285559d03d7fdc9ba7a73bf4df315" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getMIS</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *MIS_value)</argsstring>
+        <name>EF_UART_getMIS</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>MIS_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Masked Interrupt Status Register<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">MIS_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the Masked Interrupt Status Register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="392" column="18" bodyfile="EF_UART.c" bodystart="499" bodyend="513" declfile="EF_UART.h" declline="392" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1afdcd87cc87d2c0e0c16b851315c6f7cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setIM</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t mask)</argsstring>
+        <name>EF_UART_setIM</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the value of the Interrupts Masking Register; which enable and disables interrupts<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="412" column="18" bodyfile="EF_UART.c" bodystart="515" bodyend="529" declfile="EF_UART.h" declline="412" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a244ea6b7398137c5c49fde59325736c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getIM</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *IM_value)</argsstring>
+        <name>EF_UART_getIM</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>IM_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>returns the value of the Interrupts Masking Register; which enable and disables interrupts<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">IM_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the Interrupts Masking Register</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="432" column="18" bodyfile="EF_UART.c" bodystart="531" bodyend="545" declfile="EF_UART.h" declline="432" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a2d23ae1377acb1ee9fe31bdedb4fb861" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_setICR</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t mask)</argsstring>
+        <name>EF_UART_setICR</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sets the value of the Interrupts Clear Register; write 1 to clear the flag<itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required mask value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="452" column="18" bodyfile="EF_UART.c" bodystart="548" bodyend="561" declfile="EF_UART.h" declline="452" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a8036519d5504fe79890eb8fb07804dbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_writeCharArr</definition>
+        <argsstring>(EF_UART_TYPE *uart, const char *char_arr)</argsstring>
+        <name>EF_UART_writeCharArr</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>char_arr</declname>
+        </param>
+        <briefdescription>
+<para>transmit an array of characters through uart </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">char_arr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of characters to send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="463" column="18" bodyfile="EF_UART.c" bodystart="583" bodyend="600" declfile="EF_UART.h" declline="463" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a3006277927d54cf055f9bf651f1a06f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_writeChar</definition>
+        <argsstring>(EF_UART_TYPE *uart, char data)</argsstring>
+        <name>EF_UART_writeChar</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>transmit a single character through uart </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character or byte required to send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="473" column="18" bodyfile="EF_UART.c" bodystart="564" bodyend="581" declfile="EF_UART.h" declline="473" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a612735f819a9c779c00aea393b1e335f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_readChar</definition>
+        <argsstring>(EF_UART_TYPE *uar, char *RXDATA_value)</argsstring>
+        <name>EF_UART_readChar</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uar</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>RXDATA_value</declname>
+        </param>
+        <briefdescription>
+<para>recieve a single character through uart </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">RXDATA_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the received character</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="483" column="18" bodyfile="EF_UART.c" bodystart="602" bodyend="617" declfile="EF_UART.h" declline="483" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a473110eb3e426d569ad5633a259812ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_readCharNonBlocking</definition>
+        <argsstring>(EF_UART_TYPE *uart, char *RXDATA_value, bool *data_available)</argsstring>
+        <name>EF_UART_readCharNonBlocking</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>RXDATA_value</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>data_available</declname>
+        </param>
+        <briefdescription>
+<para>This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">RXDATA_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the received character </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">data_available</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A flag indicating if data is available in the receive FIFO</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="504" column="18" bodyfile="EF_UART.c" bodystart="624" bodyend="651" declfile="EF_UART.h" declline="504" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a500331134edbfe78d56e1e2588298283" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_writeCharNonBlocking</definition>
+        <argsstring>(EF_UART_TYPE *uart, char data, bool *data_sent)</argsstring>
+        <name>EF_UART_writeCharNonBlocking</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>data_sent</declname>
+        </param>
+        <briefdescription>
+<para>This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character or byte required to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">data_sent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A flag indicating if the data was sent successfully</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="514" column="18" bodyfile="EF_UART.c" bodystart="653" bodyend="677" declfile="EF_UART.h" declline="514" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1af209c1b15af4fdbd91e1b9379f251df0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_charsAvailable</definition>
+        <argsstring>(EF_UART_TYPE *uart, bool *flag)</argsstring>
+        <name>EF_UART_charsAvailable</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+<para>This function returns a flag indicating whether or not there is data available in the receive FIFO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a flag indicating if there is data available in the receive FIFO</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="523" column="18" bodyfile="EF_UART.c" bodystart="680" bodyend="696" declfile="EF_UART.h" declline="523" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1aa4612877a061c63456ee8d85b599e319" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_spaceAvailable</definition>
+        <argsstring>(EF_UART_TYPE *uart, bool *flag)</argsstring>
+        <name>EF_UART_spaceAvailable</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+<para>This function returns a flag indicating whether or not the transmit is available, i.e. the transmit FIFO is not full. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a flag indicating if the transmit FIFO is not full</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="533" column="18" bodyfile="EF_UART.c" bodystart="699" bodyend="715" declfile="EF_UART.h" declline="533" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a9eb7220c7100432805d3bb2bed40b93b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_getParityMode</definition>
+        <argsstring>(EF_UART_TYPE *uart, uint32_t *parity_mode)</argsstring>
+        <name>EF_UART_getParityMode</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>parity_mode</declname>
+        </param>
+        <briefdescription>
+<para>This function return the parity mode of the UART. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">parity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parity mode of the UART</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="542" column="18" bodyfile="EF_UART.c" bodystart="718" bodyend="730" declfile="EF_UART.h" declline="542" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a5fbbd3c1a82f43e43be788cd8978a3d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
+        <definition>EF_DRIVER_STATUS EF_UART_busy</definition>
+        <argsstring>(EF_UART_TYPE *uart, bool *flag)</argsstring>
+        <name>EF_UART_busy</name>
+        <param>
+          <type><ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> *</type>
+          <declname>uart</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+<para>This function checks id the UART is busy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> pointer, which points to the base memory address of UART registers. <ref refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kindref="member">EF_UART_TYPE</ref> is a structure that contains the UART registers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a flag indicating if the UART is busy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status A value of type <ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref> : returns a success or error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EF_UART.h" line="551" column="18" bodyfile="EF_UART.c" bodystart="732" bodyend="748" declfile="EF_UART.h" declline="551" declcolumn="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>C header file for UART APIs which contains the function prototypes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Copyright<sp/>2025<sp/>Efabless<sp/>Corp.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"></highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EF_UART_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">*<sp/>Includes</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_e_f___u_a_r_t__regs_8h" kindref="compound">EF_UART_regs.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_e_f___driver___common_8h" kindref="compound">EF_Driver_Common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">*<sp/>Macros<sp/>and<sp/>Constants</highlight></codeline>
+<codeline lineno="39"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="_e_f___u_a_r_t_8h_1abb5e56e926c33b555091e679f678515d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x0000001F)<sp/><sp/></highlight><highlight class="comment">//<sp/>CTRL<sp/>register<sp/>only<sp/>has<sp/>5<sp/>bits,<sp/>and<sp/>the<sp/>rest<sp/>are<sp/>reserved</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="_e_f___u_a_r_t_8h_1a482ad61b42cd1ab32b3d69e7fc2fbf5d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_PR_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x0000FFFF)<sp/><sp/></highlight><highlight class="comment">//<sp/>PR<sp/>register<sp/>only<sp/>has<sp/>16<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="_e_f___u_a_r_t_8h_1ad037e6ec02fdbc1ac83387687b690cb5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_DataLength_MIN_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x00000005)<sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>UART<sp/>IP<sp/>only<sp/>supports<sp/>data<sp/>length<sp/>from<sp/>5<sp/>to<sp/>9<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="_e_f___u_a_r_t_8h_1a600c1602d5dcbe87cbc6ae8d015b2384" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_DataLength_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x00000009)<sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>UART<sp/>IP<sp/>only<sp/>supports<sp/>data<sp/>length<sp/>from<sp/>5<sp/>to<sp/>9<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="_e_f___u_a_r_t_8h_1a31ef64a99d1e4389df1255aa2b3fd645" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_TIMEOUT_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x0000003F)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>CFG<sp/>register<sp/>timeout<sp/>field<sp/>is<sp/>6<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="_e_f___u_a_r_t_8h_1a2c1fd5ccd1238662c3f8fb9f2af47019" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x00001FFF)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>CFG<sp/>register<sp/>is<sp/>13<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="_e_f___u_a_r_t_8h_1a7749200841ca06b85560cdcce6143c0f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE<sp/>((uint32_t)0x0000000F)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>RX<sp/>FIFO<sp/>level<sp/>register<sp/>is<sp/>4<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="_e_f___u_a_r_t_8h_1aad9c71b2e065a1bc005853521e584cf7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE<sp/>((uint32_t)0x0000000F)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>TX<sp/>FIFO<sp/>level<sp/>register<sp/>is<sp/>4<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="_e_f___u_a_r_t_8h_1aa65fa5d0b6a628fae152ea7013052318" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_MATCH_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x00001FFF)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>match<sp/>register<sp/>is<sp/>9<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="_e_f___u_a_r_t_8h_1ac5ebf20bf24247905b19e2cb2060a457" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_IM_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x000003FF)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>IM<sp/>register<sp/>is<sp/>10<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="_e_f___u_a_r_t_8h_1a056fa4df77234c4221790bbefd6cd974" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_IC_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x000003FF)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>IC<sp/>register<sp/>is<sp/>10<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="54"><highlight class="comment">*<sp/>Typedefs<sp/>and<sp/>Enums</highlight></codeline>
+<codeline lineno="55"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>{<ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10ac157bdf0b85a40d2619cbc8bc1ae5fe2" kindref="member">NONE</ref><sp/>=<sp/>0,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10aa29cedab858353a26006af9db7cd1ed8" kindref="member">ODD</ref><sp/>=<sp/>1,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" kindref="member">EVEN</ref><sp/>=<sp/>2,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10adedda6ce97e93d2a3e84ca7a704cd998" kindref="member">STICKY_0</ref><sp/>=<sp/>4,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a0cc8b778b8f0b3fa4d7a084fddbc3cec" kindref="member">STICKY_1</ref><sp/>=<sp/>5};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="62"><highlight class="comment">*<sp/>Function<sp/>Prototypes</highlight></codeline>
+<codeline lineno="63"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ae78135e2c4c021996dfcb0214b508e87" kindref="member">EF_UART_setGclkEnable</ref><sp/>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a850821dd83e87cfcdf3786a5ae9d75d2" kindref="member">EF_UART_enable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a0650c46534721b9a55b63df53a3edacd" kindref="member">EF_UART_disable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ad5ea004f7d0231033aadb8bd6068ee88" kindref="member">EF_UART_enableRx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aa2c98e5b5be5273db1abd29519958999" kindref="member">EF_UART_disableRx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1af5f6ae890a851613ea9f9954ad5306d7" kindref="member">EF_UART_enableTx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a543a5deefec86fde9baa4cf1e8d5d03b" kindref="member">EF_UART_disableTx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ae32c894a702657491ad1094f7be9426a" kindref="member">EF_UART_enableLoopBack</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a8b578752027768733661b9b727f297a6" kindref="member">EF_UART_disableLoopBack</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a273b15c238fe14e1216594c25cf81839" kindref="member">EF_UART_enableGlitchFilter</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a29108f7acf85d94f65ce1abcbd9b950e" kindref="member">EF_UART_disableGlitchFilter</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a1a467e5c515e03613ed283bfb5113f3f" kindref="member">EF_UART_setCTRL</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1af1da4c4b17ef0c29ad04fceb4fec8daa" kindref="member">EF_UART_getCTRL</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>CTRL_value);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a2ed665f292626f6cc65e61364a89fbdd" kindref="member">EF_UART_setDataSize</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1af5cc25ffa33199c6c5d6cc8577934256" kindref="member">EF_UART_setTwoStopBitsSelect</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_two_bits);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a758aa19092a342f086b821542c5757e7" kindref="member">EF_UART_setParityType</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>parity);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a282884f28c4bf3bc46c779384c2f8f34" kindref="member">EF_UART_setTimeoutBits</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1abc1dc03d443a832dcf107d384252d061" kindref="member">EF_UART_setConfig</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t<sp/>config);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a49e2fd4f33a867cf19be6306515f48c4" kindref="member">EF_UART_getConfig</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>CFG_value);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a7a53c1e173b85e739784455457fe1790" kindref="member">EF_UART_setRxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t<sp/>threshold);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a81a73a93bb2a3102153b955f7a351c58" kindref="member">EF_UART_getRxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>RX_FIFO_THRESHOLD_value);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a83197c472e64c12d7f5548e37005c909" kindref="member">EF_UART_setTxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t<sp/>threshold);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ae789dab33f1e090979ffba3403bfc89e" kindref="member">EF_UART_getTxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>TX_FIFO_THRESHOLD_value);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a8a5bc5dc07056ad544a3d1f89180b93d" kindref="member">EF_UART_setMatchData</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t<sp/>matchData);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a680be50e9f223af9be12e473f0825627" kindref="member">EF_UART_getMatchData</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>MATCH_value);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a9c9804bacfc1ac29f5f7138c4d9391aa" kindref="member">EF_UART_getTxCount</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>TX_FIFO_LEVEL_value);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a22997ecd88103d3c73678ae95dfb6997" kindref="member">EF_UART_getRxCount</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>RX_FIFO_LEVEL_value);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1af04cdc5aaa962c7cac7c37f5411bb56d" kindref="member">EF_UART_setPrescaler</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t<sp/>prescaler);</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a6a205793b17a2b1fcfe335941cacb24f" kindref="member">EF_UART_getPrescaler</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>Prescaler_value);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ad2fd70aa8cb1d090a3081d9fc339acd2" kindref="member">EF_UART_getRIS</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>RIS_value);</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a813285559d03d7fdc9ba7a73bf4df315" kindref="member">EF_UART_getMIS</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>MIS_value);</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1afdcd87cc87d2c0e0c16b851315c6f7cc" kindref="member">EF_UART_setIM</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t<sp/>mask);</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a244ea6b7398137c5c49fde59325736c9" kindref="member">EF_UART_getIM</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>IM_value);</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"></highlight></codeline>
+<codeline lineno="434"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"></highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a2d23ae1377acb1ee9fe31bdedb4fb861" kindref="member">EF_UART_setICR</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t<sp/>mask);</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="456"><highlight class="normal"></highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a8036519d5504fe79890eb8fb07804dbf" kindref="member">EF_UART_writeCharArr</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*char_arr);</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"></highlight></codeline>
+<codeline lineno="465"><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"></highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a3006277927d54cf055f9bf651f1a06f4" kindref="member">EF_UART_writeChar</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a612735f819a9c779c00aea393b1e335f" kindref="member">EF_UART_readChar</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uar,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>RXDATA_value);</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"></highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"></highlight></codeline>
+<codeline lineno="487"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>functions<sp/>are<sp/>not<sp/>verified<sp/>yet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="488"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight></codeline>
+<codeline lineno="491" refid="_e_f___u_a_r_t_8h_1a776da4965f3dec0d9968b8f5c4c86551" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_ERROR_RX_UNAVAILABLE<sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="492" refid="_e_f___u_a_r_t_8h_1a491b6af2f2d299ccb875d408945e4c22" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_ERROR_TX_UNAVAILABLE<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="493" refid="_e_f___u_a_r_t_8h_1afeab41a7d44410d01bcf9a89eb328677" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_SUCCESS<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal"></highlight></codeline>
+<codeline lineno="495"><highlight class="normal"></highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a473110eb3e426d569ad5633a259812ee" kindref="member">EF_UART_readCharNonBlocking</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>RXDATA_value,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>data_available);</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal"></highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a500331134edbfe78d56e1e2588298283" kindref="member">EF_UART_writeCharNonBlocking</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>data_sent);</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"></highlight></codeline>
+<codeline lineno="517"><highlight class="normal"></highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1af209c1b15af4fdbd91e1b9379f251df0" kindref="member">EF_UART_charsAvailable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>flag);</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="525"><highlight class="normal"></highlight></codeline>
+<codeline lineno="527"><highlight class="normal"></highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aa4612877a061c63456ee8d85b599e319" kindref="member">EF_UART_spaceAvailable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>flag);</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"></highlight></codeline>
+<codeline lineno="536"><highlight class="normal"></highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a9eb7220c7100432805d3bb2bed40b93b" kindref="member">EF_UART_getParityMode</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/>uint32_t*<sp/>parity_mode);</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"></highlight></codeline>
+<codeline lineno="545"><highlight class="normal"></highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a5fbbd3c1a82f43e43be788cd8978a3d0" kindref="member">EF_UART_busy</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>flag);</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"></highlight></codeline>
+<codeline lineno="553"><highlight class="normal"></highlight></codeline>
+<codeline lineno="554"><highlight class="normal"></highlight></codeline>
+<codeline lineno="555"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="556"><highlight class="comment">*<sp/>External<sp/>Variables</highlight></codeline>
+<codeline lineno="557"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"></highlight></codeline>
+<codeline lineno="559"><highlight class="normal"></highlight></codeline>
+<codeline lineno="560"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EF_UART_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="561"><highlight class="normal"></highlight></codeline>
+<codeline lineno="562"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="563"><highlight class="comment">*<sp/>End<sp/>of<sp/>File</highlight></codeline>
+<codeline lineno="564"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="EF_UART.h"/>
+  </compounddef>
+</doxygen>

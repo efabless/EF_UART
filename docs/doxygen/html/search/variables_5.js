@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['reserved_0',['reserved',['../struct__EF__UART__TYPE__.html#a996f8caa831159d01cf13945b8a45a5b',1,'_EF_UART_TYPE_']]],
-  ['ris_1',['ris',['../struct__EF__UART__TYPE__.html#a0b77ac9024109a44412fea686355cd62',1,'_EF_UART_TYPE_']]],
-  ['rxdata_2',['RXDATA',['../struct__EF__UART__TYPE__.html#aff46d22baad8d54ad1615dbac2c9b905',1,'_EF_UART_TYPE_']]]
+  ['reserved_5f0_0',['reserved_0',['../struct___e_f___u_a_r_t___t_y_p_e__.html#a23927360f022c1dd4dbc8451e6977659',1,'_EF_UART_TYPE_']]],
+  ['reserved_5f1_1',['reserved_1',['../struct___e_f___u_a_r_t___t_y_p_e__.html#a4b809032c979fc45a6c5c0a55f26c34f',1,'_EF_UART_TYPE_']]],
+  ['reserved_5f2_2',['reserved_2',['../struct___e_f___u_a_r_t___t_y_p_e__.html#ad24d4ace423d0c2867c15b6ae31683fc',1,'_EF_UART_TYPE_']]],
+  ['reserved_5f3_3',['reserved_3',['../struct___e_f___u_a_r_t___t_y_p_e__.html#ade10571e4c7f19ba5d0c55623b2035e0',1,'_EF_UART_TYPE_']]],
+  ['ris_4',['RIS',['../struct___e_f___u_a_r_t___t_y_p_e__.html#a52259725e906f220be8a946cacdcffb9',1,'_EF_UART_TYPE_']]],
+  ['rx_5ffifo_5fflush_5',['RX_FIFO_FLUSH',['../struct___e_f___u_a_r_t___t_y_p_e__.html#ac613a7f5d5329fdf2e967f655cec4bac',1,'_EF_UART_TYPE_']]],
+  ['rx_5ffifo_5flevel_6',['RX_FIFO_LEVEL',['../struct___e_f___u_a_r_t___t_y_p_e__.html#aa0e14c3a6131575b34297711fb98444d',1,'_EF_UART_TYPE_']]],
+  ['rx_5ffifo_5fthreshold_7',['RX_FIFO_THRESHOLD',['../struct___e_f___u_a_r_t___t_y_p_e__.html#a43428037400a75812097cd8a3256cd4f',1,'_EF_UART_TYPE_']]],
+  ['rxdata_8',['RXDATA',['../struct___e_f___u_a_r_t___t_y_p_e__.html#aff46d22baad8d54ad1615dbac2c9b905',1,'_EF_UART_TYPE_']]]
 ];
