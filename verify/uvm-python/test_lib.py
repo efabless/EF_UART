@@ -98,7 +98,7 @@ async def module_top(dut):
     UVMRoot().clp.get_arg_values("+TEST_PATH=", test_path)
     test_path = test_path[0]
     await run_test()
-    coverage_db.export_to_yaml(filename=f"{test_path}/coverage.yalm")
+    coverage_db.export_to_yaml(filename=f"{test_path}/coverage.yaml")
     # profiler.disable()
     # profiler.dump_stats("profile_result.prof")
 
