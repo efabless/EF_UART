@@ -37,14 +37,13 @@
 * Macros and Constants
 ******************************************************************************/
 /* General return codes */
-#define EF_DRIVER_OK                    0   ///< Operation succeeded 
-#define EF_DRIVER_ERROR                 1   ///< Unspecified error
-#define EF_DRIVER_ERROR_BUSY            2   ///< Driver is busy
-#define EF_DRIVER_ERROR_TIMEOUT         3   ///< Timeout occurred
-#define EF_DRIVER_ERROR_UNSUPPORTED     4   ///< Operation not supported
-#define EF_DRIVER_ERROR_PARAMETER       5   ///< Parameter error
-#define EF_DRIVER_ERROR_SPECIFIC        6   ///< Start of driver specific errors 
-#define EF_DRIVER_ERROR_NO_DATA         7   ///< No data available
+#define EF_DRIVER_OK                    ((uint32_t)0)   ///< Operation succeeded 
+#define EF_DRIVER_ERROR                 ((uint32_t)1)   ///< Unspecified error
+#define EF_DRIVER_ERROR_BUSY            ((uint32_t)2)   ///< Driver is busy
+#define EF_DRIVER_ERROR_TIMEOUT         ((uint32_t)3)   ///< Timeout occurred
+#define EF_DRIVER_ERROR_UNSUPPORTED     ((uint32_t)4)   ///< Operation not supported
+#define EF_DRIVER_ERROR_PARAMETER       ((uint32_t)5)   ///< Parameter error
+#define EF_DRIVER_ERROR_SPECIFIC        ((uint32_t)6)   ///< Start of driver specific errors 
 
 
 /******************************************************************************

@@ -488,10 +488,6 @@ EF_DRIVER_STATUS EF_UART_readChar(EF_UART_TYPE_PTR uar, char* RXDATA_value);
 /******************************************************************************************************************************************/
 /******************************************************************************************************************************************/
 
-#define EF_UART_ERROR_RX_UNAVAILABLE -1
-#define EF_UART_ERROR_TX_UNAVAILABLE 1
-#define EF_UART_SUCCESS 0
-
 
 //! This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code
     /*!

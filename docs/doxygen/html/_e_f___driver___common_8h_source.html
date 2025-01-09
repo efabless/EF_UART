@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EF_UART APIs: EF_Driver_Common.h Source File</title>
+<title>My Project: EF_Driver_Common.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">EF_UART APIs
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -105,39 +105,38 @@ $(function() {
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">* Macros and Constants</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">******************************************************************************/</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/* General return codes */</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#ab56c746d5d1672835c101f00f7c90b7c">   40</a></span><span class="preprocessor">#define EF_DRIVER_OK                    0   </span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#adf96107766b856292d4f08a495064c7e">   41</a></span><span class="preprocessor">#define EF_DRIVER_ERROR                 1   </span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#a9b7e06e07ac1038e9cc63d5f25d681fb">   42</a></span><span class="preprocessor">#define EF_DRIVER_ERROR_BUSY            2   </span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#a26b87ad6f8f1d017af3ee034bd178795">   43</a></span><span class="preprocessor">#define EF_DRIVER_ERROR_TIMEOUT         3   </span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#abd8e6eb4870238ef0f900911e3935d91">   44</a></span><span class="preprocessor">#define EF_DRIVER_ERROR_UNSUPPORTED     4   </span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#aed4f0552faa082d7941ed37ae1e430e4">   45</a></span><span class="preprocessor">#define EF_DRIVER_ERROR_PARAMETER       5   </span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#a89de2e78c0ce8d5b48c0cef064ae3aab">   46</a></span><span class="preprocessor">#define EF_DRIVER_ERROR_SPECIFIC        6   </span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#a42a5cb31efb4e28fa9d16016485de643">   47</a></span><span class="preprocessor">#define EF_DRIVER_ERROR_NO_DATA         7   </span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#ab56c746d5d1672835c101f00f7c90b7c">   40</a></span><span class="preprocessor">#define EF_DRIVER_OK                    ((uint32_t)0)   </span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#adf96107766b856292d4f08a495064c7e">   41</a></span><span class="preprocessor">#define EF_DRIVER_ERROR                 ((uint32_t)1)   </span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#a9b7e06e07ac1038e9cc63d5f25d681fb">   42</a></span><span class="preprocessor">#define EF_DRIVER_ERROR_BUSY            ((uint32_t)2)   </span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#a26b87ad6f8f1d017af3ee034bd178795">   43</a></span><span class="preprocessor">#define EF_DRIVER_ERROR_TIMEOUT         ((uint32_t)3)   </span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#abd8e6eb4870238ef0f900911e3935d91">   44</a></span><span class="preprocessor">#define EF_DRIVER_ERROR_UNSUPPORTED     ((uint32_t)4)   </span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#aed4f0552faa082d7941ed37ae1e430e4">   45</a></span><span class="preprocessor">#define EF_DRIVER_ERROR_PARAMETER       ((uint32_t)5)   </span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#a89de2e78c0ce8d5b48c0cef064ae3aab">   46</a></span><span class="preprocessor">#define EF_DRIVER_ERROR_SPECIFIC        ((uint32_t)6)   </span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">/******************************************************************************</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">* Typedefs and Enums</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">******************************************************************************/</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">   54</a></span><span class="keyword">typedef</span> uint32_t <a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>;      </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/******************************************************************************</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">* Typedefs and Enums</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">******************************************************************************/</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">   53</a></span><span class="keyword">typedef</span> uint32_t <a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>;      </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">/******************************************************************************</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">* External Variables</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">******************************************************************************/</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/******************************************************************************</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">* External Variables</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">******************************************************************************/</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">/******************************************************************************</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">* Function Prototypes</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">******************************************************************************/</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">/******************************************************************************</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">* Function Prototypes</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">******************************************************************************/</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif </span><span class="comment">// EF_DRIVER_COMMON_H </span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">/******************************************************************************</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">* End of File</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">******************************************************************************/</span></div>
-<div class="ttc" id="a_e_f___driver___common_8h_html_ad1c99136d1edfd0a7757f5b81600a351"><div class="ttname"><a href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a></div><div class="ttdeci">uint32_t EF_DRIVER_STATUS</div><div class="ttdoc">A type that is used to return the status of the driver functions.</div><div class="ttdef"><b>Definition:</b> EF_Driver_Common.h:54</div></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif </span><span class="comment">// EF_DRIVER_COMMON_H </span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">/******************************************************************************</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">* End of File</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">******************************************************************************/</span></div>
+<div class="ttc" id="a_e_f___driver___common_8h_html_ad1c99136d1edfd0a7757f5b81600a351"><div class="ttname"><a href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a></div><div class="ttdeci">uint32_t EF_DRIVER_STATUS</div><div class="ttdoc">A type that is used to return the status of the driver functions.</div><div class="ttdef"><b>Definition:</b> EF_Driver_Common.h:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

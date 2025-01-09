@@ -1,4 +1,4 @@
-# Firmware Documentation
+# API Reference
 
 ## Header files
 
