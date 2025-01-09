@@ -64,102 +64,102 @@ enum parity_type {NONE = 0, ODD = 1, EVEN = 2, STICKY_0 = 4, STICKY_1 = 5};
 
 //! sets the GCLK enable bit in the UART register to a certain value
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] value The value of the GCLK enable bit
         
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
 
-EF_DRIVER_STATUS EF_UART_setGclkEnable (EF_UART_TYPE* uart, uint32_t value);
+EF_DRIVER_STATUS EF_UART_setGclkEnable (EF_UART_TYPE_PTR uart, uint32_t value);
 
 //! enables using uart by setting "en" bit in the control register to 1 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_enable(EF_UART_TYPE* uart);
+EF_DRIVER_STATUS EF_UART_enable(EF_UART_TYPE_PTR uart);
 
 
 //! disables using uart by clearing "en" bit in the control register
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */  
-EF_DRIVER_STATUS EF_UART_disable(EF_UART_TYPE* uart);
+EF_DRIVER_STATUS EF_UART_disable(EF_UART_TYPE_PTR uart);
 
 
 //! enables using uart RX by setting uart "rxen" bit in the control register to 1 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_enableRx(EF_UART_TYPE* uart);
+EF_DRIVER_STATUS EF_UART_enableRx(EF_UART_TYPE_PTR uart);
 
 
 //! disables using uart RX by clearing uart "rxen" bit in the control register
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_disableRx(EF_UART_TYPE* uart);
+EF_DRIVER_STATUS EF_UART_disableRx(EF_UART_TYPE_PTR uart);
 
 
 //! enables using uart TX by setting uart "txen" bit in the control register to 1 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_enableTx(EF_UART_TYPE* uart);
+EF_DRIVER_STATUS EF_UART_enableTx(EF_UART_TYPE_PTR uart);
 
 
 //! disables using uart TX by clearing uart "txen" bit in the control register
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_disableTx(EF_UART_TYPE* uart);
+EF_DRIVER_STATUS EF_UART_disableTx(EF_UART_TYPE_PTR uart);
 
 
 //! enables loopback (connecting TX to RX signal) by setting "lpen" bit in the control register to 1 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_enableLoopBack(EF_UART_TYPE* uart);
+EF_DRIVER_STATUS EF_UART_enableLoopBack(EF_UART_TYPE_PTR uart);
 
 
 //! disables loopback (connecting TX to RX signal) by clearing "lpen" bit in the control register
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_disableLoopBack(EF_UART_TYPE* uart);
+EF_DRIVER_STATUS EF_UART_disableLoopBack(EF_UART_TYPE_PTR uart);
 
 
 //! enables glitch filter (filter out noise or glitches on the received signal) by setting "gfen" bit in the control register to 1 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_enableGlitchFilter(EF_UART_TYPE* uart);
+EF_DRIVER_STATUS EF_UART_enableGlitchFilter(EF_UART_TYPE_PTR uart);
 
 
 //! disables glitch filter (filter out noise or glitches on the received signal) by clearing "gfen" bit in the control register
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_disableGlitchFilter(EF_UART_TYPE* uart);
+EF_DRIVER_STATUS EF_UART_disableGlitchFilter(EF_UART_TYPE_PTR uart);
 
 
 //! sets the control register to a certain value where
@@ -169,62 +169,62 @@ EF_DRIVER_STATUS EF_UART_disableGlitchFilter(EF_UART_TYPE* uart);
 //! *  bit 3: Loopback (connect RX and TX pins together) enable
 //! *  bit 4: UART Glitch Filer on RX enable
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] value The value of the control register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setCTRL(EF_UART_TYPE* uart, uint32_t value);
+EF_DRIVER_STATUS EF_UART_setCTRL(EF_UART_TYPE_PTR uart, uint32_t value);
 
 
 //! returns the value of the control register
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] CTRL_value The value of the control register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getCTRL(EF_UART_TYPE* uart, uint32_t* CTRL_value);
+EF_DRIVER_STATUS EF_UART_getCTRL(EF_UART_TYPE_PTR uart, uint32_t* CTRL_value);
 
 
 //! sets the Data Size (Data word length: 5-9 bits ) by setting the "wlen" field in configuration register 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] value The value of the required data word length  
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE* uart, uint32_t value);
+EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE_PTR uart, uint32_t value);
 
 
 //! sets the "stp2" bit in configuration register (whether the stop boits are two or one)
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] is_two_bits bool value, if "true", the stop bits are two and if "false", the stop bit is one
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect(EF_UART_TYPE* uart, bool is_two_bits);
+EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect(EF_UART_TYPE_PTR uart, bool is_two_bits);
 
 
 //! sets the "parity" field  in configuration register (could be none, odd, even, sticky 0 or sticky 1)
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] parity enum parity_type could be "NONE" , "ODD" , "EVEN" ,  "STICKY_0" , or  "STICKY_1"
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setParityType(EF_UART_TYPE* uart, enum parity_type parity);
+EF_DRIVER_STATUS EF_UART_setParityType(EF_UART_TYPE_PTR uart, enum parity_type parity);
 
 
 //! sets the "timeout" field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] value timeout bits value 
         
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setTimeoutBits(EF_UART_TYPE* uart, uint32_t value);
+EF_DRIVER_STATUS EF_UART_setTimeoutBits(EF_UART_TYPE_PTR uart, uint32_t value);
 
 
 //! sets the configuration register to a certain value where
@@ -233,123 +233,123 @@ EF_DRIVER_STATUS EF_UART_setTimeoutBits(EF_UART_TYPE* uart, uint32_t value);
 //! *  bit 5-7: Parity Type: 000: None, 001: odd, 010: even, 100: Sticky 0, 101: Sticky 1
 //! *  bit 8-13: Receiver Timeout measured in number of bits
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] config The value of the configuration register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setConfig(EF_UART_TYPE* uart, uint32_t config);
+EF_DRIVER_STATUS EF_UART_setConfig(EF_UART_TYPE_PTR uart, uint32_t config);
 
 
 //! returns the value of the configuration register
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] CFG_value The value of the configuration register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getConfig(EF_UART_TYPE* uart, uint32_t* CFG_value);
+EF_DRIVER_STATUS EF_UART_getConfig(EF_UART_TYPE_PTR uart, uint32_t* CFG_value);
 
 
 //! sets the RX FIFO threshold to a certain value at which "RXA" interrupt will be raised 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] threshold The value of the required threshold 
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setRxFIFOThreshold(EF_UART_TYPE* uart, uint32_t threshold);
+EF_DRIVER_STATUS EF_UART_setRxFIFOThreshold(EF_UART_TYPE_PTR uart, uint32_t threshold);
 
 
 //! returns the current value of the RX FIFO  threshold
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] RX_FIFO_THRESHOLD_value The value of the RX FIFO threshold register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getRxFIFOThreshold(EF_UART_TYPE* uart, uint32_t* RX_FIFO_THRESHOLD_value);
+EF_DRIVER_STATUS EF_UART_getRxFIFOThreshold(EF_UART_TYPE_PTR uart, uint32_t* RX_FIFO_THRESHOLD_value);
 
 
 //! sets the TX FIFO threshold to a certain value at which "TXB" interrupt will be raised 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] threshold The value of the required threshold 
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setTxFIFOThreshold(EF_UART_TYPE* uart, uint32_t threshold);
+EF_DRIVER_STATUS EF_UART_setTxFIFOThreshold(EF_UART_TYPE_PTR uart, uint32_t threshold);
 
 
 //! returns the current value of the TX FIFO  threshold
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] TX_FIFO_THRESHOLD_value The value of the TX FIFO threshold register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getTxFIFOThreshold(EF_UART_TYPE* uart, uint32_t* TX_FIFO_THRESHOLD_value);
+EF_DRIVER_STATUS EF_UART_getTxFIFOThreshold(EF_UART_TYPE_PTR uart, uint32_t* TX_FIFO_THRESHOLD_value);
 
 
 
 //! sets the matchData to a certain value at which "MATCH" interrupt will be raised 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] matchData The value of the required match data  
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setMatchData(EF_UART_TYPE* uart, uint32_t matchData);
+EF_DRIVER_STATUS EF_UART_setMatchData(EF_UART_TYPE_PTR uart, uint32_t matchData);
 
 
 //! returns the value of the match data register
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] MATCH_value The value of the match data register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getMatchData(EF_UART_TYPE* uart, uint32_t* MATCH_value);
+EF_DRIVER_STATUS EF_UART_getMatchData(EF_UART_TYPE_PTR uart, uint32_t* MATCH_value);
 
 
 //! returns the current level of the TX FIFO (the number of bytes in the FIFO)
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] TX_FIFO_LEVEL_value The value of the TX FIFO level register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getTxCount(EF_UART_TYPE* uart, uint32_t* TX_FIFO_LEVEL_value);
+EF_DRIVER_STATUS EF_UART_getTxCount(EF_UART_TYPE_PTR uart, uint32_t* TX_FIFO_LEVEL_value);
 
 
 //! returns the current level of the RX FIFO (the number of bytes in the FIFO)
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] RX_FIFO_LEVEL_value The value of the RX FIFO level register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getRxCount(EF_UART_TYPE* uart, uint32_t* RX_FIFO_LEVEL_value);
+EF_DRIVER_STATUS EF_UART_getRxCount(EF_UART_TYPE_PTR uart, uint32_t* RX_FIFO_LEVEL_value);
 
 
 //! sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] prescaler The value of the required prescaler 
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setPrescaler(EF_UART_TYPE* uart, uint32_t prescaler);
+EF_DRIVER_STATUS EF_UART_setPrescaler(EF_UART_TYPE_PTR uart, uint32_t prescaler);
 
 
 //! returns the value of the prescaler
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] Prescaler_value The value of the prescaler register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getPrescaler(EF_UART_TYPE* uart, uint32_t* Prescaler_value);
+EF_DRIVER_STATUS EF_UART_getPrescaler(EF_UART_TYPE_PTR uart, uint32_t* Prescaler_value);
 
 
 //! returns the value of the Raw Interrupt Status Register
@@ -364,12 +364,12 @@ EF_DRIVER_STATUS EF_UART_getPrescaler(EF_UART_TYPE* uart, uint32_t* Prescaler_va
 //! *  bit 8 OR : Overrun; data has been received but the RX FIFO is full.
 //! *  bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] RIS_value The value of the Raw Interrupt Status Register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getRIS(EF_UART_TYPE* uart, uint32_t* RIS_value);
+EF_DRIVER_STATUS EF_UART_getRIS(EF_UART_TYPE_PTR uart, uint32_t* RIS_value);
 
 
 //! returns the value of the Masked Interrupt Status Register
@@ -384,12 +384,12 @@ EF_DRIVER_STATUS EF_UART_getRIS(EF_UART_TYPE* uart, uint32_t* RIS_value);
 //! *  bit 8 OR : Overrun; data has been received but the RX FIFO is full.
 //! *  bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] MIS_value The value of the Masked Interrupt Status Register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getMIS(EF_UART_TYPE* uart, uint32_t* MIS_value);
+EF_DRIVER_STATUS EF_UART_getMIS(EF_UART_TYPE_PTR uart, uint32_t* MIS_value);
 
 
 //! sets the value of the Interrupts Masking Register; which enable and disables interrupts
@@ -404,12 +404,12 @@ EF_DRIVER_STATUS EF_UART_getMIS(EF_UART_TYPE* uart, uint32_t* MIS_value);
 //! *  bit 8 OR : Overrun; data has been received but the RX FIFO is full.
 //! *  bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] mask The required mask value
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setIM(EF_UART_TYPE* uart, uint32_t mask);
+EF_DRIVER_STATUS EF_UART_setIM(EF_UART_TYPE_PTR uart, uint32_t mask);
 
 
 //! returns the value of the Interrupts Masking Register; which enable and disables interrupts
@@ -424,12 +424,12 @@ EF_DRIVER_STATUS EF_UART_setIM(EF_UART_TYPE* uart, uint32_t mask);
 //! *  bit 8 OR : Overrun; data has been received but the RX FIFO is full.
 //! *  bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] IM_value The value of the Interrupts Masking Register
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getIM(EF_UART_TYPE* uart, uint32_t* IM_value);
+EF_DRIVER_STATUS EF_UART_getIM(EF_UART_TYPE_PTR uart, uint32_t* IM_value);
 
 
 //! sets the value of the Interrupts Clear Register; write 1 to clear the flag
@@ -444,43 +444,43 @@ EF_DRIVER_STATUS EF_UART_getIM(EF_UART_TYPE* uart, uint32_t* IM_value);
 //! *  bit 8 OR : Overrun; data has been received but the RX FIFO is full.
 //! *  bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] mask The required mask value
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setICR(EF_UART_TYPE* uart, uint32_t mask);
+EF_DRIVER_STATUS EF_UART_setICR(EF_UART_TYPE_PTR uart, uint32_t mask);
 
 
 //! transmit an array of characters through uart 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] char_arr An array of characters to send 
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
 
     */
-EF_DRIVER_STATUS EF_UART_writeCharArr(EF_UART_TYPE* uart, const char *char_arr);
+EF_DRIVER_STATUS EF_UART_writeCharArr(EF_UART_TYPE_PTR uart, const char *char_arr);
 
 
 //! transmit a single character through uart 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] data The character or byte required to send 
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_writeChar(EF_UART_TYPE* uart, char data);
+EF_DRIVER_STATUS EF_UART_writeChar(EF_UART_TYPE_PTR uart, char data);
 
 
 //! recieve a single character through uart 
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] RXDATA_value The value of the received character
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_readChar(EF_UART_TYPE* uar, char* RXDATA_value);
+EF_DRIVER_STATUS EF_UART_readChar(EF_UART_TYPE_PTR uar, char* RXDATA_value);
 
 
 
@@ -495,60 +495,60 @@ EF_DRIVER_STATUS EF_UART_readChar(EF_UART_TYPE* uar, char* RXDATA_value);
 
 //! This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] RXDATA_value The value of the received character
         \param [out] data_available A flag indicating if data is available in the receive FIFO
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_readCharNonBlocking(EF_UART_TYPE* uart, char* RXDATA_value, bool* data_available);
+EF_DRIVER_STATUS EF_UART_readCharNonBlocking(EF_UART_TYPE_PTR uart, char* RXDATA_value, bool* data_available);
 
 //! This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [in] data The character or byte required to send 
         \param [out] data_sent A flag indicating if the data was sent successfully
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_writeCharNonBlocking(EF_UART_TYPE* uart, char data, bool* data_sent);
+EF_DRIVER_STATUS EF_UART_writeCharNonBlocking(EF_UART_TYPE_PTR uart, char data, bool* data_sent);
 
 //! This function returns a flag indicating whether or not there is data available in the receive FIFO
     /*!
-        \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+        \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
         \param [out] flag a flag indicating if there is data available in the receive FIFO
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_charsAvailable(EF_UART_TYPE* uart, bool* flag);
+EF_DRIVER_STATUS EF_UART_charsAvailable(EF_UART_TYPE_PTR uart, bool* flag);
 
 
 //! This function returns a flag indicating whether or not the transmit is available, i.e. the transmit FIFO is not full
     /*!
-      \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+      \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
       \param [out] flag a flag indicating if the transmit FIFO is not full
 
       \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_spaceAvailable(EF_UART_TYPE* uart, bool* flag);
+EF_DRIVER_STATUS EF_UART_spaceAvailable(EF_UART_TYPE_PTR uart, bool* flag);
 
 //! This function return the parity mode of the UART
     /*!
-      \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+      \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
       \param [out] parity The parity mode of the UART
 
       \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_getParityMode(EF_UART_TYPE* uart, uint32_t* parity_mode);
+EF_DRIVER_STATUS EF_UART_getParityMode(EF_UART_TYPE_PTR uart, uint32_t* parity_mode);
 
 //! This function checks id the UART is busy
     /*!
-      \param [in] uart An \ref EF_UART_TYPE pointer, which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+      \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
       \param [out] flag a flag indicating if the UART is busy
 
       \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_busy(EF_UART_TYPE* uart, bool* flag);
+EF_DRIVER_STATUS EF_UART_busy(EF_UART_TYPE_PTR uart, bool* flag);
 
 
 

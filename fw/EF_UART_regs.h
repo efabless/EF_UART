@@ -22,9 +22,9 @@
 
 #ifndef IO_TYPES
 #define IO_TYPES
-#define   __R     volatile const unsigned int
-#define   __W     volatile       unsigned int
-#define   __RW    volatile       unsigned int
+#define   __R     volatile const uint32_t
+#define   __W     volatile       uint32_t
+#define   __RW    volatile       uint32_t
 #endif
 
 #define EF_UART_CTRL_REG_EN_BIT	0
@@ -92,6 +92,8 @@ typedef struct _EF_UART_TYPE_ {
 	__W 	IC;
 	__W 	GCLK;
 } EF_UART_TYPE;
+
+typedef EF_UART_TYPE* EF_UART_TYPE_PTR;
 
 #endif
 

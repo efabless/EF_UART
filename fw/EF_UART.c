@@ -25,10 +25,34 @@
 #ifndef EF_UART_C
 #define EF_UART_C
 
+/******************************************************************************
+* Includes
+******************************************************************************/
 #include "EF_UART.h"
 
+/******************************************************************************
+* File-Specific Macros and Constants
+******************************************************************************/
 
-EF_DRIVER_STATUS EF_UART_setGclkEnable(EF_UART_TYPE* uart, uint32_t value){
+
+
+/******************************************************************************
+* Static Variables
+******************************************************************************/
+
+
+
+/******************************************************************************
+* Static Function Prototypes
+******************************************************************************/
+
+
+
+/******************************************************************************
+* Function Definitions
+******************************************************************************/
+
+EF_DRIVER_STATUS EF_UART_setGclkEnable(EF_UART_TYPE_PTR uart, uint32_t value){
     
     EF_DRIVER_STATUS status;
 
@@ -44,7 +68,7 @@ EF_DRIVER_STATUS EF_UART_setGclkEnable(EF_UART_TYPE* uart, uint32_t value){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_enable(EF_UART_TYPE* uart){
+EF_DRIVER_STATUS EF_UART_enable(EF_UART_TYPE_PTR uart){
 
     EF_DRIVER_STATUS status;
 
@@ -58,7 +82,7 @@ EF_DRIVER_STATUS EF_UART_enable(EF_UART_TYPE* uart){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_disable(EF_UART_TYPE* uart){
+EF_DRIVER_STATUS EF_UART_disable(EF_UART_TYPE_PTR uart){
 
     EF_DRIVER_STATUS status;
 
@@ -71,7 +95,7 @@ EF_DRIVER_STATUS EF_UART_disable(EF_UART_TYPE* uart){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_enableRx(EF_UART_TYPE* uart){
+EF_DRIVER_STATUS EF_UART_enableRx(EF_UART_TYPE_PTR uart){
     
     EF_DRIVER_STATUS status;
 
@@ -84,7 +108,7 @@ EF_DRIVER_STATUS EF_UART_enableRx(EF_UART_TYPE* uart){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_disableRx(EF_UART_TYPE* uart){
+EF_DRIVER_STATUS EF_UART_disableRx(EF_UART_TYPE_PTR uart){
 
     EF_DRIVER_STATUS status;
 
@@ -97,7 +121,7 @@ EF_DRIVER_STATUS EF_UART_disableRx(EF_UART_TYPE* uart){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_enableTx(EF_UART_TYPE* uart){
+EF_DRIVER_STATUS EF_UART_enableTx(EF_UART_TYPE_PTR uart){
     
     EF_DRIVER_STATUS status;
 
@@ -110,7 +134,7 @@ EF_DRIVER_STATUS EF_UART_enableTx(EF_UART_TYPE* uart){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_disableTx(EF_UART_TYPE* uart){
+EF_DRIVER_STATUS EF_UART_disableTx(EF_UART_TYPE_PTR uart){
     
     EF_DRIVER_STATUS status;
 
@@ -123,7 +147,7 @@ EF_DRIVER_STATUS EF_UART_disableTx(EF_UART_TYPE* uart){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_enableLoopBack(EF_UART_TYPE* uart){
+EF_DRIVER_STATUS EF_UART_enableLoopBack(EF_UART_TYPE_PTR uart){
     
     EF_DRIVER_STATUS status;
 
@@ -136,7 +160,7 @@ EF_DRIVER_STATUS EF_UART_enableLoopBack(EF_UART_TYPE* uart){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_disableLoopBack(EF_UART_TYPE* uart){
+EF_DRIVER_STATUS EF_UART_disableLoopBack(EF_UART_TYPE_PTR uart){
     
     EF_DRIVER_STATUS status;
 
@@ -150,7 +174,7 @@ EF_DRIVER_STATUS EF_UART_disableLoopBack(EF_UART_TYPE* uart){
 }
 
 
-EF_DRIVER_STATUS EF_UART_enableGlitchFilter(EF_UART_TYPE* uart){
+EF_DRIVER_STATUS EF_UART_enableGlitchFilter(EF_UART_TYPE_PTR uart){
 
     EF_DRIVER_STATUS status;
 
@@ -164,7 +188,7 @@ EF_DRIVER_STATUS EF_UART_enableGlitchFilter(EF_UART_TYPE* uart){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_disableGlitchFilter(EF_UART_TYPE* uart){
+EF_DRIVER_STATUS EF_UART_disableGlitchFilter(EF_UART_TYPE_PTR uart){
     
     EF_DRIVER_STATUS status;
 
@@ -178,7 +202,7 @@ EF_DRIVER_STATUS EF_UART_disableGlitchFilter(EF_UART_TYPE* uart){
 }
 
 
-EF_DRIVER_STATUS EF_UART_setCTRL(EF_UART_TYPE* uart, uint32_t value){
+EF_DRIVER_STATUS EF_UART_setCTRL(EF_UART_TYPE_PTR uart, uint32_t value){
     
     EF_DRIVER_STATUS status;
 
@@ -194,7 +218,7 @@ EF_DRIVER_STATUS EF_UART_setCTRL(EF_UART_TYPE* uart, uint32_t value){
 }
 
 
-EF_DRIVER_STATUS EF_UART_getCTRL(EF_UART_TYPE* uart, uint32_t* CTRL_value){
+EF_DRIVER_STATUS EF_UART_getCTRL(EF_UART_TYPE_PTR uart, uint32_t* CTRL_value){
     
     EF_DRIVER_STATUS status;
 
@@ -211,7 +235,7 @@ EF_DRIVER_STATUS EF_UART_getCTRL(EF_UART_TYPE* uart, uint32_t* CTRL_value){
 }
 
 
-EF_DRIVER_STATUS EF_UART_setPrescaler(EF_UART_TYPE* uart, uint32_t prescaler){
+EF_DRIVER_STATUS EF_UART_setPrescaler(EF_UART_TYPE_PTR uart, uint32_t prescaler){
     
     EF_DRIVER_STATUS status;
 
@@ -226,7 +250,7 @@ EF_DRIVER_STATUS EF_UART_setPrescaler(EF_UART_TYPE* uart, uint32_t prescaler){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_getPrescaler(EF_UART_TYPE* uart, uint32_t* Prescaler_value){
+EF_DRIVER_STATUS EF_UART_getPrescaler(EF_UART_TYPE_PTR uart, uint32_t* Prescaler_value){
     
     EF_DRIVER_STATUS status;
 
@@ -243,7 +267,7 @@ EF_DRIVER_STATUS EF_UART_getPrescaler(EF_UART_TYPE* uart, uint32_t* Prescaler_va
 }
 
 
-EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE* uart, uint32_t value){
+EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE_PTR uart, uint32_t value){
     
     EF_DRIVER_STATUS status;
 
@@ -262,7 +286,7 @@ EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE* uart, uint32_t value){
 }
 
 
-EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect(EF_UART_TYPE* uart, bool is_two_bits){
+EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect(EF_UART_TYPE_PTR uart, bool is_two_bits){
     
     EF_DRIVER_STATUS status;
 
@@ -280,7 +304,7 @@ EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect(EF_UART_TYPE* uart, bool is_two_bi
 }
 
 
-EF_DRIVER_STATUS EF_UART_setParityType(EF_UART_TYPE* uart, enum parity_type parity){
+EF_DRIVER_STATUS EF_UART_setParityType(EF_UART_TYPE_PTR uart, enum parity_type parity){
     
     EF_DRIVER_STATUS status;
 
@@ -295,7 +319,7 @@ EF_DRIVER_STATUS EF_UART_setParityType(EF_UART_TYPE* uart, enum parity_type pari
 }
 
 
-EF_DRIVER_STATUS EF_UART_setTimeoutBits(EF_UART_TYPE* uart, uint32_t value){
+EF_DRIVER_STATUS EF_UART_setTimeoutBits(EF_UART_TYPE_PTR uart, uint32_t value){
     
     EF_DRIVER_STATUS status;
 
@@ -311,7 +335,7 @@ EF_DRIVER_STATUS EF_UART_setTimeoutBits(EF_UART_TYPE* uart, uint32_t value){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_setConfig(EF_UART_TYPE* uart, uint32_t value){
+EF_DRIVER_STATUS EF_UART_setConfig(EF_UART_TYPE_PTR uart, uint32_t value){
     
     EF_DRIVER_STATUS status;
 
@@ -326,7 +350,7 @@ EF_DRIVER_STATUS EF_UART_setConfig(EF_UART_TYPE* uart, uint32_t value){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_getConfig(EF_UART_TYPE* uart, uint32_t* CFG_value){
+EF_DRIVER_STATUS EF_UART_getConfig(EF_UART_TYPE_PTR uart, uint32_t* CFG_value){
     
     EF_DRIVER_STATUS status;
 
@@ -342,7 +366,7 @@ EF_DRIVER_STATUS EF_UART_getConfig(EF_UART_TYPE* uart, uint32_t* CFG_value){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_setRxFIFOThreshold(EF_UART_TYPE* uart, uint32_t value){
+EF_DRIVER_STATUS EF_UART_setRxFIFOThreshold(EF_UART_TYPE_PTR uart, uint32_t value){
     
     EF_DRIVER_STATUS status;
 
@@ -357,7 +381,7 @@ EF_DRIVER_STATUS EF_UART_setRxFIFOThreshold(EF_UART_TYPE* uart, uint32_t value){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_getRxFIFOThreshold(EF_UART_TYPE* uart, uint32_t* RX_FIFO_THRESHOLD_value){
+EF_DRIVER_STATUS EF_UART_getRxFIFOThreshold(EF_UART_TYPE_PTR uart, uint32_t* RX_FIFO_THRESHOLD_value){
     
     EF_DRIVER_STATUS status;
 
@@ -374,7 +398,7 @@ EF_DRIVER_STATUS EF_UART_getRxFIFOThreshold(EF_UART_TYPE* uart, uint32_t* RX_FIF
 }
 
 
-EF_DRIVER_STATUS EF_UART_setTxFIFOThreshold(EF_UART_TYPE* uart, uint32_t value){
+EF_DRIVER_STATUS EF_UART_setTxFIFOThreshold(EF_UART_TYPE_PTR uart, uint32_t value){
     
     EF_DRIVER_STATUS status;
 
@@ -389,7 +413,7 @@ EF_DRIVER_STATUS EF_UART_setTxFIFOThreshold(EF_UART_TYPE* uart, uint32_t value){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_getTxFIFOThreshold(EF_UART_TYPE* uart, uint32_t* TX_FIFO_THRESHOLD_value){
+EF_DRIVER_STATUS EF_UART_getTxFIFOThreshold(EF_UART_TYPE_PTR uart, uint32_t* TX_FIFO_THRESHOLD_value){
     
     EF_DRIVER_STATUS status;
 
@@ -405,7 +429,7 @@ EF_DRIVER_STATUS EF_UART_getTxFIFOThreshold(EF_UART_TYPE* uart, uint32_t* TX_FIF
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_getTxCount(EF_UART_TYPE* uart, uint32_t* TX_FIFO_LEVEL_value){
+EF_DRIVER_STATUS EF_UART_getTxCount(EF_UART_TYPE_PTR uart, uint32_t* TX_FIFO_LEVEL_value){
     
     EF_DRIVER_STATUS status;
 
@@ -421,7 +445,7 @@ EF_DRIVER_STATUS EF_UART_getTxCount(EF_UART_TYPE* uart, uint32_t* TX_FIFO_LEVEL_
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_getRxCount(EF_UART_TYPE* uart, uint32_t* RX_FIFO_LEVEL_value){
+EF_DRIVER_STATUS EF_UART_getRxCount(EF_UART_TYPE_PTR uart, uint32_t* RX_FIFO_LEVEL_value){
     
     EF_DRIVER_STATUS status;
 
@@ -437,7 +461,7 @@ EF_DRIVER_STATUS EF_UART_getRxCount(EF_UART_TYPE* uart, uint32_t* RX_FIFO_LEVEL_
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_setMatchData(EF_UART_TYPE* uart, uint32_t matchData){
+EF_DRIVER_STATUS EF_UART_setMatchData(EF_UART_TYPE_PTR uart, uint32_t matchData){
     
     EF_DRIVER_STATUS status;
 
@@ -452,7 +476,7 @@ EF_DRIVER_STATUS EF_UART_setMatchData(EF_UART_TYPE* uart, uint32_t matchData){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_getMatchData(EF_UART_TYPE* uart, uint32_t* MATCH_value){
+EF_DRIVER_STATUS EF_UART_getMatchData(EF_UART_TYPE_PTR uart, uint32_t* MATCH_value){
     
     EF_DRIVER_STATUS status;
 
@@ -480,7 +504,7 @@ EF_DRIVER_STATUS EF_UART_getMatchData(EF_UART_TYPE* uart, uint32_t* MATCH_value)
  // bit 8: overrun 
  // bit 9: timeout 
 
-EF_DRIVER_STATUS EF_UART_getRIS(EF_UART_TYPE* uart, uint32_t* RIS_value){
+EF_DRIVER_STATUS EF_UART_getRIS(EF_UART_TYPE_PTR uart, uint32_t* RIS_value){
     
     EF_DRIVER_STATUS status;
 
@@ -496,7 +520,7 @@ EF_DRIVER_STATUS EF_UART_getRIS(EF_UART_TYPE* uart, uint32_t* RIS_value){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_getMIS(EF_UART_TYPE* uart, uint32_t* MIS_value){
+EF_DRIVER_STATUS EF_UART_getMIS(EF_UART_TYPE_PTR uart, uint32_t* MIS_value){
     
     EF_DRIVER_STATUS status;
 
@@ -512,7 +536,7 @@ EF_DRIVER_STATUS EF_UART_getMIS(EF_UART_TYPE* uart, uint32_t* MIS_value){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_setIM(EF_UART_TYPE* uart, uint32_t mask){
+EF_DRIVER_STATUS EF_UART_setIM(EF_UART_TYPE_PTR uart, uint32_t mask){
     
     EF_DRIVER_STATUS status;
 
@@ -528,7 +552,7 @@ EF_DRIVER_STATUS EF_UART_setIM(EF_UART_TYPE* uart, uint32_t mask){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_getIM(EF_UART_TYPE* uart, uint32_t* IM_value){
+EF_DRIVER_STATUS EF_UART_getIM(EF_UART_TYPE_PTR uart, uint32_t* IM_value){
     
     EF_DRIVER_STATUS status;
 
@@ -545,7 +569,7 @@ EF_DRIVER_STATUS EF_UART_getIM(EF_UART_TYPE* uart, uint32_t* IM_value){
 }
 
 
-EF_DRIVER_STATUS EF_UART_setICR(EF_UART_TYPE* uart, uint32_t mask){
+EF_DRIVER_STATUS EF_UART_setICR(EF_UART_TYPE_PTR uart, uint32_t mask){
     
     EF_DRIVER_STATUS status;
 
@@ -561,7 +585,7 @@ EF_DRIVER_STATUS EF_UART_setICR(EF_UART_TYPE* uart, uint32_t mask){
 }
 
 
-EF_DRIVER_STATUS EF_UART_writeChar(EF_UART_TYPE* uart, char data){
+EF_DRIVER_STATUS EF_UART_writeChar(EF_UART_TYPE_PTR uart, char data){
 
     EF_DRIVER_STATUS status = EF_DRIVER_OK;   
 
@@ -580,7 +604,7 @@ EF_DRIVER_STATUS EF_UART_writeChar(EF_UART_TYPE* uart, char data){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_writeCharArr(EF_UART_TYPE* uart, const char *char_arr){
+EF_DRIVER_STATUS EF_UART_writeCharArr(EF_UART_TYPE_PTR uart, const char *char_arr){
 
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
     if (uart == NULL) {
@@ -599,7 +623,7 @@ EF_DRIVER_STATUS EF_UART_writeCharArr(EF_UART_TYPE* uart, const char *char_arr){
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_readChar(EF_UART_TYPE* uart, char* RXDATA_value){
+EF_DRIVER_STATUS EF_UART_readChar(EF_UART_TYPE_PTR uart, char* RXDATA_value){
 
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
 
@@ -621,7 +645,7 @@ EF_DRIVER_STATUS EF_UART_readChar(EF_UART_TYPE* uart, char* RXDATA_value){
 /******************************************************************************************************************************************/
 /*******************************************************************************xs***********************************************************/
 
-EF_DRIVER_STATUS EF_UART_readCharNonBlocking(EF_UART_TYPE* uart, char* RXDATA_value, bool* data_available){
+EF_DRIVER_STATUS EF_UART_readCharNonBlocking(EF_UART_TYPE_PTR uart, char* RXDATA_value, bool* data_available){
     
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
 
@@ -650,7 +674,7 @@ EF_DRIVER_STATUS EF_UART_readCharNonBlocking(EF_UART_TYPE* uart, char* RXDATA_va
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_writeCharNonBlocking(EF_UART_TYPE* uart, char data, bool* data_sent){
+EF_DRIVER_STATUS EF_UART_writeCharNonBlocking(EF_UART_TYPE_PTR uart, char data, bool* data_sent){
     
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
 
@@ -677,7 +701,7 @@ EF_DRIVER_STATUS EF_UART_writeCharNonBlocking(EF_UART_TYPE* uart, char data, boo
 }
 
 
-EF_DRIVER_STATUS EF_UART_charsAvailable(EF_UART_TYPE* uart, bool* RXA_flag) {
+EF_DRIVER_STATUS EF_UART_charsAvailable(EF_UART_TYPE_PTR uart, bool* RXA_flag) {
 
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
     if (uart == NULL) {
@@ -696,7 +720,7 @@ EF_DRIVER_STATUS EF_UART_charsAvailable(EF_UART_TYPE* uart, bool* RXA_flag) {
 }
 
 // change to check if full
-EF_DRIVER_STATUS EF_UART_spaceAvailable(EF_UART_TYPE* uart, bool* TXB_flag) {
+EF_DRIVER_STATUS EF_UART_spaceAvailable(EF_UART_TYPE_PTR uart, bool* TXB_flag) {
 
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
     if (uart == NULL) {
@@ -715,7 +739,7 @@ EF_DRIVER_STATUS EF_UART_spaceAvailable(EF_UART_TYPE* uart, bool* TXB_flag) {
 }
 
 
-EF_DRIVER_STATUS EF_UART_getParityMode(EF_UART_TYPE* uart, uint32_t* parity_mode){
+EF_DRIVER_STATUS EF_UART_getParityMode(EF_UART_TYPE_PTR uart, uint32_t* parity_mode){
     
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
     if (uart == NULL) {
@@ -729,7 +753,7 @@ EF_DRIVER_STATUS EF_UART_getParityMode(EF_UART_TYPE* uart, uint32_t* parity_mode
     return status;
 }
 
-EF_DRIVER_STATUS EF_UART_busy(EF_UART_TYPE* uart, bool* busy_flag){
+EF_DRIVER_STATUS EF_UART_busy(EF_UART_TYPE_PTR uart, bool* busy_flag){
     
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
     if (uart == NULL) {
@@ -747,7 +771,18 @@ EF_DRIVER_STATUS EF_UART_busy(EF_UART_TYPE* uart, bool* busy_flag){
     return status;
 }
 
-/******************************************************************************************************************************************/
-/******************************************************************************************************************************************/
+// todo: document the threshold is the fifo max
+
+/******************************************************************************
+* Static Function Definitions
+******************************************************************************/
+
+
+
+
 
 #endif // EF_UART_C
+
+/******************************************************************************
+* End of File
+******************************************************************************/
