@@ -103,13 +103,13 @@ module EF_UART #(parameter  MDW = 9,        // Max data size/width
     wire        rx_filtered;
     wire        rx_in;
 
-    aucohl_sync rx_sync (
+    ef_util_sync rx_sync (
         .clk(clk),
         .in(rx),
         .out(rx_synched)
     );
 
-    aucohl_glitch_filter #(.N(GFLEN)) rx_glitch_filter (
+    ef_util_glitch_filter #(.N(GFLEN)) rx_glitch_filter (
         .clk(clk),
         .rst_n(rst_n),
         .en(glitch_filter_en),
@@ -129,7 +129,7 @@ module EF_UART #(parameter  MDW = 9,        // Max data size/width
         .baudtick(b_tick)
     );
   
-    aucohl_fifo #(.DW(FIFO_DW), .AW(FAW)) fifo_tx (
+    ef_util_fifo #(.DW(FIFO_DW), .AW(FAW)) fifo_tx (
         .clk(clk),
         .rst_n(rst_n),
         .rd(tx_done),
@@ -155,7 +155,7 @@ module EF_UART #(parameter  MDW = 9,        // Max data size/width
         .tx(tx)
     );
 
-    aucohl_fifo #(.DW(FIFO_DW), .AW(FAW)) fifo_rx (
+    ef_util_fifo #(.DW(FIFO_DW), .AW(FAW)) fifo_rx (
         .clk(clk),
         .rst_n(rst_n),
         .rd(rd),

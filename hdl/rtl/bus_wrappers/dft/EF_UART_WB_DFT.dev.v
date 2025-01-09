@@ -22,59 +22,9 @@
 `timescale			1ns/1ps
 `default_nettype	none
 
+`define				WB_AW		16
 
-
-/*
-	Copyright 2020 AUCOHL
-
-    Author: Mohamed Shalan (mshalan@aucegypt.edu)
-	
-	Licensed under the Apache License, Version 2.0 (the "License"); 
-	you may not use this file except in compliance with the License. 
-	You may obtain a copy of the License at:
-
-	http://www.apache.org/licenses/LICENSE-2.0
-
-	Unless required by applicable law or agreed to in writing, software 
-	distributed under the License is distributed on an "AS IS" BASIS, 
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-	See the License for the specific language governing permissions and 
-	limitations under the License.
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                        
-
+`include			"wb_wrapper.vh"
 
 module EF_UART_WB #( 
 	parameter	
@@ -83,51 +33,41 @@ module EF_UART_WB #(
 		GFLEN = 8,
 		FAW = 4
 ) (
-
-
-
-
-	input   wire            ext_clk,
-                                        input   wire            clk_i,
-                                        input   wire            rst_i,
-                                        input   wire [31:0]     adr_i,
-                                        input   wire [31:0]     dat_i,
-                                        output  wire [31:0]     dat_o,
-                                        input   wire [3:0]      sel_i,
-                                        input   wire            cyc_i,
-                                        input   wire            stb_i,
-                                        output  reg             ack_o,
-                                        input   wire            we_i,
-                                        output  wire            IRQ,
+`ifdef USE_POWER_PINS
+	inout VPWR,
+	inout VGND,
+`endif
+	input	wire	sc_testmode,
+	`WB_SLAVE_PORTS,
 	input	wire	[1-1:0]	rx,
 	output	wire	[1-1:0]	tx
 );
 
-	localparam	RXDATA_REG_OFFSET = 16'h0000;
-	localparam	TXDATA_REG_OFFSET = 16'h0004;
-	localparam	PR_REG_OFFSET = 16'h0008;
-	localparam	CTRL_REG_OFFSET = 16'h000C;
-	localparam	CFG_REG_OFFSET = 16'h0010;
-	localparam	MATCH_REG_OFFSET = 16'h001C;
-	localparam	RX_FIFO_LEVEL_REG_OFFSET = 16'hFE00;
-	localparam	RX_FIFO_THRESHOLD_REG_OFFSET = 16'hFE04;
-	localparam	RX_FIFO_FLUSH_REG_OFFSET = 16'hFE08;
-	localparam	TX_FIFO_LEVEL_REG_OFFSET = 16'hFE10;
-	localparam	TX_FIFO_THRESHOLD_REG_OFFSET = 16'hFE14;
-	localparam	TX_FIFO_FLUSH_REG_OFFSET = 16'hFE18;
-	localparam	IM_REG_OFFSET = 16'hFF00;
-	localparam	MIS_REG_OFFSET = 16'hFF04;
-	localparam	RIS_REG_OFFSET = 16'hFF08;
-	localparam	IC_REG_OFFSET = 16'hFF0C;
+	localparam	RXDATA_REG_OFFSET = `WB_AW'h0000;
+	localparam	TXDATA_REG_OFFSET = `WB_AW'h0004;
+	localparam	PR_REG_OFFSET = `WB_AW'h0008;
+	localparam	CTRL_REG_OFFSET = `WB_AW'h000C;
+	localparam	CFG_REG_OFFSET = `WB_AW'h0010;
+	localparam	MATCH_REG_OFFSET = `WB_AW'h001C;
+	localparam	RX_FIFO_LEVEL_REG_OFFSET = `WB_AW'hFE00;
+	localparam	RX_FIFO_THRESHOLD_REG_OFFSET = `WB_AW'hFE04;
+	localparam	RX_FIFO_FLUSH_REG_OFFSET = `WB_AW'hFE08;
+	localparam	TX_FIFO_LEVEL_REG_OFFSET = `WB_AW'hFE10;
+	localparam	TX_FIFO_THRESHOLD_REG_OFFSET = `WB_AW'hFE14;
+	localparam	TX_FIFO_FLUSH_REG_OFFSET = `WB_AW'hFE18;
+	localparam	IM_REG_OFFSET = `WB_AW'hFF00;
+	localparam	MIS_REG_OFFSET = `WB_AW'hFF04;
+	localparam	RIS_REG_OFFSET = `WB_AW'hFF08;
+	localparam	IC_REG_OFFSET = `WB_AW'hFF0C;
 
     reg [0:0] GCLK_REG;
     wire clk_g;
-    wire clk_gated_en = GCLK_REG[0];
-    ef_gating_cell clk_gate_cell(
-        
-
-
- // USE_POWER_PINS
+    wire clk_gated_en = sc_testmode ? 1'b1 : GCLK_REG[0];
+    ef_util_gating_cell clk_gate_cell(
+        `ifdef USE_POWER_PINS 
+        .vpwr(VPWR),
+        .vgnd(VGND),
+        `endif // USE_POWER_PINS
         .clk(clk_i),
         .clk_en(clk_gated_en),
         .clk_o(clk_g)
@@ -137,10 +77,7 @@ module EF_UART_WB #(
 	wire		rst_n = (~rst_i);
 
 
-	wire            wb_valid    = cyc_i & stb_i;
-                                        wire            wb_we       = we_i & wb_valid;
-                                        wire            wb_re       = ~we_i & wb_valid;
-                                        wire[3:0]       wb_byte_sel = sel_i & {4{wb_we}};
+	`WB_CTRL_SIGNALS
 
 	wire [16-1:0]	prescaler;
 	wire [1-1:0]	en;
@@ -183,7 +120,7 @@ module EF_UART_WB #(
 
 	reg [15:0]	PR_REG;
 	assign	prescaler = PR_REG;
-	always @(posedge clk_i or posedge rst_i) if(rst_i) PR_REG <= 0; else if(wb_we & (adr_i[16-1:0]==PR_REG_OFFSET)) PR_REG <= dat_i[16-1:0];
+	`WB_REG(PR_REG, 0, 16)
 
 	reg [4:0]	CTRL_REG;
 	assign	en	=	CTRL_REG[0 : 0];
@@ -191,55 +128,51 @@ module EF_UART_WB #(
 	assign	rx_en	=	CTRL_REG[2 : 2];
 	assign	loopback_en	=	CTRL_REG[3 : 3];
 	assign	glitch_filter_en	=	CTRL_REG[4 : 4];
-	always @(posedge clk_i or posedge rst_i) if(rst_i) CTRL_REG <= 0; else if(wb_we & (adr_i[16-1:0]==CTRL_REG_OFFSET)) CTRL_REG <= dat_i[5-1:0];
+	`WB_REG(CTRL_REG, 0, 5)
 
 	reg [13:0]	CFG_REG;
 	assign	data_size	=	CFG_REG[3 : 0];
 	assign	stop_bits_count	=	CFG_REG[4 : 4];
 	assign	parity_type	=	CFG_REG[7 : 5];
 	assign	timeout_bits	=	CFG_REG[13 : 8];
-	always @(posedge clk_i or posedge rst_i) if(rst_i) CFG_REG <= 'h3F08; else if(wb_we & (adr_i[16-1:0]==CFG_REG_OFFSET)) CFG_REG <= dat_i[14-1:0];
+	`WB_REG(CFG_REG, 'h3F08, 14)
 
 	reg [MDW-1:0]	MATCH_REG;
 	assign	match_data = MATCH_REG;
-	always @(posedge clk_i or posedge rst_i) if(rst_i) MATCH_REG <= 0; else if(wb_we & (adr_i[16-1:0]==MATCH_REG_OFFSET)) MATCH_REG <= dat_i[MDW-1:0];
+	`WB_REG(MATCH_REG, 0, MDW)
 
 	wire [FAW-1:0]	RX_FIFO_LEVEL_WIRE;
 	assign	RX_FIFO_LEVEL_WIRE[(FAW - 1) : 0] = rx_level;
 
 	reg [FAW-1:0]	RX_FIFO_THRESHOLD_REG;
 	assign	rxfifotr	=	RX_FIFO_THRESHOLD_REG[(FAW - 1) : 0];
-	always @(posedge clk_i or posedge rst_i) if(rst_i) RX_FIFO_THRESHOLD_REG <= 0; else if(wb_we & (adr_i[16-1:0]==RX_FIFO_THRESHOLD_REG_OFFSET)) RX_FIFO_THRESHOLD_REG <= dat_i[FAW-1:0];
+	`WB_REG(RX_FIFO_THRESHOLD_REG, 0, FAW)
 
 	reg [0:0]	RX_FIFO_FLUSH_REG;
 	assign	rx_fifo_flush	=	RX_FIFO_FLUSH_REG[0 : 0];
-	always @(posedge clk_i or posedge rst_i) if(rst_i) RX_FIFO_FLUSH_REG <= 0; else if(wb_we & (adr_i[16-1:0]==RX_FIFO_FLUSH_REG_OFFSET)) RX_FIFO_FLUSH_REG <= dat_i[1-1:0]; else RX_FIFO_FLUSH_REG <= 1'h0 & RX_FIFO_FLUSH_REG;
+	`WB_REG_AC(RX_FIFO_FLUSH_REG, 0, 1, 1'h0)
 
 	wire [FAW-1:0]	TX_FIFO_LEVEL_WIRE;
 	assign	TX_FIFO_LEVEL_WIRE[(FAW - 1) : 0] = tx_level;
 
 	reg [FAW-1:0]	TX_FIFO_THRESHOLD_REG;
 	assign	txfifotr	=	TX_FIFO_THRESHOLD_REG[(FAW - 1) : 0];
-	always @(posedge clk_i or posedge rst_i) if(rst_i) TX_FIFO_THRESHOLD_REG <= 0; else if(wb_we & (adr_i[16-1:0]==TX_FIFO_THRESHOLD_REG_OFFSET)) TX_FIFO_THRESHOLD_REG <= dat_i[FAW-1:0];
+	`WB_REG(TX_FIFO_THRESHOLD_REG, 0, FAW)
 
 	reg [0:0]	TX_FIFO_FLUSH_REG;
 	assign	tx_fifo_flush	=	TX_FIFO_FLUSH_REG[0 : 0];
-	always @(posedge clk_i or posedge rst_i) if(rst_i) TX_FIFO_FLUSH_REG <= 0; else if(wb_we & (adr_i[16-1:0]==TX_FIFO_FLUSH_REG_OFFSET)) TX_FIFO_FLUSH_REG <= dat_i[1-1:0]; else TX_FIFO_FLUSH_REG <= 1'h0 & TX_FIFO_FLUSH_REG;
+	`WB_REG_AC(TX_FIFO_FLUSH_REG, 0, 1, 1'h0)
 
-	localparam	GCLK_REG_OFFSET = 16'hFF10;
-	always @(posedge clk_i or posedge rst_i) if(rst_i) GCLK_REG <= 0; else if(wb_we & (adr_i[16-1:0]==GCLK_REG_OFFSET)) GCLK_REG <= dat_i[1-1:0];
+	localparam	GCLK_REG_OFFSET = `WB_AW'hFF10;
+	`WB_REG(GCLK_REG, 0, 1)
 
 	reg [9:0] IM_REG;
 	reg [9:0] IC_REG;
 	reg [9:0] RIS_REG;
 
-	wire[10-1:0]      MIS_REG	= RIS_REG & IM_REG;
-	always @(posedge clk_i or posedge rst_i) if(rst_i) IM_REG <= 0; else if(wb_we & (adr_i[16-1:0]==IM_REG_OFFSET)) IM_REG <= dat_i[10-1:0];
-	always @(posedge clk_i or posedge rst_i) if(rst_i) IC_REG <= 10'b0;
-                                        else if(wb_we & (adr_i[16-1:0]==IC_REG_OFFSET))
-                                            IC_REG <= dat_i[10-1:0];
-                                        else
-                                            IC_REG <= 10'd0;
+	`WB_MIS_REG(10)
+	`WB_REG(IM_REG, 0, 10)
+	`WB_IC_REG(10)
 
 	wire [0:0] TXE = tx_empty;
 	wire [0:0] RXF = rx_full;
@@ -254,7 +187,7 @@ module EF_UART_WB #(
 
 
 	integer _i_;
-	always @(posedge clk_i or posedge rst_i) if(rst_i) RIS_REG <= 0; else begin
+	`WB_BLOCK(RIS_REG, 0) else begin
 		for(_i_ = 0; _i_ < 1; _i_ = _i_ + 1) begin
 			if(IC_REG[_i_]) RIS_REG[_i_] <= 1'b0; else if(TXE[_i_ - 0] == 1'b1) RIS_REG[_i_] <= 1'b1;
 		end
@@ -335,22 +268,22 @@ module EF_UART_WB #(
 	);
 
 	assign	dat_o = 
-			(adr_i[16-1:0] == RXDATA_REG_OFFSET)	? RXDATA_WIRE :
-			(adr_i[16-1:0] == TXDATA_REG_OFFSET)	? TXDATA_WIRE :
-			(adr_i[16-1:0] == PR_REG_OFFSET)	? PR_REG :
-			(adr_i[16-1:0] == CTRL_REG_OFFSET)	? CTRL_REG :
-			(adr_i[16-1:0] == CFG_REG_OFFSET)	? CFG_REG :
-			(adr_i[16-1:0] == MATCH_REG_OFFSET)	? MATCH_REG :
-			(adr_i[16-1:0] == RX_FIFO_LEVEL_REG_OFFSET)	? RX_FIFO_LEVEL_WIRE :
-			(adr_i[16-1:0] == RX_FIFO_THRESHOLD_REG_OFFSET)	? RX_FIFO_THRESHOLD_REG :
-			(adr_i[16-1:0] == RX_FIFO_FLUSH_REG_OFFSET)	? RX_FIFO_FLUSH_REG :
-			(adr_i[16-1:0] == TX_FIFO_LEVEL_REG_OFFSET)	? TX_FIFO_LEVEL_WIRE :
-			(adr_i[16-1:0] == TX_FIFO_THRESHOLD_REG_OFFSET)	? TX_FIFO_THRESHOLD_REG :
-			(adr_i[16-1:0] == TX_FIFO_FLUSH_REG_OFFSET)	? TX_FIFO_FLUSH_REG :
-			(adr_i[16-1:0] == IM_REG_OFFSET)	? IM_REG :
-			(adr_i[16-1:0] == MIS_REG_OFFSET)	? MIS_REG :
-			(adr_i[16-1:0] == RIS_REG_OFFSET)	? RIS_REG :
-			(adr_i[16-1:0] == IC_REG_OFFSET)	? IC_REG :
+			(adr_i[`WB_AW-1:0] == RXDATA_REG_OFFSET)	? RXDATA_WIRE :
+			(adr_i[`WB_AW-1:0] == TXDATA_REG_OFFSET)	? TXDATA_WIRE :
+			(adr_i[`WB_AW-1:0] == PR_REG_OFFSET)	? PR_REG :
+			(adr_i[`WB_AW-1:0] == CTRL_REG_OFFSET)	? CTRL_REG :
+			(adr_i[`WB_AW-1:0] == CFG_REG_OFFSET)	? CFG_REG :
+			(adr_i[`WB_AW-1:0] == MATCH_REG_OFFSET)	? MATCH_REG :
+			(adr_i[`WB_AW-1:0] == RX_FIFO_LEVEL_REG_OFFSET)	? RX_FIFO_LEVEL_WIRE :
+			(adr_i[`WB_AW-1:0] == RX_FIFO_THRESHOLD_REG_OFFSET)	? RX_FIFO_THRESHOLD_REG :
+			(adr_i[`WB_AW-1:0] == RX_FIFO_FLUSH_REG_OFFSET)	? RX_FIFO_FLUSH_REG :
+			(adr_i[`WB_AW-1:0] == TX_FIFO_LEVEL_REG_OFFSET)	? TX_FIFO_LEVEL_WIRE :
+			(adr_i[`WB_AW-1:0] == TX_FIFO_THRESHOLD_REG_OFFSET)	? TX_FIFO_THRESHOLD_REG :
+			(adr_i[`WB_AW-1:0] == TX_FIFO_FLUSH_REG_OFFSET)	? TX_FIFO_FLUSH_REG :
+			(adr_i[`WB_AW-1:0] == IM_REG_OFFSET)	? IM_REG :
+			(adr_i[`WB_AW-1:0] == MIS_REG_OFFSET)	? MIS_REG :
+			(adr_i[`WB_AW-1:0] == RIS_REG_OFFSET)	? RIS_REG :
+			(adr_i[`WB_AW-1:0] == IC_REG_OFFSET)	? IC_REG :
 			32'hDEADBEEF;
 
 	always @ (posedge clk_i or posedge rst_i)
@@ -361,7 +294,7 @@ module EF_UART_WB #(
 		else
 			ack_o <= 1'b0;
 	assign	RXDATA_WIRE = rdata;
-	assign	rd =  ack_o & (wb_re & (adr_i[16-1:0] == RXDATA_REG_OFFSET));
+	assign	rd =  ack_o & (wb_re & (adr_i[`WB_AW-1:0] == RXDATA_REG_OFFSET));
 	assign	wdata = dat_i;
-	assign	wr = ack_o & (wb_we & (adr_i[16-1:0] == TXDATA_REG_OFFSET));
+	assign	wr = ack_o & (wb_we & (adr_i[`WB_AW-1:0] == TXDATA_REG_OFFSET));
 endmodule
