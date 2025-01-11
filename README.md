@@ -216,7 +216,13 @@ The following are the bit definitions for the interrupt registers:
 |8|OR|1|Overrun; data has been received but the RX FIFO is full.|
 |9|RTO|1|Receiver Timeout; no data has been received for the time of a specified number of bits.|
 ### Clock Gating
-The IP has clock gating feature, enabling the selective activation and deactivation of the clock as required through the ``GCLK`` register. This functionality is implemented through the ``ef_gating_cell``, which is part of the the common modules library, [aucohl_lib.v](https://github.com/efabless/IP_Utilities/blob/main/rtl/aucohl_lib.v). By default, the cell operates with a behavioral implementation, but when the ``SKY130`` macro is enabled, the ``sky130_fd_sc_hd__dlclkp_4`` clock gating cell is used.
+The IP has clock gating feature, enabling the selective activation and deactivation of the clock as required through the ``GCLK`` register. This functionality is implemented through the ``ef_gating_cell``, which is part of the the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v). By default, the cell operates with a behavioral implementation, but when the ``SKY130`` macro is enabled, the ``sky130_fd_sc_hd__dlclkp_4`` clock gating cell is used.
+
+**Note:** If you choose the [OpenLane2](https://github.com/efabless/openlane2) flow for implementation and would like to add the clock gating feature, you need to add ``SKY130`` macro to the ``VERILOG_DEFINES`` configuration variable. Update the YAML configuration file as follows: 
+```
+VERILOG_DEFINES: 
+  - SKY130
+```
 
 ### The Interface 
 
@@ -288,12 +294,12 @@ The IP has clock gating feature, enabling the selective activation and deactivat
 ## Installation:
 You can either clone repo or use [IPM](https://github.com/efabless/IPM) which is an open-source IPs Package Manager
 * To clone repo:
-```git clone https://https://github.com/efabless/EF_UART.git```
-> **Note:** If you choose this method, you need to clone [IP_Utilities](https://github.com/efabless/IP_Utilities/tree/main) repository, as it includes required modules from the common modules library, [aucohl_lib.v](https://github.com/efabless/IP_Utilities/blob/main/rtl/aucohl_lib.v)
+```git clone https://github.com/efabless/EF_UART.git```
+> **Note:** If you choose this method, you need to clone [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL/tree/main) repository, as it includes required modules from the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v)
 * To download via IPM , follow installation guides [here](https://github.com/efabless/IPM/blob/main/README.md) then run 
 ```ipm install EF_UART```
-> **Note:** This method is recommended as it automatically installs [IP_Utilities](https://github.com/efabless/IP_Utilities/tree/main) as a dependency.
-### Run cocotb UVM Testbench:
+> **Note:** This method is recommended as it automatically installs [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL/tree/main) as a dependency.
+## Run cocotb UVM Testbench:
 In IP directory run:
  ```shell
  cd verify/uvm-python/
