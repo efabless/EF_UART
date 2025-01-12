@@ -59,3 +59,4 @@ util
 tmp
 tmp_versions
 gl
+misra_c_violations.txt

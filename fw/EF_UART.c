@@ -596,10 +596,10 @@ EF_DRIVER_STATUS EF_UART_writeChar(EF_UART_TYPE_PTR uart, char data){
         uint32_t RIS_value;
         do {
             status = EF_UART_getRIS(uart, &RIS_value);
-        } while ((status == EF_DRIVER_OK) && (RIS_value & EF_UART_TXE_FLAG) == (uint32_t)0x0); // wait until TX empty flag is 1  
+        } while ((status == EF_DRIVER_OK) && (RIS_value & EF_UART_TXB_FLAG) == (uint32_t)0x0); // wait until tx level below flag is 1
 
         uart->TXDATA = data;
-        status = EF_UART_setICR(uart, EF_UART_TXE_FLAG);
+        status = EF_UART_setICR(uart, EF_UART_TXB_FLAG);
     }
     return status;
 }
@@ -691,12 +691,12 @@ EF_DRIVER_STATUS EF_UART_writeCharNonBlocking(EF_UART_TYPE_PTR uart, char data, 
         status = EF_UART_getRIS(uart, &RIS_value);
 
         // Check if data is available
-        if ((status == EF_DRIVER_OK) && (RIS_value & EF_UART_TXE_FLAG) == (uint32_t)0x0) {
+        if ((status == EF_DRIVER_OK) && (RIS_value & EF_UART_TXB_FLAG) == (uint32_t)0x0) {
             *data_sent = false;
         } else {
             *data_sent = true;
             uart->TXDATA = data;
-            status = EF_UART_setICR(uart, EF_UART_TXE_FLAG);
+            status = EF_UART_setICR(uart, EF_UART_TXB_FLAG);
         }
     }
     return status;
@@ -721,20 +721,19 @@ EF_DRIVER_STATUS EF_UART_charsAvailable(EF_UART_TYPE_PTR uart, bool* RXA_flag) {
     return status;
 }
 
-// change to check if full
 EF_DRIVER_STATUS EF_UART_spaceAvailable(EF_UART_TYPE_PTR uart, bool* TXB_flag) {
 
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
     if (uart == NULL) {
-        status = EF_DRIVER_ERROR_PARAMETER;                // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
+        status = EF_DRIVER_ERROR_PARAMETER;                 // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
     } else if (TXB_flag == NULL) {
-        status = EF_DRIVER_ERROR_PARAMETER;                // Return EF_DRIVER_ERROR_PARAMETER if TXB_flag is NULL, 
-                                                        // i.e. there is no memory location to store the value
+        status = EF_DRIVER_ERROR_PARAMETER;                 // Return EF_DRIVER_ERROR_PARAMETER if TXB_flag is NULL, 
+                                                            // i.e. there is no memory location to store the value
     } else {
         uint32_t RIS_value;
         status = EF_UART_getRIS(uart, &RIS_value);
         if (status == EF_DRIVER_OK) {
-            *TXB_flag = (RIS_value & EF_UART_TXB_FLAG) != (uint32_t)0x0;
+            *TXB_flag = (RIS_value & EF_UART_TXB_FLAG);     // check if TX FIFO level is below the value in the TX FIFO Level Threshold Register
         }else {}
     }
     return status;
