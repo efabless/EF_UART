@@ -1,4 +1,4 @@
-*.yalm
+*.yaml
 *.html
 *.pyc
 */__pycache__/

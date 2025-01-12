@@ -1,10 +1,10 @@
 PLUSARGS += "+UVM_VERBOSITY=UVM_HIGH"
 TOPLEVEL := top
 MODULE   ?= top_module
-AHB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_AHBL.pp.v
-APB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_APB.pp.v
-WB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_WB.pp.v
-HDL_FILES ?= $(PWD)/../../ip/IP_Utilities/rtl/aucohl_lib.v $(PWD)/../../ip/IP_Utilities/rtl/aucohl_rtl.vh  $(PWD)/../../hdl/rtl/EF_UART.v 
+AHB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_AHBL.v
+APB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_APB.v
+WB_FILES ?= $(PWD)/../../hdl/rtl/bus_wrappers/EF_UART_WB.v
+HDL_FILES ?= $(PWD)/../../ip/EF_IP_UTIL/hdl/ef_util_lib.v  $(PWD)/../../hdl/rtl/EF_UART.v 
 VERILOG_SOURCES ?=  $(PWD)/top.v $(AHB_FILES) $(APB_FILES) $(WB_FILES) $(HDL_FILES)
 RTL_MACROS += ""
 BUS_TYPE ?= APB

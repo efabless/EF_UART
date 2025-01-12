@@ -106,6 +106,7 @@ module EF_UART_APB #(
 
 
 
+    input  wire         sc_testmode,
     input  wire         PCLK,
     input  wire         PRESETn,
     input  wire         PWRITE,
@@ -139,7 +140,7 @@ module EF_UART_APB #(
 
   reg [0:0] GCLK_REG;
   wire clk_g;
-  wire clk_gated_en = GCLK_REG[0];
+  wire clk_gated_en = sc_testmode ? 1'b1 : GCLK_REG[0];
   ef_util_gating_cell clk_gate_cell (
 
 
