@@ -546,7 +546,7 @@ EF_DRIVER_STATUS EF_UART_setIM(EF_UART_TYPE_PTR uart, uint32_t mask){
         status = EF_DRIVER_ERROR_PARAMETER;                // Return EF_DRIVER_ERROR_PARAMETER if mask is out of range
 
     } else {
-        uart->IM |= mask;
+        uart->IM = mask;
         
     }
     return status;
