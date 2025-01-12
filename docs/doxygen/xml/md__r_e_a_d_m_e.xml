@@ -2,564 +2,660 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
   <compounddef id="md__r_e_a_d_m_e" kind="page">
     <compoundname>md_README</compoundname>
-    <title>APIs Documentation</title>
+    <title>API Reference</title>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md1">
-<title>EF_UART_enable</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a850821dd83e87cfcdf3786a5ae9d75d2" kindref="member">EF_UART_enable</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para>enables using uart by setting &quot;en&quot; bit in the control register to 1</para>
-<para><bold>Parameters</bold>:</para>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md1">
+<title>Header files</title>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+<listitem><para>EF_Driver_Common.h</para>
+</listitem><listitem><para>EF_UART.h</para>
+</listitem><listitem><para>EF_UART_regs.h</para>
 </listitem></itemizedlist>
 </para>
-</sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md2">
-<title>EF_UART_disable</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a0650c46534721b9a55b63df53a3edacd" kindref="member">EF_UART_disable</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para>disables using uart by clearing &quot;en&quot; bit in the control register</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md2">
+<title>File EF_Driver_Common.h</title>
+<para><emphasis>C header file for common driver definitions and types.</emphasis></para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md3">
+<title>Structures and Types</title>
+<para><table rows="2" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>typedef uint32_t   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_STATUS** <linebreak/>
+<emphasis>A type that is used to return the status of the driver functions.</emphasis>   </para>
+</entry></row>
+</table>
 </para>
-</sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md3">
-<title>EF_UART_enableRx</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1ad5ea004f7d0231033aadb8bd6068ee88" kindref="member">EF_UART_enableRx</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para>enables using uart RX by setting uart &quot;rxen&quot; bit in the control register to 1</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md4">
+<title>Macros</title>
+<para><table rows="8" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR** ((uint32_t)1)<linebreak/>
+<emphasis>Unspecified error.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR\_BUSY** ((uint32_t)2)<linebreak/>
+<emphasis>Driver is busy.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR\_PARAMETER** ((uint32_t)5)<linebreak/>
+<emphasis>Parameter error.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR\_SPECIFIC** ((uint32_t)6)<linebreak/>
+<emphasis>Start of driver specific errors.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR\_TIMEOUT** ((uint32_t)3)<linebreak/>
+<emphasis>Timeout occurred.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_ERROR\_UNSUPPORTED** ((uint32_t)4)<linebreak/>
+<emphasis>Operation not supported.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_DRIVER\_OK** ((uint32_t)0)<linebreak/>
+<emphasis>Operation succeeded.</emphasis>   </para>
+</entry></row>
+</table>
 </para>
-</sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md4">
-<title>EF_UART_disableRx</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1aa2c98e5b5be5273db1abd29519958999" kindref="member">EF_UART_disableRx</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para>disables using uart RX by clearing uart &quot;rxen&quot; bit in the control register</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
-</para>
-</sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md5">
-<title>EF_UART_enableTx</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1af5f6ae890a851613ea9f9954ad5306d7" kindref="member">EF_UART_enableTx</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para>enables using uart TX by setting uart &quot;txen&quot; bit in the control register to 1</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
-</para>
-</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md5">
+<title>Structures and Types Documentation</title>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md6">
-<title>EF_UART_disableTx</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a543a5deefec86fde9baa4cf1e8d5d03b" kindref="member">EF_UART_disableTx</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>typedef &lt;tt&gt;EF_DRIVER_STATUS&lt;/tt&gt;</title>
+<para><emphasis>A type that is used to return the status of the driver functions.</emphasis> <programlisting filename=".c"><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref>;</highlight></codeline>
 </programlisting></para>
-<para>disables using uart TX by clearing uart &quot;txen&quot; bit in the control register</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
-</para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md7">
-<title>EF_UART_enableLoopBack</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1ae32c894a702657491ad1094f7be9426a" kindref="member">EF_UART_enableLoopBack</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para>enables loopback (connecting TX to RX signal) by setting &quot;lpen&quot; bit in the control register to 1</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
-</para>
-</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md7">
+<title>Macros Documentation</title>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md8">
-<title>EF_UART_disableLoopBack</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a8b578752027768733661b9b727f297a6" kindref="member">EF_UART_disableLoopBack</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>define &lt;tt&gt;EF_DRIVER_ERROR&lt;/tt&gt;</title>
+<para><emphasis>Unspecified error.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR<sp/>((uint32_t)1)</highlight></codeline>
 </programlisting></para>
-<para>disables loopback (connecting TX to RX signal) by clearing &quot;lpen&quot; bit in the control register</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
-</para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md9">
-<title>EF_UART_enableGlitchFilter</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a273b15c238fe14e1216594c25cf81839" kindref="member">EF_UART_enableGlitchFilter</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>define &lt;tt&gt;EF_DRIVER_ERROR_BUSY&lt;/tt&gt;</title>
+<para><emphasis>Driver is busy.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR_BUSY<sp/>((uint32_t)2)</highlight></codeline>
 </programlisting></para>
-<para>enables glitch filter (filter out noise or glitches on the received signal) by setting &quot;gfen&quot; bit in the control register to 1</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
-</para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md10">
-<title>EF_UART_disableGlitchFilter</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a29108f7acf85d94f65ce1abcbd9b950e" kindref="member">EF_UART_disableGlitchFilter</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>define &lt;tt&gt;EF_DRIVER_ERROR_PARAMETER&lt;/tt&gt;</title>
+<para><emphasis>Parameter error.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR_PARAMETER<sp/>((uint32_t)5)</highlight></codeline>
 </programlisting></para>
-<para>disables glitch filter (filter out noise or glitches on the received signal) by clearing &quot;gfen&quot; bit in the control register</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
-</para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md11">
-<title>EF_UART_setCTRL</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a1a467e5c515e03613ed283bfb5113f3f" kindref="member">EF_UART_setCTRL</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>define &lt;tt&gt;EF_DRIVER_ERROR_SPECIFIC&lt;/tt&gt;</title>
+<para><emphasis>Start of driver specific errors.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR_SPECIFIC<sp/>((uint32_t)6)</highlight></codeline>
 </programlisting></para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>value</bold> The value of the control register</para>
-</listitem></itemizedlist>
-</para>
-<para>sets the control register to a certain value where</para>
-<para><itemizedlist>
-<listitem><para>bit 0: UART enable</para>
-</listitem><listitem><para>bit 1: UART Transmitter enable</para>
-</listitem><listitem><para>bit 2: UART Receiver enable</para>
-</listitem><listitem><para>bit 3: Loopback (connect RX and TX pins together) enable</para>
-</listitem><listitem><para>bit 4: UART Glitch Filer on RX enable</para>
-</listitem></itemizedlist>
-</para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md12">
-<title>EF_UART_getCTRL</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1af1da4c4b17ef0c29ad04fceb4fec8daa" kindref="member">EF_UART_getCTRL</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>define &lt;tt&gt;EF_DRIVER_ERROR_TIMEOUT&lt;/tt&gt;</title>
+<para><emphasis>Timeout occurred.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR_TIMEOUT<sp/>((uint32_t)3)</highlight></codeline>
 </programlisting></para>
-<para>returns the value of the control register</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
-</para>
-<para><bold>Return</bold>: control register value</para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md13">
-<title>EF_UART_setPrescaler</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1af04cdc5aaa962c7cac7c37f5411bb56d" kindref="member">EF_UART_setPrescaler</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>prescaler</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>define &lt;tt&gt;EF_DRIVER_ERROR_UNSUPPORTED&lt;/tt&gt;</title>
+<para><emphasis>Operation not supported.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_ERROR_UNSUPPORTED<sp/>((uint32_t)4)</highlight></codeline>
 </programlisting></para>
-<para>sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>prescaler</bold> The value of the required prescaler</para>
-</listitem></itemizedlist>
-</para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md14">
-<title>EF_UART_getPrescaler</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a6a205793b17a2b1fcfe335941cacb24f" kindref="member">EF_UART_getPrescaler</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>define &lt;tt&gt;EF_DRIVER_OK&lt;/tt&gt;</title>
+<para><emphasis>Operation succeeded.</emphasis> <programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_DRIVER_OK<sp/>((uint32_t)0)</highlight></codeline>
 </programlisting></para>
-<para>returns the value of the prescaler</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
-</para>
-<para><bold>Return</bold>: prescaler register value</para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md15">
-<title>EF_UART_setDataSize</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a2ed665f292626f6cc65e61364a89fbdd" kindref="member">EF_UART_setDataSize</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para>sets the Data Size (Data word length: 5-9 bits ) by setting the &quot;wlen&quot; field in configuration register</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>value</bold> The value of the required data word length</para>
-</listitem></itemizedlist>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md15">
+<title>File EF_UART.h</title>
+<para><emphasis>C header file for UART APIs which contains the function prototypes.</emphasis></para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md16">
+<title>Structures and Types</title>
+<para><table rows="2" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>enum   </para>
+</entry><entry thead="no" align='left'><para>**parity\_type** <linebreak/>
+   </para>
+</entry></row>
+</table>
 </para>
-</sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md16">
-<title>EF_UART_setTwoStopBitsSelect</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1af5cc25ffa33199c6c5d6cc8577934256" kindref="member">EF_UART_setTwoStopBitsSelect</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_two_bits</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para>sets the &quot;stp2&quot; bit in configuration register (whether the stop bits are two or one)</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>is_two_bits</bold> bool value, if &quot;true&quot;, the stop bits are two and if &quot;false&quot;, the stop bit is one</para>
-</listitem></itemizedlist>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md17">
+<title>Functions</title>
+<para><table rows="44" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_busy** (**EF\_UART\_TYPE\_PTR** uart, bool *flag) <linebreak/>
+<emphasis>This function checks id the UART is busy.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_charsAvailable** (**EF\_UART\_TYPE\_PTR** uart, bool *flag) <linebreak/>
+<emphasis>This function returns a flag indicating whether or not there is data available in the receive FIFO.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_disable** (**EF\_UART\_TYPE\_PTR** uart) <linebreak/>
+<emphasis>disables using uart by clearing &quot;en&quot; bit in the control register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_disableGlitchFilter** (**EF\_UART\_TYPE\_PTR** uart) <linebreak/>
+<emphasis>disables glitch filter (filter out noise or glitches on the received signal) by clearing &quot;gfen&quot; bit in the control register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_disableLoopBack** (**EF\_UART\_TYPE\_PTR** uart) <linebreak/>
+<emphasis>disables loopback (connecting TX to RX signal) by clearing &quot;lpen&quot; bit in the control register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_disableRx** (**EF\_UART\_TYPE\_PTR** uart) <linebreak/>
+<emphasis>disables using uart RX by clearing uart &quot;rxen&quot; bit in the control register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_disableTx** (**EF\_UART\_TYPE\_PTR** uart) <linebreak/>
+<emphasis>disables using uart TX by clearing uart &quot;txen&quot; bit in the control register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_enable** (**EF\_UART\_TYPE\_PTR** uart) <linebreak/>
+<emphasis>enables using uart by setting &quot;en&quot; bit in the control register to 1</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_enableGlitchFilter** (**EF\_UART\_TYPE\_PTR** uart) <linebreak/>
+<emphasis>enables glitch filter (filter out noise or glitches on the received signal) by setting &quot;gfen&quot; bit in the control register to 1</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_enableLoopBack** (**EF\_UART\_TYPE\_PTR** uart) <linebreak/>
+<emphasis>enables loopback (connecting TX to RX signal) by setting &quot;lpen&quot; bit in the control register to 1</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_enableRx** (**EF\_UART\_TYPE\_PTR** uart) <linebreak/>
+<emphasis>enables using uart RX by setting uart &quot;rxen&quot; bit in the control register to 1</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_enableTx** (**EF\_UART\_TYPE\_PTR** uart) <linebreak/>
+<emphasis>enables using uart TX by setting uart &quot;txen&quot; bit in the control register to 1</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getCTRL** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *CTRL_value) <linebreak/>
+<emphasis>returns the value of the control register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getConfig** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *CFG_value) <linebreak/>
+<emphasis>returns the value of the configuration register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getIM** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *IM_value) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getMIS** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *MIS_value) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getMatchData** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *MATCH_value) <linebreak/>
+<emphasis>returns the value of the match data register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getParityMode** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *parity_mode) <linebreak/>
+<emphasis>This function return the parity mode of the UART.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getPrescaler** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *Prescaler_value) <linebreak/>
+<emphasis>returns the value of the prescaler</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getRIS** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *RIS_value) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getRxCount** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *RX_FIFO_LEVEL_value) <linebreak/>
+<emphasis>returns the current level of the RX FIFO (the number of bytes in the FIFO)</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getRxFIFOThreshold** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *RX_FIFO_THRESHOLD_value) <linebreak/>
+<emphasis>returns the current value of the RX FIFO threshold</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getTxCount** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *TX_FIFO_LEVEL_value) <linebreak/>
+<emphasis>returns the current level of the TX FIFO (the number of bytes in the FIFO)</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_getTxFIFOThreshold** (**EF\_UART\_TYPE\_PTR** uart, uint32_t *TX_FIFO_THRESHOLD_value) <linebreak/>
+<emphasis>returns the current value of the TX FIFO threshold</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_readChar** (**EF\_UART\_TYPE\_PTR** uar, char *RXDATA_value) <linebreak/>
+<emphasis>recieve a single character through uart</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_readCharNonBlocking** (**EF\_UART\_TYPE\_PTR** uart, char *RXDATA_value, bool *data_available) <linebreak/>
+<emphasis>This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setCTRL** (**EF\_UART\_TYPE\_PTR** uart, uint32_t value) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setConfig** (**EF\_UART\_TYPE\_PTR** uart, uint32_t config) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setDataSize** (**EF\_UART\_TYPE\_PTR** uart, uint32_t value) <linebreak/>
+<emphasis>sets the Data Size (Data word length: 5-9 bits ) by setting the &quot;wlen&quot; field in configuration register</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setGclkEnable** (**EF\_UART\_TYPE\_PTR** uart, uint32_t value) <linebreak/>
+<emphasis>sets the GCLK enable bit in the UART register to a certain value</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setICR** (**EF\_UART\_TYPE\_PTR** uart, uint32_t mask) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setIM** (**EF\_UART\_TYPE\_PTR** uart, uint32_t mask) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setMatchData** (**EF\_UART\_TYPE\_PTR** uart, uint32_t matchData) <linebreak/>
+<emphasis>sets the matchData to a certain value at which &quot;MATCH&quot; interrupt will be raised</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setParityType** (**EF\_UART\_TYPE\_PTR** uart, enum **parity\_type** parity) <linebreak/>
+<emphasis>sets the &quot;parity&quot; field in configuration register (could be none, odd, even, sticky 0 or sticky 1)</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setPrescaler** (**EF\_UART\_TYPE\_PTR** uart, uint32_t prescaler) <linebreak/>
+<emphasis>sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setRxFIFOThreshold** (**EF\_UART\_TYPE\_PTR** uart, uint32_t threshold) <linebreak/>
+<emphasis>sets the RX FIFO threshold to a certain value at which &quot;RXA&quot; interrupt will be raised</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setTimeoutBits** (**EF\_UART\_TYPE\_PTR** uart, uint32_t value) <linebreak/>
+<emphasis>sets the &quot;timeout&quot; field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setTwoStopBitsSelect** (**EF\_UART\_TYPE\_PTR** uart, bool is_two_bits) <linebreak/>
+<emphasis>sets the &quot;stp2&quot; bit in configuration register (whether the stop boits are two or one)</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_setTxFIFOThreshold** (**EF\_UART\_TYPE\_PTR** uart, uint32_t threshold) <linebreak/>
+<emphasis>sets the TX FIFO threshold to a certain value at which &quot;TXB&quot; interrupt will be raised</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_spaceAvailable** (**EF\_UART\_TYPE\_PTR** uart, bool *flag) <linebreak/>
+<emphasis>This function returns a flag indicating whether or not the transmit is available, i.e. the transmit FIFO is not full.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_writeChar** (**EF\_UART\_TYPE\_PTR** uart, char data) <linebreak/>
+<emphasis>transmit a single character through uart</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_writeCharArr** (**EF\_UART\_TYPE\_PTR** uart, const char *char_arr) <linebreak/>
+<emphasis>transmit an array of characters through uart</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_writeCharNonBlocking** (**EF\_UART\_TYPE\_PTR** uart, char data, bool *data_sent) <linebreak/>
+<emphasis>This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.</emphasis>   </para>
+</entry></row>
+</table>
 </para>
-</sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md17">
-<title>EF_UART_setParityType</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a758aa19092a342f086b821542c5757e7" kindref="member">EF_UART_setParityType</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>parity</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para>sets the &quot;parity&quot; field in configuration register (could be none, odd, even, sticky 0 or sticky 1)</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>parity</bold> enum parity_type could be &quot;NONE&quot; , &quot;ODD&quot; , &quot;EVEN&quot; , &quot;STICKY_0&quot; , or &quot;STICKY_1&quot;</para>
-</listitem></itemizedlist>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md18">
+<title>Macros</title>
+<para><table rows="12" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CFG\_REG\_MAX\_VALUE** ((uint32_t)0x00001FFF)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE** ((uint32_t)0x0000003F)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CTRL\_REG\_MAX\_VALUE** ((uint32_t)0x0000001F)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_DataLength\_MAX\_VALUE** ((uint32_t)0x00000009)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_DataLength\_MIN\_VALUE** ((uint32_t)0x00000005)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_IC\_REG\_MAX\_VALUE** ((uint32_t)0x000003FF)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_IM\_REG\_MAX\_VALUE** ((uint32_t)0x000003FF)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_MATCH\_REG\_MAX\_VALUE** ((uint32_t)0x00001FFF)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_PR\_REG\_MAX\_VALUE** ((uint32_t)0x0000FFFF)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE** ((uint32_t)0x0000000F)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE** ((uint32_t)0x0000000F)<linebreak/>
+   </para>
+</entry></row>
+</table>
 </para>
-</sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md18">
-<title>EF_UART_setTimeoutBits</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a282884f28c4bf3bc46c779384c2f8f34" kindref="member">EF_UART_setTimeoutBits</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para>sets the &quot;timeout&quot; field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>value</bold> timeout bits value</para>
-</listitem></itemizedlist>
-</para>
-</sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md19">
-<title>EF_UART_setConfig</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a06202a95fb25fe530a9f499a0c3356dd" kindref="member">EF_UART_setConfig</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>config</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>config</bold> The value of the configuration register</para>
-</listitem></itemizedlist>
-</para>
-<para>sets the configuration register to a certain value where</para>
-<para><itemizedlist>
-<listitem><para>bit 0-3: Data word length: 5-9 bits</para>
-</listitem><listitem><para>bit 4: Two Stop Bits Select</para>
-</listitem><listitem><para>bit 5-7: Parity Type: 000: None, 001: odd, 010: even, 100: Sticky 0, 101: Sticky 1</para>
-</listitem><listitem><para>bit 8-13: Receiver Timeout measured in number of bits</para>
-</listitem></itemizedlist>
-</para>
-</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md19">
+<title>Structures and Types Documentation</title>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md20">
-<title>EF_UART_getConfig</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a49e2fd4f33a867cf19be6306515f48c4" kindref="member">EF_UART_getConfig</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>enum &lt;tt&gt;parity_type&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10ac157bdf0b85a40d2619cbc8bc1ae5fe2" kindref="member">NONE</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10aa29cedab858353a26006af9db7cd1ed8" kindref="member">ODD</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" kindref="member">EVEN</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10adedda6ce97e93d2a3e84ca7a704cd998" kindref="member">STICKY_0</ref><sp/>=<sp/>4,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a0cc8b778b8f0b3fa4d7a084fddbc3cec" kindref="member">STICKY_1</ref><sp/>=<sp/>5</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
 </programlisting></para>
-<para>returns the value of the configuration register</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
-</para>
-<para><bold>Return</bold>: configuration register value</para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md21">
-<title>EF_UART_setRxFIFOThreshold</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1aa53c2715114709e88c0cb06933dbd795" kindref="member">EF_UART_setRxFIFOThreshold</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>threshold</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para>sets the RX FIFO threshold to a certain value at which &quot;RXA&quot; interrupt will be raised</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>threshold</bold> The value of the required threshold</para>
-</listitem></itemizedlist>
-</para>
-</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md21">
+<title>Functions Documentation</title>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md22">
-<title>EF_UART_getRxFIFOThreshold</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a81a73a93bb2a3102153b955f7a351c58" kindref="member">EF_UART_getRxFIFOThreshold</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_busy&lt;/tt&gt;</title>
+<para><emphasis>This function checks id the UART is busy.</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ad9d841da9b4114560195d08af86a4b4a" kindref="member">EF_UART_busy</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*flag</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para>returns the current value of the RX FIFO threshold</para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>flag</computeroutput> a flag indicating if the UART is busy</para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Return</bold>: RX FIFO threshold register</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md23">
-<title>EF_UART_setTxFIFOThreshold</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a586c9ea0f947b1d7749902feaece7232" kindref="member">EF_UART_setTxFIFOThreshold</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>threshold</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_charsAvailable&lt;/tt&gt;</title>
+<para><emphasis>This function returns a flag indicating whether or not there is data available in the receive FIFO.</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ae92ca95cabf87bf850b99db43d36ddd5" kindref="member">EF_UART_charsAvailable</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*flag</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para>sets the TX FIFO threshold to a certain value at which &quot;TXB&quot; interrupt will be raised</para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>threshold</bold> The value of the required threshold</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>flag</computeroutput> a flag indicating if there is data available in the receive FIFO</para>
 </listitem></itemizedlist>
 </para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md24">
-<title>EF_UART_getTxFIFOThreshold</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1ae789dab33f1e090979ffba3403bfc89e" kindref="member">EF_UART_getTxFIFOThreshold</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_disable&lt;/tt&gt;</title>
+<para><emphasis>disables using uart by clearing &quot;en&quot; bit in the control register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a9d41c2bae6bbb144932cb4c264557a0f" kindref="member">EF_UART_disable</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para>returns the current value of the TX FIFO threshold</para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Return</bold>: TX FIFO threshold register</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md25">
-<title>EF_UART_setFIFOControl</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EF_UART_setFIFOControl(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_disableGlitchFilter&lt;/tt&gt;</title>
+<para><emphasis>disables glitch filter (filter out noise or glitches on the received signal) by clearing &quot;gfen&quot; bit in the control register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a2dbdc231cba17a0da6fae5e48b394dfd" kindref="member">EF_UART_disableGlitchFilter</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>config</bold> The value of the FIFO control register</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
 </listitem></itemizedlist>
 </para>
-<para>sets the FIFO control register to a certain value where</para>
-<para><itemizedlist>
-<listitem><para>bit 0-3: Transmit FIFO Level Threshold</para>
-</listitem><listitem><para>bit 8-11: Receive FIFO Level Threshold</para>
-</listitem></itemizedlist>
-</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md26">
-<title>EF_UART_getFIFOControl</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>EF_UART_getFIFOControl(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_disableLoopBack&lt;/tt&gt;</title>
+<para><emphasis>disables loopback (connecting TX to RX signal) by clearing &quot;lpen&quot; bit in the control register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1af253218d9f38bc1e0bd0b1196c2fb44d" kindref="member">EF_UART_disableLoopBack</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para>returns the value of the FIFO control register</para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Return</bold>: FIFO control register value</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md27">
-<title>EF_UART_getTxCount</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a9c9804bacfc1ac29f5f7138c4d9391aa" kindref="member">EF_UART_getTxCount</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_disableRx&lt;/tt&gt;</title>
+<para><emphasis>disables using uart RX by clearing uart &quot;rxen&quot; bit in the control register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a46da4f034dd502e65cdbd198e33611e2" kindref="member">EF_UART_disableRx</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para>returns the current level of the TX FIFO (the number of bytes in the FIFO)</para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Return</bold>: TX FIFO level register</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md28">
-<title>EF_UART_getRxCount</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a22997ecd88103d3c73678ae95dfb6997" kindref="member">EF_UART_getRxCount</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_disableTx&lt;/tt&gt;</title>
+<para><emphasis>disables using uart TX by clearing uart &quot;txen&quot; bit in the control register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a8ffdd73320ea0474fcb177d306dc6a67" kindref="member">EF_UART_disableTx</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para>returns the current level of the RX FIFO (the number of bytes in the FIFO)</para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Return</bold>: RX FIFO level register</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md29">
-<title>EF_UART_getFIFOStatus</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>EF_UART_getFIFOStatus(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_enable&lt;/tt&gt;</title>
+<para><emphasis>enables using uart by setting &quot;en&quot; bit in the control register to 1</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a2673b6af3d435a9caa3fd9f115ad1878" kindref="member">EF_UART_enable</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Return</bold>: FIFO status register value</para>
-<para>returns the value of the FIFO status register where</para>
-<para><itemizedlist>
-<listitem><para>bit 0-3: Receive FIFO Level</para>
-</listitem><listitem><para>bit 8-11: Transmit FIFO Level</para>
-</listitem></itemizedlist>
-</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md30">
-<title>EF_UART_setMatchData</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a8a5bc5dc07056ad544a3d1f89180b93d" kindref="member">EF_UART_setMatchData</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>matchData</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_enableGlitchFilter&lt;/tt&gt;</title>
+<para><emphasis>enables glitch filter (filter out noise or glitches on the received signal) by setting &quot;gfen&quot; bit in the control register to 1</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1acc57380ee395632930bd85ca6377655b" kindref="member">EF_UART_enableGlitchFilter</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para>sets the matchData to a certain value at which &quot;MATCH&quot; interrupt will be raised</para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>matchData</bold> The value of the required match data</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
 </listitem></itemizedlist>
 </para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md31">
-<title>EF_UART_getMatchData</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a680be50e9f223af9be12e473f0825627" kindref="member">EF_UART_getMatchData</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_enableLoopBack&lt;/tt&gt;</title>
+<para><emphasis>enables loopback (connecting TX to RX signal) by setting &quot;lpen&quot; bit in the control register to 1</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a8dbf6fd5cdc6e99a3e17486c124d0d1d" kindref="member">EF_UART_enableLoopBack</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para>returns the value of the match data register</para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Return</bold>: match data register value</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md32">
-<title>EF_UART_getRIS</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1ad2fd70aa8cb1d090a3081d9fc339acd2" kindref="member">EF_UART_getRIS</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_enableRx&lt;/tt&gt;</title>
+<para><emphasis>enables using uart RX by setting uart &quot;rxen&quot; bit in the control register to 1</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a8fe185c295fdf22ad7f5ab020138e95f" kindref="member">EF_UART_enableRx</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Return</bold>: RIS register value</para>
-<para>returns the value of the Raw Interrupt Status Register</para>
-<para><itemizedlist>
-<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
-</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
-</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
-</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
-</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
-</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
-</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
-</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
-</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
-</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
-</listitem></itemizedlist>
-</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md33">
-<title>EF_UART_getMIS</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a813285559d03d7fdc9ba7a73bf4df315" kindref="member">EF_UART_getMIS</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_enableTx&lt;/tt&gt;</title>
+<para><emphasis>enables using uart TX by setting uart &quot;txen&quot; bit in the control register to 1</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a11caaf87ef28a637bfd825208eb09c18" kindref="member">EF_UART_enableTx</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Return</bold>: MIS register value</para>
-<para>returns the value of the Masked Interrupt Status Register</para>
-<para><itemizedlist>
-<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
-</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
-</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
-</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
-</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
-</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
-</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
-</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
-</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
-</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
-</listitem></itemizedlist>
-</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md34">
-<title>EF_UART_setIM</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1afdcd87cc87d2c0e0c16b851315c6f7cc" kindref="member">EF_UART_setIM</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_getCTRL&lt;/tt&gt;</title>
+<para><emphasis>returns the value of the control register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a9870f89be83da209c6823fe725ed492e" kindref="member">EF_UART_getCTRL</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*CTRL_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>mask</bold> The required mask value</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>CTRL_value</computeroutput> The value of the control register</para>
 </listitem></itemizedlist>
 </para>
-<para>sets the value of the Interrupts Masking Register; which enable and disables interrupts</para>
-<para><itemizedlist>
-<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
-</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
-</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
-</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
-</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
-</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
-</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
-</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
-</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
-</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
-</listitem></itemizedlist>
-</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md35">
-<title>EF_UART_getIM</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a244ea6b7398137c5c49fde59325736c9" kindref="member">EF_UART_getIM</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<title>function &lt;tt&gt;EF_UART_getConfig&lt;/tt&gt;</title>
+<para><emphasis>returns the value of the configuration register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1afad923241f7414fe1292101d185d0c75" kindref="member">EF_UART_getConfig</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*CFG_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>CFG_value</computeroutput> The value of the configuration register</para>
 </listitem></itemizedlist>
 </para>
-<para><bold>Return</bold>: IM register value</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md36">
+<title>function &lt;tt&gt;EF_UART_getIM&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ab22694c6e2d02fc25daac570b70ef8f1" kindref="member">EF_UART_getIM</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*IM_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
 <para>returns the value of the Interrupts Masking Register; which enable and disables interrupts</para>
 <para><itemizedlist>
 <listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
@@ -574,20 +670,309 @@
 </listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
 </listitem></itemizedlist>
 </para>
-</sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md36">
-<title>EF_UART_setICR</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a2d23ae1377acb1ee9fe31bdedb4fb861" kindref="member">EF_UART_setICR</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
-</programlisting></para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>mask</bold> The required mask value</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>IM_value</computeroutput> The value of the Interrupts Masking Register</para>
 </listitem></itemizedlist>
 </para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md37">
+<title>function &lt;tt&gt;EF_UART_getMIS&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a0ff41852bf2c3a32d25864823da6a508" kindref="member">EF_UART_getMIS</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*MIS_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para>returns the value of the Masked Interrupt Status Register</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>MIS_value</computeroutput> The value of the Masked Interrupt Status Register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md38">
+<title>function &lt;tt&gt;EF_UART_getMatchData&lt;/tt&gt;</title>
+<para><emphasis>returns the value of the match data register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a559c00c5b1d96bcb0784e0449071f4bb" kindref="member">EF_UART_getMatchData</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*MATCH_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>MATCH_value</computeroutput> The value of the match data register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md39">
+<title>function &lt;tt&gt;EF_UART_getParityMode&lt;/tt&gt;</title>
+<para><emphasis>This function return the parity mode of the UART.</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a99a9c66e92fb0233fb7cf31e6c6921f1" kindref="member">EF_UART_getParityMode</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*parity_mode</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>parity</computeroutput> The parity mode of the UART</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md40">
+<title>function &lt;tt&gt;EF_UART_getPrescaler&lt;/tt&gt;</title>
+<para><emphasis>returns the value of the prescaler</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1aa5874369ddd7767b26a076726d585235" kindref="member">EF_UART_getPrescaler</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*Prescaler_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>Prescaler_value</computeroutput> The value of the prescaler register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md41">
+<title>function &lt;tt&gt;EF_UART_getRIS&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a81943fbc40226420642143805f95e991" kindref="member">EF_UART_getRIS</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*RIS_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para>returns the value of the Raw Interrupt Status Register</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>RIS_value</computeroutput> The value of the Raw Interrupt Status Register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md42">
+<title>function &lt;tt&gt;EF_UART_getRxCount&lt;/tt&gt;</title>
+<para><emphasis>returns the current level of the RX FIFO (the number of bytes in the FIFO)</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1aaa9a26fa27e5b5fc5c8039103abc1ed7" kindref="member">EF_UART_getRxCount</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*RX_FIFO_LEVEL_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>RX_FIFO_LEVEL_value</computeroutput> The value of the RX FIFO level register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md43">
+<title>function &lt;tt&gt;EF_UART_getRxFIFOThreshold&lt;/tt&gt;</title>
+<para><emphasis>returns the current value of the RX FIFO threshold</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a7b416fd3385eb5b3ee34eb09ea0de8d2" kindref="member">EF_UART_getRxFIFOThreshold</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*RX_FIFO_THRESHOLD_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>RX_FIFO_THRESHOLD_value</computeroutput> The value of the RX FIFO threshold register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md44">
+<title>function &lt;tt&gt;EF_UART_getTxCount&lt;/tt&gt;</title>
+<para><emphasis>returns the current level of the TX FIFO (the number of bytes in the FIFO)</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1acd160a7725a4b3fb675dcebeda8776d5" kindref="member">EF_UART_getTxCount</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*TX_FIFO_LEVEL_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>TX_FIFO_LEVEL_value</computeroutput> The value of the TX FIFO level register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md45">
+<title>function &lt;tt&gt;EF_UART_getTxFIFOThreshold&lt;/tt&gt;</title>
+<para><emphasis>returns the current value of the TX FIFO threshold</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a9844c9c7921a2187ca86bead858c8c02" kindref="member">EF_UART_getTxFIFOThreshold</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>*TX_FIFO_THRESHOLD_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>TX_FIFO_THRESHOLD_value</computeroutput> The value of the TX FIFO threshold register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md46">
+<title>function &lt;tt&gt;EF_UART_readChar&lt;/tt&gt;</title>
+<para><emphasis>recieve a single character through uart</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1aed92f78ad479144a2e9bc7169f2a9850" kindref="member">EF_UART_readChar</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uar,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*RXDATA_value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>RXDATA_value</computeroutput> The value of the received character</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md47">
+<title>function &lt;tt&gt;EF_UART_readCharNonBlocking&lt;/tt&gt;</title>
+<para><emphasis>This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code.</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1aaa93d9c62ca6e64a622bb32e86fb2dc0" kindref="member">EF_UART_readCharNonBlocking</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*RXDATA_value,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*data_available</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>RXDATA_value</computeroutput> The value of the received character</para>
+</listitem><listitem><para><computeroutput>data_available</computeroutput> A flag indicating if data is available in the receive FIFO</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md48">
+<title>function &lt;tt&gt;EF_UART_setCTRL&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ad36fee036e144937af3eed59eea101c6" kindref="member">EF_UART_setCTRL</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para>sets the control register to a certain value where</para>
+<para><itemizedlist>
+<listitem><para>bit 0: UART enable</para>
+</listitem><listitem><para>bit 1: UART Transmitter enable</para>
+</listitem><listitem><para>bit 2: UART Receiver enable</para>
+</listitem><listitem><para>bit 3: Loopback (connect RX and TX pins together) enable</para>
+</listitem><listitem><para>bit 4: UART Glitch Filer on RX enable</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>value</computeroutput> The value of the control register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md49">
+<title>function &lt;tt&gt;EF_UART_setConfig&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a97261ae27ea5d029ecab9b25f2f45ac9" kindref="member">EF_UART_setConfig</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>config</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para>sets the configuration register to a certain value where</para>
+<para><itemizedlist>
+<listitem><para>bit 0-3: Data word length: 5-9 bits</para>
+</listitem><listitem><para>bit 4: Two Stop Bits Select</para>
+</listitem><listitem><para>bit 5-7: Parity Type: 000: None, 001: odd, 010: even, 100: Sticky 0, 101: Sticky 1</para>
+</listitem><listitem><para>bit 8-13: Receiver Timeout measured in number of bits</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>config</computeroutput> The value of the configuration register</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md50">
+<title>function &lt;tt&gt;EF_UART_setDataSize&lt;/tt&gt;</title>
+<para><emphasis>sets the Data Size (Data word length: 5-9 bits ) by setting the &quot;wlen&quot; field in configuration register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a04a859ae5492ec11e9f3b418337148e1" kindref="member">EF_UART_setDataSize</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>value</computeroutput> The value of the required data word length</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md51">
+<title>function &lt;tt&gt;EF_UART_setGclkEnable&lt;/tt&gt;</title>
+<para><emphasis>sets the GCLK enable bit in the UART register to a certain value</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a5b00ddd7df5f72886ea559da57a1b2bd" kindref="member">EF_UART_setGclkEnable</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>value</computeroutput> The value of the GCLK enable bit</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md52">
+<title>function &lt;tt&gt;EF_UART_setICR&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a7ecbcf6bc73a4a3392648372441a6133" kindref="member">EF_UART_setICR</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
 <para>sets the value of the Interrupts Clear Register; write 1 to clear the flag</para>
 <para><itemizedlist>
 <listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
@@ -602,53 +987,823 @@
 </listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
 </listitem></itemizedlist>
 </para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>mask</computeroutput> The required mask value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md37">
-<title>EF_UART_writeChar</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a3006277927d54cf055f9bf651f1a06f4" kindref="member">EF_UART_writeChar</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md53">
+<title>function &lt;tt&gt;EF_UART_setIM&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ad62de52cc6d11bb10dfdc275d899bb0e" kindref="member">EF_UART_setIM</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>mask</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para>sets the value of the Interrupts Masking Register; which enable and disables interrupts</para>
+<para><itemizedlist>
+<listitem><para>bit 0 TXE : Transmit FIFO is Empty.</para>
+</listitem><listitem><para>bit 1 RXF : Receive FIFO is Full.</para>
+</listitem><listitem><para>bit 2 TXB : Transmit FIFO level is Below Threshold.</para>
+</listitem><listitem><para>bit 3 RXA : Receive FIFO level is Above Threshold.</para>
+</listitem><listitem><para>bit 4 BRK : Line Break; 13 consecutive 0&apos;s have been detected on the line.</para>
+</listitem><listitem><para>bit 5 MATCH : the receive data matches the MATCH register.</para>
+</listitem><listitem><para>bit 6 FE : Framing Error, the receiver does not see a &quot;stop&quot; bit at the expected &quot;stop&quot; bit time.</para>
+</listitem><listitem><para>bit 7 PRE : Parity Error; the receiver calculated parity does not match the received one.</para>
+</listitem><listitem><para>bit 8 OR : Overrun; data has been received but the RX FIFO is full.</para>
+</listitem><listitem><para>bit 9 RTO : Receiver Timeout; no data has been received for the time of a specified number of bits.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>mask</computeroutput> The required mask value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md54">
+<title>function &lt;tt&gt;EF_UART_setMatchData&lt;/tt&gt;</title>
+<para><emphasis>sets the matchData to a certain value at which &quot;MATCH&quot; interrupt will be raised</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1af275d224f7dcde400258b8d93e1ed2ce" kindref="member">EF_UART_setMatchData</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>matchData</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>matchData</computeroutput> The value of the required match data</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md55">
+<title>function &lt;tt&gt;EF_UART_setParityType&lt;/tt&gt;</title>
+<para><emphasis>sets the &quot;parity&quot; field in configuration register (could be none, odd, even, sticky 0 or sticky 1)</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a3af979ea01c716d9b6ca923b92cc5c31" kindref="member">EF_UART_setParityType</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>parity</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>parity</computeroutput> enum parity_type could be &quot;NONE&quot; , &quot;ODD&quot; , &quot;EVEN&quot; , &quot;STICKY\_0&quot; , or &quot;STICKY\_1&quot;</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md56">
+<title>function &lt;tt&gt;EF_UART_setPrescaler&lt;/tt&gt;</title>
+<para><emphasis>sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a1184834b408cdeed94623c691068a352" kindref="member">EF_UART_setPrescaler</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>prescaler</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>prescaler</computeroutput> The value of the required prescaler</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md57">
+<title>function &lt;tt&gt;EF_UART_setRxFIFOThreshold&lt;/tt&gt;</title>
+<para><emphasis>sets the RX FIFO threshold to a certain value at which &quot;RXA&quot; interrupt will be raised</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a8a2767ea0edab0500745dde177c1e58c" kindref="member">EF_UART_setRxFIFOThreshold</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>threshold</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>threshold</computeroutput> The value of the required threshold</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md58">
+<title>function &lt;tt&gt;EF_UART_setTimeoutBits&lt;/tt&gt;</title>
+<para><emphasis>sets the &quot;timeout&quot; field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ad18a6e0c7701bdc66b483b1c53a3581d" kindref="member">EF_UART_setTimeoutBits</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>value</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>value</computeroutput> timeout bits value</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md59">
+<title>function &lt;tt&gt;EF_UART_setTwoStopBitsSelect&lt;/tt&gt;</title>
+<para><emphasis>sets the &quot;stp2&quot; bit in configuration register (whether the stop boits are two or one)</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ae2336d17bb87f77416fc9c6871b7cbdb" kindref="member">EF_UART_setTwoStopBitsSelect</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_two_bits</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>is_two_bits</computeroutput> bool value, if &quot;true&quot;, the stop bits are two and if &quot;false&quot;, the stop bit is one</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md60">
+<title>function &lt;tt&gt;EF_UART_setTxFIFOThreshold&lt;/tt&gt;</title>
+<para><emphasis>sets the TX FIFO threshold to a certain value at which &quot;TXB&quot; interrupt will be raised</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a30ba41191c67b5242173320ab54e1205" kindref="member">EF_UART_setTxFIFOThreshold</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>threshold</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>threshold</computeroutput> The value of the required threshold</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md61">
+<title>function &lt;tt&gt;EF_UART_spaceAvailable&lt;/tt&gt;</title>
+<para><emphasis>This function returns a flag indicating whether or not the transmit is available, i.e. the transmit FIFO is not full.</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a7739739a5ceeadcf591f3b387c729d0c" kindref="member">EF_UART_spaceAvailable</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*flag</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>flag</computeroutput> a flag indicating if the transmit FIFO is not full</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md62">
+<title>function &lt;tt&gt;EF_UART_writeChar&lt;/tt&gt;</title>
+<para><emphasis>transmit a single character through uart</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ace1db9bbc3b092890acff854cec1aa77" kindref="member">EF_UART_writeChar</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
 </programlisting></para>
-<para>transmit a single character through uart</para>
-<para><bold>Parameters</bold>:</para>
+<para><bold>Parameters:</bold></para>
 <para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>data</bold> The character or byte required to send</para>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>data</computeroutput> The character or byte required to send</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md63">
+<title>function &lt;tt&gt;EF_UART_writeCharArr&lt;/tt&gt;</title>
+<para><emphasis>transmit an array of characters through uart</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a0f9ad65cbfe136ad4c4080612d578536" kindref="member">EF_UART_writeCharArr</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*char_arr</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>char_arr</computeroutput> An array of characters to send</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md64">
+<title>function &lt;tt&gt;EF_UART_writeCharNonBlocking&lt;/tt&gt;</title>
+<para><emphasis>This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a8091314203111b165d1bad624159f8ba" kindref="member">EF_UART_writeCharNonBlocking</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*data_sent</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>data</computeroutput> The character or byte required to send</para>
+</listitem><listitem><para><computeroutput>data_sent</computeroutput> A flag indicating if the data was sent successfully</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code</para>
+</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md65">
+<title>Macros Documentation</title>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md66">
+<title>define &lt;tt&gt;EF_UART_CFG_REG_MAX_VALUE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_MAX_VALUE<sp/>((uint32_t)0x00001FFF)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md67">
+<title>define &lt;tt&gt;EF_UART_CFG_REG_TIMEOUT_MAX_VALUE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_TIMEOUT_MAX_VALUE<sp/>((uint32_t)0x0000003F)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md68">
+<title>define &lt;tt&gt;EF_UART_CTRL_REG_MAX_VALUE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_MAX_VALUE<sp/>((uint32_t)0x0000001F)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md69">
+<title>define &lt;tt&gt;EF_UART_DataLength_MAX_VALUE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_DataLength_MAX_VALUE<sp/>((uint32_t)0x00000009)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md70">
+<title>define &lt;tt&gt;EF_UART_DataLength_MIN_VALUE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_DataLength_MIN_VALUE<sp/>((uint32_t)0x00000005)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md71">
+<title>define &lt;tt&gt;EF_UART_IC_REG_MAX_VALUE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_IC_REG_MAX_VALUE<sp/>((uint32_t)0x000003FF)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md72">
+<title>define &lt;tt&gt;EF_UART_IM_REG_MAX_VALUE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_IM_REG_MAX_VALUE<sp/>((uint32_t)0x000003FF)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md73">
+<title>define &lt;tt&gt;EF_UART_MATCH_REG_MAX_VALUE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_MATCH_REG_MAX_VALUE<sp/>((uint32_t)0x00001FFF)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md74">
+<title>define &lt;tt&gt;EF_UART_PR_REG_MAX_VALUE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_PR_REG_MAX_VALUE<sp/>((uint32_t)0x0000FFFF)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md75">
+<title>define &lt;tt&gt;EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE<sp/>((uint32_t)0x0000000F)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md76">
+<title>define &lt;tt&gt;EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE<sp/>((uint32_t)0x0000000F)</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md77">
+<title>File EF_UART_regs.h</title>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md78">
+<title>Structures and Types</title>
+<para><table rows="4" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>typedef struct **\_EF\_UART\_TYPE\_**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_TYPE** <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>typedef **EF\_UART\_TYPE** *   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_TYPE\_PTR** <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>struct   </para>
+</entry><entry thead="no" align='left'><para>**\_EF\_UART\_TYPE\_** <linebreak/>
+   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md79">
+<title>Macros</title>
+<para><table rows="45" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_BRK\_FLAG** ((uint32_t)0x10)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CFG\_REG\_PARITY\_BIT** ((uint32_t)5)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CFG\_REG\_PARITY\_MASK** ((uint32_t)0xe0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CFG\_REG\_STP2\_BIT** ((uint32_t)4)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CFG\_REG\_STP2\_MASK** ((uint32_t)0x10)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CFG\_REG\_TIMEOUT\_BIT** ((uint32_t)8)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CFG\_REG\_TIMEOUT\_MASK** ((uint32_t)0x3f)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CFG\_REG\_WLEN\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CFG\_REG\_WLEN\_MASK** ((uint32_t)0xf)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CTRL\_REG\_EN\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CTRL\_REG\_EN\_MASK** ((uint32_t)0x1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CTRL\_REG\_GFEN\_BIT** ((uint32_t)4)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CTRL\_REG\_GFEN\_MASK** ((uint32_t)0x10)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CTRL\_REG\_LPEN\_BIT** ((uint32_t)3)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CTRL\_REG\_LPEN\_MASK** ((uint32_t)0x8)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CTRL\_REG\_RXEN\_BIT** ((uint32_t)2)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CTRL\_REG\_RXEN\_MASK** ((uint32_t)0x4)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CTRL\_REG\_TXEN\_BIT** ((uint32_t)1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_CTRL\_REG\_TXEN\_MASK** ((uint32_t)0x2)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_FE\_FLAG** ((uint32_t)0x40)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_MATCH\_FLAG** ((uint32_t)0x20)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_OR\_FLAG** ((uint32_t)0x100)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_PRE\_FLAG** ((uint32_t)0x80)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_RTO\_FLAG** ((uint32_t)0x200)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_RXA\_FLAG** ((uint32_t)0x8)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_RXF\_FLAG** ((uint32_t)0x2)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK** ((uint32_t)0x1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK** ((uint32_t)0xf)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK** ((uint32_t)0xf)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_TXB\_FLAG** ((uint32_t)0x4)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_TXE\_FLAG** ((uint32_t)0x1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK** ((uint32_t)0x1)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK** ((uint32_t)0xf)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT** ((uint32_t)0)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK** ((uint32_t)0xf)<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**IO\_TYPES** <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**\_\_R** volatile const uint32_t<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**\_\_RW** volatile uint32_t<linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>define   </para>
+</entry><entry thead="no" align='left'><para>**\_\_W** volatile uint32_t<linebreak/>
+   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md80">
+<title>Structures and Types Documentation</title>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md81">
+<title>typedef &lt;tt&gt;EF_UART_TYPE&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">_EF_UART_TYPE_</ref><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>;</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md82">
+<title>typedef &lt;tt&gt;EF_UART_TYPE_PTR&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/><ref refid="_e_f___u_a_r_t__regs_8h_1ab605c9cde76c27dd58ec6cf73ca70893" kindref="member">EF_UART_TYPE_PTR</ref>;</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md83">
+<title>struct &lt;tt&gt;_EF_UART_TYPE_&lt;/tt&gt;</title>
+<para>Variables:</para>
+<para><itemizedlist>
+<listitem><para>**\_\_W** CFG <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** CTRL <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** GCLK <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** IC <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_RW** IM <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** MATCH <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** MIS <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** PR <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** RIS <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** RXDATA <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** RX_FIFO_FLUSH <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** RX_FIFO_LEVEL <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** RX_FIFO_THRESHOLD <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** TXDATA <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** TX_FIFO_FLUSH <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** TX_FIFO_LEVEL <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_W** TX_FIFO_THRESHOLD <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** reserved_0 <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** reserved_1 <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** reserved_2 <linebreak/>
+</para>
+</listitem><listitem><para>**\_\_R** reserved_3 <linebreak/>
+</para>
 </listitem></itemizedlist>
 </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md38">
-<title>EF_UART_writeCharArr</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a8036519d5504fe79890eb8fb07804dbf" kindref="member">EF_UART_writeCharArr</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>char_arr</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md84">
+<title>Macros Documentation</title>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md85">
+<title>define &lt;tt&gt;EF_UART_BRK_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_BRK_FLAG<sp/>((uint32_t)0x10)</highlight></codeline>
 </programlisting></para>
-<para>transmit an array of characters through uart</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem><listitem><para><bold>char_arr</bold> An array of characters to send</para>
-</listitem></itemizedlist>
-</para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md39">
-<title>EF_UART_readChar</title>
-<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8c_1a81f9d3aefc98bd8e44dd93c54d8156ac" kindref="member">EF_UART_readChar</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>uart_base</highlight></codeline>
-<codeline><highlight class="normal">)</highlight></codeline>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md86">
+<title>define &lt;tt&gt;EF_UART_CFG_REG_PARITY_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_PARITY_BIT<sp/>((uint32_t)5)</highlight></codeline>
 </programlisting></para>
-<para>receive a single character through uart</para>
-<para><bold>Parameters</bold>:</para>
-<para><itemizedlist>
-<listitem><para><bold>uart_base</bold> The base memory address of UART registers.</para>
-</listitem></itemizedlist>
-</para>
-<para><bold>Return</bold>: the byte received</para>
-<para><hruler/>
- </para>
 </sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md87">
+<title>define &lt;tt&gt;EF_UART_CFG_REG_PARITY_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_PARITY_MASK<sp/>((uint32_t)0xe0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md88">
+<title>define &lt;tt&gt;EF_UART_CFG_REG_STP2_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_STP2_BIT<sp/>((uint32_t)4)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md89">
+<title>define &lt;tt&gt;EF_UART_CFG_REG_STP2_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_STP2_MASK<sp/>((uint32_t)0x10)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md90">
+<title>define &lt;tt&gt;EF_UART_CFG_REG_TIMEOUT_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_TIMEOUT_BIT<sp/>((uint32_t)8)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md91">
+<title>define &lt;tt&gt;EF_UART_CFG_REG_TIMEOUT_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_TIMEOUT_MASK<sp/>((uint32_t)0x3f)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md92">
+<title>define &lt;tt&gt;EF_UART_CFG_REG_WLEN_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_WLEN_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md93">
+<title>define &lt;tt&gt;EF_UART_CFG_REG_WLEN_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_WLEN_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md94">
+<title>define &lt;tt&gt;EF_UART_CTRL_REG_EN_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_EN_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md95">
+<title>define &lt;tt&gt;EF_UART_CTRL_REG_EN_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_EN_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md96">
+<title>define &lt;tt&gt;EF_UART_CTRL_REG_GFEN_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_GFEN_BIT<sp/>((uint32_t)4)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md97">
+<title>define &lt;tt&gt;EF_UART_CTRL_REG_GFEN_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_GFEN_MASK<sp/>((uint32_t)0x10)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md98">
+<title>define &lt;tt&gt;EF_UART_CTRL_REG_LPEN_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_LPEN_BIT<sp/>((uint32_t)3)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md99">
+<title>define &lt;tt&gt;EF_UART_CTRL_REG_LPEN_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_LPEN_MASK<sp/>((uint32_t)0x8)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md100">
+<title>define &lt;tt&gt;EF_UART_CTRL_REG_RXEN_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_RXEN_BIT<sp/>((uint32_t)2)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md101">
+<title>define &lt;tt&gt;EF_UART_CTRL_REG_RXEN_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_RXEN_MASK<sp/>((uint32_t)0x4)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md102">
+<title>define &lt;tt&gt;EF_UART_CTRL_REG_TXEN_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_TXEN_BIT<sp/>((uint32_t)1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md103">
+<title>define &lt;tt&gt;EF_UART_CTRL_REG_TXEN_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_TXEN_MASK<sp/>((uint32_t)0x2)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md104">
+<title>define &lt;tt&gt;EF_UART_FE_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_FE_FLAG<sp/>((uint32_t)0x40)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md105">
+<title>define &lt;tt&gt;EF_UART_MATCH_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_MATCH_FLAG<sp/>((uint32_t)0x20)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md106">
+<title>define &lt;tt&gt;EF_UART_OR_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_OR_FLAG<sp/>((uint32_t)0x100)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md107">
+<title>define &lt;tt&gt;EF_UART_PRE_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_PRE_FLAG<sp/>((uint32_t)0x80)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md108">
+<title>define &lt;tt&gt;EF_UART_RTO_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RTO_FLAG<sp/>((uint32_t)0x200)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md109">
+<title>define &lt;tt&gt;EF_UART_RXA_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RXA_FLAG<sp/>((uint32_t)0x8)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md110">
+<title>define &lt;tt&gt;EF_UART_RXF_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RXF_FLAG<sp/>((uint32_t)0x2)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md111">
+<title>define &lt;tt&gt;EF_UART_RX_FIFO_FLUSH_REG_FLUSH_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_FLUSH_REG_FLUSH_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md112">
+<title>define &lt;tt&gt;EF_UART_RX_FIFO_FLUSH_REG_FLUSH_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_FLUSH_REG_FLUSH_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md113">
+<title>define &lt;tt&gt;EF_UART_RX_FIFO_LEVEL_REG_LEVEL_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_LEVEL_REG_LEVEL_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md114">
+<title>define &lt;tt&gt;EF_UART_RX_FIFO_LEVEL_REG_LEVEL_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_LEVEL_REG_LEVEL_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md115">
+<title>define &lt;tt&gt;EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md116">
+<title>define &lt;tt&gt;EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md117">
+<title>define &lt;tt&gt;EF_UART_TXB_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TXB_FLAG<sp/>((uint32_t)0x4)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md118">
+<title>define &lt;tt&gt;EF_UART_TXE_FLAG&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TXE_FLAG<sp/>((uint32_t)0x1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md119">
+<title>define &lt;tt&gt;EF_UART_TX_FIFO_FLUSH_REG_FLUSH_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_FLUSH_REG_FLUSH_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md120">
+<title>define &lt;tt&gt;EF_UART_TX_FIFO_FLUSH_REG_FLUSH_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_FLUSH_REG_FLUSH_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md121">
+<title>define &lt;tt&gt;EF_UART_TX_FIFO_LEVEL_REG_LEVEL_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_LEVEL_REG_LEVEL_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md122">
+<title>define &lt;tt&gt;EF_UART_TX_FIFO_LEVEL_REG_LEVEL_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_LEVEL_REG_LEVEL_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md123">
+<title>define &lt;tt&gt;EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT<sp/>((uint32_t)0)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md124">
+<title>define &lt;tt&gt;EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md125">
+<title>define &lt;tt&gt;IO_TYPES&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>IO_TYPES<sp/></highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md126">
+<title>define &lt;tt&gt;__R&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>__R<sp/>volatile<sp/>const<sp/>uint32_t</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md127">
+<title>define &lt;tt&gt;__RW&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>__RW<sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md128">
+<title>define &lt;tt&gt;__W&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>__W<sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t</highlight></codeline>
+</programlisting> </para>
+</sect2>
+</sect1>
     </detaileddescription>
     <location file="README.md"/>
   </compounddef>

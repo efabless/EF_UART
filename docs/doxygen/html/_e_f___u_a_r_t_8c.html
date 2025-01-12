@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: EF_UART.c File Reference</title>
+<title>EF_UART APIs: EF_UART.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">EF_UART APIs
    </div>
   </td>
  </tr>
@@ -80,134 +80,154 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_e_f___u_a_r_t_8h_source.html">EF_UART.h</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a727db5e35b43153739077d4568b9f09b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a727db5e35b43153739077d4568b9f09b">EF_UART_C</a></td></tr>
+<tr class="separator:a727db5e35b43153739077d4568b9f09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5b00ddd7df5f72886ea559da57a1b2bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a5b00ddd7df5f72886ea559da57a1b2bd">EF_UART_setGclkEnable</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
+<tr class="memitem:a5b00ddd7df5f72886ea559da57a1b2bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a5b00ddd7df5f72886ea559da57a1b2bd">EF_UART_setGclkEnable</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
 <tr class="memdesc:a5b00ddd7df5f72886ea559da57a1b2bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the GCLK enable bit in the UART register to a certain value  <br /></td></tr>
 <tr class="separator:a5b00ddd7df5f72886ea559da57a1b2bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2673b6af3d435a9caa3fd9f115ad1878"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a2673b6af3d435a9caa3fd9f115ad1878">EF_UART_enable</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart)</td></tr>
+<tr class="memitem:a2673b6af3d435a9caa3fd9f115ad1878"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a2673b6af3d435a9caa3fd9f115ad1878">EF_UART_enable</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart)</td></tr>
 <tr class="memdesc:a2673b6af3d435a9caa3fd9f115ad1878"><td class="mdescLeft">&#160;</td><td class="mdescRight">enables using uart by setting "en" bit in the control register to 1  <br /></td></tr>
 <tr class="separator:a2673b6af3d435a9caa3fd9f115ad1878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d41c2bae6bbb144932cb4c264557a0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a9d41c2bae6bbb144932cb4c264557a0f">EF_UART_disable</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart)</td></tr>
+<tr class="memitem:a9d41c2bae6bbb144932cb4c264557a0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a9d41c2bae6bbb144932cb4c264557a0f">EF_UART_disable</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart)</td></tr>
 <tr class="memdesc:a9d41c2bae6bbb144932cb4c264557a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">disables using uart by clearing "en" bit in the control register  <br /></td></tr>
 <tr class="separator:a9d41c2bae6bbb144932cb4c264557a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fe185c295fdf22ad7f5ab020138e95f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a8fe185c295fdf22ad7f5ab020138e95f">EF_UART_enableRx</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart)</td></tr>
+<tr class="memitem:a8fe185c295fdf22ad7f5ab020138e95f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a8fe185c295fdf22ad7f5ab020138e95f">EF_UART_enableRx</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart)</td></tr>
 <tr class="memdesc:a8fe185c295fdf22ad7f5ab020138e95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">enables using uart RX by setting uart "rxen" bit in the control register to 1  <br /></td></tr>
 <tr class="separator:a8fe185c295fdf22ad7f5ab020138e95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46da4f034dd502e65cdbd198e33611e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a46da4f034dd502e65cdbd198e33611e2">EF_UART_disableRx</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart)</td></tr>
+<tr class="memitem:a46da4f034dd502e65cdbd198e33611e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a46da4f034dd502e65cdbd198e33611e2">EF_UART_disableRx</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart)</td></tr>
 <tr class="memdesc:a46da4f034dd502e65cdbd198e33611e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">disables using uart RX by clearing uart "rxen" bit in the control register  <br /></td></tr>
 <tr class="separator:a46da4f034dd502e65cdbd198e33611e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11caaf87ef28a637bfd825208eb09c18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a11caaf87ef28a637bfd825208eb09c18">EF_UART_enableTx</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart)</td></tr>
+<tr class="memitem:a11caaf87ef28a637bfd825208eb09c18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a11caaf87ef28a637bfd825208eb09c18">EF_UART_enableTx</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart)</td></tr>
 <tr class="memdesc:a11caaf87ef28a637bfd825208eb09c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">enables using uart TX by setting uart "txen" bit in the control register to 1  <br /></td></tr>
 <tr class="separator:a11caaf87ef28a637bfd825208eb09c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ffdd73320ea0474fcb177d306dc6a67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a8ffdd73320ea0474fcb177d306dc6a67">EF_UART_disableTx</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart)</td></tr>
+<tr class="memitem:a8ffdd73320ea0474fcb177d306dc6a67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a8ffdd73320ea0474fcb177d306dc6a67">EF_UART_disableTx</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart)</td></tr>
 <tr class="memdesc:a8ffdd73320ea0474fcb177d306dc6a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">disables using uart TX by clearing uart "txen" bit in the control register  <br /></td></tr>
 <tr class="separator:a8ffdd73320ea0474fcb177d306dc6a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dbf6fd5cdc6e99a3e17486c124d0d1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a8dbf6fd5cdc6e99a3e17486c124d0d1d">EF_UART_enableLoopBack</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart)</td></tr>
+<tr class="memitem:a8dbf6fd5cdc6e99a3e17486c124d0d1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a8dbf6fd5cdc6e99a3e17486c124d0d1d">EF_UART_enableLoopBack</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart)</td></tr>
 <tr class="memdesc:a8dbf6fd5cdc6e99a3e17486c124d0d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">enables loopback (connecting TX to RX signal) by setting "lpen" bit in the control register to 1  <br /></td></tr>
 <tr class="separator:a8dbf6fd5cdc6e99a3e17486c124d0d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af253218d9f38bc1e0bd0b1196c2fb44d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#af253218d9f38bc1e0bd0b1196c2fb44d">EF_UART_disableLoopBack</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart)</td></tr>
+<tr class="memitem:af253218d9f38bc1e0bd0b1196c2fb44d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#af253218d9f38bc1e0bd0b1196c2fb44d">EF_UART_disableLoopBack</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart)</td></tr>
 <tr class="memdesc:af253218d9f38bc1e0bd0b1196c2fb44d"><td class="mdescLeft">&#160;</td><td class="mdescRight">disables loopback (connecting TX to RX signal) by clearing "lpen" bit in the control register  <br /></td></tr>
 <tr class="separator:af253218d9f38bc1e0bd0b1196c2fb44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc57380ee395632930bd85ca6377655b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#acc57380ee395632930bd85ca6377655b">EF_UART_enableGlitchFilter</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart)</td></tr>
+<tr class="memitem:acc57380ee395632930bd85ca6377655b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#acc57380ee395632930bd85ca6377655b">EF_UART_enableGlitchFilter</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart)</td></tr>
 <tr class="memdesc:acc57380ee395632930bd85ca6377655b"><td class="mdescLeft">&#160;</td><td class="mdescRight">enables glitch filter (filter out noise or glitches on the received signal) by setting "gfen" bit in the control register to 1  <br /></td></tr>
 <tr class="separator:acc57380ee395632930bd85ca6377655b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dbdc231cba17a0da6fae5e48b394dfd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a2dbdc231cba17a0da6fae5e48b394dfd">EF_UART_disableGlitchFilter</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart)</td></tr>
+<tr class="memitem:a2dbdc231cba17a0da6fae5e48b394dfd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a2dbdc231cba17a0da6fae5e48b394dfd">EF_UART_disableGlitchFilter</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart)</td></tr>
 <tr class="memdesc:a2dbdc231cba17a0da6fae5e48b394dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">disables glitch filter (filter out noise or glitches on the received signal) by clearing "gfen" bit in the control register  <br /></td></tr>
 <tr class="separator:a2dbdc231cba17a0da6fae5e48b394dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad36fee036e144937af3eed59eea101c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ad36fee036e144937af3eed59eea101c6">EF_UART_setCTRL</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
+<tr class="memitem:ad36fee036e144937af3eed59eea101c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ad36fee036e144937af3eed59eea101c6">EF_UART_setCTRL</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
 <tr class="separator:ad36fee036e144937af3eed59eea101c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9870f89be83da209c6823fe725ed492e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a9870f89be83da209c6823fe725ed492e">EF_UART_getCTRL</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *CTRL_value)</td></tr>
+<tr class="memitem:a9870f89be83da209c6823fe725ed492e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a9870f89be83da209c6823fe725ed492e">EF_UART_getCTRL</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *CTRL_value)</td></tr>
 <tr class="memdesc:a9870f89be83da209c6823fe725ed492e"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the value of the control register  <br /></td></tr>
 <tr class="separator:a9870f89be83da209c6823fe725ed492e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1184834b408cdeed94623c691068a352"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a1184834b408cdeed94623c691068a352">EF_UART_setPrescaler</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t prescaler)</td></tr>
+<tr class="memitem:a1184834b408cdeed94623c691068a352"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a1184834b408cdeed94623c691068a352">EF_UART_setPrescaler</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t prescaler)</td></tr>
 <tr class="memdesc:a1184834b408cdeed94623c691068a352"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)  <br /></td></tr>
 <tr class="separator:a1184834b408cdeed94623c691068a352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5874369ddd7767b26a076726d585235"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#aa5874369ddd7767b26a076726d585235">EF_UART_getPrescaler</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *Prescaler_value)</td></tr>
+<tr class="memitem:aa5874369ddd7767b26a076726d585235"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#aa5874369ddd7767b26a076726d585235">EF_UART_getPrescaler</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *Prescaler_value)</td></tr>
 <tr class="memdesc:aa5874369ddd7767b26a076726d585235"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the value of the prescaler  <br /></td></tr>
 <tr class="separator:aa5874369ddd7767b26a076726d585235"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04a859ae5492ec11e9f3b418337148e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a04a859ae5492ec11e9f3b418337148e1">EF_UART_setDataSize</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
+<tr class="memitem:a04a859ae5492ec11e9f3b418337148e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a04a859ae5492ec11e9f3b418337148e1">EF_UART_setDataSize</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
 <tr class="memdesc:a04a859ae5492ec11e9f3b418337148e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the Data Size (Data word length: 5-9 bits ) by setting the "wlen" field in configuration register  <br /></td></tr>
 <tr class="separator:a04a859ae5492ec11e9f3b418337148e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2336d17bb87f77416fc9c6871b7cbdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ae2336d17bb87f77416fc9c6871b7cbdb">EF_UART_setTwoStopBitsSelect</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, bool is_two_bits)</td></tr>
+<tr class="memitem:ae2336d17bb87f77416fc9c6871b7cbdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ae2336d17bb87f77416fc9c6871b7cbdb">EF_UART_setTwoStopBitsSelect</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, bool is_two_bits)</td></tr>
 <tr class="memdesc:ae2336d17bb87f77416fc9c6871b7cbdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the "stp2" bit in configuration register (whether the stop boits are two or one)  <br /></td></tr>
 <tr class="separator:ae2336d17bb87f77416fc9c6871b7cbdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3af979ea01c716d9b6ca923b92cc5c31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a3af979ea01c716d9b6ca923b92cc5c31">EF_UART_setParityType</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, enum parity_type parity)</td></tr>
+<tr class="memitem:a3af979ea01c716d9b6ca923b92cc5c31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a3af979ea01c716d9b6ca923b92cc5c31">EF_UART_setParityType</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, enum <a class="el" href="_e_f___u_a_r_t_8h.html#aab5cbb4a185bfe65a14e19beeaba4f10">parity_type</a> parity)</td></tr>
 <tr class="memdesc:a3af979ea01c716d9b6ca923b92cc5c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the "parity" field in configuration register (could be none, odd, even, sticky 0 or sticky 1)  <br /></td></tr>
 <tr class="separator:a3af979ea01c716d9b6ca923b92cc5c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad18a6e0c7701bdc66b483b1c53a3581d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ad18a6e0c7701bdc66b483b1c53a3581d">EF_UART_setTimeoutBits</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
+<tr class="memitem:ad18a6e0c7701bdc66b483b1c53a3581d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ad18a6e0c7701bdc66b483b1c53a3581d">EF_UART_setTimeoutBits</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
 <tr class="memdesc:ad18a6e0c7701bdc66b483b1c53a3581d"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the "timeout" field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised  <br /></td></tr>
 <tr class="separator:ad18a6e0c7701bdc66b483b1c53a3581d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97261ae27ea5d029ecab9b25f2f45ac9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a97261ae27ea5d029ecab9b25f2f45ac9">EF_UART_setConfig</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
+<tr class="memitem:a97261ae27ea5d029ecab9b25f2f45ac9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a97261ae27ea5d029ecab9b25f2f45ac9">EF_UART_setConfig</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
 <tr class="separator:a97261ae27ea5d029ecab9b25f2f45ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afad923241f7414fe1292101d185d0c75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#afad923241f7414fe1292101d185d0c75">EF_UART_getConfig</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *CFG_value)</td></tr>
+<tr class="memitem:afad923241f7414fe1292101d185d0c75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#afad923241f7414fe1292101d185d0c75">EF_UART_getConfig</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *CFG_value)</td></tr>
 <tr class="memdesc:afad923241f7414fe1292101d185d0c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the value of the configuration register  <br /></td></tr>
 <tr class="separator:afad923241f7414fe1292101d185d0c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a2767ea0edab0500745dde177c1e58c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a8a2767ea0edab0500745dde177c1e58c">EF_UART_setRxFIFOThreshold</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
+<tr class="memitem:a8a2767ea0edab0500745dde177c1e58c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a8a2767ea0edab0500745dde177c1e58c">EF_UART_setRxFIFOThreshold</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
 <tr class="memdesc:a8a2767ea0edab0500745dde177c1e58c"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the RX FIFO threshold to a certain value at which "RXA" interrupt will be raised  <br /></td></tr>
 <tr class="separator:a8a2767ea0edab0500745dde177c1e58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b416fd3385eb5b3ee34eb09ea0de8d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a7b416fd3385eb5b3ee34eb09ea0de8d2">EF_UART_getRxFIFOThreshold</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *RX_FIFO_THRESHOLD_value)</td></tr>
+<tr class="memitem:a7b416fd3385eb5b3ee34eb09ea0de8d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a7b416fd3385eb5b3ee34eb09ea0de8d2">EF_UART_getRxFIFOThreshold</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *RX_FIFO_THRESHOLD_value)</td></tr>
 <tr class="memdesc:a7b416fd3385eb5b3ee34eb09ea0de8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the current value of the RX FIFO threshold  <br /></td></tr>
 <tr class="separator:a7b416fd3385eb5b3ee34eb09ea0de8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30ba41191c67b5242173320ab54e1205"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a30ba41191c67b5242173320ab54e1205">EF_UART_setTxFIFOThreshold</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
+<tr class="memitem:a30ba41191c67b5242173320ab54e1205"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a30ba41191c67b5242173320ab54e1205">EF_UART_setTxFIFOThreshold</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
 <tr class="memdesc:a30ba41191c67b5242173320ab54e1205"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the TX FIFO threshold to a certain value at which "TXB" interrupt will be raised  <br /></td></tr>
 <tr class="separator:a30ba41191c67b5242173320ab54e1205"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9844c9c7921a2187ca86bead858c8c02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a9844c9c7921a2187ca86bead858c8c02">EF_UART_getTxFIFOThreshold</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *TX_FIFO_THRESHOLD_value)</td></tr>
+<tr class="memitem:a9844c9c7921a2187ca86bead858c8c02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a9844c9c7921a2187ca86bead858c8c02">EF_UART_getTxFIFOThreshold</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *TX_FIFO_THRESHOLD_value)</td></tr>
 <tr class="memdesc:a9844c9c7921a2187ca86bead858c8c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the current value of the TX FIFO threshold  <br /></td></tr>
 <tr class="separator:a9844c9c7921a2187ca86bead858c8c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd160a7725a4b3fb675dcebeda8776d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#acd160a7725a4b3fb675dcebeda8776d5">EF_UART_getTxCount</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *TX_FIFO_LEVEL_value)</td></tr>
+<tr class="memitem:acd160a7725a4b3fb675dcebeda8776d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#acd160a7725a4b3fb675dcebeda8776d5">EF_UART_getTxCount</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *TX_FIFO_LEVEL_value)</td></tr>
 <tr class="memdesc:acd160a7725a4b3fb675dcebeda8776d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the current level of the TX FIFO (the number of bytes in the FIFO)  <br /></td></tr>
 <tr class="separator:acd160a7725a4b3fb675dcebeda8776d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa9a26fa27e5b5fc5c8039103abc1ed7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#aaa9a26fa27e5b5fc5c8039103abc1ed7">EF_UART_getRxCount</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *RX_FIFO_LEVEL_value)</td></tr>
+<tr class="memitem:aaa9a26fa27e5b5fc5c8039103abc1ed7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#aaa9a26fa27e5b5fc5c8039103abc1ed7">EF_UART_getRxCount</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *RX_FIFO_LEVEL_value)</td></tr>
 <tr class="memdesc:aaa9a26fa27e5b5fc5c8039103abc1ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the current level of the RX FIFO (the number of bytes in the FIFO)  <br /></td></tr>
 <tr class="separator:aaa9a26fa27e5b5fc5c8039103abc1ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af275d224f7dcde400258b8d93e1ed2ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#af275d224f7dcde400258b8d93e1ed2ce">EF_UART_setMatchData</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t matchData)</td></tr>
+<tr class="memitem:af275d224f7dcde400258b8d93e1ed2ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#af275d224f7dcde400258b8d93e1ed2ce">EF_UART_setMatchData</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t matchData)</td></tr>
 <tr class="memdesc:af275d224f7dcde400258b8d93e1ed2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the matchData to a certain value at which "MATCH" interrupt will be raised  <br /></td></tr>
 <tr class="separator:af275d224f7dcde400258b8d93e1ed2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a559c00c5b1d96bcb0784e0449071f4bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a559c00c5b1d96bcb0784e0449071f4bb">EF_UART_getMatchData</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *MATCH_value)</td></tr>
+<tr class="memitem:a559c00c5b1d96bcb0784e0449071f4bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a559c00c5b1d96bcb0784e0449071f4bb">EF_UART_getMatchData</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *MATCH_value)</td></tr>
 <tr class="memdesc:a559c00c5b1d96bcb0784e0449071f4bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the value of the match data register  <br /></td></tr>
 <tr class="separator:a559c00c5b1d96bcb0784e0449071f4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81943fbc40226420642143805f95e991"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a81943fbc40226420642143805f95e991">EF_UART_getRIS</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *RIS_value)</td></tr>
+<tr class="memitem:a81943fbc40226420642143805f95e991"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a81943fbc40226420642143805f95e991">EF_UART_getRIS</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *RIS_value)</td></tr>
 <tr class="separator:a81943fbc40226420642143805f95e991"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ff41852bf2c3a32d25864823da6a508"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a0ff41852bf2c3a32d25864823da6a508">EF_UART_getMIS</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *MIS_value)</td></tr>
+<tr class="memitem:a0ff41852bf2c3a32d25864823da6a508"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a0ff41852bf2c3a32d25864823da6a508">EF_UART_getMIS</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *MIS_value)</td></tr>
 <tr class="separator:a0ff41852bf2c3a32d25864823da6a508"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad62de52cc6d11bb10dfdc275d899bb0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ad62de52cc6d11bb10dfdc275d899bb0e">EF_UART_setIM</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t mask)</td></tr>
+<tr class="memitem:ad62de52cc6d11bb10dfdc275d899bb0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ad62de52cc6d11bb10dfdc275d899bb0e">EF_UART_setIM</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t mask)</td></tr>
 <tr class="separator:ad62de52cc6d11bb10dfdc275d899bb0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab22694c6e2d02fc25daac570b70ef8f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ab22694c6e2d02fc25daac570b70ef8f1">EF_UART_getIM</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *IM_value)</td></tr>
+<tr class="memitem:ab22694c6e2d02fc25daac570b70ef8f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ab22694c6e2d02fc25daac570b70ef8f1">EF_UART_getIM</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *IM_value)</td></tr>
 <tr class="separator:ab22694c6e2d02fc25daac570b70ef8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ecbcf6bc73a4a3392648372441a6133"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a7ecbcf6bc73a4a3392648372441a6133">EF_UART_setICR</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t mask)</td></tr>
+<tr class="memitem:a7ecbcf6bc73a4a3392648372441a6133"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a7ecbcf6bc73a4a3392648372441a6133">EF_UART_setICR</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t mask)</td></tr>
 <tr class="separator:a7ecbcf6bc73a4a3392648372441a6133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace1db9bbc3b092890acff854cec1aa77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ace1db9bbc3b092890acff854cec1aa77">EF_UART_writeChar</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, char data)</td></tr>
+<tr class="memitem:ace1db9bbc3b092890acff854cec1aa77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ace1db9bbc3b092890acff854cec1aa77">EF_UART_writeChar</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, char data)</td></tr>
 <tr class="memdesc:ace1db9bbc3b092890acff854cec1aa77"><td class="mdescLeft">&#160;</td><td class="mdescRight">transmit a single character through uart  <br /></td></tr>
 <tr class="separator:ace1db9bbc3b092890acff854cec1aa77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f9ad65cbfe136ad4c4080612d578536"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a0f9ad65cbfe136ad4c4080612d578536">EF_UART_writeCharArr</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, const char *char_arr)</td></tr>
+<tr class="memitem:a0f9ad65cbfe136ad4c4080612d578536"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a0f9ad65cbfe136ad4c4080612d578536">EF_UART_writeCharArr</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, const char *char_arr)</td></tr>
 <tr class="memdesc:a0f9ad65cbfe136ad4c4080612d578536"><td class="mdescLeft">&#160;</td><td class="mdescRight">transmit an array of characters through uart  <br /></td></tr>
 <tr class="separator:a0f9ad65cbfe136ad4c4080612d578536"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed92f78ad479144a2e9bc7169f2a9850"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#aed92f78ad479144a2e9bc7169f2a9850">EF_UART_readChar</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, char *RXDATA_value)</td></tr>
+<tr class="memitem:aed92f78ad479144a2e9bc7169f2a9850"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#aed92f78ad479144a2e9bc7169f2a9850">EF_UART_readChar</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, char *RXDATA_value)</td></tr>
 <tr class="memdesc:aed92f78ad479144a2e9bc7169f2a9850"><td class="mdescLeft">&#160;</td><td class="mdescRight">recieve a single character through uart  <br /></td></tr>
 <tr class="separator:aed92f78ad479144a2e9bc7169f2a9850"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa93d9c62ca6e64a622bb32e86fb2dc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#aaa93d9c62ca6e64a622bb32e86fb2dc0">EF_UART_readCharNonBlocking</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, char *RXDATA_value, bool *data_available)</td></tr>
+<tr class="memitem:aaa93d9c62ca6e64a622bb32e86fb2dc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#aaa93d9c62ca6e64a622bb32e86fb2dc0">EF_UART_readCharNonBlocking</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, char *RXDATA_value, bool *data_available)</td></tr>
 <tr class="memdesc:aaa93d9c62ca6e64a622bb32e86fb2dc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code.  <br /></td></tr>
 <tr class="separator:aaa93d9c62ca6e64a622bb32e86fb2dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8091314203111b165d1bad624159f8ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a8091314203111b165d1bad624159f8ba">EF_UART_writeCharNonBlocking</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, char data, bool *data_sent)</td></tr>
+<tr class="memitem:a8091314203111b165d1bad624159f8ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a8091314203111b165d1bad624159f8ba">EF_UART_writeCharNonBlocking</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, char data, bool *data_sent)</td></tr>
 <tr class="memdesc:a8091314203111b165d1bad624159f8ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.  <br /></td></tr>
 <tr class="separator:a8091314203111b165d1bad624159f8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae92ca95cabf87bf850b99db43d36ddd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ae92ca95cabf87bf850b99db43d36ddd5">EF_UART_charsAvailable</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, bool *RXA_flag)</td></tr>
+<tr class="memitem:ae92ca95cabf87bf850b99db43d36ddd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ae92ca95cabf87bf850b99db43d36ddd5">EF_UART_charsAvailable</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, bool *RXA_flag)</td></tr>
 <tr class="memdesc:ae92ca95cabf87bf850b99db43d36ddd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns a flag indicating whether or not there is data available in the receive FIFO.  <br /></td></tr>
 <tr class="separator:ae92ca95cabf87bf850b99db43d36ddd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7739739a5ceeadcf591f3b387c729d0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a7739739a5ceeadcf591f3b387c729d0c">EF_UART_spaceAvailable</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, bool *TXB_flag)</td></tr>
+<tr class="memitem:a7739739a5ceeadcf591f3b387c729d0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a7739739a5ceeadcf591f3b387c729d0c">EF_UART_spaceAvailable</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, bool *TXB_flag)</td></tr>
 <tr class="memdesc:a7739739a5ceeadcf591f3b387c729d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns a flag indicating whether or not the transmit is available, i.e. the transmit FIFO is not full.  <br /></td></tr>
 <tr class="separator:a7739739a5ceeadcf591f3b387c729d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99a9c66e92fb0233fb7cf31e6c6921f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a99a9c66e92fb0233fb7cf31e6c6921f1">EF_UART_getParityMode</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, uint32_t *parity_mode)</td></tr>
+<tr class="memitem:a99a9c66e92fb0233fb7cf31e6c6921f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a99a9c66e92fb0233fb7cf31e6c6921f1">EF_UART_getParityMode</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t *parity_mode)</td></tr>
 <tr class="memdesc:a99a9c66e92fb0233fb7cf31e6c6921f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function return the parity mode of the UART.  <br /></td></tr>
 <tr class="separator:a99a9c66e92fb0233fb7cf31e6c6921f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9d841da9b4114560195d08af86a4b4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ad9d841da9b4114560195d08af86a4b4a">EF_UART_busy</a> (<a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart, bool *busy_flag)</td></tr>
+<tr class="memitem:ad9d841da9b4114560195d08af86a4b4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ad9d841da9b4114560195d08af86a4b4a">EF_UART_busy</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, bool *busy_flag)</td></tr>
 <tr class="memdesc:ad9d841da9b4114560195d08af86a4b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks id the UART is busy.  <br /></td></tr>
 <tr class="separator:ad9d841da9b4114560195d08af86a4b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C file for UART APIs which contains the function implmentations. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a727db5e35b43153739077d4568b9f09b" name="a727db5e35b43153739077d4568b9f09b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a727db5e35b43153739077d4568b9f09b">&#9670;&#160;</a></span>EF_UART_C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EF_UART_C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="ad9d841da9b4114560195d08af86a4b4a" name="ad9d841da9b4114560195d08af86a4b4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad9d841da9b4114560195d08af86a4b4a">&#9670;&#160;</a></span>EF_UART_busy()</h2>
 
@@ -217,7 +237,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_busy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -237,7 +257,7 @@ Functions</h2></td></tr>
 <p>This function checks id the UART is busy. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">flag</td><td>a flag indicating if the UART is busy</td></tr>
   </table>
   </dd>
@@ -255,7 +275,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_charsAvailable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -275,7 +295,7 @@ Functions</h2></td></tr>
 <p>This function returns a flag indicating whether or not there is data available in the receive FIFO. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">flag</td><td>a flag indicating if there is data available in the receive FIFO</td></tr>
   </table>
   </dd>
@@ -293,7 +313,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_disable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em></td><td>)</td>
           <td></td>
         </tr>
@@ -303,7 +323,7 @@ Functions</h2></td></tr>
 <p>disables using uart by clearing "en" bit in the control register </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers.</td></tr>
   </table>
   </dd>
 </dl>
@@ -320,7 +340,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_disableGlitchFilter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em></td><td>)</td>
           <td></td>
         </tr>
@@ -330,7 +350,7 @@ Functions</h2></td></tr>
 <p>disables glitch filter (filter out noise or glitches on the received signal) by clearing "gfen" bit in the control register </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers.</td></tr>
   </table>
   </dd>
 </dl>
@@ -347,7 +367,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_disableLoopBack </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em></td><td>)</td>
           <td></td>
         </tr>
@@ -357,7 +377,7 @@ Functions</h2></td></tr>
 <p>disables loopback (connecting TX to RX signal) by clearing "lpen" bit in the control register </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers.</td></tr>
   </table>
   </dd>
 </dl>
@@ -374,7 +394,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_disableRx </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em></td><td>)</td>
           <td></td>
         </tr>
@@ -384,7 +404,7 @@ Functions</h2></td></tr>
 <p>disables using uart RX by clearing uart "rxen" bit in the control register </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers.</td></tr>
   </table>
   </dd>
 </dl>
@@ -401,7 +421,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_disableTx </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em></td><td>)</td>
           <td></td>
         </tr>
@@ -411,7 +431,7 @@ Functions</h2></td></tr>
 <p>disables using uart TX by clearing uart "txen" bit in the control register </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers.</td></tr>
   </table>
   </dd>
 </dl>
@@ -428,7 +448,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_enable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em></td><td>)</td>
           <td></td>
         </tr>
@@ -438,7 +458,7 @@ Functions</h2></td></tr>
 <p>enables using uart by setting "en" bit in the control register to 1 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers.</td></tr>
   </table>
   </dd>
 </dl>
@@ -455,7 +475,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_enableGlitchFilter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em></td><td>)</td>
           <td></td>
         </tr>
@@ -465,7 +485,7 @@ Functions</h2></td></tr>
 <p>enables glitch filter (filter out noise or glitches on the received signal) by setting "gfen" bit in the control register to 1 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers.</td></tr>
   </table>
   </dd>
 </dl>
@@ -482,7 +502,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_enableLoopBack </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em></td><td>)</td>
           <td></td>
         </tr>
@@ -492,7 +512,7 @@ Functions</h2></td></tr>
 <p>enables loopback (connecting TX to RX signal) by setting "lpen" bit in the control register to 1 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers.</td></tr>
   </table>
   </dd>
 </dl>
@@ -509,7 +529,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_enableRx </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em></td><td>)</td>
           <td></td>
         </tr>
@@ -519,7 +539,7 @@ Functions</h2></td></tr>
 <p>enables using uart RX by setting uart "rxen" bit in the control register to 1 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers.</td></tr>
   </table>
   </dd>
 </dl>
@@ -536,7 +556,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_enableTx </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em></td><td>)</td>
           <td></td>
         </tr>
@@ -546,7 +566,7 @@ Functions</h2></td></tr>
 <p>enables using uart TX by setting uart "txen" bit in the control register to 1 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers.</td></tr>
   </table>
   </dd>
 </dl>
@@ -563,7 +583,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getConfig </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -583,7 +603,7 @@ Functions</h2></td></tr>
 <p>returns the value of the configuration register </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">CFG_value</td><td>The value of the configuration register</td></tr>
   </table>
   </dd>
@@ -601,7 +621,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getCTRL </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -621,7 +641,7 @@ Functions</h2></td></tr>
 <p>returns the value of the control register </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">CTRL_value</td><td>The value of the control register</td></tr>
   </table>
   </dd>
@@ -639,7 +659,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getIM </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -669,7 +689,7 @@ Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">IM_value</td><td>The value of the Interrupts Masking Register</td></tr>
   </table>
   </dd>
@@ -687,7 +707,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getMatchData </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -707,7 +727,7 @@ Functions</h2></td></tr>
 <p>returns the value of the match data register </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">MATCH_value</td><td>The value of the match data register</td></tr>
   </table>
   </dd>
@@ -725,7 +745,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getMIS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -755,7 +775,7 @@ Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">MIS_value</td><td>The value of the Masked Interrupt Status Register</td></tr>
   </table>
   </dd>
@@ -773,7 +793,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getParityMode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -793,7 +813,7 @@ Functions</h2></td></tr>
 <p>This function return the parity mode of the UART. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">parity</td><td>The parity mode of the UART</td></tr>
   </table>
   </dd>
@@ -811,7 +831,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getPrescaler </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -831,7 +851,7 @@ Functions</h2></td></tr>
 <p>returns the value of the prescaler </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">Prescaler_value</td><td>The value of the prescaler register</td></tr>
   </table>
   </dd>
@@ -849,7 +869,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getRIS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -879,7 +899,7 @@ Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">RIS_value</td><td>The value of the Raw Interrupt Status Register</td></tr>
   </table>
   </dd>
@@ -897,7 +917,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getRxCount </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -917,7 +937,7 @@ Functions</h2></td></tr>
 <p>returns the current level of the RX FIFO (the number of bytes in the FIFO) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">RX_FIFO_LEVEL_value</td><td>The value of the RX FIFO level register</td></tr>
   </table>
   </dd>
@@ -935,7 +955,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getRxFIFOThreshold </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -955,7 +975,7 @@ Functions</h2></td></tr>
 <p>returns the current value of the RX FIFO threshold </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">RX_FIFO_THRESHOLD_value</td><td>The value of the RX FIFO threshold register</td></tr>
   </table>
   </dd>
@@ -973,7 +993,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getTxCount </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -993,7 +1013,7 @@ Functions</h2></td></tr>
 <p>returns the current level of the TX FIFO (the number of bytes in the FIFO) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">TX_FIFO_LEVEL_value</td><td>The value of the TX FIFO level register</td></tr>
   </table>
   </dd>
@@ -1011,7 +1031,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_getTxFIFOThreshold </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1031,7 +1051,7 @@ Functions</h2></td></tr>
 <p>returns the current value of the TX FIFO threshold </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">TX_FIFO_THRESHOLD_value</td><td>The value of the TX FIFO threshold register</td></tr>
   </table>
   </dd>
@@ -1049,7 +1069,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_readChar </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uar</em>, </td>
         </tr>
         <tr>
@@ -1069,7 +1089,7 @@ Functions</h2></td></tr>
 <p>recieve a single character through uart </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">RXDATA_value</td><td>The value of the received character</td></tr>
   </table>
   </dd>
@@ -1087,7 +1107,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_readCharNonBlocking </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1113,7 +1133,7 @@ Functions</h2></td></tr>
 <p>This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">RXDATA_value</td><td>The value of the received character </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">data_available</td><td>A flag indicating if data is available in the receive FIFO</td></tr>
   </table>
@@ -1132,7 +1152,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setConfig </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1156,7 +1176,7 @@ Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>The value of the configuration register</td></tr>
   </table>
   </dd>
@@ -1174,7 +1194,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setCTRL </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1199,7 +1219,7 @@ Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value of the control register</td></tr>
   </table>
   </dd>
@@ -1217,7 +1237,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setDataSize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1237,7 +1257,7 @@ Functions</h2></td></tr>
 <p>sets the Data Size (Data word length: 5-9 bits ) by setting the "wlen" field in configuration register </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value of the required data word length <br  />
 </td></tr>
   </table>
@@ -1256,7 +1276,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setGclkEnable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1276,7 +1296,7 @@ Functions</h2></td></tr>
 <p>sets the GCLK enable bit in the UART register to a certain value </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value of the GCLK enable bit</td></tr>
   </table>
   </dd>
@@ -1294,7 +1314,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setICR </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1324,7 +1344,7 @@ Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>The required mask value</td></tr>
   </table>
   </dd>
@@ -1342,7 +1362,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setIM </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1372,7 +1392,7 @@ Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>The required mask value</td></tr>
   </table>
   </dd>
@@ -1390,7 +1410,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setMatchData </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1410,7 +1430,7 @@ Functions</h2></td></tr>
 <p>sets the matchData to a certain value at which "MATCH" interrupt will be raised </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">matchData</td><td>The value of the required match data <br  />
 </td></tr>
   </table>
@@ -1429,13 +1449,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setParityType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">enum parity_type&#160;</td>
+          <td class="paramtype">enum <a class="el" href="_e_f___u_a_r_t_8h.html#aab5cbb4a185bfe65a14e19beeaba4f10">parity_type</a>&#160;</td>
           <td class="paramname"><em>parity</em>&#160;</td>
         </tr>
         <tr>
@@ -1449,7 +1469,7 @@ Functions</h2></td></tr>
 <p>sets the "parity" field in configuration register (could be none, odd, even, sticky 0 or sticky 1) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">parity</td><td>enum parity_type could be "NONE" , "ODD" , "EVEN" , "STICKY_0" , or "STICKY_1"</td></tr>
   </table>
   </dd>
@@ -1467,7 +1487,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setPrescaler </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1487,7 +1507,7 @@ Functions</h2></td></tr>
 <p>sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">prescaler</td><td>The value of the required prescaler</td></tr>
   </table>
   </dd>
@@ -1505,7 +1525,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setRxFIFOThreshold </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1525,7 +1545,7 @@ Functions</h2></td></tr>
 <p>sets the RX FIFO threshold to a certain value at which "RXA" interrupt will be raised </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">threshold</td><td>The value of the required threshold</td></tr>
   </table>
   </dd>
@@ -1543,7 +1563,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setTimeoutBits </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1563,7 +1583,7 @@ Functions</h2></td></tr>
 <p>sets the "timeout" field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>timeout bits value</td></tr>
   </table>
   </dd>
@@ -1581,7 +1601,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setTwoStopBitsSelect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1601,7 +1621,7 @@ Functions</h2></td></tr>
 <p>sets the "stp2" bit in configuration register (whether the stop boits are two or one) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">is_two_bits</td><td>bool value, if "true", the stop bits are two and if "false", the stop bit is one</td></tr>
   </table>
   </dd>
@@ -1619,7 +1639,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setTxFIFOThreshold </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1639,7 +1659,7 @@ Functions</h2></td></tr>
 <p>sets the TX FIFO threshold to a certain value at which "TXB" interrupt will be raised </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">threshold</td><td>The value of the required threshold</td></tr>
   </table>
   </dd>
@@ -1657,7 +1677,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_spaceAvailable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1677,7 +1697,7 @@ Functions</h2></td></tr>
 <p>This function returns a flag indicating whether or not the transmit is available, i.e. the transmit FIFO is not full. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">flag</td><td>a flag indicating if the transmit FIFO is not full</td></tr>
   </table>
   </dd>
@@ -1695,7 +1715,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_writeChar </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1715,7 +1735,7 @@ Functions</h2></td></tr>
 <p>transmit a single character through uart </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The character or byte required to send</td></tr>
   </table>
   </dd>
@@ -1733,7 +1753,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_writeCharArr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1753,7 +1773,7 @@ Functions</h2></td></tr>
 <p>transmit an array of characters through uart </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">char_arr</td><td>An array of characters to send</td></tr>
   </table>
   </dd>
@@ -1771,7 +1791,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_writeCharNonBlocking </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
           <td class="paramname"><em>uart</em>, </td>
         </tr>
         <tr>
@@ -1797,7 +1817,7 @@ Functions</h2></td></tr>
 <p>This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An EF_UART_TYPE_PTR , which points to the base memory address of UART registers. EF_UART_TYPE is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The character or byte required to send </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">data_sent</td><td>A flag indicating if the data was sent successfully</td></tr>
   </table>

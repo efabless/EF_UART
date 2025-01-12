@@ -31,54 +31,53 @@
     <member refid="_e_f___driver___common_8h_1abd8e6eb4870238ef0f900911e3935d91" kind="define"><name>EF_DRIVER_ERROR_UNSUPPORTED</name></member>
     <member refid="_e_f___driver___common_8h_1aed4f0552faa082d7941ed37ae1e430e4" kind="define"><name>EF_DRIVER_ERROR_PARAMETER</name></member>
     <member refid="_e_f___driver___common_8h_1a89de2e78c0ce8d5b48c0cef064ae3aab" kind="define"><name>EF_DRIVER_ERROR_SPECIFIC</name></member>
-    <member refid="_e_f___driver___common_8h_1a42a5cb31efb4e28fa9d16016485de643" kind="define"><name>EF_DRIVER_ERROR_NO_DATA</name></member>
     <member refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kind="typedef"><name>EF_DRIVER_STATUS</name></member>
   </compound>
   <compound refid="_e_f___u_a_r_t_8c" kind="file"><name>EF_UART.c</name>
     <member refid="_e_f___u_a_r_t_8c_1a727db5e35b43153739077d4568b9f09b" kind="define"><name>EF_UART_C</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1ae78135e2c4c021996dfcb0214b508e87" kind="function"><name>EF_UART_setGclkEnable</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a850821dd83e87cfcdf3786a5ae9d75d2" kind="function"><name>EF_UART_enable</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a0650c46534721b9a55b63df53a3edacd" kind="function"><name>EF_UART_disable</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1ad5ea004f7d0231033aadb8bd6068ee88" kind="function"><name>EF_UART_enableRx</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1aa2c98e5b5be5273db1abd29519958999" kind="function"><name>EF_UART_disableRx</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1af5f6ae890a851613ea9f9954ad5306d7" kind="function"><name>EF_UART_enableTx</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a543a5deefec86fde9baa4cf1e8d5d03b" kind="function"><name>EF_UART_disableTx</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1ae32c894a702657491ad1094f7be9426a" kind="function"><name>EF_UART_enableLoopBack</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a8b578752027768733661b9b727f297a6" kind="function"><name>EF_UART_disableLoopBack</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a273b15c238fe14e1216594c25cf81839" kind="function"><name>EF_UART_enableGlitchFilter</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a29108f7acf85d94f65ce1abcbd9b950e" kind="function"><name>EF_UART_disableGlitchFilter</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a1a467e5c515e03613ed283bfb5113f3f" kind="function"><name>EF_UART_setCTRL</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1af1da4c4b17ef0c29ad04fceb4fec8daa" kind="function"><name>EF_UART_getCTRL</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1af04cdc5aaa962c7cac7c37f5411bb56d" kind="function"><name>EF_UART_setPrescaler</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a6a205793b17a2b1fcfe335941cacb24f" kind="function"><name>EF_UART_getPrescaler</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a2ed665f292626f6cc65e61364a89fbdd" kind="function"><name>EF_UART_setDataSize</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1af5cc25ffa33199c6c5d6cc8577934256" kind="function"><name>EF_UART_setTwoStopBitsSelect</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a758aa19092a342f086b821542c5757e7" kind="function"><name>EF_UART_setParityType</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a282884f28c4bf3bc46c779384c2f8f34" kind="function"><name>EF_UART_setTimeoutBits</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a06202a95fb25fe530a9f499a0c3356dd" kind="function"><name>EF_UART_setConfig</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a49e2fd4f33a867cf19be6306515f48c4" kind="function"><name>EF_UART_getConfig</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1aa53c2715114709e88c0cb06933dbd795" kind="function"><name>EF_UART_setRxFIFOThreshold</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a81a73a93bb2a3102153b955f7a351c58" kind="function"><name>EF_UART_getRxFIFOThreshold</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a586c9ea0f947b1d7749902feaece7232" kind="function"><name>EF_UART_setTxFIFOThreshold</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1ae789dab33f1e090979ffba3403bfc89e" kind="function"><name>EF_UART_getTxFIFOThreshold</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a9c9804bacfc1ac29f5f7138c4d9391aa" kind="function"><name>EF_UART_getTxCount</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a22997ecd88103d3c73678ae95dfb6997" kind="function"><name>EF_UART_getRxCount</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a8a5bc5dc07056ad544a3d1f89180b93d" kind="function"><name>EF_UART_setMatchData</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a680be50e9f223af9be12e473f0825627" kind="function"><name>EF_UART_getMatchData</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1ad2fd70aa8cb1d090a3081d9fc339acd2" kind="function"><name>EF_UART_getRIS</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a813285559d03d7fdc9ba7a73bf4df315" kind="function"><name>EF_UART_getMIS</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1afdcd87cc87d2c0e0c16b851315c6f7cc" kind="function"><name>EF_UART_setIM</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a244ea6b7398137c5c49fde59325736c9" kind="function"><name>EF_UART_getIM</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a2d23ae1377acb1ee9fe31bdedb4fb861" kind="function"><name>EF_UART_setICR</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a3006277927d54cf055f9bf651f1a06f4" kind="function"><name>EF_UART_writeChar</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a8036519d5504fe79890eb8fb07804dbf" kind="function"><name>EF_UART_writeCharArr</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a81f9d3aefc98bd8e44dd93c54d8156ac" kind="function"><name>EF_UART_readChar</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a473110eb3e426d569ad5633a259812ee" kind="function"><name>EF_UART_readCharNonBlocking</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a500331134edbfe78d56e1e2588298283" kind="function"><name>EF_UART_writeCharNonBlocking</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a72ed560651b9d526f7c74ff67fc56655" kind="function"><name>EF_UART_charsAvailable</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1ac3287b096b6f3c2361dbd2e8e7479c84" kind="function"><name>EF_UART_spaceAvailable</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a9eb7220c7100432805d3bb2bed40b93b" kind="function"><name>EF_UART_getParityMode</name></member>
-    <member refid="_e_f___u_a_r_t_8c_1a51cc9b740aa217715e98920c3027df25" kind="function"><name>EF_UART_busy</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a5b00ddd7df5f72886ea559da57a1b2bd" kind="function"><name>EF_UART_setGclkEnable</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a2673b6af3d435a9caa3fd9f115ad1878" kind="function"><name>EF_UART_enable</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a9d41c2bae6bbb144932cb4c264557a0f" kind="function"><name>EF_UART_disable</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a8fe185c295fdf22ad7f5ab020138e95f" kind="function"><name>EF_UART_enableRx</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a46da4f034dd502e65cdbd198e33611e2" kind="function"><name>EF_UART_disableRx</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a11caaf87ef28a637bfd825208eb09c18" kind="function"><name>EF_UART_enableTx</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a8ffdd73320ea0474fcb177d306dc6a67" kind="function"><name>EF_UART_disableTx</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a8dbf6fd5cdc6e99a3e17486c124d0d1d" kind="function"><name>EF_UART_enableLoopBack</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1af253218d9f38bc1e0bd0b1196c2fb44d" kind="function"><name>EF_UART_disableLoopBack</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1acc57380ee395632930bd85ca6377655b" kind="function"><name>EF_UART_enableGlitchFilter</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a2dbdc231cba17a0da6fae5e48b394dfd" kind="function"><name>EF_UART_disableGlitchFilter</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1ad36fee036e144937af3eed59eea101c6" kind="function"><name>EF_UART_setCTRL</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a9870f89be83da209c6823fe725ed492e" kind="function"><name>EF_UART_getCTRL</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a1184834b408cdeed94623c691068a352" kind="function"><name>EF_UART_setPrescaler</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1aa5874369ddd7767b26a076726d585235" kind="function"><name>EF_UART_getPrescaler</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a04a859ae5492ec11e9f3b418337148e1" kind="function"><name>EF_UART_setDataSize</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1ae2336d17bb87f77416fc9c6871b7cbdb" kind="function"><name>EF_UART_setTwoStopBitsSelect</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a3af979ea01c716d9b6ca923b92cc5c31" kind="function"><name>EF_UART_setParityType</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1ad18a6e0c7701bdc66b483b1c53a3581d" kind="function"><name>EF_UART_setTimeoutBits</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a97261ae27ea5d029ecab9b25f2f45ac9" kind="function"><name>EF_UART_setConfig</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1afad923241f7414fe1292101d185d0c75" kind="function"><name>EF_UART_getConfig</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a8a2767ea0edab0500745dde177c1e58c" kind="function"><name>EF_UART_setRxFIFOThreshold</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a7b416fd3385eb5b3ee34eb09ea0de8d2" kind="function"><name>EF_UART_getRxFIFOThreshold</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a30ba41191c67b5242173320ab54e1205" kind="function"><name>EF_UART_setTxFIFOThreshold</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a9844c9c7921a2187ca86bead858c8c02" kind="function"><name>EF_UART_getTxFIFOThreshold</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1acd160a7725a4b3fb675dcebeda8776d5" kind="function"><name>EF_UART_getTxCount</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1aaa9a26fa27e5b5fc5c8039103abc1ed7" kind="function"><name>EF_UART_getRxCount</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1af275d224f7dcde400258b8d93e1ed2ce" kind="function"><name>EF_UART_setMatchData</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a559c00c5b1d96bcb0784e0449071f4bb" kind="function"><name>EF_UART_getMatchData</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a81943fbc40226420642143805f95e991" kind="function"><name>EF_UART_getRIS</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a0ff41852bf2c3a32d25864823da6a508" kind="function"><name>EF_UART_getMIS</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1ad62de52cc6d11bb10dfdc275d899bb0e" kind="function"><name>EF_UART_setIM</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1ab22694c6e2d02fc25daac570b70ef8f1" kind="function"><name>EF_UART_getIM</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a7ecbcf6bc73a4a3392648372441a6133" kind="function"><name>EF_UART_setICR</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1ace1db9bbc3b092890acff854cec1aa77" kind="function"><name>EF_UART_writeChar</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a0f9ad65cbfe136ad4c4080612d578536" kind="function"><name>EF_UART_writeCharArr</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1aed92f78ad479144a2e9bc7169f2a9850" kind="function"><name>EF_UART_readChar</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1aaa93d9c62ca6e64a622bb32e86fb2dc0" kind="function"><name>EF_UART_readCharNonBlocking</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a8091314203111b165d1bad624159f8ba" kind="function"><name>EF_UART_writeCharNonBlocking</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1ae92ca95cabf87bf850b99db43d36ddd5" kind="function"><name>EF_UART_charsAvailable</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a7739739a5ceeadcf591f3b387c729d0c" kind="function"><name>EF_UART_spaceAvailable</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a99a9c66e92fb0233fb7cf31e6c6921f1" kind="function"><name>EF_UART_getParityMode</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1ad9d841da9b4114560195d08af86a4b4a" kind="function"><name>EF_UART_busy</name></member>
   </compound>
   <compound refid="_e_f___u_a_r_t_8h" kind="file"><name>EF_UART.h</name>
     <member refid="_e_f___u_a_r_t_8h_1abb5e56e926c33b555091e679f678515d" kind="define"><name>EF_UART_CTRL_REG_MAX_VALUE</name></member>
@@ -92,58 +91,55 @@
     <member refid="_e_f___u_a_r_t_8h_1aa65fa5d0b6a628fae152ea7013052318" kind="define"><name>EF_UART_MATCH_REG_MAX_VALUE</name></member>
     <member refid="_e_f___u_a_r_t_8h_1ac5ebf20bf24247905b19e2cb2060a457" kind="define"><name>EF_UART_IM_REG_MAX_VALUE</name></member>
     <member refid="_e_f___u_a_r_t_8h_1a056fa4df77234c4221790bbefd6cd974" kind="define"><name>EF_UART_IC_REG_MAX_VALUE</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a776da4965f3dec0d9968b8f5c4c86551" kind="define"><name>EF_UART_ERROR_RX_UNAVAILABLE</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a491b6af2f2d299ccb875d408945e4c22" kind="define"><name>EF_UART_ERROR_TX_UNAVAILABLE</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1afeab41a7d44410d01bcf9a89eb328677" kind="define"><name>EF_UART_SUCCESS</name></member>
     <member refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kind="enum"><name>parity_type</name></member>
     <member refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10ac157bdf0b85a40d2619cbc8bc1ae5fe2" kind="enumvalue"><name>NONE</name></member>
     <member refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10aa29cedab858353a26006af9db7cd1ed8" kind="enumvalue"><name>ODD</name></member>
     <member refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" kind="enumvalue"><name>EVEN</name></member>
     <member refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10adedda6ce97e93d2a3e84ca7a704cd998" kind="enumvalue"><name>STICKY_0</name></member>
     <member refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a0cc8b778b8f0b3fa4d7a084fddbc3cec" kind="enumvalue"><name>STICKY_1</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1ae78135e2c4c021996dfcb0214b508e87" kind="function"><name>EF_UART_setGclkEnable</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a850821dd83e87cfcdf3786a5ae9d75d2" kind="function"><name>EF_UART_enable</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a0650c46534721b9a55b63df53a3edacd" kind="function"><name>EF_UART_disable</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1ad5ea004f7d0231033aadb8bd6068ee88" kind="function"><name>EF_UART_enableRx</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1aa2c98e5b5be5273db1abd29519958999" kind="function"><name>EF_UART_disableRx</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1af5f6ae890a851613ea9f9954ad5306d7" kind="function"><name>EF_UART_enableTx</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a543a5deefec86fde9baa4cf1e8d5d03b" kind="function"><name>EF_UART_disableTx</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1ae32c894a702657491ad1094f7be9426a" kind="function"><name>EF_UART_enableLoopBack</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a8b578752027768733661b9b727f297a6" kind="function"><name>EF_UART_disableLoopBack</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a273b15c238fe14e1216594c25cf81839" kind="function"><name>EF_UART_enableGlitchFilter</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a29108f7acf85d94f65ce1abcbd9b950e" kind="function"><name>EF_UART_disableGlitchFilter</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a1a467e5c515e03613ed283bfb5113f3f" kind="function"><name>EF_UART_setCTRL</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1af1da4c4b17ef0c29ad04fceb4fec8daa" kind="function"><name>EF_UART_getCTRL</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a2ed665f292626f6cc65e61364a89fbdd" kind="function"><name>EF_UART_setDataSize</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1af5cc25ffa33199c6c5d6cc8577934256" kind="function"><name>EF_UART_setTwoStopBitsSelect</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a758aa19092a342f086b821542c5757e7" kind="function"><name>EF_UART_setParityType</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a282884f28c4bf3bc46c779384c2f8f34" kind="function"><name>EF_UART_setTimeoutBits</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1abc1dc03d443a832dcf107d384252d061" kind="function"><name>EF_UART_setConfig</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a49e2fd4f33a867cf19be6306515f48c4" kind="function"><name>EF_UART_getConfig</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a7a53c1e173b85e739784455457fe1790" kind="function"><name>EF_UART_setRxFIFOThreshold</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a81a73a93bb2a3102153b955f7a351c58" kind="function"><name>EF_UART_getRxFIFOThreshold</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a83197c472e64c12d7f5548e37005c909" kind="function"><name>EF_UART_setTxFIFOThreshold</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1ae789dab33f1e090979ffba3403bfc89e" kind="function"><name>EF_UART_getTxFIFOThreshold</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a8a5bc5dc07056ad544a3d1f89180b93d" kind="function"><name>EF_UART_setMatchData</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a680be50e9f223af9be12e473f0825627" kind="function"><name>EF_UART_getMatchData</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a9c9804bacfc1ac29f5f7138c4d9391aa" kind="function"><name>EF_UART_getTxCount</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a22997ecd88103d3c73678ae95dfb6997" kind="function"><name>EF_UART_getRxCount</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1af04cdc5aaa962c7cac7c37f5411bb56d" kind="function"><name>EF_UART_setPrescaler</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a6a205793b17a2b1fcfe335941cacb24f" kind="function"><name>EF_UART_getPrescaler</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1ad2fd70aa8cb1d090a3081d9fc339acd2" kind="function"><name>EF_UART_getRIS</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a813285559d03d7fdc9ba7a73bf4df315" kind="function"><name>EF_UART_getMIS</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1afdcd87cc87d2c0e0c16b851315c6f7cc" kind="function"><name>EF_UART_setIM</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a244ea6b7398137c5c49fde59325736c9" kind="function"><name>EF_UART_getIM</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a2d23ae1377acb1ee9fe31bdedb4fb861" kind="function"><name>EF_UART_setICR</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a8036519d5504fe79890eb8fb07804dbf" kind="function"><name>EF_UART_writeCharArr</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a3006277927d54cf055f9bf651f1a06f4" kind="function"><name>EF_UART_writeChar</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a612735f819a9c779c00aea393b1e335f" kind="function"><name>EF_UART_readChar</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a473110eb3e426d569ad5633a259812ee" kind="function"><name>EF_UART_readCharNonBlocking</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a500331134edbfe78d56e1e2588298283" kind="function"><name>EF_UART_writeCharNonBlocking</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1af209c1b15af4fdbd91e1b9379f251df0" kind="function"><name>EF_UART_charsAvailable</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1aa4612877a061c63456ee8d85b599e319" kind="function"><name>EF_UART_spaceAvailable</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a9eb7220c7100432805d3bb2bed40b93b" kind="function"><name>EF_UART_getParityMode</name></member>
-    <member refid="_e_f___u_a_r_t_8h_1a5fbbd3c1a82f43e43be788cd8978a3d0" kind="function"><name>EF_UART_busy</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a5b00ddd7df5f72886ea559da57a1b2bd" kind="function"><name>EF_UART_setGclkEnable</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a2673b6af3d435a9caa3fd9f115ad1878" kind="function"><name>EF_UART_enable</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a9d41c2bae6bbb144932cb4c264557a0f" kind="function"><name>EF_UART_disable</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a8fe185c295fdf22ad7f5ab020138e95f" kind="function"><name>EF_UART_enableRx</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a46da4f034dd502e65cdbd198e33611e2" kind="function"><name>EF_UART_disableRx</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a11caaf87ef28a637bfd825208eb09c18" kind="function"><name>EF_UART_enableTx</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a8ffdd73320ea0474fcb177d306dc6a67" kind="function"><name>EF_UART_disableTx</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a8dbf6fd5cdc6e99a3e17486c124d0d1d" kind="function"><name>EF_UART_enableLoopBack</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1af253218d9f38bc1e0bd0b1196c2fb44d" kind="function"><name>EF_UART_disableLoopBack</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1acc57380ee395632930bd85ca6377655b" kind="function"><name>EF_UART_enableGlitchFilter</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a2dbdc231cba17a0da6fae5e48b394dfd" kind="function"><name>EF_UART_disableGlitchFilter</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1ad36fee036e144937af3eed59eea101c6" kind="function"><name>EF_UART_setCTRL</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a9870f89be83da209c6823fe725ed492e" kind="function"><name>EF_UART_getCTRL</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a04a859ae5492ec11e9f3b418337148e1" kind="function"><name>EF_UART_setDataSize</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1ae2336d17bb87f77416fc9c6871b7cbdb" kind="function"><name>EF_UART_setTwoStopBitsSelect</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a3af979ea01c716d9b6ca923b92cc5c31" kind="function"><name>EF_UART_setParityType</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1ad18a6e0c7701bdc66b483b1c53a3581d" kind="function"><name>EF_UART_setTimeoutBits</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a7abd365f1081dd30bc202b673851f7b7" kind="function"><name>EF_UART_setConfig</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1afad923241f7414fe1292101d185d0c75" kind="function"><name>EF_UART_getConfig</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1ae7559449b86af3339f32eb9f60da7342" kind="function"><name>EF_UART_setRxFIFOThreshold</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a7b416fd3385eb5b3ee34eb09ea0de8d2" kind="function"><name>EF_UART_getRxFIFOThreshold</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1aece15f8d4c46af75f44d94abb3018080" kind="function"><name>EF_UART_setTxFIFOThreshold</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a9844c9c7921a2187ca86bead858c8c02" kind="function"><name>EF_UART_getTxFIFOThreshold</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1af275d224f7dcde400258b8d93e1ed2ce" kind="function"><name>EF_UART_setMatchData</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a559c00c5b1d96bcb0784e0449071f4bb" kind="function"><name>EF_UART_getMatchData</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1acd160a7725a4b3fb675dcebeda8776d5" kind="function"><name>EF_UART_getTxCount</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1aaa9a26fa27e5b5fc5c8039103abc1ed7" kind="function"><name>EF_UART_getRxCount</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a1184834b408cdeed94623c691068a352" kind="function"><name>EF_UART_setPrescaler</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1aa5874369ddd7767b26a076726d585235" kind="function"><name>EF_UART_getPrescaler</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a81943fbc40226420642143805f95e991" kind="function"><name>EF_UART_getRIS</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a0ff41852bf2c3a32d25864823da6a508" kind="function"><name>EF_UART_getMIS</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1ad62de52cc6d11bb10dfdc275d899bb0e" kind="function"><name>EF_UART_setIM</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1ab22694c6e2d02fc25daac570b70ef8f1" kind="function"><name>EF_UART_getIM</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a7ecbcf6bc73a4a3392648372441a6133" kind="function"><name>EF_UART_setICR</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a0f9ad65cbfe136ad4c4080612d578536" kind="function"><name>EF_UART_writeCharArr</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1ace1db9bbc3b092890acff854cec1aa77" kind="function"><name>EF_UART_writeChar</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1abda4e085b80f004761b77dbf3f0450e6" kind="function"><name>EF_UART_readChar</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1aaa93d9c62ca6e64a622bb32e86fb2dc0" kind="function"><name>EF_UART_readCharNonBlocking</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a8091314203111b165d1bad624159f8ba" kind="function"><name>EF_UART_writeCharNonBlocking</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1aa48cbd20fb9a2898171bc7ff8688b9ee" kind="function"><name>EF_UART_charsAvailable</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a26804aec34f642578f9b6243fd16f277" kind="function"><name>EF_UART_spaceAvailable</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a99a9c66e92fb0233fb7cf31e6c6921f1" kind="function"><name>EF_UART_getParityMode</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a16e75e32fdf3a0dc46f6ca9992750328" kind="function"><name>EF_UART_busy</name></member>
   </compound>
   <compound refid="_e_f___u_a_r_t__regs_8h" kind="file"><name>EF_UART_regs.h</name>
     <member refid="_e_f___u_a_r_t__regs_8h_1a470cd5845bed94d8b8b358933e4a3442" kind="define"><name>IO_TYPES</name></member>
@@ -191,6 +187,14 @@
     <member refid="_e_f___u_a_r_t__regs_8h_1ad2021fcd6ecdc551490d95ff8a2227f4" kind="define"><name>EF_UART_OR_FLAG</name></member>
     <member refid="_e_f___u_a_r_t__regs_8h_1aa5b304f625110ba9a40b9fb5d0f22928" kind="define"><name>EF_UART_RTO_FLAG</name></member>
     <member refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kind="typedef"><name>EF_UART_TYPE</name></member>
+    <member refid="_e_f___u_a_r_t__regs_8h_1ab605c9cde76c27dd58ec6cf73ca70893" kind="typedef"><name>EF_UART_TYPE_PTR</name></member>
+  </compound>
+  <compound refid="example_8c" kind="file"><name>example.c</name>
+    <member refid="example_8c_1a245442e9ecffcadcce85a5cd86e9ed91" kind="define"><name>Example_UART_BASE_ADDRESS</name></member>
+    <member refid="example_8c_1a0508661f121639ffdee7de2353a0def2" kind="define"><name>UART0</name></member>
+    <member refid="example_8c_1a1dc3757c8ca6e8725ab78bd72373ec6b" kind="function"><name>UART_Init</name></member>
+    <member refid="example_8c_1a0bb4c33d9a6330d0c224a2cd7e2b7ab2" kind="function"><name>UART_Receive</name></member>
+    <member refid="example_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
   </compound>
   <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
   </compound>

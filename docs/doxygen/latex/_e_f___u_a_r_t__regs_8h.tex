@@ -1,5 +1,6 @@
 \hypertarget{_e_f___u_a_r_t__regs_8h}{}\doxysection{EF\+\_\+\+UART\+\_\+regs.\+h File Reference}
 \label{_e_f___u_a_r_t__regs_8h}\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+{\ttfamily \#include \char`\"{}EF\+\_\+\+Driver\+\_\+\+Common.\+h\char`\"{}}\newline
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -10,96 +11,98 @@ struct \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{\+\_\+\+EF\+\_\+\+UA
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a470cd5845bed94d8b8b358933e4a3442}{IO\+\_\+\+TYPES}}
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\+\_\+\+\_\+R}}~volatile const unsigned int
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aef00c279597b188e4cdd14d288ddf77a}{\+\_\+\+\_\+R}}~volatile const uint32\+\_\+t
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\+\_\+\+\_\+W}}~volatile       unsigned int
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}{\+\_\+\+\_\+W}}~volatile       uint32\+\_\+t
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a81f369079976a46554fd9798ab035697}{\+\_\+\+\_\+\+RW}}~volatile       unsigned int
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a81f369079976a46554fd9798ab035697}{\+\_\+\+\_\+\+RW}}~volatile       uint32\+\_\+t
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a266874a7f0e8f44a104856cc9edf8e1b}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+BIT}}~0
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a266874a7f0e8f44a104856cc9edf8e1b}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_afd2ff304610edfabd0274bb0719c2e1b}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+MASK}}~0x1
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_afd2ff304610edfabd0274bb0719c2e1b}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+MASK}}~((uint32\+\_\+t)0x1)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a4803fa0200e936a1d8f112b1cda3a0be}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+BIT}}~1
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a4803fa0200e936a1d8f112b1cda3a0be}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+BIT}}~((uint32\+\_\+t)1)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a4b8b5bd1caaa4e1f65da544132cac877}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+MASK}}~0x2
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a4b8b5bd1caaa4e1f65da544132cac877}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+MASK}}~((uint32\+\_\+t)0x2)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a5ced1617f0c81c91c84feb6e67ab7e3f}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+BIT}}~2
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a5ced1617f0c81c91c84feb6e67ab7e3f}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+BIT}}~((uint32\+\_\+t)2)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_afacdd0aef6658a33f7bfd07e21c8a68f}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+MASK}}~0x4
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_afacdd0aef6658a33f7bfd07e21c8a68f}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+MASK}}~((uint32\+\_\+t)0x4)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ad74f6f089ecffe1bee2d4d3dd3f416dc}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+BIT}}~3
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ad74f6f089ecffe1bee2d4d3dd3f416dc}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+BIT}}~((uint32\+\_\+t)3)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aebbe2052a5a6b9355d3cee5bb904d0a2}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+MASK}}~0x8
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aebbe2052a5a6b9355d3cee5bb904d0a2}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+MASK}}~((uint32\+\_\+t)0x8)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a5f47e9ee6518199926ec8b11ecdaac8c}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+BIT}}~4
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a5f47e9ee6518199926ec8b11ecdaac8c}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+BIT}}~((uint32\+\_\+t)4)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a7f87b5eccffb824604dcd31b26989dd5}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+MASK}}~0x10
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a7f87b5eccffb824604dcd31b26989dd5}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+MASK}}~((uint32\+\_\+t)0x10)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a0b828c908bc0843a0e9229adfcb29863}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+BIT}}~0
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a0b828c908bc0843a0e9229adfcb29863}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_adba653133ac3677b18091f8ad0b3c6f2}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+MASK}}~0xf
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_adba653133ac3677b18091f8ad0b3c6f2}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+MASK}}~((uint32\+\_\+t)0xf)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a16e0c9d637210b71aa88aa9f344d5f6e}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+BIT}}~4
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a16e0c9d637210b71aa88aa9f344d5f6e}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+BIT}}~((uint32\+\_\+t)4)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a328e8490a01454a2449fc367991302a1}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+MASK}}~0x10
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a328e8490a01454a2449fc367991302a1}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+MASK}}~((uint32\+\_\+t)0x10)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a385a3de23966fe78d4f7c08ce196ad15}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+BIT}}~5
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a385a3de23966fe78d4f7c08ce196ad15}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+BIT}}~((uint32\+\_\+t)5)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a798e3d66249e9defd1eaae7cde9b4d44}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+MASK}}~0xe0
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a798e3d66249e9defd1eaae7cde9b4d44}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+MASK}}~((uint32\+\_\+t)0xe0)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_afaa9ea2f3ab4ff8647532935574bcd88}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+BIT}}~8
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_afaa9ea2f3ab4ff8647532935574bcd88}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+BIT}}~((uint32\+\_\+t)8)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ad0c0bdddadfd3a44d43b5d7813af277d}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MASK}}~0x3f00
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ad0c0bdddadfd3a44d43b5d7813af277d}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MASK}}~((uint32\+\_\+t)0x3f)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_af97f793bc90ec0557b0366f49ed39768}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT}}~0
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_af97f793bc90ec0557b0366f49ed39768}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a3373791334179d5030fc3901e9cc234d}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK}}~0xf
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a3373791334179d5030fc3901e9cc234d}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK}}~((uint32\+\_\+t)0xf)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_adfa08c57c518af19d91b3386f5f5f48e}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT}}~0
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_adfa08c57c518af19d91b3386f5f5f48e}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a3519d1b3ce36f9ffd11094e6906d02f3}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK}}~0xf
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a3519d1b3ce36f9ffd11094e6906d02f3}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK}}~((uint32\+\_\+t)0xf)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae2c3c80712f43d3efef03601ed583a2e}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT}}~0
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae2c3c80712f43d3efef03601ed583a2e}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a1959835954e2643cb04ab8b6337500cc}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK}}~0x1
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a1959835954e2643cb04ab8b6337500cc}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK}}~((uint32\+\_\+t)0x1)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a32bdc59657c35d0612e6e66fe760adc7}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT}}~0
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a32bdc59657c35d0612e6e66fe760adc7}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aa1b5bca4b8333cf38e5a36abd61805f5}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK}}~0xf
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aa1b5bca4b8333cf38e5a36abd61805f5}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK}}~((uint32\+\_\+t)0xf)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a2cb10104d58a678696601c2eb7cdb17c}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT}}~0
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a2cb10104d58a678696601c2eb7cdb17c}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a21fe71b2983c43632eba11aeccbffcb0}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK}}~0xf
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a21fe71b2983c43632eba11aeccbffcb0}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK}}~((uint32\+\_\+t)0xf)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a4d36a0d56e4c71facb77edf936c5c1be}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT}}~0
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a4d36a0d56e4c71facb77edf936c5c1be}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_af62b4e21b6b8f13f76fe7a01b9abc46c}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK}}~0x1
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_af62b4e21b6b8f13f76fe7a01b9abc46c}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK}}~((uint32\+\_\+t)0x1)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_af0ef9bb61d418f4ec8031e74ac1374f3}{EF\+\_\+\+UART\+\_\+\+TXE\+\_\+\+FLAG}}~0x1
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_af0ef9bb61d418f4ec8031e74ac1374f3}{EF\+\_\+\+UART\+\_\+\+TXE\+\_\+\+FLAG}}~((uint32\+\_\+t)0x1)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_abdbd275b9e49d27fc0631f3db144626c}{EF\+\_\+\+UART\+\_\+\+RXF\+\_\+\+FLAG}}~0x2
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_abdbd275b9e49d27fc0631f3db144626c}{EF\+\_\+\+UART\+\_\+\+RXF\+\_\+\+FLAG}}~((uint32\+\_\+t)0x2)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a1d10765fcb44dabc4653269f5f45d7e0}{EF\+\_\+\+UART\+\_\+\+TXB\+\_\+\+FLAG}}~0x4
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a1d10765fcb44dabc4653269f5f45d7e0}{EF\+\_\+\+UART\+\_\+\+TXB\+\_\+\+FLAG}}~((uint32\+\_\+t)0x4)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_afcc839803a3e147726c4d0ff8aa631ac}{EF\+\_\+\+UART\+\_\+\+RXA\+\_\+\+FLAG}}~0x8
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_afcc839803a3e147726c4d0ff8aa631ac}{EF\+\_\+\+UART\+\_\+\+RXA\+\_\+\+FLAG}}~((uint32\+\_\+t)0x8)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a4e2eaae9e111bb3a77eadb3141f123a3}{EF\+\_\+\+UART\+\_\+\+BRK\+\_\+\+FLAG}}~0x10
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a4e2eaae9e111bb3a77eadb3141f123a3}{EF\+\_\+\+UART\+\_\+\+BRK\+\_\+\+FLAG}}~((uint32\+\_\+t)0x10)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aa5f6a28e7e7c0693a5d922ab8788d70c}{EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+FLAG}}~0x20
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aa5f6a28e7e7c0693a5d922ab8788d70c}{EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+FLAG}}~((uint32\+\_\+t)0x20)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aafc66529a3139c689109d2406ed67a57}{EF\+\_\+\+UART\+\_\+\+FE\+\_\+\+FLAG}}~0x40
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aafc66529a3139c689109d2406ed67a57}{EF\+\_\+\+UART\+\_\+\+FE\+\_\+\+FLAG}}~((uint32\+\_\+t)0x40)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a3cff4fc63e9ab01bad003a962a6d3938}{EF\+\_\+\+UART\+\_\+\+PRE\+\_\+\+FLAG}}~0x80
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a3cff4fc63e9ab01bad003a962a6d3938}{EF\+\_\+\+UART\+\_\+\+PRE\+\_\+\+FLAG}}~((uint32\+\_\+t)0x80)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ad2021fcd6ecdc551490d95ff8a2227f4}{EF\+\_\+\+UART\+\_\+\+OR\+\_\+\+FLAG}}~0x100
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ad2021fcd6ecdc551490d95ff8a2227f4}{EF\+\_\+\+UART\+\_\+\+OR\+\_\+\+FLAG}}~((uint32\+\_\+t)0x100)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aa5b304f625110ba9a40b9fb5d0f22928}{EF\+\_\+\+UART\+\_\+\+RTO\+\_\+\+FLAG}}~0x200
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aa5b304f625110ba9a40b9fb5d0f22928}{EF\+\_\+\+UART\+\_\+\+RTO\+\_\+\+FLAG}}~((uint32\+\_\+t)0x200)
 \end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 typedef struct \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{\+\_\+\+EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+}} \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}}
+\item 
+typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}} $\ast$ \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}
 \end{DoxyCompactItemize}
 
 
@@ -108,259 +111,259 @@ typedef struct \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{\+\_\+\+EF\+
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!\_\_R@{\_\_R}}
 \index{\_\_R@{\_\_R}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{\_\_R}{\_\_R}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+R~volatile const unsigned int}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+R~volatile const uint32\+\_\+t}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a81f369079976a46554fd9798ab035697}\label{_e_f___u_a_r_t__regs_8h_a81f369079976a46554fd9798ab035697}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!\_\_RW@{\_\_RW}}
 \index{\_\_RW@{\_\_RW}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{\_\_RW}{\_\_RW}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+RW~volatile       unsigned int}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+RW~volatile       uint32\+\_\+t}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}\label{_e_f___u_a_r_t__regs_8h_ad8cfe7014044235a4c8d3239c2597f09}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!\_\_W@{\_\_W}}
 \index{\_\_W@{\_\_W}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{\_\_W}{\_\_W}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+W~volatile       unsigned int}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+W~volatile       uint32\+\_\+t}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a4e2eaae9e111bb3a77eadb3141f123a3}\label{_e_f___u_a_r_t__regs_8h_a4e2eaae9e111bb3a77eadb3141f123a3}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_BRK\_FLAG@{EF\_UART\_BRK\_FLAG}}
 \index{EF\_UART\_BRK\_FLAG@{EF\_UART\_BRK\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_BRK\_FLAG}{EF\_UART\_BRK\_FLAG}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+BRK\+\_\+\+FLAG~0x10}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+BRK\+\_\+\+FLAG~((uint32\+\_\+t)0x10)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a385a3de23966fe78d4f7c08ce196ad15}\label{_e_f___u_a_r_t__regs_8h_a385a3de23966fe78d4f7c08ce196ad15}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_PARITY\_BIT@{EF\_UART\_CFG\_REG\_PARITY\_BIT}}
 \index{EF\_UART\_CFG\_REG\_PARITY\_BIT@{EF\_UART\_CFG\_REG\_PARITY\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_PARITY\_BIT}{EF\_UART\_CFG\_REG\_PARITY\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+BIT~5}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+BIT~((uint32\+\_\+t)5)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a798e3d66249e9defd1eaae7cde9b4d44}\label{_e_f___u_a_r_t__regs_8h_a798e3d66249e9defd1eaae7cde9b4d44}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_PARITY\_MASK@{EF\_UART\_CFG\_REG\_PARITY\_MASK}}
 \index{EF\_UART\_CFG\_REG\_PARITY\_MASK@{EF\_UART\_CFG\_REG\_PARITY\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_PARITY\_MASK}{EF\_UART\_CFG\_REG\_PARITY\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+MASK~0xe0}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+MASK~((uint32\+\_\+t)0xe0)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a16e0c9d637210b71aa88aa9f344d5f6e}\label{_e_f___u_a_r_t__regs_8h_a16e0c9d637210b71aa88aa9f344d5f6e}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_STP2\_BIT@{EF\_UART\_CFG\_REG\_STP2\_BIT}}
 \index{EF\_UART\_CFG\_REG\_STP2\_BIT@{EF\_UART\_CFG\_REG\_STP2\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_STP2\_BIT}{EF\_UART\_CFG\_REG\_STP2\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+BIT~4}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+BIT~((uint32\+\_\+t)4)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a328e8490a01454a2449fc367991302a1}\label{_e_f___u_a_r_t__regs_8h_a328e8490a01454a2449fc367991302a1}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_STP2\_MASK@{EF\_UART\_CFG\_REG\_STP2\_MASK}}
 \index{EF\_UART\_CFG\_REG\_STP2\_MASK@{EF\_UART\_CFG\_REG\_STP2\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_STP2\_MASK}{EF\_UART\_CFG\_REG\_STP2\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+MASK~0x10}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+MASK~((uint32\+\_\+t)0x10)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_afaa9ea2f3ab4ff8647532935574bcd88}\label{_e_f___u_a_r_t__regs_8h_afaa9ea2f3ab4ff8647532935574bcd88}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_TIMEOUT\_BIT@{EF\_UART\_CFG\_REG\_TIMEOUT\_BIT}}
 \index{EF\_UART\_CFG\_REG\_TIMEOUT\_BIT@{EF\_UART\_CFG\_REG\_TIMEOUT\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_TIMEOUT\_BIT}{EF\_UART\_CFG\_REG\_TIMEOUT\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+BIT~8}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+BIT~((uint32\+\_\+t)8)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_ad0c0bdddadfd3a44d43b5d7813af277d}\label{_e_f___u_a_r_t__regs_8h_ad0c0bdddadfd3a44d43b5d7813af277d}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_TIMEOUT\_MASK@{EF\_UART\_CFG\_REG\_TIMEOUT\_MASK}}
 \index{EF\_UART\_CFG\_REG\_TIMEOUT\_MASK@{EF\_UART\_CFG\_REG\_TIMEOUT\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_TIMEOUT\_MASK}{EF\_UART\_CFG\_REG\_TIMEOUT\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MASK~0x3f00}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MASK~((uint32\+\_\+t)0x3f)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a0b828c908bc0843a0e9229adfcb29863}\label{_e_f___u_a_r_t__regs_8h_a0b828c908bc0843a0e9229adfcb29863}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_WLEN\_BIT@{EF\_UART\_CFG\_REG\_WLEN\_BIT}}
 \index{EF\_UART\_CFG\_REG\_WLEN\_BIT@{EF\_UART\_CFG\_REG\_WLEN\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_WLEN\_BIT}{EF\_UART\_CFG\_REG\_WLEN\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+BIT~0}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+BIT~((uint32\+\_\+t)0)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_adba653133ac3677b18091f8ad0b3c6f2}\label{_e_f___u_a_r_t__regs_8h_adba653133ac3677b18091f8ad0b3c6f2}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_WLEN\_MASK@{EF\_UART\_CFG\_REG\_WLEN\_MASK}}
 \index{EF\_UART\_CFG\_REG\_WLEN\_MASK@{EF\_UART\_CFG\_REG\_WLEN\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_WLEN\_MASK}{EF\_UART\_CFG\_REG\_WLEN\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+MASK~0xf}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+MASK~((uint32\+\_\+t)0xf)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a266874a7f0e8f44a104856cc9edf8e1b}\label{_e_f___u_a_r_t__regs_8h_a266874a7f0e8f44a104856cc9edf8e1b}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_EN\_BIT@{EF\_UART\_CTRL\_REG\_EN\_BIT}}
 \index{EF\_UART\_CTRL\_REG\_EN\_BIT@{EF\_UART\_CTRL\_REG\_EN\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_EN\_BIT}{EF\_UART\_CTRL\_REG\_EN\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+BIT~0}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+BIT~((uint32\+\_\+t)0)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_afd2ff304610edfabd0274bb0719c2e1b}\label{_e_f___u_a_r_t__regs_8h_afd2ff304610edfabd0274bb0719c2e1b}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_EN\_MASK@{EF\_UART\_CTRL\_REG\_EN\_MASK}}
 \index{EF\_UART\_CTRL\_REG\_EN\_MASK@{EF\_UART\_CTRL\_REG\_EN\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_EN\_MASK}{EF\_UART\_CTRL\_REG\_EN\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+MASK~0x1}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+MASK~((uint32\+\_\+t)0x1)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a5f47e9ee6518199926ec8b11ecdaac8c}\label{_e_f___u_a_r_t__regs_8h_a5f47e9ee6518199926ec8b11ecdaac8c}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_GFEN\_BIT@{EF\_UART\_CTRL\_REG\_GFEN\_BIT}}
 \index{EF\_UART\_CTRL\_REG\_GFEN\_BIT@{EF\_UART\_CTRL\_REG\_GFEN\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_GFEN\_BIT}{EF\_UART\_CTRL\_REG\_GFEN\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+BIT~4}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+BIT~((uint32\+\_\+t)4)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a7f87b5eccffb824604dcd31b26989dd5}\label{_e_f___u_a_r_t__regs_8h_a7f87b5eccffb824604dcd31b26989dd5}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_GFEN\_MASK@{EF\_UART\_CTRL\_REG\_GFEN\_MASK}}
 \index{EF\_UART\_CTRL\_REG\_GFEN\_MASK@{EF\_UART\_CTRL\_REG\_GFEN\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_GFEN\_MASK}{EF\_UART\_CTRL\_REG\_GFEN\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+MASK~0x10}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+MASK~((uint32\+\_\+t)0x10)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_ad74f6f089ecffe1bee2d4d3dd3f416dc}\label{_e_f___u_a_r_t__regs_8h_ad74f6f089ecffe1bee2d4d3dd3f416dc}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_LPEN\_BIT@{EF\_UART\_CTRL\_REG\_LPEN\_BIT}}
 \index{EF\_UART\_CTRL\_REG\_LPEN\_BIT@{EF\_UART\_CTRL\_REG\_LPEN\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_LPEN\_BIT}{EF\_UART\_CTRL\_REG\_LPEN\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+BIT~3}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+BIT~((uint32\+\_\+t)3)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_aebbe2052a5a6b9355d3cee5bb904d0a2}\label{_e_f___u_a_r_t__regs_8h_aebbe2052a5a6b9355d3cee5bb904d0a2}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_LPEN\_MASK@{EF\_UART\_CTRL\_REG\_LPEN\_MASK}}
 \index{EF\_UART\_CTRL\_REG\_LPEN\_MASK@{EF\_UART\_CTRL\_REG\_LPEN\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_LPEN\_MASK}{EF\_UART\_CTRL\_REG\_LPEN\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+MASK~0x8}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+MASK~((uint32\+\_\+t)0x8)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a5ced1617f0c81c91c84feb6e67ab7e3f}\label{_e_f___u_a_r_t__regs_8h_a5ced1617f0c81c91c84feb6e67ab7e3f}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_RXEN\_BIT@{EF\_UART\_CTRL\_REG\_RXEN\_BIT}}
 \index{EF\_UART\_CTRL\_REG\_RXEN\_BIT@{EF\_UART\_CTRL\_REG\_RXEN\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_RXEN\_BIT}{EF\_UART\_CTRL\_REG\_RXEN\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+BIT~2}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+BIT~((uint32\+\_\+t)2)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_afacdd0aef6658a33f7bfd07e21c8a68f}\label{_e_f___u_a_r_t__regs_8h_afacdd0aef6658a33f7bfd07e21c8a68f}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_RXEN\_MASK@{EF\_UART\_CTRL\_REG\_RXEN\_MASK}}
 \index{EF\_UART\_CTRL\_REG\_RXEN\_MASK@{EF\_UART\_CTRL\_REG\_RXEN\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_RXEN\_MASK}{EF\_UART\_CTRL\_REG\_RXEN\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+MASK~0x4}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+MASK~((uint32\+\_\+t)0x4)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a4803fa0200e936a1d8f112b1cda3a0be}\label{_e_f___u_a_r_t__regs_8h_a4803fa0200e936a1d8f112b1cda3a0be}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_TXEN\_BIT@{EF\_UART\_CTRL\_REG\_TXEN\_BIT}}
 \index{EF\_UART\_CTRL\_REG\_TXEN\_BIT@{EF\_UART\_CTRL\_REG\_TXEN\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_TXEN\_BIT}{EF\_UART\_CTRL\_REG\_TXEN\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+BIT~1}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+BIT~((uint32\+\_\+t)1)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a4b8b5bd1caaa4e1f65da544132cac877}\label{_e_f___u_a_r_t__regs_8h_a4b8b5bd1caaa4e1f65da544132cac877}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_TXEN\_MASK@{EF\_UART\_CTRL\_REG\_TXEN\_MASK}}
 \index{EF\_UART\_CTRL\_REG\_TXEN\_MASK@{EF\_UART\_CTRL\_REG\_TXEN\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_TXEN\_MASK}{EF\_UART\_CTRL\_REG\_TXEN\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+MASK~0x2}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+MASK~((uint32\+\_\+t)0x2)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_aafc66529a3139c689109d2406ed67a57}\label{_e_f___u_a_r_t__regs_8h_aafc66529a3139c689109d2406ed67a57}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_FE\_FLAG@{EF\_UART\_FE\_FLAG}}
 \index{EF\_UART\_FE\_FLAG@{EF\_UART\_FE\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_FE\_FLAG}{EF\_UART\_FE\_FLAG}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+FE\+\_\+\+FLAG~0x40}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+FE\+\_\+\+FLAG~((uint32\+\_\+t)0x40)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_aa5f6a28e7e7c0693a5d922ab8788d70c}\label{_e_f___u_a_r_t__regs_8h_aa5f6a28e7e7c0693a5d922ab8788d70c}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_MATCH\_FLAG@{EF\_UART\_MATCH\_FLAG}}
 \index{EF\_UART\_MATCH\_FLAG@{EF\_UART\_MATCH\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_MATCH\_FLAG}{EF\_UART\_MATCH\_FLAG}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+FLAG~0x20}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+FLAG~((uint32\+\_\+t)0x20)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_ad2021fcd6ecdc551490d95ff8a2227f4}\label{_e_f___u_a_r_t__regs_8h_ad2021fcd6ecdc551490d95ff8a2227f4}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_OR\_FLAG@{EF\_UART\_OR\_FLAG}}
 \index{EF\_UART\_OR\_FLAG@{EF\_UART\_OR\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_OR\_FLAG}{EF\_UART\_OR\_FLAG}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+OR\+\_\+\+FLAG~0x100}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+OR\+\_\+\+FLAG~((uint32\+\_\+t)0x100)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a3cff4fc63e9ab01bad003a962a6d3938}\label{_e_f___u_a_r_t__regs_8h_a3cff4fc63e9ab01bad003a962a6d3938}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_PRE\_FLAG@{EF\_UART\_PRE\_FLAG}}
 \index{EF\_UART\_PRE\_FLAG@{EF\_UART\_PRE\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_PRE\_FLAG}{EF\_UART\_PRE\_FLAG}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+PRE\+\_\+\+FLAG~0x80}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+PRE\+\_\+\+FLAG~((uint32\+\_\+t)0x80)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_aa5b304f625110ba9a40b9fb5d0f22928}\label{_e_f___u_a_r_t__regs_8h_aa5b304f625110ba9a40b9fb5d0f22928}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RTO\_FLAG@{EF\_UART\_RTO\_FLAG}}
 \index{EF\_UART\_RTO\_FLAG@{EF\_UART\_RTO\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RTO\_FLAG}{EF\_UART\_RTO\_FLAG}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RTO\+\_\+\+FLAG~0x200}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RTO\+\_\+\+FLAG~((uint32\+\_\+t)0x200)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_ae2c3c80712f43d3efef03601ed583a2e}\label{_e_f___u_a_r_t__regs_8h_ae2c3c80712f43d3efef03601ed583a2e}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT@{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT}}
 \index{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT@{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT}{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT~0}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT~((uint32\+\_\+t)0)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a1959835954e2643cb04ab8b6337500cc}\label{_e_f___u_a_r_t__regs_8h_a1959835954e2643cb04ab8b6337500cc}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK@{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}}
 \index{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK@{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK~0x1}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK~((uint32\+\_\+t)0x1)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_af97f793bc90ec0557b0366f49ed39768}\label{_e_f___u_a_r_t__regs_8h_af97f793bc90ec0557b0366f49ed39768}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT@{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}}
 \index{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT@{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT~0}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT~((uint32\+\_\+t)0)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a3373791334179d5030fc3901e9cc234d}\label{_e_f___u_a_r_t__regs_8h_a3373791334179d5030fc3901e9cc234d}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK@{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}}
 \index{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK@{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK~0xf}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK~((uint32\+\_\+t)0xf)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_adfa08c57c518af19d91b3386f5f5f48e}\label{_e_f___u_a_r_t__regs_8h_adfa08c57c518af19d91b3386f5f5f48e}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT@{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}}
 \index{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT@{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT~0}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT~((uint32\+\_\+t)0)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a3519d1b3ce36f9ffd11094e6906d02f3}\label{_e_f___u_a_r_t__regs_8h_a3519d1b3ce36f9ffd11094e6906d02f3}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK@{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK}}
 \index{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK@{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK}{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK~0xf}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK~((uint32\+\_\+t)0xf)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_afcc839803a3e147726c4d0ff8aa631ac}\label{_e_f___u_a_r_t__regs_8h_afcc839803a3e147726c4d0ff8aa631ac}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RXA\_FLAG@{EF\_UART\_RXA\_FLAG}}
 \index{EF\_UART\_RXA\_FLAG@{EF\_UART\_RXA\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RXA\_FLAG}{EF\_UART\_RXA\_FLAG}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RXA\+\_\+\+FLAG~0x8}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RXA\+\_\+\+FLAG~((uint32\+\_\+t)0x8)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_abdbd275b9e49d27fc0631f3db144626c}\label{_e_f___u_a_r_t__regs_8h_abdbd275b9e49d27fc0631f3db144626c}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RXF\_FLAG@{EF\_UART\_RXF\_FLAG}}
 \index{EF\_UART\_RXF\_FLAG@{EF\_UART\_RXF\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RXF\_FLAG}{EF\_UART\_RXF\_FLAG}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RXF\+\_\+\+FLAG~0x2}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RXF\+\_\+\+FLAG~((uint32\+\_\+t)0x2)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a4d36a0d56e4c71facb77edf936c5c1be}\label{_e_f___u_a_r_t__regs_8h_a4d36a0d56e4c71facb77edf936c5c1be}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT@{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT}}
 \index{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT@{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT}{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT~0}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT~((uint32\+\_\+t)0)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_af62b4e21b6b8f13f76fe7a01b9abc46c}\label{_e_f___u_a_r_t__regs_8h_af62b4e21b6b8f13f76fe7a01b9abc46c}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK@{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}}
 \index{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK@{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK~0x1}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK~((uint32\+\_\+t)0x1)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a32bdc59657c35d0612e6e66fe760adc7}\label{_e_f___u_a_r_t__regs_8h_a32bdc59657c35d0612e6e66fe760adc7}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT@{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}}
 \index{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT@{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT~0}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT~((uint32\+\_\+t)0)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_aa1b5bca4b8333cf38e5a36abd61805f5}\label{_e_f___u_a_r_t__regs_8h_aa1b5bca4b8333cf38e5a36abd61805f5}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK@{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}}
 \index{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK@{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK~0xf}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK~((uint32\+\_\+t)0xf)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a2cb10104d58a678696601c2eb7cdb17c}\label{_e_f___u_a_r_t__regs_8h_a2cb10104d58a678696601c2eb7cdb17c}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT@{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}}
 \index{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT@{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT~0}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT~((uint32\+\_\+t)0)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a21fe71b2983c43632eba11aeccbffcb0}\label{_e_f___u_a_r_t__regs_8h_a21fe71b2983c43632eba11aeccbffcb0}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK@{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK}}
 \index{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK@{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK}{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK~0xf}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK~((uint32\+\_\+t)0xf)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a1d10765fcb44dabc4653269f5f45d7e0}\label{_e_f___u_a_r_t__regs_8h_a1d10765fcb44dabc4653269f5f45d7e0}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TXB\_FLAG@{EF\_UART\_TXB\_FLAG}}
 \index{EF\_UART\_TXB\_FLAG@{EF\_UART\_TXB\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TXB\_FLAG}{EF\_UART\_TXB\_FLAG}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TXB\+\_\+\+FLAG~0x4}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TXB\+\_\+\+FLAG~((uint32\+\_\+t)0x4)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_af0ef9bb61d418f4ec8031e74ac1374f3}\label{_e_f___u_a_r_t__regs_8h_af0ef9bb61d418f4ec8031e74ac1374f3}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TXE\_FLAG@{EF\_UART\_TXE\_FLAG}}
 \index{EF\_UART\_TXE\_FLAG@{EF\_UART\_TXE\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TXE\_FLAG}{EF\_UART\_TXE\_FLAG}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TXE\+\_\+\+FLAG~0x1}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TXE\+\_\+\+FLAG~((uint32\+\_\+t)0x1)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a470cd5845bed94d8b8b358933e4a3442}\label{_e_f___u_a_r_t__regs_8h_a470cd5845bed94d8b8b358933e4a3442}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!IO\_TYPES@{IO\_TYPES}}
@@ -376,4 +379,10 @@ typedef struct \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{\+\_\+\+EF\+
 \index{EF\_UART\_TYPE@{EF\_UART\_TYPE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TYPE}{EF\_UART\_TYPE}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{\+\_\+\+EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+}} \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}}}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}\label{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TYPE\_PTR@{EF\_UART\_TYPE\_PTR}}
+\index{EF\_UART\_TYPE\_PTR@{EF\_UART\_TYPE\_PTR}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_TYPE\_PTR}{EF\_UART\_TYPE\_PTR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}}$\ast$ \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}
 

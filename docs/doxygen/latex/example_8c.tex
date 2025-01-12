@@ -1,0 +1,55 @@
+\hypertarget{example_8c}{}\doxysection{example.\+c File Reference}
+\label{example_8c}\index{example.c@{example.c}}
+{\ttfamily \#include \char`\"{}EF\+\_\+\+UART.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{example_8c_a245442e9ecffcadcce85a5cd86e9ed91}{Example\+\_\+\+UART\+\_\+\+BASE\+\_\+\+ADDRESS}}~0x40000000
+\item 
+\#define \mbox{\hyperlink{example_8c_a0508661f121639ffdee7de2353a0def2}{UART0}}~((\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}})\mbox{\hyperlink{example_8c_a245442e9ecffcadcce85a5cd86e9ed91}{Example\+\_\+\+UART\+\_\+\+BASE\+\_\+\+ADDRESS}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{example_8c_a1dc3757c8ca6e8725ab78bd72373ec6b}{UART\+\_\+\+Init}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t baud\+\_\+rate, uint32\+\_\+t bus\+\_\+clock, uint32\+\_\+t data\+\_\+bits, bool two\+\_\+stop\+\_\+bits, enum \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parity\+\_\+type}} parity, uint32\+\_\+t timeout, uint32\+\_\+t rx\+\_\+threshold, uint32\+\_\+t tx\+\_\+threshold)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{example_8c_a0bb4c33d9a6330d0c224a2cd7e2b7ab2}{UART\+\_\+\+Receive}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, char $\ast$buffer, size\+\_\+t buffer\+\_\+size)
+\item 
+int \mbox{\hyperlink{example_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{example_8c_a245442e9ecffcadcce85a5cd86e9ed91}\label{example_8c_a245442e9ecffcadcce85a5cd86e9ed91}} 
+\index{example.c@{example.c}!Example\_UART\_BASE\_ADDRESS@{Example\_UART\_BASE\_ADDRESS}}
+\index{Example\_UART\_BASE\_ADDRESS@{Example\_UART\_BASE\_ADDRESS}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{Example\_UART\_BASE\_ADDRESS}{Example\_UART\_BASE\_ADDRESS}}
+{\footnotesize\ttfamily \#define Example\+\_\+\+UART\+\_\+\+BASE\+\_\+\+ADDRESS~0x40000000}
+
+\mbox{\Hypertarget{example_8c_a0508661f121639ffdee7de2353a0def2}\label{example_8c_a0508661f121639ffdee7de2353a0def2}} 
+\index{example.c@{example.c}!UART0@{UART0}}
+\index{UART0@{UART0}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{UART0}{UART0}}
+{\footnotesize\ttfamily \#define UART0~((\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}})\mbox{\hyperlink{example_8c_a245442e9ecffcadcce85a5cd86e9ed91}{Example\+\_\+\+UART\+\_\+\+BASE\+\_\+\+ADDRESS}})}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{example_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{example_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{example.c@{example.c}!main@{main}}
+\index{main@{main}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{example_8c_a1dc3757c8ca6e8725ab78bd72373ec6b}\label{example_8c_a1dc3757c8ca6e8725ab78bd72373ec6b}} 
+\index{example.c@{example.c}!UART\_Init@{UART\_Init}}
+\index{UART\_Init@{UART\_Init}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{UART\_Init()}{UART\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} UART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{baud\+\_\+rate,  }\item[{uint32\+\_\+t}]{bus\+\_\+clock,  }\item[{uint32\+\_\+t}]{data\+\_\+bits,  }\item[{bool}]{two\+\_\+stop\+\_\+bits,  }\item[{enum \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parity\+\_\+type}}}]{parity,  }\item[{uint32\+\_\+t}]{timeout,  }\item[{uint32\+\_\+t}]{rx\+\_\+threshold,  }\item[{uint32\+\_\+t}]{tx\+\_\+threshold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{example_8c_a0bb4c33d9a6330d0c224a2cd7e2b7ab2}\label{example_8c_a0bb4c33d9a6330d0c224a2cd7e2b7ab2}} 
+\index{example.c@{example.c}!UART\_Receive@{UART\_Receive}}
+\index{UART\_Receive@{UART\_Receive}!example.c@{example.c}}
+\doxysubsubsection{\texorpdfstring{UART\_Receive()}{UART\_Receive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} UART\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{buffer\+\_\+size }\end{DoxyParamCaption})}
+

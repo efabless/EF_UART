@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: EF_Driver_Common.h File Reference</title>
+<title>EF_UART APIs: EF_Driver_Common.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">EF_UART APIs
    </div>
   </td>
  </tr>
@@ -86,45 +86,167 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ab56c746d5d1672835c101f00f7c90b7c"><td class="memItemLeft" align="right" valign="top"><a id="ab56c746d5d1672835c101f00f7c90b7c" name="ab56c746d5d1672835c101f00f7c90b7c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>EF_DRIVER_OK</b>&#160;&#160;&#160;((uint32_t)0)</td></tr>
-<tr class="memdesc:ab56c746d5d1672835c101f00f7c90b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation succeeded. <br /></td></tr>
+<tr class="memitem:ab56c746d5d1672835c101f00f7c90b7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___driver___common_8h.html#ab56c746d5d1672835c101f00f7c90b7c">EF_DRIVER_OK</a>&#160;&#160;&#160;((uint32_t)0)</td></tr>
+<tr class="memdesc:ab56c746d5d1672835c101f00f7c90b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation succeeded.  <br /></td></tr>
 <tr class="separator:ab56c746d5d1672835c101f00f7c90b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf96107766b856292d4f08a495064c7e"><td class="memItemLeft" align="right" valign="top"><a id="adf96107766b856292d4f08a495064c7e" name="adf96107766b856292d4f08a495064c7e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>EF_DRIVER_ERROR</b>&#160;&#160;&#160;((uint32_t)1)</td></tr>
-<tr class="memdesc:adf96107766b856292d4f08a495064c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unspecified error. <br /></td></tr>
+<tr class="memitem:adf96107766b856292d4f08a495064c7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___driver___common_8h.html#adf96107766b856292d4f08a495064c7e">EF_DRIVER_ERROR</a>&#160;&#160;&#160;((uint32_t)1)</td></tr>
+<tr class="memdesc:adf96107766b856292d4f08a495064c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unspecified error.  <br /></td></tr>
 <tr class="separator:adf96107766b856292d4f08a495064c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b7e06e07ac1038e9cc63d5f25d681fb"><td class="memItemLeft" align="right" valign="top"><a id="a9b7e06e07ac1038e9cc63d5f25d681fb" name="a9b7e06e07ac1038e9cc63d5f25d681fb"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>EF_DRIVER_ERROR_BUSY</b>&#160;&#160;&#160;((uint32_t)2)</td></tr>
-<tr class="memdesc:a9b7e06e07ac1038e9cc63d5f25d681fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver is busy. <br /></td></tr>
+<tr class="memitem:a9b7e06e07ac1038e9cc63d5f25d681fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___driver___common_8h.html#a9b7e06e07ac1038e9cc63d5f25d681fb">EF_DRIVER_ERROR_BUSY</a>&#160;&#160;&#160;((uint32_t)2)</td></tr>
+<tr class="memdesc:a9b7e06e07ac1038e9cc63d5f25d681fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver is busy.  <br /></td></tr>
 <tr class="separator:a9b7e06e07ac1038e9cc63d5f25d681fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26b87ad6f8f1d017af3ee034bd178795"><td class="memItemLeft" align="right" valign="top"><a id="a26b87ad6f8f1d017af3ee034bd178795" name="a26b87ad6f8f1d017af3ee034bd178795"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>EF_DRIVER_ERROR_TIMEOUT</b>&#160;&#160;&#160;((uint32_t)3)</td></tr>
-<tr class="memdesc:a26b87ad6f8f1d017af3ee034bd178795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout occurred. <br /></td></tr>
+<tr class="memitem:a26b87ad6f8f1d017af3ee034bd178795"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___driver___common_8h.html#a26b87ad6f8f1d017af3ee034bd178795">EF_DRIVER_ERROR_TIMEOUT</a>&#160;&#160;&#160;((uint32_t)3)</td></tr>
+<tr class="memdesc:a26b87ad6f8f1d017af3ee034bd178795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout occurred.  <br /></td></tr>
 <tr class="separator:a26b87ad6f8f1d017af3ee034bd178795"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd8e6eb4870238ef0f900911e3935d91"><td class="memItemLeft" align="right" valign="top"><a id="abd8e6eb4870238ef0f900911e3935d91" name="abd8e6eb4870238ef0f900911e3935d91"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>EF_DRIVER_ERROR_UNSUPPORTED</b>&#160;&#160;&#160;((uint32_t)4)</td></tr>
-<tr class="memdesc:abd8e6eb4870238ef0f900911e3935d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation not supported. <br /></td></tr>
+<tr class="memitem:abd8e6eb4870238ef0f900911e3935d91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___driver___common_8h.html#abd8e6eb4870238ef0f900911e3935d91">EF_DRIVER_ERROR_UNSUPPORTED</a>&#160;&#160;&#160;((uint32_t)4)</td></tr>
+<tr class="memdesc:abd8e6eb4870238ef0f900911e3935d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation not supported.  <br /></td></tr>
 <tr class="separator:abd8e6eb4870238ef0f900911e3935d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed4f0552faa082d7941ed37ae1e430e4"><td class="memItemLeft" align="right" valign="top"><a id="aed4f0552faa082d7941ed37ae1e430e4" name="aed4f0552faa082d7941ed37ae1e430e4"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>EF_DRIVER_ERROR_PARAMETER</b>&#160;&#160;&#160;((uint32_t)5)</td></tr>
-<tr class="memdesc:aed4f0552faa082d7941ed37ae1e430e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter error. <br /></td></tr>
+<tr class="memitem:aed4f0552faa082d7941ed37ae1e430e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___driver___common_8h.html#aed4f0552faa082d7941ed37ae1e430e4">EF_DRIVER_ERROR_PARAMETER</a>&#160;&#160;&#160;((uint32_t)5)</td></tr>
+<tr class="memdesc:aed4f0552faa082d7941ed37ae1e430e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter error.  <br /></td></tr>
 <tr class="separator:aed4f0552faa082d7941ed37ae1e430e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89de2e78c0ce8d5b48c0cef064ae3aab"><td class="memItemLeft" align="right" valign="top"><a id="a89de2e78c0ce8d5b48c0cef064ae3aab" name="a89de2e78c0ce8d5b48c0cef064ae3aab"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>EF_DRIVER_ERROR_SPECIFIC</b>&#160;&#160;&#160;((uint32_t)6)</td></tr>
-<tr class="memdesc:a89de2e78c0ce8d5b48c0cef064ae3aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of driver specific errors. <br /></td></tr>
+<tr class="memitem:a89de2e78c0ce8d5b48c0cef064ae3aab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___driver___common_8h.html#a89de2e78c0ce8d5b48c0cef064ae3aab">EF_DRIVER_ERROR_SPECIFIC</a>&#160;&#160;&#160;((uint32_t)6)</td></tr>
+<tr class="memdesc:a89de2e78c0ce8d5b48c0cef064ae3aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of driver specific errors.  <br /></td></tr>
 <tr class="separator:a89de2e78c0ce8d5b48c0cef064ae3aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ad1c99136d1edfd0a7757f5b81600a351"><td class="memItemLeft" align="right" valign="top"><a id="ad1c99136d1edfd0a7757f5b81600a351" name="ad1c99136d1edfd0a7757f5b81600a351"></a>
-typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>EF_DRIVER_STATUS</b></td></tr>
-<tr class="memdesc:ad1c99136d1edfd0a7757f5b81600a351"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type that is used to return the status of the driver functions. <br /></td></tr>
+<tr class="memitem:ad1c99136d1edfd0a7757f5b81600a351"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a></td></tr>
+<tr class="memdesc:ad1c99136d1edfd0a7757f5b81600a351"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type that is used to return the status of the driver functions.  <br /></td></tr>
 <tr class="separator:ad1c99136d1edfd0a7757f5b81600a351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C header file for common driver definitions and types. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="adf96107766b856292d4f08a495064c7e" name="adf96107766b856292d4f08a495064c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf96107766b856292d4f08a495064c7e">&#9670;&#160;</a></span>EF_DRIVER_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EF_DRIVER_ERROR&#160;&#160;&#160;((uint32_t)1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unspecified error. </p>
+
+</div>
+</div>
+<a id="a9b7e06e07ac1038e9cc63d5f25d681fb" name="a9b7e06e07ac1038e9cc63d5f25d681fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b7e06e07ac1038e9cc63d5f25d681fb">&#9670;&#160;</a></span>EF_DRIVER_ERROR_BUSY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EF_DRIVER_ERROR_BUSY&#160;&#160;&#160;((uint32_t)2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Driver is busy. </p>
+
+</div>
+</div>
+<a id="aed4f0552faa082d7941ed37ae1e430e4" name="aed4f0552faa082d7941ed37ae1e430e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed4f0552faa082d7941ed37ae1e430e4">&#9670;&#160;</a></span>EF_DRIVER_ERROR_PARAMETER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EF_DRIVER_ERROR_PARAMETER&#160;&#160;&#160;((uint32_t)5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parameter error. </p>
+
+</div>
+</div>
+<a id="a89de2e78c0ce8d5b48c0cef064ae3aab" name="a89de2e78c0ce8d5b48c0cef064ae3aab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89de2e78c0ce8d5b48c0cef064ae3aab">&#9670;&#160;</a></span>EF_DRIVER_ERROR_SPECIFIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EF_DRIVER_ERROR_SPECIFIC&#160;&#160;&#160;((uint32_t)6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start of driver specific errors. </p>
+
+</div>
+</div>
+<a id="a26b87ad6f8f1d017af3ee034bd178795" name="a26b87ad6f8f1d017af3ee034bd178795"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26b87ad6f8f1d017af3ee034bd178795">&#9670;&#160;</a></span>EF_DRIVER_ERROR_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EF_DRIVER_ERROR_TIMEOUT&#160;&#160;&#160;((uint32_t)3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Timeout occurred. </p>
+
+</div>
+</div>
+<a id="abd8e6eb4870238ef0f900911e3935d91" name="abd8e6eb4870238ef0f900911e3935d91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd8e6eb4870238ef0f900911e3935d91">&#9670;&#160;</a></span>EF_DRIVER_ERROR_UNSUPPORTED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EF_DRIVER_ERROR_UNSUPPORTED&#160;&#160;&#160;((uint32_t)4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Operation not supported. </p>
+
+</div>
+</div>
+<a id="ab56c746d5d1672835c101f00f7c90b7c" name="ab56c746d5d1672835c101f00f7c90b7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56c746d5d1672835c101f00f7c90b7c">&#9670;&#160;</a></span>EF_DRIVER_OK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EF_DRIVER_OK&#160;&#160;&#160;((uint32_t)0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Operation succeeded. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ad1c99136d1edfd0a7757f5b81600a351" name="ad1c99136d1edfd0a7757f5b81600a351"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1c99136d1edfd0a7757f5b81600a351">&#9670;&#160;</a></span>EF_DRIVER_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint32_t <a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A type that is used to return the status of the driver functions. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
