@@ -50,22 +50,6 @@ EF_DRIVER_STATUS UART_Init(EF_UART_TYPE_PTR uart, uint32_t baud_rate, uint32_t b
     return EF_DRIVER_OK;
 }
 
-// Function to transmit a string using UART
-EF_DRIVER_STATUS UART_Transmit(EF_UART_TYPE_PTR uart, const char *data) {
-    EF_DRIVER_STATUS status;
-    while (*data) {
-        bool space_available = false;
-        status = EF_UART_spaceAvailable(uart, &space_available);
-        if (status != EF_DRIVER_OK || !space_available) {
-            // Wait or handle FIFO full case
-            continue;
-        }
-        status = EF_UART_writeChar(uart, *data++);
-        if (status != EF_DRIVER_OK) return status;
-    }
-    return EF_DRIVER_OK;
-}
-
 // Function to receive a string using UART
 EF_DRIVER_STATUS UART_Receive(EF_UART_TYPE_PTR uart, char *buffer, size_t buffer_size) {
     EF_DRIVER_STATUS status;
@@ -74,16 +58,15 @@ EF_DRIVER_STATUS UART_Receive(EF_UART_TYPE_PTR uart, char *buffer, size_t buffer
     while (index < buffer_size - 1) {
         bool data_available = false;
         status = EF_UART_charsAvailable(uart, &data_available);
-        if (status != EF_DRIVER_OK || !data_available) {
-            // Wait or handle no data case
-            continue;
-        }
+        if (status != EF_DRIVER_OK){break;}     // return on error
+        if (!data_available) {continue;}        // skip this iteration and wait for data
+
         char received_char;
         status = EF_UART_readChar(uart, &received_char);
-        if (status != EF_DRIVER_OK) return status;
+        if (status != EF_DRIVER_OK){break;}     // return on error
 
         buffer[index++] = received_char;
-        if (received_char == '\n') break; // Stop at newline
+        if (received_char == '\n') break;       // Stop reading at newline
     }
     buffer[index] = '\0'; // Null-terminate the string
     return EF_DRIVER_OK;
@@ -105,7 +88,7 @@ int main() {
 
     // Transmit a message
     const char *message = "Hello, UART!\n";
-    status = UART_Transmit(UART0, message);
+    status = EF_UART_writeCharArr(UART0, message);
     if (status != EF_DRIVER_OK) {
         // Handle transmission error
         return -1;
