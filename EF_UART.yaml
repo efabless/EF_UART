@@ -29,8 +29,8 @@ info:
   repo: https://github.com/efabless/EF_UART.git
   owner: Efabless Corp.
   license: APACHE 2.0
-  author: Mohamed Shalan
-  email: mshalan@efabless.com
+  author: Efabless Corp.
+  email: ip_admin@efabless.com
   version: v1.1.8
   date: 16-09-2024
   category: digital
