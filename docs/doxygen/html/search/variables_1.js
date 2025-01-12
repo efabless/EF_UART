@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fifoctrl_0',['FIFOCTRL',['../struct__EF__UART__TYPE__.html#a5f48f387b4dc63014e4380eb51f4c33b',1,'_EF_UART_TYPE_']]],
-  ['fifos_1',['FIFOS',['../struct__EF__UART__TYPE__.html#ac95e4f7543a0aed3ee5277c2096af20a',1,'_EF_UART_TYPE_']]]
+  ['gclk_0',['GCLK',['../struct___e_f___u_a_r_t___t_y_p_e__.html#ad1b69ebbb1bfeaed7edb816f86128518',1,'_EF_UART_TYPE_']]]
 ];

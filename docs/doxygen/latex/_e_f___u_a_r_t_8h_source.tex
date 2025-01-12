@@ -1,0 +1,248 @@
+\hypertarget{_e_f___u_a_r_t_8h_source}{}\doxysection{EF\+\_\+\+UART.\+h}
+\mbox{\hyperlink{_e_f___u_a_r_t_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ Copyright\ 2025\ Efabless\ Corp.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ \ \ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ \ \ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00008\ \textcolor{comment}{}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ \ \ \ \ \ \ www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00010\ \textcolor{comment}{}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ \ \ \ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ \ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{}}
+\DoxyCodeLine{00017\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#ifndef\ EF\_UART\_H}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ EF\_UART\_H}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*\ Includes}}
+\DoxyCodeLine{00032\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}EF\_UART\_regs.h"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_f___driver___common_8h}{EF\_Driver\_Common.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*\ Macros\ and\ Constants}}
+\DoxyCodeLine{00039\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_MAX\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000001F)\ \ }\textcolor{comment}{//\ CTRL\ register\ only\ has\ 5\ bits,\ and\ the\ rest\ are\ reserved}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ EF\_UART\_PR\_REG\_MAX\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000FFFF)\ \ }\textcolor{comment}{//\ PR\ register\ only\ has\ 16\ bits}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ EF\_UART\_DataLength\_MIN\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000005)\ \ }\textcolor{comment}{//\ This\ UART\ IP\ only\ supports\ data\ length\ from\ 5\ to\ 9\ bits}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ EF\_UART\_DataLength\_MAX\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000009)\ \ }\textcolor{comment}{//\ This\ UART\ IP\ only\ supports\ data\ length\ from\ 5\ to\ 9\ bits}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE\ \ \ \ \ \ \ ((uint32\_t)0x0000003F)\ \ }\textcolor{comment}{//\ The\ CFG\ register\ timeout\ field\ is\ 6\ bits}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_MAX\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00001FFF)\ \ }\textcolor{comment}{//\ The\ CFG\ register\ is\ 13\ bits}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE\ ((uint32\_t)0x0000000F)\ \ }\textcolor{comment}{//\ The\ RX\ FIFO\ level\ register\ is\ 4\ bits}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE\ ((uint32\_t)0x0000000F)\ \ }\textcolor{comment}{//\ The\ TX\ FIFO\ level\ register\ is\ 4\ bits}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ EF\_UART\_MATCH\_REG\_MAX\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00001FFF)\ \ }\textcolor{comment}{//\ The\ match\ register\ is\ 9\ bits}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ EF\_UART\_IM\_REG\_MAX\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000003FF)\ \ }\textcolor{comment}{//\ The\ IM\ register\ is\ 10\ bits}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ EF\_UART\_IC\_REG\_MAX\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000003FF)\ \ }\textcolor{comment}{//\ The\ IC\ register\ is\ 10\ bits}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00054\ \textcolor{comment}{*\ Typedefs\ and\ Enums}}
+\DoxyCodeLine{00055\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{enum}\ parity\_type\ \{NONE\ =\ 0,\ ODD\ =\ 1,\ EVEN\ =\ 2,\ STICKY\_0\ =\ 4,\ STICKY\_1\ =\ 5\};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00062\ \textcolor{comment}{*\ Function\ Prototypes}}
+\DoxyCodeLine{00063\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a5b00ddd7df5f72886ea559da57a1b2bd}{EF\_UART\_setGclkEnable}}\ (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t\ value);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a2673b6af3d435a9caa3fd9f115ad1878}{EF\_UART\_enable}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a9d41c2bae6bbb144932cb4c264557a0f}{EF\_UART\_disable}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a8fe185c295fdf22ad7f5ab020138e95f}{EF\_UART\_enableRx}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a46da4f034dd502e65cdbd198e33611e2}{EF\_UART\_disableRx}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a11caaf87ef28a637bfd825208eb09c18}{EF\_UART\_enableTx}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00126\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a8ffdd73320ea0474fcb177d306dc6a67}{EF\_UART\_disableTx}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00135\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a8dbf6fd5cdc6e99a3e17486c124d0d1d}{EF\_UART\_enableLoopBack}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00144\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_af253218d9f38bc1e0bd0b1196c2fb44d}{EF\_UART\_disableLoopBack}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00153\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_acc57380ee395632930bd85ca6377655b}{EF\_UART\_enableGlitchFilter}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00162\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a2dbdc231cba17a0da6fae5e48b394dfd}{EF\_UART\_disableGlitchFilter}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00177\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_ad36fee036e144937af3eed59eea101c6}{EF\_UART\_setCTRL}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t\ value);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00187\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a9870f89be83da209c6823fe725ed492e}{EF\_UART\_getCTRL}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ CTRL\_value);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00197\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a04a859ae5492ec11e9f3b418337148e1}{EF\_UART\_setDataSize}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t\ value);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00207\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_ae2336d17bb87f77416fc9c6871b7cbdb}{EF\_UART\_setTwoStopBitsSelect}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ \textcolor{keywordtype}{bool}\ is\_two\_bits);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00217\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a3af979ea01c716d9b6ca923b92cc5c31}{EF\_UART\_setParityType}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ \textcolor{keyword}{enum}\ parity\_type\ parity);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00227\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_ad18a6e0c7701bdc66b483b1c53a3581d}{EF\_UART\_setTimeoutBits}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t\ value);}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00241\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a7abd365f1081dd30bc202b673851f7b7}{EF\_UART\_setConfig}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t\ config);}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00251\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_afad923241f7414fe1292101d185d0c75}{EF\_UART\_getConfig}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ CFG\_value);}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00261\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_ae7559449b86af3339f32eb9f60da7342}{EF\_UART\_setRxFIFOThreshold}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t\ threshold);}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00271\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a7b416fd3385eb5b3ee34eb09ea0de8d2}{EF\_UART\_getRxFIFOThreshold}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ RX\_FIFO\_THRESHOLD\_value);}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00281\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_aece15f8d4c46af75f44d94abb3018080}{EF\_UART\_setTxFIFOThreshold}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t\ threshold);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00291\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a9844c9c7921a2187ca86bead858c8c02}{EF\_UART\_getTxFIFOThreshold}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ TX\_FIFO\_THRESHOLD\_value);}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00302\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_af275d224f7dcde400258b8d93e1ed2ce}{EF\_UART\_setMatchData}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t\ matchData);}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00312\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a559c00c5b1d96bcb0784e0449071f4bb}{EF\_UART\_getMatchData}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ MATCH\_value);}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00322\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_acd160a7725a4b3fb675dcebeda8776d5}{EF\_UART\_getTxCount}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ TX\_FIFO\_LEVEL\_value);}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00332\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_aaa9a26fa27e5b5fc5c8039103abc1ed7}{EF\_UART\_getRxCount}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ RX\_FIFO\_LEVEL\_value);}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00342\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a1184834b408cdeed94623c691068a352}{EF\_UART\_setPrescaler}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t\ prescaler);}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00352\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_aa5874369ddd7767b26a076726d585235}{EF\_UART\_getPrescaler}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ Prescaler\_value);}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00372\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a81943fbc40226420642143805f95e991}{EF\_UART\_getRIS}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ RIS\_value);}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00392\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a0ff41852bf2c3a32d25864823da6a508}{EF\_UART\_getMIS}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ MIS\_value);}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00412\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_ad62de52cc6d11bb10dfdc275d899bb0e}{EF\_UART\_setIM}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t\ mask);}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00432\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_ab22694c6e2d02fc25daac570b70ef8f1}{EF\_UART\_getIM}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ IM\_value);}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00452\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a7ecbcf6bc73a4a3392648372441a6133}{EF\_UART\_setICR}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t\ mask);}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00463\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a0f9ad65cbfe136ad4c4080612d578536}{EF\_UART\_writeCharArr}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *char\_arr);}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00473\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_ace1db9bbc3b092890acff854cec1aa77}{EF\_UART\_writeChar}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ \textcolor{keywordtype}{char}\ data);}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00483\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_abda4e085b80f004761b77dbf3f0450e6}{EF\_UART\_readChar}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uar,\ \textcolor{keywordtype}{char}*\ RXDATA\_value);}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \textcolor{comment}{//\ The\ following\ functions\ are\ not\ verified\ yet}}
+\DoxyCodeLine{00488\ \textcolor{comment}{/******************************************************************************************************************************************/}}
+\DoxyCodeLine{00489\ \textcolor{comment}{/******************************************************************************************************************************************/}}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00500\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_aaa93d9c62ca6e64a622bb32e86fb2dc0}{EF\_UART\_readCharNonBlocking}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ \textcolor{keywordtype}{char}*\ RXDATA\_value,\ \textcolor{keywordtype}{bool}*\ data\_available);}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00510\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a8091314203111b165d1bad624159f8ba}{EF\_UART\_writeCharNonBlocking}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ \textcolor{keywordtype}{char}\ data,\ \textcolor{keywordtype}{bool}*\ data\_sent);}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00519\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_aa48cbd20fb9a2898171bc7ff8688b9ee}{EF\_UART\_charsAvailable}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ \textcolor{keywordtype}{bool}*\ flag);}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00529\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a26804aec34f642578f9b6243fd16f277}{EF\_UART\_spaceAvailable}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ \textcolor{keywordtype}{bool}*\ flag);}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00538\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a99a9c66e92fb0233fb7cf31e6c6921f1}{EF\_UART\_getParityMode}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ uint32\_t*\ parity\_mode);}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00547\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_a16e75e32fdf3a0dc46f6ca9992750328}{EF\_UART\_busy}}(\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,\ \textcolor{keywordtype}{bool}*\ flag);}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ }
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00552\ \textcolor{comment}{*\ External\ Variables}}
+\DoxyCodeLine{00553\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00554\ }
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EF\_UART\_H}}
+\DoxyCodeLine{00557\ }
+\DoxyCodeLine{00558\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00559\ \textcolor{comment}{*\ End\ of\ File}}
+\DoxyCodeLine{00560\ \textcolor{comment}{******************************************************************************/}}
+
+\end{DoxyCode}

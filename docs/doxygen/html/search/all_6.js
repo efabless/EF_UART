@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['icr_0',['icr',['../struct__EF__UART__TYPE__.html#a8a399eff288117f64c79c9c1b0213d09',1,'_EF_UART_TYPE_']]],
-  ['im_1',['im',['../struct__EF__UART__TYPE__.html#a92173860adcbbdea07bb55da2f91f347',1,'_EF_UART_TYPE_']]],
-  ['io_5ftypes_2',['IO_TYPES',['../EF__UART__regs_8h.html#a470cd5845bed94d8b8b358933e4a3442',1,'EF_UART_regs.h']]]
+  ['match_0',['MATCH',['../struct___e_f___u_a_r_t___t_y_p_e__.html#aa4c42f2e242b0eca1910fb9584e1284f',1,'_EF_UART_TYPE_']]],
+  ['mis_1',['MIS',['../struct___e_f___u_a_r_t___t_y_p_e__.html#a6cad1b7265a8f8c8b5e71c700a1df06b',1,'_EF_UART_TYPE_']]]
 ];

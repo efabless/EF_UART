@@ -1,0 +1,226 @@
+\begin{theindex}
+
+  \item {\_EF\_UART\_TYPE\_}, \hyperpage{35}
+
+  \indexspace
+
+  \item {EF\_Driver\_Common.h}, \hyperpage{37}
+  \item {EF\_UART.c}, \hyperpage{38}
+    \subitem {EF\_UART\_busy}, \hyperpage{40}
+    \subitem {EF\_UART\_charsAvailable}, \hyperpage{41}
+    \subitem {EF\_UART\_disable}, \hyperpage{41}
+    \subitem {EF\_UART\_disableGlitchFilter}, \hyperpage{41}
+    \subitem {EF\_UART\_disableLoopBack}, \hyperpage{42}
+    \subitem {EF\_UART\_disableRx}, \hyperpage{42}
+    \subitem {EF\_UART\_disableTx}, \hyperpage{43}
+    \subitem {EF\_UART\_enable}, \hyperpage{43}
+    \subitem {EF\_UART\_enableGlitchFilter}, \hyperpage{43}
+    \subitem {EF\_UART\_enableLoopBack}, \hyperpage{44}
+    \subitem {EF\_UART\_enableRx}, \hyperpage{44}
+    \subitem {EF\_UART\_enableTx}, \hyperpage{44}
+    \subitem {EF\_UART\_getConfig}, \hyperpage{45}
+    \subitem {EF\_UART\_getCTRL}, \hyperpage{45}
+    \subitem {EF\_UART\_getIM}, \hyperpage{46}
+    \subitem {EF\_UART\_getMatchData}, \hyperpage{46}
+    \subitem {EF\_UART\_getMIS}, \hyperpage{47}
+    \subitem {EF\_UART\_getParityMode}, \hyperpage{48}
+    \subitem {EF\_UART\_getPrescaler}, \hyperpage{48}
+    \subitem {EF\_UART\_getRIS}, \hyperpage{48}
+    \subitem {EF\_UART\_getRxCount}, \hyperpage{49}
+    \subitem {EF\_UART\_getRxFIFOThreshold}, \hyperpage{49}
+    \subitem {EF\_UART\_getTxCount}, \hyperpage{50}
+    \subitem {EF\_UART\_getTxFIFOThreshold}, \hyperpage{50}
+    \subitem {EF\_UART\_readChar}, \hyperpage{51}
+    \subitem {EF\_UART\_readCharNonBlocking}, \hyperpage{51}
+    \subitem {EF\_UART\_setConfig}, \hyperpage{52}
+    \subitem {EF\_UART\_setCTRL}, \hyperpage{52}
+    \subitem {EF\_UART\_setDataSize}, \hyperpage{53}
+    \subitem {EF\_UART\_setGclkEnable}, \hyperpage{53}
+    \subitem {EF\_UART\_setICR}, \hyperpage{54}
+    \subitem {EF\_UART\_setIM}, \hyperpage{54}
+    \subitem {EF\_UART\_setMatchData}, \hyperpage{55}
+    \subitem {EF\_UART\_setParityType}, \hyperpage{55}
+    \subitem {EF\_UART\_setPrescaler}, \hyperpage{56}
+    \subitem {EF\_UART\_setRxFIFOThreshold}, \hyperpage{56}
+    \subitem {EF\_UART\_setTimeoutBits}, \hyperpage{57}
+    \subitem {EF\_UART\_setTwoStopBitsSelect}, \hyperpage{57}
+    \subitem {EF\_UART\_setTxFIFOThreshold}, \hyperpage{58}
+    \subitem {EF\_UART\_spaceAvailable}, \hyperpage{58}
+    \subitem {EF\_UART\_writeChar}, \hyperpage{58}
+    \subitem {EF\_UART\_writeCharArr}, \hyperpage{59}
+    \subitem {EF\_UART\_writeCharNonBlocking}, \hyperpage{59}
+  \item {EF\_UART.h}, \hyperpage{60}
+    \subitem {EF\_UART\_busy}, \hyperpage{62}
+    \subitem {EF\_UART\_charsAvailable}, \hyperpage{62}
+    \subitem {EF\_UART\_disable}, \hyperpage{63}
+    \subitem {EF\_UART\_disableGlitchFilter}, \hyperpage{63}
+    \subitem {EF\_UART\_disableLoopBack}, \hyperpage{64}
+    \subitem {EF\_UART\_disableRx}, \hyperpage{64}
+    \subitem {EF\_UART\_disableTx}, \hyperpage{64}
+    \subitem {EF\_UART\_enable}, \hyperpage{65}
+    \subitem {EF\_UART\_enableGlitchFilter}, \hyperpage{65}
+    \subitem {EF\_UART\_enableLoopBack}, \hyperpage{65}
+    \subitem {EF\_UART\_enableRx}, \hyperpage{66}
+    \subitem {EF\_UART\_enableTx}, \hyperpage{66}
+    \subitem {EF\_UART\_getConfig}, \hyperpage{67}
+    \subitem {EF\_UART\_getCTRL}, \hyperpage{67}
+    \subitem {EF\_UART\_getIM}, \hyperpage{67}
+    \subitem {EF\_UART\_getMatchData}, \hyperpage{68}
+    \subitem {EF\_UART\_getMIS}, \hyperpage{68}
+    \subitem {EF\_UART\_getParityMode}, \hyperpage{69}
+    \subitem {EF\_UART\_getPrescaler}, \hyperpage{70}
+    \subitem {EF\_UART\_getRIS}, \hyperpage{70}
+    \subitem {EF\_UART\_getRxCount}, \hyperpage{71}
+    \subitem {EF\_UART\_getRxFIFOThreshold}, \hyperpage{71}
+    \subitem {EF\_UART\_getTxCount}, \hyperpage{72}
+    \subitem {EF\_UART\_getTxFIFOThreshold}, \hyperpage{72}
+    \subitem {EF\_UART\_readChar}, \hyperpage{72}
+    \subitem {EF\_UART\_readCharNonBlocking}, \hyperpage{73}
+    \subitem {EF\_UART\_setConfig}, \hyperpage{73}
+    \subitem {EF\_UART\_setCTRL}, \hyperpage{74}
+    \subitem {EF\_UART\_setDataSize}, \hyperpage{74}
+    \subitem {EF\_UART\_setGclkEnable}, \hyperpage{75}
+    \subitem {EF\_UART\_setICR}, \hyperpage{75}
+    \subitem {EF\_UART\_setIM}, \hyperpage{76}
+    \subitem {EF\_UART\_setMatchData}, \hyperpage{77}
+    \subitem {EF\_UART\_setParityType}, \hyperpage{77}
+    \subitem {EF\_UART\_setPrescaler}, \hyperpage{78}
+    \subitem {EF\_UART\_setRxFIFOThreshold}, \hyperpage{78}
+    \subitem {EF\_UART\_setTimeoutBits}, \hyperpage{78}
+    \subitem {EF\_UART\_setTwoStopBitsSelect}, \hyperpage{79}
+    \subitem {EF\_UART\_setTxFIFOThreshold}, \hyperpage{79}
+    \subitem {EF\_UART\_spaceAvailable}, \hyperpage{80}
+    \subitem {EF\_UART\_writeChar}, \hyperpage{80}
+    \subitem {EF\_UART\_writeCharArr}, \hyperpage{80}
+    \subitem {EF\_UART\_writeCharNonBlocking}, \hyperpage{81}
+  \item {EF\_UART\_busy}
+    \subitem {EF\_UART.c}, \hyperpage{40}
+    \subitem {EF\_UART.h}, \hyperpage{62}
+  \item {EF\_UART\_charsAvailable}
+    \subitem {EF\_UART.c}, \hyperpage{41}
+    \subitem {EF\_UART.h}, \hyperpage{62}
+  \item {EF\_UART\_disable}
+    \subitem {EF\_UART.c}, \hyperpage{41}
+    \subitem {EF\_UART.h}, \hyperpage{63}
+  \item {EF\_UART\_disableGlitchFilter}
+    \subitem {EF\_UART.c}, \hyperpage{41}
+    \subitem {EF\_UART.h}, \hyperpage{63}
+  \item {EF\_UART\_disableLoopBack}
+    \subitem {EF\_UART.c}, \hyperpage{42}
+    \subitem {EF\_UART.h}, \hyperpage{64}
+  \item {EF\_UART\_disableRx}
+    \subitem {EF\_UART.c}, \hyperpage{42}
+    \subitem {EF\_UART.h}, \hyperpage{64}
+  \item {EF\_UART\_disableTx}
+    \subitem {EF\_UART.c}, \hyperpage{43}
+    \subitem {EF\_UART.h}, \hyperpage{64}
+  \item {EF\_UART\_enable}
+    \subitem {EF\_UART.c}, \hyperpage{43}
+    \subitem {EF\_UART.h}, \hyperpage{65}
+  \item {EF\_UART\_enableGlitchFilter}
+    \subitem {EF\_UART.c}, \hyperpage{43}
+    \subitem {EF\_UART.h}, \hyperpage{65}
+  \item {EF\_UART\_enableLoopBack}
+    \subitem {EF\_UART.c}, \hyperpage{44}
+    \subitem {EF\_UART.h}, \hyperpage{65}
+  \item {EF\_UART\_enableRx}
+    \subitem {EF\_UART.c}, \hyperpage{44}
+    \subitem {EF\_UART.h}, \hyperpage{66}
+  \item {EF\_UART\_enableTx}
+    \subitem {EF\_UART.c}, \hyperpage{44}
+    \subitem {EF\_UART.h}, \hyperpage{66}
+  \item {EF\_UART\_getConfig}
+    \subitem {EF\_UART.c}, \hyperpage{45}
+    \subitem {EF\_UART.h}, \hyperpage{67}
+  \item {EF\_UART\_getCTRL}
+    \subitem {EF\_UART.c}, \hyperpage{45}
+    \subitem {EF\_UART.h}, \hyperpage{67}
+  \item {EF\_UART\_getIM}
+    \subitem {EF\_UART.c}, \hyperpage{46}
+    \subitem {EF\_UART.h}, \hyperpage{67}
+  \item {EF\_UART\_getMatchData}
+    \subitem {EF\_UART.c}, \hyperpage{46}
+    \subitem {EF\_UART.h}, \hyperpage{68}
+  \item {EF\_UART\_getMIS}
+    \subitem {EF\_UART.c}, \hyperpage{47}
+    \subitem {EF\_UART.h}, \hyperpage{68}
+  \item {EF\_UART\_getParityMode}
+    \subitem {EF\_UART.c}, \hyperpage{48}
+    \subitem {EF\_UART.h}, \hyperpage{69}
+  \item {EF\_UART\_getPrescaler}
+    \subitem {EF\_UART.c}, \hyperpage{48}
+    \subitem {EF\_UART.h}, \hyperpage{70}
+  \item {EF\_UART\_getRIS}
+    \subitem {EF\_UART.c}, \hyperpage{48}
+    \subitem {EF\_UART.h}, \hyperpage{70}
+  \item {EF\_UART\_getRxCount}
+    \subitem {EF\_UART.c}, \hyperpage{49}
+    \subitem {EF\_UART.h}, \hyperpage{71}
+  \item {EF\_UART\_getRxFIFOThreshold}
+    \subitem {EF\_UART.c}, \hyperpage{49}
+    \subitem {EF\_UART.h}, \hyperpage{71}
+  \item {EF\_UART\_getTxCount}
+    \subitem {EF\_UART.c}, \hyperpage{50}
+    \subitem {EF\_UART.h}, \hyperpage{72}
+  \item {EF\_UART\_getTxFIFOThreshold}
+    \subitem {EF\_UART.c}, \hyperpage{50}
+    \subitem {EF\_UART.h}, \hyperpage{72}
+  \item {EF\_UART\_readChar}
+    \subitem {EF\_UART.c}, \hyperpage{51}
+    \subitem {EF\_UART.h}, \hyperpage{72}
+  \item {EF\_UART\_readCharNonBlocking}
+    \subitem {EF\_UART.c}, \hyperpage{51}
+    \subitem {EF\_UART.h}, \hyperpage{73}
+  \item {EF\_UART\_setConfig}
+    \subitem {EF\_UART.c}, \hyperpage{52}
+    \subitem {EF\_UART.h}, \hyperpage{73}
+  \item {EF\_UART\_setCTRL}
+    \subitem {EF\_UART.c}, \hyperpage{52}
+    \subitem {EF\_UART.h}, \hyperpage{74}
+  \item {EF\_UART\_setDataSize}
+    \subitem {EF\_UART.c}, \hyperpage{53}
+    \subitem {EF\_UART.h}, \hyperpage{74}
+  \item {EF\_UART\_setGclkEnable}
+    \subitem {EF\_UART.c}, \hyperpage{53}
+    \subitem {EF\_UART.h}, \hyperpage{75}
+  \item {EF\_UART\_setICR}
+    \subitem {EF\_UART.c}, \hyperpage{54}
+    \subitem {EF\_UART.h}, \hyperpage{75}
+  \item {EF\_UART\_setIM}
+    \subitem {EF\_UART.c}, \hyperpage{54}
+    \subitem {EF\_UART.h}, \hyperpage{76}
+  \item {EF\_UART\_setMatchData}
+    \subitem {EF\_UART.c}, \hyperpage{55}
+    \subitem {EF\_UART.h}, \hyperpage{77}
+  \item {EF\_UART\_setParityType}
+    \subitem {EF\_UART.c}, \hyperpage{55}
+    \subitem {EF\_UART.h}, \hyperpage{77}
+  \item {EF\_UART\_setPrescaler}
+    \subitem {EF\_UART.c}, \hyperpage{56}
+    \subitem {EF\_UART.h}, \hyperpage{78}
+  \item {EF\_UART\_setRxFIFOThreshold}
+    \subitem {EF\_UART.c}, \hyperpage{56}
+    \subitem {EF\_UART.h}, \hyperpage{78}
+  \item {EF\_UART\_setTimeoutBits}
+    \subitem {EF\_UART.c}, \hyperpage{57}
+    \subitem {EF\_UART.h}, \hyperpage{78}
+  \item {EF\_UART\_setTwoStopBitsSelect}
+    \subitem {EF\_UART.c}, \hyperpage{57}
+    \subitem {EF\_UART.h}, \hyperpage{79}
+  \item {EF\_UART\_setTxFIFOThreshold}
+    \subitem {EF\_UART.c}, \hyperpage{58}
+    \subitem {EF\_UART.h}, \hyperpage{79}
+  \item {EF\_UART\_spaceAvailable}
+    \subitem {EF\_UART.c}, \hyperpage{58}
+    \subitem {EF\_UART.h}, \hyperpage{80}
+  \item {EF\_UART\_writeChar}
+    \subitem {EF\_UART.c}, \hyperpage{58}
+    \subitem {EF\_UART.h}, \hyperpage{80}
+  \item {EF\_UART\_writeCharArr}
+    \subitem {EF\_UART.c}, \hyperpage{59}
+    \subitem {EF\_UART.h}, \hyperpage{80}
+  \item {EF\_UART\_writeCharNonBlocking}
+    \subitem {EF\_UART.c}, \hyperpage{59}
+    \subitem {EF\_UART.h}, \hyperpage{81}
+
+\end{theindex}

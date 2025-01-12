@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['fifoctrl_0',['FIFOCTRL',['../struct__EF__UART__TYPE__.html#a5f48f387b4dc63014e4380eb51f4c33b',1,'_EF_UART_TYPE_']]],
-  ['fifos_1',['FIFOS',['../struct__EF__UART__TYPE__.html#ac95e4f7543a0aed3ee5277c2096af20a',1,'_EF_UART_TYPE_']]]
+  ['ic_0',['IC',['../struct___e_f___u_a_r_t___t_y_p_e__.html#a2c2bccc1048a760f2eaf186451867770',1,'_EF_UART_TYPE_']]],
+  ['im_1',['IM',['../struct___e_f___u_a_r_t___t_y_p_e__.html#a5fd23e1cc4432238896f5b79b793014b',1,'_EF_UART_TYPE_']]],
+  ['io_5ftypes_2',['IO_TYPES',['../_e_f___u_a_r_t__regs_8h.html#a470cd5845bed94d8b8b358933e4a3442',1,'EF_UART_regs.h']]]
 ];

@@ -1,0 +1,1782 @@
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Header files}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyItemize}
+\item EF\+\_\+\+Driver\+\_\+\+Common.h
+\item EF\+\_\+\+UART.h
+\item EF\+\_\+\+UART\+\_\+regs.h
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{File EF\+\_\+\+Driver\+\_\+\+Common.\+h}\label{md__r_e_a_d_m_e_autotoc_md2}
+{\itshape C header file for common driver definitions and types.}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Structures and Types}\label{md__r_e_a_d_m_e_autotoc_md3}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft typedef uint32\+\_\+t   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ ~\newline
+{\itshape A type that is used to return the status of the driver functions.}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Macros}\label{md__r_e_a_d_m_e_autotoc_md4}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR$\ast$$\ast$ 1~\newline
+{\itshape Unspecified error.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+BUSY$\ast$$\ast$ 2~\newline
+{\itshape Driver is busy.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+NO\textbackslash{}\+\_\+\+DATA$\ast$$\ast$ 7~\newline
+{\itshape No data available.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+PARAMETER$\ast$$\ast$ 5~\newline
+{\itshape Parameter error.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+SPECIFIC$\ast$$\ast$ 6~\newline
+{\itshape Start of driver specific errors.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+TIMEOUT$\ast$$\ast$ 3~\newline
+{\itshape Timeout occurred.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+UNSUPPORTED$\ast$$\ast$ 4~\newline
+{\itshape Operation not supported.}    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+OK$\ast$$\ast$ 0~\newline
+{\itshape Operation succeeded.}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{Structures and Types Documentation}\label{md__r_e_a_d_m_e_autotoc_md5}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{typedef $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+STATUS$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md6}
+{\itshape A type that is used to return the status of the driver functions.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ uint32\_t\ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{Macros Documentation}\label{md__r_e_a_d_m_e_autotoc_md7}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md8}
+{\itshape Unspecified error.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\ 1}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+BUSY$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md9}
+{\itshape Driver is busy.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\_BUSY\ 2}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+NO\+\_\+\+DATA$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md10}
+{\itshape No data available.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\_NO\_DATA\ 7}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+PARAMETER$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md11}
+{\itshape Parameter error.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\_PARAMETER\ 5}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+SPECIFIC$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md12}
+{\itshape Start of driver specific errors.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\_SPECIFIC\ 6}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+TIMEOUT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md13}
+{\itshape Timeout occurred.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\_TIMEOUT\ 3}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+ERROR\+\_\+\+UNSUPPORTED$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md14}
+{\itshape Operation not supported.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_ERROR\_UNSUPPORTED\ 4}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+DRIVER\+\_\+\+OK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md15}
+{\itshape Operation succeeded.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_DRIVER\_OK\ 0}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysection{File EF\+\_\+\+UART.\+h}\label{md__r_e_a_d_m_e_autotoc_md16}
+{\itshape C header file for UART APIs which contains the function prototypes.}\hypertarget{md__r_e_a_d_m_e_autotoc_md17}{}\doxysection{Structures and Types}\label{md__r_e_a_d_m_e_autotoc_md17}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft enum   &$\ast$$\ast$parity\textbackslash{}\+\_\+type$\ast$$\ast$ ~\newline
+   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysection{Functions}\label{md__r_e_a_d_m_e_autotoc_md18}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+busy$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, bool $\ast$flag) ~\newline
+{\itshape This function checks id the UART is busy.}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+chars\+Available$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, bool $\ast$flag) ~\newline
+{\itshape This function returns a flag indicating whether or not there is data available in the receive FIFO.}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+disable$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart) ~\newline
+{\itshape disables using uart by clearing \char`\"{}en\char`\"{} bit in the control register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+disable\+Glitch\+Filter$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart) ~\newline
+{\itshape disables glitch filter (filter out noise or glitches on the received signal) by clearing \char`\"{}gfen\char`\"{} bit in the control register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+disable\+Loop\+Back$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart) ~\newline
+{\itshape disables loopback (connecting TX to RX signal) by clearing \char`\"{}lpen\char`\"{} bit in the control register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+disable\+Rx$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart) ~\newline
+{\itshape disables using uart RX by clearing uart \char`\"{}rxen\char`\"{} bit in the control register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+disable\+Tx$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart) ~\newline
+{\itshape disables using uart TX by clearing uart \char`\"{}txen\char`\"{} bit in the control register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+enable$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart) ~\newline
+{\itshape enables using uart by setting \char`\"{}en\char`\"{} bit in the control register to 1}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+enable\+Glitch\+Filter$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart) ~\newline
+{\itshape enables glitch filter (filter out noise or glitches on the received signal) by setting \char`\"{}gfen\char`\"{} bit in the control register to 1}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+enable\+Loop\+Back$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart) ~\newline
+{\itshape enables loopback (connecting TX to RX signal) by setting \char`\"{}lpen\char`\"{} bit in the control register to 1}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+enable\+Rx$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart) ~\newline
+{\itshape enables using uart RX by setting uart \char`\"{}rxen\char`\"{} bit in the control register to 1}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+enable\+Tx$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart) ~\newline
+{\itshape enables using uart TX by setting uart \char`\"{}txen\char`\"{} bit in the control register to 1}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+CTRL$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$\+CTRL\+\_\+value) ~\newline
+{\itshape returns the value of the control register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+Config$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$\+CFG\+\_\+value) ~\newline
+{\itshape returns the value of the configuration register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+IM$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$\+IM\+\_\+value) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+MIS$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$\+MIS\+\_\+value) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+Match\+Data$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$\+MATCH\+\_\+value) ~\newline
+{\itshape returns the value of the match data register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+Parity\+Mode$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$parity\+\_\+mode) ~\newline
+{\itshape This function return the parity mode of the UART.}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+Prescaler$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$\+Prescaler\+\_\+value) ~\newline
+{\itshape returns the value of the prescaler}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+RIS$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$\+RIS\+\_\+value) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+Rx\+Count$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+value) ~\newline
+{\itshape returns the current level of the RX FIFO (the number of bytes in the FIFO)}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+Rx\+FIFOThreshold$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+value) ~\newline
+{\itshape returns the current value of the RX FIFO threshold}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+Tx\+Count$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+value) ~\newline
+{\itshape returns the current level of the TX FIFO (the number of bytes in the FIFO)}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+get\+Tx\+FIFOThreshold$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t $\ast$\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+value) ~\newline
+{\itshape returns the current value of the TX FIFO threshold}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+read\+Char$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uar, char $\ast$\+RXDATA\+\_\+value) ~\newline
+{\itshape recieve a single character through uart}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+read\+Char\+Non\+Blocking$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, char $\ast$\+RXDATA\+\_\+value, bool $\ast$data\+\_\+available) ~\newline
+{\itshape This is a non-\/blocking function that reads a character from the UART receive FIFO if data is available and returns a status code.}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+CTRL$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t value) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+Config$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t config) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+Data\+Size$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t value) ~\newline
+{\itshape sets the Data Size (Data word length\+: 5-\/9 bits ) by setting the \char`\"{}wlen\char`\"{} field in configuration register}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+Gclk\+Enable$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t value) ~\newline
+{\itshape sets the GCLK enable bit in the UART register to a certain value}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+ICR$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t mask) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+IM$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t mask) ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+Match\+Data$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t match\+Data) ~\newline
+{\itshape sets the match\+Data to a certain value at which \char`\"{}\+MATCH\char`\"{} interrupt will be raised}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+Parity\+Type$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, enum $\ast$$\ast$parity\textbackslash{}\+\_\+type$\ast$$\ast$ parity) ~\newline
+{\itshape sets the \char`\"{}parity\char`\"{} field in configuration register (could be none, odd, even, sticky 0 or sticky 1)}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+Prescaler$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t prescaler) ~\newline
+{\itshape sets the prescaler to a certain value where Baud\+\_\+rate = Bus\+\_\+\+Clock\+\_\+\+Freq/((Prescaler+1)$\ast$16)}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+Rx\+FIFOThreshold$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t threshold) ~\newline
+{\itshape sets the RX FIFO threshold to a certain value at which \char`\"{}\+RXA\char`\"{} interrupt will be raised}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+Timeout\+Bits$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t value) ~\newline
+{\itshape sets the \char`\"{}timeout\char`\"{} field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+Two\+Stop\+Bits\+Select$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, bool is\+\_\+two\+\_\+bits) ~\newline
+{\itshape sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop boits are two or one)}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+Tx\+FIFOThreshold$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, uint32\+\_\+t threshold) ~\newline
+{\itshape sets the TX FIFO threshold to a certain value at which \char`\"{}\+TXB\char`\"{} interrupt will be raised}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+space\+Available$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, bool $\ast$flag) ~\newline
+{\itshape This function returns a flag indicating whether or not the transmit is available, i.\+e. the transmit FIFO is not full.}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+write\+Char$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, char data) ~\newline
+{\itshape transmit a single character through uart}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+write\+Char\+Arr$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, const char $\ast$char\+\_\+arr) ~\newline
+{\itshape transmit an array of characters through uart}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+write\+Char\+Non\+Blocking$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ $\ast$uart, char data, bool $\ast$data\+\_\+sent) ~\newline
+{\itshape This is a non-\/blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md19}{}\doxysection{Macros}\label{md__r_e_a_d_m_e_autotoc_md19}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+MAX\textbackslash{}\+\_\+\+VALUE$\ast$$\ast$ ((uint32\+\_\+t)0x00001\+FFF)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+TIMEOUT\textbackslash{}\+\_\+\+MAX\textbackslash{}\+\_\+\+VALUE$\ast$$\ast$ ((uint32\+\_\+t)0x0000003F)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+MAX\textbackslash{}\+\_\+\+VALUE$\ast$$\ast$ ((uint32\+\_\+t)0x0000001F)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+Data\+Length\textbackslash{}\+\_\+\+MAX\textbackslash{}\+\_\+\+VALUE$\ast$$\ast$ ((uint32\+\_\+t)0x00000009)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+Data\+Length\textbackslash{}\+\_\+\+MIN\textbackslash{}\+\_\+\+VALUE$\ast$$\ast$ ((uint32\+\_\+t)0x00000005)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+UNAVAILABLE$\ast$$\ast$ -\/1~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+ERROR\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+UNAVAILABLE$\ast$$\ast$ 1~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+IC\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+MAX\textbackslash{}\+\_\+\+VALUE$\ast$$\ast$ ((uint32\+\_\+t)0x000003\+FF)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+IM\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+MAX\textbackslash{}\+\_\+\+VALUE$\ast$$\ast$ ((uint32\+\_\+t)0x000003\+FF)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+MATCH\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+MAX\textbackslash{}\+\_\+\+VALUE$\ast$$\ast$ ((uint32\+\_\+t)0x00001\+FFF)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+PR\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+MAX\textbackslash{}\+\_\+\+VALUE$\ast$$\ast$ ((uint32\+\_\+t)0x0000\+FFFF)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+MAX\textbackslash{}\+\_\+\+VALUE$\ast$$\ast$ ((uint32\+\_\+t)0x0000000F)~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+SUCCESS$\ast$$\ast$ 0~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+MAX\textbackslash{}\+\_\+\+VALUE$\ast$$\ast$ ((uint32\+\_\+t)0x0000000F)~\newline
+   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md20}{}\doxysection{Structures and Types Documentation}\label{md__r_e_a_d_m_e_autotoc_md20}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md21}{}\doxysubsection{enum $<$tt$>$parity\+\_\+type$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md21}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{enum}\ parity\_type\ \{}
+\DoxyCodeLine{\ \ \ \ NONE\ =\ 0,}
+\DoxyCodeLine{\ \ \ \ ODD\ =\ 1,}
+\DoxyCodeLine{\ \ \ \ EVEN\ =\ 2,}
+\DoxyCodeLine{\ \ \ \ STICKY\_0\ =\ 4,}
+\DoxyCodeLine{\ \ \ \ STICKY\_1\ =\ 5}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md22}{}\doxysection{Functions Documentation}\label{md__r_e_a_d_m_e_autotoc_md22}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md23}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+busy$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md23}
+{\itshape This function checks id the UART is busy.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ad9d841da9b4114560195d08af86a4b4a}{EF\_UART\_busy}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ *flag}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily flag} a flag indicating if the UART is busy
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md24}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+chars\+Available$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md24}
+{\itshape This function returns a flag indicating whether or not there is data available in the receive FIFO.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ae92ca95cabf87bf850b99db43d36ddd5}{EF\_UART\_charsAvailable}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ *flag}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily flag} a flag indicating if there is data available in the receive FIFO
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md25}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+disable$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md25}
+{\itshape disables using uart by clearing \char`\"{}en\char`\"{} bit in the control register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a9d41c2bae6bbb144932cb4c264557a0f}{EF\_UART\_disable}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md26}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+disable\+Glitch\+Filter$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md26}
+{\itshape disables glitch filter (filter out noise or glitches on the received signal) by clearing \char`\"{}gfen\char`\"{} bit in the control register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a2dbdc231cba17a0da6fae5e48b394dfd}{EF\_UART\_disableGlitchFilter}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md27}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+disable\+Loop\+Back$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md27}
+{\itshape disables loopback (connecting TX to RX signal) by clearing \char`\"{}lpen\char`\"{} bit in the control register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_af253218d9f38bc1e0bd0b1196c2fb44d}{EF\_UART\_disableLoopBack}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md28}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+disable\+Rx$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md28}
+{\itshape disables using uart RX by clearing uart \char`\"{}rxen\char`\"{} bit in the control register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a46da4f034dd502e65cdbd198e33611e2}{EF\_UART\_disableRx}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md29}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+disable\+Tx$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md29}
+{\itshape disables using uart TX by clearing uart \char`\"{}txen\char`\"{} bit in the control register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a8ffdd73320ea0474fcb177d306dc6a67}{EF\_UART\_disableTx}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md30}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+enable$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md30}
+{\itshape enables using uart by setting \char`\"{}en\char`\"{} bit in the control register to 1} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a2673b6af3d435a9caa3fd9f115ad1878}{EF\_UART\_enable}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md31}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+enable\+Glitch\+Filter$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md31}
+{\itshape enables glitch filter (filter out noise or glitches on the received signal) by setting \char`\"{}gfen\char`\"{} bit in the control register to 1} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_acc57380ee395632930bd85ca6377655b}{EF\_UART\_enableGlitchFilter}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md32}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+enable\+Loop\+Back$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md32}
+{\itshape enables loopback (connecting TX to RX signal) by setting \char`\"{}lpen\char`\"{} bit in the control register to 1} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a8dbf6fd5cdc6e99a3e17486c124d0d1d}{EF\_UART\_enableLoopBack}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md33}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+enable\+Rx$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md33}
+{\itshape enables using uart RX by setting uart \char`\"{}rxen\char`\"{} bit in the control register to 1} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a8fe185c295fdf22ad7f5ab020138e95f}{EF\_UART\_enableRx}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md34}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+enable\+Tx$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md34}
+{\itshape enables using uart TX by setting uart \char`\"{}txen\char`\"{} bit in the control register to 1} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a11caaf87ef28a637bfd825208eb09c18}{EF\_UART\_enableTx}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md35}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+CTRL$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md35}
+{\itshape returns the value of the control register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a9870f89be83da209c6823fe725ed492e}{EF\_UART\_getCTRL}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *CTRL\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily CTRL\+\_\+value} The value of the control register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md36}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+Config$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md36}
+{\itshape returns the value of the configuration register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_afad923241f7414fe1292101d185d0c75}{EF\_UART\_getConfig}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *CFG\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily CFG\+\_\+value} The value of the configuration register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md37}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+IM$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md37}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ab22694c6e2d02fc25daac570b70ef8f1}{EF\_UART\_getIM}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *IM\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+returns the value of the Interrupts Masking Register; which enable and disables interrupts
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily IM\+\_\+value} The value of the Interrupts Masking Register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md38}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+MIS$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md38}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a0ff41852bf2c3a32d25864823da6a508}{EF\_UART\_getMIS}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *MIS\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+returns the value of the Masked Interrupt Status Register
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily MIS\+\_\+value} The value of the Masked Interrupt Status Register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md39}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+Match\+Data$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md39}
+{\itshape returns the value of the match data register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a559c00c5b1d96bcb0784e0449071f4bb}{EF\_UART\_getMatchData}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *MATCH\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily MATCH\+\_\+value} The value of the match data register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md40}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+Parity\+Mode$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md40}
+{\itshape This function return the parity mode of the UART.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a99a9c66e92fb0233fb7cf31e6c6921f1}{EF\_UART\_getParityMode}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *parity\_mode}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily parity} The parity mode of the UART
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md41}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+Prescaler$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md41}
+{\itshape returns the value of the prescaler} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_aa5874369ddd7767b26a076726d585235}{EF\_UART\_getPrescaler}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *Prescaler\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily Prescaler\+\_\+value} The value of the prescaler register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md42}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+RIS$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md42}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a81943fbc40226420642143805f95e991}{EF\_UART\_getRIS}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *RIS\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+returns the value of the Raw Interrupt Status Register
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily RIS\+\_\+value} The value of the Raw Interrupt Status Register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md43}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+Rx\+Count$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md43}
+{\itshape returns the current level of the RX FIFO (the number of bytes in the FIFO)} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_aaa9a26fa27e5b5fc5c8039103abc1ed7}{EF\_UART\_getRxCount}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *RX\_FIFO\_LEVEL\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+value} The value of the RX FIFO level register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md44}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+Rx\+FIFOThreshold$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md44}
+{\itshape returns the current value of the RX FIFO threshold} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a7b416fd3385eb5b3ee34eb09ea0de8d2}{EF\_UART\_getRxFIFOThreshold}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *RX\_FIFO\_THRESHOLD\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+value} The value of the RX FIFO threshold register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md45}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+Tx\+Count$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md45}
+{\itshape returns the current level of the TX FIFO (the number of bytes in the FIFO)} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_acd160a7725a4b3fb675dcebeda8776d5}{EF\_UART\_getTxCount}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *TX\_FIFO\_LEVEL\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+value} The value of the TX FIFO level register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md46}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+get\+Tx\+FIFOThreshold$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md46}
+{\itshape returns the current value of the TX FIFO threshold} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a9844c9c7921a2187ca86bead858c8c02}{EF\_UART\_getTxFIFOThreshold}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ *TX\_FIFO\_THRESHOLD\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+value} The value of the TX FIFO threshold register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md47}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+read\+Char$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md47}
+{\itshape recieve a single character through uart} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_aed92f78ad479144a2e9bc7169f2a9850}{EF\_UART\_readChar}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uar,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ *RXDATA\_value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily RXDATA\+\_\+value} The value of the received character
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md48}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+read\+Char\+Non\+Blocking$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md48}
+{\itshape This is a non-\/blocking function that reads a character from the UART receive FIFO if data is available and returns a status code.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_aaa93d9c62ca6e64a622bb32e86fb2dc0}{EF\_UART\_readCharNonBlocking}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ *RXDATA\_value,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ *data\_available}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily RXDATA\+\_\+value} The value of the received character
+\item {\ttfamily data\+\_\+available} A flag indicating if data is available in the receive FIFO
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md49}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+CTRL$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md49}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ad36fee036e144937af3eed59eea101c6}{EF\_UART\_setCTRL}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+sets the control register to a certain value where
+
+
+\begin{DoxyItemize}
+\item bit 0\+: UART enable
+\item bit 1\+: UART Transmitter enable
+\item bit 2\+: UART Receiver enable
+\item bit 3\+: Loopback (connect RX and TX pins together) enable
+\item bit 4\+: UART Glitch Filer on RX enable
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily value} The value of the control register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md50}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Config$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md50}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a97261ae27ea5d029ecab9b25f2f45ac9}{EF\_UART\_setConfig}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ config}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+sets the configuration register to a certain value where
+
+
+\begin{DoxyItemize}
+\item bit 0-\/3\+: Data word length\+: 5-\/9 bits
+\item bit 4\+: Two Stop Bits Select
+\item bit 5-\/7\+: Parity Type\+: 000\+: None, 001\+: odd, 010\+: even, 100\+: Sticky 0, 101\+: Sticky 1
+\item bit 8-\/13\+: Receiver Timeout measured in number of bits
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily config} The value of the configuration register
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md51}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Data\+Size$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md51}
+{\itshape sets the Data Size (Data word length\+: 5-\/9 bits ) by setting the \char`\"{}wlen\char`\"{} field in configuration register} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a04a859ae5492ec11e9f3b418337148e1}{EF\_UART\_setDataSize}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily value} The value of the required data word length
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md52}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Gclk\+Enable$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md52}
+{\itshape sets the GCLK enable bit in the UART register to a certain value} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a5b00ddd7df5f72886ea559da57a1b2bd}{EF\_UART\_setGclkEnable}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily value} The value of the GCLK enable bit
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md53}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+ICR$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md53}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a7ecbcf6bc73a4a3392648372441a6133}{EF\_UART\_setICR}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ mask}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+sets the value of the Interrupts Clear Register; write 1 to clear the flag
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily mask} The required mask value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md54}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+IM$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md54}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ad62de52cc6d11bb10dfdc275d899bb0e}{EF\_UART\_setIM}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ mask}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+sets the value of the Interrupts Masking Register; which enable and disables interrupts
+
+
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily mask} The required mask value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md55}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Match\+Data$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md55}
+{\itshape sets the match\+Data to a certain value at which \char`\"{}\+MATCH\char`\"{} interrupt will be raised} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_af275d224f7dcde400258b8d93e1ed2ce}{EF\_UART\_setMatchData}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ matchData}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily match\+Data} The value of the required match data
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md56}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Parity\+Type$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md56}
+{\itshape sets the \char`\"{}parity\char`\"{} field in configuration register (could be none, odd, even, sticky 0 or sticky 1)} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a3af979ea01c716d9b6ca923b92cc5c31}{EF\_UART\_setParityType}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{enum}\ parity\_type\ parity}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily parity} enum parity\+\_\+type could be \char`\"{}\+NONE\char`\"{} , \char`\"{}\+ODD\char`\"{} , \char`\"{}\+EVEN\char`\"{} , \char`\"{}\+STICKY\textbackslash{}\+\_\+0\char`\"{} , or \char`\"{}\+STICKY\textbackslash{}\+\_\+1\char`\"{}
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md57}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Prescaler$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md57}
+{\itshape sets the prescaler to a certain value where Baud\+\_\+rate = Bus\+\_\+\+Clock\+\_\+\+Freq/((Prescaler+1)$\ast$16)} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a1184834b408cdeed94623c691068a352}{EF\_UART\_setPrescaler}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ prescaler}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily prescaler} The value of the required prescaler
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md58}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Rx\+FIFOThreshold$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md58}
+{\itshape sets the RX FIFO threshold to a certain value at which \char`\"{}\+RXA\char`\"{} interrupt will be raised} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a8a2767ea0edab0500745dde177c1e58c}{EF\_UART\_setRxFIFOThreshold}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ threshold}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily threshold} The value of the required threshold
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md59}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Timeout\+Bits$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md59}
+{\itshape sets the \char`\"{}timeout\char`\"{} field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ad18a6e0c7701bdc66b483b1c53a3581d}{EF\_UART\_setTimeoutBits}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ value}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily value} timeout bits value
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md60}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Two\+Stop\+Bits\+Select$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md60}
+{\itshape sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop boits are two or one)} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ae2336d17bb87f77416fc9c6871b7cbdb}{EF\_UART\_setTwoStopBitsSelect}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ is\_two\_bits}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily is\+\_\+two\+\_\+bits} bool value, if \char`\"{}true\char`\"{}, the stop bits are two and if \char`\"{}false\char`\"{}, the stop bit is one
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md61}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Tx\+FIFOThreshold$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md61}
+{\itshape sets the TX FIFO threshold to a certain value at which \char`\"{}\+TXB\char`\"{} interrupt will be raised} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a30ba41191c67b5242173320ab54e1205}{EF\_UART\_setTxFIFOThreshold}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ threshold}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily threshold} The value of the required threshold
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md62}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+space\+Available$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md62}
+{\itshape This function returns a flag indicating whether or not the transmit is available, i.\+e. the transmit FIFO is not full.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a7739739a5ceeadcf591f3b387c729d0c}{EF\_UART\_spaceAvailable}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ *flag}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily flag} a flag indicating if the transmit FIFO is not full
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md63}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+write\+Char$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md63}
+{\itshape transmit a single character through uart} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ace1db9bbc3b092890acff854cec1aa77}{EF\_UART\_writeChar}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ data}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily data} The character or byte required to send
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md64}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+write\+Char\+Arr$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md64}
+{\itshape transmit an array of characters through uart} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a0f9ad65cbfe136ad4c4080612d578536}{EF\_UART\_writeCharArr}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *char\_arr}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily char\+\_\+arr} An array of characters to send
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md65}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+write\+Char\+Non\+Blocking$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md65}
+{\itshape This is a non-\/blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a8091314203111b165d1bad624159f8ba}{EF\_UART\_writeCharNonBlocking}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}\ *uart,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ data,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ *data\_sent}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ pointer, which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily data} The character or byte required to send
+\item {\ttfamily data\+\_\+sent} A flag indicating if the data was sent successfully
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code\hypertarget{md__r_e_a_d_m_e_autotoc_md66}{}\doxysection{Macros Documentation}\label{md__r_e_a_d_m_e_autotoc_md66}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md67}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md67}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_MAX\_VALUE\ ((uint32\_t)0x00001FFF)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md68}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md68}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE\ ((uint32\_t)0x0000003F)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md69}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md69}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_MAX\_VALUE\ ((uint32\_t)0x0000001F)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md70}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+Data\+Length\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md70}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_DataLength\_MAX\_VALUE\ ((uint32\_t)0x00000009)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md71}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+Data\+Length\+\_\+\+MIN\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md71}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_DataLength\_MIN\_VALUE\ ((uint32\_t)0x00000005)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md72}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+ERROR\+\_\+\+RX\+\_\+\+UNAVAILABLE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md72}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_ERROR\_RX\_UNAVAILABLE\ -\/1}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md73}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+ERROR\+\_\+\+TX\+\_\+\+UNAVAILABLE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md73}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_ERROR\_TX\_UNAVAILABLE\ 1}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md74}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+IC\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md74}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_IC\_REG\_MAX\_VALUE\ ((uint32\_t)0x000003FF)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md75}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+IM\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md75}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_IM\_REG\_MAX\_VALUE\ ((uint32\_t)0x000003FF)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md76}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md76}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_MATCH\_REG\_MAX\_VALUE\ ((uint32\_t)0x00001FFF)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md77}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md77}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_PR\_REG\_MAX\_VALUE\ ((uint32\_t)0x0000FFFF)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md78}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md78}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE\ ((uint32\_t)0x0000000F)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md79}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+SUCCESS$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md79}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_SUCCESS\ 0}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md80}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md80}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE\ ((uint32\_t)0x0000000F)}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md81}{}\doxysection{File EF\+\_\+\+UART\+\_\+regs.\+h}\label{md__r_e_a_d_m_e_autotoc_md81}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md82}{}\doxysection{Structures and Types}\label{md__r_e_a_d_m_e_autotoc_md82}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft typedef struct $\ast$$\ast$\textbackslash{}\+\_\+\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft struct   &$\ast$$\ast$\textbackslash{}\+\_\+\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+$\ast$$\ast$ ~\newline
+   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md83}{}\doxysection{Macros}\label{md__r_e_a_d_m_e_autotoc_md83}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+BRK\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ 0x10~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+PARITY\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 5~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+PARITY\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0xe0~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+STP2\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 4~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+STP2\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0x10~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+TIMEOUT\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 8~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+TIMEOUT\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0x3f00~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+WLEN\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 0~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CFG\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+WLEN\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0xf~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+EN\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 0~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+EN\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0x1~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+GFEN\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 4~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+GFEN\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0x10~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+LPEN\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 3~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+LPEN\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0x8~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+RXEN\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 2~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+RXEN\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0x4~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+TXEN\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 1~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+CTRL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+TXEN\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0x2~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+FE\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ 0x40~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+MATCH\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ 0x20~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+OR\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ 0x100~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+PRE\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ 0x80~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+RTO\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ 0x200~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+RXA\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ 0x8~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+RXF\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ 0x2~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 0~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0x1~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 0~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0xf~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 0~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+RX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0xf~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TXB\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ 0x4~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TXE\textbackslash{}\+\_\+\+FLAG$\ast$$\ast$ 0x1~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 0~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+FLUSH\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0x1~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 0~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+LEVEL\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0xf~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+BIT$\ast$$\ast$ 0~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TX\textbackslash{}\+\_\+\+FIFO\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+REG\textbackslash{}\+\_\+\+THRESHOLD\textbackslash{}\+\_\+\+MASK$\ast$$\ast$ 0xf~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\+IO\textbackslash{}\+\_\+\+TYPES$\ast$$\ast$ ~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ volatile const unsigned int~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+\+RW$\ast$$\ast$ volatile unsigned int~\newline
+    \\\cline{1-2}
+\PBS\raggedleft define   &$\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ volatile unsigned int~\newline
+   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md84}{}\doxysection{Structures and Types Documentation}\label{md__r_e_a_d_m_e_autotoc_md84}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md85}{}\doxysubsection{typedef $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TYPE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md85}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{\_EF\_UART\_TYPE\_}}\ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md86}{}\doxysubsection{struct $<$tt$>$\+\_\+\+EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md86}
+Variables\+:
+
+
+\begin{DoxyItemize}
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ CFG ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ CTRL ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ GCLK ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ IC ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+\+RW$\ast$$\ast$ IM ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ MATCH ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ MIS ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ PR ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ RIS ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ RXDATA ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ RX\+\_\+\+FIFO\+\_\+\+FLUSH ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ RX\+\_\+\+FIFO\+\_\+\+LEVEL ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ RX\+\_\+\+FIFO\+\_\+\+THRESHOLD ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ TXDATA ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ TX\+\_\+\+FIFO\+\_\+\+FLUSH ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ TX\+\_\+\+FIFO\+\_\+\+LEVEL ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ TX\+\_\+\+FIFO\+\_\+\+THRESHOLD ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ reserved\+\_\+0 ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ reserved\+\_\+1 ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ reserved\+\_\+2 ~\newline
+
+\item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ reserved\+\_\+3 ~\newline
+
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md87}{}\doxysection{Macros Documentation}\label{md__r_e_a_d_m_e_autotoc_md87}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md88}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+BRK\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md88}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_BRK\_FLAG\ 0x10}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md89}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md89}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_PARITY\_BIT\ 5}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md90}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md90}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_PARITY\_MASK\ 0xe0}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md91}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md91}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_STP2\_BIT\ 4}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md92}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md92}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_STP2\_MASK\ 0x10}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md93}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md93}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_TIMEOUT\_BIT\ 8}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md94}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md94}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_TIMEOUT\_MASK\ 0x3f00}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md95}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md95}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_WLEN\_BIT\ 0}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md96}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md96}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_WLEN\_MASK\ 0xf}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md97}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md97}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_EN\_BIT\ 0}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md98}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md98}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_EN\_MASK\ 0x1}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md99}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md99}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_GFEN\_BIT\ 4}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md100}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md100}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_GFEN\_MASK\ 0x10}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md101}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md101}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_LPEN\_BIT\ 3}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md102}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md102}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_LPEN\_MASK\ 0x8}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md103}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md103}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_RXEN\_BIT\ 2}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md104}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md104}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_RXEN\_MASK\ 0x4}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md105}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md105}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_TXEN\_BIT\ 1}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md106}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md106}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_TXEN\_MASK\ 0x2}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md107}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+FE\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md107}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_FE\_FLAG\ 0x40}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md108}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md108}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_MATCH\_FLAG\ 0x20}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md109}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+OR\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md109}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_OR\_FLAG\ 0x100}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md110}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+PRE\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md110}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_PRE\_FLAG\ 0x80}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md111}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RTO\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md111}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RTO\_FLAG\ 0x200}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md112}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RXA\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md112}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RXA\_FLAG\ 0x8}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md113}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RXF\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md113}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RXF\_FLAG\ 0x2}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md114}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md114}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT\ 0}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md115}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md115}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK\ 0x1}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md116}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md116}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT\ 0}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md117}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md117}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK\ 0xf}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md118}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md118}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT\ 0}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md119}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md119}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK\ 0xf}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md120}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TXB\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md120}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TXB\_FLAG\ 0x4}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md121}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TXE\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md121}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TXE\_FLAG\ 0x1}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md122}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md122}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT\ 0}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md123}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md123}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK\ 0x1}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md124}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md124}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT\ 0}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md125}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md125}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK\ 0xf}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md126}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md126}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT\ 0}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md127}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md127}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK\ 0xf}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md128}{}\doxysubsection{define $<$tt$>$\+IO\+\_\+\+TYPES$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md128}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ IO\_TYPES\ }}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md129}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+R$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md129}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ \_\_R\ volatile\ const\ unsigned\ int}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md130}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+RW$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md130}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ \_\_RW\ volatile\ \ \ \ \ \ \ unsigned\ int}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md131}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+W$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md131}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ \_\_W\ volatile\ \ \ \ \ \ \ unsigned\ int}}
+
+\end{DoxyCode}
+ 

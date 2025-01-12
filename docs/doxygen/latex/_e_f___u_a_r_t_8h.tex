@@ -1,0 +1,1060 @@
+\hypertarget{_e_f___u_a_r_t_8h}{}\doxysection{EF\+\_\+\+UART.\+h File Reference}
+\label{_e_f___u_a_r_t_8h}\index{EF\_UART.h@{EF\_UART.h}}
+
+
+C header file for UART APIs which contains the function prototypes.  
+
+
+{\ttfamily \#include \char`\"{}EF\+\_\+\+UART\+\_\+regs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}EF\+\_\+\+Driver\+\_\+\+Common.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_abb5e56e926c33b555091e679f678515d}\label{_e_f___u_a_r_t_8h_abb5e56e926c33b555091e679f678515d}} 
+\#define {\bfseries EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}~((uint32\+\_\+t)0x0000001F)
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a482ad61b42cd1ab32b3d69e7fc2fbf5d}\label{_e_f___u_a_r_t_8h_a482ad61b42cd1ab32b3d69e7fc2fbf5d}} 
+\#define {\bfseries EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}~((uint32\+\_\+t)0x0000\+FFFF)
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_ad037e6ec02fdbc1ac83387687b690cb5}\label{_e_f___u_a_r_t_8h_ad037e6ec02fdbc1ac83387687b690cb5}} 
+\#define {\bfseries EF\+\_\+\+UART\+\_\+\+Data\+Length\+\_\+\+MIN\+\_\+\+VALUE}~((uint32\+\_\+t)0x00000005)
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a600c1602d5dcbe87cbc6ae8d015b2384}\label{_e_f___u_a_r_t_8h_a600c1602d5dcbe87cbc6ae8d015b2384}} 
+\#define {\bfseries EF\+\_\+\+UART\+\_\+\+Data\+Length\+\_\+\+MAX\+\_\+\+VALUE}~((uint32\+\_\+t)0x00000009)
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a31ef64a99d1e4389df1255aa2b3fd645}\label{_e_f___u_a_r_t_8h_a31ef64a99d1e4389df1255aa2b3fd645}} 
+\#define {\bfseries EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MAX\+\_\+\+VALUE}~((uint32\+\_\+t)0x0000003F)
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a2c1fd5ccd1238662c3f8fb9f2af47019}\label{_e_f___u_a_r_t_8h_a2c1fd5ccd1238662c3f8fb9f2af47019}} 
+\#define {\bfseries EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}~((uint32\+\_\+t)0x00001\+FFF)
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a7749200841ca06b85560cdcce6143c0f}\label{_e_f___u_a_r_t_8h_a7749200841ca06b85560cdcce6143c0f}} 
+\#define {\bfseries EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}~((uint32\+\_\+t)0x0000000F)
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_aad9c71b2e065a1bc005853521e584cf7}\label{_e_f___u_a_r_t_8h_aad9c71b2e065a1bc005853521e584cf7}} 
+\#define {\bfseries EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}~((uint32\+\_\+t)0x0000000F)
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_aa65fa5d0b6a628fae152ea7013052318}\label{_e_f___u_a_r_t_8h_aa65fa5d0b6a628fae152ea7013052318}} 
+\#define {\bfseries EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}~((uint32\+\_\+t)0x00001\+FFF)
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_ac5ebf20bf24247905b19e2cb2060a457}\label{_e_f___u_a_r_t_8h_ac5ebf20bf24247905b19e2cb2060a457}} 
+\#define {\bfseries EF\+\_\+\+UART\+\_\+\+IM\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}~((uint32\+\_\+t)0x000003\+FF)
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a056fa4df77234c4221790bbefd6cd974}\label{_e_f___u_a_r_t_8h_a056fa4df77234c4221790bbefd6cd974}} 
+\#define {\bfseries EF\+\_\+\+UART\+\_\+\+IC\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}~((uint32\+\_\+t)0x000003\+FF)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}\label{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}} 
+enum {\bfseries parity\+\_\+type} \{ \newline
+{\bfseries NONE} = 0
+, {\bfseries ODD} = 1
+, {\bfseries EVEN} = 2
+, {\bfseries STICKY\+\_\+0} = 4
+, \newline
+{\bfseries STICKY\+\_\+1} = 5
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a5b00ddd7df5f72886ea559da57a1b2bd}{EF\+\_\+\+UART\+\_\+set\+Gclk\+Enable}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em sets the GCLK enable bit in the UART register to a certain value \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a2673b6af3d435a9caa3fd9f115ad1878}{EF\+\_\+\+UART\+\_\+enable}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart)
+\begin{DoxyCompactList}\small\item\em enables using uart by setting \char`\"{}en\char`\"{} bit in the control register to 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a9d41c2bae6bbb144932cb4c264557a0f}{EF\+\_\+\+UART\+\_\+disable}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart)
+\begin{DoxyCompactList}\small\item\em disables using uart by clearing \char`\"{}en\char`\"{} bit in the control register \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a8fe185c295fdf22ad7f5ab020138e95f}{EF\+\_\+\+UART\+\_\+enable\+Rx}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart)
+\begin{DoxyCompactList}\small\item\em enables using uart RX by setting uart \char`\"{}rxen\char`\"{} bit in the control register to 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a46da4f034dd502e65cdbd198e33611e2}{EF\+\_\+\+UART\+\_\+disable\+Rx}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart)
+\begin{DoxyCompactList}\small\item\em disables using uart RX by clearing uart \char`\"{}rxen\char`\"{} bit in the control register \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a11caaf87ef28a637bfd825208eb09c18}{EF\+\_\+\+UART\+\_\+enable\+Tx}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart)
+\begin{DoxyCompactList}\small\item\em enables using uart TX by setting uart \char`\"{}txen\char`\"{} bit in the control register to 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a8ffdd73320ea0474fcb177d306dc6a67}{EF\+\_\+\+UART\+\_\+disable\+Tx}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart)
+\begin{DoxyCompactList}\small\item\em disables using uart TX by clearing uart \char`\"{}txen\char`\"{} bit in the control register \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a8dbf6fd5cdc6e99a3e17486c124d0d1d}{EF\+\_\+\+UART\+\_\+enable\+Loop\+Back}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart)
+\begin{DoxyCompactList}\small\item\em enables loopback (connecting TX to RX signal) by setting \char`\"{}lpen\char`\"{} bit in the control register to 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_af253218d9f38bc1e0bd0b1196c2fb44d}{EF\+\_\+\+UART\+\_\+disable\+Loop\+Back}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart)
+\begin{DoxyCompactList}\small\item\em disables loopback (connecting TX to RX signal) by clearing \char`\"{}lpen\char`\"{} bit in the control register \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_acc57380ee395632930bd85ca6377655b}{EF\+\_\+\+UART\+\_\+enable\+Glitch\+Filter}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart)
+\begin{DoxyCompactList}\small\item\em enables glitch filter (filter out noise or glitches on the received signal) by setting \char`\"{}gfen\char`\"{} bit in the control register to 1 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a2dbdc231cba17a0da6fae5e48b394dfd}{EF\+\_\+\+UART\+\_\+disable\+Glitch\+Filter}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart)
+\begin{DoxyCompactList}\small\item\em disables glitch filter (filter out noise or glitches on the received signal) by clearing \char`\"{}gfen\char`\"{} bit in the control register \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_ad36fee036e144937af3eed59eea101c6}{EF\+\_\+\+UART\+\_\+set\+CTRL}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t value)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a9870f89be83da209c6823fe725ed492e}{EF\+\_\+\+UART\+\_\+get\+CTRL}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$CTRL\+\_\+value)
+\begin{DoxyCompactList}\small\item\em returns the value of the control register \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a04a859ae5492ec11e9f3b418337148e1}{EF\+\_\+\+UART\+\_\+set\+Data\+Size}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em sets the Data Size (Data word length\+: 5-\/9 bits ) by setting the \char`\"{}wlen\char`\"{} field in configuration register \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_ae2336d17bb87f77416fc9c6871b7cbdb}{EF\+\_\+\+UART\+\_\+set\+Two\+Stop\+Bits\+Select}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, bool is\+\_\+two\+\_\+bits)
+\begin{DoxyCompactList}\small\item\em sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop boits are two or one) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a3af979ea01c716d9b6ca923b92cc5c31}{EF\+\_\+\+UART\+\_\+set\+Parity\+Type}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, enum parity\+\_\+type parity)
+\begin{DoxyCompactList}\small\item\em sets the \char`\"{}parity\char`\"{} field in configuration register (could be none, odd, even, sticky 0 or sticky 1) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_ad18a6e0c7701bdc66b483b1c53a3581d}{EF\+\_\+\+UART\+\_\+set\+Timeout\+Bits}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em sets the \char`\"{}timeout\char`\"{} field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a7abd365f1081dd30bc202b673851f7b7}{EF\+\_\+\+UART\+\_\+set\+Config}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t config)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_afad923241f7414fe1292101d185d0c75}{EF\+\_\+\+UART\+\_\+get\+Config}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$CFG\+\_\+value)
+\begin{DoxyCompactList}\small\item\em returns the value of the configuration register \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_ae7559449b86af3339f32eb9f60da7342}{EF\+\_\+\+UART\+\_\+set\+Rx\+FIFOThreshold}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t threshold)
+\begin{DoxyCompactList}\small\item\em sets the RX FIFO threshold to a certain value at which \char`\"{}\+RXA\char`\"{} interrupt will be raised \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a7b416fd3385eb5b3ee34eb09ea0de8d2}{EF\+\_\+\+UART\+\_\+get\+Rx\+FIFOThreshold}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+value)
+\begin{DoxyCompactList}\small\item\em returns the current value of the RX FIFO threshold \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_aece15f8d4c46af75f44d94abb3018080}{EF\+\_\+\+UART\+\_\+set\+Tx\+FIFOThreshold}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t threshold)
+\begin{DoxyCompactList}\small\item\em sets the TX FIFO threshold to a certain value at which \char`\"{}\+TXB\char`\"{} interrupt will be raised \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a9844c9c7921a2187ca86bead858c8c02}{EF\+\_\+\+UART\+\_\+get\+Tx\+FIFOThreshold}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+value)
+\begin{DoxyCompactList}\small\item\em returns the current value of the TX FIFO threshold \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_af275d224f7dcde400258b8d93e1ed2ce}{EF\+\_\+\+UART\+\_\+set\+Match\+Data}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t match\+Data)
+\begin{DoxyCompactList}\small\item\em sets the match\+Data to a certain value at which \char`\"{}\+MATCH\char`\"{} interrupt will be raised \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a559c00c5b1d96bcb0784e0449071f4bb}{EF\+\_\+\+UART\+\_\+get\+Match\+Data}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$MATCH\+\_\+value)
+\begin{DoxyCompactList}\small\item\em returns the value of the match data register \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_acd160a7725a4b3fb675dcebeda8776d5}{EF\+\_\+\+UART\+\_\+get\+Tx\+Count}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+value)
+\begin{DoxyCompactList}\small\item\em returns the current level of the TX FIFO (the number of bytes in the FIFO) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_aaa9a26fa27e5b5fc5c8039103abc1ed7}{EF\+\_\+\+UART\+\_\+get\+Rx\+Count}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+value)
+\begin{DoxyCompactList}\small\item\em returns the current level of the RX FIFO (the number of bytes in the FIFO) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a1184834b408cdeed94623c691068a352}{EF\+\_\+\+UART\+\_\+set\+Prescaler}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t prescaler)
+\begin{DoxyCompactList}\small\item\em sets the prescaler to a certain value where Baud\+\_\+rate = Bus\+\_\+\+Clock\+\_\+\+Freq/((Prescaler+1)$\ast$16) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_aa5874369ddd7767b26a076726d585235}{EF\+\_\+\+UART\+\_\+get\+Prescaler}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$Prescaler\+\_\+value)
+\begin{DoxyCompactList}\small\item\em returns the value of the prescaler \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a81943fbc40226420642143805f95e991}{EF\+\_\+\+UART\+\_\+get\+RIS}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$RIS\+\_\+value)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a0ff41852bf2c3a32d25864823da6a508}{EF\+\_\+\+UART\+\_\+get\+MIS}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$MIS\+\_\+value)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_ad62de52cc6d11bb10dfdc275d899bb0e}{EF\+\_\+\+UART\+\_\+set\+IM}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t mask)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_ab22694c6e2d02fc25daac570b70ef8f1}{EF\+\_\+\+UART\+\_\+get\+IM}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$IM\+\_\+value)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a7ecbcf6bc73a4a3392648372441a6133}{EF\+\_\+\+UART\+\_\+set\+ICR}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t mask)
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a0f9ad65cbfe136ad4c4080612d578536}{EF\+\_\+\+UART\+\_\+write\+Char\+Arr}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, const char $\ast$char\+\_\+arr)
+\begin{DoxyCompactList}\small\item\em transmit an array of characters through uart \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_ace1db9bbc3b092890acff854cec1aa77}{EF\+\_\+\+UART\+\_\+write\+Char}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, char data)
+\begin{DoxyCompactList}\small\item\em transmit a single character through uart \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_abda4e085b80f004761b77dbf3f0450e6}{EF\+\_\+\+UART\+\_\+read\+Char}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uar, char $\ast$RXDATA\+\_\+value)
+\begin{DoxyCompactList}\small\item\em recieve a single character through uart \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_aaa93d9c62ca6e64a622bb32e86fb2dc0}{EF\+\_\+\+UART\+\_\+read\+Char\+Non\+Blocking}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, char $\ast$RXDATA\+\_\+value, bool $\ast$data\+\_\+available)
+\begin{DoxyCompactList}\small\item\em This is a non-\/blocking function that reads a character from the UART receive FIFO if data is available and returns a status code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a8091314203111b165d1bad624159f8ba}{EF\+\_\+\+UART\+\_\+write\+Char\+Non\+Blocking}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, char data, bool $\ast$data\+\_\+sent)
+\begin{DoxyCompactList}\small\item\em This is a non-\/blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_aa48cbd20fb9a2898171bc7ff8688b9ee}{EF\+\_\+\+UART\+\_\+chars\+Available}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, bool $\ast$flag)
+\begin{DoxyCompactList}\small\item\em This function returns a flag indicating whether or not there is data available in the receive FIFO. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a26804aec34f642578f9b6243fd16f277}{EF\+\_\+\+UART\+\_\+space\+Available}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, bool $\ast$flag)
+\begin{DoxyCompactList}\small\item\em This function returns a flag indicating whether or not the transmit is available, i.\+e. the transmit FIFO is not full. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a99a9c66e92fb0233fb7cf31e6c6921f1}{EF\+\_\+\+UART\+\_\+get\+Parity\+Mode}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$parity\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em This function return the parity mode of the UART. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a16e75e32fdf3a0dc46f6ca9992750328}{EF\+\_\+\+UART\+\_\+busy}} (\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, bool $\ast$flag)
+\begin{DoxyCompactList}\small\item\em This function checks id the UART is busy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C header file for UART APIs which contains the function prototypes. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a16e75e32fdf3a0dc46f6ca9992750328}\label{_e_f___u_a_r_t_8h_a16e75e32fdf3a0dc46f6ca9992750328}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_busy@{EF\_UART\_busy}}
+\index{EF\_UART\_busy@{EF\_UART\_busy}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_busy()}{EF\_UART\_busy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+busy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{bool $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+This function checks id the UART is busy. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em flag} & a flag indicating if the UART is busy\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_aa48cbd20fb9a2898171bc7ff8688b9ee}\label{_e_f___u_a_r_t_8h_aa48cbd20fb9a2898171bc7ff8688b9ee}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_charsAvailable@{EF\_UART\_charsAvailable}}
+\index{EF\_UART\_charsAvailable@{EF\_UART\_charsAvailable}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_charsAvailable()}{EF\_UART\_charsAvailable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+chars\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{bool $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+This function returns a flag indicating whether or not there is data available in the receive FIFO. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em flag} & a flag indicating if there is data available in the receive FIFO\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a9d41c2bae6bbb144932cb4c264557a0f}\label{_e_f___u_a_r_t_8h_a9d41c2bae6bbb144932cb4c264557a0f}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_disable@{EF\_UART\_disable}}
+\index{EF\_UART\_disable@{EF\_UART\_disable}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_disable()}{EF\_UART\_disable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+disable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart }\end{DoxyParamCaption})}
+
+
+
+disables using uart by clearing \char`\"{}en\char`\"{} bit in the control register 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a2dbdc231cba17a0da6fae5e48b394dfd}\label{_e_f___u_a_r_t_8h_a2dbdc231cba17a0da6fae5e48b394dfd}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_disableGlitchFilter@{EF\_UART\_disableGlitchFilter}}
+\index{EF\_UART\_disableGlitchFilter@{EF\_UART\_disableGlitchFilter}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_disableGlitchFilter()}{EF\_UART\_disableGlitchFilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+disable\+Glitch\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart }\end{DoxyParamCaption})}
+
+
+
+disables glitch filter (filter out noise or glitches on the received signal) by clearing \char`\"{}gfen\char`\"{} bit in the control register 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_af253218d9f38bc1e0bd0b1196c2fb44d}\label{_e_f___u_a_r_t_8h_af253218d9f38bc1e0bd0b1196c2fb44d}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_disableLoopBack@{EF\_UART\_disableLoopBack}}
+\index{EF\_UART\_disableLoopBack@{EF\_UART\_disableLoopBack}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_disableLoopBack()}{EF\_UART\_disableLoopBack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+disable\+Loop\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart }\end{DoxyParamCaption})}
+
+
+
+disables loopback (connecting TX to RX signal) by clearing \char`\"{}lpen\char`\"{} bit in the control register 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a46da4f034dd502e65cdbd198e33611e2}\label{_e_f___u_a_r_t_8h_a46da4f034dd502e65cdbd198e33611e2}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_disableRx@{EF\_UART\_disableRx}}
+\index{EF\_UART\_disableRx@{EF\_UART\_disableRx}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_disableRx()}{EF\_UART\_disableRx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+disable\+Rx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart }\end{DoxyParamCaption})}
+
+
+
+disables using uart RX by clearing uart \char`\"{}rxen\char`\"{} bit in the control register 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a8ffdd73320ea0474fcb177d306dc6a67}\label{_e_f___u_a_r_t_8h_a8ffdd73320ea0474fcb177d306dc6a67}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_disableTx@{EF\_UART\_disableTx}}
+\index{EF\_UART\_disableTx@{EF\_UART\_disableTx}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_disableTx()}{EF\_UART\_disableTx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+disable\+Tx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart }\end{DoxyParamCaption})}
+
+
+
+disables using uart TX by clearing uart \char`\"{}txen\char`\"{} bit in the control register 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a2673b6af3d435a9caa3fd9f115ad1878}\label{_e_f___u_a_r_t_8h_a2673b6af3d435a9caa3fd9f115ad1878}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_enable@{EF\_UART\_enable}}
+\index{EF\_UART\_enable@{EF\_UART\_enable}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_enable()}{EF\_UART\_enable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart }\end{DoxyParamCaption})}
+
+
+
+enables using uart by setting \char`\"{}en\char`\"{} bit in the control register to 1 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_acc57380ee395632930bd85ca6377655b}\label{_e_f___u_a_r_t_8h_acc57380ee395632930bd85ca6377655b}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_enableGlitchFilter@{EF\_UART\_enableGlitchFilter}}
+\index{EF\_UART\_enableGlitchFilter@{EF\_UART\_enableGlitchFilter}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_enableGlitchFilter()}{EF\_UART\_enableGlitchFilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+enable\+Glitch\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart }\end{DoxyParamCaption})}
+
+
+
+enables glitch filter (filter out noise or glitches on the received signal) by setting \char`\"{}gfen\char`\"{} bit in the control register to 1 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a8dbf6fd5cdc6e99a3e17486c124d0d1d}\label{_e_f___u_a_r_t_8h_a8dbf6fd5cdc6e99a3e17486c124d0d1d}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_enableLoopBack@{EF\_UART\_enableLoopBack}}
+\index{EF\_UART\_enableLoopBack@{EF\_UART\_enableLoopBack}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_enableLoopBack()}{EF\_UART\_enableLoopBack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+enable\+Loop\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart }\end{DoxyParamCaption})}
+
+
+
+enables loopback (connecting TX to RX signal) by setting \char`\"{}lpen\char`\"{} bit in the control register to 1 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a8fe185c295fdf22ad7f5ab020138e95f}\label{_e_f___u_a_r_t_8h_a8fe185c295fdf22ad7f5ab020138e95f}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_enableRx@{EF\_UART\_enableRx}}
+\index{EF\_UART\_enableRx@{EF\_UART\_enableRx}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_enableRx()}{EF\_UART\_enableRx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+enable\+Rx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart }\end{DoxyParamCaption})}
+
+
+
+enables using uart RX by setting uart \char`\"{}rxen\char`\"{} bit in the control register to 1 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a11caaf87ef28a637bfd825208eb09c18}\label{_e_f___u_a_r_t_8h_a11caaf87ef28a637bfd825208eb09c18}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_enableTx@{EF\_UART\_enableTx}}
+\index{EF\_UART\_enableTx@{EF\_UART\_enableTx}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_enableTx()}{EF\_UART\_enableTx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+enable\+Tx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart }\end{DoxyParamCaption})}
+
+
+
+enables using uart TX by setting uart \char`\"{}txen\char`\"{} bit in the control register to 1 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_afad923241f7414fe1292101d185d0c75}\label{_e_f___u_a_r_t_8h_afad923241f7414fe1292101d185d0c75}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getConfig@{EF\_UART\_getConfig}}
+\index{EF\_UART\_getConfig@{EF\_UART\_getConfig}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getConfig()}{EF\_UART\_getConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{CFG\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+returns the value of the configuration register 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em CFG\+\_\+value} & The value of the configuration register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a9870f89be83da209c6823fe725ed492e}\label{_e_f___u_a_r_t_8h_a9870f89be83da209c6823fe725ed492e}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getCTRL@{EF\_UART\_getCTRL}}
+\index{EF\_UART\_getCTRL@{EF\_UART\_getCTRL}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getCTRL()}{EF\_UART\_getCTRL()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+CTRL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{CTRL\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+returns the value of the control register 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em CTRL\+\_\+value} & The value of the control register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_ab22694c6e2d02fc25daac570b70ef8f1}\label{_e_f___u_a_r_t_8h_ab22694c6e2d02fc25daac570b70ef8f1}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getIM@{EF\_UART\_getIM}}
+\index{EF\_UART\_getIM@{EF\_UART\_getIM}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getIM()}{EF\_UART\_getIM()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+IM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{IM\+\_\+value }\end{DoxyParamCaption})}
+
+returns the value of the Interrupts Masking Register; which enable and disables interrupts
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em IM\+\_\+value} & The value of the Interrupts Masking Register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a559c00c5b1d96bcb0784e0449071f4bb}\label{_e_f___u_a_r_t_8h_a559c00c5b1d96bcb0784e0449071f4bb}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getMatchData@{EF\_UART\_getMatchData}}
+\index{EF\_UART\_getMatchData@{EF\_UART\_getMatchData}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getMatchData()}{EF\_UART\_getMatchData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+Match\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{MATCH\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+returns the value of the match data register 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em MATCH\+\_\+value} & The value of the match data register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a0ff41852bf2c3a32d25864823da6a508}\label{_e_f___u_a_r_t_8h_a0ff41852bf2c3a32d25864823da6a508}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getMIS@{EF\_UART\_getMIS}}
+\index{EF\_UART\_getMIS@{EF\_UART\_getMIS}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getMIS()}{EF\_UART\_getMIS()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+MIS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{MIS\+\_\+value }\end{DoxyParamCaption})}
+
+returns the value of the Masked Interrupt Status Register
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em MIS\+\_\+value} & The value of the Masked Interrupt Status Register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a99a9c66e92fb0233fb7cf31e6c6921f1}\label{_e_f___u_a_r_t_8h_a99a9c66e92fb0233fb7cf31e6c6921f1}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getParityMode@{EF\_UART\_getParityMode}}
+\index{EF\_UART\_getParityMode@{EF\_UART\_getParityMode}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getParityMode()}{EF\_UART\_getParityMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+Parity\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{parity\+\_\+mode }\end{DoxyParamCaption})}
+
+
+
+This function return the parity mode of the UART. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em parity} & The parity mode of the UART\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_aa5874369ddd7767b26a076726d585235}\label{_e_f___u_a_r_t_8h_aa5874369ddd7767b26a076726d585235}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getPrescaler@{EF\_UART\_getPrescaler}}
+\index{EF\_UART\_getPrescaler@{EF\_UART\_getPrescaler}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getPrescaler()}{EF\_UART\_getPrescaler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+Prescaler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{Prescaler\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+returns the value of the prescaler 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em Prescaler\+\_\+value} & The value of the prescaler register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a81943fbc40226420642143805f95e991}\label{_e_f___u_a_r_t_8h_a81943fbc40226420642143805f95e991}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getRIS@{EF\_UART\_getRIS}}
+\index{EF\_UART\_getRIS@{EF\_UART\_getRIS}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getRIS()}{EF\_UART\_getRIS()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+RIS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{RIS\+\_\+value }\end{DoxyParamCaption})}
+
+returns the value of the Raw Interrupt Status Register
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em RIS\+\_\+value} & The value of the Raw Interrupt Status Register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_aaa9a26fa27e5b5fc5c8039103abc1ed7}\label{_e_f___u_a_r_t_8h_aaa9a26fa27e5b5fc5c8039103abc1ed7}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getRxCount@{EF\_UART\_getRxCount}}
+\index{EF\_UART\_getRxCount@{EF\_UART\_getRxCount}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getRxCount()}{EF\_UART\_getRxCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+Rx\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+returns the current level of the RX FIFO (the number of bytes in the FIFO) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+value} & The value of the RX FIFO level register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a7b416fd3385eb5b3ee34eb09ea0de8d2}\label{_e_f___u_a_r_t_8h_a7b416fd3385eb5b3ee34eb09ea0de8d2}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getRxFIFOThreshold@{EF\_UART\_getRxFIFOThreshold}}
+\index{EF\_UART\_getRxFIFOThreshold@{EF\_UART\_getRxFIFOThreshold}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getRxFIFOThreshold()}{EF\_UART\_getRxFIFOThreshold()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+Rx\+FIFOThreshold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+returns the current value of the RX FIFO threshold 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+value} & The value of the RX FIFO threshold register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_acd160a7725a4b3fb675dcebeda8776d5}\label{_e_f___u_a_r_t_8h_acd160a7725a4b3fb675dcebeda8776d5}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getTxCount@{EF\_UART\_getTxCount}}
+\index{EF\_UART\_getTxCount@{EF\_UART\_getTxCount}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getTxCount()}{EF\_UART\_getTxCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+Tx\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+returns the current level of the TX FIFO (the number of bytes in the FIFO) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+value} & The value of the TX FIFO level register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a9844c9c7921a2187ca86bead858c8c02}\label{_e_f___u_a_r_t_8h_a9844c9c7921a2187ca86bead858c8c02}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_getTxFIFOThreshold@{EF\_UART\_getTxFIFOThreshold}}
+\index{EF\_UART\_getTxFIFOThreshold@{EF\_UART\_getTxFIFOThreshold}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_getTxFIFOThreshold()}{EF\_UART\_getTxFIFOThreshold()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+get\+Tx\+FIFOThreshold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t $\ast$}]{TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+returns the current value of the TX FIFO threshold 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+value} & The value of the TX FIFO threshold register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_abda4e085b80f004761b77dbf3f0450e6}\label{_e_f___u_a_r_t_8h_abda4e085b80f004761b77dbf3f0450e6}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_readChar@{EF\_UART\_readChar}}
+\index{EF\_UART\_readChar@{EF\_UART\_readChar}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_readChar()}{EF\_UART\_readChar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+read\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uar,  }\item[{char $\ast$}]{RXDATA\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+recieve a single character through uart 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em RXDATA\+\_\+value} & The value of the received character\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_aaa93d9c62ca6e64a622bb32e86fb2dc0}\label{_e_f___u_a_r_t_8h_aaa93d9c62ca6e64a622bb32e86fb2dc0}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_readCharNonBlocking@{EF\_UART\_readCharNonBlocking}}
+\index{EF\_UART\_readCharNonBlocking@{EF\_UART\_readCharNonBlocking}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_readCharNonBlocking()}{EF\_UART\_readCharNonBlocking()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+read\+Char\+Non\+Blocking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{char $\ast$}]{RXDATA\+\_\+value,  }\item[{bool $\ast$}]{data\+\_\+available }\end{DoxyParamCaption})}
+
+
+
+This is a non-\/blocking function that reads a character from the UART receive FIFO if data is available and returns a status code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em RXDATA\+\_\+value} & The value of the received character \\
+\hline
+\mbox{\texttt{ out}}  & {\em data\+\_\+available} & A flag indicating if data is available in the receive FIFO\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a7abd365f1081dd30bc202b673851f7b7}\label{_e_f___u_a_r_t_8h_a7abd365f1081dd30bc202b673851f7b7}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setConfig@{EF\_UART\_setConfig}}
+\index{EF\_UART\_setConfig@{EF\_UART\_setConfig}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setConfig()}{EF\_UART\_setConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{config }\end{DoxyParamCaption})}
+
+sets the configuration register to a certain value where
+\begin{DoxyItemize}
+\item bit 0-\/3\+: Data word length\+: 5-\/9 bits
+\item bit 4\+: Two Stop Bits Select
+\item bit 5-\/7\+: Parity Type\+: 000\+: None, 001\+: odd, 010\+: even, 100\+: Sticky 0, 101\+: Sticky 1
+\item bit 8-\/13\+: Receiver Timeout measured in number of bits
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & The value of the configuration register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_ad36fee036e144937af3eed59eea101c6}\label{_e_f___u_a_r_t_8h_ad36fee036e144937af3eed59eea101c6}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setCTRL@{EF\_UART\_setCTRL}}
+\index{EF\_UART\_setCTRL@{EF\_UART\_setCTRL}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setCTRL()}{EF\_UART\_setCTRL()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+CTRL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+sets the control register to a certain value where
+\begin{DoxyItemize}
+\item bit 0\+: UART enable
+\item bit 1\+: UART Transmitter enable
+\item bit 2\+: UART Receiver enable
+\item bit 3\+: Loopback (connect RX and TX pins together) enable
+\item bit 4\+: UART Glitch Filer on RX enable
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value of the control register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a04a859ae5492ec11e9f3b418337148e1}\label{_e_f___u_a_r_t_8h_a04a859ae5492ec11e9f3b418337148e1}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setDataSize@{EF\_UART\_setDataSize}}
+\index{EF\_UART\_setDataSize@{EF\_UART\_setDataSize}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setDataSize()}{EF\_UART\_setDataSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Data\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+sets the Data Size (Data word length\+: 5-\/9 bits ) by setting the \char`\"{}wlen\char`\"{} field in configuration register 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value of the required data word length ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a5b00ddd7df5f72886ea559da57a1b2bd}\label{_e_f___u_a_r_t_8h_a5b00ddd7df5f72886ea559da57a1b2bd}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setGclkEnable@{EF\_UART\_setGclkEnable}}
+\index{EF\_UART\_setGclkEnable@{EF\_UART\_setGclkEnable}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setGclkEnable()}{EF\_UART\_setGclkEnable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Gclk\+Enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+sets the GCLK enable bit in the UART register to a certain value 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value of the GCLK enable bit\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a7ecbcf6bc73a4a3392648372441a6133}\label{_e_f___u_a_r_t_8h_a7ecbcf6bc73a4a3392648372441a6133}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setICR@{EF\_UART\_setICR}}
+\index{EF\_UART\_setICR@{EF\_UART\_setICR}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setICR()}{EF\_UART\_setICR()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+ICR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{mask }\end{DoxyParamCaption})}
+
+sets the value of the Interrupts Clear Register; write 1 to clear the flag
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & The required mask value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_ad62de52cc6d11bb10dfdc275d899bb0e}\label{_e_f___u_a_r_t_8h_ad62de52cc6d11bb10dfdc275d899bb0e}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setIM@{EF\_UART\_setIM}}
+\index{EF\_UART\_setIM@{EF\_UART\_setIM}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setIM()}{EF\_UART\_setIM()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+IM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{mask }\end{DoxyParamCaption})}
+
+sets the value of the Interrupts Masking Register; which enable and disables interrupts
+\begin{DoxyItemize}
+\item bit 0 TXE \+: Transmit FIFO is Empty.
+\item bit 1 RXF \+: Receive FIFO is Full.
+\item bit 2 TXB \+: Transmit FIFO level is Below Threshold.
+\item bit 3 RXA \+: Receive FIFO level is Above Threshold.
+\item bit 4 BRK \+: Line Break; 13 consecutive 0\textquotesingle{}s have been detected on the line.
+\item bit 5 MATCH \+: the receive data matches the MATCH register.
+\item bit 6 FE \+: Framing Error, the receiver does not see a \char`\"{}stop\char`\"{} bit at the expected \char`\"{}stop\char`\"{} bit time.
+\item bit 7 PRE \+: Parity Error; the receiver calculated parity does not match the received one.
+\item bit 8 OR \+: Overrun; data has been received but the RX FIFO is full.
+\item bit 9 RTO \+: Receiver Timeout; no data has been received for the time of a specified number of bits.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mask} & The required mask value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_af275d224f7dcde400258b8d93e1ed2ce}\label{_e_f___u_a_r_t_8h_af275d224f7dcde400258b8d93e1ed2ce}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setMatchData@{EF\_UART\_setMatchData}}
+\index{EF\_UART\_setMatchData@{EF\_UART\_setMatchData}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setMatchData()}{EF\_UART\_setMatchData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Match\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{match\+Data }\end{DoxyParamCaption})}
+
+
+
+sets the match\+Data to a certain value at which \char`\"{}\+MATCH\char`\"{} interrupt will be raised 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em match\+Data} & The value of the required match data ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a3af979ea01c716d9b6ca923b92cc5c31}\label{_e_f___u_a_r_t_8h_a3af979ea01c716d9b6ca923b92cc5c31}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setParityType@{EF\_UART\_setParityType}}
+\index{EF\_UART\_setParityType@{EF\_UART\_setParityType}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setParityType()}{EF\_UART\_setParityType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Parity\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{enum parity\+\_\+type}]{parity }\end{DoxyParamCaption})}
+
+
+
+sets the \char`\"{}parity\char`\"{} field in configuration register (could be none, odd, even, sticky 0 or sticky 1) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parity} & enum parity\+\_\+type could be \char`\"{}\+NONE\char`\"{} , \char`\"{}\+ODD\char`\"{} , \char`\"{}\+EVEN\char`\"{} , \char`\"{}\+STICKY\+\_\+0\char`\"{} , or \char`\"{}\+STICKY\+\_\+1\char`\"{}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a1184834b408cdeed94623c691068a352}\label{_e_f___u_a_r_t_8h_a1184834b408cdeed94623c691068a352}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setPrescaler@{EF\_UART\_setPrescaler}}
+\index{EF\_UART\_setPrescaler@{EF\_UART\_setPrescaler}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setPrescaler()}{EF\_UART\_setPrescaler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Prescaler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{prescaler }\end{DoxyParamCaption})}
+
+
+
+sets the prescaler to a certain value where Baud\+\_\+rate = Bus\+\_\+\+Clock\+\_\+\+Freq/((Prescaler+1)$\ast$16) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em prescaler} & The value of the required prescaler\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_ae7559449b86af3339f32eb9f60da7342}\label{_e_f___u_a_r_t_8h_ae7559449b86af3339f32eb9f60da7342}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setRxFIFOThreshold@{EF\_UART\_setRxFIFOThreshold}}
+\index{EF\_UART\_setRxFIFOThreshold@{EF\_UART\_setRxFIFOThreshold}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setRxFIFOThreshold()}{EF\_UART\_setRxFIFOThreshold()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Rx\+FIFOThreshold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{threshold }\end{DoxyParamCaption})}
+
+
+
+sets the RX FIFO threshold to a certain value at which \char`\"{}\+RXA\char`\"{} interrupt will be raised 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em threshold} & The value of the required threshold\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_ad18a6e0c7701bdc66b483b1c53a3581d}\label{_e_f___u_a_r_t_8h_ad18a6e0c7701bdc66b483b1c53a3581d}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setTimeoutBits@{EF\_UART\_setTimeoutBits}}
+\index{EF\_UART\_setTimeoutBits@{EF\_UART\_setTimeoutBits}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setTimeoutBits()}{EF\_UART\_setTimeoutBits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Timeout\+Bits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+sets the \char`\"{}timeout\char`\"{} field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & timeout bits value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_ae2336d17bb87f77416fc9c6871b7cbdb}\label{_e_f___u_a_r_t_8h_ae2336d17bb87f77416fc9c6871b7cbdb}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setTwoStopBitsSelect@{EF\_UART\_setTwoStopBitsSelect}}
+\index{EF\_UART\_setTwoStopBitsSelect@{EF\_UART\_setTwoStopBitsSelect}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setTwoStopBitsSelect()}{EF\_UART\_setTwoStopBitsSelect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Two\+Stop\+Bits\+Select (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{bool}]{is\+\_\+two\+\_\+bits }\end{DoxyParamCaption})}
+
+
+
+sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop boits are two or one) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+\_\+two\+\_\+bits} & bool value, if \char`\"{}true\char`\"{}, the stop bits are two and if \char`\"{}false\char`\"{}, the stop bit is one\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_aece15f8d4c46af75f44d94abb3018080}\label{_e_f___u_a_r_t_8h_aece15f8d4c46af75f44d94abb3018080}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setTxFIFOThreshold@{EF\_UART\_setTxFIFOThreshold}}
+\index{EF\_UART\_setTxFIFOThreshold@{EF\_UART\_setTxFIFOThreshold}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setTxFIFOThreshold()}{EF\_UART\_setTxFIFOThreshold()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Tx\+FIFOThreshold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{threshold }\end{DoxyParamCaption})}
+
+
+
+sets the TX FIFO threshold to a certain value at which \char`\"{}\+TXB\char`\"{} interrupt will be raised 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em threshold} & The value of the required threshold\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a26804aec34f642578f9b6243fd16f277}\label{_e_f___u_a_r_t_8h_a26804aec34f642578f9b6243fd16f277}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_spaceAvailable@{EF\_UART\_spaceAvailable}}
+\index{EF\_UART\_spaceAvailable@{EF\_UART\_spaceAvailable}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_spaceAvailable()}{EF\_UART\_spaceAvailable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+space\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{bool $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+This function returns a flag indicating whether or not the transmit is available, i.\+e. the transmit FIFO is not full. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em flag} & a flag indicating if the transmit FIFO is not full\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_ace1db9bbc3b092890acff854cec1aa77}\label{_e_f___u_a_r_t_8h_ace1db9bbc3b092890acff854cec1aa77}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_writeChar@{EF\_UART\_writeChar}}
+\index{EF\_UART\_writeChar@{EF\_UART\_writeChar}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_writeChar()}{EF\_UART\_writeChar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+write\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{char}]{data }\end{DoxyParamCaption})}
+
+
+
+transmit a single character through uart 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & The character or byte required to send\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a0f9ad65cbfe136ad4c4080612d578536}\label{_e_f___u_a_r_t_8h_a0f9ad65cbfe136ad4c4080612d578536}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_writeCharArr@{EF\_UART\_writeCharArr}}
+\index{EF\_UART\_writeCharArr@{EF\_UART\_writeCharArr}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_writeCharArr()}{EF\_UART\_writeCharArr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+write\+Char\+Arr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{const char $\ast$}]{char\+\_\+arr }\end{DoxyParamCaption})}
+
+
+
+transmit an array of characters through uart 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em char\+\_\+arr} & An array of characters to send\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a8091314203111b165d1bad624159f8ba}\label{_e_f___u_a_r_t_8h_a8091314203111b165d1bad624159f8ba}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_writeCharNonBlocking@{EF\_UART\_writeCharNonBlocking}}
+\index{EF\_UART\_writeCharNonBlocking@{EF\_UART\_writeCharNonBlocking}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_writeCharNonBlocking()}{EF\_UART\_writeCharNonBlocking()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+write\+Char\+Non\+Blocking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{char}]{data,  }\item[{bool $\ast$}]{data\+\_\+sent }\end{DoxyParamCaption})}
+
+
+
+This is a non-\/blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR , which points to the base memory address of UART registers. EF\+\_\+\+UART\+\_\+\+TYPE is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & The character or byte required to send \\
+\hline
+\mbox{\texttt{ out}}  & {\em data\+\_\+sent} & A flag indicating if the data was sent successfully\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
