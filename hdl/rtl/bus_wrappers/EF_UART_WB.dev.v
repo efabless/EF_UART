@@ -1,7 +1,7 @@
 /*
 	Copyright 2024 Efabless Corp.
 
-	Author: Mohamed Shalan (mshalan@efabless.com)
+	Author: Efabless Corp. (ip_admin@efabless.com)
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ module EF_UART_WB #(
 
     reg [0:0] GCLK_REG;
     wire clk_g;
+
     wire clk_gated_en = GCLK_REG[0];
     ef_util_gating_cell clk_gate_cell(
         `ifdef USE_POWER_PINS 

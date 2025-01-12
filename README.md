@@ -225,7 +225,7 @@ The following are the bit definitions for the interrupt registers:
 |8|OR|1|Overrun; data has been received but the RX FIFO is full.|
 |9|RTO|1|Receiver Timeout; no data has been received for the time of a specified number of bits.|
 ### Clock Gating
-The IP has clock gating feature, enabling the selective activation and deactivation of the clock as required through the ``GCLK`` register. This functionality is implemented through the ``ef_gating_cell``, which is part of the the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v). By default, the cell operates with a behavioral implementation, but when the ``SKY130`` macro is enabled, the ``sky130_fd_sc_hd__dlclkp_4`` clock gating cell is used.
+The IP has clock gating feature, enabling the selective activation and deactivation of the clock as required through the ``GCLK`` register. This functionality is implemented through the ``ef_util_gating_cell``, which is part of the the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v). By default, the cell operates with a behavioral implementation, but when the ``CLKG_SKY130_HD`` macro is enabled, the ``sky130_fd_sc_hd__dlclkp_4`` clock gating cell is used.
 
 ### The Interface 
 
