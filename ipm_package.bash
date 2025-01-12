@@ -52,8 +52,9 @@ tar czf v$version.tar.gz --files-from <(find . | grep -v "\./verify" | grep -v "
 # get checksum
 shasum -a 256 v$version.tar.gz > v$version.tar.gz.sha256
 
-sed -i "s/version.*/version: v$version/" EF_UART.yaml
-sed -i "s/date.*/date: $(date +"%Y-%m-%d")/" EF_UART.yaml
+# update yaml
+sed -i "s/version.*/version: v$version/" *.yaml
+sed -i "s/date.*/date: $(date +"%Y-%m-%d")/" *.yaml
 
 # create tag
 git tag -a EF_UART-v$version -m "Release version $version"
