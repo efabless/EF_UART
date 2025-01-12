@@ -547,6 +547,37 @@ EF_DRIVER_STATUS EF_UART_getParityMode(EF_UART_TYPE_PTR uart, uint32_t* parity_m
 EF_DRIVER_STATUS EF_UART_busy(EF_UART_TYPE_PTR uart, bool* flag);
 
 
+//! This function initializes the UART with the specified parameters
+    /*!
+      \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+      \param [in] baud_rate The baud rate of the UART
+      \param [in] bus_clock The bus clock frequency
+      \param [in] data_bits The number of data bits
+      \param [in] two_stop_bits A flag indicating if two stop bits are used
+      \param [in] parity The parity mode
+      \param [in] timeout The receiver timeout
+      \param [in] rx_threshold The receive FIFO threshold
+      \param [in] tx_threshold The transmit FIFO threshold
+
+      \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
+    */
+EF_DRIVER_STATUS UART_Init(EF_UART_TYPE_PTR uart, uint32_t baud_rate, uint32_t bus_clock, uint32_t data_bits, bool two_stop_bits, enum parity_type parity, uint32_t timeout, uint32_t rx_threshold, uint32_t tx_threshold);
+
+
+//! This function receives a string message from the UART. The message is stored in a buffer with a specified size. 
+/// \note This is a blocking function and can only terminate under the following conditions:
+/// 1. The buffer is full
+/// 2. A "\n" character is received
+/// 3. An error is detected
+    /*!
+      \param [in] uart An \ref EF_UART_TYPE_PTR , which points to the base memory address of UART registers. \ref EF_UART_TYPE is a structure that contains the UART registers.
+      \param [out] buffer The buffer to store the received message
+      \param [in] buffer_size The size of the buffer
+
+      \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
+    */
+EF_DRIVER_STATUS EF_UART_readCharArr(EF_UART_TYPE_PTR uart, char *buffer, size_t buffer_size);
+
 
 /******************************************************************************
 * External Variables

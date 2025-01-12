@@ -284,7 +284,7 @@ EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE_PTR uart, uint32_t value){
     return status;
 }
 
-
+// todo: make this generic between 1 and 2 bits 
 EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect(EF_UART_TYPE_PTR uart, bool is_two_bits){
     
     EF_DRIVER_STATUS status = EF_DRIVER_OK; 
@@ -773,6 +773,84 @@ EF_DRIVER_STATUS EF_UART_busy(EF_UART_TYPE_PTR uart, bool* busy_flag){
 }
 
 // todo: document the threshold is the fifo max
+
+
+// Function to initialize and configure the UART
+EF_DRIVER_STATUS UART_Init(EF_UART_TYPE_PTR uart, uint32_t baud_rate, uint32_t bus_clock, uint32_t data_bits, bool two_stop_bits, enum parity_type parity, uint32_t timeout, uint32_t rx_threshold, uint32_t tx_threshold) {
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (uart == NULL) {
+        status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
+    }
+
+    // Calculate and set the prescaler
+    uint32_t prescaler = (bus_clock / (baud_rate * 16)) - 1;
+    if (status == EF_DRIVER_OK) {status = EF_UART_setPrescaler(uart, prescaler);} else {}
+
+    // Configure data bits, stop bits, and parity
+
+    // Set data bits (5-9 bits)
+    if (status == EF_DRIVER_OK) {status = EF_UART_setDataSize(uart, data_bits);} else {}
+
+    // Set stop bits (1 or 2)
+    if (status == EF_DRIVER_OK) {status = EF_UART_setTwoStopBitsSelect(uart, two_stop_bits);} else {}
+
+    // Set parity type
+    if (status == EF_DRIVER_OK) {status = EF_UART_setParityType(uart, parity);} else {}
+
+    // Set the receiver timeout value
+    if (status == EF_DRIVER_OK) {status = EF_UART_setTimeoutBits(uart, timeout);} else {}
+
+    // Set RX and TX FIFO thresholds
+    if (status != EF_DRIVER_OK) {status = EF_UART_setRxFIFOThreshold(uart, rx_threshold);} else {}
+    if (status != EF_DRIVER_OK) {status = EF_UART_setTxFIFOThreshold(uart, tx_threshold);} else {}
+
+    // Enable the UART and both RX and TX
+    if (status != EF_DRIVER_OK) {status = EF_UART_enable(uart);} else {}
+    if (status != EF_DRIVER_OK) {status = EF_UART_enableRx(uart);} else {}
+    if (status != EF_DRIVER_OK) {status = EF_UART_enableTx(uart);} else {}
+
+    // Optionally enable glitch filter and loopback for testing
+    if (status != EF_DRIVER_OK) {status = EF_UART_enableGlitchFilter(uart);} else {}
+    if (status != EF_DRIVER_OK) {status = EF_UART_enableLoopBack(uart);} else {}
+
+    return EF_DRIVER_OK;
+}
+
+
+// Function to receive a string using UART
+EF_DRIVER_STATUS EF_UART_readCharArr(EF_UART_TYPE_PTR uart, char *buffer, size_t buffer_size) {
+    
+    EF_DRIVER_STATUS status = EF_DRIVER_OK;
+
+    if (uart == NULL) {
+        status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
+    } else if (buffer == NULL) {
+        status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if buffer is NULL
+    } else if (buffer_size == 0) {
+        status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if buffer_size is 0
+    }else{
+        size_t index = 0;
+        while (index < buffer_size - 1) {
+            bool data_available = false;
+            status = EF_UART_charsAvailable(uart, &data_available);
+            if (status != EF_DRIVER_OK){break;}     // return on error
+            if (!data_available) {continue;}        // skip this iteration and wait for data
+
+            char received_char;
+            status = EF_UART_readChar(uart, &received_char);
+            if (status != EF_DRIVER_OK){break;}     // return on error
+
+            buffer[index++] = received_char;
+            if (received_char == '\n') break;       // Stop reading at newline
+        }
+        buffer[index] = '\0';                       // Null-terminate the string
+    }
+
+    return EF_DRIVER_OK;
+}
+
+
 
 /******************************************************************************
 * Static Function Definitions
