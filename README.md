@@ -279,9 +279,9 @@ The IP has clock gating feature, enabling the selective activation and deactivat
 |parity_error_flag|output|1|Parity error flag|
 |overrun_flag|output|1|Overrun flag|
 |timeout_flag|output|1|Timeout flag|
-## Drivers Documentation:
-Driver documentation for EF_UART is available [here](https://github.com/efabless/EF_UART/blob/main/fw/README.md).
-You can also find a C example application using EF_UART drivers [here]().
+## Firmware Drivers:
+Firmware drivers for EF_UART can be found in the [fw](https://github.com/efabless/EF_UART/tree/main/fw) directory. EF_UART driver documentation  is available [here](https://github.com/efabless/EF_UART/blob/main/fw/README.md).
+You can also find an example C application using the EF_UART drivers [here]().
 ## Installation:
 You can either clone repo or use [IPM](https://github.com/efabless/IPM) which is an open-source IPs Package Manager
 * To clone repo:
