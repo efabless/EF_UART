@@ -578,7 +578,7 @@ EF_DRIVER_STATUS EF_UART_setICR(EF_UART_TYPE_PTR uart, uint32_t mask){
     } else if (mask > EF_UART_IC_REG_MAX_VALUE) {
         status = EF_DRIVER_ERROR_PARAMETER;                // Return EF_DRIVER_ERROR_PARAMETER if mask is out of range
     } else {
-        uart->IC |= mask;
+        uart->IC = mask;
         
     }
     return status;
@@ -784,7 +784,7 @@ EF_DRIVER_STATUS UART_Init(EF_UART_TYPE_PTR uart, uint32_t baud_rate, uint32_t b
     }
 
     // Calculate and set the prescaler
-    uint32_t prescaler = (bus_clock / (baud_rate * 16)) - 1;
+    uint32_t prescaler = (bus_clock / (baud_rate * (uint32_t)16)) - (uint32_t)1;
     if (status == EF_DRIVER_OK) {status = EF_UART_setPrescaler(uart, prescaler);} else {}
 
     // Configure data bits, stop bits, and parity
@@ -819,19 +819,19 @@ EF_DRIVER_STATUS UART_Init(EF_UART_TYPE_PTR uart, uint32_t baud_rate, uint32_t b
 
 
 // Function to receive a string using UART
-EF_DRIVER_STATUS EF_UART_readCharArr(EF_UART_TYPE_PTR uart, char *buffer, size_t buffer_size) {
-    
+EF_DRIVER_STATUS EF_UART_readCharArr(EF_UART_TYPE_PTR uart, char *buffer, uint32_t buffer_size) {
+
     EF_DRIVER_STATUS status = EF_DRIVER_OK;
 
     if (uart == NULL) {
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
     } else if (buffer == NULL) {
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if buffer is NULL
-    } else if (buffer_size == 0) {
+    } else if (buffer_size == (uint32_t)0) {
         status = EF_DRIVER_ERROR_PARAMETER;    // Return EF_DRIVER_ERROR_PARAMETER if buffer_size is 0
     }else{
-        size_t index = 0;
-        while (index < buffer_size - 1) {
+        uint32_t index = 0;
+        while (index < (buffer_size - (uint32_t)1)) {
             bool data_available = false;
             status = EF_UART_charsAvailable(uart, &data_available);
             if (status != EF_DRIVER_OK){break;}     // return on error
@@ -841,7 +841,8 @@ EF_DRIVER_STATUS EF_UART_readCharArr(EF_UART_TYPE_PTR uart, char *buffer, size_t
             status = EF_UART_readChar(uart, &received_char);
             if (status != EF_DRIVER_OK){break;}     // return on error
 
-            buffer[index++] = received_char;
+            buffer[index] = received_char;
+            index++;
             if (received_char == '\n') break;       // Stop reading at newline
         }
         buffer[index] = '\0';                       // Null-terminate the string
