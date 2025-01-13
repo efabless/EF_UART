@@ -225,9 +225,9 @@ The following are the bit definitions for the interrupt registers:
 |8|OR|1|Overrun; data has been received but the RX FIFO is full.|
 |9|RTO|1|Receiver Timeout; no data has been received for the time of a specified number of bits.|
 ### Clock Gating
-The IP has clock gating feature, enabling the selective activation and deactivation of the clock as required through the ``GCLK`` register. This functionality is implemented through the ``ef_util_gating_cell``, which is part of the the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v). By default, the cell operates with a behavioral implementation, but when the ``CLKG_SKY130_HD`` macro is enabled, the ``sky130_fd_sc_hd__dlclkp_4`` clock gating cell is used.
+The IP has clock gating feature, enabling the selective activation and deactivation of the clock as required through the ``GCLK`` register. This functionality is implemented through the ``ef_util_gating_cell``, which is part of the the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v). By default, the clock gating is disabled. To enable behavioral implmentation clock gating for simulation purposes, you should use the ``CLKG_GENERIC`` macro. Alternatively, if you wish to use the SKY130 clock gating cell, ``sky130_fd_sc_hd__dlclkp_4``, you can enable it by using the ``CLKG_SKY130_HD`` macro.
 
-**Note:** If you choose the [OpenLane2](https://github.com/efabless/openlane2) flow for implementation and would like to add the clock gating feature, you need to add ``CLKG_SKY130_HD`` macro to the ``VERILOG_DEFINES`` configuration variable. Update the YAML configuration file as follows: 
+**Note:** If you choose the [OpenLane2](https://github.com/efabless/openlane2) flow for implementation and would like to add the clock gating feature, you need to add ``CLKG_SKY130_HD`` macro to the ``VERILOG_DEFINES`` configuration variable. Update OpenLane2 YAML configuration file as follows: 
 ```
 VERILOG_DEFINES:
 - CLKG_SKY130_HD
@@ -289,10 +289,13 @@ VERILOG_DEFINES:
 Firmware drivers for EF_UART can be found in the [fw](https://github.com/efabless/EF_UART/tree/main/fw) directory. EF_UART driver documentation  is available [here](https://github.com/efabless/EF_UART/blob/main/fw/README.md).
 You can also find an example C application using the EF_UART drivers [here]().
 ## Installation:
-You can either clone repo or use [IPM](https://github.com/efabless/IPM) which is an open-source IPs Package Manager
-* To clone repo:
-```git clone https://https://github.com/efabless/EF_UART.git```
-> **Note:** If you choose this method, you need to clone [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) repository, as it includes required modules from the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v)
-* To download via IPM , follow installation guides [here](https://github.com/efabless/IPM/blob/main/README.md) then run 
-```ipm install EF_UART```
+You can install the IP either by cloning the repository or using [IPM](https://github.com/efabless/IPM), an open-source IP Package Manager.
+##### 1. Using [IPM](https://github.com/efabless/IPM):
+- If you do not have IPM installed, follow installation guide  [here](https://github.com/efabless/IPM/blob/main/README.md)
+- Run ```ipm install EF_UART```
 > **Note:** This method is recommended as it automatically installs [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) as a dependency.
+##### 2. Cloning: 
+- Clone [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) repository, which includes the required modules from the common.
+```git clone https://github.com/efabless/EF_IP_UTIL.git```
+- Then, clone the IP repository
+```git clone https://github.com/efabless/EF_UART.git```
