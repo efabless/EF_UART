@@ -289,13 +289,13 @@ VERILOG_DEFINES:
 Firmware drivers for EF_UART can be found in the [fw](https://github.com/efabless/EF_UART/tree/main/fw) directory. EF_UART driver documentation  is available [here](https://github.com/efabless/EF_UART/blob/main/fw/README.md).
 You can also find an example C application using the EF_UART drivers [here]().
 ## Installation:
-You can install the IP either by cloning the repository or using [IPM](https://github.com/efabless/IPM), an open-source IP Package Manager.
+You can install the IP either by cloning this repository or by using [IPM](https://github.com/efabless/IPM). 
 ##### 1. Using [IPM](https://github.com/efabless/IPM):
-- If you do not have IPM installed, follow installation guide  [here](https://github.com/efabless/IPM/blob/main/README.md)
-- Run ```ipm install EF_UART```
+- [Optional] If you do not have IPM installed, follow the installation guide [here](https://github.com/efabless/IPM/blob/main/README.md)
+- After installing IPM, execute the following command ```ipm install EF_UART```.
 > **Note:** This method is recommended as it automatically installs [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) as a dependency.
-##### 2. Cloning: 
+##### 2. Cloning this repo: 
 - Clone [EF_IP_UTIL](https://github.com/efabless/EF_IP_UTIL.git) repository, which includes the required modules from the common.
 ```git clone https://github.com/efabless/EF_IP_UTIL.git```
-- Then, clone the IP repository
+- Clone the IP repository
 ```git clone https://github.com/efabless/EF_UART.git```
