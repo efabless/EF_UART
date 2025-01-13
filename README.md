@@ -51,7 +51,7 @@ EF_UART_WB INST (
 );
 ```
 #### Wrappers with DFT support
-Wrappers in the directory ``/hdl/rtl/bus_wrappers/DFT`` have an extra input port ``sc_testmode`` to enable the clock gate whenever the scan chain testmode is enabled.
+Wrappers in the directory ``/hdl/rtl/bus_wrappers/DFT`` have an extra input port ``sc_testmode`` to disable the clock gate whenever the scan chain testmode is enabled.
 
 ## Implementation example  
 
@@ -226,10 +226,11 @@ The following are the bit definitions for the interrupt registers:
 |9|RTO|1|Receiver Timeout; no data has been received for the time of a specified number of bits.|
 ### Clock Gating
 The IP has clock gating feature, enabling the selective activation and deactivation of the clock as required through the ``GCLK`` register. This functionality is implemented through the ``ef_util_gating_cell``, which is part of the the common modules library, [ef_util_lib.v](https://github.com/efabless/EF_IP_UTIL/blob/main/hdl/ef_util_lib.v). By default, the cell operates with a behavioral implementation, but when the ``CLKG_SKY130_HD`` macro is enabled, the ``sky130_fd_sc_hd__dlclkp_4`` clock gating cell is used.
-**Note:** If you choose the [OpenLane2](https://github.com/efabless/openlane2) flow for implementation and would like to add the clock gating feature, you need to add ``SKY130`` macro to the ``VERILOG_DEFINES`` configuration variable. Update the YAML configuration file as follows: 
+
+**Note:** If you choose the [OpenLane2](https://github.com/efabless/openlane2) flow for implementation and would like to add the clock gating feature, you need to add ``CLKG_SKY130_HD`` macro to the ``VERILOG_DEFINES`` configuration variable. Update the YAML configuration file as follows: 
 ```
 VERILOG_DEFINES:
-- SKY130
+- CLKG_SKY130_HD
 ```
 
 ### The Interface 

@@ -21,92 +21,12 @@
 
 `timescale 1ns / 1ps `default_nettype none
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// PRINT_LICENSE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module EF_UART_APB #(
     parameter SC = 8,
     MDW = 9,
     GFLEN = 8,
     FAW = 4
 ) (
-
-
-
 
     input  wire         PCLK,
     input  wire         PRESETn,
@@ -145,8 +65,6 @@ module EF_UART_APB #(
   wire clk_gated_en = GCLK_REG[0];
   ef_util_gating_cell clk_gate_cell (
 
-
-
       // USE_POWER_PINS
       .clk(PCLK),
       .clk_en(clk_gated_en),
@@ -155,7 +73,6 @@ module EF_UART_APB #(
 
   wire           clk = clk_g;
   wire           rst_n = PRESETn;
-
 
   wire           apb_valid = PSEL & PENABLE;
   wire           apb_we = PWRITE & apb_valid;
@@ -295,7 +212,6 @@ module EF_UART_APB #(
   wire [0:0] PRE = parity_error_flag;
   wire [0:0] OR = overrun_flag;
   wire [0:0] RTO = timeout_flag;
-
 
   integer _i_;
   always @(posedge PCLK or negedge PRESETn)

@@ -21,93 +21,12 @@
 
 `timescale 1ns / 1ps `default_nettype none
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// PRINT_LICENSE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module EF_UART_AHBL #(
     parameter SC = 8,
     MDW = 9,
     GFLEN = 8,
     FAW = 4
 ) (
-
-
-
 
     input  wire         sc_testmode,
     input  wire         HCLK,
@@ -148,8 +67,6 @@ module EF_UART_AHBL #(
   wire clk_gated_en = sc_testmode ? 1'b1 : GCLK_REG[0];
   ef_util_gating_cell clk_gate_cell (
 
-
-
       // USE_POWER_PINS
       .clk(HCLK),
       .clk_en(clk_gated_en),
@@ -158,7 +75,6 @@ module EF_UART_AHBL #(
 
   wire clk = clk_g;
   wire rst_n = HRESETn;
-
 
   reg last_HSEL, last_HWRITE;
   reg [31:0] last_HADDR;
@@ -314,7 +230,6 @@ module EF_UART_AHBL #(
   wire [0:0] PRE = parity_error_flag;
   wire [0:0] OR = overrun_flag;
   wire [0:0] RTO = timeout_flag;
-
 
   integer _i_;
   always @(posedge HCLK or negedge HRESETn)
