@@ -576,7 +576,7 @@ EF_DRIVER_STATUS UART_Init(EF_UART_TYPE_PTR uart, uint32_t baud_rate, uint32_t b
 
       \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_readCharArr(EF_UART_TYPE_PTR uart, char *buffer, size_t buffer_size);
+EF_DRIVER_STATUS EF_UART_readCharArr(EF_UART_TYPE_PTR uart, char *buffer, uint32_t buffer_size);
 
 
 /******************************************************************************

@@ -802,17 +802,18 @@ EF_DRIVER_STATUS UART_Init(EF_UART_TYPE_PTR uart, uint32_t baud_rate, uint32_t b
     if (status == EF_DRIVER_OK) {status = EF_UART_setTimeoutBits(uart, timeout);} else {}
 
     // Set RX and TX FIFO thresholds
-    if (status != EF_DRIVER_OK) {status = EF_UART_setRxFIFOThreshold(uart, rx_threshold);} else {}
-    if (status != EF_DRIVER_OK) {status = EF_UART_setTxFIFOThreshold(uart, tx_threshold);} else {}
+    if (status == EF_DRIVER_OK) {status = EF_UART_setRxFIFOThreshold(uart, rx_threshold);} else {}
+    if (status == EF_DRIVER_OK) {status = EF_UART_setTxFIFOThreshold(uart, tx_threshold);} else {}
 
     // Enable the UART and both RX and TX
-    if (status != EF_DRIVER_OK) {status = EF_UART_enable(uart);} else {}
-    if (status != EF_DRIVER_OK) {status = EF_UART_enableRx(uart);} else {}
-    if (status != EF_DRIVER_OK) {status = EF_UART_enableTx(uart);} else {}
+    if (status == EF_DRIVER_OK) {status = EF_UART_enable(uart);} else {}
+    if (status == EF_DRIVER_OK) {status = EF_UART_setGclkEnable(uart, (uint32_t)1);} else {}
+    if (status == EF_DRIVER_OK) {status = EF_UART_enableRx(uart);} else {}
+    if (status == EF_DRIVER_OK) {status = EF_UART_enableTx(uart);} else {}
 
     // Optionally enable glitch filter and loopback for testing
-    if (status != EF_DRIVER_OK) {status = EF_UART_enableGlitchFilter(uart);} else {}
-    if (status != EF_DRIVER_OK) {status = EF_UART_enableLoopBack(uart);} else {}
+    if (status == EF_DRIVER_OK) {status = EF_UART_enableGlitchFilter(uart);} else {}
+    if (status == EF_DRIVER_OK) {status = EF_UART_enableLoopBack(uart);} else {}
 
     return EF_DRIVER_OK;
 }
