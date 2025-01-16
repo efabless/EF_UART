@@ -598,8 +598,10 @@ EF_DRIVER_STATUS EF_UART_writeChar(EF_UART_TYPE_PTR uart, char data){
             status = EF_UART_getRIS(uart, &RIS_value);
         } while ((status == EF_DRIVER_OK) && (RIS_value & EF_UART_TXB_FLAG) == (uint32_t)0x0); // wait until tx level below flag is 1
 
-        uart->TXDATA = data;
-        status = EF_UART_setICR(uart, EF_UART_TXB_FLAG);
+        if (status == EF_DRIVER_OK) {
+            uart->TXDATA = data;
+            status = EF_UART_setICR(uart, EF_UART_TXB_FLAG);
+        } else {}
     }
     return status;
 }
@@ -617,9 +619,11 @@ EF_DRIVER_STATUS EF_UART_writeCharArr(EF_UART_TYPE_PTR uart, const char *char_ar
                 status = EF_UART_getRIS(uart, &RIS_value);
             } while ((status == EF_DRIVER_OK) && (RIS_value & EF_UART_TXB_FLAG) == (uint32_t)0x0); // wait until tx level below flag is 1
 
-            uart->TXDATA = (*(char_arr_iterator));
-            char_arr_iterator++;
-            status = EF_UART_setICR(uart, EF_UART_TXB_FLAG);
+            if (status == EF_DRIVER_OK) {
+                uart->TXDATA = (*(char_arr_iterator));
+                char_arr_iterator++;
+                status = EF_UART_setICR(uart, EF_UART_TXB_FLAG);
+            }else{}
         }
     }
     return status;
@@ -636,8 +640,11 @@ EF_DRIVER_STATUS EF_UART_readChar(EF_UART_TYPE_PTR uart, char* RXDATA_value){
         do {
             status = EF_UART_getRIS(uart, &RIS_value);
         } while((status == EF_DRIVER_OK) && (RIS_value & EF_UART_RXA_FLAG) == (uint32_t)0x0); // wait over RX fifo level above flag to be 1
-        *RXDATA_value = uart->RXDATA;
-        status = EF_UART_setICR(uart, EF_UART_RXA_FLAG);
+
+        if (status == EF_DRIVER_OK) {
+            *RXDATA_value = uart->RXDATA;
+            status = EF_UART_setICR(uart, EF_UART_RXA_FLAG);
+        } else {}
     }
     return status;
 }
