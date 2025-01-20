@@ -75,7 +75,7 @@ int main() {
 
     // Receive a message
     char buffer[100];
-    status = UART_Receive(UART0, buffer, sizeof(buffer));
+    status = EF_UART_readCharArr(UART0, buffer, sizeof(buffer));
     if (status == EF_DRIVER_OK) {
         // Print received message
         printf("Received: %s\n", buffer);
