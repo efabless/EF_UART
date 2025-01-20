@@ -44,15 +44,21 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
+      <node id="5">
+        <label>EF_UART_example.c</label>
+        <link refid="_e_f___u_a_r_t__example_8c"/>
+      </node>
+      <node id="4">
+        <label>EF_UART_example.h</label>
+        <link refid="_e_f___u_a_r_t__example_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>EF_UART_regs.h</label>
         <link refid="_e_f___u_a_r_t__regs_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>example.c</label>
-        <link refid="example_8c"/>
       </node>
     </invincdepgraph>
     <innerclass refid="struct___e_f___u_a_r_t___t_y_p_e__" prot="public">_EF_UART_TYPE_</innerclass>

@@ -78,6 +78,8 @@
     <member refid="_e_f___u_a_r_t_8c_1a7739739a5ceeadcf591f3b387c729d0c" kind="function"><name>EF_UART_spaceAvailable</name></member>
     <member refid="_e_f___u_a_r_t_8c_1a99a9c66e92fb0233fb7cf31e6c6921f1" kind="function"><name>EF_UART_getParityMode</name></member>
     <member refid="_e_f___u_a_r_t_8c_1ad9d841da9b4114560195d08af86a4b4a" kind="function"><name>EF_UART_busy</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1a1dc3757c8ca6e8725ab78bd72373ec6b" kind="function"><name>UART_Init</name></member>
+    <member refid="_e_f___u_a_r_t_8c_1acb379fe3cc63f5e2eea43522c39823f7" kind="function"><name>EF_UART_readCharArr</name></member>
   </compound>
   <compound refid="_e_f___u_a_r_t_8h" kind="file"><name>EF_UART.h</name>
     <member refid="_e_f___u_a_r_t_8h_1abb5e56e926c33b555091e679f678515d" kind="define"><name>EF_UART_CTRL_REG_MAX_VALUE</name></member>
@@ -140,6 +142,17 @@
     <member refid="_e_f___u_a_r_t_8h_1a26804aec34f642578f9b6243fd16f277" kind="function"><name>EF_UART_spaceAvailable</name></member>
     <member refid="_e_f___u_a_r_t_8h_1a99a9c66e92fb0233fb7cf31e6c6921f1" kind="function"><name>EF_UART_getParityMode</name></member>
     <member refid="_e_f___u_a_r_t_8h_1a16e75e32fdf3a0dc46f6ca9992750328" kind="function"><name>EF_UART_busy</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1a1dc3757c8ca6e8725ab78bd72373ec6b" kind="function"><name>UART_Init</name></member>
+    <member refid="_e_f___u_a_r_t_8h_1acb379fe3cc63f5e2eea43522c39823f7" kind="function"><name>EF_UART_readCharArr</name></member>
+  </compound>
+  <compound refid="_e_f___u_a_r_t__example_8c" kind="file"><name>EF_UART_example.c</name>
+    <member refid="_e_f___u_a_r_t__example_8c_1ac2f4a83425438348a71d343432ecdf37" kind="define"><name>EF_UART_EXAMPLE_C</name></member>
+    <member refid="_e_f___u_a_r_t__example_8c_1a245442e9ecffcadcce85a5cd86e9ed91" kind="define"><name>Example_UART_BASE_ADDRESS</name></member>
+    <member refid="_e_f___u_a_r_t__example_8c_1a0508661f121639ffdee7de2353a0def2" kind="define"><name>UART0</name></member>
+    <member refid="_e_f___u_a_r_t__example_8c_1a8451a75f6339b51e6239c6c4d01ee4e0" kind="function"><name>EF_UART_example</name></member>
+  </compound>
+  <compound refid="_e_f___u_a_r_t__example_8h" kind="file"><name>EF_UART_example.h</name>
+    <member refid="_e_f___u_a_r_t__example_8h_1a8451a75f6339b51e6239c6c4d01ee4e0" kind="function"><name>EF_UART_example</name></member>
   </compound>
   <compound refid="_e_f___u_a_r_t__regs_8h" kind="file"><name>EF_UART_regs.h</name>
     <member refid="_e_f___u_a_r_t__regs_8h_1a470cd5845bed94d8b8b358933e4a3442" kind="define"><name>IO_TYPES</name></member>
@@ -188,13 +201,6 @@
     <member refid="_e_f___u_a_r_t__regs_8h_1aa5b304f625110ba9a40b9fb5d0f22928" kind="define"><name>EF_UART_RTO_FLAG</name></member>
     <member refid="_e_f___u_a_r_t__regs_8h_1ae6e04bb01bfd86ba243d7502c0afedbf" kind="typedef"><name>EF_UART_TYPE</name></member>
     <member refid="_e_f___u_a_r_t__regs_8h_1ab605c9cde76c27dd58ec6cf73ca70893" kind="typedef"><name>EF_UART_TYPE_PTR</name></member>
-  </compound>
-  <compound refid="example_8c" kind="file"><name>example.c</name>
-    <member refid="example_8c_1a245442e9ecffcadcce85a5cd86e9ed91" kind="define"><name>Example_UART_BASE_ADDRESS</name></member>
-    <member refid="example_8c_1a0508661f121639ffdee7de2353a0def2" kind="define"><name>UART0</name></member>
-    <member refid="example_8c_1a1dc3757c8ca6e8725ab78bd72373ec6b" kind="function"><name>UART_Init</name></member>
-    <member refid="example_8c_1a0bb4c33d9a6330d0c224a2cd7e2b7ab2" kind="function"><name>UART_Receive</name></member>
-    <member refid="example_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
   </compound>
   <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
   </compound>

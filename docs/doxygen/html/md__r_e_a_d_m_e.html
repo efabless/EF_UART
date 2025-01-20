@@ -77,6 +77,7 @@ Header files</h1>
 <ul>
 <li>EF_Driver_Common.h</li>
 <li>EF_UART.h</li>
+<li>EF_UART_example.h</li>
 <li>EF_UART_regs.h</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
@@ -240,59 +241,65 @@ Functions</h1>
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_readChar** (**EF\_UART\_TYPE\_PTR** uar, char *RXDATA_value) <br  />
 <em>recieve a single character through uart</em>    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_readCharArr** (**EF\_UART\_TYPE\_PTR** uart, char *buffer, uint32_t buffer_size) <br  />
+    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_readCharNonBlocking** (**EF\_UART\_TYPE\_PTR** uart, char *RXDATA_value, bool *data_available) <br  />
 <em>This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code.</em>    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setCTRL** (**EF\_UART\_TYPE\_PTR** uart, uint32_t value) <br  />
     </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setConfig** (**EF\_UART\_TYPE\_PTR** uart, uint32_t config) <br  />
     </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setDataSize** (**EF\_UART\_TYPE\_PTR** uart, uint32_t value) <br  />
 <em>sets the Data Size (Data word length: 5-9 bits ) by setting the "wlen" field in configuration register</em>    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setGclkEnable** (**EF\_UART\_TYPE\_PTR** uart, uint32_t value) <br  />
 <em>sets the GCLK enable bit in the UART register to a certain value</em>    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setICR** (**EF\_UART\_TYPE\_PTR** uart, uint32_t mask) <br  />
     </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setIM** (**EF\_UART\_TYPE\_PTR** uart, uint32_t mask) <br  />
     </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setMatchData** (**EF\_UART\_TYPE\_PTR** uart, uint32_t matchData) <br  />
 <em>sets the matchData to a certain value at which "MATCH" interrupt will be raised</em>    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setParityType** (**EF\_UART\_TYPE\_PTR** uart, enum **parity\_type** parity) <br  />
 <em>sets the "parity" field in configuration register (could be none, odd, even, sticky 0 or sticky 1)</em>    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setPrescaler** (**EF\_UART\_TYPE\_PTR** uart, uint32_t prescaler) <br  />
 <em>sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)</em>    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setRxFIFOThreshold** (**EF\_UART\_TYPE\_PTR** uart, uint32_t threshold) <br  />
 <em>sets the RX FIFO threshold to a certain value at which "RXA" interrupt will be raised</em>    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setTimeoutBits** (**EF\_UART\_TYPE\_PTR** uart, uint32_t value) <br  />
 <em>sets the "timeout" field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised</em>    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setTwoStopBitsSelect** (**EF\_UART\_TYPE\_PTR** uart, bool is_two_bits) <br  />
 <em>sets the "stp2" bit in configuration register (whether the stop boits are two or one)</em>    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_setTxFIFOThreshold** (**EF\_UART\_TYPE\_PTR** uart, uint32_t threshold) <br  />
 <em>sets the TX FIFO threshold to a certain value at which "TXB" interrupt will be raised</em>    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_spaceAvailable** (**EF\_UART\_TYPE\_PTR** uart, bool *flag) <br  />
 <em>This function returns a flag indicating whether or not the transmit is available, i.e. the transmit FIFO is not full.</em>    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_writeChar** (**EF\_UART\_TYPE\_PTR** uart, char data) <br  />
 <em>transmit a single character through uart</em>    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_writeCharArr** (**EF\_UART\_TYPE\_PTR** uart, const char *char_arr) <br  />
 <em>transmit an array of characters through uart</em>    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_writeCharNonBlocking** (**EF\_UART\_TYPE\_PTR** uart, char data, bool *data_sent) <br  />
-<em>This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.</em>   </td></tr>
+<em>This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.</em>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**UART\_Init** (**EF\_UART\_TYPE\_PTR** uart, uint32_t baud_rate, uint32_t bus_clock, uint32_t data_bits, bool two_stop_bits, enum **parity\_type** parity, uint32_t timeout, uint32_t rx_threshold, uint32_t tx_threshold) <br  />
+<em>This function initializes the UART with the specified parameters.</em>   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md18"></a>
 Macros</h1>
@@ -358,7 +365,7 @@ function &lt;tt&gt;EF_UART_busy&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    <span class="keywordtype">bool</span> *flag</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_ad9d841da9b4114560195d08af86a4b4a"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#ad9d841da9b4114560195d08af86a4b4a">EF_UART_busy</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_busy(EF_UART_TYPE_PTR uart, bool *busy_flag)</div><div class="ttdoc">This function checks id the UART is busy.</div><div class="ttdef"><b>Definition:</b> EF_UART.c:757</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_ad9d841da9b4114560195d08af86a4b4a"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#ad9d841da9b4114560195d08af86a4b4a">EF_UART_busy</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_busy(EF_UART_TYPE_PTR uart, bool *busy_flag)</div><div class="ttdoc">This function checks id the UART is busy.</div><div class="ttdef"><b>Definition:</b> EF_UART.c:764</div></div>
 <div class="ttc" id="astruct___e_f___u_a_r_t___t_y_p_e___html"><div class="ttname"><a href="struct___e_f___u_a_r_t___t_y_p_e__.html">_EF_UART_TYPE_</a></div><div class="ttdef"><b>Definition:</b> EF_UART_regs.h:86</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
@@ -373,7 +380,7 @@ function &lt;tt&gt;EF_UART_charsAvailable&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    <span class="keywordtype">bool</span> *flag</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_ae92ca95cabf87bf850b99db43d36ddd5"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#ae92ca95cabf87bf850b99db43d36ddd5">EF_UART_charsAvailable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_charsAvailable(EF_UART_TYPE_PTR uart, bool *RXA_flag)</div><div class="ttdoc">This function returns a flag indicating whether or not there is data available in the receive FIFO.</div><div class="ttdef"><b>Definition:</b> EF_UART.c:706</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_ae92ca95cabf87bf850b99db43d36ddd5"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#ae92ca95cabf87bf850b99db43d36ddd5">EF_UART_charsAvailable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_charsAvailable(EF_UART_TYPE_PTR uart, bool *RXA_flag)</div><div class="ttdoc">This function returns a flag indicating whether or not there is data available in the receive FIFO.</div><div class="ttdef"><b>Definition:</b> EF_UART.c:713</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
@@ -507,7 +514,7 @@ function &lt;tt&gt;EF_UART_getCTRL&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    uint32_t *CTRL_value</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a9870f89be83da209c6823fe725ed492e"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a9870f89be83da209c6823fe725ed492e">EF_UART_getCTRL</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_getCTRL(EF_UART_TYPE_PTR uart, uint32_t *CTRL_value)</div><div class="ttdoc">returns the value of the control register</div><div class="ttdef"><b>Definition:</b> EF_UART.c:220</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a9870f89be83da209c6823fe725ed492e"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a9870f89be83da209c6823fe725ed492e">EF_UART_getCTRL</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_getCTRL(EF_UART_TYPE_PTR uart, uint32_t *CTRL_value)</div><div class="ttdoc">returns the value of the control register</div><div class="ttdef"><b>Definition:</b> EF_UART.c:219</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
@@ -603,7 +610,7 @@ function &lt;tt&gt;EF_UART_getParityMode&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    uint32_t *parity_mode</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a99a9c66e92fb0233fb7cf31e6c6921f1"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a99a9c66e92fb0233fb7cf31e6c6921f1">EF_UART_getParityMode</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_getParityMode(EF_UART_TYPE_PTR uart, uint32_t *parity_mode)</div><div class="ttdoc">This function return the parity mode of the UART.</div><div class="ttdef"><b>Definition:</b> EF_UART.c:743</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a99a9c66e92fb0233fb7cf31e6c6921f1"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a99a9c66e92fb0233fb7cf31e6c6921f1">EF_UART_getParityMode</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_getParityMode(EF_UART_TYPE_PTR uart, uint32_t *parity_mode)</div><div class="ttdoc">This function return the parity mode of the UART.</div><div class="ttdef"><b>Definition:</b> EF_UART.c:750</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
@@ -617,7 +624,7 @@ function &lt;tt&gt;EF_UART_getPrescaler&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    uint32_t *Prescaler_value</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_aa5874369ddd7767b26a076726d585235"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#aa5874369ddd7767b26a076726d585235">EF_UART_getPrescaler</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_getPrescaler(EF_UART_TYPE_PTR uart, uint32_t *Prescaler_value)</div><div class="ttdoc">returns the value of the prescaler</div><div class="ttdef"><b>Definition:</b> EF_UART.c:252</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_aa5874369ddd7767b26a076726d585235"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#aa5874369ddd7767b26a076726d585235">EF_UART_getPrescaler</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_getPrescaler(EF_UART_TYPE_PTR uart, uint32_t *Prescaler_value)</div><div class="ttdoc">returns the value of the prescaler</div><div class="ttdef"><b>Definition:</b> EF_UART.c:251</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
@@ -714,7 +721,7 @@ function &lt;tt&gt;EF_UART_readChar&lt;/tt&gt;</h2>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uar,</div>
 <div class="line">    <span class="keywordtype">char</span> *RXDATA_value</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_aed92f78ad479144a2e9bc7169f2a9850"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#aed92f78ad479144a2e9bc7169f2a9850">EF_UART_readChar</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_readChar(EF_UART_TYPE_PTR uart, char *RXDATA_value)</div><div class="ttdoc">recieve a single character through uart</div><div class="ttdef"><b>Definition:</b> EF_UART.c:628</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_aed92f78ad479144a2e9bc7169f2a9850"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#aed92f78ad479144a2e9bc7169f2a9850">EF_UART_readChar</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_readChar(EF_UART_TYPE_PTR uart, char *RXDATA_value)</div><div class="ttdoc">recieve a single character through uart</div><div class="ttdef"><b>Definition:</b> EF_UART.c:632</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
@@ -723,13 +730,37 @@ function &lt;tt&gt;EF_UART_readChar&lt;/tt&gt;</h2>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
 <h2><a class="anchor" id="autotoc_md47"></a>
+function &lt;tt&gt;EF_UART_readCharArr&lt;/tt&gt;</h2>
+<div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#acb379fe3cc63f5e2eea43522c39823f7">EF_UART_readCharArr</a> (</div>
+<div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
+<div class="line">    <span class="keywordtype">char</span> *buffer,</div>
+<div class="line">    uint32_t buffer_size</div>
+<div class="line">) </div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_acb379fe3cc63f5e2eea43522c39823f7"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#acb379fe3cc63f5e2eea43522c39823f7">EF_UART_readCharArr</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_readCharArr(EF_UART_TYPE_PTR uart, char *buffer, uint32_t buffer_size)</div><div class="ttdef"><b>Definition:</b> EF_UART.c:830</div></div>
+</div><!-- fragment --><p>This function receives a string message from the UART. The message is stored in a buffer with a specified size.</p>
+<p><b>Note:</b></p>
+<p>This is a blocking function and can only terminate under the following conditions:</p>
+<ul>
+<li>The buffer is full</li>
+<li>A "\n" character is received</li>
+<li>An error is detected</li>
+</ul>
+<p><b>Parameters:</b></p>
+<ul>
+<li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
+<li><code>buffer</code> The buffer to store the received message</li>
+<li><code>buffer_size</code> The size of the buffer</li>
+</ul>
+<p><b>Returns:</b></p>
+<p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
+<h2><a class="anchor" id="autotoc_md48"></a>
 function &lt;tt&gt;EF_UART_readCharNonBlocking&lt;/tt&gt;</h2>
 <p><em>This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code.</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#aaa93d9c62ca6e64a622bb32e86fb2dc0">EF_UART_readCharNonBlocking</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    <span class="keywordtype">char</span> *RXDATA_value,</div>
 <div class="line">    <span class="keywordtype">bool</span> *data_available</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_aaa93d9c62ca6e64a622bb32e86fb2dc0"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#aaa93d9c62ca6e64a622bb32e86fb2dc0">EF_UART_readCharNonBlocking</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_readCharNonBlocking(EF_UART_TYPE_PTR uart, char *RXDATA_value, bool *data_available)</div><div class="ttdoc">This is a non-blocking function that reads a character from the UART receive FIFO if data is availabl...</div><div class="ttdef"><b>Definition:</b> EF_UART.c:650</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_aaa93d9c62ca6e64a622bb32e86fb2dc0"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#aaa93d9c62ca6e64a622bb32e86fb2dc0">EF_UART_readCharNonBlocking</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_readCharNonBlocking(EF_UART_TYPE_PTR uart, char *RXDATA_value, bool *data_available)</div><div class="ttdoc">This is a non-blocking function that reads a character from the UART receive FIFO if data is availabl...</div><div class="ttdef"><b>Definition:</b> EF_UART.c:657</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
@@ -738,13 +769,13 @@ function &lt;tt&gt;EF_UART_readCharNonBlocking&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md48"></a>
+<h2><a class="anchor" id="autotoc_md49"></a>
 function &lt;tt&gt;EF_UART_setCTRL&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#ad36fee036e144937af3eed59eea101c6">EF_UART_setCTRL</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    uint32_t value</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_ad36fee036e144937af3eed59eea101c6"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#ad36fee036e144937af3eed59eea101c6">EF_UART_setCTRL</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_setCTRL(EF_UART_TYPE_PTR uart, uint32_t value)</div><div class="ttdef"><b>Definition:</b> EF_UART.c:204</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_ad36fee036e144937af3eed59eea101c6"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#ad36fee036e144937af3eed59eea101c6">EF_UART_setCTRL</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_setCTRL(EF_UART_TYPE_PTR uart, uint32_t value)</div><div class="ttdef"><b>Definition:</b> EF_UART.c:203</div></div>
 </div><!-- fragment --><p>sets the control register to a certain value where</p>
 <ul>
 <li>bit 0: UART enable</li>
@@ -760,7 +791,7 @@ function &lt;tt&gt;EF_UART_setCTRL&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md49"></a>
+<h2><a class="anchor" id="autotoc_md50"></a>
 function &lt;tt&gt;EF_UART_setConfig&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a97261ae27ea5d029ecab9b25f2f45ac9">EF_UART_setConfig</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
@@ -781,13 +812,13 @@ function &lt;tt&gt;EF_UART_setConfig&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md50"></a>
+<h2><a class="anchor" id="autotoc_md51"></a>
 function &lt;tt&gt;EF_UART_setDataSize&lt;/tt&gt;</h2>
 <p><em>sets the Data Size (Data word length: 5-9 bits ) by setting the "wlen" field in configuration register</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a04a859ae5492ec11e9f3b418337148e1">EF_UART_setDataSize</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    uint32_t value</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a04a859ae5492ec11e9f3b418337148e1"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a04a859ae5492ec11e9f3b418337148e1">EF_UART_setDataSize</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE_PTR uart, uint32_t value)</div><div class="ttdoc">sets the Data Size (Data word length: 5-9 bits ) by setting the &quot;wlen&quot; field in configuration registe...</div><div class="ttdef"><b>Definition:</b> EF_UART.c:269</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a04a859ae5492ec11e9f3b418337148e1"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a04a859ae5492ec11e9f3b418337148e1">EF_UART_setDataSize</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE_PTR uart, uint32_t value)</div><div class="ttdoc">sets the Data Size (Data word length: 5-9 bits ) by setting the &quot;wlen&quot; field in configuration registe...</div><div class="ttdef"><b>Definition:</b> EF_UART.c:268</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
@@ -795,7 +826,7 @@ function &lt;tt&gt;EF_UART_setDataSize&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md51"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 function &lt;tt&gt;EF_UART_setGclkEnable&lt;/tt&gt;</h2>
 <p><em>sets the GCLK enable bit in the UART register to a certain value</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a5b00ddd7df5f72886ea559da57a1b2bd">EF_UART_setGclkEnable</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
@@ -809,7 +840,7 @@ function &lt;tt&gt;EF_UART_setGclkEnable&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md52"></a>
+<h2><a class="anchor" id="autotoc_md53"></a>
 function &lt;tt&gt;EF_UART_setICR&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a7ecbcf6bc73a4a3392648372441a6133">EF_UART_setICR</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
@@ -836,7 +867,7 @@ function &lt;tt&gt;EF_UART_setICR&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md53"></a>
+<h2><a class="anchor" id="autotoc_md54"></a>
 function &lt;tt&gt;EF_UART_setIM&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#ad62de52cc6d11bb10dfdc275d899bb0e">EF_UART_setIM</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
@@ -863,7 +894,7 @@ function &lt;tt&gt;EF_UART_setIM&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md54"></a>
+<h2><a class="anchor" id="autotoc_md55"></a>
 function &lt;tt&gt;EF_UART_setMatchData&lt;/tt&gt;</h2>
 <p><em>sets the matchData to a certain value at which "MATCH" interrupt will be raised</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#af275d224f7dcde400258b8d93e1ed2ce">EF_UART_setMatchData</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
@@ -877,7 +908,7 @@ function &lt;tt&gt;EF_UART_setMatchData&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md55"></a>
+<h2><a class="anchor" id="autotoc_md56"></a>
 function &lt;tt&gt;EF_UART_setParityType&lt;/tt&gt;</h2>
 <p><em>sets the "parity" field in configuration register (could be none, odd, even, sticky 0 or sticky 1)</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a3af979ea01c716d9b6ca923b92cc5c31">EF_UART_setParityType</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
@@ -891,13 +922,13 @@ function &lt;tt&gt;EF_UART_setParityType&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md56"></a>
+<h2><a class="anchor" id="autotoc_md57"></a>
 function &lt;tt&gt;EF_UART_setPrescaler&lt;/tt&gt;</h2>
 <p><em>sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a1184834b408cdeed94623c691068a352">EF_UART_setPrescaler</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    uint32_t prescaler</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a1184834b408cdeed94623c691068a352"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a1184834b408cdeed94623c691068a352">EF_UART_setPrescaler</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_setPrescaler(EF_UART_TYPE_PTR uart, uint32_t prescaler)</div><div class="ttdoc">sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)</div><div class="ttdef"><b>Definition:</b> EF_UART.c:237</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a1184834b408cdeed94623c691068a352"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a1184834b408cdeed94623c691068a352">EF_UART_setPrescaler</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_setPrescaler(EF_UART_TYPE_PTR uart, uint32_t prescaler)</div><div class="ttdoc">sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)</div><div class="ttdef"><b>Definition:</b> EF_UART.c:236</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
@@ -905,7 +936,7 @@ function &lt;tt&gt;EF_UART_setPrescaler&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md57"></a>
+<h2><a class="anchor" id="autotoc_md58"></a>
 function &lt;tt&gt;EF_UART_setRxFIFOThreshold&lt;/tt&gt;</h2>
 <p><em>sets the RX FIFO threshold to a certain value at which "RXA" interrupt will be raised</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a8a2767ea0edab0500745dde177c1e58c">EF_UART_setRxFIFOThreshold</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
@@ -919,7 +950,7 @@ function &lt;tt&gt;EF_UART_setRxFIFOThreshold&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md58"></a>
+<h2><a class="anchor" id="autotoc_md59"></a>
 function &lt;tt&gt;EF_UART_setTimeoutBits&lt;/tt&gt;</h2>
 <p><em>sets the "timeout" field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#ad18a6e0c7701bdc66b483b1c53a3581d">EF_UART_setTimeoutBits</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
@@ -933,7 +964,7 @@ function &lt;tt&gt;EF_UART_setTimeoutBits&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md59"></a>
+<h2><a class="anchor" id="autotoc_md60"></a>
 function &lt;tt&gt;EF_UART_setTwoStopBitsSelect&lt;/tt&gt;</h2>
 <p><em>sets the "stp2" bit in configuration register (whether the stop boits are two or one)</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#ae2336d17bb87f77416fc9c6871b7cbdb">EF_UART_setTwoStopBitsSelect</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
@@ -947,7 +978,7 @@ function &lt;tt&gt;EF_UART_setTwoStopBitsSelect&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md60"></a>
+<h2><a class="anchor" id="autotoc_md61"></a>
 function &lt;tt&gt;EF_UART_setTxFIFOThreshold&lt;/tt&gt;</h2>
 <p><em>sets the TX FIFO threshold to a certain value at which "TXB" interrupt will be raised</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a30ba41191c67b5242173320ab54e1205">EF_UART_setTxFIFOThreshold</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
@@ -961,13 +992,13 @@ function &lt;tt&gt;EF_UART_setTxFIFOThreshold&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md61"></a>
+<h2><a class="anchor" id="autotoc_md62"></a>
 function &lt;tt&gt;EF_UART_spaceAvailable&lt;/tt&gt;</h2>
 <p><em>This function returns a flag indicating whether or not the transmit is available, i.e. the transmit FIFO is not full.</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a7739739a5ceeadcf591f3b387c729d0c">EF_UART_spaceAvailable</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    <span class="keywordtype">bool</span> *flag</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a7739739a5ceeadcf591f3b387c729d0c"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a7739739a5ceeadcf591f3b387c729d0c">EF_UART_spaceAvailable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_spaceAvailable(EF_UART_TYPE_PTR uart, bool *TXB_flag)</div><div class="ttdoc">This function returns a flag indicating whether or not the transmit is available, i....</div><div class="ttdef"><b>Definition:</b> EF_UART.c:724</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a7739739a5ceeadcf591f3b387c729d0c"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a7739739a5ceeadcf591f3b387c729d0c">EF_UART_spaceAvailable</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_spaceAvailable(EF_UART_TYPE_PTR uart, bool *TXB_flag)</div><div class="ttdoc">This function returns a flag indicating whether or not the transmit is available, i....</div><div class="ttdef"><b>Definition:</b> EF_UART.c:731</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
@@ -975,7 +1006,7 @@ function &lt;tt&gt;EF_UART_spaceAvailable&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md62"></a>
+<h2><a class="anchor" id="autotoc_md63"></a>
 function &lt;tt&gt;EF_UART_writeChar&lt;/tt&gt;</h2>
 <p><em>transmit a single character through uart</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#ace1db9bbc3b092890acff854cec1aa77">EF_UART_writeChar</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
@@ -989,13 +1020,13 @@ function &lt;tt&gt;EF_UART_writeChar&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md63"></a>
+<h2><a class="anchor" id="autotoc_md64"></a>
 function &lt;tt&gt;EF_UART_writeCharArr&lt;/tt&gt;</h2>
 <p><em>transmit an array of characters through uart</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a0f9ad65cbfe136ad4c4080612d578536">EF_UART_writeCharArr</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *char_arr</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a0f9ad65cbfe136ad4c4080612d578536"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a0f9ad65cbfe136ad4c4080612d578536">EF_UART_writeCharArr</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_writeCharArr(EF_UART_TYPE_PTR uart, const char *char_arr)</div><div class="ttdoc">transmit an array of characters through uart</div><div class="ttdef"><b>Definition:</b> EF_UART.c:607</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a0f9ad65cbfe136ad4c4080612d578536"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a0f9ad65cbfe136ad4c4080612d578536">EF_UART_writeCharArr</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_writeCharArr(EF_UART_TYPE_PTR uart, const char *char_arr)</div><div class="ttdoc">transmit an array of characters through uart</div><div class="ttdef"><b>Definition:</b> EF_UART.c:609</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
@@ -1003,14 +1034,14 @@ function &lt;tt&gt;EF_UART_writeCharArr&lt;/tt&gt;</h2>
 </ul>
 <p><b>Returns:</b></p>
 <p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
-<h2><a class="anchor" id="autotoc_md64"></a>
+<h2><a class="anchor" id="autotoc_md65"></a>
 function &lt;tt&gt;EF_UART_writeCharNonBlocking&lt;/tt&gt;</h2>
 <p><em>This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a8091314203111b165d1bad624159f8ba">EF_UART_writeCharNonBlocking</a> (</div>
 <div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
 <div class="line">    <span class="keywordtype">char</span> data,</div>
 <div class="line">    <span class="keywordtype">bool</span> *data_sent</div>
 <div class="line">) </div>
-<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a8091314203111b165d1bad624159f8ba"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a8091314203111b165d1bad624159f8ba">EF_UART_writeCharNonBlocking</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_writeCharNonBlocking(EF_UART_TYPE_PTR uart, char data, bool *data_sent)</div><div class="ttdoc">This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not ...</div><div class="ttdef"><b>Definition:</b> EF_UART.c:679</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a8091314203111b165d1bad624159f8ba"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a8091314203111b165d1bad624159f8ba">EF_UART_writeCharNonBlocking</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_writeCharNonBlocking(EF_UART_TYPE_PTR uart, char data, bool *data_sent)</div><div class="ttdoc">This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not ...</div><div class="ttdef"><b>Definition:</b> EF_UART.c:686</div></div>
 </div><!-- fragment --><p><b>Parameters:</b></p>
 <ul>
 <li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
@@ -1018,45 +1049,126 @@ function &lt;tt&gt;EF_UART_writeCharNonBlocking&lt;/tt&gt;</h2>
 <li><code>data_sent</code> A flag indicating if the data was sent successfully</li>
 </ul>
 <p><b>Returns:</b></p>
-<p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code</p>
-<h1><a class="anchor" id="autotoc_md65"></a>
-Macros Documentation</h1>
+<p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </p>
 <h2><a class="anchor" id="autotoc_md66"></a>
+function &lt;tt&gt;UART_Init&lt;/tt&gt;</h2>
+<p><em>This function initializes the UART with the specified parameters.</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a1dc3757c8ca6e8725ab78bd72373ec6b">UART_Init</a> (</div>
+<div class="line">    <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE_PTR</a> uart,</div>
+<div class="line">    uint32_t baud_rate,</div>
+<div class="line">    uint32_t bus_clock,</div>
+<div class="line">    uint32_t data_bits,</div>
+<div class="line">    <span class="keywordtype">bool</span> two_stop_bits,</div>
+<div class="line">    <span class="keyword">enum</span> <a class="code hl_enumeration" href="_e_f___u_a_r_t_8h.html#aab5cbb4a185bfe65a14e19beeaba4f10">parity_type</a> parity,</div>
+<div class="line">    uint32_t timeout,</div>
+<div class="line">    uint32_t rx_threshold,</div>
+<div class="line">    uint32_t tx_threshold</div>
+<div class="line">) </div>
+<div class="ttc" id="a_e_f___u_a_r_t_8c_html_a1dc3757c8ca6e8725ab78bd72373ec6b"><div class="ttname"><a href="_e_f___u_a_r_t_8c.html#a1dc3757c8ca6e8725ab78bd72373ec6b">UART_Init</a></div><div class="ttdeci">EF_DRIVER_STATUS UART_Init(EF_UART_TYPE_PTR uart, uint32_t baud_rate, uint32_t bus_clock, uint32_t data_bits, bool two_stop_bits, enum parity_type parity, uint32_t timeout, uint32_t rx_threshold, uint32_t tx_threshold)</div><div class="ttdoc">This function initializes the UART with the specified parameters.</div><div class="ttdef"><b>Definition:</b> EF_UART.c:786</div></div>
+</div><!-- fragment --><p><b>Parameters:</b></p>
+<ul>
+<li><code>uart</code> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</li>
+<li><code>baud_rate</code> The baud rate of the UART</li>
+<li><code>bus_clock</code> The bus clock frequency</li>
+<li><code>data_bits</code> The number of data bits</li>
+<li><code>two_stop_bits</code> A flag indicating if two stop bits are used</li>
+<li><code>parity</code> The parity mode</li>
+<li><code>timeout</code> The receiver timeout</li>
+<li><code>rx_threshold</code> The receive FIFO threshold</li>
+<li><code>tx_threshold</code> The transmit FIFO threshold</li>
+</ul>
+<p><b>Returns:</b></p>
+<p>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code</p>
+<h1><a class="anchor" id="autotoc_md67"></a>
+Macros Documentation</h1>
+<h2><a class="anchor" id="autotoc_md68"></a>
 define &lt;tt&gt;EF_UART_CFG_REG_MAX_VALUE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CFG_REG_MAX_VALUE ((uint32_t)0x00001FFF)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md67"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md69"></a>
 define &lt;tt&gt;EF_UART_CFG_REG_TIMEOUT_MAX_VALUE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CFG_REG_TIMEOUT_MAX_VALUE ((uint32_t)0x0000003F)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md68"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md70"></a>
 define &lt;tt&gt;EF_UART_CTRL_REG_MAX_VALUE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CTRL_REG_MAX_VALUE ((uint32_t)0x0000001F)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md69"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md71"></a>
 define &lt;tt&gt;EF_UART_DataLength_MAX_VALUE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_DataLength_MAX_VALUE ((uint32_t)0x00000009)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md70"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md72"></a>
 define &lt;tt&gt;EF_UART_DataLength_MIN_VALUE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_DataLength_MIN_VALUE ((uint32_t)0x00000005)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md71"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md73"></a>
 define &lt;tt&gt;EF_UART_IC_REG_MAX_VALUE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_IC_REG_MAX_VALUE ((uint32_t)0x000003FF)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md72"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md74"></a>
 define &lt;tt&gt;EF_UART_IM_REG_MAX_VALUE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_IM_REG_MAX_VALUE ((uint32_t)0x000003FF)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md73"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md75"></a>
 define &lt;tt&gt;EF_UART_MATCH_REG_MAX_VALUE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_MATCH_REG_MAX_VALUE ((uint32_t)0x00001FFF)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md74"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md76"></a>
 define &lt;tt&gt;EF_UART_PR_REG_MAX_VALUE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_PR_REG_MAX_VALUE ((uint32_t)0x0000FFFF)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md75"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md77"></a>
 define &lt;tt&gt;EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE ((uint32_t)0x0000000F)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md76"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md78"></a>
 define &lt;tt&gt;EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE ((uint32_t)0x0000000F)</span></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md77"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md79"></a>
+File EF_UART_example.h</h1>
+<h1><a class="anchor" id="autotoc_md80"></a>
+Functions</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadRight">Type   </th><th class="markdownTableHeadLeft">Name    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyRight">**EF\_DRIVER\_STATUS**   </td><td class="markdownTableBodyLeft">**EF\_UART\_example** (void) <br  />
+<em>Example Usage Example usage:</em>   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md81"></a>
+Functions Documentation</h1>
+<h2><a class="anchor" id="autotoc_md82"></a>
+function &lt;tt&gt;EF_UART_example&lt;/tt&gt;</h2>
+<p><em>Example Usage Example usage:</em> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t__example_8c.html#a8451a75f6339b51e6239c6c4d01ee4e0">EF_UART_example</a> (</div>
+<div class="line">    <span class="keywordtype">void</span></div>
+<div class="line">) </div>
+<div class="ttc" id="a_e_f___u_a_r_t__example_8c_html_a8451a75f6339b51e6239c6c4d01ee4e0"><div class="ttname"><a href="_e_f___u_a_r_t__example_8c.html#a8451a75f6339b51e6239c6c4d01ee4e0">EF_UART_example</a></div><div class="ttdeci">EF_DRIVER_STATUS EF_UART_example(void)</div><div class="ttdoc">Example Usage Example usage:</div><div class="ttdef"><b>Definition:</b> EF_UART_example.c:57</div></div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_e_f___u_a_r_t_8h.html">EF_UART.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define Example_UART_BASE_ADDRESS 0x40000000</span></div>
+<div class="line"><span class="preprocessor">#define UART0 ((EF_UART_TYPE_PTR)Example_UART_BASE_ADDRESS)</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> <a class="code hl_function" href="_e_f___u_a_r_t__example_8c.html#a8451a75f6339b51e6239c6c4d01ee4e0">EF_UART_example</a>(<span class="keywordtype">void</span>){</div>
+<div class="line">   <a class="code hl_typedef" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> status;</div>
+<div class="line"> </div>
+<div class="line">   <span class="comment">// Initialize UART with required configurations</span></div>
+<div class="line">   status = <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a1dc3757c8ca6e8725ab78bd72373ec6b">UART_Init</a>(<a class="code hl_define" href="_e_f___u_a_r_t__example_8c.html#a0508661f121639ffdee7de2353a0def2">UART0</a>, 9600, 16000000, 8, <span class="keyword">false</span>, <a class="code hl_enumvalue" href="_e_f___u_a_r_t_8h.html#aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc">EVEN</a>, 10, 4, 4);</div>
+<div class="line">   <span class="keywordflow">if</span> (status != <a class="code hl_define" href="_e_f___driver___common_8h.html#ab56c746d5d1672835c101f00f7c90b7c">EF_DRIVER_OK</a>) {</div>
+<div class="line">       <span class="keywordflow">return</span> status;</div>
+<div class="line">   }</div>
+<div class="line"> </div>
+<div class="line">   <span class="comment">// Transmit a message</span></div>
+<div class="line">   <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Hello, UART!\n&quot;</span>;</div>
+<div class="line">   status = <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#a0f9ad65cbfe136ad4c4080612d578536">EF_UART_writeCharArr</a>(<a class="code hl_define" href="_e_f___u_a_r_t__example_8c.html#a0508661f121639ffdee7de2353a0def2">UART0</a>, message);</div>
+<div class="line">   <span class="keywordflow">if</span> (status != <a class="code hl_define" href="_e_f___driver___common_8h.html#ab56c746d5d1672835c101f00f7c90b7c">EF_DRIVER_OK</a>) {</div>
+<div class="line">       <span class="comment">// Handle transmission error</span></div>
+<div class="line">       <span class="keywordflow">return</span> status;</div>
+<div class="line">   }</div>
+<div class="line"> </div>
+<div class="line">   <span class="comment">// Receive a message</span></div>
+<div class="line">   <span class="keywordtype">char</span> buffer[100];</div>
+<div class="line">   status = <a class="code hl_function" href="_e_f___u_a_r_t_8c.html#acb379fe3cc63f5e2eea43522c39823f7">EF_UART_readCharArr</a>(<a class="code hl_define" href="_e_f___u_a_r_t__example_8c.html#a0508661f121639ffdee7de2353a0def2">UART0</a>, buffer, <span class="keyword">sizeof</span>(buffer));</div>
+<div class="line">   <span class="keywordflow">if</span> (status != <a class="code hl_define" href="_e_f___driver___common_8h.html#ab56c746d5d1672835c101f00f7c90b7c">EF_DRIVER_OK</a>) {</div>
+<div class="line">       <span class="comment">// Handle reception error</span></div>
+<div class="line">       <span class="keywordflow">return</span> status;</div>
+<div class="line">   }</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_define" href="_e_f___driver___common_8h.html#ab56c746d5d1672835c101f00f7c90b7c">EF_DRIVER_OK</a>;</div>
+<div class="line">}</div>
+<div class="ttc" id="a_e_f___driver___common_8h_html_ab56c746d5d1672835c101f00f7c90b7c"><div class="ttname"><a href="_e_f___driver___common_8h.html#ab56c746d5d1672835c101f00f7c90b7c">EF_DRIVER_OK</a></div><div class="ttdeci">#define EF_DRIVER_OK</div><div class="ttdoc">Operation succeeded.</div><div class="ttdef"><b>Definition:</b> EF_Driver_Common.h:40</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t_8h_html"><div class="ttname"><a href="_e_f___u_a_r_t_8h.html">EF_UART.h</a></div><div class="ttdoc">C header file for UART APIs which contains the function prototypes.</div></div>
+<div class="ttc" id="a_e_f___u_a_r_t__example_8c_html_a0508661f121639ffdee7de2353a0def2"><div class="ttname"><a href="_e_f___u_a_r_t__example_8c.html#a0508661f121639ffdee7de2353a0def2">UART0</a></div><div class="ttdeci">#define UART0</div><div class="ttdef"><b>Definition:</b> EF_UART_example.c:38</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md83"></a>
 File EF_UART_regs.h</h1>
-<h1><a class="anchor" id="autotoc_md78"></a>
+<h1><a class="anchor" id="autotoc_md84"></a>
 Structures and Types</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -1071,7 +1183,7 @@ Structures and Types</h1>
 <td class="markdownTableBodyRight">struct   </td><td class="markdownTableBodyLeft">**\_EF\_UART\_TYPE\_** <br  />
    </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md79"></a>
+<h1><a class="anchor" id="autotoc_md85"></a>
 Macros</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -1209,16 +1321,16 @@ Macros</h1>
 <td class="markdownTableBodyRight">define   </td><td class="markdownTableBodyLeft">**\_\_W** volatile uint32_t<br  />
    </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md80"></a>
+<h1><a class="anchor" id="autotoc_md86"></a>
 Structures and Types Documentation</h1>
-<h2><a class="anchor" id="autotoc_md81"></a>
+<h2><a class="anchor" id="autotoc_md87"></a>
 typedef &lt;tt&gt;EF_UART_TYPE&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">_EF_UART_TYPE_</a> <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE</a>;</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md82"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md88"></a>
 typedef &lt;tt&gt;EF_UART_TYPE_PTR&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code hl_struct" href="struct___e_f___u_a_r_t___t_y_p_e__.html">EF_UART_TYPE</a>* <a class="code hl_typedef" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>;</div>
 <div class="ttc" id="a_e_f___u_a_r_t__regs_8h_html_ab605c9cde76c27dd58ec6cf73ca70893"><div class="ttname"><a href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a></div><div class="ttdeci">EF_UART_TYPE * EF_UART_TYPE_PTR</div><div class="ttdef"><b>Definition:</b> EF_UART_regs.h:111</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md83"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md89"></a>
 struct &lt;tt&gt;_EF_UART_TYPE_&lt;/tt&gt;</h2>
 <p>Variables:</p>
 <ul>
@@ -1265,138 +1377,138 @@ struct &lt;tt&gt;_EF_UART_TYPE_&lt;/tt&gt;</h2>
 <li>**\_\_R** reserved_3 <br  />
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md84"></a>
+<h1><a class="anchor" id="autotoc_md90"></a>
 Macros Documentation</h1>
-<h2><a class="anchor" id="autotoc_md85"></a>
+<h2><a class="anchor" id="autotoc_md91"></a>
 define &lt;tt&gt;EF_UART_BRK_FLAG&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_BRK_FLAG ((uint32_t)0x10)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md86"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md92"></a>
 define &lt;tt&gt;EF_UART_CFG_REG_PARITY_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CFG_REG_PARITY_BIT ((uint32_t)5)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md87"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md93"></a>
 define &lt;tt&gt;EF_UART_CFG_REG_PARITY_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CFG_REG_PARITY_MASK ((uint32_t)0xe0)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md88"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md94"></a>
 define &lt;tt&gt;EF_UART_CFG_REG_STP2_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CFG_REG_STP2_BIT ((uint32_t)4)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md89"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md95"></a>
 define &lt;tt&gt;EF_UART_CFG_REG_STP2_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CFG_REG_STP2_MASK ((uint32_t)0x10)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md90"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md96"></a>
 define &lt;tt&gt;EF_UART_CFG_REG_TIMEOUT_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CFG_REG_TIMEOUT_BIT ((uint32_t)8)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md91"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md97"></a>
 define &lt;tt&gt;EF_UART_CFG_REG_TIMEOUT_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CFG_REG_TIMEOUT_MASK ((uint32_t)0x3f)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md92"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md98"></a>
 define &lt;tt&gt;EF_UART_CFG_REG_WLEN_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CFG_REG_WLEN_BIT ((uint32_t)0)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md93"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md99"></a>
 define &lt;tt&gt;EF_UART_CFG_REG_WLEN_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CFG_REG_WLEN_MASK ((uint32_t)0xf)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md94"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md100"></a>
 define &lt;tt&gt;EF_UART_CTRL_REG_EN_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CTRL_REG_EN_BIT ((uint32_t)0)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md95"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md101"></a>
 define &lt;tt&gt;EF_UART_CTRL_REG_EN_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CTRL_REG_EN_MASK ((uint32_t)0x1)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md96"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md102"></a>
 define &lt;tt&gt;EF_UART_CTRL_REG_GFEN_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CTRL_REG_GFEN_BIT ((uint32_t)4)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md97"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md103"></a>
 define &lt;tt&gt;EF_UART_CTRL_REG_GFEN_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CTRL_REG_GFEN_MASK ((uint32_t)0x10)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md98"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md104"></a>
 define &lt;tt&gt;EF_UART_CTRL_REG_LPEN_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CTRL_REG_LPEN_BIT ((uint32_t)3)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md99"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md105"></a>
 define &lt;tt&gt;EF_UART_CTRL_REG_LPEN_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CTRL_REG_LPEN_MASK ((uint32_t)0x8)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md100"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md106"></a>
 define &lt;tt&gt;EF_UART_CTRL_REG_RXEN_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CTRL_REG_RXEN_BIT ((uint32_t)2)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md101"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md107"></a>
 define &lt;tt&gt;EF_UART_CTRL_REG_RXEN_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CTRL_REG_RXEN_MASK ((uint32_t)0x4)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md102"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md108"></a>
 define &lt;tt&gt;EF_UART_CTRL_REG_TXEN_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CTRL_REG_TXEN_BIT ((uint32_t)1)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md103"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md109"></a>
 define &lt;tt&gt;EF_UART_CTRL_REG_TXEN_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_CTRL_REG_TXEN_MASK ((uint32_t)0x2)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md104"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md110"></a>
 define &lt;tt&gt;EF_UART_FE_FLAG&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_FE_FLAG ((uint32_t)0x40)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md105"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md111"></a>
 define &lt;tt&gt;EF_UART_MATCH_FLAG&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_MATCH_FLAG ((uint32_t)0x20)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md106"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md112"></a>
 define &lt;tt&gt;EF_UART_OR_FLAG&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_OR_FLAG ((uint32_t)0x100)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md107"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md113"></a>
 define &lt;tt&gt;EF_UART_PRE_FLAG&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_PRE_FLAG ((uint32_t)0x80)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md108"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md114"></a>
 define &lt;tt&gt;EF_UART_RTO_FLAG&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_RTO_FLAG ((uint32_t)0x200)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md109"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md115"></a>
 define &lt;tt&gt;EF_UART_RXA_FLAG&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_RXA_FLAG ((uint32_t)0x8)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md110"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md116"></a>
 define &lt;tt&gt;EF_UART_RXF_FLAG&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_RXF_FLAG ((uint32_t)0x2)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md111"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md117"></a>
 define &lt;tt&gt;EF_UART_RX_FIFO_FLUSH_REG_FLUSH_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_RX_FIFO_FLUSH_REG_FLUSH_BIT ((uint32_t)0)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md112"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md118"></a>
 define &lt;tt&gt;EF_UART_RX_FIFO_FLUSH_REG_FLUSH_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_RX_FIFO_FLUSH_REG_FLUSH_MASK ((uint32_t)0x1)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md113"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md119"></a>
 define &lt;tt&gt;EF_UART_RX_FIFO_LEVEL_REG_LEVEL_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_RX_FIFO_LEVEL_REG_LEVEL_BIT ((uint32_t)0)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md114"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md120"></a>
 define &lt;tt&gt;EF_UART_RX_FIFO_LEVEL_REG_LEVEL_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_RX_FIFO_LEVEL_REG_LEVEL_MASK ((uint32_t)0xf)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md115"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md121"></a>
 define &lt;tt&gt;EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT ((uint32_t)0)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md116"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md122"></a>
 define &lt;tt&gt;EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK ((uint32_t)0xf)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md117"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md123"></a>
 define &lt;tt&gt;EF_UART_TXB_FLAG&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_TXB_FLAG ((uint32_t)0x4)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md118"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md124"></a>
 define &lt;tt&gt;EF_UART_TXE_FLAG&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_TXE_FLAG ((uint32_t)0x1)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md119"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md125"></a>
 define &lt;tt&gt;EF_UART_TX_FIFO_FLUSH_REG_FLUSH_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_TX_FIFO_FLUSH_REG_FLUSH_BIT ((uint32_t)0)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md120"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md126"></a>
 define &lt;tt&gt;EF_UART_TX_FIFO_FLUSH_REG_FLUSH_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_TX_FIFO_FLUSH_REG_FLUSH_MASK ((uint32_t)0x1)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md121"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md127"></a>
 define &lt;tt&gt;EF_UART_TX_FIFO_LEVEL_REG_LEVEL_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_TX_FIFO_LEVEL_REG_LEVEL_BIT ((uint32_t)0)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md122"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md128"></a>
 define &lt;tt&gt;EF_UART_TX_FIFO_LEVEL_REG_LEVEL_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_TX_FIFO_LEVEL_REG_LEVEL_MASK ((uint32_t)0xf)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md123"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md129"></a>
 define &lt;tt&gt;EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT ((uint32_t)0)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md124"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md130"></a>
 define &lt;tt&gt;EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK ((uint32_t)0xf)</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md125"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md131"></a>
 define &lt;tt&gt;IO_TYPES&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define IO_TYPES </span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md126"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md132"></a>
 define &lt;tt&gt;__R&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define __R volatile const uint32_t</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md127"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md133"></a>
 define &lt;tt&gt;__RW&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define __RW volatile       uint32_t</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md128"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md134"></a>
 define &lt;tt&gt;__W&lt;/tt&gt;</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define __W volatile       uint32_t</span></div>
 </div><!-- fragment --> </div></div><!-- contents -->

@@ -34,7 +34,7 @@
         <link refid="_e_f___driver___common_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -50,14 +50,20 @@
         </childnode>
       </node>
       <node id="5">
+        <label>EF_UART_example.c</label>
+        <link refid="_e_f___u_a_r_t__example_8c"/>
+      </node>
+      <node id="4">
+        <label>EF_UART_example.h</label>
+        <link refid="_e_f___u_a_r_t__example_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
         <label>EF_UART_regs.h</label>
         <link refid="_e_f___u_a_r_t__regs_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>example.c</label>
-        <link refid="example_8c"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">

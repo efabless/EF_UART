@@ -18,24 +18,22 @@
 
 
 /*! \file EF_UART_example.c
-    \brief C file containing an example of how to use the UART APIs
+    \brief C header file containing an example of how to use the UART APIs
     
 */
 
 
-#ifndef EF_UART_EXAMPLE_C
-#define EF_UART_EXAMPLE_C
+#ifndef EF_UART_EXAMPLE_H
+#define EF_UART_EXAMPLE_H
 
 /******************************************************************************
 * Includes
 ******************************************************************************/
-#include "EF_UART_example.h"
+#include "EF_UART.h"
 
 /******************************************************************************
 * File-Specific Macros and Constants
 ******************************************************************************/
-#define Example_UART_BASE_ADDRESS 0x40000000
-#define UART0 ((EF_UART_TYPE_PTR)Example_UART_BASE_ADDRESS)
 
 
 /******************************************************************************
@@ -54,7 +52,21 @@
 * Function Definitions
 ******************************************************************************/
 
-EF_DRIVER_STATUS EF_UART_example(void){
+
+
+/******************************************************************************
+* Example Usage
+******************************************************************************/
+
+/** @brief Example Usage
+ Example usage:
+ @code
+ #include "EF_UART.h"
+
+ #define Example_UART_BASE_ADDRESS 0x40000000
+ #define UART0 ((EF_UART_TYPE_PTR)Example_UART_BASE_ADDRESS)
+
+ EF_DRIVER_STATUS EF_UART_example(void){
     EF_DRIVER_STATUS status;
 
     // Initialize UART with required configurations
@@ -78,9 +90,11 @@ EF_DRIVER_STATUS EF_UART_example(void){
         // Handle reception error
         return status;
     }
-
-    return EF_DRIVER_OK;
-}
+     return EF_DRIVER_OK;
+ }
+ @endcode
+ */
+EF_DRIVER_STATUS EF_UART_example(void);
 
 /******************************************************************************
 * Static Function Definitions
@@ -88,7 +102,7 @@ EF_DRIVER_STATUS EF_UART_example(void){
 
 
 
-#endif // EF_UART_EXAMPLE_C
+#endif // EF_UART_EXAMPLE_H
 
 /******************************************************************************
 * End of File

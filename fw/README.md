@@ -4,6 +4,7 @@
 
 - [EF_Driver_Common.h](#file-ef_driver_commonh)
 - [EF_UART.h](#file-ef_uarth)
+- [EF_UART_example.h](#file-ef_uart_exampleh)
 - [EF_UART_regs.h](#file-ef_uart_regsh)
 
 ## File EF_Driver_Common.h
@@ -135,6 +136,7 @@ _C header file for UART APIs which contains the function prototypes._
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_getTxCount**](#function-ef_uart_gettxcount) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, uint32\_t \*TX\_FIFO\_LEVEL\_value) <br>_returns the current level of the TX FIFO (the number of bytes in the FIFO)_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_getTxFIFOThreshold**](#function-ef_uart_gettxfifothreshold) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, uint32\_t \*TX\_FIFO\_THRESHOLD\_value) <br>_returns the current value of the TX FIFO threshold_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_readChar**](#function-ef_uart_readchar) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uar, char \*RXDATA\_value) <br>_recieve a single character through uart_ |
+|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_readCharArr**](#function-ef_uart_readchararr) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, char \*buffer, uint32\_t buffer\_size) <br> |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_readCharNonBlocking**](#function-ef_uart_readcharnonblocking) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, char \*RXDATA\_value, bool \*data\_available) <br>_This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code._ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_setCTRL**](#function-ef_uart_setctrl) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, uint32\_t value) <br> |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_setConfig**](#function-ef_uart_setconfig) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, uint32\_t config) <br> |
@@ -153,6 +155,7 @@ _C header file for UART APIs which contains the function prototypes._
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_writeChar**](#function-ef_uart_writechar) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, char data) <br>_transmit a single character through uart_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_writeCharArr**](#function-ef_uart_writechararr) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, const char \*char\_arr) <br>_transmit an array of characters through uart_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_writeCharNonBlocking**](#function-ef_uart_writecharnonblocking) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, char data, bool \*data\_sent) <br>_This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code._ |
+|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**UART\_Init**](#function-uart_init) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, uint32\_t baud\_rate, uint32\_t bus\_clock, uint32\_t data\_bits, bool two\_stop\_bits, enum [**parity\_type**](#enum-parity_type) parity, uint32\_t timeout, uint32\_t rx\_threshold, uint32\_t tx\_threshold) <br>_This function initializes the UART with the specified parameters._ |
 
 ## Macros
 
@@ -734,6 +737,41 @@ EF_DRIVER_STATUS EF_UART_readChar (
 **Returns:**
 
 status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
+### function `EF_UART_readCharArr`
+
+```c
+EF_DRIVER_STATUS EF_UART_readCharArr (
+    EF_UART_TYPE_PTR uart,
+    char *buffer,
+    uint32_t buffer_size
+) 
+```
+
+
+This function receives a string message from the UART. The message is stored in a buffer with a specified size. 
+
+**Note:**
+
+This is a blocking function and can only terminate under the following conditions:
+
+* The buffer is full
+* A "\n" character is received
+* An error is detected
+
+
+
+
+**Parameters:**
+
+
+* `uart` An [**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) , which points to the base memory address of UART registers.[**EF\_UART\_TYPE**](#typedef-ef_uart_type) is a structure that contains the UART registers.
+* `buffer` The buffer to store the received message 
+* `buffer_size` The size of the buffer
+
+
+**Returns:**
+
+status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
 ### function `EF_UART_readCharNonBlocking`
 
 _This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code._
@@ -1161,6 +1199,41 @@ EF_DRIVER_STATUS EF_UART_writeCharNonBlocking (
 **Returns:**
 
 status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
+### function `UART_Init`
+
+_This function initializes the UART with the specified parameters._
+```c
+EF_DRIVER_STATUS UART_Init (
+    EF_UART_TYPE_PTR uart,
+    uint32_t baud_rate,
+    uint32_t bus_clock,
+    uint32_t data_bits,
+    bool two_stop_bits,
+    enum parity_type parity,
+    uint32_t timeout,
+    uint32_t rx_threshold,
+    uint32_t tx_threshold
+) 
+```
+
+
+**Parameters:**
+
+
+* `uart` An [**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) , which points to the base memory address of UART registers.[**EF\_UART\_TYPE**](#typedef-ef_uart_type) is a structure that contains the UART registers.
+* `baud_rate` The baud rate of the UART 
+* `bus_clock` The bus clock frequency 
+* `data_bits` The number of data bits 
+* `two_stop_bits` A flag indicating if two stop bits are used 
+* `parity` The parity mode 
+* `timeout` The receiver timeout 
+* `rx_threshold` The receive FIFO threshold 
+* `tx_threshold` The transmit FIFO threshold
+
+
+**Returns:**
+
+status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
 
 ## Macros Documentation
 
@@ -1229,6 +1302,68 @@ status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : ret
 ```c
 #define EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE ((uint32_t)0x0000000F)
 ```
+
+
+## File EF_UART_example.h
+
+
+
+
+
+
+## Functions
+
+| Type | Name |
+| ---: | :--- |
+|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_example**](#function-ef_uart_example) (void) <br>_Example Usage Example usage:_ |
+
+
+
+## Functions Documentation
+
+### function `EF_UART_example`
+
+_Example Usage Example usage:_
+```c
+EF_DRIVER_STATUS EF_UART_example (
+    void
+) 
+```
+
+
+````cpp
+#include "EF_UART.h"
+
+#define Example_UART_BASE_ADDRESS 0x40000000
+#define UART0 ((EF_UART_TYPE_PTR)Example_UART_BASE_ADDRESS)
+
+EF_DRIVER_STATUS EF_UART_example(void){
+   EF_DRIVER_STATUS status;
+
+   // Initialize UART with required configurations
+   status = UART_Init(UART0, 9600, 16000000, 8, false, EVEN, 10, 4, 4);
+   if (status != EF_DRIVER_OK) {
+       return status;
+   }
+
+   // Transmit a message
+   const char *message = "Hello, UART!\n";
+   status = EF_UART_writeCharArr(UART0, message);
+   if (status != EF_DRIVER_OK) {
+       // Handle transmission error
+       return status;
+   }
+
+   // Receive a message
+   char buffer[100];
+   status = EF_UART_readCharArr(UART0, buffer, sizeof(buffer));
+   if (status != EF_DRIVER_OK) {
+       // Handle reception error
+       return status;
+   }
+    return EF_DRIVER_OK;
+}
+````
 
 
 ## File EF_UART_regs.h

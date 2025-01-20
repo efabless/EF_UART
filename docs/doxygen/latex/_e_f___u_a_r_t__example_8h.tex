@@ -1,0 +1,57 @@
+\hypertarget{_e_f___u_a_r_t__example_8h}{}\doxysection{EF\+\_\+\+UART\+\_\+example.\+h File Reference}
+\label{_e_f___u_a_r_t__example_8h}\index{EF\_UART\_example.h@{EF\_UART\_example.h}}
+{\ttfamily \#include \char`\"{}EF\+\_\+\+UART.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t__example_8h_a8451a75f6339b51e6239c6c4d01ee4e0}{EF\+\_\+\+UART\+\_\+example}} (void)
+\begin{DoxyCompactList}\small\item\em Example Usage Example usage\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_e_f___u_a_r_t__example_8h_a8451a75f6339b51e6239c6c4d01ee4e0}\label{_e_f___u_a_r_t__example_8h_a8451a75f6339b51e6239c6c4d01ee4e0}} 
+\index{EF\_UART\_example.h@{EF\_UART\_example.h}!EF\_UART\_example@{EF\_UART\_example}}
+\index{EF\_UART\_example@{EF\_UART\_example}!EF\_UART\_example.h@{EF\_UART\_example.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_example()}{EF\_UART\_example()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+example (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Example Usage Example usage\+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_f___u_a_r_t_8h}{EF\_UART.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ Example\_UART\_BASE\_ADDRESS\ 0x40000000}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UART0\ ((EF\_UART\_TYPE\_PTR)Example\_UART\_BASE\_ADDRESS)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t__example_8c_a8451a75f6339b51e6239c6c4d01ee4e0}{EF\_UART\_example}}(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{\ \ \ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ status;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{//\ Initialize\ UART\ with\ required\ configurations}}
+\DoxyCodeLine{\ \ \ status\ =\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a1dc3757c8ca6e8725ab78bd72373ec6b}{UART\_Init}}(\mbox{\hyperlink{_e_f___u_a_r_t__example_8c_a0508661f121639ffdee7de2353a0def2}{UART0}},\ 9600,\ 16000000,\ 8,\ \textcolor{keyword}{false},\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc}{EVEN}},\ 10,\ 4,\ 4);}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{_e_f___driver___common_8h_ab56c746d5d1672835c101f00f7c90b7c}{EF\_DRIVER\_OK}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{\ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{//\ Transmit\ a\ message}}
+\DoxyCodeLine{\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *message\ =\ \textcolor{stringliteral}{"{}Hello,\ UART!\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ status\ =\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a0f9ad65cbfe136ad4c4080612d578536}{EF\_UART\_writeCharArr}}(\mbox{\hyperlink{_e_f___u_a_r_t__example_8c_a0508661f121639ffdee7de2353a0def2}{UART0}},\ message);}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{_e_f___driver___common_8h_ab56c746d5d1672835c101f00f7c90b7c}{EF\_DRIVER\_OK}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ transmission\ error}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{\ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{//\ Receive\ a\ message}}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{char}\ buffer[100];}
+\DoxyCodeLine{\ \ \ status\ =\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_acb379fe3cc63f5e2eea43522c39823f7}{EF\_UART\_readCharArr}}(\mbox{\hyperlink{_e_f___u_a_r_t__example_8c_a0508661f121639ffdee7de2353a0def2}{UART0}},\ buffer,\ \textcolor{keyword}{sizeof}(buffer));}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{_e_f___driver___common_8h_ab56c746d5d1672835c101f00f7c90b7c}{EF\_DRIVER\_OK}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ reception\ error}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{\ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_e_f___driver___common_8h_ab56c746d5d1672835c101f00f7c90b7c}{EF\_DRIVER\_OK}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

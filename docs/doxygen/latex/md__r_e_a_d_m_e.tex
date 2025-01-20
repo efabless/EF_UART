@@ -3,6 +3,7 @@
 \begin{DoxyItemize}
 \item EF\+\_\+\+Driver\+\_\+\+Common.h
 \item EF\+\_\+\+UART.h
+\item EF\+\_\+\+UART\+\_\+example.h
 \item EF\+\_\+\+UART\+\_\+regs.h
 \end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{File EF\+\_\+\+Driver\+\_\+\+Common.\+h}\label{md__r_e_a_d_m_e_autotoc_md2}
 {\itshape C header file for common driver definitions and types.}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Structures and Types}\label{md__r_e_a_d_m_e_autotoc_md3}
@@ -171,6 +172,8 @@
 {\itshape returns the current value of the TX FIFO threshold}    \\\cline{1-2}
 \PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+read\+Char$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ uar, char $\ast$\+RXDATA\+\_\+value) ~\newline
 {\itshape recieve a single character through uart}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+read\+Char\+Arr$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ uart, char $\ast$buffer, uint32\+\_\+t buffer\+\_\+size) ~\newline
+    \\\cline{1-2}
 \PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+read\+Char\+Non\+Blocking$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ uart, char $\ast$\+RXDATA\+\_\+value, bool $\ast$data\+\_\+available) ~\newline
 {\itshape This is a non-\/blocking function that reads a character from the UART receive FIFO if data is available and returns a status code.}    \\\cline{1-2}
 \PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+set\+CTRL$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ uart, uint32\+\_\+t value) ~\newline
@@ -206,7 +209,9 @@
 \PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+write\+Char\+Arr$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ uart, const char $\ast$char\+\_\+arr) ~\newline
 {\itshape transmit an array of characters through uart}    \\\cline{1-2}
 \PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+write\+Char\+Non\+Blocking$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ uart, char data, bool $\ast$data\+\_\+sent) ~\newline
-{\itshape This is a non-\/blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.}   \\\cline{1-2}
+{\itshape This is a non-\/blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.}    \\\cline{1-2}
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+UART\textbackslash{}\+\_\+\+Init$\ast$$\ast$ ($\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ uart, uint32\+\_\+t baud\+\_\+rate, uint32\+\_\+t bus\+\_\+clock, uint32\+\_\+t data\+\_\+bits, bool two\+\_\+stop\+\_\+bits, enum $\ast$$\ast$parity\textbackslash{}\+\_\+type$\ast$$\ast$ parity, uint32\+\_\+t timeout, uint32\+\_\+t rx\+\_\+threshold, uint32\+\_\+t tx\+\_\+threshold) ~\newline
+{\itshape This function initializes the UART with the specified parameters.}   \\\cline{1-2}
 \end{longtabu}
 \hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysection{Macros}\label{md__r_e_a_d_m_e_autotoc_md18}
 \tabulinesep=1mm
@@ -809,7 +814,43 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md47}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+read\+Char\+Non\+Blocking$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md47}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md47}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+read\+Char\+Arr$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md47}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_acb379fe3cc63f5e2eea43522c39823f7}{EF\_UART\_readCharArr}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ *buffer,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ buffer\_size}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+This function receives a string message from the UART. The message is stored in a buffer with a specified size.
+
+{\bfseries{Note\+:}}
+
+This is a blocking function and can only terminate under the following conditions\+:
+
+
+\begin{DoxyItemize}
+\item The buffer is full
+\item A \char`\"{}\textbackslash{}n\char`\"{} character is received
+\item An error is detected
+\end{DoxyItemize}
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ , which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily buffer} The buffer to store the received message
+\item {\ttfamily buffer\+\_\+size} The size of the buffer
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md48}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+read\+Char\+Non\+Blocking$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md48}
 {\itshape This is a non-\/blocking function that reads a character from the UART receive FIFO if data is available and returns a status code.} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_aaa93d9c62ca6e64a622bb32e86fb2dc0}{EF\_UART\_readCharNonBlocking}}\ (}
@@ -832,7 +873,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md48}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+CTRL$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md48}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md49}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+CTRL$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md49}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ad36fee036e144937af3eed59eea101c6}{EF\_UART\_setCTRL}}\ (}
@@ -864,7 +905,7 @@ sets the control register to a certain value where
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md49}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Config$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md49}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md50}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Config$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md50}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a97261ae27ea5d029ecab9b25f2f45ac9}{EF\_UART\_setConfig}}\ (}
@@ -895,7 +936,7 @@ sets the configuration register to a certain value where
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md50}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Data\+Size$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md50}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md51}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Data\+Size$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md51}
 {\itshape sets the Data Size (Data word length\+: 5-\/9 bits ) by setting the \char`\"{}wlen\char`\"{} field in configuration register} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a04a859ae5492ec11e9f3b418337148e1}{EF\_UART\_setDataSize}}\ (}
@@ -916,7 +957,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md51}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Gclk\+Enable$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md51}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md52}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Gclk\+Enable$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md52}
 {\itshape sets the GCLK enable bit in the UART register to a certain value} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a5b00ddd7df5f72886ea559da57a1b2bd}{EF\_UART\_setGclkEnable}}\ (}
@@ -937,7 +978,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md52}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+ICR$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md52}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md53}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+ICR$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md53}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a7ecbcf6bc73a4a3392648372441a6133}{EF\_UART\_setICR}}\ (}
@@ -974,7 +1015,7 @@ sets the value of the Interrupts Clear Register; write 1 to clear the flag
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md53}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+IM$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md53}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md54}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+IM$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md54}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ad62de52cc6d11bb10dfdc275d899bb0e}{EF\_UART\_setIM}}\ (}
@@ -1011,7 +1052,7 @@ sets the value of the Interrupts Masking Register; which enable and disables int
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md54}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Match\+Data$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md54}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md55}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Match\+Data$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md55}
 {\itshape sets the match\+Data to a certain value at which \char`\"{}\+MATCH\char`\"{} interrupt will be raised} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_af275d224f7dcde400258b8d93e1ed2ce}{EF\_UART\_setMatchData}}\ (}
@@ -1032,7 +1073,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md55}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Parity\+Type$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md55}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md56}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Parity\+Type$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md56}
 {\itshape sets the \char`\"{}parity\char`\"{} field in configuration register (could be none, odd, even, sticky 0 or sticky 1)} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a3af979ea01c716d9b6ca923b92cc5c31}{EF\_UART\_setParityType}}\ (}
@@ -1053,7 +1094,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md56}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Prescaler$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md56}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md57}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Prescaler$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md57}
 {\itshape sets the prescaler to a certain value where Baud\+\_\+rate = Bus\+\_\+\+Clock\+\_\+\+Freq/((Prescaler+1)$\ast$16)} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a1184834b408cdeed94623c691068a352}{EF\_UART\_setPrescaler}}\ (}
@@ -1074,7 +1115,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md57}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Rx\+FIFOThreshold$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md57}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md58}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Rx\+FIFOThreshold$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md58}
 {\itshape sets the RX FIFO threshold to a certain value at which \char`\"{}\+RXA\char`\"{} interrupt will be raised} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a8a2767ea0edab0500745dde177c1e58c}{EF\_UART\_setRxFIFOThreshold}}\ (}
@@ -1095,7 +1136,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md58}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Timeout\+Bits$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md58}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md59}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Timeout\+Bits$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md59}
 {\itshape sets the \char`\"{}timeout\char`\"{} field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ad18a6e0c7701bdc66b483b1c53a3581d}{EF\_UART\_setTimeoutBits}}\ (}
@@ -1116,7 +1157,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md59}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Two\+Stop\+Bits\+Select$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md59}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md60}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Two\+Stop\+Bits\+Select$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md60}
 {\itshape sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop boits are two or one)} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ae2336d17bb87f77416fc9c6871b7cbdb}{EF\_UART\_setTwoStopBitsSelect}}\ (}
@@ -1137,7 +1178,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md60}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Tx\+FIFOThreshold$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md60}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md61}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+set\+Tx\+FIFOThreshold$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md61}
 {\itshape sets the TX FIFO threshold to a certain value at which \char`\"{}\+TXB\char`\"{} interrupt will be raised} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a30ba41191c67b5242173320ab54e1205}{EF\_UART\_setTxFIFOThreshold}}\ (}
@@ -1158,7 +1199,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md61}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+space\+Available$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md61}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md62}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+space\+Available$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md62}
 {\itshape This function returns a flag indicating whether or not the transmit is available, i.\+e. the transmit FIFO is not full.} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a7739739a5ceeadcf591f3b387c729d0c}{EF\_UART\_spaceAvailable}}\ (}
@@ -1179,7 +1220,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md62}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+write\+Char$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md62}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md63}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+write\+Char$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md63}
 {\itshape transmit a single character through uart} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_ace1db9bbc3b092890acff854cec1aa77}{EF\_UART\_writeChar}}\ (}
@@ -1200,7 +1241,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md63}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+write\+Char\+Arr$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md63}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md64}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+write\+Char\+Arr$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md64}
 {\itshape transmit an array of characters through uart} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a0f9ad65cbfe136ad4c4080612d578536}{EF\_UART\_writeCharArr}}\ (}
@@ -1221,7 +1262,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md64}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+write\+Char\+Non\+Blocking$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md64}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md65}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+write\+Char\+Non\+Blocking$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md65}
 {\itshape This is a non-\/blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a8091314203111b165d1bad624159f8ba}{EF\_UART\_writeCharNonBlocking}}\ (}
@@ -1244,75 +1285,171 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 
 {\bfseries{Returns\+:}}
 
-status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code\hypertarget{md__r_e_a_d_m_e_autotoc_md65}{}\doxysection{Macros Documentation}\label{md__r_e_a_d_m_e_autotoc_md65}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md66}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md66}
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code \hypertarget{md__r_e_a_d_m_e_autotoc_md66}{}\doxysubsection{function $<$tt$>$\+UART\+\_\+\+Init$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md66}
+{\itshape This function initializes the UART with the specified parameters.} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a1dc3757c8ca6e8725ab78bd72373ec6b}{UART\_Init}}\ (}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE\_PTR}}\ uart,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ baud\_rate,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ bus\_clock,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ data\_bits,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{bool}\ two\_stop\_bits,}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parity\_type}}\ parity,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ timeout,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ rx\_threshold,}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ tx\_threshold}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+{\bfseries{Parameters\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily uart} An $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+\+PTR$\ast$$\ast$ , which points to the base memory address of UART registers.$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE$\ast$$\ast$ is a structure that contains the UART registers.
+\item {\ttfamily baud\+\_\+rate} The baud rate of the UART
+\item {\ttfamily bus\+\_\+clock} The bus clock frequency
+\item {\ttfamily data\+\_\+bits} The number of data bits
+\item {\ttfamily two\+\_\+stop\+\_\+bits} A flag indicating if two stop bits are used
+\item {\ttfamily parity} The parity mode
+\item {\ttfamily timeout} The receiver timeout
+\item {\ttfamily rx\+\_\+threshold} The receive FIFO threshold
+\item {\ttfamily tx\+\_\+threshold} The transmit FIFO threshold
+\end{DoxyItemize}
+
+{\bfseries{Returns\+:}}
+
+status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$ \+: returns a success or error code\hypertarget{md__r_e_a_d_m_e_autotoc_md67}{}\doxysection{Macros Documentation}\label{md__r_e_a_d_m_e_autotoc_md67}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md68}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md68}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_MAX\_VALUE\ ((uint32\_t)0x00001FFF)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md67}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md67}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md69}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md69}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE\ ((uint32\_t)0x0000003F)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md68}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md68}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md70}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md70}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_MAX\_VALUE\ ((uint32\_t)0x0000001F)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md69}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+Data\+Length\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md69}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md71}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+Data\+Length\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md71}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_DataLength\_MAX\_VALUE\ ((uint32\_t)0x00000009)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md70}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+Data\+Length\+\_\+\+MIN\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md70}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md72}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+Data\+Length\+\_\+\+MIN\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md72}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_DataLength\_MIN\_VALUE\ ((uint32\_t)0x00000005)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md71}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+IC\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md71}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md73}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+IC\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md73}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_IC\_REG\_MAX\_VALUE\ ((uint32\_t)0x000003FF)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md72}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+IM\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md72}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md74}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+IM\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md74}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_IM\_REG\_MAX\_VALUE\ ((uint32\_t)0x000003FF)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md73}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md73}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md75}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md75}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_MATCH\_REG\_MAX\_VALUE\ ((uint32\_t)0x00001FFF)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md74}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md74}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md76}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md76}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_PR\_REG\_MAX\_VALUE\ ((uint32\_t)0x0000FFFF)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md75}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md75}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md77}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md77}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE\ ((uint32\_t)0x0000000F)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md76}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md76}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md78}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md78}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE\ ((uint32\_t)0x0000000F)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md77}{}\doxysection{File EF\+\_\+\+UART\+\_\+regs.\+h}\label{md__r_e_a_d_m_e_autotoc_md77}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md78}{}\doxysection{Structures and Types}\label{md__r_e_a_d_m_e_autotoc_md78}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md79}{}\doxysection{File EF\+\_\+\+UART\+\_\+example.\+h}\label{md__r_e_a_d_m_e_autotoc_md79}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md80}{}\doxysection{Functions}\label{md__r_e_a_d_m_e_autotoc_md80}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbackslash{}\+\_\+\+STATUS$\ast$$\ast$   &$\ast$$\ast$\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+example$\ast$$\ast$ (void) ~\newline
+{\itshape Example Usage Example usage\+:}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md81}{}\doxysection{Functions Documentation}\label{md__r_e_a_d_m_e_autotoc_md81}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md82}{}\doxysubsection{function $<$tt$>$\+EF\+\_\+\+UART\+\_\+example$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md82}
+{\itshape Example Usage Example usage\+:} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t__example_8c_a8451a75f6339b51e6239c6c4d01ee4e0}{EF\_UART\_example}}\ (}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{)\ }
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_f___u_a_r_t_8h}{EF\_UART.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ Example\_UART\_BASE\_ADDRESS\ 0x40000000}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UART0\ ((EF\_UART\_TYPE\_PTR)Example\_UART\_BASE\_ADDRESS)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ \mbox{\hyperlink{_e_f___u_a_r_t__example_8c_a8451a75f6339b51e6239c6c4d01ee4e0}{EF\_UART\_example}}(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{\ \ \ \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\_DRIVER\_STATUS}}\ status;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{//\ Initialize\ UART\ with\ required\ configurations}}
+\DoxyCodeLine{\ \ \ status\ =\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a1dc3757c8ca6e8725ab78bd72373ec6b}{UART\_Init}}(\mbox{\hyperlink{_e_f___u_a_r_t__example_8c_a0508661f121639ffdee7de2353a0def2}{UART0}},\ 9600,\ 16000000,\ 8,\ \textcolor{keyword}{false},\ \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc}{EVEN}},\ 10,\ 4,\ 4);}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{_e_f___driver___common_8h_ab56c746d5d1672835c101f00f7c90b7c}{EF\_DRIVER\_OK}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{\ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{//\ Transmit\ a\ message}}
+\DoxyCodeLine{\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *message\ =\ \textcolor{stringliteral}{"{}Hello,\ UART!\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ status\ =\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_a0f9ad65cbfe136ad4c4080612d578536}{EF\_UART\_writeCharArr}}(\mbox{\hyperlink{_e_f___u_a_r_t__example_8c_a0508661f121639ffdee7de2353a0def2}{UART0}},\ message);}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{_e_f___driver___common_8h_ab56c746d5d1672835c101f00f7c90b7c}{EF\_DRIVER\_OK}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ transmission\ error}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{\ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{//\ Receive\ a\ message}}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{char}\ buffer[100];}
+\DoxyCodeLine{\ \ \ status\ =\ \mbox{\hyperlink{_e_f___u_a_r_t_8c_acb379fe3cc63f5e2eea43522c39823f7}{EF\_UART\_readCharArr}}(\mbox{\hyperlink{_e_f___u_a_r_t__example_8c_a0508661f121639ffdee7de2353a0def2}{UART0}},\ buffer,\ \textcolor{keyword}{sizeof}(buffer));}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ \mbox{\hyperlink{_e_f___driver___common_8h_ab56c746d5d1672835c101f00f7c90b7c}{EF\_DRIVER\_OK}})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ reception\ error}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{\ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_e_f___driver___common_8h_ab56c746d5d1672835c101f00f7c90b7c}{EF\_DRIVER\_OK}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md83}{}\doxysection{File EF\+\_\+\+UART\+\_\+regs.\+h}\label{md__r_e_a_d_m_e_autotoc_md83}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md84}{}\doxysection{Structures and Types}\label{md__r_e_a_d_m_e_autotoc_md84}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
@@ -1330,7 +1467,7 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 \PBS\raggedleft struct   &$\ast$$\ast$\textbackslash{}\+\_\+\+EF\textbackslash{}\+\_\+\+UART\textbackslash{}\+\_\+\+TYPE\textbackslash{}\+\_\+$\ast$$\ast$ ~\newline
    \\\cline{1-2}
 \end{longtabu}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md79}{}\doxysection{Macros}\label{md__r_e_a_d_m_e_autotoc_md79}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md85}{}\doxysection{Macros}\label{md__r_e_a_d_m_e_autotoc_md85}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
@@ -1430,20 +1567,20 @@ status A value of type $\ast$$\ast$\+EF\textbackslash{}\+\_\+\+DRIVER\textbacksl
 \PBS\raggedleft define   &$\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+W$\ast$$\ast$ volatile uint32\+\_\+t~\newline
    \\\cline{1-2}
 \end{longtabu}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md80}{}\doxysection{Structures and Types Documentation}\label{md__r_e_a_d_m_e_autotoc_md80}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md81}{}\doxysubsection{typedef $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TYPE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md81}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md86}{}\doxysection{Structures and Types Documentation}\label{md__r_e_a_d_m_e_autotoc_md86}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md87}{}\doxysubsection{typedef $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TYPE$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md87}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{\_EF\_UART\_TYPE\_}}\ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}};}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md82}{}\doxysubsection{typedef $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md82}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md88}{}\doxysubsection{typedef $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md88}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{EF\_UART\_TYPE}}*\ \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\_UART\_TYPE\_PTR}};}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md83}{}\doxysubsection{struct $<$tt$>$\+\_\+\+EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md83}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md89}{}\doxysubsection{struct $<$tt$>$\+\_\+\+EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md89}
 Variables\+:
 
 
@@ -1490,266 +1627,266 @@ Variables\+:
 
 \item $\ast$$\ast$\textbackslash{}\+\_\+\textbackslash{}\+\_\+R$\ast$$\ast$ reserved\+\_\+3 ~\newline
 
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md84}{}\doxysection{Macros Documentation}\label{md__r_e_a_d_m_e_autotoc_md84}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md85}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+BRK\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md85}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md90}{}\doxysection{Macros Documentation}\label{md__r_e_a_d_m_e_autotoc_md90}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md91}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+BRK\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md91}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_BRK\_FLAG\ ((uint32\_t)0x10)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md86}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md86}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md92}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md92}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_PARITY\_BIT\ ((uint32\_t)5)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md87}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md87}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md93}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+PARITY\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md93}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_PARITY\_MASK\ ((uint32\_t)0xe0)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md88}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md88}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md94}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md94}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_STP2\_BIT\ ((uint32\_t)4)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md89}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md89}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md95}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+STP2\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md95}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_STP2\_MASK\ ((uint32\_t)0x10)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md90}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md90}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md96}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md96}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_TIMEOUT\_BIT\ ((uint32\_t)8)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md91}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md91}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md97}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md97}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_TIMEOUT\_MASK\ ((uint32\_t)0x3f)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md92}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md92}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md98}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md98}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_WLEN\_BIT\ ((uint32\_t)0)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md93}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md93}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md99}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md99}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CFG\_REG\_WLEN\_MASK\ ((uint32\_t)0xf)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md94}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md94}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md100}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md100}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_EN\_BIT\ ((uint32\_t)0)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md95}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md95}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md101}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md101}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_EN\_MASK\ ((uint32\_t)0x1)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md96}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md96}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md102}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md102}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_GFEN\_BIT\ ((uint32\_t)4)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md97}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md97}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md103}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md103}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_GFEN\_MASK\ ((uint32\_t)0x10)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md98}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md98}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md104}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md104}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_LPEN\_BIT\ ((uint32\_t)3)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md99}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md99}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md105}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md105}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_LPEN\_MASK\ ((uint32\_t)0x8)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md100}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md100}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md106}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md106}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_RXEN\_BIT\ ((uint32\_t)2)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md101}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md101}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md107}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+RXEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md107}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_RXEN\_MASK\ ((uint32\_t)0x4)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md102}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md102}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md108}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md108}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_TXEN\_BIT\ ((uint32\_t)1)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md103}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md103}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md109}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+TXEN\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md109}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_CTRL\_REG\_TXEN\_MASK\ ((uint32\_t)0x2)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md104}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+FE\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md104}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md110}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+FE\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md110}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_FE\_FLAG\ ((uint32\_t)0x40)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md105}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md105}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md111}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md111}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_MATCH\_FLAG\ ((uint32\_t)0x20)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md106}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+OR\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md106}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md112}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+OR\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md112}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_OR\_FLAG\ ((uint32\_t)0x100)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md107}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+PRE\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md107}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md113}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+PRE\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md113}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_PRE\_FLAG\ ((uint32\_t)0x80)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md108}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RTO\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md108}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md114}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RTO\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md114}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RTO\_FLAG\ ((uint32\_t)0x200)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md109}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RXA\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md109}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md115}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RXA\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md115}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RXA\_FLAG\ ((uint32\_t)0x8)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md110}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RXF\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md110}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md116}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RXF\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md116}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RXF\_FLAG\ ((uint32\_t)0x2)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md111}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md111}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md117}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md117}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT\ ((uint32\_t)0)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md112}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md112}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md118}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md118}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK\ ((uint32\_t)0x1)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md113}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md113}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md119}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md119}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT\ ((uint32\_t)0)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md114}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md114}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md120}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md120}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK\ ((uint32\_t)0xf)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md115}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md115}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md121}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md121}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT\ ((uint32\_t)0)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md116}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md116}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md122}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md122}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK\ ((uint32\_t)0xf)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md117}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TXB\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md117}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md123}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TXB\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md123}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TXB\_FLAG\ ((uint32\_t)0x4)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md118}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TXE\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md118}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md124}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TXE\+\_\+\+FLAG$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md124}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TXE\_FLAG\ ((uint32\_t)0x1)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md119}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md119}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md125}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md125}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT\ ((uint32\_t)0)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md120}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md120}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md126}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md126}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK\ ((uint32\_t)0x1)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md121}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md121}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md127}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md127}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT\ ((uint32\_t)0)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md122}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md122}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md128}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md128}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK\ ((uint32\_t)0xf)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md123}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md123}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md129}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md129}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT\ ((uint32\_t)0)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md124}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md124}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md130}{}\doxysubsection{define $<$tt$>$\+EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md130}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK\ ((uint32\_t)0xf)}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md125}{}\doxysubsection{define $<$tt$>$\+IO\+\_\+\+TYPES$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md125}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md131}{}\doxysubsection{define $<$tt$>$\+IO\+\_\+\+TYPES$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md131}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ IO\_TYPES\ }}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md126}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+R$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md126}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md132}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+R$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md132}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ \_\_R\ volatile\ const\ uint32\_t}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md127}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+RW$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md127}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md133}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+RW$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md133}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ \_\_RW\ volatile\ \ \ \ \ \ \ uint32\_t}}
 
 \end{DoxyCode}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md128}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+W$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md128}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md134}{}\doxysubsection{define $<$tt$>$\+\_\+\+\_\+\+W$<$/tt$>$}\label{md__r_e_a_d_m_e_autotoc_md134}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#define\ \_\_W\ volatile\ \ \ \ \ \ \ uint32\_t}}

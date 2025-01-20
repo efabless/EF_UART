@@ -13,6 +13,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">-<sp/>[EF_Driver_Common.h](#file-ef_driver_commonh)</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>[EF_UART.h](#file-ef_uarth)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[EF_UART_example.h](#file-ef_uart_exampleh)</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>[EF_UART_regs.h](#file-ef_uart_regsh)</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>File<sp/>EF_Driver_Common.h</highlight></codeline>
@@ -144,6 +145,7 @@
 <codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_UART\_getTxCount**](#function-ef_uart_gettxcount)<sp/>([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>uart,<sp/>uint32\_t<sp/>\*TX\_FIFO\_LEVEL\_value)<sp/>&lt;br&gt;_returns<sp/>the<sp/>current<sp/>level<sp/>of<sp/>the<sp/>TX<sp/>FIFO<sp/>(the<sp/>number<sp/>of<sp/>bytes<sp/>in<sp/>the<sp/>FIFO)_<sp/>|</highlight></codeline>
 <codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_UART\_getTxFIFOThreshold**](#function-ef_uart_gettxfifothreshold)<sp/>([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>uart,<sp/>uint32\_t<sp/>\*TX\_FIFO\_THRESHOLD\_value)<sp/>&lt;br&gt;_returns<sp/>the<sp/>current<sp/>value<sp/>of<sp/>the<sp/>TX<sp/>FIFO<sp/>threshold_<sp/>|</highlight></codeline>
 <codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_UART\_readChar**](#function-ef_uart_readchar)<sp/>([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>uar,<sp/>char<sp/>\*RXDATA\_value)<sp/>&lt;br&gt;_recieve<sp/>a<sp/>single<sp/>character<sp/>through<sp/>uart_<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_UART\_readCharArr**](#function-ef_uart_readchararr)<sp/>([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>uart,<sp/>char<sp/>\*buffer,<sp/>uint32\_t<sp/>buffer\_size)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
 <codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_UART\_readCharNonBlocking**](#function-ef_uart_readcharnonblocking)<sp/>([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>uart,<sp/>char<sp/>\*RXDATA\_value,<sp/>bool<sp/>\*data\_available)<sp/>&lt;br&gt;_This<sp/>is<sp/>a<sp/>non-blocking<sp/>function<sp/>that<sp/>reads<sp/>a<sp/>character<sp/>from<sp/>the<sp/>UART<sp/>receive<sp/>FIFO<sp/>if<sp/>data<sp/>is<sp/>available<sp/>and<sp/>returns<sp/>a<sp/>status<sp/>code._<sp/>|</highlight></codeline>
 <codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_UART\_setCTRL**](#function-ef_uart_setctrl)<sp/>([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>uart,<sp/>uint32\_t<sp/>value)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
 <codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_UART\_setConfig**](#function-ef_uart_setconfig)<sp/>([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>uart,<sp/>uint32\_t<sp/>config)<sp/>&lt;br&gt;<sp/>|</highlight></codeline>
@@ -162,6 +164,7 @@
 <codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_UART\_writeChar**](#function-ef_uart_writechar)<sp/>([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>uart,<sp/>char<sp/>data)<sp/>&lt;br&gt;_transmit<sp/>a<sp/>single<sp/>character<sp/>through<sp/>uart_<sp/>|</highlight></codeline>
 <codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_UART\_writeCharArr**](#function-ef_uart_writechararr)<sp/>([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>uart,<sp/>const<sp/>char<sp/>\*char\_arr)<sp/>&lt;br&gt;_transmit<sp/>an<sp/>array<sp/>of<sp/>characters<sp/>through<sp/>uart_<sp/>|</highlight></codeline>
 <codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_UART\_writeCharNonBlocking**](#function-ef_uart_writecharnonblocking)<sp/>([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>uart,<sp/>char<sp/>data,<sp/>bool<sp/>\*data\_sent)<sp/>&lt;br&gt;_This<sp/>is<sp/>a<sp/>non-blocking<sp/>function<sp/>that<sp/>writes<sp/>a<sp/>character<sp/>to<sp/>the<sp/>UART<sp/>transmit<sp/>FIFO<sp/>if<sp/>the<sp/>FIFO<sp/>is<sp/>not<sp/>full<sp/>and<sp/>returns<sp/>a<sp/>status<sp/>code._<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**UART\_Init**](#function-uart_init)<sp/>([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>uart,<sp/>uint32\_t<sp/>baud\_rate,<sp/>uint32\_t<sp/>bus\_clock,<sp/>uint32\_t<sp/>data\_bits,<sp/>bool<sp/>two\_stop\_bits,<sp/>enum<sp/>[**parity\_type**](#enum-parity_type)<sp/>parity,<sp/>uint32\_t<sp/>timeout,<sp/>uint32\_t<sp/>rx\_threshold,<sp/>uint32\_t<sp/>tx\_threshold)<sp/>&lt;br&gt;_This<sp/>function<sp/>initializes<sp/>the<sp/>UART<sp/>with<sp/>the<sp/>specified<sp/>parameters._<sp/>|</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>Macros</highlight></codeline>
 <codeline></codeline>
@@ -743,6 +746,41 @@
 <codeline><highlight class="normal">**Returns:**</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_UART_readCharArr`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_UART_readCharArr<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_UART_TYPE_PTR<sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>char<sp/>*buffer,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>buffer_size</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>function<sp/>receives<sp/>a<sp/>string<sp/>message<sp/>from<sp/>the<sp/>UART.<sp/>The<sp/>message<sp/>is<sp/>stored<sp/>in<sp/>a<sp/>buffer<sp/>with<sp/>a<sp/>specified<sp/>size.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Note:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>a<sp/>blocking<sp/>function<sp/>and<sp/>can<sp/>only<sp/>terminate<sp/>under<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>The<sp/>buffer<sp/>is<sp/>full</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>A<sp/>&quot;\n&quot;<sp/>character<sp/>is<sp/>received</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>An<sp/>error<sp/>is<sp/>detected</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`uart`<sp/>An<sp/>[**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.[**EF\_UART\_TYPE**](#typedef-ef_uart_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>UART<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`buffer`<sp/>The<sp/>buffer<sp/>to<sp/>store<sp/>the<sp/>received<sp/>message<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`buffer_size`<sp/>The<sp/>size<sp/>of<sp/>the<sp/>buffer</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
 <codeline><highlight class="normal">###<sp/>function<sp/>`EF_UART_readCharNonBlocking`</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">_This<sp/>is<sp/>a<sp/>non-blocking<sp/>function<sp/>that<sp/>reads<sp/>a<sp/>character<sp/>from<sp/>the<sp/>UART<sp/>receive<sp/>FIFO<sp/>if<sp/>data<sp/>is<sp/>available<sp/>and<sp/>returns<sp/>a<sp/>status<sp/>code._</highlight></codeline>
@@ -1170,6 +1208,41 @@
 <codeline><highlight class="normal">**Returns:**</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`UART_Init`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_This<sp/>function<sp/>initializes<sp/>the<sp/>UART<sp/>with<sp/>the<sp/>specified<sp/>parameters._</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>UART_Init<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EF_UART_TYPE_PTR<sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>baud_rate,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>bus_clock,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>data_bits,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>two_stop_bits,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>enum<sp/>parity_type<sp/>parity,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>timeout,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>rx_threshold,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>tx_threshold</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Parameters:**</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`uart`<sp/>An<sp/>[**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr)<sp/>,<sp/>which<sp/>points<sp/>to<sp/>the<sp/>base<sp/>memory<sp/>address<sp/>of<sp/>UART<sp/>registers.[**EF\_UART\_TYPE**](#typedef-ef_uart_type)<sp/>is<sp/>a<sp/>structure<sp/>that<sp/>contains<sp/>the<sp/>UART<sp/>registers.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`baud_rate`<sp/>The<sp/>baud<sp/>rate<sp/>of<sp/>the<sp/>UART<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`bus_clock`<sp/>The<sp/>bus<sp/>clock<sp/>frequency<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`data_bits`<sp/>The<sp/>number<sp/>of<sp/>data<sp/>bits<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`two_stop_bits`<sp/>A<sp/>flag<sp/>indicating<sp/>if<sp/>two<sp/>stop<sp/>bits<sp/>are<sp/>used<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`parity`<sp/>The<sp/>parity<sp/>mode<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`timeout`<sp/>The<sp/>receiver<sp/>timeout<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`rx_threshold`<sp/>The<sp/>receive<sp/>FIFO<sp/>threshold<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`tx_threshold`<sp/>The<sp/>transmit<sp/>FIFO<sp/>threshold</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Returns:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">status<sp/>A<sp/>value<sp/>of<sp/>type<sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>:<sp/>returns<sp/>a<sp/>success<sp/>or<sp/>error<sp/>code</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>Macros<sp/>Documentation</highlight></codeline>
 <codeline></codeline>
@@ -1238,6 +1311,68 @@
 <codeline><highlight class="normal">```c</highlight></codeline>
 <codeline><highlight class="normal">#define<sp/>EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE<sp/>((uint32_t)0x0000000F)</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>File<sp/>EF_UART_example.h</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Functions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>|<sp/>Name<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---:<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/>[**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status)<sp/>|<sp/>[**EF\_UART\_example**](#function-ef_uart_example)<sp/>(void)<sp/>&lt;br&gt;_Example<sp/>Usage<sp/>Example<sp/>usage:_<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Functions<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>function<sp/>`EF_UART_example`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Example<sp/>Usage<sp/>Example<sp/>usage:_</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_UART_example<sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>void</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">````cpp</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;EF_UART.h&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#define<sp/>Example_UART_BASE_ADDRESS<sp/>0x40000000</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>UART0<sp/>((EF_UART_TYPE_PTR)Example_UART_BASE_ADDRESS)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">EF_DRIVER_STATUS<sp/>EF_UART_example(void){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>EF_DRIVER_STATUS<sp/>status;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>//<sp/>Initialize<sp/>UART<sp/>with<sp/>required<sp/>configurations</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>status<sp/>=<sp/>UART_Init(UART0,<sp/>9600,<sp/>16000000,<sp/>8,<sp/>false,<sp/>EVEN,<sp/>10,<sp/>4,<sp/>4);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>if<sp/>(status<sp/>!=<sp/>EF_DRIVER_OK)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>status;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>//<sp/>Transmit<sp/>a<sp/>message</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>const<sp/>char<sp/>*message<sp/>=<sp/>&quot;Hello,<sp/>UART!\n&quot;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>status<sp/>=<sp/>EF_UART_writeCharArr(UART0,<sp/>message);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>if<sp/>(status<sp/>!=<sp/>EF_DRIVER_OK)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Handle<sp/>transmission<sp/>error</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>status;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>//<sp/>Receive<sp/>a<sp/>message</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>char<sp/>buffer[100];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>status<sp/>=<sp/>EF_UART_readCharArr(UART0,<sp/>buffer,<sp/>sizeof(buffer));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>if<sp/>(status<sp/>!=<sp/>EF_DRIVER_OK)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Handle<sp/>reception<sp/>error</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>status;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>EF_DRIVER_OK;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">````</highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>File<sp/>EF_UART_regs.h</highlight></codeline>

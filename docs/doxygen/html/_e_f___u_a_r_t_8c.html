@@ -209,6 +209,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ad9d841da9b4114560195d08af86a4b4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ad9d841da9b4114560195d08af86a4b4a">EF_UART_busy</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, bool *busy_flag)</td></tr>
 <tr class="memdesc:ad9d841da9b4114560195d08af86a4b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function checks id the UART is busy.  <br /></td></tr>
 <tr class="separator:ad9d841da9b4114560195d08af86a4b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc3757c8ca6e8725ab78bd72373ec6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a1dc3757c8ca6e8725ab78bd72373ec6b">UART_Init</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t baud_rate, uint32_t bus_clock, uint32_t data_bits, bool two_stop_bits, enum <a class="el" href="_e_f___u_a_r_t_8h.html#aab5cbb4a185bfe65a14e19beeaba4f10">parity_type</a> parity, uint32_t timeout, uint32_t rx_threshold, uint32_t tx_threshold)</td></tr>
+<tr class="memdesc:a1dc3757c8ca6e8725ab78bd72373ec6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function initializes the UART with the specified parameters.  <br /></td></tr>
+<tr class="separator:a1dc3757c8ca6e8725ab78bd72373ec6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb379fe3cc63f5e2eea43522c39823f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#acb379fe3cc63f5e2eea43522c39823f7">EF_UART_readCharArr</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, char *buffer, uint32_t buffer_size)</td></tr>
+<tr class="separator:acb379fe3cc63f5e2eea43522c39823f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C file for UART APIs which contains the function implmentations. </p>
@@ -1098,6 +1103,55 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="acb379fe3cc63f5e2eea43522c39823f7" name="acb379fe3cc63f5e2eea43522c39823f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb379fe3cc63f5e2eea43522c39823f7">&#9670;&#160;</a></span>EF_UART_readCharArr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_readCharArr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramname"><em>uart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>buffer_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function receives a string message from the UART. The message is stored in a buffer with a specified size. </p><dl class="section note"><dt>Note</dt><dd>This is a blocking function and can only terminate under the following conditions:<ol type="1">
+<li>The buffer is full</li>
+<li>A "\n" character is received</li>
+<li>An error is detected</li>
+</ol>
+</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>The buffer to store the received message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_size</td><td>The size of the buffer</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status A value of type <a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> : returns a success or error code </dd></dl>
+
+</div>
+</div>
 <a id="aaa93d9c62ca6e64a622bb32e86fb2dc0" name="aaa93d9c62ca6e64a622bb32e86fb2dc0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa93d9c62ca6e64a622bb32e86fb2dc0">&#9670;&#160;</a></span>EF_UART_readCharNonBlocking()</h2>
 
@@ -1820,6 +1874,93 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The character or byte required to send </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">data_sent</td><td>A flag indicating if the data was sent successfully</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status A value of type <a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> : returns a success or error code </dd></dl>
+
+</div>
+</div>
+<a id="a1dc3757c8ca6e8725ab78bd72373ec6b" name="a1dc3757c8ca6e8725ab78bd72373ec6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc3757c8ca6e8725ab78bd72373ec6b">&#9670;&#160;</a></span>UART_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> UART_Init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramname"><em>uart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>baud_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>bus_clock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>data_bits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>two_stop_bits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="_e_f___u_a_r_t_8h.html#aab5cbb4a185bfe65a14e19beeaba4f10">parity_type</a>&#160;</td>
+          <td class="paramname"><em>parity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rx_threshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tx_threshold</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function initializes the UART with the specified parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">baud_rate</td><td>The baud rate of the UART </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bus_clock</td><td>The bus clock frequency </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_bits</td><td>The number of data bits </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">two_stop_bits</td><td>A flag indicating if two stop bits are used </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parity</td><td>The parity mode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>The receiver timeout </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rx_threshold</td><td>The receive FIFO threshold </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tx_threshold</td><td>The transmit FIFO threshold</td></tr>
   </table>
   </dd>
 </dl>

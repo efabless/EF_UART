@@ -11,6 +11,7 @@
 <para><itemizedlist>
 <listitem><para>EF_Driver_Common.h</para>
 </listitem><listitem><para>EF_UART.h</para>
+</listitem><listitem><para>EF_UART_example.h</para>
 </listitem><listitem><para>EF_UART_regs.h</para>
 </listitem></itemizedlist>
 </para>
@@ -143,7 +144,7 @@
 </sect1>
 <sect1 id="md__r_e_a_d_m_e_1autotoc_md17">
 <title>Functions</title>
-<para><table rows="44" cols="2"><row>
+<para><table rows="46" cols="2"><row>
 <entry thead="yes" align='right'><para>Type   </para>
 </entry><entry thead="yes" align='left'><para>Name    </para>
 </entry></row>
@@ -274,6 +275,11 @@
 </entry></row>
 <row>
 <entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_readCharArr** (**EF\_UART\_TYPE\_PTR** uart, char *buffer, uint32_t buffer_size) <linebreak/>
+    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
 </entry><entry thead="no" align='left'><para>**EF\_UART\_readCharNonBlocking** (**EF\_UART\_TYPE\_PTR** uart, char *RXDATA_value, bool *data_available) <linebreak/>
 <emphasis>This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code.</emphasis>    </para>
 </entry></row>
@@ -360,7 +366,12 @@
 <row>
 <entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
 </entry><entry thead="no" align='left'><para>**EF\_UART\_writeCharNonBlocking** (**EF\_UART\_TYPE\_PTR** uart, char data, bool *data_sent) <linebreak/>
-<emphasis>This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.</emphasis>   </para>
+<emphasis>This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.</emphasis>    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**UART\_Init** (**EF\_UART\_TYPE\_PTR** uart, uint32_t baud_rate, uint32_t bus_clock, uint32_t data_bits, bool two_stop_bits, enum **parity\_type** parity, uint32_t timeout, uint32_t rx_threshold, uint32_t tx_threshold) <linebreak/>
+<emphasis>This function initializes the UART with the specified parameters.</emphasis>   </para>
 </entry></row>
 </table>
 </para>
@@ -868,6 +879,33 @@
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md47">
+<title>function &lt;tt&gt;EF_UART_readCharArr&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1acb379fe3cc63f5e2eea43522c39823f7" kindref="member">EF_UART_readCharArr</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>buffer_size</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para>This function receives a string message from the UART. The message is stored in a buffer with a specified size.</para>
+<para><bold>Note:</bold></para>
+<para>This is a blocking function and can only terminate under the following conditions:</para>
+<para><itemizedlist>
+<listitem><para>The buffer is full</para>
+</listitem><listitem><para>A &quot;\n&quot; character is received</para>
+</listitem><listitem><para>An error is detected</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>buffer</computeroutput> The buffer to store the received message</para>
+</listitem><listitem><para><computeroutput>buffer_size</computeroutput> The size of the buffer</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md48">
 <title>function &lt;tt&gt;EF_UART_readCharNonBlocking&lt;/tt&gt;</title>
 <para><emphasis>This is a non-blocking function that reads a character from the UART receive FIFO if data is available and returns a status code.</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1aaa93d9c62ca6e64a622bb32e86fb2dc0" kindref="member">EF_UART_readCharNonBlocking</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -885,7 +923,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md48">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md49">
 <title>function &lt;tt&gt;EF_UART_setCTRL&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ad36fee036e144937af3eed59eea101c6" kindref="member">EF_UART_setCTRL</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -910,7 +948,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md49">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md50">
 <title>function &lt;tt&gt;EF_UART_setConfig&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a97261ae27ea5d029ecab9b25f2f45ac9" kindref="member">EF_UART_setConfig</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -934,7 +972,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md50">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md51">
 <title>function &lt;tt&gt;EF_UART_setDataSize&lt;/tt&gt;</title>
 <para><emphasis>sets the Data Size (Data word length: 5-9 bits ) by setting the &quot;wlen&quot; field in configuration register</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a04a859ae5492ec11e9f3b418337148e1" kindref="member">EF_UART_setDataSize</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -950,7 +988,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md51">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md52">
 <title>function &lt;tt&gt;EF_UART_setGclkEnable&lt;/tt&gt;</title>
 <para><emphasis>sets the GCLK enable bit in the UART register to a certain value</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a5b00ddd7df5f72886ea559da57a1b2bd" kindref="member">EF_UART_setGclkEnable</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -966,7 +1004,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md52">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md53">
 <title>function &lt;tt&gt;EF_UART_setICR&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a7ecbcf6bc73a4a3392648372441a6133" kindref="member">EF_UART_setICR</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -996,7 +1034,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md53">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md54">
 <title>function &lt;tt&gt;EF_UART_setIM&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ad62de52cc6d11bb10dfdc275d899bb0e" kindref="member">EF_UART_setIM</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1026,7 +1064,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md54">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md55">
 <title>function &lt;tt&gt;EF_UART_setMatchData&lt;/tt&gt;</title>
 <para><emphasis>sets the matchData to a certain value at which &quot;MATCH&quot; interrupt will be raised</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1af275d224f7dcde400258b8d93e1ed2ce" kindref="member">EF_UART_setMatchData</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1042,7 +1080,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md55">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md56">
 <title>function &lt;tt&gt;EF_UART_setParityType&lt;/tt&gt;</title>
 <para><emphasis>sets the &quot;parity&quot; field in configuration register (could be none, odd, even, sticky 0 or sticky 1)</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a3af979ea01c716d9b6ca923b92cc5c31" kindref="member">EF_UART_setParityType</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1058,7 +1096,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md56">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md57">
 <title>function &lt;tt&gt;EF_UART_setPrescaler&lt;/tt&gt;</title>
 <para><emphasis>sets the prescaler to a certain value where Baud_rate = Bus_Clock_Freq/((Prescaler+1)*16)</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a1184834b408cdeed94623c691068a352" kindref="member">EF_UART_setPrescaler</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1074,7 +1112,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md57">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md58">
 <title>function &lt;tt&gt;EF_UART_setRxFIFOThreshold&lt;/tt&gt;</title>
 <para><emphasis>sets the RX FIFO threshold to a certain value at which &quot;RXA&quot; interrupt will be raised</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a8a2767ea0edab0500745dde177c1e58c" kindref="member">EF_UART_setRxFIFOThreshold</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1090,7 +1128,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md58">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md59">
 <title>function &lt;tt&gt;EF_UART_setTimeoutBits&lt;/tt&gt;</title>
 <para><emphasis>sets the &quot;timeout&quot; field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ad18a6e0c7701bdc66b483b1c53a3581d" kindref="member">EF_UART_setTimeoutBits</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1106,7 +1144,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md59">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md60">
 <title>function &lt;tt&gt;EF_UART_setTwoStopBitsSelect&lt;/tt&gt;</title>
 <para><emphasis>sets the &quot;stp2&quot; bit in configuration register (whether the stop boits are two or one)</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ae2336d17bb87f77416fc9c6871b7cbdb" kindref="member">EF_UART_setTwoStopBitsSelect</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1122,7 +1160,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md60">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md61">
 <title>function &lt;tt&gt;EF_UART_setTxFIFOThreshold&lt;/tt&gt;</title>
 <para><emphasis>sets the TX FIFO threshold to a certain value at which &quot;TXB&quot; interrupt will be raised</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a30ba41191c67b5242173320ab54e1205" kindref="member">EF_UART_setTxFIFOThreshold</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1138,7 +1176,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md61">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md62">
 <title>function &lt;tt&gt;EF_UART_spaceAvailable&lt;/tt&gt;</title>
 <para><emphasis>This function returns a flag indicating whether or not the transmit is available, i.e. the transmit FIFO is not full.</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a7739739a5ceeadcf591f3b387c729d0c" kindref="member">EF_UART_spaceAvailable</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1154,7 +1192,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md62">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md63">
 <title>function &lt;tt&gt;EF_UART_writeChar&lt;/tt&gt;</title>
 <para><emphasis>transmit a single character through uart</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1ace1db9bbc3b092890acff854cec1aa77" kindref="member">EF_UART_writeChar</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1170,7 +1208,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md63">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md64">
 <title>function &lt;tt&gt;EF_UART_writeCharArr&lt;/tt&gt;</title>
 <para><emphasis>transmit an array of characters through uart</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a0f9ad65cbfe136ad4c4080612d578536" kindref="member">EF_UART_writeCharArr</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1186,7 +1224,7 @@
 <para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md64">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md65">
 <title>function &lt;tt&gt;EF_UART_writeCharNonBlocking&lt;/tt&gt;</title>
 <para><emphasis>This is a non-blocking function that writes a character to the UART transmit FIFO if the FIFO is not full and returns a status code.</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a8091314203111b165d1bad624159f8ba" kindref="member">EF_UART_writeCharNonBlocking</ref><sp/>(</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
@@ -1202,71 +1240,160 @@
 </listitem></itemizedlist>
 </para>
 <para><bold>Returns:</bold></para>
+<para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code </para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md66">
+<title>function &lt;tt&gt;UART_Init&lt;/tt&gt;</title>
+<para><emphasis>This function initializes the UART with the specified parameters.</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8c_1a1dc3757c8ca6e8725ab78bd72373ec6b" kindref="member">UART_Init</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>baud_rate,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>bus_clock,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>data_bits,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>two_stop_bits,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>parity,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>timeout,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>rx_threshold,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>tx_threshold</highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><bold>Parameters:</bold></para>
+<para><itemizedlist>
+<listitem><para><computeroutput>uart</computeroutput> An **EF\_UART\_TYPE\_PTR** , which points to the base memory address of UART registers.**EF\_UART\_TYPE** is a structure that contains the UART registers.</para>
+</listitem><listitem><para><computeroutput>baud_rate</computeroutput> The baud rate of the UART</para>
+</listitem><listitem><para><computeroutput>bus_clock</computeroutput> The bus clock frequency</para>
+</listitem><listitem><para><computeroutput>data_bits</computeroutput> The number of data bits</para>
+</listitem><listitem><para><computeroutput>two_stop_bits</computeroutput> A flag indicating if two stop bits are used</para>
+</listitem><listitem><para><computeroutput>parity</computeroutput> The parity mode</para>
+</listitem><listitem><para><computeroutput>timeout</computeroutput> The receiver timeout</para>
+</listitem><listitem><para><computeroutput>rx_threshold</computeroutput> The receive FIFO threshold</para>
+</listitem><listitem><para><computeroutput>tx_threshold</computeroutput> The transmit FIFO threshold</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Returns:</bold></para>
 <para>status A value of type **EF\_DRIVER\_STATUS** : returns a success or error code</para>
 </sect2>
 </sect1>
-<sect1 id="md__r_e_a_d_m_e_1autotoc_md65">
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md67">
 <title>Macros Documentation</title>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md66">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md68">
 <title>define &lt;tt&gt;EF_UART_CFG_REG_MAX_VALUE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_MAX_VALUE<sp/>((uint32_t)0x00001FFF)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md67">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md69">
 <title>define &lt;tt&gt;EF_UART_CFG_REG_TIMEOUT_MAX_VALUE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_TIMEOUT_MAX_VALUE<sp/>((uint32_t)0x0000003F)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md68">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md70">
 <title>define &lt;tt&gt;EF_UART_CTRL_REG_MAX_VALUE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_MAX_VALUE<sp/>((uint32_t)0x0000001F)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md69">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md71">
 <title>define &lt;tt&gt;EF_UART_DataLength_MAX_VALUE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_DataLength_MAX_VALUE<sp/>((uint32_t)0x00000009)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md70">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md72">
 <title>define &lt;tt&gt;EF_UART_DataLength_MIN_VALUE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_DataLength_MIN_VALUE<sp/>((uint32_t)0x00000005)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md71">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md73">
 <title>define &lt;tt&gt;EF_UART_IC_REG_MAX_VALUE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_IC_REG_MAX_VALUE<sp/>((uint32_t)0x000003FF)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md72">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md74">
 <title>define &lt;tt&gt;EF_UART_IM_REG_MAX_VALUE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_IM_REG_MAX_VALUE<sp/>((uint32_t)0x000003FF)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md73">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md75">
 <title>define &lt;tt&gt;EF_UART_MATCH_REG_MAX_VALUE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_MATCH_REG_MAX_VALUE<sp/>((uint32_t)0x00001FFF)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md74">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md76">
 <title>define &lt;tt&gt;EF_UART_PR_REG_MAX_VALUE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_PR_REG_MAX_VALUE<sp/>((uint32_t)0x0000FFFF)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md75">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md77">
 <title>define &lt;tt&gt;EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE<sp/>((uint32_t)0x0000000F)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md76">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md78">
 <title>define &lt;tt&gt;EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE<sp/>((uint32_t)0x0000000F)</highlight></codeline>
 </programlisting></para>
 </sect2>
 </sect1>
-<sect1 id="md__r_e_a_d_m_e_1autotoc_md77">
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md79">
+<title>File EF_UART_example.h</title>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md80">
+<title>Functions</title>
+<para><table rows="2" cols="2"><row>
+<entry thead="yes" align='right'><para>Type   </para>
+</entry><entry thead="yes" align='left'><para>Name    </para>
+</entry></row>
+<row>
+<entry thead="no" align='right'><para>**EF\_DRIVER\_STATUS**   </para>
+</entry><entry thead="no" align='left'><para>**EF\_UART\_example** (void) <linebreak/>
+<emphasis>Example Usage Example usage:</emphasis>   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md81">
+<title>Functions Documentation</title>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md82">
+<title>function &lt;tt&gt;EF_UART_example&lt;/tt&gt;</title>
+<para><emphasis>Example Usage Example usage:</emphasis> <programlisting filename=".c"><codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t__example_8c_1a8451a75f6339b51e6239c6c4d01ee4e0" kindref="member">EF_UART_example</ref><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">)<sp/></highlight></codeline>
+</programlisting></para>
+<para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_e_f___u_a_r_t_8h" kindref="compound">EF_UART.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Example_UART_BASE_ADDRESS<sp/>0x40000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UART0<sp/>((EF_UART_TYPE_PTR)Example_UART_BASE_ADDRESS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t__example_8c_1a8451a75f6339b51e6239c6c4d01ee4e0" kindref="member">EF_UART_example</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/>status;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>UART<sp/>with<sp/>required<sp/>configurations</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___u_a_r_t_8c_1a1dc3757c8ca6e8725ab78bd72373ec6b" kindref="member">UART_Init</ref>(<ref refid="_e_f___u_a_r_t__example_8c_1a0508661f121639ffdee7de2353a0def2" kindref="member">UART0</ref>,<sp/>9600,<sp/>16000000,<sp/>8,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" kindref="member">EVEN</ref>,<sp/>10,<sp/>4,<sp/>4);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Transmit<sp/>a<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Hello,<sp/>UART!\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___u_a_r_t_8c_1a0f9ad65cbfe136ad4c4080612d578536" kindref="member">EF_UART_writeCharArr</ref>(<ref refid="_e_f___u_a_r_t__example_8c_1a0508661f121639ffdee7de2353a0def2" kindref="member">UART0</ref>,<sp/>message);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Handle<sp/>transmission<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Receive<sp/>a<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[100];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>status<sp/>=<sp/><ref refid="_e_f___u_a_r_t_8c_1acb379fe3cc63f5e2eea43522c39823f7" kindref="member">EF_UART_readCharArr</ref>(<ref refid="_e_f___u_a_r_t__example_8c_1a0508661f121639ffdee7de2353a0def2" kindref="member">UART0</ref>,<sp/>buffer,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(buffer));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Handle<sp/>reception<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_e_f___driver___common_8h_1ab56c746d5d1672835c101f00f7c90b7c" kindref="member">EF_DRIVER_OK</ref>;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md83">
 <title>File EF_UART_regs.h</title>
 </sect1>
-<sect1 id="md__r_e_a_d_m_e_1autotoc_md78">
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md84">
 <title>Structures and Types</title>
 <para><table rows="4" cols="2"><row>
 <entry thead="yes" align='right'><para>Type   </para>
@@ -1290,7 +1417,7 @@
 </table>
 </para>
 </sect1>
-<sect1 id="md__r_e_a_d_m_e_1autotoc_md79">
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md85">
 <title>Macros</title>
 <para><table rows="45" cols="2"><row>
 <entry thead="yes" align='right'><para>Type   </para>
@@ -1519,19 +1646,19 @@
 </table>
 </para>
 </sect1>
-<sect1 id="md__r_e_a_d_m_e_1autotoc_md80">
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md86">
 <title>Structures and Types Documentation</title>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md81">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md87">
 <title>typedef &lt;tt&gt;EF_UART_TYPE&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">_EF_UART_TYPE_</ref><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>;</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md82">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md88">
 <title>typedef &lt;tt&gt;EF_UART_TYPE_PTR&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE</ref>*<sp/><ref refid="_e_f___u_a_r_t__regs_8h_1ab605c9cde76c27dd58ec6cf73ca70893" kindref="member">EF_UART_TYPE_PTR</ref>;</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md83">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md89">
 <title>struct &lt;tt&gt;_EF_UART_TYPE_&lt;/tt&gt;</title>
 <para>Variables:</para>
 <para><itemizedlist>
@@ -1581,224 +1708,224 @@
 </para>
 </sect2>
 </sect1>
-<sect1 id="md__r_e_a_d_m_e_1autotoc_md84">
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md90">
 <title>Macros Documentation</title>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md85">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md91">
 <title>define &lt;tt&gt;EF_UART_BRK_FLAG&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_BRK_FLAG<sp/>((uint32_t)0x10)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md86">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md92">
 <title>define &lt;tt&gt;EF_UART_CFG_REG_PARITY_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_PARITY_BIT<sp/>((uint32_t)5)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md87">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md93">
 <title>define &lt;tt&gt;EF_UART_CFG_REG_PARITY_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_PARITY_MASK<sp/>((uint32_t)0xe0)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md88">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md94">
 <title>define &lt;tt&gt;EF_UART_CFG_REG_STP2_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_STP2_BIT<sp/>((uint32_t)4)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md89">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md95">
 <title>define &lt;tt&gt;EF_UART_CFG_REG_STP2_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_STP2_MASK<sp/>((uint32_t)0x10)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md90">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md96">
 <title>define &lt;tt&gt;EF_UART_CFG_REG_TIMEOUT_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_TIMEOUT_BIT<sp/>((uint32_t)8)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md91">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md97">
 <title>define &lt;tt&gt;EF_UART_CFG_REG_TIMEOUT_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_TIMEOUT_MASK<sp/>((uint32_t)0x3f)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md92">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md98">
 <title>define &lt;tt&gt;EF_UART_CFG_REG_WLEN_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_WLEN_BIT<sp/>((uint32_t)0)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md93">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md99">
 <title>define &lt;tt&gt;EF_UART_CFG_REG_WLEN_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_WLEN_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md94">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md100">
 <title>define &lt;tt&gt;EF_UART_CTRL_REG_EN_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_EN_BIT<sp/>((uint32_t)0)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md95">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md101">
 <title>define &lt;tt&gt;EF_UART_CTRL_REG_EN_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_EN_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md96">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md102">
 <title>define &lt;tt&gt;EF_UART_CTRL_REG_GFEN_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_GFEN_BIT<sp/>((uint32_t)4)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md97">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md103">
 <title>define &lt;tt&gt;EF_UART_CTRL_REG_GFEN_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_GFEN_MASK<sp/>((uint32_t)0x10)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md98">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md104">
 <title>define &lt;tt&gt;EF_UART_CTRL_REG_LPEN_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_LPEN_BIT<sp/>((uint32_t)3)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md99">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md105">
 <title>define &lt;tt&gt;EF_UART_CTRL_REG_LPEN_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_LPEN_MASK<sp/>((uint32_t)0x8)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md100">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md106">
 <title>define &lt;tt&gt;EF_UART_CTRL_REG_RXEN_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_RXEN_BIT<sp/>((uint32_t)2)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md101">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md107">
 <title>define &lt;tt&gt;EF_UART_CTRL_REG_RXEN_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_RXEN_MASK<sp/>((uint32_t)0x4)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md102">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md108">
 <title>define &lt;tt&gt;EF_UART_CTRL_REG_TXEN_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_TXEN_BIT<sp/>((uint32_t)1)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md103">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md109">
 <title>define &lt;tt&gt;EF_UART_CTRL_REG_TXEN_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_TXEN_MASK<sp/>((uint32_t)0x2)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md104">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md110">
 <title>define &lt;tt&gt;EF_UART_FE_FLAG&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_FE_FLAG<sp/>((uint32_t)0x40)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md105">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md111">
 <title>define &lt;tt&gt;EF_UART_MATCH_FLAG&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_MATCH_FLAG<sp/>((uint32_t)0x20)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md106">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md112">
 <title>define &lt;tt&gt;EF_UART_OR_FLAG&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_OR_FLAG<sp/>((uint32_t)0x100)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md107">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md113">
 <title>define &lt;tt&gt;EF_UART_PRE_FLAG&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_PRE_FLAG<sp/>((uint32_t)0x80)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md108">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md114">
 <title>define &lt;tt&gt;EF_UART_RTO_FLAG&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RTO_FLAG<sp/>((uint32_t)0x200)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md109">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md115">
 <title>define &lt;tt&gt;EF_UART_RXA_FLAG&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RXA_FLAG<sp/>((uint32_t)0x8)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md110">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md116">
 <title>define &lt;tt&gt;EF_UART_RXF_FLAG&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RXF_FLAG<sp/>((uint32_t)0x2)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md111">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md117">
 <title>define &lt;tt&gt;EF_UART_RX_FIFO_FLUSH_REG_FLUSH_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_FLUSH_REG_FLUSH_BIT<sp/>((uint32_t)0)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md112">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md118">
 <title>define &lt;tt&gt;EF_UART_RX_FIFO_FLUSH_REG_FLUSH_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_FLUSH_REG_FLUSH_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md113">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md119">
 <title>define &lt;tt&gt;EF_UART_RX_FIFO_LEVEL_REG_LEVEL_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_LEVEL_REG_LEVEL_BIT<sp/>((uint32_t)0)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md114">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md120">
 <title>define &lt;tt&gt;EF_UART_RX_FIFO_LEVEL_REG_LEVEL_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_LEVEL_REG_LEVEL_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md115">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md121">
 <title>define &lt;tt&gt;EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT<sp/>((uint32_t)0)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md116">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md122">
 <title>define &lt;tt&gt;EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md117">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md123">
 <title>define &lt;tt&gt;EF_UART_TXB_FLAG&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TXB_FLAG<sp/>((uint32_t)0x4)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md118">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md124">
 <title>define &lt;tt&gt;EF_UART_TXE_FLAG&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TXE_FLAG<sp/>((uint32_t)0x1)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md119">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md125">
 <title>define &lt;tt&gt;EF_UART_TX_FIFO_FLUSH_REG_FLUSH_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_FLUSH_REG_FLUSH_BIT<sp/>((uint32_t)0)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md120">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md126">
 <title>define &lt;tt&gt;EF_UART_TX_FIFO_FLUSH_REG_FLUSH_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_FLUSH_REG_FLUSH_MASK<sp/>((uint32_t)0x1)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md121">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md127">
 <title>define &lt;tt&gt;EF_UART_TX_FIFO_LEVEL_REG_LEVEL_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_LEVEL_REG_LEVEL_BIT<sp/>((uint32_t)0)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md122">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md128">
 <title>define &lt;tt&gt;EF_UART_TX_FIFO_LEVEL_REG_LEVEL_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_LEVEL_REG_LEVEL_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md123">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md129">
 <title>define &lt;tt&gt;EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT<sp/>((uint32_t)0)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md124">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md130">
 <title>define &lt;tt&gt;EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK<sp/>((uint32_t)0xf)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md125">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md131">
 <title>define &lt;tt&gt;IO_TYPES&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>IO_TYPES<sp/></highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md126">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md132">
 <title>define &lt;tt&gt;__R&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>__R<sp/>volatile<sp/>const<sp/>uint32_t</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md127">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md133">
 <title>define &lt;tt&gt;__RW&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>__RW<sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md__r_e_a_d_m_e_1autotoc_md128">
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md134">
 <title>define &lt;tt&gt;__W&lt;/tt&gt;</title>
 <para><programlisting filename=".c"><codeline><highlight class="preprocessor">#define<sp/>__W<sp/>volatile<sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t</highlight></codeline>
 </programlisting> </para>

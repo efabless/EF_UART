@@ -132,7 +132,11 @@ enum \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parit
 \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a99a9c66e92fb0233fb7cf31e6c6921f1}{EF\+\_\+\+UART\+\_\+get\+Parity\+Mode}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t $\ast$parity\+\_\+mode)
 \begin{DoxyCompactList}\small\item\em This function return the parity mode of the UART. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a16e75e32fdf3a0dc46f6ca9992750328}{EF\+\_\+\+UART\+\_\+busy}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, bool $\ast$flag)
-\begin{DoxyCompactList}\small\item\em This function checks id the UART is busy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function checks id the UART is busy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a1dc3757c8ca6e8725ab78bd72373ec6b}{UART\+\_\+\+Init}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t baud\+\_\+rate, uint32\+\_\+t bus\+\_\+clock, uint32\+\_\+t data\+\_\+bits, bool two\+\_\+stop\+\_\+bits, enum \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parity\+\_\+type}} parity, uint32\+\_\+t timeout, uint32\+\_\+t rx\+\_\+threshold, uint32\+\_\+t tx\+\_\+threshold)
+\begin{DoxyCompactList}\small\item\em This function initializes the UART with the specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_acb379fe3cc63f5e2eea43522c39823f7}{EF\+\_\+\+UART\+\_\+read\+Char\+Arr}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, char $\ast$buffer, uint32\+\_\+t buffer\+\_\+size)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -751,6 +755,32 @@ recieve a single character through uart
 \begin{DoxyReturn}{Returns}
 status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
 \end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_acb379fe3cc63f5e2eea43522c39823f7}\label{_e_f___u_a_r_t_8h_acb379fe3cc63f5e2eea43522c39823f7}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_readCharArr@{EF\_UART\_readCharArr}}
+\index{EF\_UART\_readCharArr@{EF\_UART\_readCharArr}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_readCharArr()}{EF\_UART\_readCharArr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+read\+Char\+Arr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{char $\ast$}]{buffer,  }\item[{uint32\+\_\+t}]{buffer\+\_\+size }\end{DoxyParamCaption})}
+
+This function receives a string message from the UART. The message is stored in a buffer with a specified size. \begin{DoxyNote}{Note}
+This is a blocking function and can only terminate under the following conditions\+:
+\begin{DoxyEnumerate}
+\item The buffer is full
+\item A \char`\"{}\textbackslash{}n\char`\"{} character is received
+\item An error is detected
+\end{DoxyEnumerate}
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} , which points to the base memory address of UART registers. \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}} is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ out}}  & {\em buffer} & The buffer to store the received message \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+size} & The size of the buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
 \mbox{\Hypertarget{_e_f___u_a_r_t_8h_aaa93d9c62ca6e64a622bb32e86fb2dc0}\label{_e_f___u_a_r_t_8h_aaa93d9c62ca6e64a622bb32e86fb2dc0}} 
 \index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_readCharNonBlocking@{EF\_UART\_readCharNonBlocking}}
 \index{EF\_UART\_readCharNonBlocking@{EF\_UART\_readCharNonBlocking}!EF\_UART.h@{EF\_UART.h}}
@@ -1141,6 +1171,40 @@ This is a non-\/blocking function that writes a character to the UART transmit F
 \mbox{\texttt{ in}}  & {\em data} & The character or byte required to send \\
 \hline
 \mbox{\texttt{ out}}  & {\em data\+\_\+sent} & A flag indicating if the data was sent successfully\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a1dc3757c8ca6e8725ab78bd72373ec6b}\label{_e_f___u_a_r_t_8h_a1dc3757c8ca6e8725ab78bd72373ec6b}} 
+\index{EF\_UART.h@{EF\_UART.h}!UART\_Init@{UART\_Init}}
+\index{UART\_Init@{UART\_Init}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{UART\_Init()}{UART\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} UART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{uint32\+\_\+t}]{baud\+\_\+rate,  }\item[{uint32\+\_\+t}]{bus\+\_\+clock,  }\item[{uint32\+\_\+t}]{data\+\_\+bits,  }\item[{bool}]{two\+\_\+stop\+\_\+bits,  }\item[{enum \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parity\+\_\+type}}}]{parity,  }\item[{uint32\+\_\+t}]{timeout,  }\item[{uint32\+\_\+t}]{rx\+\_\+threshold,  }\item[{uint32\+\_\+t}]{tx\+\_\+threshold }\end{DoxyParamCaption})}
+
+
+
+This function initializes the UART with the specified parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} , which points to the base memory address of UART registers. \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}} is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em baud\+\_\+rate} & The baud rate of the UART \\
+\hline
+\mbox{\texttt{ in}}  & {\em bus\+\_\+clock} & The bus clock frequency \\
+\hline
+\mbox{\texttt{ in}}  & {\em data\+\_\+bits} & The number of data bits \\
+\hline
+\mbox{\texttt{ in}}  & {\em two\+\_\+stop\+\_\+bits} & A flag indicating if two stop bits are used \\
+\hline
+\mbox{\texttt{ in}}  & {\em parity} & The parity mode \\
+\hline
+\mbox{\texttt{ in}}  & {\em timeout} & The receiver timeout \\
+\hline
+\mbox{\texttt{ in}}  & {\em rx\+\_\+threshold} & The receive FIFO threshold \\
+\hline
+\mbox{\texttt{ in}}  & {\em tx\+\_\+threshold} & The transmit FIFO threshold\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
