@@ -791,7 +791,7 @@ EF_DRIVER_STATUS UART_Init(EF_UART_TYPE_PTR uart, uint32_t baud_rate, uint32_t b
     }
 
     // Calculate and set the prescaler
-    uint32_t prescaler = (bus_clock / (baud_rate * (uint32_t)16)) - (uint32_t)1;
+    uint32_t prescaler = (bus_clock / (baud_rate * (uint32_t)8)) - (uint32_t)1;
     if (status == EF_DRIVER_OK) {status = EF_UART_setPrescaler(uart, prescaler);} else {}
 
     // Configure data bits, stop bits, and parity
