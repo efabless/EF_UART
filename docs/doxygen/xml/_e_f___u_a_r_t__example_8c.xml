@@ -139,7 +139,6 @@
 <para>C file containing an example of how to use the UART APIs. </para>
     </briefdescription>
     <detaileddescription>
-<para>C header file containing an example of how to use the UART APIs.</para>
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">/*</highlight></codeline>

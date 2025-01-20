@@ -1306,7 +1306,7 @@ status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : ret
 
 ## File EF_UART_example.h
 
-
+_C header file containing an example of how to use the UART APIs._
 
 
 

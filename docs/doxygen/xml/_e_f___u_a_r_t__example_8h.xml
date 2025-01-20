@@ -109,6 +109,7 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>C header file containing an example of how to use the UART APIs. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

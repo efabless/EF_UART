@@ -17,7 +17,7 @@
 */
 
 
-/*! \file EF_UART_example.c
+/*! \file EF_UART_example.h
     \brief C header file containing an example of how to use the UART APIs
     
 */
