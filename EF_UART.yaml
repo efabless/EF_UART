@@ -212,13 +212,13 @@ external_interface:
   - name: rx
     port: rx
     direction: input
-    description: RX connected to the external interface 
+    description: This is the receive line where the UART device receives data from another device. It carries the incoming data signals.
     width: 1
   - name: tx
     port: tx
     direction: output
     width: 1
-    description: TX connected to external interface 
+    description: This is the transmission line where the UART device sends data to another device. It carries the outgoing data signals.
 
 clock:
   name: clk

@@ -55,8 +55,8 @@ Wrappers in the directory ``/hdl/rtl/bus_wrappers/DFT`` have an extra input port
 ### External IO interfaces
 |IO name|Direction|Width|Description|
 |---|---|---|---|
-|rx|input|1|RX connected to the external interface|
-|tx|output|1|TX connected to external interface|
+|rx|input|1|This is the receive line where the UART device receives data from another device. It carries the incoming data signals.|
+|tx|output|1|This is the transmission line where the UART device sends data to another device. It carries the outgoing data signals.|
 ### Interrupt Request Line (irq)
 This IP generates interrupts on specific events, which are described in the [Interrupt Flags](#interrupt-flags) section bellow. The IRQ port should be connected to the system interrupt controller.
 
@@ -240,8 +240,8 @@ VERILOG_DEFINES:
 - CLKG_SKY130_HD
 ```
 ## Firmware Drivers:
-Firmware drivers for EF_UART can be found in the [fw](https://github.com/efabless/EF_UART/tree/main/fw) directory. EF_UART driver documentation  is available [here](https://github.com/efabless/EF_UART/blob/main/fw/README.md).
-You can also find an example C application using the EF_UART drivers [here]().
+Firmware drivers for EF_UART can be found in the [EF_UART](https://github.com/efabless/EF_APIs_HUB/tree/main/EF_UART) directory in the [EF_APIs_HUB](https://github.com/efabless/EF_APIs_HUB) repo. EF_UART driver documentation  is available [here](https://github.com/efabless/EF_APIs_HUB/tree/main/EF_UART/README.md).
+You can also find an example C application using the EF_UART drivers [here](https://github.com/efabless/EF_APIs_HUB/tree/main/EF_UART/EF_UART_example.c).
 ## Installation:
 You can install the IP either by cloning this repository or by using [IPM](https://github.com/efabless/IPM).
 ### 1. Using [IPM](https://github.com/efabless/IPM):
@@ -273,8 +273,8 @@ You can install the IP either by cloning this repository or by using [IPM](https
 
 |Port|Direction|Width|Description|
 |---|---|---|---|
-|rx|input|1|RX connected to the external interface|
-|tx|output|1|TX connected to external interface|
+|rx|input|1|This is the receive line where the UART device receives data from another device. It carries the incoming data signals.|
+|tx|output|1|This is the transmission line where the UART device sends data to another device. It carries the outgoing data signals.|
 |prescaler|input|16|Prescaler used to determine the baud rate.|
 |en|input|1|Enable for UART|
 |tx_en|input|1|Enable for UART transmission|

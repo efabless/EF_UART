@@ -23,9 +23,6 @@ Directory Structure:
 
     - fw 
         - **EF_UART_regs.h**: Header file containing the register definitions for the EF_UART interface.
-        - **EF_UART.c**: C source file implementing the low-level driver functions for the EF_UART.
-        - **EF_UART.h**: Header file declaring the API functions and data structures for the EF_UART driver.
-        - **DEVICE_DRIVER.pdf**: Documentation for users to understand how to use the EF_UART driver and interface with the IP.
 
     - hdl 
         - rtl 
