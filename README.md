@@ -240,8 +240,8 @@ VERILOG_DEFINES:
 - CLKG_SKY130_HD
 ```
 ## Firmware Drivers:
-Firmware drivers for EF_UART can be found in the [EF_UART](https://github.com/efabless/EFIS/tree/main/EF_UART) directory in the [EFIS](https://github.com/efabless/EFIS) repo. EF_UART driver documentation  is available [here](https://github.com/efabless/EFIS/tree/main/EF_UART/README.md).
-You can also find an example C application using the EF_UART drivers [here](https://github.com/efabless/EFIS/tree/main/EF_UART/EF_UART_example.c).
+Firmware drivers for EF_UART can be found in the [Drivers](https://github.com/efabless/EFIS/tree/main/Drivers) directory in the [EFIS](https://github.com/efabless/EFIS) (Efabless Firmware Interface Standard) repo. EF_UART driver documentation  is available [here](https://github.com/efabless/EFIS/blob/main/Drivers/docs/EF_Driver_UART/README.md).
+You can also find an example C application using the EF_UART drivers [here](https://github.com/efabless/EFIS/tree/main/Drivers/docs/EF_Driver_UART/example).
 ## Installation:
 You can install the IP either by cloning this repository or by using [IPM](https://github.com/efabless/IPM).
 ### 1. Using [IPM](https://github.com/efabless/IPM):
