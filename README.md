@@ -78,7 +78,7 @@ The following table is the result for implementing the EF_UART IP with different
 |---|---|---|---|---|
 |RXDATA|0000|0x00000000|r|RX Data register; the interface to the Receive FIFO.|
 |TXDATA|0004|0x00000000|w|TX Data register; ; the interface to the Receive FIFO.|
-|PR|0008|0x00000000|w|The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.|
+|PR|0008|0x00000000|w|The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*SC)$. SC (the number of samples per bit/baud) is a module parameter with a default value of 8.|
 |CTRL|000c|0x00000000|w|UART Control Register|
 |CFG|0010|0x00003F08|w|UART Configuration Register|
 |MATCH|001c|0x00000000|w|Match Register|
@@ -106,7 +106,7 @@ TX Data register; ; the interface to the Receive FIFO.
 
 ### PR Register [Offset: 0x8, mode: w]
 
-The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*16)$.
+The Prescaler register; used to determine the baud rate. $baud_rate = clock_freq/((PR+1)*SC)$. SC (the number of samples per bit/baud) is a module parameter with a default value of 8.
 <img src="https://svg.wavedrom.com/{reg:[{name:'PR', bits:16},{bits: 16}], config: {lanes: 2, hflip: true}} "/>
 
 ### CTRL Register [Offset: 0xc, mode: w]
