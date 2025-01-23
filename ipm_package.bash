@@ -91,15 +91,15 @@ sed -i "s/version.*/version: v$version/" *.yaml
 sed -i "s/date.*/date: $(date +"%Y-%m-%d")/" *.yaml
 
 # Extract information from YAML using sed
-date=$(sed -n 's/^[[:space:]]*date:[[:space:]]*//p' EF_UART.yaml)
-maturity=$(sed -n 's/^[[:space:]]*status:[[:space:]]*//p' EF_UART.yaml)
-bus=$(sed -n '/^[[:space:]]*bus:/,/^[[:space:]]*type:/p' EF_UART.yaml | sed -n 's/^[[:space:]]*-[[:space:]]*//p' | paste -sd "," -)
-type=$(sed -n 's/^[[:space:]]*type:[[:space:]]*//p' EF_UART.yaml)
-width=$(sed -n 's/^[[:space:]]*width":[[:space:]]*//p' EF_UART.yaml)
-height=$(sed -n 's/^[[:space:]]*height":[[:space:]]*//p' EF_UART.yaml)
-cell_count=$(sed -n '/^[[:space:]]*cell_count:/,/^[[:space:]]*width:/p' EF_UART.yaml | sed -n 's/^[[:space:]]*-[[:space:]]*//p' | paste -sd "," -)
-clock_freq_mhz=$(sed -n '/^[[:space:]]*clock_freq_mhz:/,/^[[:space:]]*digital_supply_voltage:/p' EF_UART.yaml | sed -n 's/^[[:space:]]*-[[:space:]]*//p' | paste -sd "," -)
-supply_voltage=$(sed -n 's/^[[:space:]]*digital_supply_voltage:[[:space:]]*//p' EF_UART.yaml)
+date=$(sed -n 's/^[[:space:]]*date:[[:space:]]*//p' $ip_name.yaml)
+maturity=$(sed -n 's/^[[:space:]]*status:[[:space:]]*//p' $ip_name.yaml)
+bus=$(sed -n '/^[[:space:]]*bus:/,/^[[:space:]]*type:/p' $ip_name.yaml | sed -n 's/^[[:space:]]*-[[:space:]]*//p' | paste -sd "," -)
+type=$(sed -n 's/^[[:space:]]*type:[[:space:]]*//p' $ip_name.yaml)
+width=$(sed -n 's/^[[:space:]]*width":[[:space:]]*//p' $ip_name.yaml)
+height=$(sed -n 's/^[[:space:]]*height":[[:space:]]*//p' $ip_name.yaml)
+cell_count=$(sed -n '/^[[:space:]]*cell_count:/,/^[[:space:]]*width:/p' $ip_name.yaml | sed -n 's/^[[:space:]]*-[[:space:]]*//p' | paste -sd "," -)
+clock_freq_mhz=$(sed -n '/^[[:space:]]*clock_freq_mhz:/,/^[[:space:]]*digital_supply_voltage:/p' $ip_name.yaml | sed -n 's/^[[:space:]]*-[[:space:]]*//p' | paste -sd "," -)
+supply_voltage=$(sed -n 's/^[[:space:]]*digital_supply_voltage:[[:space:]]*//p' $ip_name.yaml)
 sha256=$(cat v$version.tar.gz.sha256 | awk '{print $1}')
 
 # Format JSON section
