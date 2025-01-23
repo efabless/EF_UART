@@ -104,12 +104,12 @@ sha256=$(cat v$version.tar.gz.sha256 | awk '{print $1}')
 
 # Format JSON section
 json_section=$(cat <<EOF
-  "release": {
-      "$version": {
+  ,"release": {
+      "v$version": {
           "date": "$date",
           "maturity": "$maturity",
           "bus": [
-              $bus
+              "$bus"
           ],
           "type": "$type",
           "width": "$width",
@@ -121,7 +121,6 @@ json_section=$(cat <<EOF
           ],
           "sha256": "$sha256"
       }
-  }
 EOF
 )
 
