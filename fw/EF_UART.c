@@ -88,7 +88,7 @@ EF_DRIVER_STATUS EF_UART_disable(EF_UART_TYPE_PTR uart){
     if (uart == NULL) {
         status = EF_DRIVER_ERROR_PARAMETER;                // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
     } else{
-        uart->CTRL &= ~(EF_UART_CTRL_REG_EN_MASK << EF_UART_CTRL_REG_EN_BIT);        // Clear the enable bit using the specified  mask
+        uart->CTRL &= ~(EF_UART_CTRL_REG_EN_MASK);        // Clear the enable bit using the specified  mask
         
     }
     return status;
@@ -114,7 +114,7 @@ EF_DRIVER_STATUS EF_UART_disableRx(EF_UART_TYPE_PTR uart){
     if (uart == NULL) {
         status = EF_DRIVER_ERROR_PARAMETER;                // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
     } else{
-        uart->CTRL &= ~(EF_UART_CTRL_REG_RXEN_MASK << EF_UART_CTRL_REG_RXEN_BIT);      // Clear the enable bit using the specified  mask
+        uart->CTRL &= ~(EF_UART_CTRL_REG_RXEN_MASK);      // Clear the enable bit using the specified  mask
         
     }
     return status;
@@ -140,7 +140,7 @@ EF_DRIVER_STATUS EF_UART_disableTx(EF_UART_TYPE_PTR uart){
     if (uart == NULL) {
         status = EF_DRIVER_ERROR_PARAMETER;                // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
     } else{
-        uart->CTRL &= ~(EF_UART_CTRL_REG_TXEN_MASK << EF_UART_CTRL_REG_TXEN_BIT);      // Clear the enable bit using the specified  mask
+        uart->CTRL &= ~(EF_UART_CTRL_REG_TXEN_MASK);      // Clear the enable bit using the specified  mask
         
     }
     return status;
@@ -166,7 +166,7 @@ EF_DRIVER_STATUS EF_UART_disableLoopBack(EF_UART_TYPE_PTR uart){
     if (uart == NULL) {
         status = EF_DRIVER_ERROR_PARAMETER;                // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
     } else{
-        uart->CTRL &= ~(EF_UART_CTRL_REG_LPEN_MASK << EF_UART_CTRL_REG_LPEN_BIT);      // Clear the enable bit using the specified  mask
+        uart->CTRL &= ~(EF_UART_CTRL_REG_LPEN_MASK);      // Clear the enable bit using the specified  mask
         
     }
     return status;
@@ -180,7 +180,7 @@ EF_DRIVER_STATUS EF_UART_enableGlitchFilter(EF_UART_TYPE_PTR uart){
     if (uart == NULL) {
         status = EF_DRIVER_ERROR_PARAMETER;                 // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
     } else{
-        uart->CTRL &= ~(EF_UART_CTRL_REG_GFEN_MASK << EF_UART_CTRL_REG_GFEN_BIT);          // Clear the enable bit using the specified  mask
+        uart->CTRL &= ~(EF_UART_CTRL_REG_GFEN_MASK);          // Clear the enable bit using the specified  mask
         uart->CTRL |= ((uint32_t)0x1 << EF_UART_CTRL_REG_GFEN_BIT); // set the enable bit to 1 at the specified offset
         
     }
@@ -194,7 +194,7 @@ EF_DRIVER_STATUS EF_UART_disableGlitchFilter(EF_UART_TYPE_PTR uart){
     if (uart == NULL) {
         status = EF_DRIVER_ERROR_PARAMETER;                 // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
     } else{
-        uart->CTRL &= ~(EF_UART_CTRL_REG_GFEN_MASK << EF_UART_CTRL_REG_GFEN_BIT);          // Clear the enable bit using the specified  mask
+        uart->CTRL &= ~(EF_UART_CTRL_REG_GFEN_MASK);          // Clear the enable bit using the specified  mask
     }
     return status;
 }
@@ -276,7 +276,7 @@ EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE_PTR uart, uint32_t value){
                                                         // This UART IP only supports data length from 5 to 9 bits
     } else {
 
-        uart->CFG &= ~(EF_UART_CFG_REG_WLEN_MASK << EF_UART_CFG_REG_WLEN_BIT);        // Clear the field bits in the register using the defined mask
+        uart->CFG &= ~(EF_UART_CFG_REG_WLEN_MASK);        // Clear the field bits in the register using the defined mask
         uart->CFG |= ((value << EF_UART_CFG_REG_WLEN_BIT) & EF_UART_CFG_REG_WLEN_MASK);     // Set the bits with the given value at the defined offset
         
     }
@@ -285,7 +285,7 @@ EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE_PTR uart, uint32_t value){
 
 // todo: make this generic between 1 and 2 bits 
 
-EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect(EF_UART_TYPE_PTR uart, bool is_two_bits){
+EF_DRIVER_STATUS EF_UART_setStopBits(EF_UART_TYPE_PTR uart, bool is_two_bits){
     
     EF_DRIVER_STATUS status = EF_DRIVER_OK; 
 
@@ -295,7 +295,7 @@ EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect(EF_UART_TYPE_PTR uart, bool is_two
         if (is_two_bits){
             uart->CFG |= ((uint32_t)0x1 << EF_UART_CFG_REG_STP2_BIT); // set the enable bit to 1 at the specified offset
         } else {
-            uart->CFG &= ~(EF_UART_CFG_REG_STP2_MASK << EF_UART_CFG_REG_STP2_BIT);      // Clear the enable bit using the specified  mask
+            uart->CFG &= ~(EF_UART_CFG_REG_STP2_MASK);      // Clear the enable bit using the specified  mask
         }
         
     }
@@ -311,7 +311,7 @@ EF_DRIVER_STATUS EF_UART_setParityType(EF_UART_TYPE_PTR uart, enum parity_type p
     if (uart == NULL) {
         status = EF_DRIVER_ERROR_PARAMETER;                // Return EF_DRIVER_ERROR_PARAMETER if uart is NULL
     } else {
-        uart->CFG &= ~(EF_UART_CFG_REG_PARITY_MASK << EF_UART_CFG_REG_PARITY_BIT);      // Clear the field bits in the register using the defined mask
+        uart->CFG &= ~(EF_UART_CFG_REG_PARITY_MASK);      // Clear the field bits in the register using the defined mask
         uart->CFG |= ((parity << EF_UART_CFG_REG_PARITY_BIT) & EF_UART_CFG_REG_PARITY_MASK); // Set the bits with the given value at the defined offset
         
     }
@@ -328,7 +328,7 @@ EF_DRIVER_STATUS EF_UART_setTimeoutBits(EF_UART_TYPE_PTR uart, uint32_t value){
     } else if (value > EF_UART_CFG_REG_TIMEOUT_MAX_VALUE) {
         status = EF_DRIVER_ERROR_PARAMETER;                // Return EF_DRIVER_ERROR_PARAMETER if value is out of range
     } else {
-        uart->CFG &= ~(EF_UART_CFG_REG_TIMEOUT_MASK << EF_UART_CFG_REG_TIMEOUT_BIT);            // Clear the field bits in the register using the defined mask
+        uart->CFG &= ~(EF_UART_CFG_REG_TIMEOUT_MASK);            // Clear the field bits in the register using the defined mask
         uart->CFG |= ((value << EF_UART_CFG_REG_TIMEOUT_BIT) & EF_UART_CFG_REG_TIMEOUT_MASK);   // Set the bits with the given value at the defined offset
         
     }

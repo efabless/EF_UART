@@ -37,17 +37,9 @@
 /******************************************************************************
 * Macros and Constants
 ******************************************************************************/
-#define EF_UART_CTRL_REG_MAX_VALUE              ((uint32_t)0x0000001F)  // CTRL register only has 5 bits, and the rest are reserved
-#define EF_UART_PR_REG_MAX_VALUE                ((uint32_t)0x0000FFFF)  // PR register only has 16 bits
 #define EF_UART_DataLength_MIN_VALUE            ((uint32_t)0x00000005)  // This UART IP only supports data length from 5 to 9 bits
 #define EF_UART_DataLength_MAX_VALUE            ((uint32_t)0x00000009)  // This UART IP only supports data length from 5 to 9 bits
 #define EF_UART_CFG_REG_TIMEOUT_MAX_VALUE       ((uint32_t)0x0000003F)  // The CFG register timeout field is 6 bits
-#define EF_UART_CFG_REG_MAX_VALUE               ((uint32_t)0x00001FFF)  // The CFG register is 13 bits
-#define EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE ((uint32_t)0x0000000F)  // The RX FIFO level register is 4 bits
-#define EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE ((uint32_t)0x0000000F)  // The TX FIFO level register is 4 bits
-#define EF_UART_MATCH_REG_MAX_VALUE             ((uint32_t)0x00001FFF)  // The match register is 9 bits
-#define EF_UART_IM_REG_MAX_VALUE                ((uint32_t)0x000003FF)  // The IM register is 10 bits
-#define EF_UART_IC_REG_MAX_VALUE                ((uint32_t)0x000003FF)  // The IC register is 10 bits
 
 
 /******************************************************************************
@@ -204,7 +196,7 @@ EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE_PTR uart, uint32_t value);
 
         \return status A value of type \ref EF_DRIVER_STATUS : returns a success or error code 
     */
-EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect(EF_UART_TYPE_PTR uart, bool is_two_bits);
+EF_DRIVER_STATUS EF_UART_setStopBits(EF_UART_TYPE_PTR uart, bool is_two_bits);
 
 
 //! sets the "parity" field  in configuration register (could be none, odd, even, sticky 0 or sticky 1)

@@ -17,6 +17,24 @@ struct \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{\+\_\+\+EF\+\_\+\+UA
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a81f369079976a46554fd9798ab035697}{\+\_\+\+\_\+\+RW}}~volatile       uint32\+\_\+t
 \item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a3cdf79a1f65fa10e69534e5b2666d0ba}{EF\+\_\+\+UART\+\_\+\+RXDATA\+\_\+\+REG\+\_\+\+RXDATA\+\_\+\+BIT}}~((uint32\+\_\+t)0)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a4652f7ff523613b196bf5baf6d78d91f}{EF\+\_\+\+UART\+\_\+\+RXDATA\+\_\+\+REG\+\_\+\+RXDATA\+\_\+\+MASK}}~((uint32\+\_\+t)0x1ff)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a81ff23cd181b0651137089be133f24cc}{EF\+\_\+\+UART\+\_\+\+RXDATA\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x1\+FF)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aa786713443bcfca4a35927787a726e64}{EF\+\_\+\+UART\+\_\+\+TXDATA\+\_\+\+REG\+\_\+\+TXDATA\+\_\+\+BIT}}~((uint32\+\_\+t)0)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a149893850dba218c422b89833dcec4e3}{EF\+\_\+\+UART\+\_\+\+TXDATA\+\_\+\+REG\+\_\+\+TXDATA\+\_\+\+MASK}}~((uint32\+\_\+t)0x1ff)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a4bb951f422b2caa68f5e6098972f5c5c}{EF\+\_\+\+UART\+\_\+\+TXDATA\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x1\+FF)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a69b6f29dcb6b6620369f9596ce6d9026}{EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+PR\+\_\+\+BIT}}~((uint32\+\_\+t)0)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a014196bf4b5234e6e5e631dd88925f6c}{EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+PR\+\_\+\+MASK}}~((uint32\+\_\+t)0xffff)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a482ad61b42cd1ab32b3d69e7fc2fbf5d}{EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x\+FFFF)
+\item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a266874a7f0e8f44a104856cc9edf8e1b}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_afd2ff304610edfabd0274bb0719c2e1b}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+EN\+\_\+\+MASK}}~((uint32\+\_\+t)0x1)
@@ -37,6 +55,8 @@ struct \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{\+\_\+\+EF\+\_\+\+UA
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a7f87b5eccffb824604dcd31b26989dd5}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+GFEN\+\_\+\+MASK}}~((uint32\+\_\+t)0x10)
 \item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_abb5e56e926c33b555091e679f678515d}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x1F)
+\item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a0b828c908bc0843a0e9229adfcb29863}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_adba653133ac3677b18091f8ad0b3c6f2}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+WLEN\+\_\+\+MASK}}~((uint32\+\_\+t)0xf)
@@ -51,31 +71,51 @@ struct \mbox{\hyperlink{struct___e_f___u_a_r_t___t_y_p_e__}{\+\_\+\+EF\+\_\+\+UA
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_afaa9ea2f3ab4ff8647532935574bcd88}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+BIT}}~((uint32\+\_\+t)8)
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ad0c0bdddadfd3a44d43b5d7813af277d}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MASK}}~((uint32\+\_\+t)0x3f)
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ad0c0bdddadfd3a44d43b5d7813af277d}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MASK}}~((uint32\+\_\+t)0x3f00)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a2c1fd5ccd1238662c3f8fb9f2af47019}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x3\+FFF)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a6058d6cafba5b10b8e9d23d11ae59873}{EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MATCH\+\_\+\+BIT}}~((uint32\+\_\+t)0)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a3ba8fa51df71c0e8c336de81f00a39f2}{EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MATCH\+\_\+\+MASK}}~((uint32\+\_\+t)0x1ff)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aa65fa5d0b6a628fae152ea7013052318}{EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x1\+FF)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_af97f793bc90ec0557b0366f49ed39768}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a3373791334179d5030fc3901e9cc234d}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK}}~((uint32\+\_\+t)0xf)
 \item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aa5f8f27b3110ec990049d2488c5d143d}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0xF)
+\item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_adfa08c57c518af19d91b3386f5f5f48e}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a3519d1b3ce36f9ffd11094e6906d02f3}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK}}~((uint32\+\_\+t)0xf)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a7749200841ca06b85560cdcce6143c0f}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0xF)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae2c3c80712f43d3efef03601ed583a2e}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a1959835954e2643cb04ab8b6337500cc}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK}}~((uint32\+\_\+t)0x1)
 \item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a856c4437bd17a616628d95731d618ecc}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x1)
+\item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a32bdc59657c35d0612e6e66fe760adc7}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aa1b5bca4b8333cf38e5a36abd61805f5}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK}}~((uint32\+\_\+t)0xf)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a1b62ce9a48066d446dc4c07a603e3724}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0xF)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a2cb10104d58a678696601c2eb7cdb17c}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a21fe71b2983c43632eba11aeccbffcb0}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+THRESHOLD\+\_\+\+MASK}}~((uint32\+\_\+t)0xf)
 \item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_aad9c71b2e065a1bc005853521e584cf7}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0xF)
+\item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a4d36a0d56e4c71facb77edf936c5c1be}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+BIT}}~((uint32\+\_\+t)0)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_af62b4e21b6b8f13f76fe7a01b9abc46c}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK}}~((uint32\+\_\+t)0x1)
+\item 
+\#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_a6cfe5d9603e830de2e8a7cabbfba7faf}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x1)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_af0ef9bb61d418f4ec8031e74ac1374f3}{EF\+\_\+\+UART\+\_\+\+TXE\+\_\+\+FLAG}}~((uint32\+\_\+t)0x1)
 \item 
@@ -131,6 +171,12 @@ typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afed
 \doxysubsubsection{\texorpdfstring{EF\_UART\_BRK\_FLAG}{EF\_UART\_BRK\_FLAG}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+BRK\+\_\+\+FLAG~((uint32\+\_\+t)0x10)}
 
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a2c1fd5ccd1238662c3f8fb9f2af47019}\label{_e_f___u_a_r_t__regs_8h_a2c1fd5ccd1238662c3f8fb9f2af47019}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_MAX\_VALUE@{EF\_UART\_CFG\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_CFG\_REG\_MAX\_VALUE@{EF\_UART\_CFG\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_MAX\_VALUE}{EF\_UART\_CFG\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x3\+FFF)}
+
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a385a3de23966fe78d4f7c08ce196ad15}\label{_e_f___u_a_r_t__regs_8h_a385a3de23966fe78d4f7c08ce196ad15}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_PARITY\_BIT@{EF\_UART\_CFG\_REG\_PARITY\_BIT}}
 \index{EF\_UART\_CFG\_REG\_PARITY\_BIT@{EF\_UART\_CFG\_REG\_PARITY\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
@@ -165,7 +211,7 @@ typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afed
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_TIMEOUT\_MASK@{EF\_UART\_CFG\_REG\_TIMEOUT\_MASK}}
 \index{EF\_UART\_CFG\_REG\_TIMEOUT\_MASK@{EF\_UART\_CFG\_REG\_TIMEOUT\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_TIMEOUT\_MASK}{EF\_UART\_CFG\_REG\_TIMEOUT\_MASK}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MASK~((uint32\+\_\+t)0x3f)}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MASK~((uint32\+\_\+t)0x3f00)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a0b828c908bc0843a0e9229adfcb29863}\label{_e_f___u_a_r_t__regs_8h_a0b828c908bc0843a0e9229adfcb29863}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CFG\_REG\_WLEN\_BIT@{EF\_UART\_CFG\_REG\_WLEN\_BIT}}
@@ -215,6 +261,12 @@ typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afed
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_LPEN\_MASK}{EF\_UART\_CTRL\_REG\_LPEN\_MASK}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+LPEN\+\_\+\+MASK~((uint32\+\_\+t)0x8)}
 
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_abb5e56e926c33b555091e679f678515d}\label{_e_f___u_a_r_t__regs_8h_abb5e56e926c33b555091e679f678515d}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_MAX\_VALUE@{EF\_UART\_CTRL\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_CTRL\_REG\_MAX\_VALUE@{EF\_UART\_CTRL\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_MAX\_VALUE}{EF\_UART\_CTRL\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x1F)}
+
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a5ced1617f0c81c91c84feb6e67ab7e3f}\label{_e_f___u_a_r_t__regs_8h_a5ced1617f0c81c91c84feb6e67ab7e3f}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_CTRL\_REG\_RXEN\_BIT@{EF\_UART\_CTRL\_REG\_RXEN\_BIT}}
 \index{EF\_UART\_CTRL\_REG\_RXEN\_BIT@{EF\_UART\_CTRL\_REG\_RXEN\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
@@ -251,11 +303,47 @@ typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afed
 \doxysubsubsection{\texorpdfstring{EF\_UART\_MATCH\_FLAG}{EF\_UART\_MATCH\_FLAG}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+FLAG~((uint32\+\_\+t)0x20)}
 
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a6058d6cafba5b10b8e9d23d11ae59873}\label{_e_f___u_a_r_t__regs_8h_a6058d6cafba5b10b8e9d23d11ae59873}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_MATCH\_REG\_MATCH\_BIT@{EF\_UART\_MATCH\_REG\_MATCH\_BIT}}
+\index{EF\_UART\_MATCH\_REG\_MATCH\_BIT@{EF\_UART\_MATCH\_REG\_MATCH\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_MATCH\_REG\_MATCH\_BIT}{EF\_UART\_MATCH\_REG\_MATCH\_BIT}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MATCH\+\_\+\+BIT~((uint32\+\_\+t)0)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a3ba8fa51df71c0e8c336de81f00a39f2}\label{_e_f___u_a_r_t__regs_8h_a3ba8fa51df71c0e8c336de81f00a39f2}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_MATCH\_REG\_MATCH\_MASK@{EF\_UART\_MATCH\_REG\_MATCH\_MASK}}
+\index{EF\_UART\_MATCH\_REG\_MATCH\_MASK@{EF\_UART\_MATCH\_REG\_MATCH\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_MATCH\_REG\_MATCH\_MASK}{EF\_UART\_MATCH\_REG\_MATCH\_MASK}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MATCH\+\_\+\+MASK~((uint32\+\_\+t)0x1ff)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_aa65fa5d0b6a628fae152ea7013052318}\label{_e_f___u_a_r_t__regs_8h_aa65fa5d0b6a628fae152ea7013052318}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_MATCH\_REG\_MAX\_VALUE@{EF\_UART\_MATCH\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_MATCH\_REG\_MAX\_VALUE@{EF\_UART\_MATCH\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_MATCH\_REG\_MAX\_VALUE}{EF\_UART\_MATCH\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x1\+FF)}
+
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_ad2021fcd6ecdc551490d95ff8a2227f4}\label{_e_f___u_a_r_t__regs_8h_ad2021fcd6ecdc551490d95ff8a2227f4}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_OR\_FLAG@{EF\_UART\_OR\_FLAG}}
 \index{EF\_UART\_OR\_FLAG@{EF\_UART\_OR\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_OR\_FLAG}{EF\_UART\_OR\_FLAG}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+OR\+\_\+\+FLAG~((uint32\+\_\+t)0x100)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a482ad61b42cd1ab32b3d69e7fc2fbf5d}\label{_e_f___u_a_r_t__regs_8h_a482ad61b42cd1ab32b3d69e7fc2fbf5d}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_PR\_REG\_MAX\_VALUE@{EF\_UART\_PR\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_PR\_REG\_MAX\_VALUE@{EF\_UART\_PR\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_PR\_REG\_MAX\_VALUE}{EF\_UART\_PR\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x\+FFFF)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a69b6f29dcb6b6620369f9596ce6d9026}\label{_e_f___u_a_r_t__regs_8h_a69b6f29dcb6b6620369f9596ce6d9026}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_PR\_REG\_PR\_BIT@{EF\_UART\_PR\_REG\_PR\_BIT}}
+\index{EF\_UART\_PR\_REG\_PR\_BIT@{EF\_UART\_PR\_REG\_PR\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_PR\_REG\_PR\_BIT}{EF\_UART\_PR\_REG\_PR\_BIT}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+PR\+\_\+\+BIT~((uint32\+\_\+t)0)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a014196bf4b5234e6e5e631dd88925f6c}\label{_e_f___u_a_r_t__regs_8h_a014196bf4b5234e6e5e631dd88925f6c}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_PR\_REG\_PR\_MASK@{EF\_UART\_PR\_REG\_PR\_MASK}}
+\index{EF\_UART\_PR\_REG\_PR\_MASK@{EF\_UART\_PR\_REG\_PR\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_PR\_REG\_PR\_MASK}{EF\_UART\_PR\_REG\_PR\_MASK}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+PR\+\_\+\+MASK~((uint32\+\_\+t)0xffff)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a3cff4fc63e9ab01bad003a962a6d3938}\label{_e_f___u_a_r_t__regs_8h_a3cff4fc63e9ab01bad003a962a6d3938}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_PRE\_FLAG@{EF\_UART\_PRE\_FLAG}}
@@ -281,6 +369,12 @@ typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afed
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK~((uint32\+\_\+t)0x1)}
 
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a856c4437bd17a616628d95731d618ecc}\label{_e_f___u_a_r_t__regs_8h_a856c4437bd17a616628d95731d618ecc}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RX\_FIFO\_FLUSH\_REG\_MAX\_VALUE@{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_MAX\_VALUE@{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_MAX\_VALUE}{EF\_UART\_RX\_FIFO\_FLUSH\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x1)}
+
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_af97f793bc90ec0557b0366f49ed39768}\label{_e_f___u_a_r_t__regs_8h_af97f793bc90ec0557b0366f49ed39768}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT@{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}}
 \index{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT@{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
@@ -292,6 +386,18 @@ typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afed
 \index{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK@{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK~((uint32\+\_\+t)0xf)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_aa5f8f27b3110ec990049d2488c5d143d}\label{_e_f___u_a_r_t__regs_8h_aa5f8f27b3110ec990049d2488c5d143d}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RX\_FIFO\_LEVEL\_REG\_MAX\_VALUE@{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_MAX\_VALUE@{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_MAX\_VALUE}{EF\_UART\_RX\_FIFO\_LEVEL\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0xF)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a7749200841ca06b85560cdcce6143c0f}\label{_e_f___u_a_r_t__regs_8h_a7749200841ca06b85560cdcce6143c0f}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE@{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE@{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0xF)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_adfa08c57c518af19d91b3386f5f5f48e}\label{_e_f___u_a_r_t__regs_8h_adfa08c57c518af19d91b3386f5f5f48e}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT@{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}}
@@ -311,6 +417,24 @@ typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afed
 \doxysubsubsection{\texorpdfstring{EF\_UART\_RXA\_FLAG}{EF\_UART\_RXA\_FLAG}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RXA\+\_\+\+FLAG~((uint32\+\_\+t)0x8)}
 
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a81ff23cd181b0651137089be133f24cc}\label{_e_f___u_a_r_t__regs_8h_a81ff23cd181b0651137089be133f24cc}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RXDATA\_REG\_MAX\_VALUE@{EF\_UART\_RXDATA\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_RXDATA\_REG\_MAX\_VALUE@{EF\_UART\_RXDATA\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_RXDATA\_REG\_MAX\_VALUE}{EF\_UART\_RXDATA\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RXDATA\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x1\+FF)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a3cdf79a1f65fa10e69534e5b2666d0ba}\label{_e_f___u_a_r_t__regs_8h_a3cdf79a1f65fa10e69534e5b2666d0ba}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RXDATA\_REG\_RXDATA\_BIT@{EF\_UART\_RXDATA\_REG\_RXDATA\_BIT}}
+\index{EF\_UART\_RXDATA\_REG\_RXDATA\_BIT@{EF\_UART\_RXDATA\_REG\_RXDATA\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_RXDATA\_REG\_RXDATA\_BIT}{EF\_UART\_RXDATA\_REG\_RXDATA\_BIT}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RXDATA\+\_\+\+REG\+\_\+\+RXDATA\+\_\+\+BIT~((uint32\+\_\+t)0)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a4652f7ff523613b196bf5baf6d78d91f}\label{_e_f___u_a_r_t__regs_8h_a4652f7ff523613b196bf5baf6d78d91f}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RXDATA\_REG\_RXDATA\_MASK@{EF\_UART\_RXDATA\_REG\_RXDATA\_MASK}}
+\index{EF\_UART\_RXDATA\_REG\_RXDATA\_MASK@{EF\_UART\_RXDATA\_REG\_RXDATA\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_RXDATA\_REG\_RXDATA\_MASK}{EF\_UART\_RXDATA\_REG\_RXDATA\_MASK}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RXDATA\+\_\+\+REG\+\_\+\+RXDATA\+\_\+\+MASK~((uint32\+\_\+t)0x1ff)}
+
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_abdbd275b9e49d27fc0631f3db144626c}\label{_e_f___u_a_r_t__regs_8h_abdbd275b9e49d27fc0631f3db144626c}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_RXF\_FLAG@{EF\_UART\_RXF\_FLAG}}
 \index{EF\_UART\_RXF\_FLAG@{EF\_UART\_RXF\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
@@ -329,6 +453,12 @@ typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afed
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+FLUSH\+\_\+\+MASK~((uint32\+\_\+t)0x1)}
 
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a6cfe5d9603e830de2e8a7cabbfba7faf}\label{_e_f___u_a_r_t__regs_8h_a6cfe5d9603e830de2e8a7cabbfba7faf}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TX\_FIFO\_FLUSH\_REG\_MAX\_VALUE@{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_MAX\_VALUE@{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_MAX\_VALUE}{EF\_UART\_TX\_FIFO\_FLUSH\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+FLUSH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x1)}
+
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a32bdc59657c35d0612e6e66fe760adc7}\label{_e_f___u_a_r_t__regs_8h_a32bdc59657c35d0612e6e66fe760adc7}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT@{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}}
 \index{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT@{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
@@ -340,6 +470,18 @@ typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afed
 \index{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK@{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+LEVEL\+\_\+\+MASK~((uint32\+\_\+t)0xf)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a1b62ce9a48066d446dc4c07a603e3724}\label{_e_f___u_a_r_t__regs_8h_a1b62ce9a48066d446dc4c07a603e3724}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TX\_FIFO\_LEVEL\_REG\_MAX\_VALUE@{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_MAX\_VALUE@{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_MAX\_VALUE}{EF\_UART\_TX\_FIFO\_LEVEL\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+LEVEL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0xF)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_aad9c71b2e065a1bc005853521e584cf7}\label{_e_f___u_a_r_t__regs_8h_aad9c71b2e065a1bc005853521e584cf7}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE@{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE@{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0xF)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a2cb10104d58a678696601c2eb7cdb17c}\label{_e_f___u_a_r_t__regs_8h_a2cb10104d58a678696601c2eb7cdb17c}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT@{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT}}
@@ -358,6 +500,24 @@ typedef \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afed
 \index{EF\_UART\_TXB\_FLAG@{EF\_UART\_TXB\_FLAG}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_TXB\_FLAG}{EF\_UART\_TXB\_FLAG}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TXB\+\_\+\+FLAG~((uint32\+\_\+t)0x4)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a4bb951f422b2caa68f5e6098972f5c5c}\label{_e_f___u_a_r_t__regs_8h_a4bb951f422b2caa68f5e6098972f5c5c}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TXDATA\_REG\_MAX\_VALUE@{EF\_UART\_TXDATA\_REG\_MAX\_VALUE}}
+\index{EF\_UART\_TXDATA\_REG\_MAX\_VALUE@{EF\_UART\_TXDATA\_REG\_MAX\_VALUE}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_TXDATA\_REG\_MAX\_VALUE}{EF\_UART\_TXDATA\_REG\_MAX\_VALUE}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TXDATA\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x1\+FF)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_aa786713443bcfca4a35927787a726e64}\label{_e_f___u_a_r_t__regs_8h_aa786713443bcfca4a35927787a726e64}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TXDATA\_REG\_TXDATA\_BIT@{EF\_UART\_TXDATA\_REG\_TXDATA\_BIT}}
+\index{EF\_UART\_TXDATA\_REG\_TXDATA\_BIT@{EF\_UART\_TXDATA\_REG\_TXDATA\_BIT}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_TXDATA\_REG\_TXDATA\_BIT}{EF\_UART\_TXDATA\_REG\_TXDATA\_BIT}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TXDATA\+\_\+\+REG\+\_\+\+TXDATA\+\_\+\+BIT~((uint32\+\_\+t)0)}
+
+\mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_a149893850dba218c422b89833dcec4e3}\label{_e_f___u_a_r_t__regs_8h_a149893850dba218c422b89833dcec4e3}} 
+\index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TXDATA\_REG\_TXDATA\_MASK@{EF\_UART\_TXDATA\_REG\_TXDATA\_MASK}}
+\index{EF\_UART\_TXDATA\_REG\_TXDATA\_MASK@{EF\_UART\_TXDATA\_REG\_TXDATA\_MASK}!EF\_UART\_regs.h@{EF\_UART\_regs.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_TXDATA\_REG\_TXDATA\_MASK}{EF\_UART\_TXDATA\_REG\_TXDATA\_MASK}}
+{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TXDATA\+\_\+\+REG\+\_\+\+TXDATA\+\_\+\+MASK~((uint32\+\_\+t)0x1ff)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t__regs_8h_af0ef9bb61d418f4ec8031e74ac1374f3}\label{_e_f___u_a_r_t__regs_8h_af0ef9bb61d418f4ec8031e74ac1374f3}} 
 \index{EF\_UART\_regs.h@{EF\_UART\_regs.h}!EF\_UART\_TXE\_FLAG@{EF\_UART\_TXE\_FLAG}}

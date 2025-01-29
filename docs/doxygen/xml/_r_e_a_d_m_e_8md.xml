@@ -1315,7 +1315,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>File<sp/>EF_UART_example.h</highlight></codeline>
 <codeline></codeline>
-<codeline></codeline>
+<codeline><highlight class="normal">_C<sp/>header<sp/>file<sp/>containing<sp/>an<sp/>example<sp/>of<sp/>how<sp/>to<sp/>use<sp/>the<sp/>UART<sp/>APIs._</highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
 <codeline></codeline>

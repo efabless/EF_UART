@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="87" column="5" bodyfile="EF_UART_regs.h" bodystart="87" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="120" column="5" bodyfile="EF_UART_regs.h" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a99fca397943293a7c803a989f17a51f5" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="88" column="5" bodyfile="EF_UART_regs.h" bodystart="88" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="121" column="5" bodyfile="EF_UART_regs.h" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1ab2ed350e6f2da615799df38abd839c27" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="89" column="5" bodyfile="EF_UART_regs.h" bodystart="89" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="122" column="5" bodyfile="EF_UART_regs.h" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1aaf3574c53f189c64c14ccfb846aed421" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="90" column="5" bodyfile="EF_UART_regs.h" bodystart="90" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="123" column="5" bodyfile="EF_UART_regs.h" bodystart="123" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a419b02d7f3175d7386fbb78c635d2cff" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="91" column="5" bodyfile="EF_UART_regs.h" bodystart="91" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="124" column="5" bodyfile="EF_UART_regs.h" bodystart="124" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a23927360f022c1dd4dbc8451e6977659" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="92" column="5" bodyfile="EF_UART_regs.h" bodystart="92" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="125" column="5" bodyfile="EF_UART_regs.h" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1aa4c42f2e242b0eca1910fb9584e1284f" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="93" column="5" bodyfile="EF_UART_regs.h" bodystart="93" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="126" column="5" bodyfile="EF_UART_regs.h" bodystart="126" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a4b809032c979fc45a6c5c0a55f26c34f" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="94" column="5" bodyfile="EF_UART_regs.h" bodystart="94" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="127" column="5" bodyfile="EF_UART_regs.h" bodystart="127" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1aa0e14c3a6131575b34297711fb98444d" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="95" column="5" bodyfile="EF_UART_regs.h" bodystart="95" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="128" column="5" bodyfile="EF_UART_regs.h" bodystart="128" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a43428037400a75812097cd8a3256cd4f" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
@@ -142,7 +142,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="96" column="5" bodyfile="EF_UART_regs.h" bodystart="96" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="129" column="5" bodyfile="EF_UART_regs.h" bodystart="129" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1ac613a7f5d5329fdf2e967f655cec4bac" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
@@ -156,7 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="97" column="5" bodyfile="EF_UART_regs.h" bodystart="97" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="130" column="5" bodyfile="EF_UART_regs.h" bodystart="130" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1ad24d4ace423d0c2867c15b6ae31683fc" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
@@ -170,7 +170,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="98" column="5" bodyfile="EF_UART_regs.h" bodystart="98" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="131" column="5" bodyfile="EF_UART_regs.h" bodystart="131" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a4fd96d87bc841a6f1726629499bfeb50" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
@@ -184,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="99" column="5" bodyfile="EF_UART_regs.h" bodystart="99" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="132" column="5" bodyfile="EF_UART_regs.h" bodystart="132" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a0e1ade580ea1c936365b711a8c43a8ac" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
@@ -198,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="100" column="5" bodyfile="EF_UART_regs.h" bodystart="100" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="133" column="5" bodyfile="EF_UART_regs.h" bodystart="133" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1aca03e5be4579abf3e7fcca929aec08de" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
@@ -212,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="101" column="5" bodyfile="EF_UART_regs.h" bodystart="101" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="134" column="5" bodyfile="EF_UART_regs.h" bodystart="134" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1ade10571e4c7f19ba5d0c55623b2035e0" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
@@ -226,7 +226,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="102" column="5" bodyfile="EF_UART_regs.h" bodystart="102" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="135" column="5" bodyfile="EF_UART_regs.h" bodystart="135" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a5fd23e1cc4432238896f5b79b793014b" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1a81f369079976a46554fd9798ab035697" kindref="member">__RW</ref></type>
@@ -240,7 +240,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="103" column="5" bodyfile="EF_UART_regs.h" bodystart="103" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="136" column="5" bodyfile="EF_UART_regs.h" bodystart="136" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a6cad1b7265a8f8c8b5e71c700a1df06b" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
@@ -254,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="104" column="5" bodyfile="EF_UART_regs.h" bodystart="104" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="137" column="5" bodyfile="EF_UART_regs.h" bodystart="137" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a52259725e906f220be8a946cacdcffb9" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1aef00c279597b188e4cdd14d288ddf77a" kindref="member">__R</ref></type>
@@ -268,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="105" column="5" bodyfile="EF_UART_regs.h" bodystart="105" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="138" column="5" bodyfile="EF_UART_regs.h" bodystart="138" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1a2c2bccc1048a760f2eaf186451867770" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
@@ -282,7 +282,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="106" column="5" bodyfile="EF_UART_regs.h" bodystart="106" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="139" column="5" bodyfile="EF_UART_regs.h" bodystart="139" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct___e_f___u_a_r_t___t_y_p_e___1ad1b69ebbb1bfeaed7edb816f86128518" prot="public" static="no" mutable="no">
         <type><ref refid="_e_f___u_a_r_t__regs_8h_1ad8cfe7014044235a4c8d3239c2597f09" kindref="member">__W</ref></type>
@@ -296,14 +296,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART_regs.h" line="107" column="5" bodyfile="EF_UART_regs.h" bodystart="107" bodyend="-1"/>
+        <location file="EF_UART_regs.h" line="140" column="5" bodyfile="EF_UART_regs.h" bodystart="140" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="EF_UART_regs.h" line="86" column="1" bodyfile="EF_UART_regs.h" bodystart="86" bodyend="108"/>
+    <location file="EF_UART_regs.h" line="119" column="1" bodyfile="EF_UART_regs.h" bodystart="119" bodyend="141"/>
     <listofallmembers>
       <member refid="struct___e_f___u_a_r_t___t_y_p_e___1a419b02d7f3175d7386fbb78c635d2cff" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>CFG</name></member>
       <member refid="struct___e_f___u_a_r_t___t_y_p_e___1aaf3574c53f189c64c14ccfb846aed421" prot="public" virt="non-virtual"><scope>_EF_UART_TYPE_</scope><name>CTRL</name></member>

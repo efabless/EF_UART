@@ -66,28 +66,6 @@
       </node>
     </invincdepgraph>
       <sectiondef kind="define">
-      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1abb5e56e926c33b555091e679f678515d" prot="public" static="no">
-        <name>EF_UART_CTRL_REG_MAX_VALUE</name>
-        <initializer>((uint32_t)0x0000001F)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="EF_UART.h" line="40" column="9" bodyfile="EF_UART.h" bodystart="40" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a482ad61b42cd1ab32b3d69e7fc2fbf5d" prot="public" static="no">
-        <name>EF_UART_PR_REG_MAX_VALUE</name>
-        <initializer>((uint32_t)0x0000FFFF)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="EF_UART.h" line="41" column="9" bodyfile="EF_UART.h" bodystart="41" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="define" id="_e_f___u_a_r_t_8h_1ad037e6ec02fdbc1ac83387687b690cb5" prot="public" static="no">
         <name>EF_UART_DataLength_MIN_VALUE</name>
         <initializer>((uint32_t)0x00000005)</initializer>
@@ -97,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="42" column="9" bodyfile="EF_UART.h" bodystart="42" bodyend="-1"/>
+        <location file="EF_UART.h" line="40" column="9" bodyfile="EF_UART.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a600c1602d5dcbe87cbc6ae8d015b2384" prot="public" static="no">
         <name>EF_UART_DataLength_MAX_VALUE</name>
@@ -108,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="43" column="9" bodyfile="EF_UART.h" bodystart="43" bodyend="-1"/>
+        <location file="EF_UART.h" line="41" column="9" bodyfile="EF_UART.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a31ef64a99d1e4389df1255aa2b3fd645" prot="public" static="no">
         <name>EF_UART_CFG_REG_TIMEOUT_MAX_VALUE</name>
@@ -119,73 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="44" column="9" bodyfile="EF_UART.h" bodystart="44" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a2c1fd5ccd1238662c3f8fb9f2af47019" prot="public" static="no">
-        <name>EF_UART_CFG_REG_MAX_VALUE</name>
-        <initializer>((uint32_t)0x00001FFF)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="EF_UART.h" line="45" column="9" bodyfile="EF_UART.h" bodystart="45" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a7749200841ca06b85560cdcce6143c0f" prot="public" static="no">
-        <name>EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE</name>
-        <initializer>((uint32_t)0x0000000F)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="EF_UART.h" line="46" column="9" bodyfile="EF_UART.h" bodystart="46" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1aad9c71b2e065a1bc005853521e584cf7" prot="public" static="no">
-        <name>EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE</name>
-        <initializer>((uint32_t)0x0000000F)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="EF_UART.h" line="47" column="9" bodyfile="EF_UART.h" bodystart="47" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1aa65fa5d0b6a628fae152ea7013052318" prot="public" static="no">
-        <name>EF_UART_MATCH_REG_MAX_VALUE</name>
-        <initializer>((uint32_t)0x00001FFF)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="EF_UART.h" line="48" column="9" bodyfile="EF_UART.h" bodystart="48" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1ac5ebf20bf24247905b19e2cb2060a457" prot="public" static="no">
-        <name>EF_UART_IM_REG_MAX_VALUE</name>
-        <initializer>((uint32_t)0x000003FF)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="EF_UART.h" line="49" column="9" bodyfile="EF_UART.h" bodystart="49" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="_e_f___u_a_r_t_8h_1a056fa4df77234c4221790bbefd6cd974" prot="public" static="no">
-        <name>EF_UART_IC_REG_MAX_VALUE</name>
-        <initializer>((uint32_t)0x000003FF)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="EF_UART.h" line="50" column="9" bodyfile="EF_UART.h" bodystart="50" bodyend="-1"/>
+        <location file="EF_UART.h" line="42" column="9" bodyfile="EF_UART.h" bodystart="42" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -238,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="57" column="1" bodyfile="EF_UART.h" bodystart="57" bodyend="57"/>
+        <location file="EF_UART.h" line="49" column="1" bodyfile="EF_UART.h" bodystart="49" bodyend="49"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -282,7 +194,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="73" column="18" bodyfile="EF_UART.c" bodystart="55" bodyend="68" declfile="EF_UART.h" declline="73" declcolumn="18"/>
+        <location file="EF_UART.h" line="65" column="18" bodyfile="EF_UART.c" bodystart="55" bodyend="68" declfile="EF_UART.h" declline="65" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a2673b6af3d435a9caa3fd9f115ad1878" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -312,7 +224,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="81" column="18" bodyfile="EF_UART.c" bodystart="70" bodyend="82" declfile="EF_UART.h" declline="81" declcolumn="18"/>
+        <location file="EF_UART.h" line="73" column="18" bodyfile="EF_UART.c" bodystart="70" bodyend="82" declfile="EF_UART.h" declline="73" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a9d41c2bae6bbb144932cb4c264557a0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -342,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="90" column="18" bodyfile="EF_UART.c" bodystart="84" bodyend="95" declfile="EF_UART.h" declline="90" declcolumn="18"/>
+        <location file="EF_UART.h" line="82" column="18" bodyfile="EF_UART.c" bodystart="84" bodyend="95" declfile="EF_UART.h" declline="82" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a8fe185c295fdf22ad7f5ab020138e95f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -372,7 +284,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="99" column="18" bodyfile="EF_UART.c" bodystart="97" bodyend="108" declfile="EF_UART.h" declline="99" declcolumn="18"/>
+        <location file="EF_UART.h" line="91" column="18" bodyfile="EF_UART.c" bodystart="97" bodyend="108" declfile="EF_UART.h" declline="91" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a46da4f034dd502e65cdbd198e33611e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -402,7 +314,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="108" column="18" bodyfile="EF_UART.c" bodystart="110" bodyend="121" declfile="EF_UART.h" declline="108" declcolumn="18"/>
+        <location file="EF_UART.h" line="100" column="18" bodyfile="EF_UART.c" bodystart="110" bodyend="121" declfile="EF_UART.h" declline="100" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a11caaf87ef28a637bfd825208eb09c18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -432,7 +344,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="117" column="18" bodyfile="EF_UART.c" bodystart="123" bodyend="134" declfile="EF_UART.h" declline="117" declcolumn="18"/>
+        <location file="EF_UART.h" line="109" column="18" bodyfile="EF_UART.c" bodystart="123" bodyend="134" declfile="EF_UART.h" declline="109" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a8ffdd73320ea0474fcb177d306dc6a67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -462,7 +374,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="126" column="18" bodyfile="EF_UART.c" bodystart="136" bodyend="147" declfile="EF_UART.h" declline="126" declcolumn="18"/>
+        <location file="EF_UART.h" line="118" column="18" bodyfile="EF_UART.c" bodystart="136" bodyend="147" declfile="EF_UART.h" declline="118" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a8dbf6fd5cdc6e99a3e17486c124d0d1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -492,7 +404,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="135" column="18" bodyfile="EF_UART.c" bodystart="149" bodyend="160" declfile="EF_UART.h" declline="135" declcolumn="18"/>
+        <location file="EF_UART.h" line="127" column="18" bodyfile="EF_UART.c" bodystart="149" bodyend="160" declfile="EF_UART.h" declline="127" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1af253218d9f38bc1e0bd0b1196c2fb44d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -522,7 +434,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="144" column="18" bodyfile="EF_UART.c" bodystart="162" bodyend="173" declfile="EF_UART.h" declline="144" declcolumn="18"/>
+        <location file="EF_UART.h" line="136" column="18" bodyfile="EF_UART.c" bodystart="162" bodyend="173" declfile="EF_UART.h" declline="136" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1acc57380ee395632930bd85ca6377655b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -552,7 +464,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="153" column="18" bodyfile="EF_UART.c" bodystart="176" bodyend="188" declfile="EF_UART.h" declline="153" declcolumn="18"/>
+        <location file="EF_UART.h" line="145" column="18" bodyfile="EF_UART.c" bodystart="176" bodyend="188" declfile="EF_UART.h" declline="145" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a2dbdc231cba17a0da6fae5e48b394dfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -582,7 +494,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="162" column="18" bodyfile="EF_UART.c" bodystart="190" bodyend="200" declfile="EF_UART.h" declline="162" declcolumn="18"/>
+        <location file="EF_UART.h" line="154" column="18" bodyfile="EF_UART.c" bodystart="190" bodyend="200" declfile="EF_UART.h" declline="154" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ad36fee036e144937af3eed59eea101c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -631,7 +543,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="177" column="18" bodyfile="EF_UART.c" bodystart="203" bodyend="216" declfile="EF_UART.h" declline="177" declcolumn="18"/>
+        <location file="EF_UART.h" line="169" column="18" bodyfile="EF_UART.c" bodystart="203" bodyend="216" declfile="EF_UART.h" declline="169" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a9870f89be83da209c6823fe725ed492e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -673,7 +585,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="187" column="18" bodyfile="EF_UART.c" bodystart="219" bodyend="233" declfile="EF_UART.h" declline="187" declcolumn="18"/>
+        <location file="EF_UART.h" line="179" column="18" bodyfile="EF_UART.c" bodystart="219" bodyend="233" declfile="EF_UART.h" declline="179" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a04a859ae5492ec11e9f3b418337148e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -716,13 +628,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="197" column="18" bodyfile="EF_UART.c" bodystart="268" bodyend="284" declfile="EF_UART.h" declline="197" declcolumn="18"/>
+        <location file="EF_UART.h" line="189" column="18" bodyfile="EF_UART.c" bodystart="268" bodyend="284" declfile="EF_UART.h" declline="189" declcolumn="18"/>
       </memberdef>
-      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ae2336d17bb87f77416fc9c6871b7cbdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a6f487e3868b1f73de81f684a569eea12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
-        <definition>EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect</definition>
+        <definition>EF_DRIVER_STATUS EF_UART_setStopBits</definition>
         <argsstring>(EF_UART_TYPE_PTR uart, bool is_two_bits)</argsstring>
-        <name>EF_UART_setTwoStopBitsSelect</name>
+        <name>EF_UART_setStopBits</name>
         <param>
           <type><ref refid="_e_f___u_a_r_t__regs_8h_1ab605c9cde76c27dd58ec6cf73ca70893" kindref="member">EF_UART_TYPE_PTR</ref></type>
           <declname>uart</declname>
@@ -758,7 +670,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="207" column="18" bodyfile="EF_UART.c" bodystart="288" bodyend="303" declfile="EF_UART.h" declline="207" declcolumn="18"/>
+        <location file="EF_UART.h" line="199" column="18" bodyfile="EF_UART.c" bodystart="288" bodyend="303" declfile="EF_UART.h" declline="199" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a3af979ea01c716d9b6ca923b92cc5c31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -800,7 +712,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="217" column="18" bodyfile="EF_UART.c" bodystart="307" bodyend="319" declfile="EF_UART.h" declline="217" declcolumn="18"/>
+        <location file="EF_UART.h" line="209" column="18" bodyfile="EF_UART.c" bodystart="307" bodyend="319" declfile="EF_UART.h" declline="209" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ad18a6e0c7701bdc66b483b1c53a3581d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -842,7 +754,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="227" column="18" bodyfile="EF_UART.c" bodystart="322" bodyend="336" declfile="EF_UART.h" declline="227" declcolumn="18"/>
+        <location file="EF_UART.h" line="219" column="18" bodyfile="EF_UART.c" bodystart="322" bodyend="336" declfile="EF_UART.h" declline="219" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a7abd365f1081dd30bc202b673851f7b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -890,7 +802,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="241" column="18" bodyfile="EF_UART.c" bodystart="338" bodyend="351" declfile="EF_UART.h" declline="241" declcolumn="18"/>
+        <location file="EF_UART.h" line="233" column="18" bodyfile="EF_UART.c" bodystart="338" bodyend="351" declfile="EF_UART.h" declline="233" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1afad923241f7414fe1292101d185d0c75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -932,7 +844,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="251" column="18" bodyfile="EF_UART.c" bodystart="353" bodyend="367" declfile="EF_UART.h" declline="251" declcolumn="18"/>
+        <location file="EF_UART.h" line="243" column="18" bodyfile="EF_UART.c" bodystart="353" bodyend="367" declfile="EF_UART.h" declline="243" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ae7559449b86af3339f32eb9f60da7342" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -974,7 +886,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="261" column="18" bodyfile="EF_UART.c" bodystart="369" bodyend="382" declfile="EF_UART.h" declline="261" declcolumn="18"/>
+        <location file="EF_UART.h" line="253" column="18" bodyfile="EF_UART.c" bodystart="369" bodyend="382" declfile="EF_UART.h" declline="253" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a7b416fd3385eb5b3ee34eb09ea0de8d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1016,7 +928,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="271" column="18" bodyfile="EF_UART.c" bodystart="384" bodyend="398" declfile="EF_UART.h" declline="271" declcolumn="18"/>
+        <location file="EF_UART.h" line="263" column="18" bodyfile="EF_UART.c" bodystart="384" bodyend="398" declfile="EF_UART.h" declline="263" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1aece15f8d4c46af75f44d94abb3018080" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1058,7 +970,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="281" column="18" bodyfile="EF_UART.c" bodystart="401" bodyend="414" declfile="EF_UART.h" declline="281" declcolumn="18"/>
+        <location file="EF_UART.h" line="273" column="18" bodyfile="EF_UART.c" bodystart="401" bodyend="414" declfile="EF_UART.h" declline="273" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a9844c9c7921a2187ca86bead858c8c02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1100,7 +1012,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="291" column="18" bodyfile="EF_UART.c" bodystart="416" bodyend="430" declfile="EF_UART.h" declline="291" declcolumn="18"/>
+        <location file="EF_UART.h" line="283" column="18" bodyfile="EF_UART.c" bodystart="416" bodyend="430" declfile="EF_UART.h" declline="283" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1af275d224f7dcde400258b8d93e1ed2ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1143,7 +1055,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="302" column="18" bodyfile="EF_UART.c" bodystart="464" bodyend="477" declfile="EF_UART.h" declline="302" declcolumn="18"/>
+        <location file="EF_UART.h" line="294" column="18" bodyfile="EF_UART.c" bodystart="464" bodyend="477" declfile="EF_UART.h" declline="294" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a559c00c5b1d96bcb0784e0449071f4bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1185,7 +1097,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="312" column="18" bodyfile="EF_UART.c" bodystart="479" bodyend="493" declfile="EF_UART.h" declline="312" declcolumn="18"/>
+        <location file="EF_UART.h" line="304" column="18" bodyfile="EF_UART.c" bodystart="479" bodyend="493" declfile="EF_UART.h" declline="304" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1acd160a7725a4b3fb675dcebeda8776d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1227,7 +1139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="322" column="18" bodyfile="EF_UART.c" bodystart="432" bodyend="446" declfile="EF_UART.h" declline="322" declcolumn="18"/>
+        <location file="EF_UART.h" line="314" column="18" bodyfile="EF_UART.c" bodystart="432" bodyend="446" declfile="EF_UART.h" declline="314" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1aaa9a26fa27e5b5fc5c8039103abc1ed7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1269,7 +1181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="332" column="18" bodyfile="EF_UART.c" bodystart="448" bodyend="462" declfile="EF_UART.h" declline="332" declcolumn="18"/>
+        <location file="EF_UART.h" line="324" column="18" bodyfile="EF_UART.c" bodystart="448" bodyend="462" declfile="EF_UART.h" declline="324" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a1184834b408cdeed94623c691068a352" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1311,7 +1223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="342" column="18" bodyfile="EF_UART.c" bodystart="236" bodyend="249" declfile="EF_UART.h" declline="342" declcolumn="18"/>
+        <location file="EF_UART.h" line="334" column="18" bodyfile="EF_UART.c" bodystart="236" bodyend="249" declfile="EF_UART.h" declline="334" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1aa5874369ddd7767b26a076726d585235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1353,7 +1265,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="352" column="18" bodyfile="EF_UART.c" bodystart="251" bodyend="265" declfile="EF_UART.h" declline="352" declcolumn="18"/>
+        <location file="EF_UART.h" line="344" column="18" bodyfile="EF_UART.c" bodystart="251" bodyend="265" declfile="EF_UART.h" declline="344" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a81943fbc40226420642143805f95e991" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1407,7 +1319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="372" column="18" bodyfile="EF_UART.c" bodystart="507" bodyend="521" declfile="EF_UART.h" declline="372" declcolumn="18"/>
+        <location file="EF_UART.h" line="364" column="18" bodyfile="EF_UART.c" bodystart="507" bodyend="521" declfile="EF_UART.h" declline="364" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a0ff41852bf2c3a32d25864823da6a508" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1461,7 +1373,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="392" column="18" bodyfile="EF_UART.c" bodystart="523" bodyend="537" declfile="EF_UART.h" declline="392" declcolumn="18"/>
+        <location file="EF_UART.h" line="384" column="18" bodyfile="EF_UART.c" bodystart="523" bodyend="537" declfile="EF_UART.h" declline="384" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ad62de52cc6d11bb10dfdc275d899bb0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1515,7 +1427,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="412" column="18" bodyfile="EF_UART.c" bodystart="539" bodyend="553" declfile="EF_UART.h" declline="412" declcolumn="18"/>
+        <location file="EF_UART.h" line="404" column="18" bodyfile="EF_UART.c" bodystart="539" bodyend="553" declfile="EF_UART.h" declline="404" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ab22694c6e2d02fc25daac570b70ef8f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1569,7 +1481,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="432" column="18" bodyfile="EF_UART.c" bodystart="555" bodyend="569" declfile="EF_UART.h" declline="432" declcolumn="18"/>
+        <location file="EF_UART.h" line="424" column="18" bodyfile="EF_UART.c" bodystart="555" bodyend="569" declfile="EF_UART.h" declline="424" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a7ecbcf6bc73a4a3392648372441a6133" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1623,7 +1535,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="452" column="18" bodyfile="EF_UART.c" bodystart="572" bodyend="585" declfile="EF_UART.h" declline="452" declcolumn="18"/>
+        <location file="EF_UART.h" line="444" column="18" bodyfile="EF_UART.c" bodystart="572" bodyend="585" declfile="EF_UART.h" declline="444" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a0f9ad65cbfe136ad4c4080612d578536" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1665,7 +1577,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="463" column="18" bodyfile="EF_UART.c" bodystart="609" bodyend="630" declfile="EF_UART.h" declline="463" declcolumn="18"/>
+        <location file="EF_UART.h" line="455" column="18" bodyfile="EF_UART.c" bodystart="609" bodyend="630" declfile="EF_UART.h" declline="455" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1ace1db9bbc3b092890acff854cec1aa77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1707,7 +1619,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="473" column="18" bodyfile="EF_UART.c" bodystart="588" bodyend="607" declfile="EF_UART.h" declline="473" declcolumn="18"/>
+        <location file="EF_UART.h" line="465" column="18" bodyfile="EF_UART.c" bodystart="588" bodyend="607" declfile="EF_UART.h" declline="465" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1abda4e085b80f004761b77dbf3f0450e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1749,7 +1661,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="483" column="18" bodyfile="EF_UART.c" bodystart="632" bodyend="650" declfile="EF_UART.h" declline="483" declcolumn="18"/>
+        <location file="EF_UART.h" line="475" column="18" bodyfile="EF_UART.c" bodystart="632" bodyend="650" declfile="EF_UART.h" declline="475" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1aaa93d9c62ca6e64a622bb32e86fb2dc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1803,7 +1715,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="500" column="18" bodyfile="EF_UART.c" bodystart="657" bodyend="684" declfile="EF_UART.h" declline="500" declcolumn="18"/>
+        <location file="EF_UART.h" line="492" column="18" bodyfile="EF_UART.c" bodystart="657" bodyend="684" declfile="EF_UART.h" declline="492" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a8091314203111b165d1bad624159f8ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1857,7 +1769,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="510" column="18" bodyfile="EF_UART.c" bodystart="686" bodyend="710" declfile="EF_UART.h" declline="510" declcolumn="18"/>
+        <location file="EF_UART.h" line="502" column="18" bodyfile="EF_UART.c" bodystart="686" bodyend="710" declfile="EF_UART.h" declline="502" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1aa48cbd20fb9a2898171bc7ff8688b9ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1899,7 +1811,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="519" column="18" bodyfile="EF_UART.c" bodystart="713" bodyend="729" declfile="EF_UART.h" declline="519" declcolumn="18"/>
+        <location file="EF_UART.h" line="511" column="18" bodyfile="EF_UART.c" bodystart="713" bodyend="729" declfile="EF_UART.h" declline="511" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a26804aec34f642578f9b6243fd16f277" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1941,7 +1853,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="529" column="18" bodyfile="EF_UART.c" bodystart="731" bodyend="747" declfile="EF_UART.h" declline="529" declcolumn="18"/>
+        <location file="EF_UART.h" line="521" column="18" bodyfile="EF_UART.c" bodystart="731" bodyend="747" declfile="EF_UART.h" declline="521" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a99a9c66e92fb0233fb7cf31e6c6921f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -1983,7 +1895,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="538" column="18" bodyfile="EF_UART.c" bodystart="750" bodyend="762" declfile="EF_UART.h" declline="538" declcolumn="18"/>
+        <location file="EF_UART.h" line="530" column="18" bodyfile="EF_UART.c" bodystart="750" bodyend="762" declfile="EF_UART.h" declline="530" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a16e75e32fdf3a0dc46f6ca9992750328" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -2025,7 +1937,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="547" column="18" bodyfile="EF_UART.c" bodystart="764" bodyend="780" declfile="EF_UART.h" declline="547" declcolumn="18"/>
+        <location file="EF_UART.h" line="539" column="18" bodyfile="EF_UART.c" bodystart="764" bodyend="780" declfile="EF_UART.h" declline="539" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1a1dc3757c8ca6e8725ab78bd72373ec6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -2151,7 +2063,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="564" column="18" bodyfile="EF_UART.c" bodystart="786" bodyend="826" declfile="EF_UART.h" declline="564" declcolumn="18"/>
+        <location file="EF_UART.h" line="556" column="18" bodyfile="EF_UART.c" bodystart="786" bodyend="826" declfile="EF_UART.h" declline="556" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="_e_f___u_a_r_t_8h_1acb379fe3cc63f5e2eea43522c39823f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref></type>
@@ -2211,7 +2123,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="EF_UART.h" line="579" column="18" bodyfile="EF_UART.c" bodystart="830" bodyend="860" declfile="EF_UART.h" declline="579" declcolumn="18"/>
+        <location file="EF_UART.h" line="571" column="18" bodyfile="EF_UART.c" bodystart="830" bodyend="860" declfile="EF_UART.h" declline="571" declcolumn="18"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -2253,223 +2165,215 @@
 <codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
 <codeline lineno="38"><highlight class="comment">*<sp/>Macros<sp/>and<sp/>Constants</highlight></codeline>
 <codeline lineno="39"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40" refid="_e_f___u_a_r_t_8h_1abb5e56e926c33b555091e679f678515d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CTRL_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x0000001F)<sp/><sp/></highlight><highlight class="comment">//<sp/>CTRL<sp/>register<sp/>only<sp/>has<sp/>5<sp/>bits,<sp/>and<sp/>the<sp/>rest<sp/>are<sp/>reserved</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41" refid="_e_f___u_a_r_t_8h_1a482ad61b42cd1ab32b3d69e7fc2fbf5d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_PR_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x0000FFFF)<sp/><sp/></highlight><highlight class="comment">//<sp/>PR<sp/>register<sp/>only<sp/>has<sp/>16<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42" refid="_e_f___u_a_r_t_8h_1ad037e6ec02fdbc1ac83387687b690cb5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_DataLength_MIN_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x00000005)<sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>UART<sp/>IP<sp/>only<sp/>supports<sp/>data<sp/>length<sp/>from<sp/>5<sp/>to<sp/>9<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="_e_f___u_a_r_t_8h_1a600c1602d5dcbe87cbc6ae8d015b2384" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_DataLength_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x00000009)<sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>UART<sp/>IP<sp/>only<sp/>supports<sp/>data<sp/>length<sp/>from<sp/>5<sp/>to<sp/>9<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44" refid="_e_f___u_a_r_t_8h_1a31ef64a99d1e4389df1255aa2b3fd645" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_TIMEOUT_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x0000003F)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>CFG<sp/>register<sp/>timeout<sp/>field<sp/>is<sp/>6<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45" refid="_e_f___u_a_r_t_8h_1a2c1fd5ccd1238662c3f8fb9f2af47019" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x00001FFF)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>CFG<sp/>register<sp/>is<sp/>13<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46" refid="_e_f___u_a_r_t_8h_1a7749200841ca06b85560cdcce6143c0f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE<sp/>((uint32_t)0x0000000F)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>RX<sp/>FIFO<sp/>level<sp/>register<sp/>is<sp/>4<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="47" refid="_e_f___u_a_r_t_8h_1aad9c71b2e065a1bc005853521e584cf7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE<sp/>((uint32_t)0x0000000F)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>TX<sp/>FIFO<sp/>level<sp/>register<sp/>is<sp/>4<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="48" refid="_e_f___u_a_r_t_8h_1aa65fa5d0b6a628fae152ea7013052318" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_MATCH_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x00001FFF)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>match<sp/>register<sp/>is<sp/>9<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49" refid="_e_f___u_a_r_t_8h_1ac5ebf20bf24247905b19e2cb2060a457" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_IM_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x000003FF)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>IM<sp/>register<sp/>is<sp/>10<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50" refid="_e_f___u_a_r_t_8h_1a056fa4df77234c4221790bbefd6cd974" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_IC_REG_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x000003FF)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>IC<sp/>register<sp/>is<sp/>10<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="_e_f___u_a_r_t_8h_1ad037e6ec02fdbc1ac83387687b690cb5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_DataLength_MIN_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x00000005)<sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>UART<sp/>IP<sp/>only<sp/>supports<sp/>data<sp/>length<sp/>from<sp/>5<sp/>to<sp/>9<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="_e_f___u_a_r_t_8h_1a600c1602d5dcbe87cbc6ae8d015b2384" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_DataLength_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x00000009)<sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>UART<sp/>IP<sp/>only<sp/>supports<sp/>data<sp/>length<sp/>from<sp/>5<sp/>to<sp/>9<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="_e_f___u_a_r_t_8h_1a31ef64a99d1e4389df1255aa2b3fd645" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EF_UART_CFG_REG_TIMEOUT_MAX_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)0x0000003F)<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>CFG<sp/>register<sp/>timeout<sp/>field<sp/>is<sp/>6<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="46"><highlight class="comment">*<sp/>Typedefs<sp/>and<sp/>Enums</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>{<ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10ac157bdf0b85a40d2619cbc8bc1ae5fe2" kindref="member">NONE</ref><sp/>=<sp/>0,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10aa29cedab858353a26006af9db7cd1ed8" kindref="member">ODD</ref><sp/>=<sp/>1,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" kindref="member">EVEN</ref><sp/>=<sp/>2,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10adedda6ce97e93d2a3e84ca7a704cd998" kindref="member">STICKY_0</ref><sp/>=<sp/>4,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a0cc8b778b8f0b3fa4d7a084fddbc3cec" kindref="member">STICKY_1</ref><sp/>=<sp/>5};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
-<codeline lineno="54"><highlight class="comment">*<sp/>Typedefs<sp/>and<sp/>Enums</highlight></codeline>
+<codeline lineno="54"><highlight class="comment">*<sp/>Function<sp/>Prototypes</highlight></codeline>
 <codeline lineno="55"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57" refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>{<ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10ac157bdf0b85a40d2619cbc8bc1ae5fe2" kindref="member">NONE</ref><sp/>=<sp/>0,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10aa29cedab858353a26006af9db7cd1ed8" kindref="member">ODD</ref><sp/>=<sp/>1,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a8487756fbc720579906f0ae1738f0fcc" kindref="member">EVEN</ref><sp/>=<sp/>2,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10adedda6ce97e93d2a3e84ca7a704cd998" kindref="member">STICKY_0</ref><sp/>=<sp/>4,<sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10a0cc8b778b8f0b3fa4d7a084fddbc3cec" kindref="member">STICKY_1</ref><sp/>=<sp/>5};</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
-<codeline lineno="62"><highlight class="comment">*<sp/>Function<sp/>Prototypes</highlight></codeline>
-<codeline lineno="63"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a5b00ddd7df5f72886ea559da57a1b2bd" kindref="member">EF_UART_setGclkEnable</ref><sp/>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a5b00ddd7df5f72886ea559da57a1b2bd" kindref="member">EF_UART_setGclkEnable</ref><sp/>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a2673b6af3d435a9caa3fd9f115ad1878" kindref="member">EF_UART_enable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a2673b6af3d435a9caa3fd9f115ad1878" kindref="member">EF_UART_enable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a9d41c2bae6bbb144932cb4c264557a0f" kindref="member">EF_UART_disable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a9d41c2bae6bbb144932cb4c264557a0f" kindref="member">EF_UART_disable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a8fe185c295fdf22ad7f5ab020138e95f" kindref="member">EF_UART_enableRx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a8fe185c295fdf22ad7f5ab020138e95f" kindref="member">EF_UART_enableRx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a46da4f034dd502e65cdbd198e33611e2" kindref="member">EF_UART_disableRx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a46da4f034dd502e65cdbd198e33611e2" kindref="member">EF_UART_disableRx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a11caaf87ef28a637bfd825208eb09c18" kindref="member">EF_UART_enableTx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a11caaf87ef28a637bfd825208eb09c18" kindref="member">EF_UART_enableTx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a8ffdd73320ea0474fcb177d306dc6a67" kindref="member">EF_UART_disableTx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a8ffdd73320ea0474fcb177d306dc6a67" kindref="member">EF_UART_disableTx</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a8dbf6fd5cdc6e99a3e17486c124d0d1d" kindref="member">EF_UART_enableLoopBack</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a8dbf6fd5cdc6e99a3e17486c124d0d1d" kindref="member">EF_UART_enableLoopBack</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1af253218d9f38bc1e0bd0b1196c2fb44d" kindref="member">EF_UART_disableLoopBack</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1af253218d9f38bc1e0bd0b1196c2fb44d" kindref="member">EF_UART_disableLoopBack</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1acc57380ee395632930bd85ca6377655b" kindref="member">EF_UART_enableGlitchFilter</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal"></highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1acc57380ee395632930bd85ca6377655b" kindref="member">EF_UART_enableGlitchFilter</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a2dbdc231cba17a0da6fae5e48b394dfd" kindref="member">EF_UART_disableGlitchFilter</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"></highlight></codeline>
-<codeline lineno="157"><highlight class="normal"></highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a2dbdc231cba17a0da6fae5e48b394dfd" kindref="member">EF_UART_disableGlitchFilter</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ad36fee036e144937af3eed59eea101c6" kindref="member">EF_UART_setCTRL</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
 <codeline lineno="171"><highlight class="normal"></highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ad36fee036e144937af3eed59eea101c6" kindref="member">EF_UART_setCTRL</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"></highlight></codeline>
-<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a9870f89be83da209c6823fe725ed492e" kindref="member">EF_UART_getCTRL</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>CTRL_value);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
 <codeline lineno="181"><highlight class="normal"></highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a9870f89be83da209c6823fe725ed492e" kindref="member">EF_UART_getCTRL</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>CTRL_value);</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"></highlight></codeline>
-<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a04a859ae5492ec11e9f3b418337148e1" kindref="member">EF_UART_setDataSize</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
 <codeline lineno="191"><highlight class="normal"></highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a04a859ae5492ec11e9f3b418337148e1" kindref="member">EF_UART_setDataSize</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"></highlight></codeline>
-<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a6f487e3868b1f73de81f684a569eea12" kindref="member">EF_UART_setStopBits</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_two_bits);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
 <codeline lineno="201"><highlight class="normal"></highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ae2336d17bb87f77416fc9c6871b7cbdb" kindref="member">EF_UART_setTwoStopBitsSelect</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_two_bits);</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"></highlight></codeline>
-<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a3af979ea01c716d9b6ca923b92cc5c31" kindref="member">EF_UART_setParityType</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>parity);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
 <codeline lineno="211"><highlight class="normal"></highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a3af979ea01c716d9b6ca923b92cc5c31" kindref="member">EF_UART_setParityType</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>parity);</highlight></codeline>
-<codeline lineno="218"><highlight class="normal"></highlight></codeline>
-<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ad18a6e0c7701bdc66b483b1c53a3581d" kindref="member">EF_UART_setTimeoutBits</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
 <codeline lineno="221"><highlight class="normal"></highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ad18a6e0c7701bdc66b483b1c53a3581d" kindref="member">EF_UART_setTimeoutBits</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>value);</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"></highlight></codeline>
-<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a7abd365f1081dd30bc202b673851f7b7" kindref="member">EF_UART_setConfig</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>config);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a7abd365f1081dd30bc202b673851f7b7" kindref="member">EF_UART_setConfig</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>config);</highlight></codeline>
-<codeline lineno="242"><highlight class="normal"></highlight></codeline>
-<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1afad923241f7414fe1292101d185d0c75" kindref="member">EF_UART_getConfig</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>CFG_value);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
 <codeline lineno="245"><highlight class="normal"></highlight></codeline>
-<codeline lineno="251"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1afad923241f7414fe1292101d185d0c75" kindref="member">EF_UART_getConfig</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>CFG_value);</highlight></codeline>
-<codeline lineno="252"><highlight class="normal"></highlight></codeline>
-<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ae7559449b86af3339f32eb9f60da7342" kindref="member">EF_UART_setRxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>threshold);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
 <codeline lineno="255"><highlight class="normal"></highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ae7559449b86af3339f32eb9f60da7342" kindref="member">EF_UART_setRxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>threshold);</highlight></codeline>
-<codeline lineno="262"><highlight class="normal"></highlight></codeline>
-<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a7b416fd3385eb5b3ee34eb09ea0de8d2" kindref="member">EF_UART_getRxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>RX_FIFO_THRESHOLD_value);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
 <codeline lineno="265"><highlight class="normal"></highlight></codeline>
-<codeline lineno="271"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a7b416fd3385eb5b3ee34eb09ea0de8d2" kindref="member">EF_UART_getRxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>RX_FIFO_THRESHOLD_value);</highlight></codeline>
-<codeline lineno="272"><highlight class="normal"></highlight></codeline>
-<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aece15f8d4c46af75f44d94abb3018080" kindref="member">EF_UART_setTxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>threshold);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
 <codeline lineno="275"><highlight class="normal"></highlight></codeline>
-<codeline lineno="281"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aece15f8d4c46af75f44d94abb3018080" kindref="member">EF_UART_setTxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>threshold);</highlight></codeline>
-<codeline lineno="282"><highlight class="normal"></highlight></codeline>
-<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a9844c9c7921a2187ca86bead858c8c02" kindref="member">EF_UART_getTxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>TX_FIFO_THRESHOLD_value);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
 <codeline lineno="285"><highlight class="normal"></highlight></codeline>
-<codeline lineno="291"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a9844c9c7921a2187ca86bead858c8c02" kindref="member">EF_UART_getTxFIFOThreshold</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>TX_FIFO_THRESHOLD_value);</highlight></codeline>
-<codeline lineno="292"><highlight class="normal"></highlight></codeline>
-<codeline lineno="293"><highlight class="normal"></highlight></codeline>
-<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1af275d224f7dcde400258b8d93e1ed2ce" kindref="member">EF_UART_setMatchData</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>matchData);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
 <codeline lineno="296"><highlight class="normal"></highlight></codeline>
-<codeline lineno="302"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1af275d224f7dcde400258b8d93e1ed2ce" kindref="member">EF_UART_setMatchData</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>matchData);</highlight></codeline>
-<codeline lineno="303"><highlight class="normal"></highlight></codeline>
-<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a559c00c5b1d96bcb0784e0449071f4bb" kindref="member">EF_UART_getMatchData</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>MATCH_value);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
 <codeline lineno="306"><highlight class="normal"></highlight></codeline>
-<codeline lineno="312"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a559c00c5b1d96bcb0784e0449071f4bb" kindref="member">EF_UART_getMatchData</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>MATCH_value);</highlight></codeline>
-<codeline lineno="313"><highlight class="normal"></highlight></codeline>
-<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1acd160a7725a4b3fb675dcebeda8776d5" kindref="member">EF_UART_getTxCount</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>TX_FIFO_LEVEL_value);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
 <codeline lineno="316"><highlight class="normal"></highlight></codeline>
-<codeline lineno="322"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1acd160a7725a4b3fb675dcebeda8776d5" kindref="member">EF_UART_getTxCount</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>TX_FIFO_LEVEL_value);</highlight></codeline>
-<codeline lineno="323"><highlight class="normal"></highlight></codeline>
-<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aaa9a26fa27e5b5fc5c8039103abc1ed7" kindref="member">EF_UART_getRxCount</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>RX_FIFO_LEVEL_value);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
 <codeline lineno="326"><highlight class="normal"></highlight></codeline>
-<codeline lineno="332"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aaa9a26fa27e5b5fc5c8039103abc1ed7" kindref="member">EF_UART_getRxCount</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>RX_FIFO_LEVEL_value);</highlight></codeline>
-<codeline lineno="333"><highlight class="normal"></highlight></codeline>
-<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a1184834b408cdeed94623c691068a352" kindref="member">EF_UART_setPrescaler</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>prescaler);</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
 <codeline lineno="336"><highlight class="normal"></highlight></codeline>
-<codeline lineno="342"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a1184834b408cdeed94623c691068a352" kindref="member">EF_UART_setPrescaler</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>prescaler);</highlight></codeline>
-<codeline lineno="343"><highlight class="normal"></highlight></codeline>
-<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aa5874369ddd7767b26a076726d585235" kindref="member">EF_UART_getPrescaler</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>Prescaler_value);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
 <codeline lineno="346"><highlight class="normal"></highlight></codeline>
-<codeline lineno="352"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aa5874369ddd7767b26a076726d585235" kindref="member">EF_UART_getPrescaler</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>Prescaler_value);</highlight></codeline>
-<codeline lineno="353"><highlight class="normal"></highlight></codeline>
-<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a81943fbc40226420642143805f95e991" kindref="member">EF_UART_getRIS</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>RIS_value);</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
 <codeline lineno="366"><highlight class="normal"></highlight></codeline>
-<codeline lineno="372"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a81943fbc40226420642143805f95e991" kindref="member">EF_UART_getRIS</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>RIS_value);</highlight></codeline>
-<codeline lineno="373"><highlight class="normal"></highlight></codeline>
-<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a0ff41852bf2c3a32d25864823da6a508" kindref="member">EF_UART_getMIS</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>MIS_value);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
 <codeline lineno="386"><highlight class="normal"></highlight></codeline>
-<codeline lineno="392"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a0ff41852bf2c3a32d25864823da6a508" kindref="member">EF_UART_getMIS</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>MIS_value);</highlight></codeline>
-<codeline lineno="393"><highlight class="normal"></highlight></codeline>
-<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ad62de52cc6d11bb10dfdc275d899bb0e" kindref="member">EF_UART_setIM</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>mask);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
 <codeline lineno="406"><highlight class="normal"></highlight></codeline>
-<codeline lineno="412"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ad62de52cc6d11bb10dfdc275d899bb0e" kindref="member">EF_UART_setIM</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>mask);</highlight></codeline>
-<codeline lineno="413"><highlight class="normal"></highlight></codeline>
-<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ab22694c6e2d02fc25daac570b70ef8f1" kindref="member">EF_UART_getIM</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>IM_value);</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight></codeline>
 <codeline lineno="426"><highlight class="normal"></highlight></codeline>
-<codeline lineno="432"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ab22694c6e2d02fc25daac570b70ef8f1" kindref="member">EF_UART_getIM</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>IM_value);</highlight></codeline>
-<codeline lineno="433"><highlight class="normal"></highlight></codeline>
-<codeline lineno="434"><highlight class="normal"></highlight></codeline>
+<codeline lineno="438"><highlight class="normal"></highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a7ecbcf6bc73a4a3392648372441a6133" kindref="member">EF_UART_setICR</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>mask);</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"></highlight></codeline>
 <codeline lineno="446"><highlight class="normal"></highlight></codeline>
-<codeline lineno="452"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a7ecbcf6bc73a4a3392648372441a6133" kindref="member">EF_UART_setICR</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>mask);</highlight></codeline>
-<codeline lineno="453"><highlight class="normal"></highlight></codeline>
-<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="448"><highlight class="normal"></highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a0f9ad65cbfe136ad4c4080612d578536" kindref="member">EF_UART_writeCharArr</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*char_arr);</highlight></codeline>
 <codeline lineno="456"><highlight class="normal"></highlight></codeline>
-<codeline lineno="463"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a0f9ad65cbfe136ad4c4080612d578536" kindref="member">EF_UART_writeCharArr</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*char_arr);</highlight></codeline>
-<codeline lineno="464"><highlight class="normal"></highlight></codeline>
-<codeline lineno="465"><highlight class="normal"></highlight></codeline>
+<codeline lineno="457"><highlight class="normal"></highlight></codeline>
+<codeline lineno="459"><highlight class="normal"></highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ace1db9bbc3b092890acff854cec1aa77" kindref="member">EF_UART_writeChar</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"></highlight></codeline>
 <codeline lineno="467"><highlight class="normal"></highlight></codeline>
-<codeline lineno="473"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1ace1db9bbc3b092890acff854cec1aa77" kindref="member">EF_UART_writeChar</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
-<codeline lineno="474"><highlight class="normal"></highlight></codeline>
-<codeline lineno="475"><highlight class="normal"></highlight></codeline>
+<codeline lineno="469"><highlight class="normal"></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1abda4e085b80f004761b77dbf3f0450e6" kindref="member">EF_UART_readChar</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uar,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>RXDATA_value);</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"></highlight></codeline>
 <codeline lineno="477"><highlight class="normal"></highlight></codeline>
-<codeline lineno="483"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1abda4e085b80f004761b77dbf3f0450e6" kindref="member">EF_UART_readChar</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uar,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>RXDATA_value);</highlight></codeline>
-<codeline lineno="484"><highlight class="normal"></highlight></codeline>
+<codeline lineno="478"><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>functions<sp/>are<sp/>not<sp/>verified<sp/>yet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight></codeline>
 <codeline lineno="485"><highlight class="normal"></highlight></codeline>
-<codeline lineno="486"><highlight class="normal"></highlight></codeline>
-<codeline lineno="487"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>functions<sp/>are<sp/>not<sp/>verified<sp/>yet</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="488"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="489"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="490"><highlight class="normal"></highlight></codeline>
-<codeline lineno="491"><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aaa93d9c62ca6e64a622bb32e86fb2dc0" kindref="member">EF_UART_readCharNonBlocking</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>RXDATA_value,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>data_available);</highlight></codeline>
 <codeline lineno="493"><highlight class="normal"></highlight></codeline>
-<codeline lineno="500"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aaa93d9c62ca6e64a622bb32e86fb2dc0" kindref="member">EF_UART_readCharNonBlocking</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>RXDATA_value,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>data_available);</highlight></codeline>
-<codeline lineno="501"><highlight class="normal"></highlight></codeline>
+<codeline lineno="495"><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a8091314203111b165d1bad624159f8ba" kindref="member">EF_UART_writeCharNonBlocking</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>data_sent);</highlight></codeline>
 <codeline lineno="503"><highlight class="normal"></highlight></codeline>
-<codeline lineno="510"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a8091314203111b165d1bad624159f8ba" kindref="member">EF_UART_writeCharNonBlocking</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>data_sent);</highlight></codeline>
-<codeline lineno="511"><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"></highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aa48cbd20fb9a2898171bc7ff8688b9ee" kindref="member">EF_UART_charsAvailable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>flag);</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"></highlight></codeline>
 <codeline lineno="513"><highlight class="normal"></highlight></codeline>
-<codeline lineno="519"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1aa48cbd20fb9a2898171bc7ff8688b9ee" kindref="member">EF_UART_charsAvailable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>flag);</highlight></codeline>
-<codeline lineno="520"><highlight class="normal"></highlight></codeline>
-<codeline lineno="521"><highlight class="normal"></highlight></codeline>
-<codeline lineno="523"><highlight class="normal"></highlight></codeline>
-<codeline lineno="529"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a26804aec34f642578f9b6243fd16f277" kindref="member">EF_UART_spaceAvailable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>flag);</highlight></codeline>
-<codeline lineno="530"><highlight class="normal"></highlight></codeline>
-<codeline lineno="532"><highlight class="normal"></highlight></codeline>
-<codeline lineno="538"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a99a9c66e92fb0233fb7cf31e6c6921f1" kindref="member">EF_UART_getParityMode</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>parity_mode);</highlight></codeline>
-<codeline lineno="539"><highlight class="normal"></highlight></codeline>
+<codeline lineno="515"><highlight class="normal"></highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a26804aec34f642578f9b6243fd16f277" kindref="member">EF_UART_spaceAvailable</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>flag);</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"></highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a99a9c66e92fb0233fb7cf31e6c6921f1" kindref="member">EF_UART_getParityMode</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t*<sp/>parity_mode);</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"></highlight></codeline>
+<codeline lineno="533"><highlight class="normal"></highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a16e75e32fdf3a0dc46f6ca9992750328" kindref="member">EF_UART_busy</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>flag);</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"></highlight></codeline>
 <codeline lineno="541"><highlight class="normal"></highlight></codeline>
-<codeline lineno="547"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a16e75e32fdf3a0dc46f6ca9992750328" kindref="member">EF_UART_busy</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>flag);</highlight></codeline>
-<codeline lineno="548"><highlight class="normal"></highlight></codeline>
-<codeline lineno="549"><highlight class="normal"></highlight></codeline>
-<codeline lineno="551"><highlight class="normal"></highlight></codeline>
-<codeline lineno="564"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a1dc3757c8ca6e8725ab78bd72373ec6b" kindref="member">UART_Init</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>baud_rate,<sp/>uint32_t<sp/>bus_clock,<sp/>uint32_t<sp/>data_bits,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>two_stop_bits,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>parity,<sp/>uint32_t<sp/>timeout,<sp/>uint32_t<sp/>rx_threshold,<sp/>uint32_t<sp/>tx_threshold);</highlight></codeline>
-<codeline lineno="565"><highlight class="normal"></highlight></codeline>
-<codeline lineno="566"><highlight class="normal"></highlight></codeline>
+<codeline lineno="543"><highlight class="normal"></highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1a1dc3757c8ca6e8725ab78bd72373ec6b" kindref="member">UART_Init</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/>uint32_t<sp/>baud_rate,<sp/>uint32_t<sp/>bus_clock,<sp/>uint32_t<sp/>data_bits,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>two_stop_bits,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_e_f___u_a_r_t_8h_1aab5cbb4a185bfe65a14e19beeaba4f10" kindref="member">parity_type</ref><sp/>parity,<sp/>uint32_t<sp/>timeout,<sp/>uint32_t<sp/>rx_threshold,<sp/>uint32_t<sp/>tx_threshold);</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"></highlight></codeline>
+<codeline lineno="564"><highlight class="normal"></highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1acb379fe3cc63f5e2eea43522c39823f7" kindref="member">EF_UART_readCharArr</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,<sp/>uint32_t<sp/>buffer_size);</highlight></codeline>
 <codeline lineno="572"><highlight class="normal"></highlight></codeline>
-<codeline lineno="579"><highlight class="normal"><ref refid="_e_f___driver___common_8h_1ad1c99136d1edfd0a7757f5b81600a351" kindref="member">EF_DRIVER_STATUS</ref><sp/><ref refid="_e_f___u_a_r_t_8h_1acb379fe3cc63f5e2eea43522c39823f7" kindref="member">EF_UART_readCharArr</ref>(<ref refid="struct___e_f___u_a_r_t___t_y_p_e__" kindref="compound">EF_UART_TYPE_PTR</ref><sp/>uart,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,<sp/>uint32_t<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"></highlight></codeline>
+<codeline lineno="574"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="575"><highlight class="comment">*<sp/>External<sp/>Variables</highlight></codeline>
+<codeline lineno="576"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="577"><highlight class="normal"></highlight></codeline>
+<codeline lineno="578"><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EF_UART_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="580"><highlight class="normal"></highlight></codeline>
-<codeline lineno="581"><highlight class="normal"></highlight></codeline>
-<codeline lineno="582"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
-<codeline lineno="583"><highlight class="comment">*<sp/>External<sp/>Variables</highlight></codeline>
-<codeline lineno="584"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="585"><highlight class="normal"></highlight></codeline>
-<codeline lineno="586"><highlight class="normal"></highlight></codeline>
-<codeline lineno="587"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>EF_UART_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="588"><highlight class="normal"></highlight></codeline>
-<codeline lineno="589"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
-<codeline lineno="590"><highlight class="comment">*<sp/>End<sp/>of<sp/>File</highlight></codeline>
-<codeline lineno="591"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="581"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="582"><highlight class="comment">*<sp/>End<sp/>of<sp/>File</highlight></codeline>
+<codeline lineno="583"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="EF_UART.h"/>
   </compounddef>

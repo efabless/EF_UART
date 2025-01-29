@@ -10,27 +10,11 @@ C header file for UART APIs which contains the function prototypes.
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t_8h_abb5e56e926c33b555091e679f678515d}{EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x0000001F)
-\item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t_8h_a482ad61b42cd1ab32b3d69e7fc2fbf5d}{EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x0000\+FFFF)
-\item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t_8h_ad037e6ec02fdbc1ac83387687b690cb5}{EF\+\_\+\+UART\+\_\+\+Data\+Length\+\_\+\+MIN\+\_\+\+VALUE}}~((uint32\+\_\+t)0x00000005)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t_8h_a600c1602d5dcbe87cbc6ae8d015b2384}{EF\+\_\+\+UART\+\_\+\+Data\+Length\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x00000009)
 \item 
 \#define \mbox{\hyperlink{_e_f___u_a_r_t_8h_a31ef64a99d1e4389df1255aa2b3fd645}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x0000003F)
-\item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t_8h_a2c1fd5ccd1238662c3f8fb9f2af47019}{EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x00001\+FFF)
-\item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t_8h_a7749200841ca06b85560cdcce6143c0f}{EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x0000000F)
-\item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t_8h_aad9c71b2e065a1bc005853521e584cf7}{EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x0000000F)
-\item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t_8h_aa65fa5d0b6a628fae152ea7013052318}{EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x00001\+FFF)
-\item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t_8h_ac5ebf20bf24247905b19e2cb2060a457}{EF\+\_\+\+UART\+\_\+\+IM\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x000003\+FF)
-\item 
-\#define \mbox{\hyperlink{_e_f___u_a_r_t_8h_a056fa4df77234c4221790bbefd6cd974}{EF\+\_\+\+UART\+\_\+\+IC\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE}}~((uint32\+\_\+t)0x000003\+FF)
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -75,7 +59,7 @@ enum \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parit
 \begin{DoxyCompactList}\small\item\em returns the value of the control register \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a04a859ae5492ec11e9f3b418337148e1}{EF\+\_\+\+UART\+\_\+set\+Data\+Size}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em sets the Data Size (Data word length\+: 5-\/9 bits ) by setting the \char`\"{}wlen\char`\"{} field in configuration register \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_ae2336d17bb87f77416fc9c6871b7cbdb}{EF\+\_\+\+UART\+\_\+set\+Two\+Stop\+Bits\+Select}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, bool is\+\_\+two\+\_\+bits)
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a6f487e3868b1f73de81f684a569eea12}{EF\+\_\+\+UART\+\_\+set\+Stop\+Bits}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, bool is\+\_\+two\+\_\+bits)
 \begin{DoxyCompactList}\small\item\em sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop boits are two or one) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8h_a3af979ea01c716d9b6ca923b92cc5c31}{EF\+\_\+\+UART\+\_\+set\+Parity\+Type}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, enum \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parity\+\_\+type}} parity)
 \begin{DoxyCompactList}\small\item\em sets the \char`\"{}parity\char`\"{} field in configuration register (could be none, odd, even, sticky 0 or sticky 1) \end{DoxyCompactList}\item 
@@ -145,23 +129,11 @@ C header file for UART APIs which contains the function prototypes.
 
 
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a2c1fd5ccd1238662c3f8fb9f2af47019}\label{_e_f___u_a_r_t_8h_a2c1fd5ccd1238662c3f8fb9f2af47019}} 
-\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_CFG\_REG\_MAX\_VALUE@{EF\_UART\_CFG\_REG\_MAX\_VALUE}}
-\index{EF\_UART\_CFG\_REG\_MAX\_VALUE@{EF\_UART\_CFG\_REG\_MAX\_VALUE}!EF\_UART.h@{EF\_UART.h}}
-\doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_MAX\_VALUE}{EF\_UART\_CFG\_REG\_MAX\_VALUE}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x00001\+FFF)}
-
 \mbox{\Hypertarget{_e_f___u_a_r_t_8h_a31ef64a99d1e4389df1255aa2b3fd645}\label{_e_f___u_a_r_t_8h_a31ef64a99d1e4389df1255aa2b3fd645}} 
 \index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE@{EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE}}
 \index{EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE@{EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE}!EF\_UART.h@{EF\_UART.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE}{EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CFG\+\_\+\+REG\+\_\+\+TIMEOUT\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x0000003F)}
-
-\mbox{\Hypertarget{_e_f___u_a_r_t_8h_abb5e56e926c33b555091e679f678515d}\label{_e_f___u_a_r_t_8h_abb5e56e926c33b555091e679f678515d}} 
-\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_CTRL\_REG\_MAX\_VALUE@{EF\_UART\_CTRL\_REG\_MAX\_VALUE}}
-\index{EF\_UART\_CTRL\_REG\_MAX\_VALUE@{EF\_UART\_CTRL\_REG\_MAX\_VALUE}!EF\_UART.h@{EF\_UART.h}}
-\doxysubsubsection{\texorpdfstring{EF\_UART\_CTRL\_REG\_MAX\_VALUE}{EF\_UART\_CTRL\_REG\_MAX\_VALUE}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+CTRL\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x0000001F)}
 
 \mbox{\Hypertarget{_e_f___u_a_r_t_8h_a600c1602d5dcbe87cbc6ae8d015b2384}\label{_e_f___u_a_r_t_8h_a600c1602d5dcbe87cbc6ae8d015b2384}} 
 \index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_DataLength\_MAX\_VALUE@{EF\_UART\_DataLength\_MAX\_VALUE}}
@@ -174,42 +146,6 @@ C header file for UART APIs which contains the function prototypes.
 \index{EF\_UART\_DataLength\_MIN\_VALUE@{EF\_UART\_DataLength\_MIN\_VALUE}!EF\_UART.h@{EF\_UART.h}}
 \doxysubsubsection{\texorpdfstring{EF\_UART\_DataLength\_MIN\_VALUE}{EF\_UART\_DataLength\_MIN\_VALUE}}
 {\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+Data\+Length\+\_\+\+MIN\+\_\+\+VALUE~((uint32\+\_\+t)0x00000005)}
-
-\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a056fa4df77234c4221790bbefd6cd974}\label{_e_f___u_a_r_t_8h_a056fa4df77234c4221790bbefd6cd974}} 
-\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_IC\_REG\_MAX\_VALUE@{EF\_UART\_IC\_REG\_MAX\_VALUE}}
-\index{EF\_UART\_IC\_REG\_MAX\_VALUE@{EF\_UART\_IC\_REG\_MAX\_VALUE}!EF\_UART.h@{EF\_UART.h}}
-\doxysubsubsection{\texorpdfstring{EF\_UART\_IC\_REG\_MAX\_VALUE}{EF\_UART\_IC\_REG\_MAX\_VALUE}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+IC\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x000003\+FF)}
-
-\mbox{\Hypertarget{_e_f___u_a_r_t_8h_ac5ebf20bf24247905b19e2cb2060a457}\label{_e_f___u_a_r_t_8h_ac5ebf20bf24247905b19e2cb2060a457}} 
-\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_IM\_REG\_MAX\_VALUE@{EF\_UART\_IM\_REG\_MAX\_VALUE}}
-\index{EF\_UART\_IM\_REG\_MAX\_VALUE@{EF\_UART\_IM\_REG\_MAX\_VALUE}!EF\_UART.h@{EF\_UART.h}}
-\doxysubsubsection{\texorpdfstring{EF\_UART\_IM\_REG\_MAX\_VALUE}{EF\_UART\_IM\_REG\_MAX\_VALUE}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+IM\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x000003\+FF)}
-
-\mbox{\Hypertarget{_e_f___u_a_r_t_8h_aa65fa5d0b6a628fae152ea7013052318}\label{_e_f___u_a_r_t_8h_aa65fa5d0b6a628fae152ea7013052318}} 
-\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_MATCH\_REG\_MAX\_VALUE@{EF\_UART\_MATCH\_REG\_MAX\_VALUE}}
-\index{EF\_UART\_MATCH\_REG\_MAX\_VALUE@{EF\_UART\_MATCH\_REG\_MAX\_VALUE}!EF\_UART.h@{EF\_UART.h}}
-\doxysubsubsection{\texorpdfstring{EF\_UART\_MATCH\_REG\_MAX\_VALUE}{EF\_UART\_MATCH\_REG\_MAX\_VALUE}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+MATCH\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x00001\+FFF)}
-
-\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a482ad61b42cd1ab32b3d69e7fc2fbf5d}\label{_e_f___u_a_r_t_8h_a482ad61b42cd1ab32b3d69e7fc2fbf5d}} 
-\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_PR\_REG\_MAX\_VALUE@{EF\_UART\_PR\_REG\_MAX\_VALUE}}
-\index{EF\_UART\_PR\_REG\_MAX\_VALUE@{EF\_UART\_PR\_REG\_MAX\_VALUE}!EF\_UART.h@{EF\_UART.h}}
-\doxysubsubsection{\texorpdfstring{EF\_UART\_PR\_REG\_MAX\_VALUE}{EF\_UART\_PR\_REG\_MAX\_VALUE}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+PR\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x0000\+FFFF)}
-
-\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a7749200841ca06b85560cdcce6143c0f}\label{_e_f___u_a_r_t_8h_a7749200841ca06b85560cdcce6143c0f}} 
-\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE@{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}}
-\index{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE@{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}!EF\_UART.h@{EF\_UART.h}}
-\doxysubsubsection{\texorpdfstring{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}{EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+RX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x0000000F)}
-
-\mbox{\Hypertarget{_e_f___u_a_r_t_8h_aad9c71b2e065a1bc005853521e584cf7}\label{_e_f___u_a_r_t_8h_aad9c71b2e065a1bc005853521e584cf7}} 
-\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE@{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}}
-\index{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE@{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}!EF\_UART.h@{EF\_UART.h}}
-\doxysubsubsection{\texorpdfstring{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}{EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE}}
-{\footnotesize\ttfamily \#define EF\+\_\+\+UART\+\_\+\+TX\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+\+REG\+\_\+\+MAX\+\_\+\+VALUE~((uint32\+\_\+t)0x0000000F)}
 
 
 
@@ -1034,6 +970,26 @@ sets the RX FIFO threshold to a certain value at which \char`\"{}\+RXA\char`\"{}
 \begin{DoxyReturn}{Returns}
 status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
 \end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8h_a6f487e3868b1f73de81f684a569eea12}\label{_e_f___u_a_r_t_8h_a6f487e3868b1f73de81f684a569eea12}} 
+\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setStopBits@{EF\_UART\_setStopBits}}
+\index{EF\_UART\_setStopBits@{EF\_UART\_setStopBits}!EF\_UART.h@{EF\_UART.h}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setStopBits()}{EF\_UART\_setStopBits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Stop\+Bits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{bool}]{is\+\_\+two\+\_\+bits }\end{DoxyParamCaption})}
+
+
+
+sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop boits are two or one) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} , which points to the base memory address of UART registers. \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}} is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+\_\+two\+\_\+bits} & bool value, if \char`\"{}true\char`\"{}, the stop bits are two and if \char`\"{}false\char`\"{}, the stop bit is one\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
 \mbox{\Hypertarget{_e_f___u_a_r_t_8h_ad18a6e0c7701bdc66b483b1c53a3581d}\label{_e_f___u_a_r_t_8h_ad18a6e0c7701bdc66b483b1c53a3581d}} 
 \index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setTimeoutBits@{EF\_UART\_setTimeoutBits}}
 \index{EF\_UART\_setTimeoutBits@{EF\_UART\_setTimeoutBits}!EF\_UART.h@{EF\_UART.h}}
@@ -1049,26 +1005,6 @@ sets the \char`\"{}timeout\char`\"{} field in configuration register which is re
 \mbox{\texttt{ in}}  & {\em uart} & An \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} , which points to the base memory address of UART registers. \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}} is a structure that contains the UART registers. \\
 \hline
 \mbox{\texttt{ in}}  & {\em value} & timeout bits value\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
-\end{DoxyReturn}
-\mbox{\Hypertarget{_e_f___u_a_r_t_8h_ae2336d17bb87f77416fc9c6871b7cbdb}\label{_e_f___u_a_r_t_8h_ae2336d17bb87f77416fc9c6871b7cbdb}} 
-\index{EF\_UART.h@{EF\_UART.h}!EF\_UART\_setTwoStopBitsSelect@{EF\_UART\_setTwoStopBitsSelect}}
-\index{EF\_UART\_setTwoStopBitsSelect@{EF\_UART\_setTwoStopBitsSelect}!EF\_UART.h@{EF\_UART.h}}
-\doxysubsubsection{\texorpdfstring{EF\_UART\_setTwoStopBitsSelect()}{EF\_UART\_setTwoStopBitsSelect()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Two\+Stop\+Bits\+Select (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{bool}]{is\+\_\+two\+\_\+bits }\end{DoxyParamCaption})}
-
-
-
-sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop boits are two or one) 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em uart} & An \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} , which points to the base memory address of UART registers. \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}} is a structure that contains the UART registers. \\
-\hline
-\mbox{\texttt{ in}}  & {\em is\+\_\+two\+\_\+bits} & bool value, if \char`\"{}true\char`\"{}, the stop bits are two and if \char`\"{}false\char`\"{}, the stop bit is one\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

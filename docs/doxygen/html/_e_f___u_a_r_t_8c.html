@@ -134,9 +134,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a04a859ae5492ec11e9f3b418337148e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a04a859ae5492ec11e9f3b418337148e1">EF_UART_setDataSize</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, uint32_t value)</td></tr>
 <tr class="memdesc:a04a859ae5492ec11e9f3b418337148e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the Data Size (Data word length: 5-9 bits ) by setting the "wlen" field in configuration register  <br /></td></tr>
 <tr class="separator:a04a859ae5492ec11e9f3b418337148e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2336d17bb87f77416fc9c6871b7cbdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#ae2336d17bb87f77416fc9c6871b7cbdb">EF_UART_setTwoStopBitsSelect</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, bool is_two_bits)</td></tr>
-<tr class="memdesc:ae2336d17bb87f77416fc9c6871b7cbdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the "stp2" bit in configuration register (whether the stop boits are two or one)  <br /></td></tr>
-<tr class="separator:ae2336d17bb87f77416fc9c6871b7cbdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f487e3868b1f73de81f684a569eea12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a6f487e3868b1f73de81f684a569eea12">EF_UART_setStopBits</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, bool is_two_bits)</td></tr>
+<tr class="memdesc:a6f487e3868b1f73de81f684a569eea12"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the "stp2" bit in configuration register (whether the stop boits are two or one)  <br /></td></tr>
+<tr class="separator:a6f487e3868b1f73de81f684a569eea12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3af979ea01c716d9b6ca923b92cc5c31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_f___u_a_r_t_8c.html#a3af979ea01c716d9b6ca923b92cc5c31">EF_UART_setParityType</a> (<a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> uart, enum <a class="el" href="_e_f___u_a_r_t_8h.html#aab5cbb4a185bfe65a14e19beeaba4f10">parity_type</a> parity)</td></tr>
 <tr class="memdesc:a3af979ea01c716d9b6ca923b92cc5c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the "parity" field in configuration register (could be none, odd, even, sticky 0 or sticky 1)  <br /></td></tr>
 <tr class="separator:a3af979ea01c716d9b6ca923b92cc5c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1608,6 +1608,44 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6f487e3868b1f73de81f684a569eea12" name="a6f487e3868b1f73de81f684a569eea12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f487e3868b1f73de81f684a569eea12">&#9670;&#160;</a></span>EF_UART_setStopBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setStopBits </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
+          <td class="paramname"><em>uart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_two_bits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>sets the "stp2" bit in configuration register (whether the stop boits are two or one) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_two_bits</td><td>bool value, if "true", the stop bits are two and if "false", the stop bit is one</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status A value of type <a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> : returns a success or error code </dd></dl>
+
+</div>
+</div>
 <a id="ad18a6e0c7701bdc66b483b1c53a3581d" name="ad18a6e0c7701bdc66b483b1c53a3581d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad18a6e0c7701bdc66b483b1c53a3581d">&#9670;&#160;</a></span>EF_UART_setTimeoutBits()</h2>
 
@@ -1639,44 +1677,6 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>timeout bits value</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status A value of type <a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> : returns a success or error code </dd></dl>
-
-</div>
-</div>
-<a id="ae2336d17bb87f77416fc9c6871b7cbdb" name="ae2336d17bb87f77416fc9c6871b7cbdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2336d17bb87f77416fc9c6871b7cbdb">&#9670;&#160;</a></span>EF_UART_setTwoStopBitsSelect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_e_f___driver___common_8h.html#ad1c99136d1edfd0a7757f5b81600a351">EF_DRIVER_STATUS</a> EF_UART_setTwoStopBitsSelect </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a>&#160;</td>
-          <td class="paramname"><em>uart</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>is_two_bits</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>sets the "stp2" bit in configuration register (whether the stop boits are two or one) </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>An <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ab605c9cde76c27dd58ec6cf73ca70893">EF_UART_TYPE_PTR</a> , which points to the base memory address of UART registers. <a class="el" href="_e_f___u_a_r_t__regs_8h.html#ae6e04bb01bfd86ba243d7502c0afedbf">EF_UART_TYPE</a> is a structure that contains the UART registers. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">is_two_bits</td><td>bool value, if "true", the stop bits are two and if "false", the stop bit is one</td></tr>
   </table>
   </dd>
 </dl>

@@ -46,7 +46,7 @@ C file for UART APIs which contains the function implmentations.
 \begin{DoxyCompactList}\small\item\em returns the value of the prescaler \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8c_a04a859ae5492ec11e9f3b418337148e1}{EF\+\_\+\+UART\+\_\+set\+Data\+Size}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, uint32\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em sets the Data Size (Data word length\+: 5-\/9 bits ) by setting the \char`\"{}wlen\char`\"{} field in configuration register \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8c_ae2336d17bb87f77416fc9c6871b7cbdb}{EF\+\_\+\+UART\+\_\+set\+Two\+Stop\+Bits\+Select}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, bool is\+\_\+two\+\_\+bits)
+\mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8c_a6f487e3868b1f73de81f684a569eea12}{EF\+\_\+\+UART\+\_\+set\+Stop\+Bits}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, bool is\+\_\+two\+\_\+bits)
 \begin{DoxyCompactList}\small\item\em sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop boits are two or one) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \mbox{\hyperlink{_e_f___u_a_r_t_8c_a3af979ea01c716d9b6ca923b92cc5c31}{EF\+\_\+\+UART\+\_\+set\+Parity\+Type}} (\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} uart, enum \mbox{\hyperlink{_e_f___u_a_r_t_8h_aab5cbb4a185bfe65a14e19beeaba4f10}{parity\+\_\+type}} parity)
 \begin{DoxyCompactList}\small\item\em sets the \char`\"{}parity\char`\"{} field in configuration register (could be none, odd, even, sticky 0 or sticky 1) \end{DoxyCompactList}\item 
@@ -910,6 +910,26 @@ sets the RX FIFO threshold to a certain value at which \char`\"{}\+RXA\char`\"{}
 \begin{DoxyReturn}{Returns}
 status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
 \end{DoxyReturn}
+\mbox{\Hypertarget{_e_f___u_a_r_t_8c_a6f487e3868b1f73de81f684a569eea12}\label{_e_f___u_a_r_t_8c_a6f487e3868b1f73de81f684a569eea12}} 
+\index{EF\_UART.c@{EF\_UART.c}!EF\_UART\_setStopBits@{EF\_UART\_setStopBits}}
+\index{EF\_UART\_setStopBits@{EF\_UART\_setStopBits}!EF\_UART.c@{EF\_UART.c}}
+\doxysubsubsection{\texorpdfstring{EF\_UART\_setStopBits()}{EF\_UART\_setStopBits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Stop\+Bits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{bool}]{is\+\_\+two\+\_\+bits }\end{DoxyParamCaption})}
+
+
+
+sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop boits are two or one) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em uart} & An \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} , which points to the base memory address of UART registers. \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}} is a structure that contains the UART registers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+\_\+two\+\_\+bits} & bool value, if \char`\"{}true\char`\"{}, the stop bits are two and if \char`\"{}false\char`\"{}, the stop bit is one\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
+\end{DoxyReturn}
 \mbox{\Hypertarget{_e_f___u_a_r_t_8c_ad18a6e0c7701bdc66b483b1c53a3581d}\label{_e_f___u_a_r_t_8c_ad18a6e0c7701bdc66b483b1c53a3581d}} 
 \index{EF\_UART.c@{EF\_UART.c}!EF\_UART\_setTimeoutBits@{EF\_UART\_setTimeoutBits}}
 \index{EF\_UART\_setTimeoutBits@{EF\_UART\_setTimeoutBits}!EF\_UART.c@{EF\_UART.c}}
@@ -925,26 +945,6 @@ sets the \char`\"{}timeout\char`\"{} field in configuration register which is re
 \mbox{\texttt{ in}}  & {\em uart} & An \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} , which points to the base memory address of UART registers. \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}} is a structure that contains the UART registers. \\
 \hline
 \mbox{\texttt{ in}}  & {\em value} & timeout bits value\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-status A value of type \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} \+: returns a success or error code 
-\end{DoxyReturn}
-\mbox{\Hypertarget{_e_f___u_a_r_t_8c_ae2336d17bb87f77416fc9c6871b7cbdb}\label{_e_f___u_a_r_t_8c_ae2336d17bb87f77416fc9c6871b7cbdb}} 
-\index{EF\_UART.c@{EF\_UART.c}!EF\_UART\_setTwoStopBitsSelect@{EF\_UART\_setTwoStopBitsSelect}}
-\index{EF\_UART\_setTwoStopBitsSelect@{EF\_UART\_setTwoStopBitsSelect}!EF\_UART.c@{EF\_UART.c}}
-\doxysubsubsection{\texorpdfstring{EF\_UART\_setTwoStopBitsSelect()}{EF\_UART\_setTwoStopBitsSelect()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_e_f___driver___common_8h_ad1c99136d1edfd0a7757f5b81600a351}{EF\+\_\+\+DRIVER\+\_\+\+STATUS}} EF\+\_\+\+UART\+\_\+set\+Two\+Stop\+Bits\+Select (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}}}]{uart,  }\item[{bool}]{is\+\_\+two\+\_\+bits }\end{DoxyParamCaption})}
-
-
-
-sets the \char`\"{}stp2\char`\"{} bit in configuration register (whether the stop boits are two or one) 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em uart} & An \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ab605c9cde76c27dd58ec6cf73ca70893}{EF\+\_\+\+UART\+\_\+\+TYPE\+\_\+\+PTR}} , which points to the base memory address of UART registers. \mbox{\hyperlink{_e_f___u_a_r_t__regs_8h_ae6e04bb01bfd86ba243d7502c0afedbf}{EF\+\_\+\+UART\+\_\+\+TYPE}} is a structure that contains the UART registers. \\
-\hline
-\mbox{\texttt{ in}}  & {\em is\+\_\+two\+\_\+bits} & bool value, if \char`\"{}true\char`\"{}, the stop bits are two and if \char`\"{}false\char`\"{}, the stop bit is one\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

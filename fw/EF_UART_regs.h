@@ -37,7 +37,19 @@
 #define   __RW    volatile       uint32_t
 #endif
 
-#define EF_UART_CTRL_REG_EN_BIT	    ((uint32_t)0)
+#define EF_UART_RXDATA_REG_RXDATA_BIT	((uint32_t)0)
+#define EF_UART_RXDATA_REG_RXDATA_MASK	((uint32_t)0x1ff)
+#define EF_UART_RXDATA_REG_MAX_VALUE	((uint32_t)0x1FF)
+
+#define EF_UART_TXDATA_REG_TXDATA_BIT	((uint32_t)0)
+#define EF_UART_TXDATA_REG_TXDATA_MASK	((uint32_t)0x1ff)
+#define EF_UART_TXDATA_REG_MAX_VALUE	((uint32_t)0x1FF)
+
+#define EF_UART_PR_REG_PR_BIT	((uint32_t)0)
+#define EF_UART_PR_REG_PR_MASK	((uint32_t)0xffff)
+#define EF_UART_PR_REG_MAX_VALUE	((uint32_t)0xFFFF)
+
+#define EF_UART_CTRL_REG_EN_BIT	((uint32_t)0)
 #define EF_UART_CTRL_REG_EN_MASK	((uint32_t)0x1)
 #define EF_UART_CTRL_REG_TXEN_BIT	((uint32_t)1)
 #define EF_UART_CTRL_REG_TXEN_MASK	((uint32_t)0x2)
@@ -47,26 +59,46 @@
 #define EF_UART_CTRL_REG_LPEN_MASK	((uint32_t)0x8)
 #define EF_UART_CTRL_REG_GFEN_BIT	((uint32_t)4)
 #define EF_UART_CTRL_REG_GFEN_MASK	((uint32_t)0x10)
+#define EF_UART_CTRL_REG_MAX_VALUE	((uint32_t)0x1F)
+
 #define EF_UART_CFG_REG_WLEN_BIT	((uint32_t)0)
-#define EF_UART_CFG_REG_WLEN_MASK   ((uint32_t)0xf)
+#define EF_UART_CFG_REG_WLEN_MASK	((uint32_t)0xf)
 #define EF_UART_CFG_REG_STP2_BIT	((uint32_t)4)
 #define EF_UART_CFG_REG_STP2_MASK	((uint32_t)0x10)
 #define EF_UART_CFG_REG_PARITY_BIT	((uint32_t)5)
 #define EF_UART_CFG_REG_PARITY_MASK	((uint32_t)0xe0)
 #define EF_UART_CFG_REG_TIMEOUT_BIT	((uint32_t)8)
-#define EF_UART_CFG_REG_TIMEOUT_MASK                    ((uint32_t)0x3f)
-#define EF_UART_RX_FIFO_LEVEL_REG_LEVEL_BIT	            ((uint32_t)0)
-#define EF_UART_RX_FIFO_LEVEL_REG_LEVEL_MASK	        ((uint32_t)0xf)
-#define EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT	    ((uint32_t)0)
+#define EF_UART_CFG_REG_TIMEOUT_MASK	((uint32_t)0x3f00)
+#define EF_UART_CFG_REG_MAX_VALUE	((uint32_t)0x3FFF)
+
+#define EF_UART_MATCH_REG_MATCH_BIT	((uint32_t)0)
+#define EF_UART_MATCH_REG_MATCH_MASK	((uint32_t)0x1ff)
+#define EF_UART_MATCH_REG_MAX_VALUE	((uint32_t)0x1FF)
+
+#define EF_UART_RX_FIFO_LEVEL_REG_LEVEL_BIT	((uint32_t)0)
+#define EF_UART_RX_FIFO_LEVEL_REG_LEVEL_MASK	((uint32_t)0xf)
+#define EF_UART_RX_FIFO_LEVEL_REG_MAX_VALUE	((uint32_t)0xF)
+
+#define EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT	((uint32_t)0)
 #define EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_MASK	((uint32_t)0xf)
-#define EF_UART_RX_FIFO_FLUSH_REG_FLUSH_BIT	            ((uint32_t)0)
-#define EF_UART_RX_FIFO_FLUSH_REG_FLUSH_MASK	        ((uint32_t)0x1)
-#define EF_UART_TX_FIFO_LEVEL_REG_LEVEL_BIT	            ((uint32_t)0)
-#define EF_UART_TX_FIFO_LEVEL_REG_LEVEL_MASK	        ((uint32_t)0xf)
-#define EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT	    ((uint32_t)0)
+#define EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE	((uint32_t)0xF)
+
+#define EF_UART_RX_FIFO_FLUSH_REG_FLUSH_BIT	((uint32_t)0)
+#define EF_UART_RX_FIFO_FLUSH_REG_FLUSH_MASK	((uint32_t)0x1)
+#define EF_UART_RX_FIFO_FLUSH_REG_MAX_VALUE	((uint32_t)0x1)
+
+#define EF_UART_TX_FIFO_LEVEL_REG_LEVEL_BIT	((uint32_t)0)
+#define EF_UART_TX_FIFO_LEVEL_REG_LEVEL_MASK	((uint32_t)0xf)
+#define EF_UART_TX_FIFO_LEVEL_REG_MAX_VALUE	((uint32_t)0xF)
+
+#define EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT	((uint32_t)0)
 #define EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_MASK	((uint32_t)0xf)
-#define EF_UART_TX_FIFO_FLUSH_REG_FLUSH_BIT	            ((uint32_t)0)
-#define EF_UART_TX_FIFO_FLUSH_REG_FLUSH_MASK	        ((uint32_t)0x1)
+#define EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE	((uint32_t)0xF)
+
+#define EF_UART_TX_FIFO_FLUSH_REG_FLUSH_BIT	((uint32_t)0)
+#define EF_UART_TX_FIFO_FLUSH_REG_FLUSH_MASK	((uint32_t)0x1)
+#define EF_UART_TX_FIFO_FLUSH_REG_MAX_VALUE	((uint32_t)0x1)
+
 
 #define EF_UART_TXE_FLAG	((uint32_t)0x1)
 #define EF_UART_RXF_FLAG	((uint32_t)0x2)
@@ -74,10 +106,11 @@
 #define EF_UART_RXA_FLAG	((uint32_t)0x8)
 #define EF_UART_BRK_FLAG	((uint32_t)0x10)
 #define EF_UART_MATCH_FLAG	((uint32_t)0x20)
-#define EF_UART_FE_FLAG	    ((uint32_t)0x40)
+#define EF_UART_FE_FLAG	((uint32_t)0x40)
 #define EF_UART_PRE_FLAG	((uint32_t)0x80)
-#define EF_UART_OR_FLAG	    ((uint32_t)0x100)
+#define EF_UART_OR_FLAG	((uint32_t)0x100)
 #define EF_UART_RTO_FLAG	((uint32_t)0x200)
+
 
 
 /******************************************************************************

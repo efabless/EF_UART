@@ -148,8 +148,8 @@ _C header file for UART APIs which contains the function prototypes._
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_setParityType**](#function-ef_uart_setparitytype) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, enum [**parity\_type**](#enum-parity_type) parity) <br>_sets the "parity" field in configuration register (could be none, odd, even, sticky 0 or sticky 1)_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_setPrescaler**](#function-ef_uart_setprescaler) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, uint32\_t prescaler) <br>_sets the prescaler to a certain value where Baud\_rate = Bus\_Clock\_Freq/((Prescaler+1)\*16)_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_setRxFIFOThreshold**](#function-ef_uart_setrxfifothreshold) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, uint32\_t threshold) <br>_sets the RX FIFO threshold to a certain value at which "RXA" interrupt will be raised_ |
+|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_setStopBits**](#function-ef_uart_setstopbits) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, bool is\_two\_bits) <br>_sets the "stp2" bit in configuration register (whether the stop boits are two or one)_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_setTimeoutBits**](#function-ef_uart_settimeoutbits) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, uint32\_t value) <br>_sets the "timeout" field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised_ |
-|  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_setTwoStopBitsSelect**](#function-ef_uart_settwostopbitsselect) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, bool is\_two\_bits) <br>_sets the "stp2" bit in configuration register (whether the stop boits are two or one)_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_setTxFIFOThreshold**](#function-ef_uart_settxfifothreshold) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, uint32\_t threshold) <br>_sets the TX FIFO threshold to a certain value at which "TXB" interrupt will be raised_ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_spaceAvailable**](#function-ef_uart_spaceavailable) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, bool \*flag) <br>_This function returns a flag indicating whether or not the transmit is available, i.e. the transmit FIFO is not full._ |
 |  [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) | [**EF\_UART\_writeChar**](#function-ef_uart_writechar) ([**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) uart, char data) <br>_transmit a single character through uart_ |
@@ -161,17 +161,9 @@ _C header file for UART APIs which contains the function prototypes._
 
 | Type | Name |
 | ---: | :--- |
-| define  | [**EF\_UART\_CFG\_REG\_MAX\_VALUE**](#define-ef_uart_cfg_reg_max_value)  ((uint32\_t)0x00001FFF)<br> |
 | define  | [**EF\_UART\_CFG\_REG\_TIMEOUT\_MAX\_VALUE**](#define-ef_uart_cfg_reg_timeout_max_value)  ((uint32\_t)0x0000003F)<br> |
-| define  | [**EF\_UART\_CTRL\_REG\_MAX\_VALUE**](#define-ef_uart_ctrl_reg_max_value)  ((uint32\_t)0x0000001F)<br> |
 | define  | [**EF\_UART\_DataLength\_MAX\_VALUE**](#define-ef_uart_datalength_max_value)  ((uint32\_t)0x00000009)<br> |
 | define  | [**EF\_UART\_DataLength\_MIN\_VALUE**](#define-ef_uart_datalength_min_value)  ((uint32\_t)0x00000005)<br> |
-| define  | [**EF\_UART\_IC\_REG\_MAX\_VALUE**](#define-ef_uart_ic_reg_max_value)  ((uint32\_t)0x000003FF)<br> |
-| define  | [**EF\_UART\_IM\_REG\_MAX\_VALUE**](#define-ef_uart_im_reg_max_value)  ((uint32\_t)0x000003FF)<br> |
-| define  | [**EF\_UART\_MATCH\_REG\_MAX\_VALUE**](#define-ef_uart_match_reg_max_value)  ((uint32\_t)0x00001FFF)<br> |
-| define  | [**EF\_UART\_PR\_REG\_MAX\_VALUE**](#define-ef_uart_pr_reg_max_value)  ((uint32\_t)0x0000FFFF)<br> |
-| define  | [**EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE**](#define-ef_uart_rx_fifo_threshold_reg_max_value)  ((uint32\_t)0x0000000F)<br> |
-| define  | [**EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE**](#define-ef_uart_tx_fifo_threshold_reg_max_value)  ((uint32\_t)0x0000000F)<br> |
 
 ## Structures and Types Documentation
 
@@ -1050,6 +1042,27 @@ EF_DRIVER_STATUS EF_UART_setRxFIFOThreshold (
 **Returns:**
 
 status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
+### function `EF_UART_setStopBits`
+
+_sets the "stp2" bit in configuration register (whether the stop boits are two or one)_
+```c
+EF_DRIVER_STATUS EF_UART_setStopBits (
+    EF_UART_TYPE_PTR uart,
+    bool is_two_bits
+) 
+```
+
+
+**Parameters:**
+
+
+* `uart` An [**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) , which points to the base memory address of UART registers.[**EF\_UART\_TYPE**](#typedef-ef_uart_type) is a structure that contains the UART registers.
+* `is_two_bits` bool value, if "true", the stop bits are two and if "false", the stop bit is one
+
+
+**Returns:**
+
+status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
 ### function `EF_UART_setTimeoutBits`
 
 _sets the "timeout" field in configuration register which is receiver timeout measured in number of bits at which the timeout flag will be raised_
@@ -1066,27 +1079,6 @@ EF_DRIVER_STATUS EF_UART_setTimeoutBits (
 
 * `uart` An [**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) , which points to the base memory address of UART registers.[**EF\_UART\_TYPE**](#typedef-ef_uart_type) is a structure that contains the UART registers.
 * `value` timeout bits value
-
-
-**Returns:**
-
-status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : returns a success or error code
-### function `EF_UART_setTwoStopBitsSelect`
-
-_sets the "stp2" bit in configuration register (whether the stop boits are two or one)_
-```c
-EF_DRIVER_STATUS EF_UART_setTwoStopBitsSelect (
-    EF_UART_TYPE_PTR uart,
-    bool is_two_bits
-) 
-```
-
-
-**Parameters:**
-
-
-* `uart` An [**EF\_UART\_TYPE\_PTR**](#typedef-ef_uart_type_ptr) , which points to the base memory address of UART registers.[**EF\_UART\_TYPE**](#typedef-ef_uart_type) is a structure that contains the UART registers.
-* `is_two_bits` bool value, if "true", the stop bits are two and if "false", the stop bit is one
 
 
 **Returns:**
@@ -1237,22 +1229,10 @@ status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : ret
 
 ## Macros Documentation
 
-### define `EF_UART_CFG_REG_MAX_VALUE`
-
-```c
-#define EF_UART_CFG_REG_MAX_VALUE ((uint32_t)0x00001FFF)
-```
-
 ### define `EF_UART_CFG_REG_TIMEOUT_MAX_VALUE`
 
 ```c
 #define EF_UART_CFG_REG_TIMEOUT_MAX_VALUE ((uint32_t)0x0000003F)
-```
-
-### define `EF_UART_CTRL_REG_MAX_VALUE`
-
-```c
-#define EF_UART_CTRL_REG_MAX_VALUE ((uint32_t)0x0000001F)
 ```
 
 ### define `EF_UART_DataLength_MAX_VALUE`
@@ -1265,42 +1245,6 @@ status A value of type [**EF\_DRIVER\_STATUS**](#typedef-ef_driver_status) : ret
 
 ```c
 #define EF_UART_DataLength_MIN_VALUE ((uint32_t)0x00000005)
-```
-
-### define `EF_UART_IC_REG_MAX_VALUE`
-
-```c
-#define EF_UART_IC_REG_MAX_VALUE ((uint32_t)0x000003FF)
-```
-
-### define `EF_UART_IM_REG_MAX_VALUE`
-
-```c
-#define EF_UART_IM_REG_MAX_VALUE ((uint32_t)0x000003FF)
-```
-
-### define `EF_UART_MATCH_REG_MAX_VALUE`
-
-```c
-#define EF_UART_MATCH_REG_MAX_VALUE ((uint32_t)0x00001FFF)
-```
-
-### define `EF_UART_PR_REG_MAX_VALUE`
-
-```c
-#define EF_UART_PR_REG_MAX_VALUE ((uint32_t)0x0000FFFF)
-```
-
-### define `EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE`
-
-```c
-#define EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE ((uint32_t)0x0000000F)
-```
-
-### define `EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE`
-
-```c
-#define EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE ((uint32_t)0x0000000F)
 ```
 
 
@@ -1386,12 +1330,13 @@ EF_DRIVER_STATUS EF_UART_example(void){
 | Type | Name |
 | ---: | :--- |
 | define  | [**EF\_UART\_BRK\_FLAG**](#define-ef_uart_brk_flag)  ((uint32\_t)0x10)<br> |
+| define  | [**EF\_UART\_CFG\_REG\_MAX\_VALUE**](#define-ef_uart_cfg_reg_max_value)  ((uint32\_t)0x3FFF)<br> |
 | define  | [**EF\_UART\_CFG\_REG\_PARITY\_BIT**](#define-ef_uart_cfg_reg_parity_bit)  ((uint32\_t)5)<br> |
 | define  | [**EF\_UART\_CFG\_REG\_PARITY\_MASK**](#define-ef_uart_cfg_reg_parity_mask)  ((uint32\_t)0xe0)<br> |
 | define  | [**EF\_UART\_CFG\_REG\_STP2\_BIT**](#define-ef_uart_cfg_reg_stp2_bit)  ((uint32\_t)4)<br> |
 | define  | [**EF\_UART\_CFG\_REG\_STP2\_MASK**](#define-ef_uart_cfg_reg_stp2_mask)  ((uint32\_t)0x10)<br> |
 | define  | [**EF\_UART\_CFG\_REG\_TIMEOUT\_BIT**](#define-ef_uart_cfg_reg_timeout_bit)  ((uint32\_t)8)<br> |
-| define  | [**EF\_UART\_CFG\_REG\_TIMEOUT\_MASK**](#define-ef_uart_cfg_reg_timeout_mask)  ((uint32\_t)0x3f)<br> |
+| define  | [**EF\_UART\_CFG\_REG\_TIMEOUT\_MASK**](#define-ef_uart_cfg_reg_timeout_mask)  ((uint32\_t)0x3f00)<br> |
 | define  | [**EF\_UART\_CFG\_REG\_WLEN\_BIT**](#define-ef_uart_cfg_reg_wlen_bit)  ((uint32\_t)0)<br> |
 | define  | [**EF\_UART\_CFG\_REG\_WLEN\_MASK**](#define-ef_uart_cfg_reg_wlen_mask)  ((uint32\_t)0xf)<br> |
 | define  | [**EF\_UART\_CTRL\_REG\_EN\_BIT**](#define-ef_uart_ctrl_reg_en_bit)  ((uint32\_t)0)<br> |
@@ -1400,29 +1345,48 @@ EF_DRIVER_STATUS EF_UART_example(void){
 | define  | [**EF\_UART\_CTRL\_REG\_GFEN\_MASK**](#define-ef_uart_ctrl_reg_gfen_mask)  ((uint32\_t)0x10)<br> |
 | define  | [**EF\_UART\_CTRL\_REG\_LPEN\_BIT**](#define-ef_uart_ctrl_reg_lpen_bit)  ((uint32\_t)3)<br> |
 | define  | [**EF\_UART\_CTRL\_REG\_LPEN\_MASK**](#define-ef_uart_ctrl_reg_lpen_mask)  ((uint32\_t)0x8)<br> |
+| define  | [**EF\_UART\_CTRL\_REG\_MAX\_VALUE**](#define-ef_uart_ctrl_reg_max_value)  ((uint32\_t)0x1F)<br> |
 | define  | [**EF\_UART\_CTRL\_REG\_RXEN\_BIT**](#define-ef_uart_ctrl_reg_rxen_bit)  ((uint32\_t)2)<br> |
 | define  | [**EF\_UART\_CTRL\_REG\_RXEN\_MASK**](#define-ef_uart_ctrl_reg_rxen_mask)  ((uint32\_t)0x4)<br> |
 | define  | [**EF\_UART\_CTRL\_REG\_TXEN\_BIT**](#define-ef_uart_ctrl_reg_txen_bit)  ((uint32\_t)1)<br> |
 | define  | [**EF\_UART\_CTRL\_REG\_TXEN\_MASK**](#define-ef_uart_ctrl_reg_txen_mask)  ((uint32\_t)0x2)<br> |
 | define  | [**EF\_UART\_FE\_FLAG**](#define-ef_uart_fe_flag)  ((uint32\_t)0x40)<br> |
 | define  | [**EF\_UART\_MATCH\_FLAG**](#define-ef_uart_match_flag)  ((uint32\_t)0x20)<br> |
+| define  | [**EF\_UART\_MATCH\_REG\_MATCH\_BIT**](#define-ef_uart_match_reg_match_bit)  ((uint32\_t)0)<br> |
+| define  | [**EF\_UART\_MATCH\_REG\_MATCH\_MASK**](#define-ef_uart_match_reg_match_mask)  ((uint32\_t)0x1ff)<br> |
+| define  | [**EF\_UART\_MATCH\_REG\_MAX\_VALUE**](#define-ef_uart_match_reg_max_value)  ((uint32\_t)0x1FF)<br> |
 | define  | [**EF\_UART\_OR\_FLAG**](#define-ef_uart_or_flag)  ((uint32\_t)0x100)<br> |
 | define  | [**EF\_UART\_PRE\_FLAG**](#define-ef_uart_pre_flag)  ((uint32\_t)0x80)<br> |
+| define  | [**EF\_UART\_PR\_REG\_MAX\_VALUE**](#define-ef_uart_pr_reg_max_value)  ((uint32\_t)0xFFFF)<br> |
+| define  | [**EF\_UART\_PR\_REG\_PR\_BIT**](#define-ef_uart_pr_reg_pr_bit)  ((uint32\_t)0)<br> |
+| define  | [**EF\_UART\_PR\_REG\_PR\_MASK**](#define-ef_uart_pr_reg_pr_mask)  ((uint32\_t)0xffff)<br> |
 | define  | [**EF\_UART\_RTO\_FLAG**](#define-ef_uart_rto_flag)  ((uint32\_t)0x200)<br> |
 | define  | [**EF\_UART\_RXA\_FLAG**](#define-ef_uart_rxa_flag)  ((uint32\_t)0x8)<br> |
+| define  | [**EF\_UART\_RXDATA\_REG\_MAX\_VALUE**](#define-ef_uart_rxdata_reg_max_value)  ((uint32\_t)0x1FF)<br> |
+| define  | [**EF\_UART\_RXDATA\_REG\_RXDATA\_BIT**](#define-ef_uart_rxdata_reg_rxdata_bit)  ((uint32\_t)0)<br> |
+| define  | [**EF\_UART\_RXDATA\_REG\_RXDATA\_MASK**](#define-ef_uart_rxdata_reg_rxdata_mask)  ((uint32\_t)0x1ff)<br> |
 | define  | [**EF\_UART\_RXF\_FLAG**](#define-ef_uart_rxf_flag)  ((uint32\_t)0x2)<br> |
 | define  | [**EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT**](#define-ef_uart_rx_fifo_flush_reg_flush_bit)  ((uint32\_t)0)<br> |
 | define  | [**EF\_UART\_RX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK**](#define-ef_uart_rx_fifo_flush_reg_flush_mask)  ((uint32\_t)0x1)<br> |
+| define  | [**EF\_UART\_RX\_FIFO\_FLUSH\_REG\_MAX\_VALUE**](#define-ef_uart_rx_fifo_flush_reg_max_value)  ((uint32\_t)0x1)<br> |
 | define  | [**EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT**](#define-ef_uart_rx_fifo_level_reg_level_bit)  ((uint32\_t)0)<br> |
 | define  | [**EF\_UART\_RX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK**](#define-ef_uart_rx_fifo_level_reg_level_mask)  ((uint32\_t)0xf)<br> |
+| define  | [**EF\_UART\_RX\_FIFO\_LEVEL\_REG\_MAX\_VALUE**](#define-ef_uart_rx_fifo_level_reg_max_value)  ((uint32\_t)0xF)<br> |
+| define  | [**EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE**](#define-ef_uart_rx_fifo_threshold_reg_max_value)  ((uint32\_t)0xF)<br> |
 | define  | [**EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT**](#define-ef_uart_rx_fifo_threshold_reg_threshold_bit)  ((uint32\_t)0)<br> |
 | define  | [**EF\_UART\_RX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK**](#define-ef_uart_rx_fifo_threshold_reg_threshold_mask)  ((uint32\_t)0xf)<br> |
 | define  | [**EF\_UART\_TXB\_FLAG**](#define-ef_uart_txb_flag)  ((uint32\_t)0x4)<br> |
+| define  | [**EF\_UART\_TXDATA\_REG\_MAX\_VALUE**](#define-ef_uart_txdata_reg_max_value)  ((uint32\_t)0x1FF)<br> |
+| define  | [**EF\_UART\_TXDATA\_REG\_TXDATA\_BIT**](#define-ef_uart_txdata_reg_txdata_bit)  ((uint32\_t)0)<br> |
+| define  | [**EF\_UART\_TXDATA\_REG\_TXDATA\_MASK**](#define-ef_uart_txdata_reg_txdata_mask)  ((uint32\_t)0x1ff)<br> |
 | define  | [**EF\_UART\_TXE\_FLAG**](#define-ef_uart_txe_flag)  ((uint32\_t)0x1)<br> |
 | define  | [**EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_BIT**](#define-ef_uart_tx_fifo_flush_reg_flush_bit)  ((uint32\_t)0)<br> |
 | define  | [**EF\_UART\_TX\_FIFO\_FLUSH\_REG\_FLUSH\_MASK**](#define-ef_uart_tx_fifo_flush_reg_flush_mask)  ((uint32\_t)0x1)<br> |
+| define  | [**EF\_UART\_TX\_FIFO\_FLUSH\_REG\_MAX\_VALUE**](#define-ef_uart_tx_fifo_flush_reg_max_value)  ((uint32\_t)0x1)<br> |
 | define  | [**EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_BIT**](#define-ef_uart_tx_fifo_level_reg_level_bit)  ((uint32\_t)0)<br> |
 | define  | [**EF\_UART\_TX\_FIFO\_LEVEL\_REG\_LEVEL\_MASK**](#define-ef_uart_tx_fifo_level_reg_level_mask)  ((uint32\_t)0xf)<br> |
+| define  | [**EF\_UART\_TX\_FIFO\_LEVEL\_REG\_MAX\_VALUE**](#define-ef_uart_tx_fifo_level_reg_max_value)  ((uint32\_t)0xF)<br> |
+| define  | [**EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_MAX\_VALUE**](#define-ef_uart_tx_fifo_threshold_reg_max_value)  ((uint32\_t)0xF)<br> |
 | define  | [**EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_BIT**](#define-ef_uart_tx_fifo_threshold_reg_threshold_bit)  ((uint32\_t)0)<br> |
 | define  | [**EF\_UART\_TX\_FIFO\_THRESHOLD\_REG\_THRESHOLD\_MASK**](#define-ef_uart_tx_fifo_threshold_reg_threshold_mask)  ((uint32\_t)0xf)<br> |
 | define  | [**IO\_TYPES**](#define-io_types)  <br> |
@@ -1501,6 +1465,12 @@ Variables:
 #define EF_UART_BRK_FLAG ((uint32_t)0x10)
 ```
 
+### define `EF_UART_CFG_REG_MAX_VALUE`
+
+```c
+#define EF_UART_CFG_REG_MAX_VALUE ((uint32_t)0x3FFF)
+```
+
 ### define `EF_UART_CFG_REG_PARITY_BIT`
 
 ```c
@@ -1534,7 +1504,7 @@ Variables:
 ### define `EF_UART_CFG_REG_TIMEOUT_MASK`
 
 ```c
-#define EF_UART_CFG_REG_TIMEOUT_MASK ((uint32_t)0x3f)
+#define EF_UART_CFG_REG_TIMEOUT_MASK ((uint32_t)0x3f00)
 ```
 
 ### define `EF_UART_CFG_REG_WLEN_BIT`
@@ -1585,6 +1555,12 @@ Variables:
 #define EF_UART_CTRL_REG_LPEN_MASK ((uint32_t)0x8)
 ```
 
+### define `EF_UART_CTRL_REG_MAX_VALUE`
+
+```c
+#define EF_UART_CTRL_REG_MAX_VALUE ((uint32_t)0x1F)
+```
+
 ### define `EF_UART_CTRL_REG_RXEN_BIT`
 
 ```c
@@ -1621,6 +1597,24 @@ Variables:
 #define EF_UART_MATCH_FLAG ((uint32_t)0x20)
 ```
 
+### define `EF_UART_MATCH_REG_MATCH_BIT`
+
+```c
+#define EF_UART_MATCH_REG_MATCH_BIT ((uint32_t)0)
+```
+
+### define `EF_UART_MATCH_REG_MATCH_MASK`
+
+```c
+#define EF_UART_MATCH_REG_MATCH_MASK ((uint32_t)0x1ff)
+```
+
+### define `EF_UART_MATCH_REG_MAX_VALUE`
+
+```c
+#define EF_UART_MATCH_REG_MAX_VALUE ((uint32_t)0x1FF)
+```
+
 ### define `EF_UART_OR_FLAG`
 
 ```c
@@ -1633,6 +1627,24 @@ Variables:
 #define EF_UART_PRE_FLAG ((uint32_t)0x80)
 ```
 
+### define `EF_UART_PR_REG_MAX_VALUE`
+
+```c
+#define EF_UART_PR_REG_MAX_VALUE ((uint32_t)0xFFFF)
+```
+
+### define `EF_UART_PR_REG_PR_BIT`
+
+```c
+#define EF_UART_PR_REG_PR_BIT ((uint32_t)0)
+```
+
+### define `EF_UART_PR_REG_PR_MASK`
+
+```c
+#define EF_UART_PR_REG_PR_MASK ((uint32_t)0xffff)
+```
+
 ### define `EF_UART_RTO_FLAG`
 
 ```c
@@ -1643,6 +1655,24 @@ Variables:
 
 ```c
 #define EF_UART_RXA_FLAG ((uint32_t)0x8)
+```
+
+### define `EF_UART_RXDATA_REG_MAX_VALUE`
+
+```c
+#define EF_UART_RXDATA_REG_MAX_VALUE ((uint32_t)0x1FF)
+```
+
+### define `EF_UART_RXDATA_REG_RXDATA_BIT`
+
+```c
+#define EF_UART_RXDATA_REG_RXDATA_BIT ((uint32_t)0)
+```
+
+### define `EF_UART_RXDATA_REG_RXDATA_MASK`
+
+```c
+#define EF_UART_RXDATA_REG_RXDATA_MASK ((uint32_t)0x1ff)
 ```
 
 ### define `EF_UART_RXF_FLAG`
@@ -1663,6 +1693,12 @@ Variables:
 #define EF_UART_RX_FIFO_FLUSH_REG_FLUSH_MASK ((uint32_t)0x1)
 ```
 
+### define `EF_UART_RX_FIFO_FLUSH_REG_MAX_VALUE`
+
+```c
+#define EF_UART_RX_FIFO_FLUSH_REG_MAX_VALUE ((uint32_t)0x1)
+```
+
 ### define `EF_UART_RX_FIFO_LEVEL_REG_LEVEL_BIT`
 
 ```c
@@ -1673,6 +1709,18 @@ Variables:
 
 ```c
 #define EF_UART_RX_FIFO_LEVEL_REG_LEVEL_MASK ((uint32_t)0xf)
+```
+
+### define `EF_UART_RX_FIFO_LEVEL_REG_MAX_VALUE`
+
+```c
+#define EF_UART_RX_FIFO_LEVEL_REG_MAX_VALUE ((uint32_t)0xF)
+```
+
+### define `EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE`
+
+```c
+#define EF_UART_RX_FIFO_THRESHOLD_REG_MAX_VALUE ((uint32_t)0xF)
 ```
 
 ### define `EF_UART_RX_FIFO_THRESHOLD_REG_THRESHOLD_BIT`
@@ -1693,6 +1741,24 @@ Variables:
 #define EF_UART_TXB_FLAG ((uint32_t)0x4)
 ```
 
+### define `EF_UART_TXDATA_REG_MAX_VALUE`
+
+```c
+#define EF_UART_TXDATA_REG_MAX_VALUE ((uint32_t)0x1FF)
+```
+
+### define `EF_UART_TXDATA_REG_TXDATA_BIT`
+
+```c
+#define EF_UART_TXDATA_REG_TXDATA_BIT ((uint32_t)0)
+```
+
+### define `EF_UART_TXDATA_REG_TXDATA_MASK`
+
+```c
+#define EF_UART_TXDATA_REG_TXDATA_MASK ((uint32_t)0x1ff)
+```
+
 ### define `EF_UART_TXE_FLAG`
 
 ```c
@@ -1711,6 +1777,12 @@ Variables:
 #define EF_UART_TX_FIFO_FLUSH_REG_FLUSH_MASK ((uint32_t)0x1)
 ```
 
+### define `EF_UART_TX_FIFO_FLUSH_REG_MAX_VALUE`
+
+```c
+#define EF_UART_TX_FIFO_FLUSH_REG_MAX_VALUE ((uint32_t)0x1)
+```
+
 ### define `EF_UART_TX_FIFO_LEVEL_REG_LEVEL_BIT`
 
 ```c
@@ -1721,6 +1793,18 @@ Variables:
 
 ```c
 #define EF_UART_TX_FIFO_LEVEL_REG_LEVEL_MASK ((uint32_t)0xf)
+```
+
+### define `EF_UART_TX_FIFO_LEVEL_REG_MAX_VALUE`
+
+```c
+#define EF_UART_TX_FIFO_LEVEL_REG_MAX_VALUE ((uint32_t)0xF)
+```
+
+### define `EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE`
+
+```c
+#define EF_UART_TX_FIFO_THRESHOLD_REG_MAX_VALUE ((uint32_t)0xF)
 ```
 
 ### define `EF_UART_TX_FIFO_THRESHOLD_REG_THRESHOLD_BIT`
