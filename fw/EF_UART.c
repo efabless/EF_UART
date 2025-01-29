@@ -283,8 +283,6 @@ EF_DRIVER_STATUS EF_UART_setDataSize(EF_UART_TYPE_PTR uart, uint32_t value){
     return status;
 }
 
-// todo: make this generic between 1 and 2 bits 
-
 EF_DRIVER_STATUS EF_UART_setStopBits(EF_UART_TYPE_PTR uart, bool is_two_bits){
     
     EF_DRIVER_STATUS status = EF_DRIVER_OK; 
