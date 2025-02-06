@@ -268,7 +268,6 @@ module EF_UART_WB #(
 
 	assign	dat_o = 
 			(adr_i[`WB_AW-1:0] == RXDATA_REG_OFFSET)	? RXDATA_WIRE :
-			(adr_i[`WB_AW-1:0] == TXDATA_REG_OFFSET)	? TXDATA_WIRE :
 			(adr_i[`WB_AW-1:0] == PR_REG_OFFSET)	? PR_REG :
 			(adr_i[`WB_AW-1:0] == CTRL_REG_OFFSET)	? CTRL_REG :
 			(adr_i[`WB_AW-1:0] == CFG_REG_OFFSET)	? CFG_REG :
