@@ -1,5 +1,5 @@
 /*
-	Copyright 2024 Efabless Corp.
+	Copyright 2025 Efabless Corp.
 
 	Author: Efabless Corp. (ip_admin@efabless.com)
 
@@ -117,7 +117,6 @@ module EF_UART_APB #(
 	// Register Definitions
 	wire	[MDW-1:0]	RXDATA_WIRE;
 
-	wire	[MDW-1:0]	TXDATA_WIRE;
 
 	reg [15:0]	PR_REG;
 	assign	prescaler = PR_REG;
@@ -270,7 +269,6 @@ module EF_UART_APB #(
 
 	assign	PRDATA = 
 			(PADDR[`APB_AW-1:0] == RXDATA_REG_OFFSET)	? RXDATA_WIRE :
-			(PADDR[`APB_AW-1:0] == TXDATA_REG_OFFSET)	? TXDATA_WIRE :
 			(PADDR[`APB_AW-1:0] == PR_REG_OFFSET)	? PR_REG :
 			(PADDR[`APB_AW-1:0] == CTRL_REG_OFFSET)	? CTRL_REG :
 			(PADDR[`APB_AW-1:0] == CFG_REG_OFFSET)	? CFG_REG :

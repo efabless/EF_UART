@@ -1,5 +1,5 @@
 /*
-	Copyright 2024 Efabless Corp.
+	Copyright 2025 Efabless Corp.
 
 	Author: Efabless Corp. (ip_admin@efabless.com)
 
@@ -118,8 +118,6 @@ module EF_UART_WB #(
 
   // Register Definitions
   wire [MDW-1:0] RXDATA_WIRE;
-
-  wire [MDW-1:0] TXDATA_WIRE;
 
   reg  [   15:0] PR_REG;
   assign prescaler = PR_REG;
