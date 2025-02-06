@@ -9,7 +9,7 @@ EF_UART is a Soft IP with the following features:
 - Line-break detection
 - Configurable receiver timeout
 - Loopback capability for testing/debugging
-- Glitch Filter on RX enable
+- Glitch Filter on the RX pin when enabled.
 - Matching received data detection
 - 16-byte TX and RX FIFOs with programmable thresholds
 - 16-bit prescaler (PR) for programmable baud rate generation
