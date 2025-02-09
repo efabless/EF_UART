@@ -23,12 +23,13 @@ class uart_loopback_seq(bus_seq_base):
         await uvm_do(self, config_seq)  # change the presclar/ configs
         # enable loopback
         self.create_new_item()
+        ctrl_data = 0x1F if config_seq.is_glitch_filter_en else 0xF
         await uvm_do_with(
             self,
             self.req,
             lambda addr: addr == self.adress_dict["CTRL"],
             lambda kind: kind == bus_item.WRITE,
-            lambda data: data == 0xF,
+            lambda data: data == ctrl_data,
         )
 
         for _ in range(30):

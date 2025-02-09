@@ -5,7 +5,7 @@ from uvm.macros.uvm_sequence_defines import uvm_do_with, uvm_do
 from uvm.base import sv, UVM_HIGH, UVM_LOW
 from EF_UVM.bus_env.bus_item import bus_item
 from EF_UVM.bus_env.bus_seq_lib.bus_seq_base import bus_seq_base
-
+import random
 
 class uart_config(bus_seq_base):
     def __init__(
@@ -122,11 +122,27 @@ class uart_config(bus_seq_base):
                 data_condition=lambda data: data == self.control,
             )
         else:
-            await self.send_req(
-                is_write=True,
-                reg="CTRL",
-                data_condition=lambda data: data & 0b1111 == 0x7,
-            )  # tx enabled, rx enabled and loopback disabled
+            self.is_glitch_filter_en = random.randint(0, 1)
+            # glitch filter is special case if it is enable it should be enabled before rx is enabled by 8 cycles * glitch divider from rtl
+            if self.is_glitch_filter_en:
+                await self.send_req(
+                    is_write=True,
+                    reg="CTRL",
+                    data_condition=lambda data: data & 0b11111 == 0x10,
+                )  # enable glitch filter
+                for _ in range(8 * 2):
+                    await self.send_nop()
+                await self.send_req(
+                    is_write=True,
+                    reg="CTRL",
+                    data_condition=lambda data: data & 0b11111 == 0x17,
+                )  # tx enabled, rx enabled, loopback disabled and glitch filter enabled
+            else:
+                await self.send_req(
+                    is_write=True,
+                    reg="CTRL",
+                    data_condition=lambda data: data & 0b11111 == 0x7,
+                )  # tx enabled, rx enabled, loopback disabled and glitch filter disabled
 
     async def send_req(self, is_write, reg, data_condition=None):
         # send request
