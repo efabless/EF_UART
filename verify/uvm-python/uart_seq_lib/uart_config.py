@@ -48,7 +48,7 @@ class uart_config(bus_seq_base):
             await self.send_req(
                 is_write=True,
                 reg="PR",
-                data_condition=lambda data: data in range(0, 0x10),
+                data_condition=lambda data: data in range(1, 0x10),
             )
 
         # random config
