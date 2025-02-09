@@ -11,7 +11,7 @@ info:
     - Line-break detection
     - Configurable receiver timeout
     - Loopback capability for testing/debugging
-    - Glitch Filter on RX enable
+    - Glitch Filter on the RX pin when enabled.
     - Matching received data detection
     - 16-byte TX and RX FIFOs with programmable thresholds
     - 16-bit prescaler (PR) for programmable baud rate generation
@@ -285,7 +285,7 @@ registers:
         bit_offset: 4
         bit_width: 1
         write_port: glitch_filter_en
-        description: UART Glitch Filer on RX enable
+        description: "UART Glitch Filter on RX enable (Note: glitch filter is only functional when PR > 0)"
   - name: CFG
     size: 14
     mode: w

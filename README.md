@@ -120,7 +120,7 @@ UART Control Register
 |1|txen|1|UART Transmitter enable|
 |2|rxen|1|UART Receiver enable|
 |3|lpen|1|Loopback (connect RX and TX pins together) enable|
-|4|gfen|1|UART Glitch Filer on RX enable|
+|4|gfen|1|UART Glitch Filter on RX enable (Note: glitch filter is only functional when PR > 0)|
 
 ### CFG Register [Offset: 0x10, mode: w]
 
@@ -308,3 +308,21 @@ You can install the IP either by cloning this repository or by using [IPM](https
 |parity_error_flag|output|1|Parity error flag|
 |overrun_flag|output|1|Overrun flag|
 |timeout_flag|output|1|Timeout flag|
+## Run cocotb UVM Testbench:
+In IP directory run:
+ ```shell
+ cd verify/uvm-python/
+ ```
+ ##### To run testbench for design with certain bus type 
+ To run all tests:
+ ```shell
+ make run_all_tests BUS_TYPE=<bus_type>
+ ```
+ To run a certain test:
+ ```shell
+ make run_<test_name> BUS_TYPE=<bus_type>
+ ```
+ To run all tests with a tag: 
+ ```shell
+ make run_all_tests TAG=<new_tag> BUS_TYPE=<bus_type>
+ ```
