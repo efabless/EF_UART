@@ -45,6 +45,7 @@ jobs:
           rm -rf ${ip_dir}/README.md
           rm -rf ${ip_dir}/verify/README.md
           rm -rf ${ip_dir}/fw/${ip_name}_regs.h
+          git -C ${{ env.IP_PATH }} status
           mkdir -p ${ip_dir}/hdl/rtl/bus_wrappers/dft
 
           python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -apb > ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_APB.dev.v 
@@ -93,3 +94,4 @@ jobs:
       - name: Check output
         run: |
           git -C ${{ env.IP_PATH }} status
+          git -C ${{ env.IP_PATH }} diff
