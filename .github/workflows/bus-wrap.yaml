@@ -27,6 +27,7 @@ jobs:
         run: |
           ip_dir=${{ env.IP_PATH }}
           ip_name=${{ env.IP_NAME }}
+          bus_wrap_dir=${{ env.BUSWRAP_PATH }}
           rm -rf ${ip_dir}/hdl//rtl/bus_wrappers
           mkdir -p ${ip_dir}/hdl//rtl/bus_wrappers
           mkdir -p ${ip_dir}/hdl//rtl/bus_wrappers/dft
