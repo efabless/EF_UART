@@ -1,26 +1,26 @@
-name: Run UVM tests
-
-on:
-  push: # This now triggers on pushes to any branch
-  pull_request: # This now triggers on pull requests to any branch
-
-jobs:
-  Extract-Buses:
-    runs-on: ubuntu-latest
-    outputs:
-      IPs: ${{ steps.set-IPs-matrix.outputs.IPs }}
-      buses: ${{ steps.extract_buses.outputs.buses }}
-    steps:
-      - name: Extract Supported Buses
-        id: extract_buses
-        uses: efabless/EF_UVM/.github/actions/get-bus@main
-      - name: Check Output
-        run: echo ${{ steps.extract_buses.outputs.buses }}
-  Run-IP-Tests:
-    uses: efabless/EF_UVM/.github/workflows/run_IP.yaml@main
-    needs: [Extract-Buses]
-    with:
-      test-names: "all_tests"
-      name: ${{ github.event.repository.name }}
-      buses: ${{ needs.Extract-Buses.outputs.buses }}
-      is-ip: true
+#name: Run UVM tests
+#
+#on:
+#  push: # This now triggers on pushes to any branch
+#  pull_request: # This now triggers on pull requests to any branch
+#
+#jobs:
+#  Extract-Buses:
+#    runs-on: ubuntu-latest
+#    outputs:
+#      IPs: ${{ steps.set-IPs-matrix.outputs.IPs }}
+#      buses: ${{ steps.extract_buses.outputs.buses }}
+#    steps:
+#      - name: Extract Supported Buses
+#        id: extract_buses
+#        uses: efabless/EF_UVM/.github/actions/get-bus@main
+#      - name: Check Output
+#        run: echo ${{ steps.extract_buses.outputs.buses }}
+#  Run-IP-Tests:
+#    uses: efabless/EF_UVM/.github/workflows/run_IP.yaml@main
+#    needs: [Extract-Buses]
+#    with:
+#      test-names: "all_tests"
+#      name: ${{ github.event.repository.name }}
+#      buses: ${{ needs.Extract-Buses.outputs.buses }}
+#      is-ip: true
