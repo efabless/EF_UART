@@ -42,6 +42,9 @@ jobs:
           ip_name=${{ env.IP_NAME }}
           bus_wrap_dir=${{ env.BUSWRAP_PATH }}
           rm -rf ${ip_dir}/hdl/rtl/bus_wrappers
+          rm -rf ${ip_dir}/README.md
+          rm -rf ${ip_dir}/verify/README.md
+          rm -rf ${ip_dir}/fw/${ip_name}_regs.h
           mkdir -p ${ip_dir}/hdl/rtl/bus_wrappers/dft
 
           python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -apb > ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_APB.dev.v 
@@ -64,6 +67,11 @@ jobs:
           verible-verilog-format --inplace  ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_WB_DFT.v
           verible-verilog-format --inplace  ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_AHBL.v
           verible-verilog-format --inplace  ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_AHBL_DFT.v
+
+          python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ahbl -md | head -n -18 > ${ip_dir}/README.md
+          python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ahbl -md | tail -n 18 > ${ip_dir}/verify/README.md
+          # fw
+          python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ch > ${ip_dir}/fw/${ip_name}_regs.h
 
           # remove extra lines and comment
           sed -i '/^$/N;/^\n$/D' ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_APB.v
