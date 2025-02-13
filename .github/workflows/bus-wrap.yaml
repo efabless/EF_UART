@@ -70,7 +70,7 @@ jobs:
           verible-verilog-format --inplace  ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_AHBL_DFT.v
 
           python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ahbl -md | head -n -18 > ${ip_dir}/README.md
-          python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ahbl -md | tail -n 18 > ${ip_dir}/verify/README.md
+          python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ahbl -md | tail -n 18 > ${ip_dir}/README.md
           # fw
           python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ch > ${ip_dir}/fw/${ip_name}_regs.h
 
