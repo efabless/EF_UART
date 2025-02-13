@@ -15,7 +15,7 @@ jobs:
           echo "BUSWRAP_PATH=./bus-wrap" >> $GITHUB_ENV
           echo "BUSWRAP_REPO=efabless/BusWrap" >> $GITHUB_ENV
           echo "IP_PATH=./ip" >> $GITHUB_ENV
-          echo "IP_NAME=${github_repo}" >> GITHUB_ENV
+          echo "IP_NAME=${github_repo}" >> $GITHUB_ENV
       - uses: actions/checkout@v4
         name: Checkout ${{ env.BUSWRAP_REPO }}
         with:
