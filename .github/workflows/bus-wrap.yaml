@@ -42,7 +42,7 @@ jobs:
           ip_name=${{ env.IP_NAME }}
           bus_wrap_dir=${{ env.BUSWRAP_PATH }}
           rm -rf ${ip_dir}/hdl/rtl/bus_wrappers
-          mkdir -p ${ip_dir}/hdl/rtl/bus_wrappers
+          mkdir -p ${ip_dir}/hdl/rtl/bus_wrappers/dft
 
           python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -apb > ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_APB.dev.v 
           python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -apb -dft > ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_APB_DFT.dev.v
