@@ -37,6 +37,7 @@ jobs:
           path: ${{ env.IP_PATH }}
       - name: Execute BusWrap flow
         run: |
+          set -x
           ip_dir=${{ env.IP_PATH }}
           ip_name=${{ env.IP_NAME }}
           bus_wrap_dir=${{ env.BUSWRAP_PATH }}
