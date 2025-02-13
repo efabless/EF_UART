@@ -43,3 +43,6 @@ jobs:
           python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ahbl -dft > ${ip_dir}/hdl//rtl/bus_wrappers/dft/${ip_name}_AHBL_DFT.dev.v
       #      - name: Push output files to a branch
       #      - name: Create a pullrequest from the branch to main
+      - name: Check output
+        run: |
+          git -C ${{ env.IP_PATH }} status
