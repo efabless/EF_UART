@@ -110,6 +110,7 @@ jobs:
           diffs_log=diffs.log
           echo "diffs_log=$diffs_log" >> $GITHUB_OUTPUT
           echo "buswrap_head_commit=$(git -C ${{ env.BUSWRAP_PATH }} rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          echo "ip_head_commit=$(git -C ${{ env.IP_PATH }} rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
           echo "ip_branch_name=${{ github.head_ref || github.ref_name }}" >> "$GITHUB_OUTPUT"
 
       - name: Check Diff
@@ -126,6 +127,13 @@ jobs:
         run: |
           branch="ci-${{steps.vars.outputs.buswrap_head_commit}}-${{steps.vars.outputs.ip_branch_name}}"
           echo "there are changes pushing to $branch"
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          cd ${{ env.IP_PATH }}
+          git checkout -b $branch
+          git add .
+          git commit -m "run bus_wrap(${{steps.vars.outputs.buswrap_head_commit}}) on ${{ steps.vars.outputs.ip_head_commit }}"
+          git push -f
       - name: Not Push to branch
         if: ${{ steps.check_diff.outputs.changed == 'false' }} 
         run: |
