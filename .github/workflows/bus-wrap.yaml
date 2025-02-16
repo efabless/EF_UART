@@ -9,6 +9,7 @@ jobs:
     name: Generate
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - name: Set variables
         run: |
@@ -124,7 +125,7 @@ jobs:
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
           git -C ${{ env.IP_PATH }} status
-      - name: Push to branch
+      - name: Create PR
         if: ${{ steps.check_diff.outputs.changed == 'true' }} 
         run: |
           branch="ci-${{steps.vars.outputs.buswrap_head_commit}}-${{steps.vars.outputs.ip_branch_name}}"
@@ -136,6 +137,7 @@ jobs:
           git add .
           git commit -m "run bus_wrap(${{steps.vars.outputs.buswrap_head_commit}}) on ${{ steps.vars.outputs.ip_head_commit }}"
           git push -f --set-upstream origin $branch
+          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} gh pr create -B ${{steps.vars.outputs.ip_branch_name}} -H $branch --title 'ci: run bus_wrap on ${{steps.vars.outputs.ip_branch_name}}' --body 'Created by CI Github action'
       - name: Not Push to branch
         if: ${{ steps.check_diff.outputs.changed == 'false' }} 
         run: |
