@@ -133,7 +133,7 @@ jobs:
           git checkout -b $branch
           git add .
           git commit -m "run bus_wrap(${{steps.vars.outputs.buswrap_head_commit}}) on ${{ steps.vars.outputs.ip_head_commit }}"
-          git push -f
+          git push -f --set-upstream origin $branch
       - name: Not Push to branch
         if: ${{ steps.check_diff.outputs.changed == 'false' }} 
         run: |
@@ -141,6 +141,7 @@ jobs:
           echo "there are changes pushing to $branch"
       - name: Check Context
         shell: bash
+        if: always()
         run: |
           cat << 'EOF'
           "${{ toJSON(steps) }}"
