@@ -2,14 +2,14 @@ name: CI
 
 on:
   push: # This now triggers on pushes to any branch
+permissions:
+  pull-requests: write
+  contents: write
 
 jobs:
   Bus-Wrap:
     runs-on: ubuntu-latest
     name: Generate
-    permissions:
-      contents: write
-      pull-requests: write
     steps:
       - name: Set variables
         run: |
