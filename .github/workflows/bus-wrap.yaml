@@ -120,13 +120,21 @@ jobs:
           else
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
+          git -C ${{ env.IP_PATH }} status
       - name: Push to branch
-        if: ${{ steps.check_diff.outputs.changed }} == 'true'
+        if: ${{ steps.check_diff.outputs.changed == 'true' }} 
         run: |
           branch="ci-${{steps.vars.outputs.buswrap_head_commit}}-${{steps.vars.outputs.ip_branch_name}}"
           echo "there are changes pushing to $branch"
       - name: Not Push to branch
-        if: ${{ steps.check_diff.outputs.changed }} == 'false'
+        if: ${{ steps.check_diff.outputs.changed == 'false' }} 
         run: |
           branch="ci-${{steps.vars.outputs.buswrap_head_commit}}-${{steps.vars.outputs.ip_branch_name}}"
           echo "there are changes pushing to $branch"
+      - name: Check Context
+        shell: bash
+        run: |
+          cat << 'EOF'
+          "${{ toJSON(steps) }}"
+          "${{ toJSON(inputs) }}"
+          EOF
