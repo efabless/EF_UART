@@ -1,0 +1,195 @@
+name: Run IP
+
+permissions:
+  pull-requests: write
+  contents: write
+on:
+  workflow_call:
+    inputs:
+      repo:
+        type: string
+      name:
+        type: string
+      fw:
+        type: string
+        default: "true"
+      docs:
+        type: string
+        default: "true"
+      bus_wrapper:
+        type: string
+        default: "true"
+      pr_base:
+        type: string
+      commit_msg:
+        type: string
+      pr_branch:
+        type: string
+      pr_title:
+        type: string
+
+jobs:
+  Main:
+    runs-on: ubuntu-latest
+    name: Run BusWarp on ${{ inputs.name }}
+    steps:
+    - name: Set variables
+      run: |
+        echo "BUSWRAP_PATH=./bus-wrap" >> $GITHUB_ENV
+        echo "BUSWRAP_REPO=efabless/BusWrap" >> $GITHUB_ENV
+        echo "BUSWRAP_REF=main" >> $GITHUB_ENV
+        echo "IP_PATH=./${{ inputs.ip_name }}" >> $GITHUB_ENV
+    - name: Install iverilog
+      run: |
+        sudo apt-get update -qq
+        sudo apt-get install -y iverilog 
+    - name: Install dependencies
+      shell: bash
+      run: |
+        sudo apt-get -y install --no-install-recommends git python3 python3-click python3-unidiff
+    - name: Install Verible
+      uses: chipsalliance/verible-actions-common/install-verible@main
+    - uses: actions/checkout@v4
+      name: Checkout ${{ env.BUSWRAP_REPO }}
+      with:
+        repository: ${{ env.BUSWRAP_REPO }}
+        path: ${{ env.BUSWRAP_PATH }}
+        ref: ${{ env.BUSWRAP_REF }}
+    - uses: actions/checkout@v4
+      name: Checkout ${{ inputs.ip_repo }}
+      with:
+        path: ${{ env.IP_PATH }}
+    - name: Generate Wrapper
+      if: ${{ inputs.bus_wrapper == 'true' }}
+      run: |
+        set -x
+        ip_dir=${{ env.IP_PATH }}
+        ip_name=${{ inputs.ip_name }}
+        bus_wrap_dir=${{ env.BUSWRAP_PATH }}
+        rm -rf ${ip_dir}/hdl/rtl/bus_wrappers
+        git -C ${{ env.IP_PATH }} status
+        mkdir -p ${ip_dir}/hdl/rtl/bus_wrappers/dft
+
+        # wrapper
+        python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -apb > ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_APB.dev.v 
+        python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -apb -dft > ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_APB_DFT.dev.v
+        python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -wb > ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_WB.dev.v 
+        python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -wb -dft > ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_WB_DFT.dev.v
+        python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ahbl > ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_AHBL.dev.v
+        python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ahbl -dft > ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_AHBL_DFT.dev.v
+        iverilog -E -I$bus_wrap_dir/includes/rtl -o ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_APB.v ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_APB.dev.v
+        iverilog -E -I$bus_wrap_dir/includes/rtl -o ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_APB_DFT.v ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_APB_DFT.dev.v
+        iverilog -E -I$bus_wrap_dir/includes/rtl -o ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_WB.v ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_WB.dev.v
+        iverilog -E -I$bus_wrap_dir/includes/rtl -o ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_WB_DFT.v ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_WB_DFT.dev.v
+        iverilog -E -I$bus_wrap_dir/includes/rtl -o ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_AHBL.v ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_AHBL.dev.v
+        iverilog -E -I$bus_wrap_dir/includes/rtl -o ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_AHBL_DFT.v ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_AHBL_DFT.dev.v
+        verible-verilog-format --inplace  ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_APB.v
+        verible-verilog-format --inplace  ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_APB_DFT.v
+        verible-verilog-format --inplace  ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_WB.v
+        verible-verilog-format --inplace  ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_WB_DFT.v
+        verible-verilog-format --inplace  ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_AHBL.v
+        verible-verilog-format --inplace  ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_AHBL_DFT.v
+        sed -i '/^$/N;/^\n$/D' ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_APB.v
+        sed -i '/^$/N;/^\n$/D' ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_APB_DFT.v
+        sed -i '/^$/N;/^\n$/D' ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_WB.v
+        sed -i '/^$/N;/^\n$/D' ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_WB_DFT.v
+        sed -i '/^$/N;/^\n$/D' ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_AHBL.v
+        sed -i '/^$/N;/^\n$/D' ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_AHBL_DFT.v
+        # add line between timescale and default_nettype
+        sed -i 's/`timescale 1ns \/ 1ps `default_nettype none/`timescale 1ns \/ 1ps\n`default_nettype none/'  ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_APB.v
+        sed -i 's/`timescale 1ns \/ 1ps `default_nettype none/`timescale 1ns \/ 1ps\n`default_nettype none/'  ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_APB_DFT.v
+        sed -i 's/`timescale 1ns \/ 1ps `default_nettype none/`timescale 1ns \/ 1ps\n`default_nettype none/'  ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_WB.v
+        sed -i 's/`timescale 1ns \/ 1ps `default_nettype none/`timescale 1ns \/ 1ps\n`default_nettype none/'  ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_WB_DFT.v
+        sed -i 's/`timescale 1ns \/ 1ps `default_nettype none/`timescale 1ns \/ 1ps\n`default_nettype none/'  ${ip_dir}/hdl/rtl/bus_wrappers/${ip_name}_AHBL.v
+        sed -i 's/`timescale 1ns \/ 1ps `default_nettype none/`timescale 1ns \/ 1ps\n`default_nettype none/'  ${ip_dir}/hdl/rtl/bus_wrappers/dft/${ip_name}_AHBL_DFT.v
+    - name: Generate Docs
+      if: ${{ inputs.docs == 'true' }}
+      run: |
+        set -x
+        ip_dir=${{ env.IP_PATH }}
+        ip_name=${{ inputs.IP_NAME }}
+        bus_wrap_dir=${{ env.BUSWRAP_PATH }}
+        rm -rf ${ip_dir}/README.md
+        rm -rf ${ip_dir}/verify/README.md
+        git -C ${{ env.IP_PATH }} status
+        # doc
+        python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ahbl -md | head -n -18 > ${ip_dir}/README.md
+        python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ahbl -md | tail -n 18 > ${ip_dir}/verify/README.md
+    - name: Generate FW
+      if: ${{ inputs.fw == 'true' }}
+      run: |
+        set -x
+        ip_dir=${{ env.IP_PATH }}
+        ip_name=${{ inputs.IP_NAME }}
+        bus_wrap_dir=${{ env.BUSWRAP_PATH }}
+        rm -rf ${ip_dir}/fw/${ip_name}_regs.h
+        git -C ${{ env.IP_PATH }} status
+        # fw
+        python3 $bus_wrap_dir/scripts/bus_wrap.py ${ip_dir}/${ip_name}.yaml -ch > ${ip_dir}/fw/${ip_name}_regs.h
+    - name: Check Diff
+      id: check_diff
+      run: |
+        if [ -n "$(git -C ${{ env.IP_PATH }} status --porcelain)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+        fi
+        git -C ${{ env.IP_PATH }} status
+    - name: Set Variables
+      if: ${{ steps.check_diff.outputs.changed == 'true' }} 
+      id: vars
+      run: |
+        diffs_log=diffs.log
+        echo "diffs_log=$diffs_log" >> $GITHUB_OUTPUT
+        echo "buswrap_head_commit=$(git -C ${{ env.BUSWRAP_PATH }} rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+        echo "ip_head_commit=$(git -C ${{ env.IP_PATH }} rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+    - name: Create PR
+      if: ${{ steps.check_diff.outputs.changed == 'true' }} 
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        set -x
+        ip_head_commit=${{steps.vars.outputs.ip_head_commit}}
+        buswrap_head_commit=${{steps.vars.outputs.buswrap_head_commit}}
+        branch="${{inputs.pr_branch}}"
+        branch="${branch/IP_COMMIT/"$ip_head_commit"}"
+        branch="${branch/BUSWRAP_COMMIT/"$buswrap_head_commit"}"
+        title="${{inputs.pr_title}}"
+        title="${title/IP_COMMIT/"$ip_head_commit"}"
+        title="${title/BUSWRAP_COMMIT/"$buswrap_head_commit"}"
+        msg="${{inputs.commit_msg}}"
+        msg="${msg/IP_COMMIT/"$ip_head_commit"}"
+        msg="${msg/BUSWRAP_COMMIT/"$buswrap_head_commit"}"
+        echo "there are changes pushing to $branch"
+        cd ${{ env.IP_PATH }}
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout -b $branch
+        git add .
+        git commit -m "$msg"
+        git push -f --set-upstream origin $branch
+        pr=$(gh pr list --search "${title}" --state open)
+        if [[ -n "${pr}" ]]; then
+          echo "PR '$title' already exists"
+          exit 0
+        else
+          gh pr create \
+            -B ${{steps.vars.outputs.ip_branch_name}}\
+            -H $branch\
+            --title "$title"\
+            --body "Created by CI Github action"
+        fi
+    - name: Not Push to branch
+      if: ${{ steps.check_diff.outputs.changed == 'false' }} 
+      run: |
+        branch="ci-${{steps.vars.outputs.buswrap_head_commit}}-${{steps.vars.outputs.ip_branch_name}}"
+        echo "there are no changes not pushing to $branch"
+    - name: Check Context
+      shell: bash
+      if: always()
+      run: |
+        cat << 'EOF'
+        "${{ toJSON(steps) }}"
+        "${{ toJSON(inputs) }}"
+        EOF
